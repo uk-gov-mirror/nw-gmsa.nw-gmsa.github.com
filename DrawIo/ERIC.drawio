@@ -68,7 +68,7 @@
         <mxCell id="cbGTD4vIU7MyVdIxbExD-1" value="IHE 360X&lt;br&gt;HL7 v2 OMG_O19 or eRS&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="ebBzsFreggs344WMEcYp-2">
           <mxGeometry x="930" y="150" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZK1Klg-z9rnJ1v-QrYSl-6" value="Process Care Notifications" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" vertex="1" parent="ebBzsFreggs344WMEcYp-2">
+        <mxCell id="ZK1Klg-z9rnJ1v-QrYSl-6" value="Diagnostics and Care Progress Notifications" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;" vertex="1" parent="ebBzsFreggs344WMEcYp-2">
           <mxGeometry x="1530" y="40" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="XFexKGj4cigSWieowQqG-8" value="" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;" vertex="1" parent="ebBzsFreggs344WMEcYp-2">
@@ -205,7 +205,7 @@
           <mxGeometry x="1400" y="185" width="40" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ebBzsFreggs344WMEcYp-45" value="Diagnostic&amp;nbsp;&lt;br&gt;Discharge Summary?&lt;br&gt;(Referral Result)" style="shape=mxgraph.bpmn.data2;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;size=8;html=1;bpmnTransferType=output;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="ebBzsFreggs344WMEcYp-4">
-          <mxGeometry x="1740" y="180" width="40" height="60" as="geometry" />
+          <mxGeometry x="1758" y="180" width="40" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XFexKGj4cigSWieowQqG-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ebBzsFreggs344WMEcYp-4" source="ebBzsFreggs344WMEcYp-36" target="ebBzsFreggs344WMEcYp-40">
           <mxGeometry relative="1" as="geometry">
