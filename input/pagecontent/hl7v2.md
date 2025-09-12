@@ -609,7 +609,7 @@ SPM|1|RA257630||364611000000101^Tissue resection sample^SNM3|||||||||||||2023090
 This example is created from the original iGene Message in the next section, it is also enriched with data from the [original order example](#genomics-order-with-coded-entries). 
 
 ```aiignore
-MSH|^~\&|IGENE|699X0|EPIC|699X0|20250814094223+0000||ORU^R01^ORU_R01|ORIE-250814-0|T|2.5.1|||AL
+MSH|^~\&|RIE|699X0|EPR|R0A|20250814094223+0000||ORU^R01^ORU_R01|ORIE-250814-0|T|2.5.1|||AL
 PID|1||9449305552^^^NHS^NH~633^^^R0A^MR||CHISLETT^Octavia||20080920|F|||1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST
 PV1|1||||||||||||||||||1001166717^^^R0A
 ORC|NW|1601737^R0A|T25-01FU^699X0
@@ -635,7 +635,7 @@ NTE|1|L|R240.1=PACKAGE: R240.1 - Diagnostic testing for known mutation(s) (Targe
 This example is created from the original iGene Message in the previous section, it is also enriched with data from the [original order example](#genomics-order-with-coded-entries).
 
 ```
-MSH|^~\&|IGENE|699X0|EPIC|699X0|20250814094223+0000||MDM^T02|ORIE-250814-0|T|2.4|||AL
+MSH|^~\&|RIE|699X0|HIE|QOP|20250814094223+0000||MDM^T02|ORIE-250814-0|T|2.4|||AL
 EVN|T02|20250814094223+0000
 PID|1||9449305552^^^NHS^NH~633^^^R0A^MR||CHISLETT^Octavia||20080920|F|||1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST
 PV1|1||||||||||||||||||1001166717^^^R0A

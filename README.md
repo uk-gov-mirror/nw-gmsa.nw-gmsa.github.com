@@ -19,3 +19,4 @@ curl --request POST --data-binary "@ORU_R01_PDF.txt" http://192.168.1.67:9981/tr
 `Invoke-RestMethod -Method POST -Uri http://localhost:9980 -InFile "Specifications/ManchesterFoundationTrust/OML_O21_PDF.txt"`
 `Invoke-RestMethod -Method POST -Uri http://localhost:9980 -InFile "Specifications/ManchesterFoundationTrust/ORU_R01_PDF.txt"`
 `Invoke-RestMethod -Method POST -Uri http://localhost:9980 -InFile "Specifications/iGene/ORU_R01_PDF.txt"`
+`Invoke-RestMethod -Method POST -Uri http://localhost:9981/transformToFHIR -InFile "Specifications/iGene/ORU_R01_PDF.txt"`
