@@ -4,4 +4,4 @@ Title: "Binary Genomic Report Example"
 Description: "Genomic Report PDF Example"
 
 * contentType = #application/pdf
-* data = "ig-loader-genome-report-example.pdf"
+* data = "ig-loader-R24-0WH7-1.pdf"

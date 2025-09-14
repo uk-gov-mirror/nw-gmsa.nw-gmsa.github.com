@@ -1,7 +1,7 @@
 
-## Message Definitions
 
-### OML_O21 Laboratory Order 
+
+## OML_O21 Laboratory Order 
 
 HL7 over HTTP is preferred for this message, MLLP is also supported.
 
@@ -11,12 +11,12 @@ Authorization: Basic {accessToken}<br/>
 Content-Type: application/hl7-v2+er7
 </div>
 
-#### References
+### References
 
  - [EPIC HL7 v2](https://open.epic.com/Interface/HL7v2) See **Outgoing Ancillary Orders** (EPR to RIE)
  - [MEDITECH HL7 v2](https://ehr.meditech.com/sites/default/files/documents/20240613/om-orders-outbound-24.pdf)
 
-#### Message
+### Message
 
 | Segment HL7               | Optionality | Notes                                                   |
 |---------------------------|-------------|---------------------------------------------------------|
@@ -34,7 +34,7 @@ Content-Type: application/hl7-v2+er7
 | - **SPECIMEN**            | 0..*        | Conditional - required for complete order               |
 | -- [SPM](#spm)            | 0..1        |                                                         |
 
-### ORU_R01 Unsolicited transmission of an observation message
+## ORU_R01 Unsolicited transmission of an observation message
 
 HL7 over HTTP is preferred for this message, MLLP is also supported.
 
@@ -46,14 +46,14 @@ Content-Type: application/hl7-v2+er7
 
 
 
-#### References
+### References
 
 - [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
   - See Appendix A – Using ORU to Publish PDF Reports
 - [HL7 Version 2.5.1 Implementation Guide: Lab Results Interface (LRI), Release 1 from May 2017](https://confluence.hl7.org/download/attachments/25559919/2018%2004%2003%20-%20V2%20LRI%20-%20Ch.%205%20CG%20and%20Code%20System%20Tables.pdf?api=v2) includes **Data Standards**
 - [EPIC HL7 v2](https://open.epic.com/Interface/HL7v2) See **Discrete Genomic Results** (RIE to EPIC EPR)
 
-#### Message
+### Message
 
 | Segment HL7           | Optionality | Notes                                                   |
 |-----------------------|-------------|---------------------------------------------------------|
@@ -66,7 +66,15 @@ Content-Type: application/hl7-v2+er7
 | -- **OBSERVATION**    | 1..*        |                                                         |
 | -- [OBX](#obx)        | 1..*        |                                                         |
 
-### MDM_T02 Original document notification and content
+### MASTER HL7 REPORTING PANEL
+
+| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)                | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5)                                                        | Cardinality | Term Description                                                          |
+|--------------|----------------|-------------------------------|----------------------|----------------|-------------------------------------------------------------------------------|-------------|---------------------------------------------------------------------------|
+| CWE          | 51967-8        | Genetic disease assessed [ID] | LOINC                | 1.a            | R240.1^Specific target Targeted mutation testing^England-GenomicTestDirectory | [0..*]      | [Genomic Test Directory](CodeSystem-NHSEngland-GenomicTestDirectory.html) |
+| ED           | 51969-4        | Genetic analysis report       | LOINC                | 1              | See below                                                                     | [0..1]      |                                                                           |
+| CE           | -              | -                             | TESTOUTCOME          |                | (OBX-3) 311^RESULT CONSISTENT WITH REFERRAL INDICATION^TESTOUTCOME            | [0..1]      | [Genomic Test Outcome Codes](ValueSet-GenomicTestOutcomeCodes.html)       |                                                                     |
+
+## MDM_T02 Original document notification and content
 
 <div class="alert alert-info" role="alert">
 This is currently being elaborated and subject to change.
@@ -77,11 +85,11 @@ See also which are functionally equivalent and have a similar data model:
 - IHE XDS Cross-Enterprise Document Sharing (XDS.b) or Cross-Enterprise Document Reliable Interchange (XDR) - [Provide and Register Document Set-b [ITI-41]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-41.html#3.41)
 - IHE MHD Mobile access to Health Documents (MHD) - [Simplified Publish [ITI-105]](https://profiles.ihe.net/ITI/MHD/ITI-105.html)
 
-#### References 
+### References 
 
 - [EPIC Incoming Scanned Document Link Interface Technical Specification](https://open.epic.com/Tech/TechSpec?spec=5323)
 
-#### Message
+### Message
 
 | Segment HL7   | Optionality | Notes                                                   |
 |---------------|-------------|---------------------------------------------------------|
