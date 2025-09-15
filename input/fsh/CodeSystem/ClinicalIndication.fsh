@@ -2,7 +2,7 @@ CodeSystem: GenomicClinicalIndication
 Id: GenomicClinicalIndication
 Title: "NHS England Genomic Clinical Indication Code"
 Description: """
-2nd level Genomic Test Directory Codes
+1st level Genomic Test Directory Codes
 """
 
 * ^name = "GenomicClinicalIndication"
@@ -14,6 +14,7 @@ Description: """
 * ^date = "2025-05-08"
 * ^url = "https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicClinicalIndication"
 
+* #R240 "Diagnostic testing for known mutation(s)"
 * #R361 "Childhood onset hereditary spastic paraplegia"
 * #R362 "Not present in 8.0"
 * #R372 "Newborn screening for sickle cell disease in a transfused baby"

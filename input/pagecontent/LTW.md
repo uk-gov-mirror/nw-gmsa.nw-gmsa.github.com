@@ -45,8 +45,8 @@ Later stages will include the use of [Genomic Order Management Service](https://
 
 The processes above are described in more detail in:
 
-- [Use Case 1: Genomic Test Order](#use-case-1-genomic-test-order) for the order
-- [Use Case 2: Genomic Test Report](#use-case-2-genomic-test-report) for the report
+- [Use Case 1: Genomic Test Order](#use-case-genomic-test-order) for the order
+- [Use Case 2: Genomic Test Report](#use-case-genomic-test-report) for the report
 
 From a high level perspective the process is 
 
@@ -250,7 +250,7 @@ Key differences include:
 <p class="figureTitle">Genomic LTW Business Process - Use Case 3</p> 
 <br clear="all">
 
-In this use case the original order is raised by the `Order Placer` and sent to a Pathology LIMS (`Pathology Order Filler`). The Pathology LIMS follows the processes outlined in [Use Case 1: Genomic Test Order](#use-case-1-genomic-test-order) and [Use Case 2: Genomic Test Report](#use-case-2-genomic-test-report) for pathology testing.  
+In this use case the original order is raised by the `Order Placer` and sent to a Pathology LIMS (`Pathology Order Filler`). The Pathology LIMS follows the processes outlined in [Use Case 1: Genomic Test Order](#use-case-genomic-test-order) and [Use Case 2: Genomic Test Report](#use-case-genomic-test-report) for pathology testing.  
 As part of this testing, the clinical process requires a genomics test to be performed.
 This genomics process is largely the same except for:
 - The order is sent as one interaction as the sample does not need to be collected.
@@ -398,7 +398,7 @@ Note: Event trigger definitions based on [NHS England HL7 v2 ADT Message Specifi
 
 It is common for this requirement to be answered by a combination of:
 
-- [Patient Identifier Cross-referencing (PIX)](PIX.html)
+- [Patient Administration (PAM)](PAM.html)
 - [IHE Patient Administration Management (PAM)](https://profiles.ihe.net/ITI/TF/Volume1/ch-14.html)//HL7 v2 ADT Patient Encounter Management (A02, A08 and A12)
   - (Denmark) HL7 FHIR version [DK MedCom HospitalNotification](https://medcomfhir.dk/ig/hospitalnotification/)
 

@@ -74,7 +74,7 @@ For sucessful messages the [MessageHeader](StructureDefinition-MessageHeader.htm
 
 Where the identifier refers to the Bundle.identifier in the original message. The Bundle may also include modified FHIR Patient or ServiceRequest resources with updated and new identifiers.
 
-> Example payload [Bundle 'Message' - Genomics Order Acknowledgement](Bundle-GenomicsOrderMessageAcknowledgement.html)
+> Example payload [Bundle 'Message' - Genomics Order Reply](Bundle-GenomicsOrderMessageReplyOk.json.html)
 
 ##### Error/Reject
 
