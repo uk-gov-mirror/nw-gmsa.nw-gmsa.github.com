@@ -127,7 +127,7 @@ Reference:
 
 
 * reasonCode MS
-* reasonCode from GenomicConditionCodes (preferred)
+* reasonCode from GenomicClinicalIndicationCodes (preferred)
 
 * supportingInfo 0..* MS
 //* supportingInfo only Reference(ObservationPanel or Observation or DiagnosticReport or QuestionnaireResponse or DocumentReference)
