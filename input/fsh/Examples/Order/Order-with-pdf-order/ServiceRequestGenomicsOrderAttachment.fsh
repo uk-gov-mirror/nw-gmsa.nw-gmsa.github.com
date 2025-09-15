@@ -52,6 +52,6 @@ Description: "TODO"
 
 * reasonCode[+]
   * coding[+]
-    * code = #363349007
-    * display = "Malignant tumour of stomach"
-    * system = $sct
+    * code = #R240
+    * display = "Diagnostic testing for known mutation(s)"
+    * system = $GCC
