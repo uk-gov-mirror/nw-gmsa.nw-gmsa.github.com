@@ -1,11 +1,11 @@
-CodeSystem: NHSEngland-GenomicTestDirectory
-Id: NHSEngland-GenomicTestDirectory
-Title: "Genomic Test Directory"
+CodeSystem: NHSEngland-GenomicTestCode
+Id: GenomicTestCode
+Title: "NHS England Genomic Test Code"
 Description: """
 - [Genomic Test Directory](https://www.england.nhs.uk/publication/national-genomic-test-directories)
 """
 
-* ^name = "NHSEnglandGenomicTestDirectory"
+* ^name = "GenomicTestCode"
 * ^content = #fragment
 * ^caseSensitive = true
 * ^experimental = false

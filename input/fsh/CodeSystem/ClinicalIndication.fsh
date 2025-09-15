@@ -1,18 +1,18 @@
-CodeSystem: GenomicConditionCode
-Id: GenomicConditionCode
-Title: "Genomic Condition Code"
+CodeSystem: GenomicClinicalIndication
+Id: GenomicClinicalIndication
+Title: "NHS England Genomic Clinical Indication Code"
 Description: """
 2nd level Genomic Test Directory Codes
 """
 
-* ^name = "GenomicConditionCode"
+* ^name = "GenomicClinicalIndication"
 * ^content = #fragment
 * ^caseSensitive = true
 * ^experimental = false
 * ^status = #draft
 * ^version = "0.0.1"
 * ^date = "2025-05-08"
-* ^url = "https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicConditionCode"
+* ^url = "https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicClinicalIndication"
 
 * #R361 "Childhood onset hereditary spastic paraplegia"
 * #R362 "Not present in 8.0"

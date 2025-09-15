@@ -50,3 +50,5 @@ Bucket for local codes
 * #TransportUsed "Transport used"
 * #SampleSentTo "Sample sent to"
 * #SampleSentToName "Name of person who sent sample"
+
+* #TESTOUTCOME "NHS England Genomics Test Outcome"

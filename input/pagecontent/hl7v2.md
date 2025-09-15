@@ -68,11 +68,11 @@ Content-Type: application/hl7-v2+er7
 
 ### MASTER HL7 REPORTING PANEL
 
-| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)                | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5)                                                        | Cardinality | Term Description                                                          |
-|--------------|----------------|-------------------------------|----------------------|----------------|-------------------------------------------------------------------------------|-------------|---------------------------------------------------------------------------|
-| CWE          | 51967-8        | Genetic disease assessed [ID] | LOINC                | 1.a            | R240.1^Specific target Targeted mutation testing^England-GenomicTestDirectory | [0..*]      | [Genomic Test Directory](CodeSystem-NHSEngland-GenomicTestDirectory.html) |
-| ED           | 51969-4        | Genetic analysis report       | LOINC                | 1              | See below                                                                     | [0..1]      |                                                                           |
-| CE           | -              | -                             | TESTOUTCOME          |                | (OBX-3) 311^RESULT CONSISTENT WITH REFERRAL INDICATION^TESTOUTCOME            | [0..1]      | [Genomic Test Outcome Codes](ValueSet-GenomicTestOutcomeCodes.html)       |                                                                     |
+| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)                    | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5)                                            | Cardinality | Term Description                                                       |
+|--------------|----------------|-----------------------------------|----------------------|----------------|-------------------------------------------------------------------|-------------|------------------------------------------------------------------------|
+| CWE          | 51967-8        | Genetic disease assessed [ID]     | LOINC                | 1.a            | R240^Specific target Targeted mutation testing^ClinicalIndication | [0..*]      | [Clinical Indication](CodeSystem-GenomicClinicalIndication.html) |
+| ED           | 51969-4        | Genetic analysis report           | LOINC                | 1              | ^AP^PDF^Base64^JVBERi0xL....                                      | [0..1]      |                                                                        |
+| CWE          | TESTCOME       | NHS England Genomics Test Outcome | NWGMSA         |                | 311^RESULT CONSISTENT WITH REFERRAL INDICATION^TESTOUTCOME        | [0..1]      | [Test Outcome](ValueSet-GenomicTestOutcomeCodes.html)    |                                                                     |
 
 ## MDM_T02 Original document notification and content
 

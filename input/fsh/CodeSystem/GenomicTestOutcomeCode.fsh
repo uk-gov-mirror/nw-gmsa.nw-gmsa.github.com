@@ -1,6 +1,6 @@
 CodeSystem: GenomicTestOutcomeCode
 Id: GenomicTestOutcomeCode
-Title: "Genomic Test Outcome Code"
+Title: "NHS England Genomic Test Outcome Code"
 Description: """
 Test Outcome Code from [NHS England Genomics Test Reporting Specification](https://www.england.nhs.uk/publication/genomics-testing-reporting-specification/)
 """
