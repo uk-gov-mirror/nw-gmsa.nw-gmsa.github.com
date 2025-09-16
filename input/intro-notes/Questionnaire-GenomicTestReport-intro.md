@@ -13,6 +13,7 @@
 Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q=https://nw-gmsa.github.io/Questionnaire-GenomicTestReport.json" target="_blank">Questionnaire-GenomicTestReport.json</a>
 </div>
 
+### Results
 
 | Entity                    | Cardinality | HL7 v2 ORU_RO1 Message                  | HL7 FHIR DiagnosticReport                                                                              | HL7 FHIR Resource (RESTful)                                                |
 |---------------------------|-------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
