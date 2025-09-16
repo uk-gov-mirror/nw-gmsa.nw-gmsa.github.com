@@ -9,6 +9,11 @@
 
 ## Domain Archetype
 
+<div class="alert alert-info" role="alert">
+Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q=https://nw-gmsa.github.io/Questionnaire-GenomicTestReport.json" target="_blank">Questionnaire-GenomicTestReport.json</a>
+</div>
+
+
 | Entity                    | Cardinality | HL7 v2 ORU_RO1 Message                  | HL7 FHIR DiagnosticReport                                                                              | HL7 FHIR Resource (RESTful)                                                |
 |---------------------------|-------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | Patient                   | 1..1        | [PID](hl7v2.html#pid)                   | subject                                                                                                | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html)   |

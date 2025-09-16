@@ -8,6 +8,10 @@
 
 ## Domain Archetype
 
+<div class="alert alert-info" role="alert">
+Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q=https://nw-gmsa.github.io/Questionnaire-GenomicTestOrder.json" target="_blank">Questionnaire-GenomicTestOrder.json</a>
+</div>
+
 <figure>
 {%include Laboratory-Order-mindmap.svg%}
 <p id="fX.X.X.X-X" class="figureTitle">Genomic Test Order Sections</p>
@@ -30,6 +34,4 @@
 | CITT code (Suspected Condition) | *..*        | [DG1](hl7v2.html#dg1) DG1-3       | reasonCode [Genomic Condition Codes](ValueSet-genomic-condition-codes.html)                                                       |                                                                          |
 | Specimen                        | 0..*        | [SPM](hl7v2.html#spm)             | specimen                                                                                                                          | [Specimen](StructureDefinition-Specimen.html)                            |
 
-
-[Questionnaire Viewer](https://project-wildfyre.github.io/domain-archetype/?q=https://nw-gmsa.github.io/R4/Questionnaire-GenomicTestOrder.json)
 
