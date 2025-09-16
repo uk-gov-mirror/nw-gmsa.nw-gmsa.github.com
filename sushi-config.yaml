@@ -143,14 +143,6 @@ resources:
     name: North West Genomics Test Order
     description: NHS England North West Genomics Test Order (Draft)
     exampleBoolean: false
-  Questionnaire/81247-9:
-    name: Master HL7 genetic variant reporting panel
-    description: Master HL7 genetic variant reporting panel
-    exampleBoolean: false
-  Questionnaire/58410-2:
-    name: CBC panel - Blood by Automated count
-    description: CBC panel - Blood by Automated count
-    exampleBoolean: false
   Questionnaire/24323-8:
     name: Comprehensive metabolic 2000 panel - Serum or Plasma
     description: Comprehensive metabolic 2000 panel - Serum or Plasma
