@@ -208,6 +208,7 @@ menu:
     Overview: archetype-intro.html
     Genomic Test Order (Template): Questionnaire-GenomicTestOrder.html
     Genomic Test Report (Composition): StructureDefinition-Composition-GenomicReport.html
+    Genomic Test Report (Template): Questionnaire-GenomicTestReport.html
   Artefacts (Volume 3): artifacts.html
   Development:
     Environments and Testing: testing.html
