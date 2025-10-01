@@ -74,6 +74,27 @@ Content-Type: application/hl7-v2+er7
 | ED          | 51969-4        | Genetic analysis report           | LOINC                | 1              | ^AP^PDF^Base64^JVBERi0xL....                                      | [0..1]      |                                                                        |
 | CE         | TESTCOME       | NHS England Genomics Test Outcome | NWGMSA         |                | 311^RESULT CONSISTENT WITH REFERRAL INDICATION^TESTOUTCOME        | [0..1]      | [Test Outcome](ValueSet-GenomicTestOutcomeCodes.html)    |                                                                     |
 
+### Supplemental Codes (tbd)
+
+| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)    | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5) | Cardinality | Term Description |
+|--------------|----------------|-------------------|----------------------|----------------|------------------------|-------------|------------------|
+| CNE          | 48018-6        | Gene studied [ID] | LOINC                | 1.a            | 21497^ACAD9^HGNC-Symb  | [0..*]      |
+
+### Summary Results (tbd)
+
+| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)                          | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5)                             | Cardinality | Term Description                                                                                                                                                                                                                                                                                                                                                              |
+|--------------|----------------|-----------------------------------------|----------------------|----------------|----------------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CNE          | 51968-6        | Genetic analysis overall interpretation | LOINC                | 1              | LA6576^Posititive^LN^ <br/>  10828004^Positive^SCT | [0..1]      | [Genetic disease analysis overall predictive risk interpretation (LOINC LL541-4)](https://loinc.org/LL541-4)                                                                                                                                                                                                                                                                  |
+| CWE          | 51958-7        | Transcript reference sequence [ID]      | LOINC                | 2a             | NM_014049.4^ NM_014049.4^RefSeq-T                  | [0..1]      | N.B: Most structural variants are based on genomic <br/>    reference sequences, and the transcript reference <br/>    sequences would not apply. <br/>    At least one of the transcript or genomic reference sequence (rows B.4, B.9) must be included. <br/> If the LOINC 48004-6 DNA change c.HGVS (B.5) is included, the transcript reference sequence must be included. |
+| CWE          | 48004-6        | DNA change c.HGVS                       | LOINC                | 2a             | c.1249C>T^c.1249C>T^HGVS.c                         | [0..1]      | Coding system: HGVS.c HGVS specification of the change at the DNA level relative to the transcript RefSeq.                                                                                                                                                                                                                                                                    |
+
+### Interpretations (tbd)
+
+| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)             | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5) | Cardinality | Term Description                                                              |
+|--------------|----------------|----------------------------|----------------------|----------------|------------------------|-------------|-------------------------------------------------------------------------------|
+| CNE          | 53037-8        | Genetic sequence           | LOINC                | 2a             | LA6668-3^Pathogenic^LN | [0..1]      | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) |
+| CWE          | 69548-6        | Genetic variant Assessment | LOINC                | 2a             | LA9633-4^Present^LN    | [0..1]      | [Genetic variant assessment](https://loinc.org/LL1971-2)                      |
+
 ## MDM_T02 Original document notification and content
 
 <div class="alert alert-info" role="alert">
