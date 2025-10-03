@@ -6,13 +6,6 @@ This guide is to support Genomic Testing Workflow at a regional level and is des
 - [NHS England - FHIR Genomics Implementation Guide](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home) which defines the conformance requirements for Genomics in England
 - [NHS England - Genomic Order Management Service FHIR API](https://digital.nhs.uk/developer/api-catalogue/genomic-order-management-service-fhir) a [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html) based service for managing orders and results at a national level.
 
-It also brings in both data and workflow requirements from a variety of other guides.
-
-<img style="padding:3px;width:70%;" src="GenomicsIG.drawio.png" alt="North West GMSA IG"/>
-<br clear="all">
-<p class="figureTitle">North West GMSA IG</p> 
-<br clear="all">
-
 The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU
 
 <img style="padding:3px;width:70%;" src="Standardising Health.drawio.png" alt="Process Orientated Interoperability"/>
@@ -63,6 +56,13 @@ This Implementation Guide is implemented in the Regional Integration Engine (RIE
 
 This guide follows [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow), which describes how to use HL7 v2 orders and reports at an enterprise level. It will contain several modifications in order to support HL7 [FHIR Messasging](https://hl7.org/fhir/R4/messaging.html), these messages will be closely related to HL7 v2 Messages to help with adoption.
 For documentation purposes, HL7 v2 version used will be 2.5.1 (this also matches NHS England FHIR Genomics, HL7 International v2 standards around structured Genomic reporting and Digital Health and Care Wales standards around ORU_R01)
+
+It also brings in both data and workflow requirements from a variety of other guides.
+
+<img style="padding:3px;width:70%;" src="GenomicsIG.drawio.png" alt="North West GMSA IG"/>
+<br clear="all">
+<p class="figureTitle">North West GMSA IG</p> 
+<br clear="all">
 
 ### GLH Regional Integration Engine (GLH RIE)
 
