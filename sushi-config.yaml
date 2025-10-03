@@ -204,12 +204,12 @@ menu:
     Authorisation [IUA] : IUA.html
 ##    Work Order Management [LAB-4]: LAB-4.html
 ##    Test Results Management [LAB-5]: LAB-5.html
-  Domain Archetypes:
+  Domain Archetype (Volume 3):
     Overview: archetype-intro.html
     Genomic Test Order (Template): Questionnaire-GenomicTestOrder.html
     Genomic Test Report (Composition): StructureDefinition-Composition-GenomicReport.html
     Genomic Test Report (Template): Questionnaire-GenomicTestReport.html
-  Artefacts (Volume 3): artifacts.html
+  Artefacts (Volume 4): artifacts.html
   Development:
     Environments and Testing: testing.html
     Support: support.html

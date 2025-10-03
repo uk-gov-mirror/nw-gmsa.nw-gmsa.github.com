@@ -13,6 +13,41 @@ It also brings in both data and workflow requirements from a variety of other gu
 <p class="figureTitle">North West GMSA IG</p> 
 <br clear="all">
 
+The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU
+
+<table >
+  <thead>
+    <tr>
+      <th></th>
+      <th>Menu Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color: #E1D5E7"></td>
+      <td>Analysis and Design (Volume 1)</td>
+      <td>Description of the processes and corresponding technical frameworks</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F8CECC"></td>
+      <td>Interfaces (Volume 2)</td>
+      <td>Description of the processes and corresponding technical frameworks (HL7 v2 and FHIR Interactions)</td>
+    </tr>
+    <tr>
+      <td style="background-color: #DAE8FC"></td>
+      <td>Domain Archetype (Volume 3)</td>
+      <td>NHS North West Forms, Templates, Reports and Compositions</td>
+    </tr>
+    <tr>
+      <td style="background-color: #DAE8FC"></td>
+      <td>Artefacts (Volume 4)</td>
+      <td>NHS North West Common Data Models</td>
+    </tr>
+  </tbody>
+</table>
+
+
 This Implementation Guide is implemented in the Regional Integration Engine (RIE)
 
 <figure>
