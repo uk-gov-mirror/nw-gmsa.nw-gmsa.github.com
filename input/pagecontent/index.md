@@ -15,6 +15,11 @@ It also brings in both data and workflow requirements from a variety of other gu
 
 The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU
 
+<img style="padding:3px;width:70%;" src="Standardising Health.drawio.png" alt="Process Orientated Interoperability"/>
+<br clear="all">
+<p class="figureTitle">Process Orientated Interoperability</p> 
+<br clear="all">
+
 <table >
   <thead>
     <tr>

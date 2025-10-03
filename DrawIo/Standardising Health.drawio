@@ -1,0 +1,96 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="meLw6w4zPxafdMbe4XTQ">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-18" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Process Orientated Workflow/Interoperability&lt;br&gt;&lt;b&gt;Diagnostic Testing Pathway&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="230" y="10" width="480" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UIPUpaiJNlF5K1_aJ8nw-21" target="UIPUpaiJNlF5K1_aJ8nw-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-21" value="Order Form" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="150" y="180" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-22" value="Template" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="150" y="250" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-23" value="&lt;b&gt;Order Placer&lt;/b&gt;&lt;br&gt;Often EPR or OrderComms" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="140" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UIPUpaiJNlF5K1_aJ8nw-24" target="UIPUpaiJNlF5K1_aJ8nw-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-24" value="HL7 v2 ORM/OML/OMI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="390" y="180" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-26" value="Order Form" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="630" y="180" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-28" value="Template" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="630" y="250" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UIPUpaiJNlF5K1_aJ8nw-30" target="UIPUpaiJNlF5K1_aJ8nw-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UIPUpaiJNlF5K1_aJ8nw-30" target="UIPUpaiJNlF5K1_aJ8nw-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UIPUpaiJNlF5K1_aJ8nw-30" target="UIPUpaiJNlF5K1_aJ8nw-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-54" value="(May be sent directly by source system)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="UIPUpaiJNlF5K1_aJ8nw-52">
+          <mxGeometry x="-0.6263" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-30" value="HL7 v2 ORU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="390" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-32" value="Diagnostic Report" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="150" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UIPUpaiJNlF5K1_aJ8nw-34" target="UIPUpaiJNlF5K1_aJ8nw-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-34" value="Diagnostic Report" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="630" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-40" value="Template/Composition" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="630" y="370" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-42" value="IHE Cross Enterprise Document Sharing (XDS/MHD(HL7 FHIR))" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="460" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-46" value="Composition" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="530" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-47" value="FHIR Document / CDA" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="560" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-48" value="&lt;b&gt;Order Filler&lt;/b&gt;&lt;br&gt;often a LIMS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="655" y="140" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-49" value="&lt;br&gt;IHE Query for Existing Data (HL7 FHIR)" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-50" value="Resource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="480" y="530" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-53" value="Template/Composition" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="150" y="370" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UIPUpaiJNlF5K1_aJ8nw-55" value="&lt;b&gt;Clinicians/Providers outside of the diagnostic pathway&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="600" width="420" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OnvfmyCuNzJhIYn2wSSQ-1" value="IHE Laboratory and Testing Workflow (LTW)" style="whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="90" width="645" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OnvfmyCuNzJhIYn2wSSQ-2" value="Optional" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="530" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
