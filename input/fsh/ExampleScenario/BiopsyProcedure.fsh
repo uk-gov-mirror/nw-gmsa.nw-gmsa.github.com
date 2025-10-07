@@ -44,12 +44,12 @@ Usage: #definition
     * process[+]
       * title = "Update Order"
       * description = "Document Procedure - Update specimen details"
-      * insert ProcessUpdate(1, "Document Procedure - Update specimen details", nurse, epr, ,  , [[ Ideally the updated specimen record should result in an update to the original order.  ]])
+      * insert ProcessUpdate(2, "Document Procedure - Update specimen details", nurse, epr, ,  , [[ Ideally the updated specimen record should result in an update to the original order.  ]])
   * step[+]
     * process[+]
       * title = "Send Specimen - physically not electronic"
       * description = "Send Specimen"
-      * insert ProcessCreateEvent(1, "Send specimen", nurse, laboratory, ,  , [[ If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
+      * insert ProcessCreateEvent(3, "Send specimen", nurse, laboratory, ,  , [[ If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
 
 
 * process[+]
@@ -64,4 +64,4 @@ Usage: #definition
     * process[+]
       * title = "Discharge Patient"
       * description = "Discharge Patient"
-      * insert ProcessUpdate(1, "Discharge Patient", nurse, epr, ,  , [[This includes a HL7 v2 ADT Discharge event and may include clinical notes]])
+      * insert ProcessUpdate(2, "Discharge Patient", nurse, epr, ,  , [[This includes a HL7 v2 ADT Discharge event and may include clinical notes]])
