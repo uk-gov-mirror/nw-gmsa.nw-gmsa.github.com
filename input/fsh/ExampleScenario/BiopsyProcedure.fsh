@@ -56,4 +56,4 @@ Usage: #definition
 * process[+]
   * title = "Discharge Patient"
   * description = "Discharge Patient"
-  * insert ProcessUpdate(1, "This includes a HL7 v2 ADT Discharge event", nurse, epr, ,  , [[  ]])
+  * insert ProcessUpdate(1, "Discharge Patient - This includes a HL7 v2 ADT Discharge event", nurse, epr, ,  , [[This includes a HL7 v2 ADT Discharge event]])
