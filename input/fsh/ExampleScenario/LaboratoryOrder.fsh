@@ -17,6 +17,21 @@ Usage: #definition
 
 
 * process[+]
+  * title = "Select Test Order Form"
+  * description = "Select Test Order Form"
+  * insert ProcessSearch(1, "Select Order Form", placer, filler,GenomicsOrderMessageCodedEntries, GenomicsOrderMessageReplyOk , [[  ]])
+
+* process[+]
+  * title = "Complete Test Order Form"
+  * description = "Complete Test Order Form"
+  * insert ProcessCreateEvent(1, "Create Form", placer, filler,GenomicsOrderMessageCodedEntries, GenomicsOrderMessageReplyOk , [[  ]])
+
+* process[+]
+  * title = "Collect Sample"
+  * description = "Collect sample. Record Specimen details and procedure details if biopsy"
+  * insert ProcessCreateEvent(1, "Create Form", placer, filler,GenomicsOrderMessageCodedEntries, GenomicsOrderMessageReplyOk , [[  ]])
+
+* process[+]
   * title = "Send Order"
   * description = "Send the order"
   * insert ProcessCreateEvent(1, "Send Order", placer, filler,GenomicsOrderMessageCodedEntries, GenomicsOrderMessageReplyOk , [[  ]])
