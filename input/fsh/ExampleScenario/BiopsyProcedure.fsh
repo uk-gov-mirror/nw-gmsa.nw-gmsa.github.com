@@ -21,17 +21,12 @@ Usage: #definition
 * process[+]
   * title = "Admission"
   * description = "Admit Patient"
-  * step[+]
-    * process[+]
-      * title = "Select Admission Form"
-      * description = "Select the Admission Forms"
-      * insert ProcessSearch(1, "Select Admission Forms", nurse, forms, ,  , [[ This may be paper based.]])
+  * insert ProcessSearch(1, "Select Admission Forms", nurse, forms, ,  , [[ This may be paper based.]])
   * step[+]
     * process[+]
       * title = "Prepopulate Admission Forms"
       * description = "Prepopulate Admission Form"
       * insert ProcessCreateEvent(1, "Pre-populate Admission Forms",  forms, epr, ,  , [[ If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated. ]])
-  * step[+]
     * process[+]
       * title = "Complete Admission Forms"
       * description = "Complete Admission Form and Admit patient"
