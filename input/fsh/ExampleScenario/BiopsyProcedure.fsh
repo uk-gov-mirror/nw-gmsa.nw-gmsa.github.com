@@ -26,7 +26,7 @@ Usage: #definition
 * process[+]
   * title = "Prepopulate Admission Forms"
   * description = "Prepopulate Admission Form and take vital signs"
-  * insert ProcessCreateEvent(1, "Prepopulate Admission Forms",  forms, epr, ,  , [[  ]])
+  * insert ProcessCreateEvent(1, "Pre-populate Admission Forms",  forms, epr, ,  , [[  ]])
 
 * process[+]
   * title = "Complete Admission Forms"
@@ -35,13 +35,13 @@ Usage: #definition
 
 * process[+]
   * title = "Perform Procedure"
-  * description = "Perform Procedure"
-  * insert ProcessCreateEvent(1, "Record procedure", consultant, epr, ,  , [[  ]])
+  * description = "Document Procedure - Perform Procedure"
+  * insert ProcessCreateEvent(1, "Document Procedure - Record procedure details", consultant, epr, ,  , [[  ]])
 
 * process[+]
   * title = "Update Order"
-  * description = "Update specimen details"
-  * insert ProcessUpdate(1, "Update specimen details", nurse, epr, ,  , [[  ]])
+  * description = "Document Procedure - Update specimen details"
+  * insert ProcessUpdate(1, "Document Procedure - Update specimen details", nurse, epr, ,  , [[  ]])
 
 * process[+]
   * title = "Send Specimen"
@@ -51,7 +51,7 @@ Usage: #definition
 * process[+]
   * title = "Monitor Patient on the day case ward"
   * description = "Take observations such as vital signs, patient is monitored to ensure they are ok to discharge."
-  * insert ProcessUpdate(1, "Update specimen details", nurse, epr, ,  , [[  ]])
+  * insert ProcessUpdate(1, "Monitor Patient - Update specimen details", nurse, epr, ,  , [[  ]])
 
 * process[+]
   * title = "Discharge Patient"
