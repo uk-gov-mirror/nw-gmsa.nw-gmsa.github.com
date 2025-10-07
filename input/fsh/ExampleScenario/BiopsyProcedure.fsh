@@ -30,7 +30,7 @@ Usage: #definition
   * title = "Perform Biopsy"
   * description = "Perform Biopsy Procedure"
   * insert ProcessCreateEvent(5, "Document Procedure - Record procedure details", consultant, epr, ,  , [[  ]])
-  * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr, ,  , [[ Ideally the updated specimen record should result in an update to the original order.  ]])
+  * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr,SpecimenExample ,  , [[ Ideally the updated specimen record should result in an update to the original order.  ]])
   * insert ProcessCreateEvent(7, "Send specimen", nurse, laboratory, ,  , [[ If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
 
 
