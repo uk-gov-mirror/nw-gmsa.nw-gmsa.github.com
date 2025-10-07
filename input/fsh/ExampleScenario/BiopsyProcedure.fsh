@@ -30,7 +30,7 @@ Usage: #definition
     * process[+]
       * title = "Complete Admission Forms"
       * description = "Complete Admission Form and Admit patient"
-      * insert ProcessCreateEvent(1, "Complete Admission Forms. ", nurse, forms, ,  , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs. The end of this process is likely to be siganlled via a HL7 v2 ADT Admission event. ]])
+      * insert ProcessCreateEvent(1, "Complete Admission Forms. ", nurse, forms, ,  , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. The end of this process is likely to be siganlled via a HL7 v2 ADT Admission event. ]])
 
 * process[+]
   * title = "Perform Biopsy"
