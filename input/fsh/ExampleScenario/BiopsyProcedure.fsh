@@ -22,20 +22,20 @@ Usage: #definition
   * title = "Admission"
   * description = "Admit Patient"
   * insert ProcessSearch(1, "Select Admission Forms", nurse, forms, ,  , [[ This may be paper based.]])
-  * insert ProcessCreateEvent(1, "Pre-populate Admission Forms",  forms, epr, ,  , [[ If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated. ]])
-  * insert ProcessRead(1, "Complete Admission Forms. ", nurse, patient, ,  , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. ]])
-  * insert ProcessCreateEvent(1, "Complete Admission Forms. ", nurse, forms, ,  , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a HL7 v2 ADT Admission event. ]])
+  * insert ProcessCreateEvent(2, "Pre-populate Admission Forms",  forms, epr, ,  , [[ If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated. ]])
+  * insert ProcessRead(3, "Complete Admission Forms. ", nurse, patient, ,  , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. ]])
+  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", nurse, forms, ,  , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a HL7 v2 ADT Admission event. ]])
 
 * process[+]
   * title = "Perform Biopsy"
   * description = "Perform Biopsy Procedure"
-  * insert ProcessCreateEvent(1, "Document Procedure - Record procedure details", consultant, epr, ,  , [[  ]])
-  * insert ProcessUpdate(1, "Document Procedure - Update specimen details", nurse, epr, ,  , [[ Ideally the updated specimen record should result in an update to the original order.  ]])
-  * insert ProcessCreateEvent(1, "Send specimen", nurse, laboratory, ,  , [[ If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
+  * insert ProcessCreateEvent(5, "Document Procedure - Record procedure details", consultant, epr, ,  , [[  ]])
+  * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr, ,  , [[ Ideally the updated specimen record should result in an update to the original order.  ]])
+  * insert ProcessCreateEvent(7, "Send specimen", nurse, laboratory, ,  , [[ If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
 
 
 * process[+]
   * title = "Monitor and Discharge Patient"
   * description = "Monitor patient post procedure and Discharge Patient"
-  * insert ProcessUpdate(1, "Monitor Patient - Update specimen details", nurse, epr, ,  , [[ This probably includes taking of vital signs to ensure the patient is stable ]])
-  * insert ProcessUpdate(1, "Discharge Patient", nurse, epr, ,  , [[This includes a HL7 v2 ADT Discharge event and may include clinical notes]])
+  * insert ProcessUpdate(8, "Monitor Patient - Update specimen details", nurse, epr, ,  , [[ This probably includes taking of vital signs to ensure the patient is stable ]])
+  * insert ProcessUpdate(9, "Discharge Patient", nurse, epr, ,  , [[This includes a HL7 v2 ADT Discharge event and may include clinical notes]])
