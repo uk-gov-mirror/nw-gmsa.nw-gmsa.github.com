@@ -16,7 +16,7 @@ Usage: #definition
 * insert ActorEntity(epr, "Electronic Patient Record",   [[TODO]])
 * insert ActorEntity(patient, "Patient/relative/carer",   [[TODO]])
 * insert ActorEntity(consultant, "Consultant",   [[TODO]])
-* insert ActorEntity(laboratory, "Diagnostic Testing - Laboratory, genomics, etc.",   [[TODO]])
+* insert ActorEntity(laboratory, "Diagnostic Testing",   [[TODO]])
 
 * process[+]
   * title = "Select Admission Form"
