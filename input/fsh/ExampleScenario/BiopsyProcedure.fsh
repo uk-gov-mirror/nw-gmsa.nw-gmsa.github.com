@@ -23,7 +23,8 @@ Usage: #definition
   * description = "Admit Patient"
   * insert ProcessSearch(1, "Select Admission Forms", nurse, forms, ,  , [[ This may be paper based.]])
   * insert ProcessCreateEvent(1, "Pre-populate Admission Forms",  forms, epr, ,  , [[ If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated. ]])
-  * insert ProcessCreateEvent(1, "Complete Admission Forms. ", nurse, forms, ,  , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. The end of this process is likely to be signalled via a HL7 v2 ADT Admission event. ]])
+  * insert ProcessRead(1, "Complete Admission Forms. ", nurse, patient], ,  , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. ]])
+  * insert ProcessCreateEvent(1, "Complete Admission Forms. ", nurse, forms, ,  , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a HL7 v2 ADT Admission event. ]])
 
 * process[+]
   * title = "Perform Biopsy"
