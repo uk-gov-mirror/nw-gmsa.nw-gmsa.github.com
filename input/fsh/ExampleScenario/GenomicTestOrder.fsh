@@ -1,6 +1,6 @@
 Instance: GenomicTestOrderProcess
 InstanceOf: ExampleScenario
-Title:       "Genomic Tes tOrder Process including order entry and transmission of the order"
+Title:       "Genomic Test Order Process including order entry and transmission of the order"
 Description: """
 
 This is for background information for genomic test ordering.
