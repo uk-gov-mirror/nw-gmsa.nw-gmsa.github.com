@@ -17,25 +17,46 @@ Usage: #definition
 * insert ActorEntity(consultant, "Consultant",   [[TODO]])
 * insert ActorEntity(laboratory, "Diagnostic Testing",   [[TODO]])
 
+* insert Instance_Empty(Request1,   Binary,   "Dummy", [[Query for Froms: `GET https://goodhealth.example.org/fhir/Questionnaire`]])
+* insert Instance_Empty(Request2,   Binary,   "Dummy",  [[]])
+* insert Instance_Empty(Request3,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Request4,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Reply1,   Binary,   "Dummy", [[Query for Froms: `GET https://goodhealth.example.org/fhir/Questionnaire`]])
+* insert Instance_Empty(Reply2,   Binary,   "Dummy",  [[]])
+* insert Instance_Empty(Reply3,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[]])
+
+* insert Instance_Empty(Request5,   Binary,   "Dummy",  [[]])
+* insert Instance_Empty(Request5,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Request7,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Reply5,   Binary,   "Dummy",  [[]])
+* insert Instance_Empty(Reply6,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Reply7,   Binary,   "Dummy", [[]])
+
+* insert Instance_Empty(Request8,   Binary,   "Dummy",  [[]])
+* insert Instance_Empty(Request9,   Binary,   "Dummy", [[]])
+
+* insert Instance_Empty(Reply8,   Binary,   "Dummy",  [[]])
+* insert Instance_Empty(Reply9,   Binary,   "Dummy", [[]])
 
 * process[+]
   * title = "Admission"
   * description = "Admit Patient"
-  * insert ProcessSearch(1, "Select Admission Forms", nurse, forms, ,  , [[ This may be paper based.]])
-  * insert ProcessCreateEvent(2, "Pre-populate Admission Forms",  forms, epr, ,  , [[ If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated. ]])
-  * insert ProcessRead(3, "Complete Admission Forms. ", nurse, patient, ,  , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. ]])
-  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", nurse, forms, ,  , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a HL7 v2 ADT Admission event. ]])
+  * insert ProcessSearch(1, "Select Admission Forms", nurse, forms,Request1 , Reply1 , [[This may be paper based]])
+  * insert ProcessCreateEvent(2, "Pre-populate Admission Forms",  forms, epr, Request2 , Reply2 , [[If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated. ]])
+  * insert ProcessRead(3, "Complete Admission Forms. ", nurse, patient, Request3 , Reply3 , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. ]])
+  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", nurse, forms, Request4, Reply4  , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a HL7 v2 ADT Admission event. ]])
 
 * process[+]
   * title = "Perform Biopsy"
   * description = "Perform Biopsy Procedure"
-  * insert ProcessCreateEvent(5, "Document Procedure - Record procedure details", consultant, epr, ,  , [[  ]])
-  * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr,SpecimenExample ,  , [[ Ideally the updated specimen record should result in an update to the original order.  ]])
-  * insert ProcessCreateEvent(7, "Send specimen", nurse, laboratory, ,  , [[ If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
+  * insert ProcessCreateEvent(5, "Document Procedure - Record procedure details", consultant, epr, Request5 , Reply5  , [[TODO]])
+  * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr,Request6 , Reply6 , [[Ideally the updated specimen record should result in an update to the original order.  ]])
+  * insert ProcessCreateEvent(7, "Send specimen", nurse, laboratory, Request7 , Reply7  , [[If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
 
 
 * process[+]
   * title = "Monitor and Discharge Patient"
   * description = "Monitor patient post procedure and Discharge Patient"
-  * insert ProcessUpdate(8, "Monitor Patient - Update specimen details", nurse, epr, ,  , [[ This probably includes taking of vital signs to ensure the patient is stable ]])
-  * insert ProcessUpdate(9, "Discharge Patient", nurse, epr, ,  , [[This includes a HL7 v2 ADT Discharge event and may include clinical notes]])
+  * insert ProcessUpdate(8, "Monitor Patient - Update specimen details", nurse, epr, Request8, Reply8 , [[This probably includes taking of vital signs to ensure the patient is stable ]])
+  * insert ProcessUpdate(9, "Discharge Patient", nurse, epr,Request9 , Reply9 , [[This includes a HL7 v2 ADT Discharge event and may include clinical notes]])
