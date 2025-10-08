@@ -11,6 +11,7 @@ Alias: $observationFocus = http://hl7.org/fhir/5.0/StructureDefinition/extension
 Alias: $instanceContent  = http://hl7.org/fhir/5.0/StructureDefinition/extension-ExampleScenario.instance.content
 Alias: $verContent       = http://hl7.org/fhir/5.0/StructureDefinition/extension-ExampleScenario.instance.version.content
 Alias: $verTitle         = http://hl7.org/fhir/5.0/StructureDefinition/extension-ExampleScenario.instance.version.title
+Alias: $workflow         = http://hl7.org/fhir/5.0/StructureDefinition/extension-ExampleScenario.process.step.workflow
 
 
 // ExampleScenario RuleSets
@@ -50,6 +51,10 @@ RuleSet: InstanceContains(id, version)
 * instance[=].containedInstance
   * resourceId = "{id}"
   * versionId = "{version}"
+
+RuleSet: ProcessWorkflow(exampleScenario)
+* step[+]
+  * extension[$workflow].valueCanonical = Canonical({exampleScenario})
 
 RuleSet: ProcessSearch(num, name, sender, receiver, request, response, description)
 * step[+].operation

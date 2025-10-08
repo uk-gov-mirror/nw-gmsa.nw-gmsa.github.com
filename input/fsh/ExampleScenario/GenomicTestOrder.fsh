@@ -34,9 +34,9 @@ Usage: #definition
 * process[+]
   * title = "Complete Test Order Form"
   * description = "Creates Test Order Form"
-  * insert ProcessSearch(1, "Select Order Form", placer, forms, Request1 , Reply1 , [[This may be paper based]])
-  * insert ProcessCreateEvent(2, "Pre-populate Admission Forms", forms, epr, Request2 ,  , [[If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated ]])
-  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", placer, epr, Request4,   , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
+  * insert ProcessSearch(1, "Select Order Form", placer, forms, Request1 , Reply1 , [[This may be part of the EPR and not implemented in HL7 FHIR. If not using FHIR, the clinical coding and valuesets in the FHIR Questionnaire should be implemented in the EPR Order Form]])
+  * insert ProcessCreateEvent(2, "Pre-populate Order Form", forms, epr, Request2 ,  , [[If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated ]])
+  * insert ProcessCreateEvent(4, "Complete Order Form. ", placer, epr, Request4,   , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
 
 * process[+]
   * title = "Send Order"
@@ -44,6 +44,11 @@ Usage: #definition
   * insert ProcessCreateEvent(5, "Order Send", epr, tie, Request5 ,   , [[TODO]])
   * insert ProcessCreateEvent(6, "Order Send", tie, rie, Request6 ,   , [[TODO]])
   * insert ProcessCreateEvent(7, "Order Send", rie, filler, Request7 ,   , [[TODO]])
+
+* process[+]
+  * title = "Optional - Collect Specimen"
+  * description = "For an example process see [ExampleScenario: Biopsy Procedure](ExampleScenario-GenomicTestOrderProcess.html)"
+  * insert ProcessWorkflow(BiopsyProcedure)
 
 
 Instance: SDCSearchResults
