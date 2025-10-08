@@ -27,18 +27,18 @@ Usage: #definition
 * insert Instance_Empty(Reply3,   Binary,   "Dummy", [[ ]])
 //* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[ ]])
 
-* insert Instance_Empty(Request5,   Binary,   "Dummy",  [[]])
-* insert Instance_Empty(Request5,   Binary,   "Dummy", [[]])
-* insert Instance_Empty(Request7,   Binary,   "Dummy", [[]])
-* insert Instance_Empty(Reply5,   Binary,   "Dummy",  [[]])
-* insert Instance_Empty(Reply6,   Binary,   "Dummy", [[]])
-* insert Instance_Empty(Reply7,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Request5,   Binary,   "Dummy",  [[ ]])
+* insert Instance_Empty(Request5,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Request7,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Reply5,   Binary,   "Dummy",  [[ ]])
+* insert Instance_Empty(Reply6,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Reply7,   Binary,   "Dummy", [[ ]])
 
-* insert Instance_Empty(Request8,   Binary,   "Dummy",  [[]])
-* insert Instance_Empty(Request9,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Request8,   Binary,   "Dummy",  [[ ]])
+* insert Instance_Empty(Request9,   Binary,   "Dummy", [[ ]])
 
-* insert Instance_Empty(Reply8,   Binary,   "Dummy",  [[]])
-* insert Instance_Empty(Reply9,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Reply8,   Binary,   "Dummy",  [[ ]])
+* insert Instance_Empty(Reply9,   Binary,   "Dummy", [[ ]])
 
 * process[+]
   * title = "Admission"
