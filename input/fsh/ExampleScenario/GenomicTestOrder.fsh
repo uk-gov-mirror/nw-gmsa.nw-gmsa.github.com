@@ -31,6 +31,8 @@ Usage: #definition
 
 * insert Instance_Empty(Request7,   Binary,   "HL7 v2 ORM_O01",  [[ ]])
 
+* insert Instance_Empty(Request8,   Binary,   "Collect Sample",  [[ ]])
+
 * process[+]
   * title = "Complete Test Order Form"
   * description = "Creates Test Order Form"
@@ -50,6 +52,12 @@ Usage: #definition
   * description = "For an example process see [ExampleScenario: Biopsy Procedure](ExampleScenario-GenomicTestOrderProcess.html)"
   * insert ProcessWorkflow(BiopsyProcedure)
 
+* process[+]
+  * title = "Perform Tests"
+  * description = "For an example process see [ExampleScenario: Biopsy Procedure](ExampleScenario-GenomicTestOrderProcess.html)"
+  * insert ProcessCreateEvent(8, "Collect sample", rie, filler, Request8 ,   , [[ See Biopsy and Blood scenarios for more details ]])
+// code is correct but causes plantuml error
+//  * insert ProcessWorkflow(BiopsyProcedure)
 
 Instance: SDCSearchResults
 InstanceOf: Bundle
