@@ -61,3 +61,4 @@ Usage: #definition
   * description = "Monitor patient post procedure and Discharge Patient"
   * insert ProcessUpdate(8, "Monitor Patient - Update specimen details", nurse, epr, Request8,  , [[This probably includes taking of vital signs to ensure the patient is stable ]])
   * insert ProcessUpdate(9, "Discharge Patient", nurse, epr,Request9 ,  , [[This includes a **IHE Patient Administration** - HL7 v2 ADT Discharge event and may include clinical notes]])
+
