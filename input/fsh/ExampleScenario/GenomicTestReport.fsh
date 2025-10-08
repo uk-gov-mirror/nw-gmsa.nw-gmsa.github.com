@@ -18,18 +18,18 @@ Usage: #definition
 * insert ActorEntity(hie, "Health Information Exchange",   [[  [Intermediary](ActorDefinition-Intermediary.html) found in LHCRE/ICS ]])
 * insert ActorEntity(cdr, "Clinical Data Repository",   [[ Clinical Data Repository ]])
 
-* insert Instance_Empty(Request1,   Binary,   "HL7 v2 ORU_R01",  [[ [iGene HL7 v2 ORU_R01](hl7v2.html#original-igene-message) ]])
-* insert Instance_Empty(Request2,   Binary,   "HL7 v2 ORU_R01",  [[ [Regional HL7 v2 ORU_R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message-1) ]])
-* insert Instance_Empty(Request3,   Binary,   "HL7 v2 ORU_R01",  [[ ]])
+* insert Instance_Empty(Request1,   Binary,   "HL7 v2 ORU_R01 - supplier",  [[ [iGene HL7 v2 ORU_R01](hl7v2.html#original-igene-message) ]])
+* insert Instance_Empty(Request2,   Binary,   "HL7 v2 ORU_R01 - regional",  [[ [Regional HL7 v2 ORU_R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message-1) ]])
+* insert Instance_Empty(Request3,   Binary,   "HL7 v2 ORU_R01 - supplier",  [[ ]])
 
 * insert Instance_Empty(Request4,   Binary,   "Search for master Patient demographics record", [[Query for Patient: `GET https://example.nhs.uk/FHIR/R4/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9449305552`]])
 
 * insert Instance_Empty(Reply4,   Bundle,   "Search results", [[ ]])
 * insert InstanceVersion(4, "Search Results", PDQSearchResults , )
 
-* insert Instance_Empty(Request6,   Binary,   "HL7 v2 MDM_T02",  [[ [Regional Hl7 v2 MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content-1) The format of the report is PDF, in future for England/EU document sharing the format may change to [HL7 EU Laboratory Report](https://hl7.eu/fhir/laboratory/) ]])
+* insert Instance_Empty(Request6,   Binary,   "HL7 v2 MDM_T02 - regional",  [[ [Regional Hl7 v2 MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content-1) The format of the report is PDF, in future for England/EU document sharing the format may change to [HL7 EU Laboratory Report](https://hl7.eu/fhir/laboratory/) ]])
 
-* insert Instance_Empty(Request6,   Bundle,   "HL7 FHIR Message R01",  [[ ]])
+* insert Instance_Empty(Request6,   Bundle,   "HL7 FHIR Message R01 - regional",  [[ ]])
 * insert InstanceVersion(6, "HL7 FHIR Message R01", GenomicsReportMessage , )
 
 * process[+]
