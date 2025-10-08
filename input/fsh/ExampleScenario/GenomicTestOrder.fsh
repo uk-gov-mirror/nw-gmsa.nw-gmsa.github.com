@@ -1,14 +1,14 @@
-Instance: BiopsyProcedure
+Instance: GenomicTestOrder
 InstanceOf: ExampleScenario
 Title:       "Biopsy Procedure for obtaining a specimen, part of a diagnostic pathway. Day case admission."
 Description: """
 
-This is for background information around the specimen collection process, it is not considered part of this genomic specification.
+This is for background information for genomic test ordering.
 """
 Usage: #definition
 
 * status = #draft
-* name = "Biopsy Procedure"
+* name = "GenomicTestOrder"
 
 * insert ActorEntity(placer, "Order Placer",         [[ [Order Placer](ActorDefinition-OrderPlacer.html) ]])
 * insert ActorEntity(forms, "Form Manager",   [[This may be part of the EPR or be paper based]])
