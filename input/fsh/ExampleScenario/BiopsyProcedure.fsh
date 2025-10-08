@@ -18,13 +18,14 @@ Usage: #definition
 * insert ActorEntity(laboratory, "Diagnostic Testing",   [[TODO]])
 
 * insert Instance_Empty(Request1,   Binary,   "Dummy", [[Query for Froms: `GET https://goodhealth.example.org/fhir/Questionnaire`]])
-* insert Instance_Empty(Request2,   Binary,   "Dummy",  [[]])
-* insert Instance_Empty(Request3,   Binary,   "Dummy", [[]])
-* insert Instance_Empty(Request4,   Binary,   "Dummy", [[]])
-* insert Instance_Empty(Reply1,   Binary,   "Dummy", [[Query for Froms: `GET https://goodhealth.example.org/fhir/Questionnaire`]])
-* insert Instance_Empty(Reply2,   Binary,   "Dummy",  [[]])
-* insert Instance_Empty(Reply3,   Binary,   "Dummy", [[]])
-* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[]])
+* insert Instance_Empty(Request2,   Binary,   "Dummy",  [[ ]])
+* insert Instance_Empty(Request3,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Request4,   Binary,   "Dummy", [[ ]])
+
+* insert Instance_Empty(Reply1,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Reply2a,   Binary,   "Dummy",  [[ ]])
+* insert Instance_Empty(Reply3,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[ ]])
 
 * insert Instance_Empty(Request5,   Binary,   "Dummy",  [[]])
 * insert Instance_Empty(Request5,   Binary,   "Dummy", [[]])
@@ -43,16 +44,16 @@ Usage: #definition
   * title = "Admission"
   * description = "Admit Patient. The process roughly follows [FHIR Structured Data Capture](https://build.fhir.org/ig/HL7/sdc)"
   * insert ProcessSearch(1, "Select Admission Forms", nurse, forms,Request1 , Reply1 , [[This may be paper based]])
-  * insert ProcessCreateEvent(2, "Pre-populate Admission Forms",  forms, epr, Request2 , Reply2 , [[If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated. ]])
+  * insert ProcessCreateEvent(2, "Pre-populate Admission Forms", forms, epr, Request2 ,  , [[If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated ]])
   * insert ProcessRead(3, "Complete Admission Forms. ", nurse, patient, Request3 , Reply3 , [[This includes enquiring about the patients medical history, such as conditions and medications. This also includes taking the patient vital signs - device data may be automatically uploaded into the EPR. ]])
-  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", nurse, forms, Request4, Reply4  , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
+  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", nurse, forms, Request4,   , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
 
 * process[+]
   * title = "Perform Biopsy"
   * description = "Perform Biopsy Procedure"
-  * insert ProcessCreateEvent(5, "Document Procedure - Record procedure details", consultant, epr, Request5 , Reply5  , [[TODO]])
+  * insert ProcessCreateEvent(5, "Document Procedure - Record procedure details", consultant, epr, Request5 ,   , [[TODO]])
   * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr,Request6 , Reply6 , [[Ideally the updated specimen record should result in an update to the original order.  ]])
-  * insert ProcessCreateEvent(7, "Send specimen", nurse, laboratory, Request7 , Reply7  , [[If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
+  * insert ProcessCreateEvent(7, "Send specimen", nurse, laboratory, Request7 ,  , [[If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
 
 
 * process[+]
