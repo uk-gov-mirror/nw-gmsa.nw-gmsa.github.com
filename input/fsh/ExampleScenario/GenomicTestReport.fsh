@@ -27,14 +27,14 @@ Usage: #definition
 * insert Instance_Empty(Reply4,   Bundle,   "Search results", [[ ]])
 * insert InstanceVersion(4, "Search Results", PDQSearchResults , )
 
-* insert Instance_Empty(Request6,   Binary,   "HL7 v2 MDM_T02",  [[ ]])
+* insert Instance_Empty(Request6,   Binary,   "HL7 v2 MDM_T02",  [[ The format of the report is PDF, in future for England/EU document sharing the format may change to [HL7 EU Laboratory Report](https://hl7.eu/fhir/laboratory/) ]])
 
 * insert Instance_Empty(Request6,   Bundle,   "HL7 FHIR Message R01",  [[ ]])
 * insert InstanceVersion(6, "HL7 FHIR Message R01", GenomicsReportMessage , )
 
 * process[+]
   * title = "Send Report to Order Placer"
-  * preConditions = "Test has been received, specimen has physically arrived and the test(s) have been performed"
+  * preConditions = "Test Order has been received ([Genomic Test Order Process](ExampleScenario-GenomicTestOrderProcess.html)), specimen has been collected (e.g. [Biopsy Procedure](ExampleScenario-BiopsyProcedure.html)), has physically arrived and the test(s) have been performed"
   * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
   * insert ProcessCreateEvent(1, "Report Send", filler, rie, Request1 ,   , [[TODO]])
   * insert ProcessCreateEvent(2, "Report Send", rie, tie, Request2 ,   , [[TODO]])

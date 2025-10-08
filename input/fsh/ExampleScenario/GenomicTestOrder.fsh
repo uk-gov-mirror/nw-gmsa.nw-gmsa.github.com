@@ -49,14 +49,14 @@ Usage: #definition
 
 * process[+]
   * title = "Optional - Collect Specimen"
-  * description = "For an example process see [ExampleScenario: Biopsy Procedure](ExampleScenario-GenomicTestOrderProcess.html)"
+  * description = "For an example process see [ExampleScenario: Biopsy Procedure](ExampleScenario-BiopsyProcedure.html)"
 // code is correct but causes plantuml error
 //  * insert ProcessWorkflow(BiopsyProcedure)
   * insert ProcessCreateEvent(8, "Collect sample", rie, filler, Request8 ,   , [[ See Biopsy and Blood scenarios for more details ]])
 
 * process[+]
   * title = "Perform Tests"
-  * description = "For an example process see [ExampleScenario: Genomic Report Process](ExampleScenario-GenomicTestReportProcess.html)"
+  * description = "See [ExampleScenario: Genomic Report Process](ExampleScenario-GenomicTestReportProcess.html)"
 
 //  * insert ProcessWorkflow(GenomicTestReportProcess)
 
