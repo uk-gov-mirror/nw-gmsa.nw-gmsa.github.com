@@ -34,6 +34,7 @@ Usage: #definition
 
 * process[+]
   * title = "Send Report to Order Placer"
+  * preConditions = "Test has been received, specimen has physically arrived and the test(s) have been performed"
   * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
   * insert ProcessCreateEvent(1, "Report Send", filler, rie, Request1 ,   , [[TODO]])
   * insert ProcessCreateEvent(2, "Report Send", rie, tie, Request2 ,   , [[TODO]])
@@ -41,6 +42,7 @@ Usage: #definition
 
 * process[+]
   * title = "Send Report to ICS"
+  * preConditions = "Patient has a NHS Number"
   * description = "The report to ICS HL7 MDM_T02. The ICS chosen is based on which general practice the patient is registered with"
   * insert ProcessSearch(4, "Patient Demographics Query", rie, cdr, Request4 , Reply4   , [[TODO]])
   * insert ProcessCreateEvent(5, "Report Send", rie, hie, Request5,   , [[TODO]])
