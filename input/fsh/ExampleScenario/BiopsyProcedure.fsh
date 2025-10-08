@@ -52,12 +52,12 @@ Usage: #definition
   * title = "Perform Biopsy"
   * description = "Perform Biopsy Procedure"
   * insert ProcessCreateEvent(5, "Document Procedure - Record procedure details", consultant, epr, Request5 ,   , [[TODO]])
-  * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr,Request6 , Reply6 , [[Ideally the updated specimen record should result in an update to the original order.  ]])
+  * insert ProcessUpdate(6, "Document Procedure - Update specimen details", nurse, epr,Request6 , , [[Ideally the updated specimen record should result in an update to the original order.  ]])
   * insert ProcessCreateEvent(7, "Send specimen", nurse, laboratory, Request7 ,  , [[If the specimen is being sent via a courier, then the specimen record should be updated with a tracking id ]])
 
 
 * process[+]
   * title = "Monitor and Discharge Patient"
   * description = "Monitor patient post procedure and Discharge Patient"
-  * insert ProcessUpdate(8, "Monitor Patient - Update specimen details", nurse, epr, Request8, Reply8 , [[This probably includes taking of vital signs to ensure the patient is stable ]])
-  * insert ProcessUpdate(9, "Discharge Patient", nurse, epr,Request9 , Reply9 , [[This includes a **IHE Patient Administration** - HL7 v2 ADT Discharge event and may include clinical notes]])
+  * insert ProcessUpdate(8, "Monitor Patient - Update specimen details", nurse, epr, Request8,  , [[This probably includes taking of vital signs to ensure the patient is stable ]])
+  * insert ProcessUpdate(9, "Discharge Patient", nurse, epr,Request9 ,  , [[This includes a **IHE Patient Administration** - HL7 v2 ADT Discharge event and may include clinical notes]])
