@@ -26,7 +26,7 @@ Usage: #definition
   * description = "Creates Test Order Form"
   * insert ProcessSearch(1, "Select Order Form", placer, forms, Request1 , Reply1 , [[This may be paper based]])
   * insert ProcessCreateEvent(2, "Pre-populate Admission Forms", forms, epr, Request2 ,  , [[If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated ]])
-  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", nurse, forms, Request4,   , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
+  * insert ProcessCreateEvent(4, "Complete Admission Forms. ", placer, forms, Request4,   , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
 
 Instance: SDCSearchResults
 InstanceOf: Bundle
