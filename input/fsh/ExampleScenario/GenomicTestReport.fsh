@@ -24,7 +24,7 @@ Usage: #definition
 
 * insert Instance_Empty(Request4,   Binary,   "Search for master Patient demographics record", [[Query for Patient: `GET https://example.nhs.uk/FHIR/R4/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9449305552`]])
 
-* insert Instance_Empty(Reply4,   Bundle,   "Search results", [[ ]])
+* insert Instance_Empty(Reply4,   Bundle,  "Search results", [[ ]])
 * insert InstanceVersion(4, "Search Results", PDQSearchResults , )
 
 * insert Instance_Empty(Request6,   Binary,   "HL7 v2 MDM_T02 - regional",  [[ [Regional Hl7 v2 MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content-1) The format of the report is PDF, in future for England/EU document sharing the format may change to [HL7 EU Laboratory Report](https://hl7.eu/fhir/laboratory/) ]])
