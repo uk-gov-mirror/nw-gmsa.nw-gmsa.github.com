@@ -29,7 +29,7 @@ Usage: #definition
 * insert Instance_Empty(Request6,   Bundle,   "HL7 FHIR Message O21",  [[ This is equivalent to HL7 v2.5 OML_O21, it may be advisable to use this message in the previous step to reduce transforms. ]])
 * insert InstanceVersion(6, "HL7 FHIR Message O21", GenomicsOrderMessageCodedEntries , )
 
-* insert Instance_Empty(Request7,   Binary,   "HL7 v2 ORM_O01",  [[ ]])
+* insert Instance_Empty(Request7,   Binary,   "HL7 v2 ORM_O01",  [[ [Regional HL7 v2 OML_O21](hl7v2.html#oml_o21-laboratory-order-1) ]])
 
 * insert Instance_Empty(Request8,   Binary,   "Collect Sample",  [[ ]])
 
