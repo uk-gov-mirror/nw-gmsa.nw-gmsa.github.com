@@ -12,20 +12,20 @@ Usage: #definition
 
 * insert ActorEntity(nurse, "Nurse",         [[TODO]])
 * insert ActorEntity(forms, "Form Manager",   [[This may be part of the EPR or be paper based]])
-* insert ActorEntity(epr, "Electronic Patient Record",   [[TODO]])
+* insert ActorEntity(epr, "Electronic Patient Record",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(patient, "Patient/relative/carer",   [[TODO]])
 * insert ActorEntity(consultant, "Consultant",   [[TODO]])
 * insert ActorEntity(laboratory, "Diagnostic Testing",   [[TODO]])
 
-* insert Instance_Empty(Request1,   Binary,   "Dummy", [[Query for Froms: `GET https://goodhealth.example.org/fhir/Questionnaire`]])
+* insert Instance_Empty(Request1,   Binary,   "Dummy", [[Query for Froms: `GET https://example.nhs.uk/FHIR/R4/Questionnaire`]])
 * insert Instance_Empty(Request2,   Binary,   "Dummy",  [[ ]])
 * insert Instance_Empty(Request3,   Binary,   "Dummy", [[ ]])
 * insert Instance_Empty(Request4,   Binary,   "Dummy", [[ ]])
 
 * insert Instance_Empty(Reply1,   Binary,   "Dummy", [[ ]])
-* insert Instance_Empty(Reply2a,   Binary,   "Dummy",  [[ ]])
+//* insert Instance_Empty(Reply2a,   Binary,   "Dummy",  [[ ]])
 * insert Instance_Empty(Reply3,   Binary,   "Dummy", [[ ]])
-* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[ ]])
+//* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[ ]])
 
 * insert Instance_Empty(Request5,   Binary,   "Dummy",  [[]])
 * insert Instance_Empty(Request5,   Binary,   "Dummy", [[]])
