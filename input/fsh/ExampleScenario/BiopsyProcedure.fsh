@@ -28,7 +28,7 @@ Usage: #definition
 //* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[ ]])
 
 * insert Instance_Empty(Request5,   Binary,   "Dummy",  [[ ]])
-* insert Instance_Empty(Request5,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Request6,   Binary,   "Dummy", [[ ]])
 * insert Instance_Empty(Request7,   Binary,   "Dummy", [[ ]])
 * insert Instance_Empty(Reply5,   Binary,   "Dummy",  [[ ]])
 * insert Instance_Empty(Reply6,   Binary,   "Dummy", [[ ]])
