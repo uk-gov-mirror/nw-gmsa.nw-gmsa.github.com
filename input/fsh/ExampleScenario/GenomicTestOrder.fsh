@@ -1,4 +1,4 @@
-Instance: GenomicTestOrder
+Instance: GenomicTestOrderProcess
 InstanceOf: ExampleScenario
 Title:       "Biopsy Procedure for obtaining a specimen, part of a diagnostic pathway. Day case admission."
 Description: """
