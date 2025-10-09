@@ -36,21 +36,21 @@ Usage: #definition
   * title = "Send Report to Order Placer"
   * preConditions = "Test Order has been received ([Genomic Test Order Process](ExampleScenario-GenomicTestOrderProcess.html)), specimen has been collected (e.g. [Biopsy Procedure](ExampleScenario-BiopsyProcedure.html)), has physically arrived and the test(s) have been performed"
   * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
-  * insert ProcessCreateEvent(1, "Laboratory Report R01", filler, rie, Request1 ,   , [[TODO]])
-  * insert ProcessCreateEvent(2, "Laboratory Report R01", rie, tie, Request2 ,   , [[TODO]])
-  * insert ProcessCreateEvent(3, "Laboratory Report R01", tie, epr, Request3 ,   , [[TODO]])
+  * insert ProcessCreateEvent(1, "Send Laboratory Report R01 v2", filler, rie, Request1 ,   , [[TODO]])
+  * insert ProcessCreateEvent(2, "Send Laboratory Report R01 v2", rie, tie, Request2 ,   , [[At present the report will only be sent to regional NHS Trusts, in future this will include  NHS England Genomic Order Management Service to route reports to other NHS Trusts]])
+  * insert ProcessCreateEvent(3, "Send Laboratory Report R01 v2", tie, epr, Request3 ,   , [[TODO]])
 
 * process[+]
   * title = "Send Report to ICS"
   * preConditions = "Patient has a NHS Number"
-  * description = "The report to ICS HL7 MDM_T02. The ICS chosen is based on which general practice the patient is registered with"
-  * insert ProcessSearch(4, "Patient Demographics Query", rie, cdr, Request4 , Reply4   , [[TODO]])
-  * insert ProcessCreateEvent(5, "Laboratory Report T02", rie, hie, Request5,   , [[TODO]])
+  * description = "The report to ICS HL7 MDM_T02. The report is routed to the ICS based on which general practice the patient is registered with"
+  * insert ProcessSearch(4, "Patient Demographics Query", rie, cdr, Request4 , Reply4   , [[This is an internal API which includes use of NHS England Personal Demographics Service]])
+  * insert ProcessCreateEvent(5, "Send Laboratory Report T02 v2", rie, hie, Request5,   , [[For IHE XDS destinations this may include conversion to IHE ITI-41 ]])
 
 * process[+]
   * title = "Send Report to Regional Genomic CDR"
-  * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
-  * insert ProcessCreateEvent(6, "Laboratory Report R01", rie, cdr, Request6,   , [[TODO]])
+  * description = "The report is sent to the regional Clinical Data Repository which shares the report using FHIR RESTful readonly APIs"
+  * insert ProcessCreateEvent(6, "Send Laboratory Report R01 FHIR", rie, cdr, Request6,   , [[The v2 message is transformed to a FHIR Message]])
 
 
 Instance: PDQSearchResults

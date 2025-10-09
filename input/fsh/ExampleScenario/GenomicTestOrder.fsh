@@ -33,6 +33,9 @@ Usage: #definition
 
 * insert Instance_Empty(Request8,   Binary,   "Collect Sample",  [[ ]])
 
+* insert Instance_Empty(Request9,   Bundle,   "HL7 FHIR Message O21 - regional",  [[ TODO ]])
+* insert InstanceVersion(9, "HL7 FHIR Message O21", GenomicsOrderMessageCodedEntries , )
+
 * process[+]
   * title = "Complete Genomic Test Order Form"
   * description = "Creates Test Order Form. For methods of automating this process such as using a forms based application see [HL7 Structured Data Capture](https://build.fhir.org/ig/HL7/sdc/), in most cases this will be part of the EPR"
@@ -46,6 +49,11 @@ Usage: #definition
   * insert ProcessCreateEvent(5, "Send Laboratory Order O01 v2", epr, tie, Request5 ,   , [[In NHS Trusts will this will often be HL7 v2 ORM_O01 from the EPR, the region is using HL7 v2/FHIR OML_O21 which may involve some message transformation especially around v2 SPM/FHIR Specimen. Note: the region is using a common (canonical) data model for both v2 and FHIR. Most coded questions and answer should be be supplied in v2 OBX segments which have a simple transform to FHIR Observations.]])
   * insert ProcessCreateEvent(6, "Send Laboratory Order O21 FHIR", tie, rie, Request6 ,   , [[Message routing is done using the FHIR Message, this is where future routing to other GMSA/GLH will be performed using the NHS England Genomic Order Management Service.]])
   * insert ProcessCreateEvent(7, "Send Laboratory Order O21 v2", rie, filler, Request7 ,   , [[The FHIR Message is transformed by the RIE into a v2 Message]])
+
+* process[+]
+  * title = "Send Order to Regional Genomic CDR"
+  * description = "The order is sent to the regional Clinical Data Repository which shares the order using FHIR RESTful readonly APIs"
+  * insert ProcessCreateEvent(9, "Send Laboratory Order O21 FHIR", rie, cdr, Request9,   , [[TODO]])
 
 * process[+]
   * title = "Collect Sample"
