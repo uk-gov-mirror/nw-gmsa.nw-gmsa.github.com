@@ -10,9 +10,9 @@ Usage: #definition
 * status = #draft
 * name = "GenomicTestOrder"
 
-* insert ActorEntity(placer, "Order Placer",         [[ [Order Placer](ActorDefinition-OrderPlacer.html) ]])
+* insert ActorEntity(placer, "Order Placer (EPR)",         [[ [Order Placer](ActorDefinition-OrderPlacer.html) ]])
 * insert ActorEntity(forms, "Form Manager",   [[This may be part of the EPR or be paper based]])
-* insert ActorEntity(epr, "Electronic Patient Record",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
+* insert ActorEntity(epr, "Electronic Patient Record (NHS Trust)",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(tie, "Trust Integration Engine",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(rie, "Regional Integration Engine",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(filler, "Order Filler",         [[ [Order Filler](ActorDefinition-OrderFiller.html) ]])

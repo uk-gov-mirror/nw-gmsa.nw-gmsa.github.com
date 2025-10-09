@@ -10,13 +10,13 @@ Usage: #definition
 * status = #draft
 * name = "GenomicTestReport"
 
-* insert ActorEntity(filler, "Order Filler",         [[ [Order Filler](ActorDefinition-OrderFiller.html) ]])
+* insert ActorEntity(filler, "Order Filler (LIMS)",         [[ [Order Filler](ActorDefinition-OrderFiller.html) ]])
 * insert ActorEntity(rie, "Regional Integration Engine",   [[ [Intermediary](ActorDefinition-Intermediary.html) ]])
 * insert ActorEntity(tie, "Trust Integration Engine",   [[ [Intermediary](ActorDefinition-Intermediary.html) ]])
-* insert ActorEntity(epr, "Electronic Patient Record",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(placer, "Order Placer",         [[ [Order Placer](ActorDefinition-OrderPlacer.html) ]])
-* insert ActorEntity(hie, "Health Information Exchange",   [[  [Intermediary](ActorDefinition-Intermediary.html) found in LHCRE/ICS ]])
-* insert ActorEntity(cdr, "Clinical Data Repository",   [[ Clinical Data Repository ]])
+* insert ActorEntity(epr, "Electronic Patient Record (NHS Trust)",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
+* insert ActorEntity(hie, "ICS - Health Information Exchange",   [[  [Intermediary](ActorDefinition-Intermediary.html) found in LHCRE/ICS ]])
+* insert ActorEntity(cdr, "Regional - Clinical Data Repository",   [[ Clinical Data Repository ]])
 
 * insert Instance_Empty(Request1,   Binary,   "HL7 v2 ORU_R01 - supplier",  [[ [iGene HL7 v2 ORU_R01](hl7v2.html#original-igene-message) ]])
 * insert Instance_Empty(Request2,   Binary,   "HL7 v2 ORU_R01 - regional",  [[ [Regional HL7 v2 ORU_R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message-1) ]])
@@ -38,7 +38,8 @@ Usage: #definition
   * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
   * insert ProcessCreateEvent(1, "Send Laboratory Report R01 v2", filler, rie, Request1 ,   , [[TODO]])
   * insert ProcessCreateEvent(2, "Send Laboratory Report R01 v2", rie, tie, Request2 ,   , [[At present the report will only be sent to regional NHS Trusts, in future this will include  NHS England Genomic Order Management Service to route reports to other NHS Trusts]])
-  * insert ProcessCreateEvent(3, "Send Laboratory Report R01 v2", tie, epr, Request3 ,   , [[TODO]])
+  * insert ProcessCreateEvent(3, "Send Laboratory Report R01 v2", tie, placer, Request3 ,   , [[TODO]])
+  * insert ProcessCreateEvent(4, "Send Laboratory Report R01 v2", tie, epr, Request3 ,   , [[Order Placer and EPR may be the same system]])
 
 * process[+]
   * title = "Send Report to ICS"
