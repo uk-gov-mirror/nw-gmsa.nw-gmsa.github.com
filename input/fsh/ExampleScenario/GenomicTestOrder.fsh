@@ -8,7 +8,7 @@ This is for background information for genomic test ordering.
 Usage: #definition
 
 * status = #draft
-* name = "GenomicTestOrder"
+* name = "Genomic Test Order"
 
 * insert ActorEntity(placer, "Order Placer",  [[ [Order Placer](ActorDefinition-OrderPlacer.html) ]])
 * insert ActorEntity(forms, "Form Manager",   [[This may be part of the EPR or be paper based]])
