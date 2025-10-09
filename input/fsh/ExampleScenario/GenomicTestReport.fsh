@@ -36,21 +36,21 @@ Usage: #definition
   * title = "Send Report to Order Placer"
   * preConditions = "Test Order has been received ([Genomic Test Order Process](ExampleScenario-GenomicTestOrderProcess.html)), specimen has been collected (e.g. [Biopsy Procedure](ExampleScenario-BiopsyProcedure.html)), has physically arrived and the test(s) have been performed"
   * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
-  * insert ProcessCreateEvent(1, "Report Send", filler, rie, Request1 ,   , [[TODO]])
-  * insert ProcessCreateEvent(2, "Report Send", rie, tie, Request2 ,   , [[TODO]])
-  * insert ProcessCreateEvent(3, "Report Send", tie, epr, Request3 ,   , [[TODO]])
+  * insert ProcessCreateEvent(1, "Laboratory Report R01", filler, rie, Request1 ,   , [[TODO]])
+  * insert ProcessCreateEvent(2, "Laboratory Report R01", rie, tie, Request2 ,   , [[TODO]])
+  * insert ProcessCreateEvent(3, "Laboratory Report R01", tie, epr, Request3 ,   , [[TODO]])
 
 * process[+]
   * title = "Send Report to ICS"
   * preConditions = "Patient has a NHS Number"
   * description = "The report to ICS HL7 MDM_T02. The ICS chosen is based on which general practice the patient is registered with"
   * insert ProcessSearch(4, "Patient Demographics Query", rie, cdr, Request4 , Reply4   , [[TODO]])
-  * insert ProcessCreateEvent(5, "Report Send", rie, hie, Request5,   , [[TODO]])
+  * insert ProcessCreateEvent(5, "Laboratory Report T02", rie, hie, Request5,   , [[TODO]])
 
 * process[+]
   * title = "Send Report to Regional Genomic CDR"
   * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
-  * insert ProcessCreateEvent(6, "Report Send", rie, cdr, Request6,   , [[TODO]])
+  * insert ProcessCreateEvent(6, "Laboratory Report R01", rie, cdr, Request6,   , [[TODO]])
 
 
 Instance: PDQSearchResults

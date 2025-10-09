@@ -34,28 +34,28 @@ Usage: #definition
 * insert Instance_Empty(Request8,   Binary,   "Collect Sample",  [[ ]])
 
 * process[+]
-  * title = "Complete Test Order Form"
-  * description = "Creates Test Order Form"
-  * insert ProcessSearch(1, "Select Order Form", placer, forms, Request1 , Reply1 , [[This may be part of the EPR and not implemented in HL7 FHIR. If not using FHIR, the clinical coding and valuesets in the FHIR Questionnaire should be implemented in the EPR Order Form]])
+  * title = "Complete Genomic Test Order Form"
+  * description = "Creates Test Order Form. For methods of automating this process such as using a forms based application see [HL7 Structured Data Capture](https://build.fhir.org/ig/HL7/sdc/), in most cases this will be part of the EPR"
+  * insert ProcessSearch(1, "Select Genomic Test Order Form", placer, forms, Request1 , Reply1 , [[This may be part of the EPR and not implemented in HL7 FHIR. If not using FHIR, the clinical coding and valuesets in the FHIR Questionnaire should be implemented in the EPR Order Form]])
   * insert ProcessCreateEvent(2, "Pre-populate Order Form", forms, epr, Request2 ,  , [[If using electronic forms and their is a connection to an EPR or Health Information Exchange - the forms may be pre-populated ]])
-  * insert ProcessCreateEvent(4, "Complete Order Form. ", placer, epr, Request4,   , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
+  * insert ProcessCreateEvent(4, "Complete Genomic Test Order Form. ", placer, epr, Request4,   , [[Enter answers to questions in the forms. The end of this process is likely to be signalled via a **IHE Patient Administration** HL7 v2 ADT Admission event. ]])
 
 * process[+]
-  * title = "Send Order"
+  * title = "Submit Genomic Test Order Form"
   * description = "The order is sent from the EPR using HL7 ORM_O21 and this is sent to the Order Filler/Laboratory Information Management System (LIMS) via middleware"
-  * insert ProcessCreateEvent(5, "Order Send", epr, tie, Request5 ,   , [[TODO]])
-  * insert ProcessCreateEvent(6, "Order Send", tie, rie, Request6 ,   , [[TODO]])
-  * insert ProcessCreateEvent(7, "Order Send", rie, filler, Request7 ,   , [[TODO]])
+  * insert ProcessCreateEvent(5, "Send Laboratory Order O01", epr, tie, Request5 ,   , [[TODO]])
+  * insert ProcessCreateEvent(6, "Send Laboratory Order O21", tie, rie, Request6 ,   , [[TODO]])
+  * insert ProcessCreateEvent(7, "Send Laboratory Order O01", rie, filler, Request7 ,   , [[TODO]])
 
 * process[+]
-  * title = "Optional - Collect Specimen"
-  * description = "For an example process see [ExampleScenario: Biopsy Procedure](ExampleScenario-BiopsyProcedure.html)"
+  * title = "Collect Sample"
+  * description = "This process is not required if the sample has already been collected (and this is a reflex order). For an example process see [ExampleScenario: Biopsy Procedure](ExampleScenario-BiopsyProcedure.html)."
 // code is correct but causes plantuml error
 //  * insert ProcessWorkflow(BiopsyProcedure)
   * insert ProcessCreateEvent(8, "Collect sample", rie, filler, Request8 ,   , [[ See Biopsy and Blood scenarios for more details ]])
 
 * process[+]
-  * title = "Perform Tests"
+  * title = "Perform Genomic Tests"
   * description = "See [ExampleScenario: Genomic Report Process](ExampleScenario-GenomicTestReportProcess.html)"
 
 //  * insert ProcessWorkflow(GenomicTestReportProcess)
