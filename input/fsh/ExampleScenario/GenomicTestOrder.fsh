@@ -16,6 +16,7 @@ Usage: #definition
 * insert ActorEntity(tie, "Trust Integration Engine",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(rie, "Regional Integration Engine",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(filler, "Order Filler",         [[ [Order Filler](ActorDefinition-OrderFiller.html) ]])
+* insert ActorEntity(cdr, "Clinical Data Repository",   [[ Clinical Data Repository ]])
 
 * insert Instance_Empty(Request1,   Binary,   "Search for Order Genomic Test Order Form", [[Query for Froms: `GET https://example.nhs.uk/FHIR/R4/Questionnaire?id=GenomicTestOrder`]])
 
