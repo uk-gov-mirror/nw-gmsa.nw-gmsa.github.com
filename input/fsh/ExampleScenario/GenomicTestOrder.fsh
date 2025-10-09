@@ -29,7 +29,7 @@ Usage: #definition
 * insert Instance_Empty(Request6,   Bundle,   "HL7 FHIR Message O21 - regional",  [[ This is equivalent to HL7 v2.5 OML_O21, it may be advisable to use this message in the previous step to reduce transforms. ]])
 * insert InstanceVersion(6, "HL7 FHIR Message O21", GenomicsOrderMessageCodedEntries , )
 
-* insert Instance_Empty(Request7,   Binary,   "HL7 v2 ORM_O01 - regional",  [[ [Regional HL7 v2 OML_O21](hl7v2.html#oml_o21-laboratory-order-1) ]])
+* insert Instance_Empty(Request7,   Binary,   "HL7 v2 OML_O21 - regional",  [[ [Regional HL7 v2 OML_O21](hl7v2.html#oml_o21-laboratory-order-1) ]])
 
 * insert Instance_Empty(Request8,   Binary,   "Collect Sample",  [[ ]])
 
@@ -45,7 +45,7 @@ Usage: #definition
   * description = "The order is sent from the EPR using HL7 ORM_O21 and this is sent to the Order Filler/Laboratory Information Management System (LIMS) via middleware"
   * insert ProcessCreateEvent(5, "Send Laboratory Order O01", epr, tie, Request5 ,   , [[TODO]])
   * insert ProcessCreateEvent(6, "Send Laboratory Order O21", tie, rie, Request6 ,   , [[TODO]])
-  * insert ProcessCreateEvent(7, "Send Laboratory Order O01", rie, filler, Request7 ,   , [[TODO]])
+  * insert ProcessCreateEvent(7, "Send Laboratory Order O21", rie, filler, Request7 ,   , [[TODO]])
 
 * process[+]
   * title = "Collect Sample"
