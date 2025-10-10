@@ -47,9 +47,9 @@ Usage: #definition
 * process[+]
   * title = "Submit Genomic Test Order Form"
   * description = "The order is sent from the EPR using HL7 ORM_O21 and this is sent to the Order Filler/Laboratory Information Management System (LIMS) via middleware"
-  * insert ProcessCreateEvent(5, "Send Laboratory Order O01 v2", epr, tie, Request5 ,   , [[In NHS Trusts will this will often be HL7 v2 ORM_O01 from the EPR, the region is using HL7 v2/FHIR OML_O21 which may involve some message transformation especially around v2 SPM/FHIR Specimen. Note: the region is using a common (canonical) data model for both v2 and FHIR. Most coded questions and answer should be be supplied in v2 OBX segments which have a simple transform to FHIR Observations.]])
+  * insert ProcessCreateEvent(5, "Send Laboratory Order ORM_O01 v2", epr, tie, Request5 ,   , [[In NHS Trusts will this will often be HL7 v2 ORM_O01 from the EPR, the region is using HL7 v2/FHIR OML_O21 which may involve some message transformation especially around v2 SPM/FHIR Specimen. Note: the region is using a common (canonical) data model for both v2 and FHIR. Most coded questions and answer should be be supplied in v2 OBX segments which have a simple transform to FHIR Observations.]])
   * insert ProcessCreateEvent(6, "Send Laboratory Order O21 FHIR", tie, rie, Request6 ,   , [[Message routing is done using the FHIR Message, this is where future routing to other GMSA/GLH will be performed using the NHS England Genomic Order Management Service.]])
-  * insert ProcessCreateEvent(7, "Send Laboratory Order O21 v2", rie, filler, Request7 ,   , [[The FHIR Message is transformed by the RIE into a v2 Message]])
+  * insert ProcessCreateEvent(7, "Send Laboratory Order OML_O21 v2", rie, filler, Request7 ,   , [[The FHIR Message is transformed by the RIE into a v2 Message]])
 
 * process[+]
   * title = "Send Order to Regional Genomic CDR"

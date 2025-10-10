@@ -38,17 +38,17 @@ Usage: #definition
   * title = "Send Report to Order Placer"
   * preConditions = "Test Order has been received ([Genomic Test Order Process](ExampleScenario-GenomicTestOrderProcess.html)), specimen has been collected (e.g. [Biopsy Procedure](ExampleScenario-BiopsyProcedure.html)), has physically arrived and the test(s) have been performed"
   * description = "The report is sent from the LIMS using HL7 ORU_R01 and this is sent to the Order Placer/EPR via middleware"
-  * insert ProcessCreateEvent(1, "Send Laboratory Report R01 v2", filler, rie, Request1 ,   , [[TODO]])
-  * insert ProcessCreateEvent(2, "Send Laboratory Report R01 v2", rie, tie, Request2 ,   , [[At present the report will only be sent to regional NHS Trusts, in future this will include  NHS England Genomic Order Management Service to route reports to other NHS Trusts]])
-  * insert ProcessCreateEvent(3, "Send Laboratory Report R01 v2", tie, placer, Request3 ,   , [[TODO]])
-  * insert ProcessCreateEvent(7, "Send Laboratory Report R01 v2", tie, epr, Request7 ,   , [[Order Placer and EPR may be the same system]])
+  * insert ProcessCreateEvent(1, "Send Laboratory Report ORU_R01 v2", filler, rie, Request1 ,   , [[TODO]])
+  * insert ProcessCreateEvent(2, "Send Laboratory Report ORU_R01 v2", rie, tie, Request2 ,   , [[At present the report will only be sent to regional NHS Trusts, in future this will include  NHS England Genomic Order Management Service to route reports to other NHS Trusts]])
+  * insert ProcessCreateEvent(3, "Send Laboratory Report ORU_R01 v2", tie, placer, Request3 ,   , [[TODO]])
+  * insert ProcessCreateEvent(7, "Send Laboratory Report ORU_R01 v2", tie, epr, Request7 ,   , [[Order Placer and EPR may be the same system]])
 
 * process[+]
   * title = "Send Report to ICS"
   * preConditions = "Patient has a NHS Number"
   * description = "The report to ICS HL7 MDM_T02. The report is routed to the ICS based on which general practice the patient is registered with"
   * insert ProcessSearch(4, "Patient Demographics Query", rie, cdr, Request4 , Reply4   , [[This is an internal API which includes use of NHS England Personal Demographics Service]])
-  * insert ProcessCreateEvent(5, "Send Laboratory Report T02 v2", rie, hie, Request5,   , [[For IHE XDS destinations this may include conversion to IHE ITI-41 ]])
+  * insert ProcessCreateEvent(5, "Send Laboratory Report MDM_T02 v2", rie, hie, Request5,   , [[For IHE XDS destinations this may include conversion to IHE ITI-41 ]])
 
 * process[+]
   * title = "Send Report to Regional Genomic CDR"
