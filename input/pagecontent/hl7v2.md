@@ -76,10 +76,11 @@ Content-Type: application/hl7-v2+er7
 
 ### Supplemental Codes (work in progress)
 
-| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)                          | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5)                             | Cardinality | Term Description                                                                                             |
-|--------------|----------------|-----------------------------------------|----------------------|----------------|----------------------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------|
+| Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)                          | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5)                             | Cardinality | Term Description                                                                                                                                                                                     |
+|--------------|----------------|-----------------------------------------|----------------------|----------------|----------------------------------------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CNE          | 48018-6        | Gene studied [ID]                       | LOINC                | 1.a            | 21497^ACAD9^HGNC-Symb                              | [0..*]      |
-| CNE          | 51968-6        | Genetic analysis overall interpretation | LOINC                | 1              | LA6576^Posititive^LN^ <br/>  10828004^Positive^SCT | [0..1]      | [Genetic disease analysis overall predictive risk interpretation (LOINC LL541-4)](https://loinc.org/LL541-4) |
+| CNE          | 51968-6        | Genetic analysis overall interpretation | LOINC                | 1              | LA6576^Posititive^LN^ <br/>  10828004^Positive^SCT | [0..1]      | [Genetic disease analysis overall predictive risk interpretation (LOINC LL541-4)](https://loinc.org/LL541-4)                                                                                         |
+| ST           | 69547-8        | Genomic ref allele [ID]                 | LOINC                | 2a             | C                                                  | [0..1]      | The DNA string in the reference sequence (Ref Allele) with which the DNA string in the test sample differs, starting at the first position given in  LOINC 81254-5’s Genome Allele start-end (B.12). |
 
 ### Interpretations (work in progress)
 
