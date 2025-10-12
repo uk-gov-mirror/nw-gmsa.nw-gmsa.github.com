@@ -8,6 +8,8 @@ This guide is to support Genomic Testing Workflow at a regional level and is des
 
 The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU
 
+## How to Read this IG
+
 <img style="padding:3px;width:70%;" src="Standardising Health.drawio.png" alt="Process Orientated Interoperability"/>
 <br clear="all">
 <p class="figureTitle">Process Orientated Interoperability</p> 
@@ -19,6 +21,7 @@ The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU
       <th></th>
       <th>Menu Item</th>
       <th>Description</th>
+      <th>Audience</th>
     </tr>
   </thead>
   <tbody>
@@ -26,25 +29,36 @@ The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU
       <td style="background-color: #E1D5E7">&nbsp;&nbsp;</td>
       <td>Analysis and Design (Volume 1)</td>
       <td>Description of the processes and corresponding technical frameworks</td>
+      <td>General</td>
     </tr>
     <tr>
       <td style="background-color: #F8CECC">&nbsp;&nbsp;</td>
       <td>Interfaces (Volume 2)</td>
       <td>Description of the processes and corresponding technical frameworks (HL7 v2 and FHIR Interactions)</td>
+      <td>Detailed Technical (Integration Developer)</td>
     </tr>
     <tr>
       <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
       <td>Domain Archetype (Volume 3)</td>
       <td>NHS North West Forms, Templates, Reports and Compositions</td>
+      <td>Detailed Technical (Data Modelling)</td>
     </tr>
     <tr>
       <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
       <td>Artefacts (Volume 4)</td>
       <td>NHS North West Common Data Models</td>
+      <td>Detailed Technical</td>
+    </tr>
+    <tr>
+      <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
+      <td>Development</td>
+      <td>Testing, Suppport and Architecture</td>
+      <td>Detailed Technical (Developer)</td>
     </tr>
   </tbody>
 </table>
 
+## Overview
 
 This Implementation Guide is implemented in the Regional Integration Engine (RIE)
 
