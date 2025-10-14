@@ -6,7 +6,43 @@ This guide is to support Genomic Testing Workflow at a regional level and is des
 - [NHS England - FHIR Genomics Implementation Guide](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home) which defines the conformance requirements for Genomics in England
 - [NHS England - Genomic Order Management Service FHIR API](https://digital.nhs.uk/developer/api-catalogue/genomic-order-management-service-fhir) a [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html) based service for managing orders and results at a national level.
 
-The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU
+The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU. 
+
+Genomic Testing Workflow is part of Diagnostic Testing which is also part of general clinical process. 
+
+```mermaid
+graph TD;
+
+    A[Assessment]-->|Observation| B;
+    A--> O;
+    B[Diagnosis]-->|Condition| C;
+    O[Diagnostic Testing]--> T;
+    T[Ordering Tests]--> |laboratory or imaging order| S;
+    S[Specimen Collection] --> AN;
+    AN[Analyzing results] --> |further tests| T;
+    AN --> |laboratory or imaging report| B;
+    C[Plan]-->|Goal| D;
+    D[Implement/Interventions]-->|Task| E;
+    E[Evaluate]-->A;
+    
+    graph TD;
+
+    A[Assessment]-->|Observation| B;
+    A--> O;
+    B[Diagnosis]-->|Condition| C;
+    O[Diagnostic Testing]--> T;
+    T[Ordering Tests]--> |laboratory or imaging order| S;
+    S[Specimen Collection] --> AN;
+    AN[Analyzing results] --> |further tests| T;
+    AN --> |laboratory or imaging report| B;
+    C[Plan]-->|Goal| D;
+    D[Implement/Interventions]-->|Task| E;
+    E[Evaluate]-->A;
+
+    classDef diag fill:#E1D5E7;
+
+    class O,S,T,AN diag
+```
 
 ## How to Read this IG
 
