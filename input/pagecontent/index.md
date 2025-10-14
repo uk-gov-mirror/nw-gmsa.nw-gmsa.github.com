@@ -21,6 +21,7 @@ graph TD;
     S[Specimen Collection] --> AN;
     AN[Analyzing results] --> |further tests <br/> reflex order| T;
     AN --> |laboratory or imaging report| A;
+    AN --> |laboratory or imaging report| B;
     C[Plan]-->|Goal| D;
     D[Implement/Interventions]-->|Task| E;
     E[Evaluate]-->A;
