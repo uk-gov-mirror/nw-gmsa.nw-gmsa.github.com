@@ -24,24 +24,22 @@ graph TD;
     C[Plan]-->|Goal| D;
     D[Implement/Interventions]-->|Task| E;
     E[Evaluate]-->A;
-    
-    graph TD;
 
-    A[Assessment]-->|Observation| B;
-    A--> O;
-    B[Diagnosis]-->|Condition| C;
-    O[Diagnostic Testing]--> T;
-    T[Ordering Tests]--> |laboratory or imaging order| S;
-    S[Specimen Collection] --> AN;
-    AN[Analyzing results] --> |further tests| T;
-    AN --> |laboratory or imaging report| B;
-    C[Plan]-->|Goal| D;
-    D[Implement/Interventions]-->|Task| E;
-    E[Evaluate]-->A;
+    classDef purple fill:#E1D5E7;
 
-    classDef diag fill:#E1D5E7;
+    classDef yellow fill:#FFF2CC;
+    classDef pink fill:#F8CECC
+    classDef green fill:#D5E8D4;
+    classDef blue fill:#DAE8FC;
+    classDef orange fill:#FFE6CC;
 
-    class O,S,T,AN diag
+    class A pink
+    class B yellow
+    class C green
+    class D blue
+    class E orange
+
+    class O,S,T,AN purple
 ```
 
 ## How to Read this IG
