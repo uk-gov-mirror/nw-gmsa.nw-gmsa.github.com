@@ -87,6 +87,21 @@ To enable viewing of Genomic Laboratory Reports within an NHS Trust EHR or an IC
 
 In the future, an alternative messaging approach using [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/index.html) and Event Notifications is expected to be supported. Details of this approach will be provided in a later version of this Implementation Guide.
 
+#### Read and Send Laboratory Order
+
+```mermaid
+graph TD;
+    Read[<b>Read</b> Genomic Laboratory Order]-->O
+    O{options} --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
+
+    Receive[<b>Send</b> Genomic Laboratory Order] --> OR{Options}
+   
+    OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Regional Genomic Integration Engine] 
+    OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
+    RIE --> |"HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
+    RIE --> |"FHIR Transaction"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
+```
+
 ## How to Read this IG
 
 
