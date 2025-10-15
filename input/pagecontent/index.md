@@ -63,7 +63,7 @@ graph TD;
     Read[<b>Read</b> Genomic Laboratory Report]-->O
     O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
     O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
-    O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional <br/> Clinical Data Repository]
+    O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
 
     Receive[<b>Receive</b> Genomic Laboratory Report] --> OR{Options}
     OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[NHS Trust<br/>EHR] 
