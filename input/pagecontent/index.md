@@ -99,7 +99,7 @@ graph TD;
     OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Regional Genomic Integration Engine] 
     OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
     RIE --> |"HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
-    RIE --> |"FHIR Transaction"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
+    RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
 ```
 
 ## How to Read this IG
