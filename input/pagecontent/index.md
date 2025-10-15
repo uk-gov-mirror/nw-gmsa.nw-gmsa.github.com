@@ -61,12 +61,12 @@ Together, the ICS document sharing and regional data repositories represent new 
 ```mermaid
 graph TD;
     Read[Read Genomic Laboratory Report]-->O
-    O{options} --> |FHIR REST or bespoke API| EHR[NHS Trust<br/>EHR] 
-    O --> |FHIR REST or IHE XDS| ICS[Integrated Care System <br/> Document Repository]
-    O --> |FHIR REST| CDR[Regional <br/> Clinical Data Repository]
+    O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
+    O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
+    O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional <br/> Clinical Data Repository]
 
     Receive[Receive Genomic Laboratory Report] --> OR{Options}
-    OR --> |HL7 v2 ORU_R01| EHRTIE[NHS Trust<br/>EHR] 
+    OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[NHS Trust<br/>EHR] 
     OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
     OR --> |FHIR Subscription <br/>/ Event Notification| Any["Any <br/>(future)"]
 ```
