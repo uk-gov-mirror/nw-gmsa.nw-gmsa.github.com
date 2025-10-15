@@ -60,12 +60,12 @@ Together, the ICS document sharing and regional data repositories represent new 
 
 ```mermaid
 graph TD;
-    Read[<b>Read</b> Genomic Laboratory Report]-->O
+    Read[Read Genomic Laboratory Report]-->O
     O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
     O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
     O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
 
-    Receive[<b>Receive</b> Genomic Laboratory Report] --> OR{Options}
+    Receive[Receive Genomic Laboratory Report] --> OR{Options}
     OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[NHS Trust<br/>EHR] 
     OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
     OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
@@ -91,10 +91,10 @@ In the future, an alternative messaging approach using [FHIR Subscription](https
 
 ```mermaid
 graph TD;
-    Read[<b>Read</b> Genomic Laboratory Order]-->O
+    Read[Read Genomic Laboratory Order]-->O
     O{options} --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
 
-    Receive[<b>Send</b> Genomic Laboratory Order] --> OR{Options}
+    Receive[Send Genomic Laboratory Order] --> OR{Options}
    
     OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Regional Genomic Integration Engine] 
     OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
