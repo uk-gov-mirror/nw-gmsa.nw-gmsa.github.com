@@ -68,7 +68,7 @@ graph TD;
     Receive[Receive Genomic Laboratory Report] --> OR{Options}
     OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[NHS Trust<br/>EHR] 
     OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
-    OR --> |FHIR Subscription <br/>/ Event Notification| Any["Any <br/>(future)"]
+    OR --> |FHIR Subscription <br/>and Event Notification| Any["Any <br/>(future)"]
 ```
 
 #### Read Genomic Laboratory Report
