@@ -101,7 +101,8 @@ Reference:
 * encounter.identifier insert Obligation(#SHALL:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 * requester 1..1 MS
-* requester only Reference(PractitionerRole)
+* requester only Reference(PractitionerRole or Organization)
+* requester.identifier only OrganisationCode
 
 * performer only Reference(Organization)
 * performer.identifier only OrganisationCode
