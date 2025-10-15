@@ -133,7 +133,7 @@ In the future, an alternative messaging approach using [FHIR Subscription](https
   </tbody>
 </table>
 
-## Overview
+## Technical Overview
 
 This Implementation Guide is implemented in the Regional Integration Engine (RIE)
 
