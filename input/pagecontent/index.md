@@ -8,7 +8,9 @@ This guide is to support Genomic Testing Workflow at a regional level and is des
 
 The general workflow is based on IHE LTW profiles and HL7 v2 OML and ORU. 
 
-Genomic Testing Workflow is part of Diagnostic Testing which is also part of general clinical process. 
+### Clinical Process
+
+Genomic Testing Workflow is part of Diagnostic Testing, which is also part of the general clinical process. 
 
 ```mermaid
 graph TD;
@@ -43,12 +45,50 @@ graph TD;
     class O,S,T,AN purple
 ```
 
-## How to Read this IG
+### Diagnostic Testing Workflow
+
+
+Genomic diagnostic testing follows the same standardized process defined by the [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow) used in traditional laboratory testing.
+This workflow has been enhanced to support the sharing of laboratory reports (documents) through Integrated Care Systems (ICS). In addition, a new mechanism for sharing laboratory reports has been introduced to establish a regional genomic data repository.
 
 <img style="padding:3px;width:70%;" src="Standardising Health.drawio.png" alt="Process Orientated Interoperability"/>
 <br clear="all">
-<p class="figureTitle">Process Orientated Interoperability</p> 
+<p class="figureTitle">Diagnostic Testing Workflow</p> 
 <br clear="all">
+
+Together, the ICS document sharing and regional data repositories represent new methods of exchanging genomic data, building upon the traditional HL7 v2 messaging approach.
+
+```mermaid
+graph TD;
+    Read[Read Genomic Laboratory Report]-->O
+    O{options} --> |FHIR REST or bespoke API| EHR[NHS Trust<br/>EHR] 
+    O --> |FHIR REST or IHE XDS| ICS[Integrated Care System <br/> Document Repository]
+    O --> |FHIR REST| CDR[Regional <br/> Clinical Data Repository]
+
+    Receive[Receive Genomic Laboratory Report] --> OR{Options}
+    OR --> |HL7 v2 ORU_R01| EHRTIE[NHS Trust<br/>EHR] 
+    OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
+    OR --> |FHIR Subscription <br/>/ Event Notification| Any["Any <br/>(future)"]
+```
+
+#### Read Genomic Laboratory Report
+
+The APIs for accessing genomic laboratory reports from EHR using FHIR REST are outside the scope of this Implementation Guide and are detailed in supplier-specific implementation guides, such as:
+
+- [EPIC on FHIR](https://fhir.epic.com/)
+- [Meditech FHIR](https://fhir.meditech.com/)
+- [FHIR R4 APIs for Oracle Health Millennium Platform](https://docs.oracle.com/en/industries/health/millennium-platform-apis/mfrap/r4_overview.html)
+
+The Regional Clinical Data Repository (CDR) will adopt a similar FHIR RESTful approach to that used by Electronic Health Records (EHRs), and will also conform to [IHE Query for Existing Data for Mobile (QEDm)](https://build.fhir.org/ig/IHE/QEDm/branches/master/index.html) and [IHE Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html)   
+
+#### Receive Genomic Laboratory Report
+
+To enable viewing of Genomic Laboratory Reports within an NHS Trust EHR or an ICS Document Repository, the report must first be received through HL7 v2 ORU or MDM messaging.
+
+In the future, an alternative messaging approach using [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/index.html) and Event Notifications is expected to be supported. Details of this approach will be provided in a later version of this Implementation Guide.
+
+## How to Read this IG
+
 
 <table >
   <thead>
