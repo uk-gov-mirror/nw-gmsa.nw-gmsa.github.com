@@ -14,7 +14,7 @@ This is currently being elaborated and subject to change.
 The mCSD interface will initially be used to route Laboratory Reports to interfaces associated with NHS Acute Trusts and Patients Surgery (retrieved via NHS England Personal Demographics Service - FHIR API).
 
 ```mermaid
-graph LR;
+graph TD;
 
     U[Query Client] --> |ITI-90<br/>FHIR REST| RIE["Mobile Care Services Discovery (mCSD)"];
     RIE --> |"Organisation Data Terminology<br/>FHIR REST"| ODS["Organisation Data Service (ODS)"]
