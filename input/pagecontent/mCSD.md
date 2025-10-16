@@ -18,4 +18,6 @@ graph TD;
 
     U[Query Client] --> |ITI-90<br/>FHIR REST| RIE["Mobile Care Services Discovery (mCSD)"];
     RIE --> |"Organisation Data Terminology<br/>FHIR REST"| ODS["Organisation Data Service (ODS)"]
+    RIE --> |"Future?"| SDS[Spine Directory Service]
+    RIE --> |Future?| DOS[Directory of Service]
 ```
