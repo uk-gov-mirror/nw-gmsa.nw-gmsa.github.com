@@ -66,7 +66,7 @@ graph TD;
     O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
 
     Receive[Receive Genomic Laboratory Report] --> OR{Options}
-    OR --> RIE[Regional Genomic Integration Engine] 
+    OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Acute Hospitals<br/>Regional Genomic Integration Engine] 
     RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
     RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["DHCW<br/>(future)"]
     RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>NHS Trust<br/>EHR (Future)"] 
@@ -99,7 +99,7 @@ graph TD;
 
     Receive[Send Genomic Laboratory Order] --> OR{Options}
    
-    OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Regional Genomic Integration Engine] 
+    OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Acute Hospitals<br/>Regional Genomic Integration Engine] 
     OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
     RIE --> |"HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
     RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
