@@ -138,6 +138,9 @@ pages:
   archetype-intro.md:
     title: Domain Archetypes Introduction
     generation: markdown
+  mCSD.md:
+    title: Care Services Discovery
+    generation: markdown
 
 resources:
   Questionnaire/GenomicTestOrder:
@@ -192,6 +195,7 @@ menu:
   Analysis and Design (Volume 1) :
     Laboratory Testing Workflow (LTW): LTW.html
     Health Information Exchange (HIE): HIE.html
+    Care Services Discovery (mCSD): mCSD.html
     Patient Administration (PAM): PAM.html
     Authorisation (OAuth2): authorisation.html
 
