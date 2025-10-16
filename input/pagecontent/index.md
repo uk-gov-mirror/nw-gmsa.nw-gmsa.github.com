@@ -68,8 +68,8 @@ graph TD;
     Receive[Receive Genomic Laboratory Report] --> OR{Options}
     OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Acute Hospitals<br/>Regional Genomic Integration Engine] 
     RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
-    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["DHCW<br/>(future?)"]
-    RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>NHS Trust<br/>EHR (Future)"] 
+    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
+    RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
     OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
     OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
 ```
