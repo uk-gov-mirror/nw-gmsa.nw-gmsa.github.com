@@ -58,23 +58,15 @@ This workflow has been enhanced to support the sharing of laboratory reports (do
 
 Together, the ICS document sharing and regional data repositories represent new methods of exchanging genomic data, building upon the traditional HL7 v2 messaging approach.
 
+#### Read Genomic Laboratory Report
+
 ```mermaid
 graph TD;
     Read[Read Genomic Laboratory Report]-->O
     O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
     O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
     O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
-
-    Receive[Receive Genomic Laboratory Report] --> OR{Options}
-    OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Acute Hospitals<br/>Regional Genomic Integration Engine] 
-    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
-    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
-    RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
-    OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
-    OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
 ```
-
-#### Read Genomic Laboratory Report
 
 The APIs for accessing genomic laboratory reports from EHR using FHIR REST are outside the scope of this Implementation Guide and are detailed in supplier-specific implementation guides, such as:
 
@@ -85,6 +77,17 @@ The APIs for accessing genomic laboratory reports from EHR using FHIR REST are o
 The Regional Clinical Data Repository (CDR) will adopt a similar FHIR RESTful approach to that used by Electronic Health Records (EHRs), and will also conform to [IHE Query for Existing Data for Mobile (QEDm)](https://build.fhir.org/ig/IHE/QEDm/branches/master/index.html) and [IHE Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html)   
 
 #### Receive Genomic Laboratory Report
+
+```mermaid
+graph TD;
+    Receive[Receive Genomic Laboratory Report] --> OR{Options}
+    OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Acute Hospitals<br/>Regional Genomic Integration Engine] 
+    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
+    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
+    RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
+    OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
+    OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
+```
 
 To enable viewing of Genomic Laboratory Reports within an NHS Trust EHR or an ICS Document Repository, the report must first be received through HL7 v2 ORU or MDM messaging.
 
