@@ -210,7 +210,7 @@ This is based on the definition of ORC from [Digital Health and Care Wales - HL7
 | ORC-5     | Order Status             |             | O           |                                                                                   |                                                                                                                                 |
 | ORC-9     | Date/Time of Transaction | TS          | O           |                                                                                   |                                                                                                                                 |
 | ORC-12    | Ordering Provider        | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC                                                                                               |
-| ORC-21    | Ordering Facility Name   | [XON](#xon) | R           | [Organisation Code](StructureDefinition-OrganisationCode.html)                    |                                                                                                                                 |
+| ORC-21    | Ordering Facility Name   | [XON](#xon) | R           | [Organisation Code](StructureDefinition-OrganisationCode.html)                    | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS                                                                                                                                |
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-orc-to-servicerequest.html" _target="_blank">ORC to FHIR ServiceRequest</a> 
@@ -629,13 +629,13 @@ SPM|1|RA257630||364611000000101^Tissue resection sample^SNM3|||||||||||||2023090
 
 ### ORU_R01 Unsolicited transmission of an observation message
 
-This example is created from the original iGene Message in the next section, it is also enriched with data from the [original order example](#genomics-order-with-coded-entries). 
+This example is created from the original iGene Message in the next section, it is also enriched with data from the [original order example](#genomics-order-with-coded-entries).
 
 ```aiignore
 MSH|^~\&|RIE|699X0|EPR|R0A|20250814094223+0000||ORU^R01^ORU_R01|ORIE-250814-0|T|2.5.1|||AL
 PID|1||9449305552^^^NHS^NH~633^^^R0A^MR||CHISLETT^Octavia||20080920|F|||1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST
 PV1|1||||||||||||||||||1001166717^^^R0A
-ORC|NW|1601737^R0A|T25-01FU^699X0
+ORC|NW|1601737^R0A|T25-01FU^699X0||||||||||||||||||Manchester University NHS Foundation Trust^^R0A^^^ODS
 OBR|1|1601737^R0A|T25-01FU^699X0|R240.1^Specific target Targeted mutation testing^England-GenomicTestDirectory||||||||||||||||||20250814094116+0000|||F|||||||&Suttie&Fraser
 OBX|1|CE|TESTCOME^^NWGMSA||311^RESULT CONSISTENT WITH REFERRAL INDICATION^|||||||||20250129103726+0000
 OBX|2|CE|51967-8^Genetic disease assessed [ID]^LN|1.a|R240^^ClinicalIndication|||||||||20250129103726+0000
@@ -647,7 +647,7 @@ OBX|3|ED|51969-4^Genetic analysis report^LN|1|^AP^PDF^Base64^JVBERi0xLjQKJeLjz9M
 ```aiignore
 MSH|^~\&|IGENE|MFT|EPIC|MFT|20250814094223||ORU^R01|ORIE-250814-0|T|2.3
 PID||944 930 5552|||CHISLETT^Octavia||20080920|F|||||||||||944 930 5552
-ORC|RE|1601737^R0A
+ORC|RE|1601737^R0A|||||||||||||||||||Manchester University NHS Foundation Trust^^^^^R0A^^^ODS
 OBR|1|1601737^R0A|T25-01FU|SANGER^TEST: Sanger Sequencing^IGEAP||20250805||||||||202508110000||^^^^^^^^PROVID^^^^PROVID||||||20250814094116|||F||^^^202508090900|||||^Suttie^Fraser
 OBX|1|CE|SANGER^TEST: Sanger Sequencing^IGENE|PDF|^IGene^application/pdf^Base64^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
 OBX|2|CWE|TESTCOME^^NWGMSA||311^RESULT CONSISTENT WITH REFERRAL INDICATION^TESTOUTCOME|||||||||20250129103726+0000
