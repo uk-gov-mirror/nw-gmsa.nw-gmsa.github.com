@@ -97,7 +97,7 @@ The outline of this approach is shown below and is related to a similar approach
 graph TD;
 
     LIMS[Genomics<br/>LIMS] --> |HL7 v2 ORU| RIE[Middleware<br/>Regional Integration Engine];
-    RIE --> |HL7 FHIR R4<br/>Message R01| CDR[Genomic<br/>Clinical Data Repository]
+    RIE --> |HL7 FHIR R4<br/>Message R01| CDR[NW Genomics<br/>Clinical Data Repository]
     CDR --> |Publish Report Event| SUB[FHIR Subscription<br/>Event-Notifications]
     SUB --> |Deliver Report Event| EPR["Recipient<br/>e.g. GP Foundation System"]
     EPR --> |Get Report| CDR
