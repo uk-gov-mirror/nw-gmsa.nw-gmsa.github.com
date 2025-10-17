@@ -66,6 +66,9 @@ graph TD;
     O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
     O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
     O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
+    
+    classDef yellow fill:#FFF2CC;
+    class CDR yellow;
 ```
 
 The APIs for accessing genomic laboratory reports from EHR using FHIR REST are outside the scope of this Implementation Guide and are detailed in supplier-specific implementation guides, such as:
@@ -80,13 +83,20 @@ The Regional Clinical Data Repository (CDR) will adopt a similar FHIR RESTful ap
 
 ```mermaid
 graph TD;
-    Receive[Receive Genomic Laboratory Report] --> OR{Options}
-    OR --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Acute Hospitals<br/>Regional Genomic Integration Engine] 
-    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
+    Receive[Receive Genomic Laboratory Report] --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
+    RIE --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| TIE[Middleware<br/>Acute Hospitals<br/>Trust Integration Engine] 
+    TIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
     RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
     RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
-    OR --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
-    OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
+    RIE --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
+    RIE --> |HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
+    CDR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
+
+    classDef green fill:#D5E8D4;
+    classDef yellow fill:#FFF2CC;
+    class RIE green;
+    class TIE green;
+    class CDR yellow;
 ```
 
 To enable viewing of Genomic Laboratory Reports within an NHS Trust EHR or an ICS Document Repository, the report must first be received through HL7 v2 ORU or MDM messaging.
@@ -115,19 +125,34 @@ graph TD;
     class SUB blue;
 ```
 
-#### Read and Send Laboratory Order
+#### Read Laboratory Order
 
 ```mermaid
 graph TD;
     Read[Read Genomic Laboratory Order]-->O
     O{options} --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
+    
+    classDef yellow fill:#FFF2CC;
+    class CDR yellow;
+```
 
-    Receive[Send Genomic Laboratory Order] --> OR{Options}
-   
-    OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Acute Hospitals<br/>Regional Genomic Integration Engine] 
-    OR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
+#### Send Laboratory Order
+
+```mermaid
+graph TD;
+    Receive[Send Genomic Laboratory Order] --> |HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
+    Receive --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE
+    OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine] 
+    RIE --> |HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
+    CDR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
     RIE --> |"HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
     RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
+    
+    classDef green fill:#D5E8D4;
+    classDef yellow fill:#FFF2CC;
+    class RIE green;
+    class OR green;
+    class CDR yellow;
 ```
 
 ## How to Read this IG
