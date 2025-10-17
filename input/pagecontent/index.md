@@ -179,7 +179,7 @@ graph TD;
 graph TD;
     Read[Read Genomic Laboratory Order]-->O
     O{options} --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
-    
+    O --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust EPR<br/>EHR] 
     classDef yellow fill:#FFF2CC;
     class CDR yellow;
 ```
