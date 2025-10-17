@@ -88,7 +88,29 @@ The Regional Clinical Data Repository (CDR) will adopt a similar FHIR RESTful ap
 
 To enable viewing of Genomic Laboratory Reports within an NHS Trust EHR or an ICS Document Repository, the report must first be received through HL7 v2 ORU or MDM messaging.
 
-In the future, an alternative messaging approach using [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/index.html) and Event Notifications is expected to be supported. Details of this approach will be provided in a later version of this Implementation Guide.
+#### Genomic Report Notification and Read Report (Future?)
+
+In the future, an alternative messaging approach using [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/index.html) and Event Notifications is expected to be supported. 
+The outline of this approach is shown below and is related to a similar approach used by [NHS England Pathology FHIR specification](https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dapb4101-pathology-and-laboratory-medicine-reporting-information-standard/implementation/pathology-fhir-specification#architecture)
+
+```mermaid
+graph TD;
+
+    LIMS[Genomics<br/>LIMS] --> |HL7 v2 ORU| RIE[Middleware<br/>Regional Integration Engine];
+    RIE --> |HL7 FHIR R4<br/>Message R01| CDR[Genomic<br/>Clinical Data Repository]
+    CDR --> |Publish Report Event| SUB[FHIR Subscription<br/>Event-Notifications]
+    SUB --> |Deliver Report Event| EPR["Recipient<br/>e.g. GP Foundation System"]
+    EPR --> |Get Report| CDR
+   
+    classDef yellow fill:#FFF2CC;
+    classDef green fill:#D5E8D4;
+    classDef blue fill:#DAE8FC;
+
+    class RIE green;
+    class EPR green;
+    class CDR yellow;
+    class SUB blue;
+```
 
 #### Read and Send Laboratory Order
 
