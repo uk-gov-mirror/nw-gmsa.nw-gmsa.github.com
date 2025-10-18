@@ -19,7 +19,7 @@ graph TD;
     A--> O;
     B[Diagnosis]-->|Condition| C;
     O[Diagnostic Testing]--> T;
-    T["Ordering Tests<br/><a href='Questionnaire-GenomicTestOrder.html'>Genomics Test Order Form"]--> |"laboratory or imaging order - LAB-1<br/><a herf='https://nw-gmsa.github.io/LAB-1.html'>FHIR Message O21"| AN;
+    T[Ordering Tests<br/>Genomics Test Order Form]--> |"laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
     T --> S
     S[Specimen Collection] --> AN;
     AN["Analyzing results<br/>Genomics Test Report"] --> |further tests <br/> reflex order| T;
@@ -31,6 +31,7 @@ graph TD;
     
     click T Questionnaire-GenomicTestOrder.html
     click AN Questionnaire-GenomicTestReport.html
+    click S ExampleScenario-BiopsyProcedure.html
 
     classDef purple fill:#E1D5E7;
 
