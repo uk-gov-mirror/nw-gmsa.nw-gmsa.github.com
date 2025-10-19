@@ -19,8 +19,8 @@ title "Genomic Laboratory Report"
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
 *** Results
 **** Genomic Analysis Narrative Report (PDF) [[StructureDefinition-NWAttachment.html Attachment]]
-**** Genomic Variant Result [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap Genomic Variant Result (openEHR minmap)]]
-**** Simple Genetic Variant
+**** [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap Genomic Variant Result (openEHR minmap)]]
+**** [[https://ckm.openehr.org/ckm/archetypes/1013.1.4858/mindmap Simple Genetic Variant (openEHR minmap)]]
 ***** NHS England Genomics Test Outcome
 *** Method
 **** [[https://ckm.openehr.org/ckm/archetypes/1013.1.4256/mindmap Sequencing Assay (openEHR mindmap)]]
