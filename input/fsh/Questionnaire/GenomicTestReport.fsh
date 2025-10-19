@@ -94,12 +94,6 @@ Usage:  #definition
       * text = "Lab DNA Number (If Known)"
 
   * item[+]
-    * linkId = "/81306-3/51969-4"
-    * code = $loinc#51969-4 "Genetic analysis report"
-    * text = "Gene analysis narr rpt Doc"
-    * type = #string
-    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/DiagnosticReport#DiagnosticReport.presentedForm"
-  * item[+]
     * linkId = "/81306-3/51967-8"
     * code = $loinc#51967-8 "Genetic disease assessed [ID]"
     * text = "Gene dis assessed"
@@ -118,6 +112,12 @@ Usage:  #definition
   * linkId = "/Results"
   * text = "Results"
   * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/DiagnosticReport#DiagnosticReport.result"
+  * item[+]
+    * linkId = "/81306-3/51969-4"
+    * code = $loinc#51969-4 "Genetic analysis report"
+    * text = "Gene analysis narr rpt Doc"
+    * type = #string
+    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/DiagnosticReport#DiagnosticReport.presentedForm"
   * item[+]
     * type = #group
     * code = $loinc#81250-3 "Simple var pnl"
