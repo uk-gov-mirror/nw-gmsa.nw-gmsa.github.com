@@ -15,6 +15,8 @@ title "Genomic Laboratory Report"
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
 **** Test Code [[CodeSystem-GenomicTestCode.html Test Directory Code]]
 **** [[StructureDefinition-ReportNumber.html Report Number]]
+**** Performer
+**** Results Interpreter
 **** [[StructureDefinition-Specimen.html Specimen]]
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
 *** Results
