@@ -11,8 +11,17 @@ Note files must use CR or CRLF (not unix/mac LF)
 
 ### Mac
 
-curl --request POST --data-binary "@OML_O21_PDF.txt" http://192.168.1.67:9980
-curl --request POST --data-binary "@ORU_R01_PDF.txt" http://192.168.1.67:9981/transformToFHIR
+#### Transform to FHIR
+
+curl --request POST --data-binary "@Specifications/iGene/ORU_R01_PDF.txt" http://192.168.1.67:9981/transformToFHIR
+curl --request POST --data-binary "@Specifications/iGene/ORU_R01_R125.1.txt" http://192.168.1.67:9981/transformToFHIR
+
+#### Send to HL7v2 Receiver
+
+Note file must use \r mac line endings.
+
+curl --request POST --data-binary "@Specifications/iGene/ORU_R01_PDF.txt" http://192.168.1.67:9980
+curl --request POST --data-binary "@Specifications/iGene/ORU_R01_R125.1.txt" http://192.168.1.67:9980
 
 ### Windows 
 
