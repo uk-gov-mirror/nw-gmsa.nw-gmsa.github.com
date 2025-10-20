@@ -39,7 +39,8 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 
 ### Results Mapping
 
-| Entity                    | LOINC | Cardinality | HL7 v2 ORU_RO1 Message                   |  HL7 FHIR Resource (RESTful)                                                |
-|---------------------------|-------|-------------|------------------------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-| Narrative Report          | 51967-8      | 1..1        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | DiagnosticReport.presentedForm [Attachment](StructureDefinition-NWAttachment.html) and Binary |
-| Results                   |       | 1..1        | [OBX](hl7v2.html#obx) |  [Observation](StructureDefinition-Observation.html)                        |
+| Entity                                      | LOINC   | Cardinality | HL7 v2 ORU_RO1 Message                   | HL7 FHIR Resource (RESTful)                                                                   |
+|---------------------------------------------|---------|-------------|------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Narrative Report                            | 51969-4| 1..1        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | DiagnosticReport.presentedForm [Attachment](StructureDefinition-NWAttachment.html) and Binary |
+| Gene disease assessed / Clinical Indication | 51967-8 | 1..1        | [OBX](hl7v2.html#obx)                    | [Observation](StructureDefinition-Observation.html)                                           |
+| Genomic Test Outcome                        |         |             |                                          | |
