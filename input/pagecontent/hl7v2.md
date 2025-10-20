@@ -66,6 +66,7 @@ Content-Type: application/hl7-v2+er7
 | -- **OBSERVATION**    | 1..*        |                                                         |
 | -- [OBX](#obx)        | 1..*        |                                                         |
 
+<!--
 ### MASTER HL7 REPORTING PANEL
 
 | Type (OBX-2) | Code (OBX-3.1) | Name (OBX-3.2)                    | CodeSystem (OBX-3.3) | Sub ID (OBX-4) | Example values (OBX-5)                                            | Cardinality | Term Description                                                       |
@@ -88,7 +89,7 @@ Content-Type: application/hl7-v2+er7
 |--------------|----------------|----------------------------|----------------------|----------------|------------------------|-------------|-------------------------------------------------------------------------------|
 | CNE          | 53037-8        | Genetic sequence           | LOINC                | 2a             | LA6668-3^Pathogenic^LN | [0..1]      | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) |
 | CWE          | 69548-6        | Genetic variant Assessment | LOINC                | 2a             | LA9633-4^Present^LN    | [0..1]      | [Genetic variant assessment](https://loinc.org/LL1971-2)                      |
-
+-->
 ## MDM_T02 Original document notification and content
 
 <div class="alert alert-info" role="alert">
