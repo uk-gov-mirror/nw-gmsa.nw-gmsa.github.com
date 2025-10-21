@@ -29,9 +29,9 @@ graph TD;
     D[Implement/Interventions]-->|Task| E;
     E[Evaluate]-->A;
     
-    click T Questionnaire-GenomicTestOrder.html
-    click AN Questionnaire-GenomicTestReport.html
-    click S ExampleScenario-BiopsyProcedure.html
+    click T href Questionnaire-GenomicTestOrder.html
+    click AN href Questionnaire-GenomicTestReport.html
+    click S href ExampleScenario-BiopsyProcedure.html
 
     classDef purple fill:#E1D5E7;
 
