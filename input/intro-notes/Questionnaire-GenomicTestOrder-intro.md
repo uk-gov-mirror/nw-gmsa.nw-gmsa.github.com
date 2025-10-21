@@ -36,3 +36,18 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 | Specimen Accession Number                             | 80398-1 |                                                                                                | 0..*        | [SPM](hl7v2.html#spm)             | specimen                      | [Specimen](StructureDefinition-Specimen.html).accessionIdentifier                |
 | Shipment Tracking Number                              | 97209-1 |                                                                                                |             |                                   |                               | [Specimen](StructureDefinition-Specimen.html).identifier[ShipmentTrackingNumber] |                                                                                |
 
+Note: it is likely that source systems will use ORM_01 and not include specimen details. In this case it is suggested that the specimen details are captured as 'Ask at Order Entry Questions' and so provided as OBX segments.
+
+## Supporting Information Mapping
+
+| Entity                                                                 | Code System         | Value Set / Data Type | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR Resource (Message + RESTful)                                    |
+|------------------------------------------------------------------------|---------------------|-----------------------|-------------|------------------------|--------------------------------------------------------------------------|
+| Patient is from consanguineous union?                                  | SNM/842009          |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
+| Confirm that a pathology report will be provided alongside the sample. | SNM/74996004        |                       | 0..1        |                        | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
+| Neonatal/Prenatal/Neither?                                             | SNM/118185001       |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
+| Pregnant                                                               |                     |                       |             |                        | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
+| - Does this test relate to a pregnancy with > 1 fetus?                 | SNM/370386005       |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
+| - Patient expected delivery date                                       | SNM/161714006       |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueDateTime        |
+| - Patient gestation                                                    | SNM/598151000005105 |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueQuantity        |
+| Is this test for a pregnancy loss?                                     | SNM/17369002        |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueCodeableConcept ||
+| Is this test for a deceased infant?                                    | SNM/419099009       |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueCodeableConcept ||
