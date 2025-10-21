@@ -21,4 +21,5 @@ Description:    """
 * reasonCode 1..* MS
 * reasonCode from GenomicClinicalIndicationCodes (preferred)
 
+* outcome MS
 * outcome from GenomicTestOutcomeCodes
