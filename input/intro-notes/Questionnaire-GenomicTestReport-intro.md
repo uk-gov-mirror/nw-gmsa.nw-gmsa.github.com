@@ -25,7 +25,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 
 ### Test Detail Mapping
 
-| Entity                                   | LOINC   | Value Set / Data Type                                                                                       | Cardinality | HL7 v2 ORU_RO1 Message  | HL7 FHIR DiagnosticReport | HL7 FHIR Resource (RESTful)                                              |
+| Name                                     | LOINC   | Value Set / Data Type                                                                                       | Cardinality | HL7 v2 ORU_RO1 Message  | HL7 FHIR DiagnosticReport | HL7 FHIR Resource (RESTful)                                              |
 |------------------------------------------|---------|------------------------------------------------------------------------------------------------|-------------|-------------------------|---------------------------|--------------------------------------------------------------------------|
 | Patient                                  |         |                                                                                                | 1..1        | [PID](hl7v2.html#pid)   | subject                   | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
 | Case Identification or Visit/Stay Number | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html)    | 0..1        | [PV1](hl7v2.html#pv1)-19 | encounter                 | [Encounter](StructureDefinition-Encounter.html)                          |
@@ -44,10 +44,10 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 This is for elaboration and subject to change.
 </div>
 
-| Entity                                      | LOINC   | Value Set / Data Type | Example | Cardinality | HL7 v2 ORU_RO1 Message                   | HL7 v2 OBX-4 | HL7 FHIR Resource (RESTful)                                                                                                                                                     |
-|---------------------------------------------|---------|----------|---------|-------------|------------------------------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Narrative Report                            | 51969-4 |          |         | 1..1        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | 1            | DiagnosticReport.presentedForm [Attachment](StructureDefinition-NWAttachment.html) and Binary                                                                                   |
-| Gene studied [ID]                           | 48018-6 |          | ACAD9   | 0..1        | [OBX](hl7v2.html#obx)                    | 1.a          | [Observation](StructureDefinition-Observation.html) Profile [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component:gene-studied |
+| Name              | LOINC   | Value Set / Data Type | Example | Cardinality | HL7 v2 ORU_RO1 Message                   | HL7 v2 OBX-4 | HL7 FHIR Resource (RESTful)                                                                                                                                                     |
+|-------------------|---------|----------|---------|-------------|------------------------------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Narrative Report  | 51969-4 |          |         | 1..1        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | 1            | DiagnosticReport.presentedForm [Attachment](StructureDefinition-NWAttachment.html) and Binary                                                                                   |
+| Gene studied [ID] | 48018-6 |          | ACAD9   | 0..1        | [OBX](hl7v2.html#obx)                    | 1.a          | [Observation](StructureDefinition-Observation.html) Profile [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component:gene-studied |
 
 #### Variant Mapping
 
@@ -55,7 +55,7 @@ This is for elaboration and subject to change.
 This is for elaboration and subject to change.
 </div>
 
-| Entity                                                 | LOINC   | Value Set / Data Type                                                                      | Example                     | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                            |
+| Name                                                   | LOINC   | Value Set / Data Type                                                                      | Example                     | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                            |
 |--------------------------------------------------------|---------|-------------------------------------------------------------------------------|-----------------------------|-------------|--------------|---------------------------------------------------------------------------------------------------------------------|
 | Genomic DNA change g.HGVS                              | 81290-9 |                                                                               | NC_000003.11:g.128625063C>T | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component:genomic-hgvs |
 | Genetic variant Assessment                             | 69548-6 | [Variant Assess](https://loinc.org/LL1971-2)                                  | Present                     | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).valueCodeableConcept   |
@@ -68,7 +68,7 @@ This is for elaboration and subject to change.
 This is for elaboration and subject to change.
 </div>
 
-| Entity                                      | LOINC             | Value Set / Data Type                                                                                                            | Example   | Cardinality | HL7 v2 OBX-4 | FHIR Profile                                                                                                                                                                |
+| Name                                        | LOINC             | Value Set / Data Type                                                                                                            | Example   | Cardinality | HL7 v2 OBX-4 | FHIR Profile                                                                                                                                                                |
 |---------------------------------------------|-------------------|---------------------------------------------------------------------------------------------------------------------|-----------|-------------|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Analysis method [Type]                      | Might be 81304-8  | [Genomic Study Type ValueSet](https://build.fhir.org/ig/HL7/genomics-reporting/ValueSet-genomic-study-type-vs.html) | SNP Array | 0..1        |            | [Procedure - Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html).code                                                   |
 | Gene disease assessed / Clinical Indication | 51967-8           |                                                                                                                     |           | 1..1        | 1.a        | [Procedure - Genomic Study (NW)](StructureDefinition-Procedure-GenomicStudy.html).reasonCode |

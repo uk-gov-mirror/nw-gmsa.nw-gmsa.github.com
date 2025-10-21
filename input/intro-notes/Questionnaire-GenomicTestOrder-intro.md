@@ -20,7 +20,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 
 ## Test Detail Mapping
 
-| Entity                                                | LOINC   | Value Set / Data Type                                                                          | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest       | HL7 FHIR Resource (Message + RESTful)                                            |
+| Name                                                  | LOINC   | Value Set / Data Type                                                                          | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest       | HL7 FHIR Resource (Message + RESTful)                                            |
 |-------------------------------------------------------|---------|------------------------------------------------------------------------------------------------|-------------|-----------------------------------|-------------------------------|----------------------------------------------------------------------------------|
 | Patient                                               |         |                                                                                                | 1..1        | [PID](hl7v2.html#pid)             | subject                       | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html)         |
 | Case Identification or Episode/Visit/Stay Number      |         | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html)    | 0..1        | [PV1](hl7v2.html#pv1)-19          |                               | [Encounter](StructureDefinition-Encounter.html).identifier                       |
@@ -40,7 +40,7 @@ Note: it is likely that source systems will use ORM_01 and not include specimen 
 
 ## Supporting Information Mapping
 
-| Entity                                                                 | Code System         | Value Set / Data Type | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR Resource (Message + RESTful)                                    |
+| Name                                                                   | Code System         | Value Set / Data Type | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR Resource (Message + RESTful)                                    |
 |------------------------------------------------------------------------|---------------------|-----------------------|-------------|------------------------|--------------------------------------------------------------------------|
 | Patient is from consanguineous union?                                  | SNM/842009          |                       | 0..1        | [OBX](hl7v2.html#obx)  | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
 | Confirm that a pathology report will be provided alongside the sample. | SNM/74996004        |                       | 0..1        |                        | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
