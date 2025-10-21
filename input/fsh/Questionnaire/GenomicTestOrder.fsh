@@ -233,7 +233,7 @@ Usage:  #definition
     * type = #string
     * linkId = "HL7/ORC-21"
     * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/PractitionerRole#PractitionerRole.organization.identifier.value"
-    * text = "Referring Organisation ODS Code"
+    * text = "Referring Organisation ODS Code / Ordering Facility"
 
 * item[+]
   * type = #group
@@ -324,7 +324,7 @@ Usage:  #definition
     * linkId = "LN/106194-4"
     * code[+] = $loinc#106194-4
     * text = "Test request ID/Order ID"
-    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:placerOrderNumber"
+    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:PlacerOrderNumber"
     * required = false
 
 // Test request	Priority

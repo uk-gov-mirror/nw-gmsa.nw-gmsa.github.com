@@ -15,7 +15,7 @@
 > **DRAFT FOR ELABORATION PURPOSES**
 
 <figure>
-{%include LaboratoryReport-mindmap.svg%}
+{%include LaboratoryReportComposition-mindmap.svg%}
 <p id="fX.X.X.X-X" class="figureTitle">Laboratory Report - Map</p>
 </figure>
 <br clear="all">
