@@ -18,6 +18,16 @@ Description:    """
 
 * code 1..1 MS
 
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "system"
+* code.coding ^slicing.rules = #open
+* code.coding ^slicing.description = "Slice based on the category code pattern"
+* code.coding ^slicing.ordered = false
+* code.coding contains snomedCT 1..1
+
+* code.coding[snomedCT] 1..1 MS
+* code.coding[snomedCT] from https://fhir.hl7.org.uk/ValueSet/UKCore-ProcedureCode
+
 * reasonCode 1..* MS
 * reasonCode from GenomicClinicalIndicationCodes (preferred)
 
