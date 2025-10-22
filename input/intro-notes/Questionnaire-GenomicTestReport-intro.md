@@ -44,6 +44,22 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 This is for elaboration and subject to change.
 </div>
 
+```mermaid
+classDiagram
+    class GenomicReport["Genomic Laboratory Report (result)"]
+    class Variant
+    class GenomicStudy["Genomic Study"]
+    class DiagnosticImplication["Diagnostic Implication"]
+
+    Variant --|> GenomicReport 
+    GenomicStudy --|> GenomicReport
+    DiagnosticImplication --|> GenomicReport
+    Variant <|--|> DiagnosticImplication
+```
+
+A more detailed mapping of the results section of the laboratory report, see [Genomics Reporting Implementation Guide](https://build.fhir.org/ig/HL7/genomics-reporting/general.html)
+
+
 | Name              | LOINC   | Value Set / Data Type | Example | Cardinality | HL7 v2 ORU_RO1 Message                   | HL7 v2 OBX-4 | HL7 FHIR Resource (RESTful)                                                                                                                                                     |
 |-------------------|---------|----------|---------|-------------|------------------------------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Narrative Report  | 51969-4 |          |         | 1..1        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | 1            | DiagnosticReport.presentedForm [Attachment](StructureDefinition-NWAttachment.html) and Binary                                                                                   |
@@ -55,14 +71,25 @@ This is for elaboration and subject to change.
 This is for elaboration and subject to change.
 </div>
 
-| Name                                                   | LOINC   | Value Set / Data Type                                                                      | Example                     | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                            |
-|--------------------------------------------------------|---------|-------------------------------------------------------------------------------|-----------------------------|-------------|--------------|---------------------------------------------------------------------------------------------------------------------|
-| Genomic DNA change g.HGVS                              | 81290-9 |                                                                               | NC_000003.11:g.128625063C>T | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component:genomic-hgvs |
-| Genetic variant Assessment                             | 69548-6 | [Variant Assess](https://loinc.org/LL1971-2)                                  | Present                     | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).valueCodeableConcept   |
-| Variant analysis method [Type]                         | 81304-8 | [Structural variant analysis method](https://loinc.org/LL4048-6)              | SNP Array                   | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).method                 |
-| Genetic sequence variation clinical significance [Imp] | 53037-8 | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) | Pathogenic                  | 0..1        | 2a           |                       |
+| Name                                                   | LOINC   | Value Set / Data Type                                                         | Example                     | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                                               |
+|--------------------------------------------------------|---------|-------------------------------------------------------------------------------|-----------------------------|-------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Genomic DNA change g.HGVS                              | 81290-9 |                                                                               | NC_000003.11:g.128625063C>T | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[genomic-hgvs]                   |
+| Genetic variant Assessment                             | 69548-6 | [Variant Assess](https://loinc.org/LL1971-2)                                  | Present                     | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).valueCodeableConcept                      |
+| Variant analysis method [Type]                         | 81304-8 | [Structural variant analysis method](https://loinc.org/LL4048-6)              | SNP Array                   | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).method                                    |
+| Genomic source class [Type]                            | 48002-0 | [Genetic variant source](https://loinc.org/LL378-1)                           | Somatic                     | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[genomic-source-class]           |
 
-### Method 
+#### Diagnostic Implication Mapping
+
+<div class="alert alert-danger" role="alert">
+This is for elaboration and subject to change.
+</div>
+
+| Name                                                   | LOINC   | Value Set / Data Type                                                         | Example                     | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                                               |
+|--------------------------------------------------------|---------|-------------------------------------------------------------------------------|-----------------------------|-------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| Genetic sequence variation clinical significance [Imp] | 53037-8 | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) | Pathogenic                  | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[clinical-significance] |
+
+
+### Genomic Study Mapping 
 
 <div class="alert alert-danger" role="alert">
 This is for elaboration and subject to change.
