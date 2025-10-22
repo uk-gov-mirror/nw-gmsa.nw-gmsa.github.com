@@ -23,7 +23,10 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 </figure>
 <br clear="all">
 
-### Test Detail Mapping
+### Test Detail and Metadata Mapping
+
+Metadata is data that applies to the patient's entire clinical pathway and so it extends beyond diagnostic tests.
+Test detail tends to be common across all diagnostic tests in a patient's pathway, not just genomics.
 
 | Name                                     | LOINC   | Value Set / Data Type                                                                                       | Cardinality | HL7 v2 ORU_RO1 Message  | HL7 FHIR DiagnosticReport | HL7 FHIR Resource (RESTful)                                              |
 |------------------------------------------|---------|------------------------------------------------------------------------------------------------|-------------|-------------------------|---------------------------|--------------------------------------------------------------------------|
@@ -43,6 +46,8 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 <div class="alert alert-danger" role="alert">
 This is for elaboration and subject to change.
 </div>
+
+Results section is specific to genomics and is focused on the requirements of general clinicians, not genomic specialists. For this reason this section will tend to be an extract of the wider genomics reporting specifications.
 
 ```mermaid
 classDiagram
@@ -89,7 +94,7 @@ This is for elaboration and subject to change.
 | Genetic sequence variation clinical significance [Imp] | 53037-8 | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) | Pathogenic                  | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[clinical-significance] |
 
 
-### Genomic Study Mapping 
+#### Genomic Study Mapping 
 
 <div class="alert alert-danger" role="alert">
 This is for elaboration and subject to change.
