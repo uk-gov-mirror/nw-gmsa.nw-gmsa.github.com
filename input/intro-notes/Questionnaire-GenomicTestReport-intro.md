@@ -89,10 +89,10 @@ This is for elaboration and subject to change.
 This is for elaboration and subject to change.
 </div>
 
-| Name                                                   | LOINC   | Value Set / Data Type                                                         | Example                     | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                                               |
-|--------------------------------------------------------|---------|-------------------------------------------------------------------------------|-----------------------------|-------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| Genetic sequence variation clinical significance [Imp] | 53037-8 | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) | Pathogenic                  | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[clinical-significance] |
-
+| Name                                                   | LOINC   | Value Set / Data Type                                                         | Example        | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                                                                    |
+|--------------------------------------------------------|---------|-------------------------------------------------------------------------------|----------------|-------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Genetic sequence variation clinical significance [Imp] | 53037-8 | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) | Pathogenic     | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[clinical-significance] |
+| Probable Associated Phenotype                          | 81259-4 |                                                                               | Lynch syndrome | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[predicted-phenotype]   |
 
 #### Genomic Study Mapping 
 
