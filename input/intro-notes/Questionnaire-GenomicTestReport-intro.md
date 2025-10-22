@@ -41,7 +41,7 @@ Test detail tends to be common across all diagnostic tests in a patient's pathwa
 | Performer (organisation)                 |         | [Organisation Code](StructureDefinition-OrganisationCode.html)                                 | 1..*        |                         | performer[organisation]   | [Organizaton](StructureDefinition-Organizaton.html)                      |
 | Specimen                                 | 80398-1 |                                                                                                | 0..1        | [SPM](hl7v2.html#spm)   | specimen                  | [Specimen](StructureDefinition-Specimen.html)                            |
 
-### Results Mapping
+### Results and Study Mapping
 
 <div class="alert alert-danger" role="alert">
 This is for elaboration and subject to change.
