@@ -30,5 +30,6 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 * component[=].valueCodeableConcept = $loinc#LA6668-3 "Pathogenic"
 * component[+].code = $loinc#81259-4
 * component[=].valueCodeableConcept.coding[0] = $GCC#R210 "Inherited MMR deficiency (Lynch syndrome)"
+* component[=].valueCodeableConcept.coding[+] = $sct#1365861003 "Lynch syndrome gene mutation detected"
 * component[=].valueCodeableConcept.text = "Inherited MMR deficiency (Lynch syndrome)"
 

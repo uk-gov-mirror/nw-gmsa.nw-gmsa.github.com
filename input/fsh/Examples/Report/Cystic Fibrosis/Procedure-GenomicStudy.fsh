@@ -1,9 +1,9 @@
-Instance: f0036554-cd1a-463c-ac8a-d891ca409af9
+Instance: 7b362aa5-41a7-4168-94b4-f12dff0dfb2a
 InstanceOf: ProcedureGenomicStudy
-Title: "Genomic Study - Lynch Syndrome"
-Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
+Title: "Genomic Study - Cystic Fibrosis"
+Description: "Based on HL7 LRI Example 1 (Ref 5.9.1.2)"
 
-* identifier[+].value = "f0036554-cd1a-463c-ac8a-d891ca409af9"
+* identifier[+].value = "7b362aa5-41a7-4168-94b4-f12dff0dfb2a"
 
 * status = #completed
 
@@ -16,13 +16,13 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 
 * asserter = Reference(59577028-8fcc-4554-8b43-988561d41d9c)
 
-* subject = Reference(Patient-Liverpool)
-* subject.display = "Paul LIVERPOOL"
+* subject = Reference(Patient-Manchester)
+* subject.display = "Liam MANCHESTER"
 
 * reasonCode[+]
   * coding[+]
-    * code = #R210
-    * display = "Inherited MMR deficiency (Lynch syndrome)"
+    * code = #R185
+    * display = "Cystic fibrosis carrier testing"
     * system = $GCC
 
 * outcome = $GTOC#321 "VARIANT DETECTED"

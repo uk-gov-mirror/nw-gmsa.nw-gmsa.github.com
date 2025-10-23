@@ -255,6 +255,10 @@ groups:
     resources:
       - Observation/6beb613f-d303-42af-b025-86e8e0872061
       - Observation/8385c2fd-313d-4fd5-b98e-d5ea4bae6f99
+      - Procedure/7b362aa5-41a7-4168-94b4-f12dff0dfb2a
+      - Procedure/f0036554-cd1a-463c-ac8a-d891ca409af9
+      - Observation/bca547c1-78a5-41be-8cfc-03c05805ac85
+      - Observation/a954a98c-f427-4968-9022-8b760de66628
   -ex-example-other:
     name: "Example: Ask at Order Entry questions and prior results"
     description: "Ask at Order Entry questions and prior results"
