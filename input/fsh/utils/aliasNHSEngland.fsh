@@ -13,6 +13,8 @@ Alias: $GSC = https://fhir.hl7.org.uk/CodeSystem/UKCore-GenomeSequencingCategory
 Alias: $GCC = https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicClinicalIndication
 Alias: $GTOC = https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicTestOutcomeCode
 Alias: $genenames = http://www.genenames.org
+Alias: $ghgvs = http://varnomen.hgvs.org
+Alias: $refseq = http://www.ncbi.nlm.nih.gov/refseq
 
 RuleSet: Obligation(code, actor)
 * ^extension[$Obligation][+].extension[code].valueCode = {code}

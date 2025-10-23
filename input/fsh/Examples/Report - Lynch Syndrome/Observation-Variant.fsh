@@ -24,7 +24,16 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 * subject = Reference(Patient-Liverpool)
 * subject.display = "Paul LIVERPOOL"
 
+* method = $loinc#LA26398 "Sequencing"
+
 * component[0].code = $loinc#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $genenames#HGNC:89753 "NTHL1"
 
+* component[+].code = $loinc#81290-9 "Genomic DNA change (gHGVS)"
+* component[=].valueCodeableConcept = $ghgvs#NC_000003.11
 
+* component[+].code = $loinc#48013-7 "Genomic reference sequence [ID]"
+* component[=].valueCodeableConcept = $refseq#NG_007109.2:g.40514dupC
+
+* component[+].code = $loinc#48019-4 "DNA change type"
+* component[=].valueCodeableConcept = $loinc#LA6686-5 "Duplication"
