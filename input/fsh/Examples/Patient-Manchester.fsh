@@ -21,7 +21,7 @@ Usage: #example
 * name.family = "MANCHESTER"
 * name.given = "Liam"
 
-* birthDate = "1942-06-18"
+* birthDate = "1972-09-21"
 
 * address[+]
   * use = #home
