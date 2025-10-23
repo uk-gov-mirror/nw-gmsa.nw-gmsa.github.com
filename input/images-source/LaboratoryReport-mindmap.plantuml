@@ -21,10 +21,11 @@ title "Genomic Laboratory Report"
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
 *** Genomic Results
 **** Genomic Analysis Narrative Report (PDF) [[StructureDefinition-NWAttachment.html Attachment]]
-**** Variant
-***** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap Genomic Variant Result (openEHR minmap)]]
-***** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.4858/mindmap Simple Genetic Variant (openEHR minmap)]]
-**** Diagnostic Implication
+**** [[StructureDefinition-Observation-Variant.html Variant]]
+***** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap openEHR Genomic Variant Result]]
+***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html HL7 Genomic Reporting Variant]]
+**** [[StructureDefinition-Observation-DiagnosticImplication.html Diagnostic Implication]]
+***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html HL7 Genomic Reporting Diagnostic Implication]]
 *** Genomic Study/Method
 **** Gene disease assessed / Clinical Indication
 **** Analysis method [Type]
