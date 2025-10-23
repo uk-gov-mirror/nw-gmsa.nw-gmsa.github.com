@@ -110,4 +110,18 @@ This is for elaboration and subject to change.
 | Genomic source class [Type]    | 48002-0 | [Genetic variant source](https://loinc.org/LL378-1)                       | Somatic                     | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[genomic-source-class] |
 | DNA change type                | 48019-4 | [LOINC DNA change type](https://loinc.org/48019-4) or [DNA Change Type](https://build.fhir.org/ig/HL7/genomics-reporting/ValueSet-dna-change-type-vs.html) |  Substitution                           | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[coding-change-type]   |
 
+## Examples
 
+### Inherited MMR deficiency (Lynch syndrome) - R210
+
+- [Patient Paul LIVERPOOL](Patient-Patient-Liverpool.html)
+- [Genomic Study](Procedure-f0036554-cd1a-463c-ac8a-d891ca409af9.html)
+- [Diagnostic Implication - Lynch syndrome](Observation-6beb613f-d303-42af-b025-86e8e0872061.html)
+- [Variant NTHL1](Observation-8385c2fd-313d-4fd5-b98e-d5ea4bae6f99.html)
+
+### Cystic fibrosis Carrier R184 & Diagnostic R185
+
+- [Patient Liam MANCHESTER](Patient-Patient-Manchester.html)
+- [Genomic Study]()
+- [Diagnostic Implication - ]()
+- [Variant CFTR]()
