@@ -115,13 +115,13 @@ This is for elaboration and subject to change.
 ### Inherited MMR deficiency (Lynch syndrome) - R210
 
 - [Patient Paul LIVERPOOL](Patient-Patient-Liverpool.html)
-- [Genomic Study](Procedure-f0036554-cd1a-463c-ac8a-d891ca409af9.html)
+- [Genomic Study- Inherited MMR deficiency (Lynch syndrome)](Procedure-f0036554-cd1a-463c-ac8a-d891ca409af9.html)
 - [Diagnostic Implication - Lynch syndrome](Observation-6beb613f-d303-42af-b025-86e8e0872061.html)
 - [Variant NTHL1](Observation-8385c2fd-313d-4fd5-b98e-d5ea4bae6f99.html)
 
 ### Cystic fibrosis Carrier R184
 
 - [Patient Liam MANCHESTER](Patient-Patient-Manchester.html)
-- [Genomic Study](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html)
+- [Genomic Study - Cystic fibrosis carrier testing](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html)
 - [Diagnostic Implication - Cystic Fibrosis Carrier](Observation-a954a98c-f427-4968-9022-8b760de66628.html)
 - [Variant CFTR](Observation-bca547c1-78a5-41be-8cfc-03c05805ac85.html)
