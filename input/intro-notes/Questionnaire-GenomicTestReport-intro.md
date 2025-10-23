@@ -119,7 +119,7 @@ This is for elaboration and subject to change.
 - [Diagnostic Implication - Lynch syndrome](Observation-6beb613f-d303-42af-b025-86e8e0872061.html)
 - [Variant NTHL1](Observation-8385c2fd-313d-4fd5-b98e-d5ea4bae6f99.html)
 
-### Cystic fibrosis Carrier R184 & Diagnostic R185
+### Cystic fibrosis Carrier R184
 
 - [Patient Liam MANCHESTER](Patient-Patient-Manchester.html)
 - [Genomic Study](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html)
