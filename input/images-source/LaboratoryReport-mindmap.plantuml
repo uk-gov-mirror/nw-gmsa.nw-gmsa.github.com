@@ -26,10 +26,11 @@ title "Genomic Laboratory Report"
 ***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html HL7 Genomic Reporting Variant]]
 **** [[StructureDefinition-Observation-DiagnosticImplication.html Diagnostic Implication]]
 ***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html HL7 Genomic Reporting Diagnostic Implication]]
-*** Genomic Study/Method
+*** [[StructureDefinition-Procedure-GenomicStudy.html Genomic Study/Method]]
 **** Gene disease assessed / Clinical Indication
 **** Analysis method [Type]
 **** NHS England Genomics Test Outcome
+**** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html HL7 Genomic Reporting Genomic Study]]
 **** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.4256/mindmap Sequencing Assay (openEHR mindmap)]]
 
 @endmindmap
