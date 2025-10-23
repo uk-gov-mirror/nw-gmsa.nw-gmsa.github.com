@@ -1,7 +1,7 @@
-Profile:        Procedure
+Profile:        ProcedureGenomicStudy
 Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Procedure
-Id:             Procedure
-Title:          "Procedure"
+Id:             Procedure-GenomicStudy
+Title:          "Procedure Genomic Study"
 Description:    """
 """
 

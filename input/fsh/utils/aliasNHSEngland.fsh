@@ -12,6 +12,7 @@ Alias: $GTD = https://fhir.nhs.uk/CodeSystem/England-GenomicTestDirectory
 Alias: $GSC = https://fhir.hl7.org.uk/CodeSystem/UKCore-GenomeSequencingCategory
 Alias: $GCC = https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicClinicalIndication
 Alias: $GTOC = https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicTestOutcomeCode
+Alias: $genenames = http://www.genenames.org
 
 RuleSet: Obligation(code, actor)
 * ^extension[$Obligation][+].extension[code].valueCode = {code}

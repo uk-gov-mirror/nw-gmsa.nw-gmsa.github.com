@@ -249,6 +249,12 @@ groups:
       - DiagnosticReport/DiagnosticReportGenomicsReport
       - DocumentReference/94bf65ba-cd6c-4601-b339-6d547f424646
       - MessageHeader/MessageHeaderGenomicReport
+  -ex-example-structured-laboratory-report:
+    name: "Example: Laboratory Report Structured"
+    description: "Laboratory Report Structured Examples"
+    resources:
+      - Observation/6beb613f-d303-42af-b025-86e8e0872061
+      - Observation/8385c2fd-313d-4fd5-b98e-d5ea4bae6f99
   -ex-example-other:
     name: "Example: Ask at Order Entry questions and prior results"
     description: "Ask at Order Entry questions and prior results"
