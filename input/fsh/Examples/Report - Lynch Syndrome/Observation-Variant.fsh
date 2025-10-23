@@ -40,3 +40,6 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 
 * component[+].code = $loinc#48002-0 "Genomic source class"
 * component[=].valueCodeableConcept = $loinc#LLA6683-2 "Germline"
+
+* component[+].code = $loinc#53034-5 "Allelic state"
+* component[=].valueCodeableConcept = $loinc#LA6706-1 "Heterozygous"
