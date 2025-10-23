@@ -123,5 +123,5 @@ This is for elaboration and subject to change.
 
 - [Patient Liam MANCHESTER](Patient-Patient-Manchester.html)
 - [Genomic Study](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html)
-- [Diagnostic Implication - ](Observation-a954a98c-f427-4968-9022-8b760de66628.html)
+- [Diagnostic Implication - Cystic Fibrosis Carrier](Observation-a954a98c-f427-4968-9022-8b760de66628.html)
 - [Variant CFTR](Observation-bca547c1-78a5-41be-8cfc-03c05805ac85.html)

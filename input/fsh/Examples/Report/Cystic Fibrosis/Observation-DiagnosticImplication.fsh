@@ -1,6 +1,6 @@
 Instance: a954a98c-f427-4968-9022-8b760de66628
 InstanceOf: ObservationDiagnosticImplication
-Title: "DiagnosticImplication - Cystic Fibrosis"
+Title: "DiagnosticImplication - Cystic Fibrosis Carrier"
 Description: "Based on HL7 LRI Example 2 (Ref 5.9.1.2)"
 
 * identifier[+].value = "a954a98c-f427-4968-9022-8b760de66628"
