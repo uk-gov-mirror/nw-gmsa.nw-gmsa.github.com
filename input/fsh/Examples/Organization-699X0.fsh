@@ -6,7 +6,7 @@ Organization North West GMSA
 """
 Usage: #example
 
-* identifier[odsOrganisationCode].system = "https://fhir.nhs.uk/Id/ods-organization-code"
+* identifier[odsOrganisationCode].system = $ods-code
 * identifier[odsOrganisationCode].value = "699X0"
 
 * active = true

@@ -6,7 +6,7 @@ Organization MANCHESTER UNIVERSITY NHS FOUNDATION TRUST
 """
 Usage: #example
 
-* identifier[odsOrganisationCode].system = "https://fhir.nhs.uk/Id/ods-organization-code"
+* identifier[odsOrganisationCode].system = $ods-code
 * identifier[odsOrganisationCode].value = "R0A"
 
 * active = true
