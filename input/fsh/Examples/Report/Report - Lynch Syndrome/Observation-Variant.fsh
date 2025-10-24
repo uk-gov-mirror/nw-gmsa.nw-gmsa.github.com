@@ -29,6 +29,9 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 * component[0].code = $loinc#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $genenames#HGNC:89753 "NTHL1"
 
+* component[0].code = $loinc#51958-7 "Transcript reference sequence [ID]"
+* component[=].valueCodeableConcept = $refseq#NM_000249
+
 * component[+].code = $loinc#81290-9 "Genomic DNA change (gHGVS)"
 * component[=].valueCodeableConcept = $ghgvs#NC_000003.11
 

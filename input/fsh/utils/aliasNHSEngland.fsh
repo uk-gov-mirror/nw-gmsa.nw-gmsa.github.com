@@ -16,6 +16,7 @@ Alias: $genenames = http://www.genenames.org
 Alias: $ghgvs = http://varnomen.hgvs.org
 Alias: $refseq = http://www.ncbi.nlm.nih.gov/refseq
 
+
 RuleSet: Obligation(code, actor)
 * ^extension[$Obligation][+].extension[code].valueCode = {code}
 * ^extension[$Obligation][=].extension[actor].valueCanonical = "{actor}"
