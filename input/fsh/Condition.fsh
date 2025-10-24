@@ -3,10 +3,13 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Condition
 Id:             Condition
 Title:          "Condition"
 Description:    """
-**HL7 v2** [DG1](hl7v2.html#dg1) *mapping* [DG1 to Condition](https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-dg1-to-condition.html)
 
 Reference:
 - **NHS England HL7 v2** DG1 [ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws)
+
+<div class="alert alert-info" role="alert">
+<b>HL7 v2 Segment:</b> <a href="hl7v2.html#dg1" _target="_blank">DG1</a>
+</div>
 """
 
 * identifier 1..* MS
