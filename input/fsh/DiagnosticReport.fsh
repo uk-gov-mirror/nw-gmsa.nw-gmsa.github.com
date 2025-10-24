@@ -156,12 +156,15 @@ Reference:
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
 * result contains
     diagnostic-implication 0..* and
-    variant 0..*
+    variant 0..* and
+    genomic-study 0..*
 
 * result[variant] MS
 * result[variant] only Reference(ObservationVariant)
 * result[diagnostic-implication] MS
 * result[diagnostic-implication] only Reference(ObservationDiagnosticImplication)
+* result[genomic-study] MS
+* result[genomic-study] only Reference(ProcedureGenomicStudy)
 
 * presentedForm 1..* MS
 * presentedForm ^short = "a reference to the full report (presentedForm)"

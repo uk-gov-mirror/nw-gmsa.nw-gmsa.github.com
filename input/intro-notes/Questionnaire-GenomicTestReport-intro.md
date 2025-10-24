@@ -114,7 +114,7 @@ This is for elaboration and subject to change.
 
 ### Inherited MMR deficiency (Lynch syndrome) - R210
 
-HL7 LRI (Ref A) - FOUND DISCRETE – TARGETED MUTATIONS ANALYSIS THAT STUDIES MANY MUTATIONS (106) (5.9.1.2 )
+HL7 LRI (Ref A) Example 2 (5.9.1.2) - FOUND DISCRETE – TARGETED MUTATIONS ANALYSIS THAT STUDIES MANY MUTATIONS (106) 
 
 - [Patient Paul LIVERPOOL](Patient-Patient-Liverpool.html)
 - [Genomic Study- Inherited MMR deficiency (Lynch syndrome)](Procedure-f0036554-cd1a-463c-ac8a-d891ca409af9.html)
@@ -123,7 +123,7 @@ HL7 LRI (Ref A) - FOUND DISCRETE – TARGETED MUTATIONS ANALYSIS THAT STUDIES MA
 
 ### Cystic fibrosis Carrier R184
 
-HL7 LRI (Ref A) - SIMPLE VARIANT – MUTATION ANALYSIS WITH SEQUENCE PLUS DELETION-DUPLICATION STUDY
+HL7 LRI (Ref A) Example 3 (5.9.1.3)  - SIMPLE VARIANT – MUTATION ANALYSIS WITH SEQUENCE PLUS DELETION-DUPLICATION STUDY
 
 - [Patient Liam MANCHESTER](Patient-Patient-Manchester.html)
 - [Genomic Study - Cystic fibrosis carrier testing](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html)
