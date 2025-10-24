@@ -1,7 +1,5 @@
 Profile:        DiagnosticReport
 Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-DiagnosticReport
-//Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/DiagnosticReport-eu-lab
-//Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/genomic-report
 Id:             DiagnosticReport
 Title:          "Diagnostic Report"
 Description:    """
@@ -15,7 +13,7 @@ Reference:
 
 // https://github.com/HL7/genomics-reporting/blob/master/input/fsh/CGGeneral.fsh
 
-//* extension contains http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo named supporting-info 0..1
+* extension contains DiagnosticReportProcedure named procedure 0..*
 
 * identifier 1..* MS
 * identifier only CorrelationIdentifier
@@ -156,15 +154,12 @@ Reference:
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
 * result contains
     diagnostic-implication 0..* and
-    variant 0..* and
-    genomic-study 0..*
+    variant 0..*
 
 * result[variant] MS
 * result[variant] only Reference(ObservationVariant)
 * result[diagnostic-implication] MS
 * result[diagnostic-implication] only Reference(ObservationDiagnosticImplication)
-* result[genomic-study] MS
-* result[genomic-study] only Reference(ProcedureGenomicStudy)
 
 * presentedForm 1..* MS
 * presentedForm ^short = "a reference to the full report (presentedForm)"
