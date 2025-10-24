@@ -4,11 +4,14 @@ Parent:         http://hl7.org/fhir/StructureDefinition/DiagnosticReport
 Id:             DiagnosticReport
 Title:          "Diagnostic Report"
 Description:    """
-**HL7 v2** [OBR](hl7v2.html#obr) *mapping* [OBR to DiagnosticReport](https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-obr-to-diagnosticreport.html)
 
 Reference:
 - The Royal College of Radiologists [Reporting networks - understanding the technical options](https://www.rcr.ac.uk/media/wwtp2mif/rcr-publications_radiology-reporting-networks-understanding-the-technical-options_march-2022.pdf)
 - [NHS England Genomics DiagnosticReport](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/FHIRAssets/Profiles/All-Profiles/UKCore-DiagnosticReport) use text descriptions only, not the rendered profile.
+
+<div class="alert alert-info" role="alert">
+<b>HL7 v2 Segment:</b> <a href="hl7v2.html#obr" _target="_blank">OBR</a>
+</div>
 
 """
 

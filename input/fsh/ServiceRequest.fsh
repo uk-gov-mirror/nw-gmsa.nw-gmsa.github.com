@@ -4,11 +4,14 @@ Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/ServiceRequest
 Id:             ServiceRequest
 Title:          "ServiceRequest"
 Description:    """
-**HL7 v2** [ORC](hl7v2.html#orc) *mapping* [ORC to ServiceRequest](https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-orc-to-servicerequest.html)
 
 Reference:
 - [NHS England Genomics ServiceRequest](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/FHIRAssets/Profiles/All-Profiles/UKCore-ServiceRequest) use text descriptions only, not the rendered profile.
 - [HL7 Europe Laboratory Report - ServiceRequest: Laboratory Order](https://build.fhir.org/ig/hl7-eu/laboratory/StructureDefinition-ServiceRequest-eu-lab.html)
+
+<div class="alert alert-info" role="alert">
+<b>HL7 v2 Segment:</b> <a href="hl7v2.html#orc" _target="_blank">ORC</a>
+</div>
 """
 
 //* extension[additionalContact] ^short = "Do not use, not supported. Use PractitionerRole instead."
