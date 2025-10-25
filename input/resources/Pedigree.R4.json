@@ -24,7 +24,7 @@
           "valueUrl": "https://snowstorm.ihtsdotools.org/fhir"
         }
       ],
-      "linkId": "811531851025",
+      "linkId": "SNM3/734840008",
       "code": [
         {
           "system": "http://snomed.info/sct",
@@ -43,7 +43,7 @@
           "valueUrl": "https://snowstorm.ihtsdotools.org/fhir"
         }
       ],
-      "linkId": "242195182656",
+      "linkId": "SNM3/95462004",
       "code": [
         {
           "system": "http://snomed.info/sct",
@@ -73,7 +73,7 @@
               "valueUrl": "https://snowstorm.ihtsdotools.org/fhir"
             }
           ],
-          "linkId": "559372493257",
+          "linkId": "SNM3/303071001",
           "code": [
             {
               "system": "http://snomed.info/sct",
