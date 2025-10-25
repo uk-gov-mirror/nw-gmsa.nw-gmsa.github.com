@@ -1,6 +1,7 @@
 ## References
 
 - [GA4GH Pedigree - Conceptual Model](https://pedigree.readthedocs.io/en/latest/pedigree-model.html)
+- [NW Genomics - Gen O](https://mft.nhs.uk/2024/03/13/gen-o-technology-revolutionises-genomic-medicine-services-in-the-north-west/)
 
 ## Domain Archetype
 
