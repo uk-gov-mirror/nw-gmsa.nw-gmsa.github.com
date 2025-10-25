@@ -1,0 +1,89 @@
+{
+  "resourceType": "Questionnaire",
+  "meta": {
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/NWQuestionnaire"
+    ]
+  },
+  "url": "https://fhir.nwgenomics.nhs.uk/Questionnaire/Pedigree",
+  "title": "Pedigree",
+  "status": "draft",
+  "description": "Basic mapping of GA4GH Pedigree - for elaboration purposes",
+  "item": [
+    {
+      "type": "string",
+      "linkId": "778124063099",
+      "text": "Patient NHS Number"
+    },
+    {
+      "type": "choice",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+          "valueUrl": "https://snowstorm.ihtsdotools.org/fhir"
+        }
+      ],
+      "linkId": "811531851025",
+      "code": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "734840008",
+          "display": "Karyotype"
+        }
+      ],
+      "text": "Karyotypic Sex",
+      "answerValueSet": "http://snomed.info/sct/900000000000207008?fhir_vs=ecl/%3C734840008"
+    },
+    {
+      "type": "choice",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+          "valueUrl": "https://snowstorm.ihtsdotools.org/fhir"
+        }
+      ],
+      "linkId": "242195182656",
+      "code": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "95462004",
+          "display": "Anomaly of sex chromosome"
+        }
+      ],
+      "text": "Anomaly of sex chromosome",
+      "answerValueSet": "http://snomed.info/sct/900000000000207008?fhir_vs=ecl/%3C95462004"
+    },
+    {
+      "type": "group",
+      "linkId": "109013198442",
+      "text": "Individual",
+      "repeats": true,
+      "item": [
+        {
+          "type": "string",
+          "linkId": "899651036145",
+          "text": "Individual NHS Number"
+        },
+        {
+          "type": "choice",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-preferredTerminologyServer",
+              "valueUrl": "https://snowstorm.ihtsdotools.org/fhir"
+            }
+          ],
+          "linkId": "559372493257",
+          "code": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "303071001",
+              "display": "Person in the family"
+            }
+          ],
+          "text": "Relationship",
+          "answerValueSet": "http://snomed.info/sct/900000000000207008?fhir_vs=ecl/%3C303071001"
+        }
+      ]
+    }
+  ]
+}

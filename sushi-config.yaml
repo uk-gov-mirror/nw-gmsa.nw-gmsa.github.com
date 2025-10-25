@@ -151,6 +151,10 @@ resources:
     name: Comprehensive metabolic 2000 panel - Serum or Plasma
     description: Comprehensive metabolic 2000 panel - Serum or Plasma
     exampleBoolean: false
+  Questionnaire/Pedigree:
+    name: Pedigree
+    description: Initial elaboration of pedigree
+    exampleBoolean: false
   Observation/brca1-variant:
     name: Genomic Report BRCA1 Variant Example
     description: Genomic Report BRCA1 Variant Example
