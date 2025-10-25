@@ -1,54 +1,15 @@
 @startuml
 
-title "Genomic Model Overview"
+title "Genomic Archetype Overview"
 
-
-entity "[[StructureDefinition-Patient.html Patient]]" as Patient {
-  [[StructureDefinition-NHSNumber.html NHS Number]]
-  [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
-}
-
-entity "GMSA ([[StructureDefinition-Organization.html Organisation]])" as GMSA {
-[[StructureDefinition-OrganisationCode.html Organisation Code]]
-}
 
 class "[[Questionnaire-GenomicTestOrder.html Genomic Test Order]]" as Order <<aggregate>> {
-  [[StructureDefinition-PlacerGroupNumber.html Placer Group Number]]
+
 }
 
-entity "Order Item\n[[StructureDefinition-ServiceRequest.html Service Request]]" as OrderItem  {
-  [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
-  [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
-}
-
-class "[[StructureDefinition-Composition-GenomicReport.html Genomic Test Report]]" as Report <<aggregate>>
-
-entity "[[StructureDefinition-Specimen.html Specimen]]" as Specimen {
-  [[StructureDefinition-AccessionNumber.html Accession Number]]
-}
-
-entity "[[Spell]]" as Spell {
-  [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
-}
-
-entity "[[StructureDefinition-DiagnosticReport.html Diagnostic Report]]" as DiagnosticReport {
-Filler Report Number
-}
-entity "[[StructureDefinition-Observation.html Observation]]" as Observation
-
-Order o-d- "1..*" OrderItem
-OrderItem o-- "0..*" Report
-Report o-d- DiagnosticReport
-DiagnosticReport o-d- Observation
-
-OrderItem -l- "1..*" Specimen
-Order -l- "1..1" Specimen
-
-OrderItem -r- "1..1" GMSA
+class "[[Questionnaire-GenomicTestReport.html Genomic Test Report]]" as Report <<aggregate>>
 
 
-Order -r- Spell
-
-Patient -r- Order
+Order o-r- "0..*" Report
 
 @enduml
