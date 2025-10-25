@@ -46,3 +46,6 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 
 * component[+].code = $loinc#53034-5 "Allelic state"
 * component[=].valueCodeableConcept = $loinc#LA6706-1 "Heterozygous"
+
+* component[+].code = $loinc#69547-8 "Genomic ref allele"
+* component[=].valueString = "C"
