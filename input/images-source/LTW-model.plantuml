@@ -9,6 +9,7 @@ class "[[Questionnaire-GenomicTestOrder.html Genomic Test Order]]" as Order <<ag
 
 class "[[Questionnaire-GenomicTestReport.html Genomic Test Report]]" as Report <<aggregate>>
 
+class "[[Questionnaire-Pedigree.html Pedigree]]" as Pedigree <<aggregate>>
 
 Order o-r- "0..*" Report
 
