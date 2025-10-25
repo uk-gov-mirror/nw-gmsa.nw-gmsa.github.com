@@ -55,9 +55,11 @@ classDiagram
     class GenomicStudy["Genomic Study"]
     class DiagnosticImplication["Diagnostic Implication"]
     class TherapeuticImplication["Therapeutic Implication"]
+    class GenomicRegion["Genomic Regions Studied"]
 
     Variant --|> GenomicReport 
     GenomicStudy --|> GenomicReport
+    GenomicRegion --|> GenomicReport
     DiagnosticImplication --|> GenomicReport
     TherapeuticImplication ..|> GenomicReport
     Variant <|--|> DiagnosticImplication
@@ -116,7 +118,10 @@ This is for elaboration and subject to change.
 | Genomic ref allele [ID]                    | 69547-8 |                                                                                                                                                            | C                           | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[ref-allele]                        | 
 | Allelic phase                              | 82120-7 | [Allelic phase](https://loinc.org/LL4025-4)                                                                                                                | Maternal                    | 0..1        | 2a           | See 94186-4 below?                                                                                                                        |
 | Origin of germline genetic variant [Type]  | 94186-4 | [Origin of Genetic Variance](https://loinc.org/LL5489-1)                                                                                                   | Maternal                    | 0..1        | - n/a        | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[variant-inheritance]               |
-   
+
+#### Genomic Regions Studied Mapping
+
+TBC - This includes Gene studied [ID] (48018-6) and Gene mutations tested (36908-2). Maybe a requirement from oncology.
 
 ## Examples
 
