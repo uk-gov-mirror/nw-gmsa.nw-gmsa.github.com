@@ -54,11 +54,14 @@ classDiagram
     class Variant
     class GenomicStudy["Genomic Study"]
     class DiagnosticImplication["Diagnostic Implication"]
+    class TherapeuticImplication["Therapeutic Implication"]
 
     Variant --|> GenomicReport 
     GenomicStudy --|> GenomicReport
     DiagnosticImplication --|> GenomicReport
+    TherapeuticImplication ..|> GenomicReport
     Variant <|--|> DiagnosticImplication
+    Variant <|..|> TherapeuticImplication
 ```
 
 A more detailed mapping of the results section of the laboratory report, see [Genomics Reporting Implementation Guide](https://build.fhir.org/ig/HL7/genomics-reporting/general.html)

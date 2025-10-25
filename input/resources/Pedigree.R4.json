@@ -1,5 +1,6 @@
 {
   "resourceType": "Questionnaire",
+  "id": "Pedigree",
   "meta": {
     "profile": [
       "https://fhir.nwgenomics.nhs.uk/StructureDefinition/NWQuestionnaire"

@@ -3,6 +3,11 @@ Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/th
 Id:             Observation-TherapeuticImplication
 Title:          "Observation Therapeutic Implication"
 Description:    """
+Reference:
+- [FHIR Genomic Report - Therapeutic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html)
+- [NW Genomics - ProgressRX](https://www.nw-gmsa.nhs.uk/media-news-and-events/latest-news-blogs/advancing-application-pharmacogenomics-digital-innovation-introducing-progressrx-1)
+
+For elaboration purposes only
 """
 
 * identifier 1..* MS
@@ -26,3 +31,5 @@ Description:    """
 * effective[x] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 * code MS
+* derivedFrom[variant] MS
+* derivedFrom[variant] only Reference(Variant)
