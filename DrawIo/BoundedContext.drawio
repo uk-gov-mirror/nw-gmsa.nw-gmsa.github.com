@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.8">
+  <diagram name="Page-1" id="vbhbuHTddtJxYs73kHN8">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-23" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Diagnostic Testing&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="65" y="57.5" width="680" height="652.5" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;endArrow=none;endFill=0;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-24" target="8OnzJcDQAADAtnC0aIjU-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;endArrow=none;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="590" as="sourcePoint" />
+            <mxPoint x="405" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;endArrow=none;endFill=0;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="405" y="570" as="sourcePoint" />
+            <mxPoint x="405" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;endArrow=none;endFill=0;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-24" target="8OnzJcDQAADAtnC0aIjU-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-24" value="&lt;b&gt;England Diagnostic&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;Testing Core&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=3;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="105" width="170" height="445" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#fff2cc;strokeColor=#d6b656;endArrow=none;endFill=0;strokeWidth=3;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-6" target="8OnzJcDQAADAtnC0aIjU-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-6" value="&lt;b&gt;Genomic Reporting&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="182.5" width="170" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;endArrow=ERmany;endFill=0;strokeWidth=3;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-2" target="8OnzJcDQAADAtnC0aIjU-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-2" value="Genomic Report" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="552.5" y="232.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;startArrow=ERmany;startFill=0;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-4" target="8OnzJcDQAADAtnC0aIjU-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-4" value="Variant" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="552.5" y="312.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-5" value="Diagnostic&lt;div&gt;Implication&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="552.5" y="392.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-7" value="&lt;b&gt;Laboratory and Pathology Reporting&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="182.5" width="165" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-8" target="8OnzJcDQAADAtnC0aIjU-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-8" value="Panel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="132.5" y="312.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-9" value="Observation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="132.5" y="392.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-11" value="&lt;b&gt;Diagnostic Report&lt;br&gt;(HL7 v2 OBR)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="345" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;endArrow=ERmany;endFill=0;strokeWidth=3;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-12" target="8OnzJcDQAADAtnC0aIjU-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-12" value="Laboratory Report" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="132.5" y="232.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-14" value="&lt;b&gt;Specimen&lt;br&gt;(HL7 v2 SPM)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="345" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-16" value="&lt;b&gt;Patient&amp;nbsp;&lt;br&gt;(HL7 v2 PID)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="345" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-17" value="&lt;b&gt;Imaging Report&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="105" y="570" width="600" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-18" target="8OnzJcDQAADAtnC0aIjU-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-18" value="Imaging Study" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="340" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-19" value="Image" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="510" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-21" target="8OnzJcDQAADAtnC0aIjU-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-21" value="Imaging Report" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="170" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-14" target="8OnzJcDQAADAtnC0aIjU-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="8OnzJcDQAADAtnC0aIjU-23" target="8OnzJcDQAADAtnC0aIjU-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-32" value="&lt;b&gt;Diagnostic Order &lt;br&gt;(HL7 FHIR Service Request and v2 ORC)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="345" y="470" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8OnzJcDQAADAtnC0aIjU-35" value="&lt;b&gt;Case / Spell&lt;/b&gt;&lt;div&gt;&lt;b&gt;(HL7 FHIR Encounter and V2 PV1)&lt;/b&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="345" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

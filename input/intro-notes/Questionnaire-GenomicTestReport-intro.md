@@ -121,7 +121,12 @@ This is for elaboration and subject to change.
 
 #### Genomic Regions Studied Mapping
 
+<div class="alert alert-danger" role="alert">
+This is for elaboration and subject to change.
+</div>
+
 TBC - This includes Gene studied [ID] (48018-6) and Gene mutations tested (36908-2). Maybe a requirement from oncology.
+This appears to be part of [FHIR R6 GenomicStudy](https://build.fhir.org/genomicstudy.html)
 
 ## Examples
 
