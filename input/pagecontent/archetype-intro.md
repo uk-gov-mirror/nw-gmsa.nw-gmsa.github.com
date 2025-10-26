@@ -35,11 +35,10 @@ Note: Patient and Case/Spell are logically part of a Patient Administration doma
 
 This domain focuses on genomic and molecular diagnostics, the data modeling here is **Archetypes** or templates.
 
-= [Genomic Test Order](Questionnaire-GenomicTestOrder.html)
+- [Genomic Test Order](Questionnaire-GenomicTestOrder.html)
 - [Genomic Test Report](Questionnaire-GenomicTestReport.html) – Summarizes genomic testing results.
   - Variant – Represents a specific genetic variant or mutation.
   - Diagnostic Implication – Links variants to clinical significance (e.g., pathogenicity, treatment implications).
   - The relationships show that a Genomic Report contains Variants, which in turn have Diagnostic Implications. 
   - This domain also connects to the Diagnostic Report in the core
-
 
