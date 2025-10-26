@@ -21,6 +21,7 @@ This is the core shared context that links the other three domains; the data mod
 - [Diagnostic Report](StructureDefinition-DiagnosticReport.html) – (HL7 v2 OBR): The core diagnostic report entity summarizing results.
 - [Specimen](StructureDefinition-Specimen.html) – (HL7 v2 SPM): Represents the collected specimen or sample.
 - Diagnostic Order – (HL7 FHIR [ServiceRequest](StructureDefinition-ServiceRequest.html) and v2 ORC): Represents orders or requests for diagnostic services.
+- Results are specific to each subdomain. An overview of Genonic results is described in the next section.
 
 These core components enable interoperability and data exchange among different reporting domains.
 
