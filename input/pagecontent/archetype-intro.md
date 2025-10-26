@@ -1,8 +1,3 @@
-<figure>
-{%include BoundedContext.drawio.png%}
-<p id="fX.X.X.X-X" class="figureTitle">Bounded Contexts</p>
-</figure>
-<br clear="all">
 
 The data model is divided into four main contexts (bounded areas):
 
@@ -10,6 +5,12 @@ The data model is divided into four main contexts (bounded areas):
 - **Genomic Reporting** (focus of this guide)
 - Imaging Reporting
 - Diagnostic Testing Core (central integration context)
+
+<img style="padding:3px;width:60%;" src="BoundedContext.drawio.png" alt="Diagnostic Testing Bounded Contexts"/>
+<br clear="all">
+<p class="figureTitle">Diagnostic Testing Bounded Contexts</p> 
+<br clear="all">
+
 
 ## Diagnostic Testing Core (Center)
 
