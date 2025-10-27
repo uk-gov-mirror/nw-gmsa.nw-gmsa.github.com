@@ -3,9 +3,11 @@
 title "Genomic Laboratory Report"
 
 * [[StructureDefinition-DiagnosticReport.html Diagnostic Report]]
-** Metadata
+** Patient Administration
 *** [[StructureDefinition-Patient.html Patient]]
-**** Identification [[StructureDefinition-NHSNumber.html NHSNumber]] [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
+**** Identification [[StructureDefinition-NHSNumber.html NHSNumber]]
+**** Identification [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
+**** Name, date of birth, ethnic category, etc.
 *** Case identification [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Report
 *** Test Details
