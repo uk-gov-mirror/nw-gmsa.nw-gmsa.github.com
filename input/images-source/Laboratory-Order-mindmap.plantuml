@@ -16,7 +16,8 @@ title "Genomic Laboratory Order"
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Ordering Practitioner
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
-**** Test Code [[CodeSystem-GenomicTestCode.html Test Directory Code]]
+**** [[https://www.datadictionary.nhs.uk/data_elements/local_treatment_category_code.html Local Treatment Category Code]]
+***** Genomic Test Code [[CodeSystem-GenomicTestCode.html Test Directory Code]]
 **** [[StructureDefinition-Specimen.html Specimen]]
 ***** Specimen Id
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
