@@ -10,7 +10,7 @@ title "Genomic Laboratory Report"
 **** Name, date of birth, ethnic category, etc.
 *** Case identification [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Report
-*** Order Details
+*** [[Questionnaire-GenomicTestOrder.html Order Details]]
 **** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
 **** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
