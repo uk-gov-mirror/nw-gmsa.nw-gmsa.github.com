@@ -33,11 +33,11 @@ title "Genomic Laboratory Report"
 **** [[StructureDefinition-Observation-TherapeuticImplication.html Therapeutic Implication]] ProgressRX
 ***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html HL7 Genomic Reporting Therapeutic Implication]]
 *** [[StructureDefinition-Procedure-GenomicStudy.html Genomic Study/Method]]
-*** [[https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-genomic-region-studied.html Genomic Region Studied]] (US mCode Oncology)
 **** Gene disease assessed / Clinical Indication
 **** Analysis method [Type]
 **** NHS England Genomics Test Outcome
 **** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html HL7 Genomic Reporting Genomic Study]]
-**** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.4256/mindmap Sequencing Assay (openEHR mindmap)]]
+*** [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html Genomic Study Analysis]]
+**** Regions Studied / Gene mutations tested
 
 @endmindmap
