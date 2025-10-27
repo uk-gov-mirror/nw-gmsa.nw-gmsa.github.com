@@ -2,12 +2,12 @@
 
 title "Genomic Laboratory Report"
 
-* Laboratory Report
+* Diagnostic Report
 ** Metadata
 *** [[StructureDefinition-Patient.html Patient]]
 **** Identification [[StructureDefinition-NHSNumber.html NHSNumber]] [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
 *** Case identification [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
-** Laboratory Test Result
+** Laboratory Report
 *** Test Details
 **** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
 **** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]

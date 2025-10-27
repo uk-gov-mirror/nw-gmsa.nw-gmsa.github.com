@@ -2,13 +2,13 @@
 
 title "Genomic Laboratory Order"
 
-* Genomic Order
+* Diagnostic Order
 ** Metadata
 *** [[StructureDefinition-Patient.html Patient]]
 **** Identification [[StructureDefinition-NHSNumber.html NHSNumber]] [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
 **** Name, date of birth, ethnic category, etc.
 *** Case identification / Account Number [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
-** Laboratory Test Order
+** Laboratory Order
 *** Test Details
 **** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
 **** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
@@ -20,7 +20,7 @@ title "Genomic Laboratory Order"
 ***** Specimen Id
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
 ***** [[StructureDefinition-ShipmentTrackingNumber.html Shipment Tracking number]]
-*** Supporting Information\n(Ask At Order Entry Questions)
+*** Genomic Test Supporting Information\n(Ask At Order Entry Questions)
 **** Consent
 **** Pregnant
 **** Consanguineous union
