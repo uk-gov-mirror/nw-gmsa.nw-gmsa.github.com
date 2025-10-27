@@ -1,4 +1,4 @@
-[Questionnaire Viewer](https://project-wildfyre.github.io/domain-archetype/?q=https://nw-gmsa.github.io/R4/Questionnaire-58410-2.json)
+[Questionnaire Viewer](https://project-wildfyre.github.io/domain-archetype/?q=https://nw-gmsa.github.io/Questionnaire-58410-2.json)
 
 Based on:
 
