@@ -10,18 +10,20 @@ title "Genomic Laboratory Report"
 **** Name, date of birth, ethnic category, etc.
 *** Case identification [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Report
-*** Test Details
+*** Order Details
 **** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
 **** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
 **** Test Code [[CodeSystem-GenomicTestCode.html Test Directory Code]]
+**** [[StructureDefinition-Specimen.html Specimen]]
+***** [[StructureDefinition-AccessionNumber.html Accession Number]]
+*** Test Details
 **** [[StructureDefinition-ReportNumber.html Report Number]]
 **** Performer
 **** Results Interpreter
-**** [[StructureDefinition-Specimen.html Specimen]]
-***** [[StructureDefinition-AccessionNumber.html Accession Number]]
-*** Genomic Results
+**** Conclusion (Clinical Indication)
+*** Results Genomic
 **** Genomic Analysis Narrative Report (PDF) [[StructureDefinition-NWAttachment.html Attachment]]
 **** [[StructureDefinition-Observation-Variant.html Variant]]
 ***** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap openEHR Genomic Variant Result]]

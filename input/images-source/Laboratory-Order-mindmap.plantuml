@@ -10,7 +10,7 @@ title "Genomic Laboratory Order"
 **** Name, date of birth, ethnic category, etc.
 *** Case identification / Account Number [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Order
-*** Test Details
+*** Order Details
 **** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
 **** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
@@ -21,7 +21,7 @@ title "Genomic Laboratory Order"
 ***** Specimen Id
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
 ***** [[StructureDefinition-ShipmentTrackingNumber.html Shipment Tracking number]]
-*** Genomic Test Supporting Information\n(Ask At Order Entry Questions)
+*** Supporting Information Genomic\n(Ask At Order Entry Questions)
 **** Consent
 **** Pregnant
 **** Consanguineous union
