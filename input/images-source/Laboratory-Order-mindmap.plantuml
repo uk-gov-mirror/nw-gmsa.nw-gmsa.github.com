@@ -2,7 +2,7 @@
 
 title "Genomic Laboratory Order"
 
-* Diagnostic Order
+* [[StructureDefinition-ServiceRequest.html Diagnostic Order]]
 ** Metadata
 *** [[StructureDefinition-Patient.html Patient]]
 **** Identification [[StructureDefinition-NHSNumber.html NHSNumber]] [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]

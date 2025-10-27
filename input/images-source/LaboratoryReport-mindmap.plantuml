@@ -2,7 +2,7 @@
 
 title "Genomic Laboratory Report"
 
-* Diagnostic Report
+* [[StructureDefinition-DiagnosticReport.html Diagnostic Report]]
 ** Metadata
 *** [[StructureDefinition-Patient.html Patient]]
 **** Identification [[StructureDefinition-NHSNumber.html NHSNumber]] [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
