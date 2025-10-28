@@ -40,6 +40,12 @@ Test detail tends to be common across all diagnostic tests in a patient's pathwa
 | Performer (organisation)                 |         | [Organisation Code](StructureDefinition-OrganisationCode.html)                                 | 1..*        |                         | performer[organisation]   | [Organizaton](StructureDefinition-Organizaton.html)                      |
 | Specimen                                 | 80398-1 |                                                                                                | 0..1        | [SPM](hl7v2.html#spm)   | specimen                  | [Specimen](StructureDefinition-Specimen.html)                            |
 
+<div class="alert alert-info" role="alert">
+<b>HL7 FHIR Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-report.html" _target="_blank">Genomic Report</a> 
+<br/>
+<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-DiagnosticReport" _target="_blank">DiagnosticReport</a> 
+</div>
+
 ### Results Mapping
 
 <div class="alert alert-danger" role="alert">
@@ -130,6 +136,13 @@ This is for elaboration and subject to change.
 | Genomic ref allele [ID]                    | 69547-8 |                                                                                                                                                            | C                           | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[ref-allele]                        | 
 | Allelic phase                              | 82120-7 | [Allelic phase](https://loinc.org/LL4025-4)                                                                                                                | Maternal                    | 0..1        | 2a           | See 94186-4 below?                                                                                                                        |
 | Origin of germline genetic variant [Type]  | 94186-4 | [Origin of Genetic Variance](https://loinc.org/LL5489-1)                                                                                                   | Maternal                    | 0..1        | - n/a        | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[variant-inheritance]               |
+
+<div class="alert alert-info" role="alert">
+<b>HL7 FHIR Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html" _target="_blank">Variant</a> 
+<br/>
+<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-Observation-Variant.html" _target="_blank">Observation Variant</a> 
+</div>
+
 
 ### Implications
 
