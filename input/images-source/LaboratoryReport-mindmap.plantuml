@@ -2,7 +2,7 @@
 
 title "Genomic Laboratory Report"
 
-* [[StructureDefinition-DiagnosticReport.html Diagnostic Report]]
+* [[#diagnostic-report Diagnostic Report]]
 ** Patient Administration
 *** [[StructureDefinition-Patient.html Patient]]
 **** Identification [[StructureDefinition-NHSNumber.html NHSNumber]]
@@ -28,18 +28,13 @@ title "Genomic Laboratory Report"
 **** Genomic Analysis Narrative Report (PDF) [[StructureDefinition-NWAttachment.html Attachment]]
 **** Finding
 ***** [[StructureDefinition-Observation-Variant.html Variant]]
-****** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap openEHR Genomic Variant Result]]
-****** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html HL7 Genomic Reporting Variant]]
 **** Implication
 ***** [[StructureDefinition-Observation-DiagnosticImplication.html Diagnostic Implication]]
-****** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html HL7 Genomic Reporting Diagnostic Implication]]
-**** [[StructureDefinition-Observation-TherapeuticImplication.html Therapeutic Implication]] ProgressRX
-***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html HL7 Genomic Reporting Therapeutic Implication]]
+***** [[StructureDefinition-Observation-TherapeuticImplication.html Therapeutic Implication]] ProgressRX
 *** [[StructureDefinition-Procedure-GenomicStudy.html Genomic Study/Method]]
 **** Gene disease assessed / Clinical Indication
 **** Analysis method [Type]
 **** NHS England Genomics Test Outcome
-**** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html HL7 Genomic Reporting Genomic Study]]
 **** [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html Genomic Study Analysis]]
 ***** Regions Studied / Gene mutations tested
 

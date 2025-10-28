@@ -22,7 +22,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 </figure>
 <br clear="all">
 
-### Test Detail and Metadata Mapping
+### Diagnostic Report
 
 Metadata is data that applies to the patient's entire clinical pathway and so it extends beyond diagnostic tests.
 Test detail tends to be common across all diagnostic tests in a patient's pathway, not just genomics.
