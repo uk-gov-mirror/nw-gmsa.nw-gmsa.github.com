@@ -38,7 +38,7 @@ title "Genomic Laboratory Report"
 **** Analysis method [Type]
 **** NHS England Genomics Test Outcome
 **** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html HL7 Genomic Reporting Genomic Study]]
-*** [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html Genomic Study Analysis]]
-**** Regions Studied / Gene mutations tested
+**** [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html Genomic Study Analysis]]
+***** Regions Studied / Gene mutations tested
 
 @endmindmap

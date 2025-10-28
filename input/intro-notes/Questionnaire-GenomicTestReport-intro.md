@@ -55,11 +55,11 @@ classDiagram
     class GenomicStudy["Genomic Study"]
     class DiagnosticImplication["Diagnostic Implication"]
     class TherapeuticImplication["Therapeutic Implication"]
-    class GenomicRegion["Genomic Regions Studied"]
+    class GenomicStudyAnalysis["Genomic Study Analysis"]
 
     Variant --|> GenomicReport 
     GenomicStudy --|> GenomicReport
-    GenomicRegion --|> GenomicReport
+    GenomicStudyAnalysis --|> GenomicReport
     DiagnosticImplication --|> GenomicReport
     TherapeuticImplication ..|> GenomicReport
     Variant <|--|> DiagnosticImplication
@@ -119,7 +119,7 @@ This is for elaboration and subject to change.
 | Allelic phase                              | 82120-7 | [Allelic phase](https://loinc.org/LL4025-4)                                                                                                                | Maternal                    | 0..1        | 2a           | See 94186-4 below?                                                                                                                        |
 | Origin of germline genetic variant [Type]  | 94186-4 | [Origin of Genetic Variance](https://loinc.org/LL5489-1)                                                                                                   | Maternal                    | 0..1        | - n/a        | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[variant-inheritance]               |
 
-#### Genomic Regions Studied Mapping
+#### Genomic Study Analysis Mapping
 
 <div class="alert alert-danger" role="alert">
 This is for elaboration and subject to change.
@@ -127,6 +127,13 @@ This is for elaboration and subject to change.
 
 TBC - This includes Gene studied [ID] (48018-6) and Gene mutations tested (36908-2). Maybe a requirement from oncology.
 This appears to be part of [FHIR R6 GenomicStudy](https://build.fhir.org/genomicstudy.html)
+
+| Name                        | LOINC   | Value Set / Data Type                               | Example | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                                                                   |
+|-----------------------------|---------|-----------------------------------------------------|---------|-------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| regions                     |         |                                                     |         |             |              | [Genomic Study Analysis ](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html).extension[regions]             |
+| Genomic source class [Type] | 48002-0 | [Genetic variant source](https://loinc.org/LL378-1) | Somatic | 0..1        |            | [Genomic Study Analysis](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html).extension[genomic-source-class] |
+| specimen                    |         |                                                     |         |             |           | [Genomic Study Analysis](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html).extension[specimen]             |
+
 
 ## Examples
 
