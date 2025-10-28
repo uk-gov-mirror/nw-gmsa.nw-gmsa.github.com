@@ -2,7 +2,7 @@
 
 title "Genomic Laboratory Report"
 
-* [[#diagnostic-report Diagnostic Report]]
+* [[StructureDefinition-DiagnosticReport.html Diagnostic Report]]
 ** Patient Administration
 *** [[StructureDefinition-Patient.html Patient]]
 **** Identification [[StructureDefinition-NHSNumber.html NHSNumber]]
@@ -17,7 +17,7 @@ title "Genomic Laboratory Report"
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
 **** [[https://www.datadictionary.nhs.uk/data_elements/local_treatment_category_code.html Local Treatment Category Code]]
 ***** Genomic Test Code [[CodeSystem-GenomicTestCode.html Test Directory Code]]
-**** [[Questionnaire-GenomicTestOrder.html#specimen Specimen]]
+**** [[StructureDefinition-Specimen.html Specimen]]
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
 *** Test Details
 **** [[StructureDefinition-ReportNumber.html Report Number]]
@@ -27,15 +27,15 @@ title "Genomic Laboratory Report"
 *** Results Genomic
 **** Genomic Analysis Narrative Report (PDF) [[StructureDefinition-NWAttachment.html Attachment]]
 **** Finding
-***** [[StructureDefinition-Observation-Variant.html Variant]]
+***** [[#variant Variant]]
 **** Implication
-***** [[StructureDefinition-Observation-DiagnosticImplication.html Diagnostic Implication]]
-***** [[StructureDefinition-Observation-TherapeuticImplication.html Therapeutic Implication]] ProgressRX
-*** [[StructureDefinition-Procedure-GenomicStudy.html Genomic Study/Method]]
+***** [[#diagnostic-implication Diagnostic Implication]]
+***** [[#implications Therapeutic Implication]] ProgressRX
+*** [[#genomic-study Genomic Study/Method]]
 **** Gene disease assessed / Clinical Indication
 **** Analysis method [Type]
 **** NHS England Genomics Test Outcome
-**** [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html Genomic Study Analysis]]
+**** [[#genomic-study-analysis Genomic Study Analysis]]
 ***** Regions Studied / Gene mutations tested
 
 @endmindmap
