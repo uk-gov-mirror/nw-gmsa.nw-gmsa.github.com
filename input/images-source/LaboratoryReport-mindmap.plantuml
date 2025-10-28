@@ -26,11 +26,13 @@ title "Genomic Laboratory Report"
 **** Conclusion (Clinical Indication)
 *** Results Genomic
 **** Genomic Analysis Narrative Report (PDF) [[StructureDefinition-NWAttachment.html Attachment]]
-**** [[StructureDefinition-Observation-Variant.html Variant]]
-***** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap openEHR Genomic Variant Result]]
-***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html HL7 Genomic Reporting Variant]]
-**** [[StructureDefinition-Observation-DiagnosticImplication.html Diagnostic Implication]]
-***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html HL7 Genomic Reporting Diagnostic Implication]]
+**** Finding
+***** [[StructureDefinition-Observation-Variant.html Variant]]
+****** See also [[https://ckm.openehr.org/ckm/archetypes/1013.1.3759/mindmap openEHR Genomic Variant Result]]
+****** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html HL7 Genomic Reporting Variant]]
+**** Implication
+***** [[StructureDefinition-Observation-DiagnosticImplication.html Diagnostic Implication]]
+****** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html HL7 Genomic Reporting Diagnostic Implication]]
 **** [[StructureDefinition-Observation-TherapeuticImplication.html Therapeutic Implication]] ProgressRX
 ***** See also [[https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html HL7 Genomic Reporting Therapeutic Implication]]
 *** [[StructureDefinition-Procedure-GenomicStudy.html Genomic Study/Method]]
