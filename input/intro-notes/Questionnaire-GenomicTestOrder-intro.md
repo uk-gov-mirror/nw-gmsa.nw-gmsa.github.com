@@ -18,7 +18,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 </figure>
 <br clear="all"> 
 
-## Test Detail Mapping
+## Diagnostic Order
 
 | Name                                                  | LOINC   | Value Set / Data Type                                                                          | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest       | HL7 FHIR Resource (Message + RESTful)                                            |
 |-------------------------------------------------------|---------|------------------------------------------------------------------------------------------------|-------------|-----------------------------------|-------------------------------|----------------------------------------------------------------------------------|
@@ -32,13 +32,18 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 | Ordering Facility                                     |         | [England Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)             | 1..1        | [ORC](hl7v2.html#orc)-21          | requester[PractitionerRole]   | [PractitionerRole](StructureDefinition-PractitionerRole.html).organization       |
 | performer                                             |         | [Organisation Code](StructureDefinition-OrganisationCode.html)                                 | 0..1        | implied by destination of message | performer                     | [Organization](StructureDefinition-Organization.html)                            |
 | Clinical Indication / CITT code (Suspected Condition) |         | [Genomic Condition Codes](ValueSet-genomic-condition-codes.html)                               | *..*        | [DG1](hl7v2.html#dg1)-3           | reasonCode                    |                                                                                  |
+
+## Specimen
+
+| Name                                                  | LOINC   | Value Set / Data Type                                                                          | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest       | HL7 FHIR Resource (Message + RESTful)                                            |
+|-------------------------------------------------------|---------|------------------------------------------------------------------------------------------------|-------------|-----------------------------------|-------------------------------|----------------------------------------------------------------------------------|
 | Specimen ID                                           | 80398-1 |                                                                                                | 0..*        | [SPM](hl7v2.html#spm)             | specimen                      | [Specimen](StructureDefinition-Specimen.html).identifier[PlacerSpecimenNumber]   |
 | Specimen Accession Number                             | 80398-1 |                                                                                                | 0..*        | [SPM](hl7v2.html#spm)             | specimen                      | [Specimen](StructureDefinition-Specimen.html).accessionIdentifier                |
 | Shipment Tracking Number                              | 97209-1 |                                                                                                |             |                                   |                               | [Specimen](StructureDefinition-Specimen.html).identifier[ShipmentTrackingNumber] |                                                                                |
 
 Note: it is likely that source systems will use ORM_01 and not include specimen details. In this case it is suggested that the specimen details are captured as 'Ask at Order Entry Questions' and so provided as OBX segments.
 
-## Supporting Information Mapping
+## Supporting Information
 
 | Name                                                                   | Code System         | Value Set / Data Type | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR Resource (Message + RESTful)                                    |
 |------------------------------------------------------------------------|---------------------|-----------------------|-------------|------------------------|--------------------------------------------------------------------------|
