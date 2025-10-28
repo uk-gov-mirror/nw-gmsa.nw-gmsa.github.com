@@ -99,7 +99,7 @@ See also [HL7 Genomic Reporting - Genomic Study](https://build.fhir.org/ig/HL7/g
 | Genomic Test Outcome                        | TESTCOME (NWGMSA) | [Genomic Test Outcome Codes](ValueSet-GenomicTestOutcomeCodes.html)                                                 |           |             |            | [Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html).outcome                                                                       |                                                                                                                                                                                 |
 
 <div class="alert alert-info" role="alert">
-<b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/STU3/StructureDefinition-genomic-study.html" _target="_blank">Genomic Study</a> 
+<b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-genomic-study.html" _target="_blank">Genomic Study</a> 
 <br/>
 <b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-Procedure-GenomicStudy.html" _target="_blank">Procedure Genomic Study</a> 
 </div>
@@ -166,7 +166,7 @@ This is for elaboration and subject to change.
 | Probable Associated Phenotype                          | 81259-4 |                                                                               | Lynch syndrome | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[predicted-phenotype]   |
 
 <div class="alert alert-info" role="alert">
-<b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/STU3/StructureDefinition-diagnostic-implication.html" _target="_blank">Diagnostic Implication</a> 
+<b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-diagnostic-implication.html" _target="_blank">Diagnostic Implication</a> 
 <br/>
 <b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-Observation-DiagnosticImplication.html" _target="_blank">Observation Diagnostic Implication</a> 
 </div>
