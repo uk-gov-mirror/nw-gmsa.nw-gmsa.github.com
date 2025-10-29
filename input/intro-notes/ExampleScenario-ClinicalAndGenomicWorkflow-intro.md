@@ -11,4 +11,5 @@ graph TD;
 
     Consultant --> |Records Condition| EPR
     GeneticCounseling --> |Records FamilyMemberHistory| GenomicCDR[Genomic Clinical Data Repository]
+    Consultant --> |Asks for Genetic Counseling on Genetic Condition?| GeneticCounseling
 ```

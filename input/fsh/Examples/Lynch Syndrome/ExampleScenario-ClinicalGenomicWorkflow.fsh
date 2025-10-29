@@ -3,9 +3,6 @@ InstanceOf: ExampleScenario
 Title:       "Clinical and Genomic Workflow"
 Description: """
 Overview Clinical Workflow including Genomic Diagnostic Testing
-
-
-
 """
 Usage: #definition
 
