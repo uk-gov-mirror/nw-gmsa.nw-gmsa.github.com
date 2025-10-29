@@ -26,7 +26,7 @@ Usage: #definition
 * insert ActorEntity(counsellor, "Genomic counsellor",   [[TODO]])
 * insert ActorEntity(cdr, "Regional - Genomic Data Repository",   [[ Clinical Data Repository ]])
 
-* insert ActorEntity(consultant, "Consultant",   [[TODO]])
+* insert ActorEntity(consultant, "Consultant",   [[Primary Care doctor or Secondary Care Consultant]])
 * insert ActorEntity(epr, "Electronic Patient Record",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 
 * insert Instance_Empty(Request1,   Observation,   "Variant",  [[ TODO ]])
