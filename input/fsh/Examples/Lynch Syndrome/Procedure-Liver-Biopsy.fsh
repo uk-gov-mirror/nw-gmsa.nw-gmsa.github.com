@@ -20,7 +20,7 @@ Description: "TODO"
 
 * reasonCode[+]
   * coding[+]
-    * code = "363508008"
+    * code = #363508008
     * display = "Malignant neoplasm of intestine"
     * system = $sct
 
