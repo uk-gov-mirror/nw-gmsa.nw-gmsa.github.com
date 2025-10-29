@@ -25,4 +25,4 @@ Usage: #definition
   * description = "This step creates the [Genomics Test Report](Questionnaire-GenomicTestReport.html)"
   * preConditions = "Genomic Testing has Completed"
   * insert ProcessCreateEvent(1, "Variant is added to Genomic CDR", diagnostics, cdr, Request1 ,  , [[This step is performed by middleware - RIE]])
-  * insert ProcessCreateEvent(2, "Diagnostic Implication is added to Genomic CDR", diagnostics, epr, Request2 ,  , [[This step is performed by middleware - RIE]])
+  * insert ProcessCreateEvent(2, "Diagnostic Implication is added to Genomic CDR", diagnostics, cdr, Request2 ,  , [[This step is performed by middleware - RIE]])
