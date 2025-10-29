@@ -7,7 +7,7 @@ Overview Clinical Workflow including Genomic Diagnostic Testing
 Usage: #definition
 
 * status = #draft
-* name = "ClinicalAndGenomicWorkflow"
+* name = "Clinical And Genomic Workflow"
 
 * insert ActorEntity(diagnostics, "Genomic Diagnostic Testing",         [[TODO]])
 * insert ActorEntity(counsellor, "Genomic counsellor",   [[TODO]])
