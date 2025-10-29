@@ -24,6 +24,12 @@ Usage: #definition
 * insert Instance_Empty(Request3,   Condition,   "Condition",  [[ TODO ]])
 * insert InstanceVersion(3, "Condition Lynch syndrome", c8f82825-e4cb-4e1f-b728-3fd2808e93db , )
 
+* insert Instance_Empty(Request4,   RelatedPerson,   "RelatedPerson Son",  [[ TODO ]])
+* insert InstanceVersion(4, "RelatedPerson Ricky LEEDS", 074ea905-8d91-452c-af3c-15b5b860fdb2 , )
+
+* insert Instance_Empty(Request5,   RelatedPerson,   "RelatedPerson Mother",  [[ TODO ]])
+* insert InstanceVersion(5, "RelatedPerson Sarah-Jane NOTTINGHAM", c76b8bc2-ec36-4ce1-a2ea-8c57215115e2 , )
+
 * process[+]
   * title = "Create Diagnostic Testing Report"
   * description = "This step creates the [Genomics Test Report](Questionnaire-GenomicTestReport.html)"
@@ -41,3 +47,5 @@ Usage: #definition
   * title = "Perform Genomic Counselling"
   * description = "This step acts on the [Genomics Test Report](Questionnaire-GenomicTestReport.html)"
   * preConditions = "A Task has been received to perform Genomic Counselling"
+  * insert ProcessCreateEvent(4, "Relations are documented via a Pedigree chart", counsellor, cdr, Request4 ,  , [[Probably Gen-O]])
+  * insert ProcessCreateEvent(5, "Relations are documented via a Pedigree chart", counsellor, cdr, Request5 ,  , [[Probably Gen-O]])
