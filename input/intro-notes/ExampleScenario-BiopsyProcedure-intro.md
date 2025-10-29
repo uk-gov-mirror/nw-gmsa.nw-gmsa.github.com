@@ -9,5 +9,6 @@ graph TD;
     Performs --> Discharge[Discharges Patient]
     Performs --> |Sends Specimen| DiagnosticTesting
     Discharge --> |Discharge Letter| Patient["Patient (and GP)"]
+    Discharge --> |"Record procedure (as completed)"| EPR[Electronic Patient Record]
 
 ```
