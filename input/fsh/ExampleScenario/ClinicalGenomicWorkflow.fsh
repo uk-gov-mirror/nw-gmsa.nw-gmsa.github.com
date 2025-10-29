@@ -10,9 +10,10 @@ Usage: #definition
 * name = "ClinicalAndGenomicWorkflow"
 
 * insert ActorEntity(diagnostics, "Genomic Diagnostic Testing",         [[TODO]])
-* insert ActorEntity(cdr, "Regional - Genomic Data Repository",   [[ Clinical Data Repository ]])
-* insert ActorEntity(consultant, "Consultant",   [[TODO]])
 * insert ActorEntity(counsellor, "Genomic counsellor",   [[TODO]])
+* insert ActorEntity(cdr, "Regional - Genomic Data Repository",   [[ Clinical Data Repository ]])
+
+* insert ActorEntity(consultant, "Consultant",   [[TODO]])
 * insert ActorEntity(epr, "Electronic Patient Record",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 
 * insert Instance_Empty(Request1,   Observation,   "Variant",  [[ TODO ]])
@@ -24,11 +25,11 @@ Usage: #definition
 * insert Instance_Empty(Request3,   Condition,   "Condition",  [[ TODO ]])
 * insert InstanceVersion(3, "Condition Lynch syndrome", c8f82825-e4cb-4e1f-b728-3fd2808e93db , )
 
-* insert Instance_Empty(Request4,   RelatedPerson,   "RelatedPerson Son",  [[ TODO ]])
-* insert InstanceVersion(4, "RelatedPerson Ricky LEEDS", 074ea905-8d91-452c-af3c-15b5b860fdb2 , )
+* insert Instance_Empty(Request4,   FamilyMemberHistory,   "FamilyMemberHistory Son",  [[ TODO ]])
+* insert InstanceVersion(4, "FamilyMemberHistory Ricky LEEDS", 074ea905-8d91-452c-af3c-15b5b860fdb2 , )
 
-* insert Instance_Empty(Request5,   RelatedPerson,   "RelatedPerson Mother",  [[ TODO ]])
-* insert InstanceVersion(5, "RelatedPerson Sarah-Jane NOTTINGHAM", c76b8bc2-ec36-4ce1-a2ea-8c57215115e2 , )
+* insert Instance_Empty(Request5,  FamilyMemberHistory,   "FamilyMemberHistory Mother",  [[ TODO ]])
+* insert InstanceVersion(5, "FamilyMemberHistory Sarah-Jane NOTTINGHAM", c76b8bc2-ec36-4ce1-a2ea-8c57215115e2 , )
 
 * process[+]
   * title = "Create Diagnostic Testing Report"
@@ -47,5 +48,5 @@ Usage: #definition
   * title = "Perform Genomic Counselling"
   * description = "This step acts on the [Genomics Test Report](Questionnaire-GenomicTestReport.html)"
   * preConditions = "A Task has been received to perform Genomic Counselling"
-  * insert ProcessCreateEvent(4, "Relations are documented via a Pedigree chart", counsellor, cdr, Request4 ,  , [[Probably Gen-O]])
-  * insert ProcessCreateEvent(5, "Relations are documented via a Pedigree chart", counsellor, cdr, Request5 ,  , [[Probably Gen-O]])
+  * insert ProcessCreateEvent(4, "Relations + clinical history are documented via a Pedigree chart", counsellor, cdr, Request4 ,  , [[Probably Gen-O]])
+  * insert ProcessCreateEvent(5, "Relations + clinical history are documented via a Pedigree chart", counsellor, cdr, Request5 ,  , [[Probably Gen-O]])
