@@ -27,7 +27,9 @@ Usage: #definition
 * insert Instance_Empty(Reply3,   Binary,   "Dummy", [[ ]])
 //* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[ ]])
 
-* insert Instance_Empty(Request5,   Binary,   "Dummy",  [[ ]])
+* insert Instance_Empty(Request5,   Procedure,   "Biopsy",  [[ ]])
+* insert InstanceVersion(1, "Procedure Liver Biopsy", 13240a3b-d1db-4f1a-ad7d-b19f23967060 , )
+
 * insert Instance_Empty(Request6,   Binary,   "Dummy", [[ ]])
 * insert Instance_Empty(Request7,   Binary,   "Dummy", [[ ]])
 * insert Instance_Empty(Reply5,   Binary,   "Dummy",  [[ ]])
