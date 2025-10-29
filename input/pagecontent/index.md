@@ -15,19 +15,19 @@ Genomic Testing Workflow is part of Diagnostic Testing, which is also part of th
 ```mermaid
 graph TD;
 
-    A[Assessment]-->|Observation| B;
-    A--> O;
+    A[Assessment]-->|Creates Observations| B;
+    A--> |Needs| O;
     B[Diagnosis]-->|Condition| C;
     O[Diagnostic Testing]--> T;
     T[Ordering Tests<br/>Genomics Test Order Form]--> |"laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
-    T --> S
-    S[Specimen Collection] --> AN;
-    AN["Analyzing results<br/>Genomics Test Report"] --> |further tests <br/> reflex order| T;
-    AN --> |"laboratory or imaging report - LAB-3<br/>HL7 v2 ORU_R01"| B;
+    T --> |Asks for| S
+    S[Specimen Collection] --> |Sends Specimen| AN;
+    AN["Analyzing results<br/>Genomics Test Report"] --> |Requests further tests <br/> reflex order| T;
+    AN --> |"Creates laboratory or imaging report - LAB-3<br/>HL7 v2 ORU_R01"| B;
     AN --> |laboratory or imaging report| A;
-    C[Plan]-->|Goal| D;
-    D[Implement/Interventions]-->|Task| E;
-    E[Evaluate]-->A;
+    C[Plan]-->|Creates Goals and Tasks| D;
+    D[Implement/Interventions]-->|Actions Tasks| E;
+    E[Evaluate]--> |Reviews Care| A;
     
     click T Questionnaire-GenomicTestOrder.html
     click AN Questionnaire-GenomicTestReport.html
