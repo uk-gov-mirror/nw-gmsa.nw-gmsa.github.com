@@ -35,18 +35,18 @@ Usage: #definition
   * title = "Create Diagnostic Testing Report"
   * description = "This step creates the [Genomics Test Report](Questionnaire-GenomicTestReport.html)"
   * preConditions = "Genomic Testing has Completed"
-  * insert ProcessCreateEvent(1, "Variant is added to Genomic CDR", diagnostics, cdr, Request1 ,  , [[This step is performed by middleware - RIE]])
-  * insert ProcessCreateEvent(2, "Diagnostic Implication is added to Genomic CDR", diagnostics, cdr, Request2 ,  , [[This step is performed by middleware - RIE]])
+  * insert ProcessCreateEvent(1, "Variant NTHL1 is added to Genomic CDR", diagnostics, cdr, Request1 ,  , [[This step is performed by middleware - RIE]])
+  * insert ProcessCreateEvent(2, "Diagnostic Implication Lynch Syndrome is added to Genomic CDR", diagnostics, cdr, Request2 ,  , [[This step is performed by middleware - RIE]])
 
 * process[+]
   * title = "Review Diagnostic Testing Report"
   * description = "This step reviews the [Genomics Test Report](Questionnaire-GenomicTestReport.html)"
   * preConditions = "Genomic Testing Received has been received"
-  * insert ProcessCreateEvent(3, "Condition is added to Acute or Primary Care EPR", consultant, epr, Request3 ,  , [[This step is assumed to be a manual entry]])
+  * insert ProcessCreateEvent(3, "Condition Lynch Syndrome is added to Acute or Primary Care EPR", consultant, epr, Request3 ,  , [[This step is assumed to be a manual entry]])
 
 * process[+]
   * title = "Perform Genomic Counselling"
   * description = "This step acts on the [Genomics Test Report](Questionnaire-GenomicTestReport.html)"
   * preConditions = "A Task has been received to perform Genomic Counselling"
-  * insert ProcessCreateEvent(4, "Relations + clinical history are documented via a Pedigree chart", counsellor, cdr, Request4 ,  , [[Probably Gen-O]])
-  * insert ProcessCreateEvent(5, "Relations + clinical history are documented via a Pedigree chart", counsellor, cdr, Request5 ,  , [[Probably Gen-O]])
+  * insert ProcessCreateEvent(4, "Family History for Son Leeds is added to Genomic CDR ", counsellor, cdr, Request4 ,  , [[Probably Gen-O]])
+  * insert ProcessCreateEvent(5, "Family History for Mother Nottingham is added to Genomic CDR", counsellor, cdr, Request5 ,  , [[Probably Gen-O]])
