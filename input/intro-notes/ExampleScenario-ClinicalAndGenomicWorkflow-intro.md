@@ -9,7 +9,7 @@ graph TD;
     DiagnosticReport --> |Contains Variant and DiagnosticImplication| GeneticCounseling[fas:fa-user-md Genetic Counseling]
     DiagnosticReport --> |What do they need?| Oncologist[fas:fa-user-md Oncologist]
 
-    Consultant --> |Records Condition| EPR
-    GeneticCounseling --> |Records FamilyMemberHistory| GenomicCDR[Genomic Clinical Data Repository]
+    Consultant --> |Records Condition| EPR["<i class='fa fa-database'></i> Electronic Patient Record"]
+    GeneticCounseling --> |Records FamilyMemberHistory| GenomicCDR["<i class='fa fa-database'></i> Genomic Clinical Data Repository"]
     Consultant --> |Asks for Genetic Counseling on Genetic Condition?| GeneticCounseling
 ```
