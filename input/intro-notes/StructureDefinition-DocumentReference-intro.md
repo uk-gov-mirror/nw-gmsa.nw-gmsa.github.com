@@ -1,3 +1,4 @@
+
 ## Reference Standards
 
 * [IHE Europe Document Metadata](https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf) (this contains references to NHS England terminology)
@@ -6,6 +7,14 @@
 * [HL7 UK Core](https://simplifier.net/hl7fhirukcorer4/ukcore-documentreference)
 
 ## XDS DocumentEntry and MHD (FHIR) DocumentReference Mapping  
+
+
+<div class="alert alert-info" role="alert">
+<b>HL7 v2 Segment:</b> <a href="hl7v2.html#txa" _target="_blank">TXA</a>
+</div>
+<div class="alert alert-info" role="alert">
+<b>HL7 v2 Segment:</b> <a href="hl7v2.html#obx-type--ed" _target="_blank">OBX type ED</a>
+</div>
 
 For HL7 v2 MDM T02, see [HL7 v2 MDM T02 Mapping](https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-message-mdm-t02-to-bundle.html) 
 

@@ -6,13 +6,6 @@ Description:    """
 Reference:
 [IHE Europe Metadata for exchange medical documents and images](https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf)
 
-<div class="alert alert-info" role="alert">
-<b>HL7 v2 Segment:</b> <a href="hl7v2.html#txa" _target="_blank">TXA</a>
-</div>
-<div class="alert alert-info" role="alert">
-<b>HL7 v2 Segment:</b> <a href="hl7v2.html#obx-type--ed" _target="_blank">OBX type ED</a>
-</div>
-
 """
 
 * identifier 1..* MS
