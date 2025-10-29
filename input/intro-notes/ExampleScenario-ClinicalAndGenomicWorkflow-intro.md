@@ -10,7 +10,7 @@ graph TD;
     DiagnosticReport --> |What do they need?| Oncologist[fas:fa-user-md Oncologist]
     DiagnosticReport --> |Persisted| GenomicCDR
 
-    Consultant --> |"Records Condition (from Diagnostic Implication)"| EPR["<i class='fa fa-database'></i> Electronic Patient Record"]
-    GeneticCounseling --> |Records FamilyMemberHistory| GenomicCDR["<i class='fa fa-database'></i> Genomic Clinical Data Repository"]
+    Consultant --> |"Records Condition (from Diagnostic Implication)"| EPR["Electronic Patient Record"]
+    GeneticCounseling --> |Records FamilyMemberHistory| GenomicCDR["Genomic Clinical Data Repository"]
     Consultant --> |Asks for Genetic Counseling on Genetic Condition?| GeneticCounseling
 ```
