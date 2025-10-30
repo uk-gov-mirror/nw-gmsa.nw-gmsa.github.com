@@ -89,9 +89,10 @@ graph TD;
     Performs --> Discharge[Discharges Patient]
     Performs --> |Sends Specimen| DiagnosticTesting
     Discharge --> |Discharge Letter| Patient["fas:fa-user Patient"]
-    Discharge --> |Discharge Letter| GP["fas:fa-user-md GP"]
+    Discharge --> |Send Discharge Letter| GP["fas:fa-user-md GP"]
     Discharge --> |"Record procedure (as completed)"| EPR["fas:fa-database <i>Electronic Patient Record</i>"]
-    Discharge --> |Visit Notification| Consultant[fas:fa-user-md Consultant]
+    Discharge --> |Send Visit Notification| Consultant[fas:fa-user-md Consultant]
+    GP --> |"Store Discharge Letter"| GPEPR["fas:fa-database <i>GP Electronic Patient Record</i>"]
 ```
 
 A detailed example of this process can be found in the [Example Scenario - Collect Specimen](ExampleScenario-BiopsyProcedure.html).
