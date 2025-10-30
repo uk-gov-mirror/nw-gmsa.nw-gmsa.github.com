@@ -48,3 +48,13 @@ Example search results for a Genomic Variant Gene = `NTHL1`
 Usage: #example
 * insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Observation?combo-code=http://loinc.org|48018-6&combo-code-value-concept=NTHL1]])
 * insert EntryMatch(Observation, 8385c2fd-313d-4fd5-b98e-d5ea4bae6f99)
+
+Instance: 92a0a6c6-404f-4347-8de4-fa1c457a037e
+InstanceOf: Bundle
+Title:       "Bundle - Genomic Diagnostic Implication for a Patient QEDm"
+Description: """
+Example search results for a Genomic Diagnostic Implication for a Patient
+"""
+Usage: #example
+* insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Observation?code=diagnostic-implication&patient=Patient-Liverpool]])
+* insert EntryMatch(Observation, 6beb613f-d303-42af-b025-86e8e0872061)

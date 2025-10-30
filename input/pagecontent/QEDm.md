@@ -197,22 +197,33 @@ GET [base]/Observation?[parameter]=[value]]
 | date         | date      | GET [base]/Observation?date=[date]                     | Obtained date/time. If the obtained element is a period, a date that falls in the period                  |
 | combo-code         | token     | GET [base]/Observation?combo-code=[system&#124;][code]       | The code of the observation type or component type                                                        |
 
-#### Example
+#### Examples
 
 Searching for an [Variant](StructureDefinition-Observation-Variant.html) Observation by code.
-
 ```
 GET [base]/Observation?code=http://loinc.org|69548-6&patient=Patient-Liverpool
 Accept: application/fhir+json
 ```
 [Response](Bundle-187a20ef-9b81-4c83-84f7-140c210f8706.json.html)
 
-Searching for a [Variant](StructureDefinition-Observation-Variant.html) Observation with a specific gene (LOINC 48018-6 - Gene studied [ID]) of `NTHL1`.
+---
 
+Searching for a [Variant](StructureDefinition-Observation-Variant.html) Observation with a specific gene (LOINC 48018-6 - Gene studied [ID]) of `NTHL1`.
 ```
 GET [base]/Observation?combo-code=http://loinc.org|48018-6&combo-code-value-concept=NTHL1
 Accept: application/fhir+json
 ```
+[Response](Bundle-187a20ef-9b81-4c83-84f7-140c210f8706.json.html)
+
+---
+
+Searching for a [Diagnostic Implication](StructureDefinition-Observation-DiagnosticImplication.html) Observation by code.
+```
+GET [base]/Observation?code=diagnostic-implication&patient=Patient-Liverpool
+Accept: application/fhir+json
+```
+[Response](Bundle-92a0a6c6-404f-4347-8de4-fa1c457a037e.json.html)
+
 
 ## Patient
 
