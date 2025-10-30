@@ -72,7 +72,7 @@ A detailed example of this process can be found in the [Example Scenario - Clini
 
 ### Specimen Collection
 
-Specimen collection (collecting blood, performing biopsy, etc) is not performed by a Genomics service, and this shows how genomics fits into that process.
+Specimen collection is not performed by a Genomics service, and this shows how genomics fits into that process. The diagram here is around a biopsy procedure, but the same principles apply to other specimen collection procedures.
 
 ```mermaid
 graph TD;
