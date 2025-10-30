@@ -37,6 +37,65 @@ In the North West region the HIE systems are:
     - Greater Manchester Care Record
     - NW GMSA Clinical Data Repository
 
+## Read Genomic Laboratory Report
+
+```mermaid
+graph TD;
+    Read[Read Genomic Laboratory Report]-->O
+    O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
+    O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
+    O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
+    
+    classDef yellow fill:#FFF2CC;
+    class CDR yellow;
+```
+
+The APIs for accessing genomic laboratory reports from EHR using FHIR REST are outside the scope of this Implementation Guide and are detailed in supplier-specific implementation guides, such as:
+
+- [EPIC on FHIR](https://fhir.epic.com/)
+- [Meditech FHIR](https://fhir.meditech.com/)
+- [FHIR R4 APIs for Oracle Health Millennium Platform](https://docs.oracle.com/en/industries/health/millennium-platform-apis/mfrap/r4_overview.html)
+
+The Regional Clinical Data Repository (CDR) will adopt a similar FHIR RESTful approach to that used by Electronic Health Records (EHRs), and will also conform to [IHE Query for Existing Data for Mobile (QEDm)](https://build.fhir.org/ig/IHE/QEDm/branches/master/index.html) and [IHE Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html)
+
+
+## Read Laboratory Order
+
+```mermaid
+graph TD;
+    Read[Consumer]--> |Read Genomic Laboratory Order| O
+    O{options} --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
+    O --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust EPR<br/>EHR] 
+    classDef yellow fill:#FFF2CC;
+    class CDR yellow;
+```
+
+
+### Genomic Report Notification and Read Report (Future?)
+
+In the future, an alternative messaging approach using [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/index.html) and Event Notifications is expected to be supported.
+The outline of this approach is shown below and is related to a similar approach used by [NHS England Pathology FHIR specification](https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dapb4101-pathology-and-laboratory-medicine-reporting-information-standard/implementation/pathology-fhir-specification#architecture)
+
+```mermaid
+graph TD;
+
+    LIMS[Genomics<br/>LIMS] --> |" HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine];
+    RIE --> |"Sends HL7 FHIR R4<br/>Message R01"| CDR[NW Genomics<br/>Clinical Data Repository]
+    CDR --> |Publish Report Event| SUB[FHIR Subscription<br/>Event-Notifications]
+    SUB --> |Deliver Report Event| EPR["Recipient<br/>e.g. GP Foundation System"]
+    EPR --> |Get Report| CDR
+   
+    classDef yellow fill:#FFF2CC;
+    classDef green fill:#D5E8D4;
+    classDef blue fill:#DAE8FC;
+
+    class RIE green;
+    class EPR green;
+    class CDR yellow;
+    class SUB blue;
+```
+
+
 ### Publish a Document
 
 <figure>

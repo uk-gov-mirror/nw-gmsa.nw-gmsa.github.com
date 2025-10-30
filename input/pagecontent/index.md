@@ -49,21 +49,10 @@ graph TD;
     class O,S,T,AN purple
 ```
 
-### Diagnostic Testing Workflow
-
-
 Genomic diagnostic testing follows the same standardized process defined by the [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow) used in traditional laboratory testing.
 This workflow has been enhanced to support the sharing of laboratory reports (documents) through Integrated Care Systems (ICS). In addition, a new mechanism for sharing laboratory reports has been introduced to establish a regional genomic data repository.
 
-<img style="padding:3px;width:70%;" src="Standardising Health.drawio.png" alt="Process Orientated Interoperability"/>
-<br clear="all">
-<p class="figureTitle">Diagnostic Testing Workflow</p> 
-<br clear="all">
-
-Together, the ICS document sharing and regional data repositories represent new methods of exchanging genomic data, building upon the traditional HL7 v2 messaging approach.
-
 ## How to Read this IG
-
 
 <table >
   <thead>
@@ -91,7 +80,7 @@ Together, the ICS document sharing and regional data repositories represent new 
       <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
       <td>Domain Archetype (Volume 3)</td>
       <td>NHS North West Forms, Templates, Reports and Compositions</td>
-      <td>Detailed Technical (Data Modelling)</td>
+      <td>Data Modeling (Detailed Technical)</td>
     </tr>
     <tr>
       <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
@@ -108,140 +97,26 @@ Together, the ICS document sharing and regional data repositories represent new 
   </tbody>
 </table>
 
-## Technical Overview
+| Analysis and Design                                    | Interfaces                                                                                                                 | Domain Archetype                                                        | Artefacts                             |
+|--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------|
+| [Send Laboratory Order (LTW)](LTW.html)                | HL7 FHIR [LAB-1](LAB-1.html)                                                                                               | [North West Genomics Test Order](Questionnaire-GenomicTestOrder.html)   |                                       |
+| [Send Laboratory Report Data (LTW)](LTW.html)          | HL7 FHIR [LAB-3](LAB-3.html) and HL7 v2 ORU [LAB-3](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message) | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) |                                       |
+| [Send Laboratory Report Document (HIE)](HIE.html)      | HL7 v2 MDM [LAB-3](hl7v2.html#mdm_t02-original-document-notification-and-content)                                          | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) |                                       |
+| [Read Laboratory Order or Report Data (HIE)](HIE.html) | HL7 FHIR [QEDm](QEDm.html)                                                                                                 | | [Resource Profiles](artifacts.html#7) |                                                              | 
+| [Read Laboratory Report Documents (HIE)](HIE.html)     | HL7 FHIR [MHD](MHD.html)                                                                                                   | | [Resource Profiles](artifacts.html#7) | 
 
-### Read Genomic Laboratory Report
+## Data Modelling
 
-```mermaid
-graph TD;
-    Read[Read Genomic Laboratory Report]-->O
-    O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
-    O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
-    O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
-    
-    classDef yellow fill:#FFF2CC;
-    class CDR yellow;
-```
-
-The APIs for accessing genomic laboratory reports from EHR using FHIR REST are outside the scope of this Implementation Guide and are detailed in supplier-specific implementation guides, such as:
-
-- [EPIC on FHIR](https://fhir.epic.com/)
-- [Meditech FHIR](https://fhir.meditech.com/)
-- [FHIR R4 APIs for Oracle Health Millennium Platform](https://docs.oracle.com/en/industries/health/millennium-platform-apis/mfrap/r4_overview.html)
-
-The Regional Clinical Data Repository (CDR) will adopt a similar FHIR RESTful approach to that used by Electronic Health Records (EHRs), and will also conform to [IHE Query for Existing Data for Mobile (QEDm)](https://build.fhir.org/ig/IHE/QEDm/branches/master/index.html) and [IHE Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html)   
-
-### Receive Genomic Laboratory Report
-
-```mermaid
-graph TD;
-    Receive["Diagnostic Testing (LIMS)"] --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
-    RIE --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| TIE[Middleware<br/>Acute Hospitals<br/>Trust Integration Engine] 
-    TIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
-    RIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
-    RIE --> |"Sends FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
-    RIE --> |Sends HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
-    RIE --> |Sends HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
-    CDR --> |Sends FHIR Event Notification| Any["Any <br/>(future)"]
-
-    classDef green fill:#D5E8D4;
-    classDef yellow fill:#FFF2CC;
-    class RIE green;
-    class TIE green;
-    class CDR yellow;
-```
-
-To enable viewing of Genomic Laboratory Reports within an NHS Trust EHR or an ICS Document Repository, the report must first be received through HL7 v2 ORU or MDM messaging.
-
-### Genomic Report Notification and Read Report (Future?)
-
-In the future, an alternative messaging approach using [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/index.html) and Event Notifications is expected to be supported. 
-The outline of this approach is shown below and is related to a similar approach used by [NHS England Pathology FHIR specification](https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dapb4101-pathology-and-laboratory-medicine-reporting-information-standard/implementation/pathology-fhir-specification#architecture)
-
-```mermaid
-graph TD;
-
-    LIMS[Genomics<br/>LIMS] --> |" HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine];
-    RIE --> |"Sends HL7 FHIR R4<br/>Message R01"| CDR[NW Genomics<br/>Clinical Data Repository]
-    CDR --> |Publish Report Event| SUB[FHIR Subscription<br/>Event-Notifications]
-    SUB --> |Deliver Report Event| EPR["Recipient<br/>e.g. GP Foundation System"]
-    EPR --> |Get Report| CDR
-   
-    classDef yellow fill:#FFF2CC;
-    classDef green fill:#D5E8D4;
-    classDef blue fill:#DAE8FC;
-
-    class RIE green;
-    class EPR green;
-    class CDR yellow;
-    class SUB blue;
-```
-
-### Read Laboratory Order
-
-```mermaid
-graph TD;
-    Read[Consumer]--> |Read Genomic Laboratory Order| O
-    O{options} --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
-    O --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust EPR<br/>EHR] 
-    classDef yellow fill:#FFF2CC;
-    class CDR yellow;
-```
-
-### Send Laboratory Order
-
-```mermaid
-graph TD;
-    Receive["Diagnostic Testing (LIMS)"] --> |Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
-    Receive --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| RIE
-    OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine] 
-    RIE --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| CDR[NW Genomics<br/>Clinical Data Repository]
-    CDR --> |Send FHIR Event Notification| Any["Any <br/>(future)"]
-    RIE --> |"Send Genomic Laboratory Order<br/>HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
-    RIE --> |"Send Genomic Laboratory Order<br/>FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
-    
-    classDef green fill:#D5E8D4;
-    classDef yellow fill:#FFF2CC;
-    class RIE green;
-    class OR green;
-    class CDR yellow;
-```
-
-## Detailed Technical Overview
-
-This Implementation Guide is implemented in the Regional Integration Engine (RIE)
-
-<figure>
-{%include RIE-component.svg%}
-<p id="fX.X.X.X-X" class="figureTitle">Regional Integration Engine Scope</p>
-</figure>
-<br clear="all">
-
-This guide follows [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow), which describes how to use HL7 v2 orders and reports at an enterprise level. It will contain several modifications in order to support HL7 [FHIR Messasging](https://hl7.org/fhir/R4/messaging.html), these messages will be closely related to HL7 v2 Messages to help with adoption.
-For documentation purposes, HL7 v2 version used will be 2.5.1 (this also matches NHS England FHIR Genomics, HL7 International v2 standards around structured Genomic reporting and Digital Health and Care Wales standards around ORU_R01)
-
-It also brings in both data and workflow requirements from a variety of other guides.
+The data model used in this guide is a combination of data and workflow requirements from a variety of other guides.
 
 <img style="padding:3px;width:70%;" src="GenomicsIG.drawio.png" alt="North West GMSA IG"/>
 <br clear="all">
 <p class="figureTitle">North West GMSA IG</p> 
 <br clear="all">
 
-### GLH Regional Integration Engine (GLH RIE)
-
-This implementation guide will be supported by a **Genomics Regional Integration Engine (RIE)** which will:
-
-- [Message Routing](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageRouter.html) to deliver orders and reports to the regional GLH (and in the future national GLH's).
-- [Message Translation](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageTranslator.html) to 
-  - LAB-1 converts HL7 FHIR based orders to HL7 v2 Messages (for Order Placer (local GLH))
-  - LAB-3 converts HL7 v2 based results (from Order Placer (local GLH)) to HL7 FHIR Messages
-- [Message Bridge](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessagingBridge.html) between regional Trust Integration Engines (TIE)/GLH Laboratory Information System (LIMS) and the national Genomic Order Management Service (LAB-4 and LAB-5)
-- May contain a Structured Reporting [Message Translation](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageTranslator.html) to convert HL7 v2 ORU_R01 structured reports to a [HL7 Europe Laboratory Report](https://build.fhir.org/ig/hl7-eu/laboratory/) to replace the use of PDF reports.
-
-### Testing 
+## Testing 
 
 This implementation guide will also enable use of FHIR Testing tools such as [Command Line FHIR Validation](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator) and [Online FHIR Validation](https://validator.fhir.org/)
-
 
 ## SNOMED CT
 

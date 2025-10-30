@@ -58,8 +58,26 @@ From a high level perspective the process is
 
 Where the `Order Placer` sends the **Laboratory Order** to the `Order Filler`, the lab performs the test and then sends the **Laboratory Report** back to the `Order Placer`. However, variations can exist such as the order is updated or the order is entered directly on the `Order Filler`system (these are currently out of scope).
 
+## Laboratory Order (LAB-1)
 
-## Use Case: Genomic Test Order
+```mermaid
+graph TD;
+    Receive["Diagnostic Testing (LIMS)"] --> |Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
+    Receive --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| RIE
+    OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine] 
+    RIE --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| CDR[NW Genomics<br/>Clinical Data Repository]
+    CDR --> |Send FHIR Event Notification| Any["Any <br/>(future)"]
+    RIE --> |"Send Genomic Laboratory Order<br/>HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
+    RIE --> |"Send Genomic Laboratory Order<br/>FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
+    
+    classDef green fill:#D5E8D4;
+    classDef yellow fill:#FFF2CC;
+    class RIE green;
+    class OR green;
+    class CDR yellow;
+```
+
+### Use Case: Genomic Test Order
 
 An order is created by the clinical practice and placed to the laboratory.
 
@@ -70,7 +88,7 @@ An order is created by the clinical practice and placed to the laboratory.
 </figure>
 <br clear="all">
 
-### Select Genomic Test Order Form
+#### Select Genomic Test Order Form
 
 Within the system creating the genomics order, the practitioner will select a form for the test required. Below are several examples from [North West Genomic Laboratory Hub - Test Request Forms](https://mft.nhs.uk/nwglh/documents/test-request-forms/).
 How this is implemented will vary between different NHS organisations and systems they use.
@@ -88,7 +106,7 @@ How this is implemented will vary between different NHS organisations and system
   </tr>
 </table>
 
-### Complete Genomic Test Order Form
+#### Complete Genomic Test Order Form
 
 These forms may (/will?) will have a computable definition called an [template (FHIR Questionnaire)](https://hl7.org/fhir/R4/questionnaire.html) which will list the technical content requirements for the form. At present only one archetype has been defined:
 
@@ -96,7 +114,7 @@ These forms may (/will?) will have a computable definition called an [template (
 
 This archetype definition can also support [HL7 Structured Data Capture](https://build.fhir.org/ig/HL7/sdc/index.html) should the Order Placer system support these features.
 
-### Submit Genomic Test Order Form
+#### Submit Genomic Test Order Form
 
 The completed form is submitted to the Regional Integration Engine using:
 
@@ -150,16 +168,115 @@ The detail of this form/template defines:
 
 > It is not expected the NW GLH Laboratory Information Management System (LIMS) will support UK SNOMED CT, and the RIE will handle the conversion either internally using [FHIR ConceptMap](https://hl7.org/fhir/R4/conceptmap.html) or a terminology service with the following capabilities [IHE Sharing Valuesets, Codes, and Maps (SVCM)](https://profiles.ihe.net/ITI/SVCM/index.html)
 
-### Collect Sample and Update Genomic Test Order
+#### Collect Sample and Update Genomic Test Order
 
 After submitting the original order, the sample will be collected and sent to the Order Filler. The Order Filler will update the Test Order to include details such as a specimen collection date, order filler number, etc.
 
-## Use Case: Genomic Test Report
+### Use Case: Genomic Test Order following on from Pathology Test Order
+
+<img style="padding:3px;width:95%;" src="LTW Use Case 3.drawio.png" alt="Genomic LTW Business Process - Use Case 3"/>
+<br clear="all">
+<p class="figureTitle">Genomic LTW Business Process - Use Case 3</p> 
+<br clear="all">
+
+In this use case the original order is raised by the `Order Placer` and sent to a Pathology LIMS (`Pathology Order Filler`). The Pathology LIMS follows the processes outlined in [Use Case 1: Genomic Test Order](#use-case-genomic-test-order) and [Use Case 2: Genomic Test Report](#use-case-genomic-test-report) for pathology testing.  
+As part of this testing, the clinical process requires a genomics test to be performed.
+This genomics process is largely the same except for:
+- The order is sent as one interaction as the sample does not need to be collected.
+- The order should contain the pathology report detailing the results of the pathology tests.
+
+<figure>
+{%include LTW-usecase-3-sequence.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Multiple Diagnostic Tests - LAB-1 and LAB-3</p>
+</figure>
+<br clear="all">
+
+#### Main Process Flow
+
+- Initial Laboratory Order
+    - Step 1: The Order Placer submits a Laboratory Order O21 (LAB-1) to Order Filler (Pathology).
+    - Step 2: Order Filler (Pathology) sends back a Laboratory Report R01 (LAB-3).
+    - Note: As required by local clinical guidelines, this step can also include imaging orders.
+- Optional Path 1 – Genomic Order created by original order placer
+    - Condition: [Genomic Order created by original order placer].
+    - Note: The same specimen can be reused for multiple tests.
+    - Step 3: Order Placer submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
+    - Step 4: Specimen is sent from Order Placer to Genomics.
+    - Step 5: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) back to the Order Placer.
+- Optional Path 2 – Genomic Order created by Pathology
+    - Condition: [Order Filler (Pathology) creates Genomic Order].
+    - Note: The same specimen can be reused for multiple tests.
+    - Step 6: Order Filler (Pathology) submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
+    - Step 7: Specimen is sent from Pathology to Genomics.
+    - Step 8: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) to Order Filler (Pathology).
+    - Step 9: Pathology sends the Genomic Report R01 (LAB-3) to the Order Placer.
+
+#### Diagnostic Cancer Pathways
+
+This use case can often occur around cancer:
+
+<img style="padding:3px;width:20%;" src="cancer-diagnostics.png" alt="Cancer Diagnostics"/>
+<br clear="all">
+<p class="figureTitle">Cancer Diagnostics</p> 
+<br clear="all">
+
+##### Colorectal Cancer—Diagnostic Pathways Example
+
+The details of this are beyond the scope of this guide, for more details see [Getting It Right First Time (GIRFT) Best Practice Timed Diagnostic Cancer pathways ](https://gettingitrightfirsttime.co.uk/wp-content/uploads/2024/03/BestPracticeTimedDiagnosticCancerPathwayssummary-guide-March-24-V3.pdf)
+
+For information on `Genomic Tests on the bowel cancer cells`, see [macmillan.org.uk](https://www.macmillan.org.uk/cancer-information-and-support/bowel-cancer/tests-on-the-bowel-cancer-cells) and [NICE DG27 Molecular testing strategies for Lynch syndrome in people with colorectal cancer](https://www.nice.org.uk/guidance/dg27)
+
+<img style="padding:3px;width:90%;" src="ERIC.drawio.png" alt="Colorectal Cancer Diagnostics and Patient Referrals"/>
+<br clear="all">
+<p class="figureTitle">Colorectal Cancer Diagnostics and Patient Referrals</p> 
+<br clear="all">
+
+
+#### Relationship to NHS England Pathology
+
+This guide builds on the use cases described in the [NHS England Pathology FHIR Implementation Guide](https://simplifier.net/guide/pathology-fhir-implementation-guide/Home/Design/Background), extending them to support a wider range of stakeholders and introducing standards for the Laboratory Order LAB-1.
+
+Key differences include:
+
+- **Workflow foundation:** The [IHE Laboratory and Testing Worflow LTW](https://www.ihe.net/uploadedFiles/Documents/PaLM/IHE_PaLM_TF_Vol1.pdf) is used as the reference model for describing laboratory testing processes.
+- **Order Placer role:** The GP Electronic Patient Record (EPR) System and the Order Communications System together form the Order Placer role, which may also be fulfilled by other EPR systems.
+- **Intermediary between Order Placer and Order Filler:** This intermediary performs message translation and code conversion.
+- **Order Result Tracker role:** For results, the GP EPR System acts as the Order Result Tracker, though other systems (e.g. Secondary Care EPR) can provide this function.
+- **Intermediary between Order Filler and Order Result Tracker:** This intermediary also handles message translation and code conversion.
+- **Canonical model:** A standardised model ([Canonical model](https://en.wikipedia.org/wiki/Canonical_model)), expressed in HL7 FHIR, that can be implemented using HL7 v2, FHIR, and IHE XDS. It aligns with the latest HL7 UK Core and NHS England Data Model and Dictionary. While primarily focused on genomics, it incorporates elements from pathology and radiology for compatibility, and mandates the use of NHS England National Procedure Codes.
+
+<img style="padding:3px;width:95%;" src="Relationship to NHS England Pathology.drawio.png" alt="Relationship to NHS England Pathology"/>
+<br clear="all">
+<p class="figureTitle">Relationship to NHS England Pathology</p> 
+<br clear="all">
+
+
+## Laboratory Report (LAB-3)
+
+```mermaid
+graph TD;
+    Receive["Diagnostic Testing (LIMS)"] --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
+    RIE --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| TIE[Middleware<br/>Acute Hospitals<br/>Trust Integration Engine] 
+    TIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
+    RIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
+    RIE --> |"Sends FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
+    RIE --> |Sends HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
+    RIE --> |Sends HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
+    CDR --> |Sends FHIR Event Notification| Any["Any <br/>(future)"]
+
+    classDef green fill:#D5E8D4;
+    classDef yellow fill:#FFF2CC;
+    class RIE green;
+    class TIE green;
+    class CDR yellow;
+```
+
+### Use Case: Genomic Test Report
 
 A report is created by the clinical practice and sent to the order result tracker.
 
 
-### Genomic Test Report Description
+#### Genomic Test Report Description
 
 <figure>
 {%include LTW-usecase-2-activity.svg%}
@@ -167,7 +284,7 @@ A report is created by the clinical practice and sent to the order result tracke
 </figure>
 <br clear="all">
 
-### Send/Share Genomic Test Report
+#### Send/Share Genomic Test Report
 
 
 <img style="padding:3px;width:95%;" src="LaboratoryReportExplainedPage1.drawio.png" alt="Genomic Report Page 1"/>
@@ -188,7 +305,7 @@ A report is created by the clinical practice and sent to the order result tracke
 </figure>
 <br clear="all">
 
-### Main Process Flow
+#### Main Process Flow
 
 - Optional Preliminary Report Stage
   - Perform Diagnostic Test → Write Preliminary Report (Order Filler).
@@ -243,83 +360,6 @@ Key differences include:
 <br clear="all">
 
 
-## Use Case: Genomic Test Order following on from Pathology Test Order
-
-<img style="padding:3px;width:95%;" src="LTW Use Case 3.drawio.png" alt="Genomic LTW Business Process - Use Case 3"/>
-<br clear="all">
-<p class="figureTitle">Genomic LTW Business Process - Use Case 3</p> 
-<br clear="all">
-
-In this use case the original order is raised by the `Order Placer` and sent to a Pathology LIMS (`Pathology Order Filler`). The Pathology LIMS follows the processes outlined in [Use Case 1: Genomic Test Order](#use-case-genomic-test-order) and [Use Case 2: Genomic Test Report](#use-case-genomic-test-report) for pathology testing.  
-As part of this testing, the clinical process requires a genomics test to be performed.
-This genomics process is largely the same except for:
-- The order is sent as one interaction as the sample does not need to be collected.
-- The order should contain the pathology report detailing the results of the pathology tests.
-
-<figure>
-{%include LTW-usecase-3-sequence.svg%}
-<p id="fX.X.X.X-X" class="figureTitle">Multiple Diagnostic Tests - LAB-1 and LAB-3</p>
-</figure>
-<br clear="all">
-
-### Main Process Flow
-
-- Initial Laboratory Order
-  - Step 1: The Order Placer submits a Laboratory Order O21 (LAB-1) to Order Filler (Pathology).
-  - Step 2: Order Filler (Pathology) sends back a Laboratory Report R01 (LAB-3).
-  - Note: As required by local clinical guidelines, this step can also include imaging orders.
-- Optional Path 1 – Genomic Order created by original order placer
-  - Condition: [Genomic Order created by original order placer].
-  - Note: The same specimen can be reused for multiple tests.
-  - Step 3: Order Placer submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
-  - Step 4: Specimen is sent from Order Placer to Genomics.
-  - Step 5: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) back to the Order Placer.
-- Optional Path 2 – Genomic Order created by Pathology
-  - Condition: [Order Filler (Pathology) creates Genomic Order].
-  - Note: The same specimen can be reused for multiple tests.
-  - Step 6: Order Filler (Pathology) submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
-  - Step 7: Specimen is sent from Pathology to Genomics.
-  - Step 8: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) to Order Filler (Pathology).
-  - Step 9: Pathology sends the Genomic Report R01 (LAB-3) to the Order Placer.
-
-### Diagnostic Cancer Pathways 
-
-This use case can often occur around cancer:
-
-<img style="padding:3px;width:20%;" src="cancer-diagnostics.png" alt="Cancer Diagnostics"/>
-<br clear="all">
-<p class="figureTitle">Cancer Diagnostics</p> 
-<br clear="all">
-
-#### Colorectal Cancer—Diagnostic Pathways Example
-
-The details of this are beyond the scope of this guide, for more details see [Getting It Right First Time (GIRFT) Best Practice Timed Diagnostic Cancer pathways ](https://gettingitrightfirsttime.co.uk/wp-content/uploads/2024/03/BestPracticeTimedDiagnosticCancerPathwayssummary-guide-March-24-V3.pdf)
-
-For information on `Genomic Tests on the bowel cancer cells`, see [macmillan.org.uk](https://www.macmillan.org.uk/cancer-information-and-support/bowel-cancer/tests-on-the-bowel-cancer-cells) and [NICE DG27 Molecular testing strategies for Lynch syndrome in people with colorectal cancer](https://www.nice.org.uk/guidance/dg27)   
-
-<img style="padding:3px;width:90%;" src="ERIC.drawio.png" alt="Colorectal Cancer Diagnostics and Patient Referrals"/>
-<br clear="all">
-<p class="figureTitle">Colorectal Cancer Diagnostics and Patient Referrals</p> 
-<br clear="all">
-
-
-### Relationship to NHS England Pathology
-
-This guide builds on the use cases described in the [NHS England Pathology FHIR Implementation Guide](https://simplifier.net/guide/pathology-fhir-implementation-guide/Home/Design/Background), extending them to support a wider range of stakeholders and introducing standards for the Laboratory Order LAB-1.
-
-Key differences include:
-
-- **Workflow foundation:** The [IHE Laboratory and Testing Worflow LTW](https://www.ihe.net/uploadedFiles/Documents/PaLM/IHE_PaLM_TF_Vol1.pdf) is used as the reference model for describing laboratory testing processes.
-- **Order Placer role:** The GP Electronic Patient Record (EPR) System and the Order Communications System together form the Order Placer role, which may also be fulfilled by other EPR systems.
-- **Intermediary between Order Placer and Order Filler:** This intermediary performs message translation and code conversion.
-- **Order Result Tracker role:** For results, the GP EPR System acts as the Order Result Tracker, though other systems (e.g. Secondary Care EPR) can provide this function.
-- **Intermediary between Order Filler and Order Result Tracker:** This intermediary also handles message translation and code conversion.
-- **Canonical model:** A standardised model ([Canonical model](https://en.wikipedia.org/wiki/Canonical_model)), expressed in HL7 FHIR, that can be implemented using HL7 v2, FHIR, and IHE XDS. It aligns with the latest HL7 UK Core and NHS England Data Model and Dictionary. While primarily focused on genomics, it incorporates elements from pathology and radiology for compatibility, and mandates the use of NHS England National Procedure Codes.
-
-<img style="padding:3px;width:95%;" src="Relationship to NHS England Pathology.drawio.png" alt="Relationship to NHS England Pathology"/>
-<br clear="all">
-<p class="figureTitle">Relationship to NHS England Pathology</p> 
-<br clear="all">
 
 
 ## Use Case: Work Order Management 
