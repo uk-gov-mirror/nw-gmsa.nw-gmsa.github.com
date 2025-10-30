@@ -62,8 +62,11 @@ graph TD;
     GenomicCDR --> |Reads Variant and DiagnosticImplication| GeneticCounseling[fas:fa-user-md Genetic Counseling]
     DiagnosticReport --> |Reads Genomic Study and Variant| Oncologist[fas:fa-user-md Oncologist]
     DiagnosticReport --> |Is Persisted| GenomicCDR
+    DiagnosticReport --> |"Reads DiagnosticImplication (Condition) and Variant (Gene)"| Patient[fas:fa-user Patient]
 
     Consultant --> |"Records Condition (from Diagnostic Implication)"| EPR[fas:fa-database Electronic Patient Record]
+    
+    GeneticCounseling --> |Obtains Family Structure and History| Patient
     GeneticCounseling --> |Records FamilyMemberHistory| GenomicCDR[fas:fa-database  Genomic Clinical Data Repository]
     Consultant --> |Asks for Genetic Counseling on Genetic Condition?| GeneticCounseling
 ```
@@ -81,10 +84,14 @@ graph TD;
     Oncology --> |"Asks for a diagnostic test (procedure)"| DiagnosticTesting[Diagnostic Testing]
     SpecialistTeam --> Admits[Admits Patient]
     Admits --> Performs[Performs Procedure]
+    Admits --> |"Gets Patient Summary <br/>(Conditions, Allergies and Current Medications)"| Patient
+    Admits --> |Update Patient Record| EPR
     Performs --> Discharge[Discharges Patient]
     Performs --> |Sends Specimen| DiagnosticTesting
-    Discharge --> |Discharge Letter| Patient["fas:fa-user Patient (and fas:fa-user-md GP)"]
+    Discharge --> |Discharge Letter| Patient["fas:fa-user Patient"]
+    Discharge --> |Discharge Letter| GP["fas:fa-user-md GP"]
     Discharge --> |"Record procedure (as completed)"| EPR["fas:fa-database <i>Electronic Patient Record</i>"]
+    Discharge --> |Visit Notification| Consultant[fas:fa-user-md Consultant]
 ```
 
 A detailed example of this process can be found in the [Example Scenario - Collect Specimen](ExampleScenario-BiopsyProcedure.html).
