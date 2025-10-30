@@ -16,15 +16,14 @@ Genomic Testing Workflow is part of Diagnostic Testing, which is also part of th
 graph TD;
 
     A[Assessment]-->|Creates Observations| B;
-    A--> |Needs| O;
-    B[Diagnosis]-->|Condition| C;
-    O[Diagnostic Testing]--> T;
-    T[Ordering Tests<br/>Genomics Test Order Form]--> |"laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
+    A--> |Needs Diagnostic Testing and Completes| T;
+    B[Diagnosis]-->|Creates Condition| C;
+    T[Genomics Test Order Form]--> |"Sends laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
     T --> |Asks for| S
     S[Specimen Collection] --> |Sends Specimen| AN;
-    AN["Analyzing results<br/>Genomics Test Report"] --> |Requests further tests <br/> reflex order| T;
+    AN["Diagnostic Testing"] --> |Requests further tests <br/> reflex order| T;
     AN --> |"Creates laboratory or imaging report - LAB-3<br/>HL7 v2 ORU_R01"| B;
-    AN --> |laboratory or imaging report| A;
+    AN --> |Sends laboratory or imaging report| A;
     C[Plan]-->|Creates Goals and Tasks| D;
     D[Implement/Interventions]-->|Actions Tasks| E;
     E[Evaluate]--> |Reviews Care| A;
@@ -136,14 +135,14 @@ The Regional Clinical Data Repository (CDR) will adopt a similar FHIR RESTful ap
 
 ```mermaid
 graph TD;
-    Receive[Receive Genomic Laboratory Report] --> |" HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
-    RIE --> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| TIE[Middleware<br/>Acute Hospitals<br/>Trust Integration Engine] 
-    TIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
-    RIE--> |"HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
-    RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
-    RIE --> |HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
-    RIE --> |HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
-    CDR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
+    Receive["Diagnostic Testing (LIMS)"] --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
+    RIE --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| TIE[Middleware<br/>Acute Hospitals<br/>Trust Integration Engine] 
+    TIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
+    RIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
+    RIE --> |"Sends FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["NHS England<br/>NHS Trust<br/>EHR (Future)"] 
+    RIE --> |Sends HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
+    RIE --> |Sends HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
+    CDR --> |Sends FHIR Event Notification| Any["Any <br/>(future)"]
 
     classDef green fill:#D5E8D4;
     classDef yellow fill:#FFF2CC;
@@ -163,7 +162,7 @@ The outline of this approach is shown below and is related to a similar approach
 graph TD;
 
     LIMS[Genomics<br/>LIMS] --> |" HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine];
-    RIE --> |"HL7 FHIR R4<br/>Message R01"| CDR[NW Genomics<br/>Clinical Data Repository]
+    RIE --> |"Sends HL7 FHIR R4<br/>Message R01"| CDR[NW Genomics<br/>Clinical Data Repository]
     CDR --> |Publish Report Event| SUB[FHIR Subscription<br/>Event-Notifications]
     SUB --> |Deliver Report Event| EPR["Recipient<br/>e.g. GP Foundation System"]
     EPR --> |Get Report| CDR
@@ -182,7 +181,7 @@ graph TD;
 
 ```mermaid
 graph TD;
-    Read[Read Genomic Laboratory Order]-->O
+    Read[Consumer]--> |Read Genomic Laboratory Order| O
     O{options} --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
     O --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust EPR<br/>EHR] 
     classDef yellow fill:#FFF2CC;
@@ -193,13 +192,13 @@ graph TD;
 
 ```mermaid
 graph TD;
-    Receive[Send Genomic Laboratory Order] --> |HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
-    Receive --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE
+    Receive["Diagnostic Testing (LIMS)"] --> |Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
+    Receive --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| RIE
     OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine] 
-    RIE --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| CDR[NW Genomics<br/>Clinical Data Repository]
-    CDR --> |FHIR Subscription <br/> and Event Notification| Any["Any <br/>(future)"]
-    RIE --> |"HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
-    RIE --> |"FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
+    RIE --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| CDR[NW Genomics<br/>Clinical Data Repository]
+    CDR --> |Send FHIR Event Notification| Any["Any <br/>(future)"]
+    RIE --> |"Send Genomic Laboratory Order<br/>HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
+    RIE --> |"Send Genomic Laboratory Order<br/>FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
     
     classDef green fill:#D5E8D4;
     classDef yellow fill:#FFF2CC;
