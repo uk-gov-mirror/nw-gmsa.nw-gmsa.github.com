@@ -29,7 +29,7 @@ Description: "Based on HL7 LRI Example 2 (Ref 5.9.1.2)"
 * component[0].code = $loinc#48018-6 "Gene studied [ID]"
 * component[=].valueCodeableConcept = $genenames#HGNC:1884 "CFTR"
 
-* component[0].code = $loinc#51958-7 "Transcript reference sequence [ID]"
+* component[+].code = $loinc#51958-7 "Transcript reference sequence [ID]"
 * component[=].valueCodeableConcept = $refseq#NM_000492.3
 
 * component[+].code = $loinc#81290-9 "Genomic DNA change (gHGVS)"

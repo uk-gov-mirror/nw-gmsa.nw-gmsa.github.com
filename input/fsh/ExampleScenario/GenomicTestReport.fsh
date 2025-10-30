@@ -56,12 +56,4 @@ Usage: #definition
   * insert ProcessCreateEvent(6, "Send Laboratory Report R01 FHIR", rie, cdr, Request6,   , [[The v2 message is transformed to a FHIR Message]])
 
 
-Instance: PDQSearchResults
-InstanceOf: Bundle
-Title:       "Bundle - Patient Search Results PDQ"
-Description: """
-Example search results for a NHS Number of `9449305552`
-"""
-Usage: #example
-* insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9449305552]])
-* insert EntryMatch(Patient, Patient-OctaviaCHISLETT-9449305552)
+

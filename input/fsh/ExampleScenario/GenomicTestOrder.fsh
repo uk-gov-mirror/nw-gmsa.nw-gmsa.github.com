@@ -69,13 +69,5 @@ Usage: #definition
 
 //  * insert ProcessWorkflow(GenomicTestReportProcess)
 
-Instance: SDCSearchResults
-InstanceOf: Bundle
-Title:       "Bundle - Form Search Results SDC"
-Description: """
-Example search results for a form with id of ``
-"""
-Usage: #example
-* insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Questionnaire?id=GenomicTestOrder]])
-* insert EntryMatch(Questionnaire, GenomicTestOrder)
+
 

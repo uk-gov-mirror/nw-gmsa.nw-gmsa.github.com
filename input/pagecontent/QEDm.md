@@ -199,17 +199,18 @@ GET [base]/Observation?[parameter]=[value]]
 
 #### Example
 
-Searching for an Observation by code (Genetic variant assessment).
+Searching for an [Variant](StructureDefinition-Observation-Variant.html) Observation by code.
 
 ```
-GET [base]/Observation?code=http://loinc.org|69548-6
+GET [base]/Observation?code=http://loinc.org|69548-6&patient=Patient-Liverpool
 Accept: application/fhir+json
 ```
+[Response](Bundle-187a20ef-9b81-4c83-84f7-140c210f8706.json.html)
 
-Searching for a Observation by combo-code (Genomic reference sequence) and patient.
+Searching for a [Variant](StructureDefinition-Observation-Variant.html) Observation with a specific gene (LOINC 48018-6 - Gene studied [ID]) of `NTHL1`.
 
 ```
-GET [base]/Observation?combo-code=http://loinc.org|48013-7
+GET [base]/Observation?combo-code=http://loinc.org|48018-6&combo-code-value-concept=NTHL1
 Accept: application/fhir+json
 ```
 
@@ -258,12 +259,16 @@ GET [base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9449305552
 Accept: application/fhir+json
 ```
 
+[Response](Bundle-PDQSearchResults.json.html)
+
 Searching for a Patient via Medical Record Number.
 
 ```
 GET [base]/Patient?identifier=http://www.acme.org/patient/identifier|A12356565
 Accept: application/fhir+json
 ```
+
+[Response](Bundle-c39fc97b-e99f-47b2-8660-d3d6b8840d20.json.html)
 
 ## ServiceRequest
 
