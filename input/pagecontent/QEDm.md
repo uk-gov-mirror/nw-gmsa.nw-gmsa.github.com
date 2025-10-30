@@ -45,6 +45,14 @@ GET [base]/Condition?[parameter]=[value]]
 | identifier   | token     | GET [base]/Condition?identifier=[system&#124;][code] | A unique identifier of the condition record |
 | patient      | reference | GET [base]/Condition?patient=[id]                    | Who has the condition?                      |
 
+#### Examples
+
+Searching for Conditions for Patient Liverpool.
+```
+GET [base]/Condition?patient=Patient-Liverpool
+Accept: application/fhir+json
+```
+[Response](Bundle-036ceda5-8eea-42d5-9e8f-f977287c0dd6.json.html)
 
 ## DiagnosticReport
 
@@ -264,21 +272,19 @@ GET [base]/Patient?[parameter]=[value]]
 #### Example
 
 Searching for a Patient via NHS Number.
-
 ```
 GET [base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9449305552
 Accept: application/fhir+json
 ```
-
 [Response](Bundle-PDQSearchResults.json.html)
 
-Searching for a Patient via Medical Record Number.
+---
 
+Searching for a Patient via Medical Record Number.
 ```
 GET [base]/Patient?identifier=http://www.acme.org/patient/identifier|A12356565
 Accept: application/fhir+json
 ```
-
 [Response](Bundle-c39fc97b-e99f-47b2-8660-d3d6b8840d20.json.html)
 
 ## ServiceRequest

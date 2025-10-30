@@ -33,7 +33,7 @@ Instance: 187a20ef-9b81-4c83-84f7-140c210f8706
 InstanceOf: Bundle
 Title:       "Bundle - Genomic Variant for a Patient QEDm"
 Description: """
-Example search results for a Genomic Variant LOINC `69548-6`
+Example search results for a Genomic Variant LOINC `69548-6` for Patient Liverpool
 """
 Usage: #example
 * insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Observation?code=http://loinc.org|69548-6&patient=Patient-Liverpool]])
@@ -53,8 +53,18 @@ Instance: 92a0a6c6-404f-4347-8de4-fa1c457a037e
 InstanceOf: Bundle
 Title:       "Bundle - Genomic Diagnostic Implication for a Patient QEDm"
 Description: """
-Example search results for a Genomic Diagnostic Implication for a Patient
+Example search results for a Genomic Diagnostic Implication for Patient Liverpool
 """
 Usage: #example
 * insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Observation?code=diagnostic-implication&patient=Patient-Liverpool]])
 * insert EntryMatch(Observation, 6beb613f-d303-42af-b025-86e8e0872061)
+
+Instance: 036ceda5-8eea-42d5-9e8f-f977287c0dd6
+InstanceOf: Bundle
+Title:       "Bundle - Conditions for a Patient QEDm"
+Description: """
+Example search results for Conditions for Patient Liverpool
+"""
+Usage: #example
+* insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Condition?patient=Patient-Liverpool]])
+* insert EntryMatch(Condition, c8f82825-e4cb-4e1f-b728-3fd2808e93db)
