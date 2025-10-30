@@ -21,7 +21,7 @@ graph TD;
     T[Genomics Test Order Form]--> |"Sends laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
     T --> |Asks for| S
     S[Specimen Collection] --> |Sends Specimen| AN;
-    AN["Diagnostic Testing"] --> |Requests further tests <br/> reflex order| T;
+    AN["Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
     AN --> |"Creates laboratory or imaging report - LAB-3<br/>HL7 v2 ORU_R01"| B;
     AN --> |Sends laboratory or imaging report| A;
     C[Plan]-->|Creates Goals and Tasks| D;
@@ -52,7 +52,7 @@ graph TD;
 Genomic diagnostic testing follows the same standardized process defined by the [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow) used in traditional laboratory testing.
 This workflow has been enhanced to support the sharing of laboratory reports (documents) through Integrated Care Systems (ICS). In addition, a new mechanism for sharing laboratory reports has been introduced to establish a regional genomic data repository.
 
-### Clinical and Genomic Workflow
+### Diagnostic Testing
 
 ```mermaid
 graph TD;
@@ -70,7 +70,7 @@ graph TD;
 
 A detailed example of this process can be found in the [Example Scenario - Clinical and Genomic Workflow](ExampleScenario-ClinicalAndGenomicWorkflow.html).
 
-### Specimen Collection / Biopsy
+### Specimen Collection
 
 Specimen collection (collecting blood, performing biopsy, etc) is not performed by a Genomics service, and this shows how genomics fits into that process.
 
@@ -135,13 +135,13 @@ A detailed example of this process can be found in the [Example Scenario - Colle
   </tbody>
 </table>
 
-| Analysis and Design                                    | Interfaces                                                                                                                 | Domain Archetype                                                        | Artefacts                             |
-|--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------|
-| [Send Laboratory Order (LTW)](LTW.html)                | HL7 FHIR [LAB-1](LAB-1.html)                                                                                               | [North West Genomics Test Order](Questionnaire-GenomicTestOrder.html)   |                                       |
-| [Send Laboratory Report Data (LTW)](LTW.html)          | HL7 FHIR [LAB-3](LAB-3.html) and HL7 v2 ORU [LAB-3](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message) | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) |                                       |
-| [Send Laboratory Report Document (HIE)](HIE.html)      | HL7 v2 MDM [LAB-3](hl7v2.html#mdm_t02-original-document-notification-and-content)                                          | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) |                                       |
-| [Read Laboratory Order or Report Data (HIE)](HIE.html) | HL7 FHIR [QEDm](QEDm.html)                                                                                                 | | [Resource Profiles](artifacts.html#7) |                                                              | 
-| [Read Laboratory Report Documents (HIE)](HIE.html)     | HL7 FHIR [MHD](MHD.html)                                                                                                   | | [Resource Profiles](artifacts.html#7) | 
+| Analysis and Design                                    | Interfaces                                                                                                                     | Domain Archetype                                                        | Artefacts                             |
+|--------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------|
+| [Send Laboratory Order (LTW)](LTW.html)                | HL7 FHIR [LAB-1](LAB-1.html)                                                                                                   | [North West Genomics Test Order](Questionnaire-GenomicTestOrder.html)   |                                       |
+| [Send Laboratory Report Data (LTW)](LTW.html)          | HL7 FHIR [LAB-3](LAB-3.html) and HL7 v2 ORU [LAB-3/R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message) | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) |                                       |
+| [Send Laboratory Report Document (HIE)](HIE.html#publish-a-document)      | HL7 v2 MDM [T02](hl7v2.html#mdm_t02-original-document-notification-and-content)                                                | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) |                                       |
+| [Read Laboratory Order or Report Data (HIE)](HIE.html) | HL7 FHIR [QEDm](QEDm.html)                                                                                                     | | [Resource Profiles](artifacts.html#7) |                                                              | 
+| [Read Laboratory Report Documents (HIE)](HIE.html)     | HL7 FHIR [MHD](MHD.html)                                                                                                       | | [Resource Profiles](artifacts.html#7) | 
 
 ## Data Modelling
 

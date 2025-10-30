@@ -359,10 +359,9 @@ Key differences include:
 <p class="figureTitle">Relationship to NHS England Genomic Order Management Service</p> 
 <br clear="all">
 
+## Work Order Management (LAB-4)
 
-
-
-## Use Case: Work Order Management 
+### Use Case: Work Order Management 
 
 <figure>
 {%include LTW-usecase-4-sequence.svg%}
@@ -370,7 +369,7 @@ Key differences include:
 </figure>
 <br clear="all">
 
-### Main Process Flow
+#### Main Process Flow
 
 - Order Submission
   - The Order Placer submits a Laboratory Order O21 (LAB-1) to the Automation Manager.

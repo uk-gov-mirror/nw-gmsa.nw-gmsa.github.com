@@ -41,10 +41,10 @@ In the North West region the HIE systems are:
 
 ```mermaid
 graph TD;
-    Read[Read Genomic Laboratory Report]-->O
-    O{options} --> |"FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
-    O --> |"FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
-    O --> |"FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
+    Read[Consumer]-->O
+    O{options} --> |"Read Genomic Laboratory Report Data <br/>FHIR REST (US Core) or bespoke API"| EHR[NHS Trust<br/>EHR] 
+    O --> |"Read Genomic Laboratory Report Document<br/>FHIR REST (CareConnectAPI)<br/>or IHE XDS"| ICS[Integrated Care System <br/> Document Repository]
+    O --> |"Read Genomic Laboratory Report Data <br/>FHIR REST<br/>(IHE QEDm and MHD)"| CDR[Regional Genomic<br/> Clinical Data Repository]
     
     classDef yellow fill:#FFF2CC;
     class CDR yellow;
