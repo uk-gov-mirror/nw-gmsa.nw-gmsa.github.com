@@ -17,27 +17,27 @@ Usage: #definition
 * insert ActorEntity(consultant, "Consultant",   [[TODO]])
 * insert ActorEntity(laboratory, "Diagnostic Testing",   [[TODO]])
 
-* insert Instance_Empty(Request1,   Binary,   "Dummy", [[Query for Froms: `GET https://example.nhs.uk/FHIR/R4/Questionnaire`]])
-* insert Instance_Empty(Request2,   Binary,   "Dummy",  [[ ]])
-* insert Instance_Empty(Request3,   Binary,   "Dummy", [[ ]])
-* insert Instance_Empty(Request4,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Request1,   Questionnaire,   "Query Questionnaire", [[Query for Froms: `GET https://example.nhs.uk/FHIR/R4/Questionnaire`]])
+* insert Instance_Empty(Request2,   Observation,   "Query Observation and MedicationRequest",  [[ ]])
+* insert Instance_Empty(Request3,   QuestionnaireResponse,   "Create QuestionnaireResponse", [[ ]])
+* insert Instance_Empty(Request4,   Observation,   "Create Observation and MedicationStatement from QuestionnaireResponse", [[ ]])
 
 * insert Instance_Empty(Reply1,   Binary,   "Dummy", [[ ]])
 //* insert Instance_Empty(Reply2a,   Binary,   "Dummy",  [[ ]])
 * insert Instance_Empty(Reply3,   Binary,   "Dummy", [[ ]])
 //* insert Instance_Empty(Reply4,   Binary,   "Dummy", [[ ]])
 
-* insert Instance_Empty(Request5,   Procedure,   "Biopsy",  [[ ]])
+* insert Instance_Empty(Request5,   Procedure,   "Update Procedure -Biopsy",  [[ ]])
 * insert InstanceVersion(1, "Procedure Liver Biopsy", 13240a3b-d1db-4f1a-ad7d-b19f23967060 , )
 
-* insert Instance_Empty(Request6,   Binary,   "Dummy", [[ ]])
-* insert Instance_Empty(Request7,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Request6,   Specimen,   "Update Specimen", [[ ]])
+* insert Instance_Empty(Request7,   Specimen,   "Update Specimen with tracking number", [[ ]])
 * insert Instance_Empty(Reply5,   Binary,   "Dummy",  [[ ]])
 * insert Instance_Empty(Reply6,   Binary,   "Dummy", [[ ]])
 * insert Instance_Empty(Reply7,   Binary,   "Dummy", [[ ]])
 
-* insert Instance_Empty(Request8,   Binary,   "Dummy",  [[ ]])
-* insert Instance_Empty(Request9,   Binary,   "Dummy", [[ ]])
+* insert Instance_Empty(Request8,   Observation,   "Create Observation - Vital Signs",  [[ ]])
+* insert Instance_Empty(Request9,   Binary,   "Create Disharge Letter", [[ ]])
 
 * insert Instance_Empty(Reply8,   Binary,   "Dummy",  [[ ]])
 * insert Instance_Empty(Reply9,   Binary,   "Dummy", [[ ]])
