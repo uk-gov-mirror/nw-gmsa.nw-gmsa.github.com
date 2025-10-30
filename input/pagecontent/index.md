@@ -70,6 +70,25 @@ graph TD;
 
 A detailed example of this process can be found in the [Example Scenario - Clinical and Genomic Workflow](ExampleScenario-ClinicalAndGenomicWorkflow.html).
 
+### Specimen Collection / Biopsy
+
+Specimen collection (collecting blood, performing biopsy, etc) is not performed by a Genomics service, and this shows how genomics fits into that process.
+
+```mermaid
+graph TD;
+
+    Oncology[Specialty e.g. Oncology] --> |"Asks for a biopsy (procedure)"| SpecialistTeam[fas:fa-user-md Specialist Team]
+    Oncology --> |"Asks for a diagnostic test (procedure)"| DiagnosticTesting[Diagnostic Testing]
+    SpecialistTeam --> Admits[Admits Patient]
+    Admits --> Performs[Performs Procedure]
+    Performs --> Discharge[Discharges Patient]
+    Performs --> |Sends Specimen| DiagnosticTesting
+    Discharge --> |Discharge Letter| Patient["fas:fa-user Patient (and fas:fa-user-md GP)"]
+    Discharge --> |"Record procedure (as completed)"| EPR["fas:fa-database <i>Electronic Patient Record</i>"]
+```
+
+A detailed example of this process can be found in the [Example Scenario - Collect Specimen](ExampleScenario-BiopsyProcedure.html).
+
 
 ## How to Read this IG
 

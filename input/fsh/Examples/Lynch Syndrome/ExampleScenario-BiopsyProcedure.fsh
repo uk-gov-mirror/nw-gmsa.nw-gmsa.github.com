@@ -1,6 +1,6 @@
 Instance: BiopsyProcedure
 InstanceOf: ExampleScenario
-Title:       "Collect Sample - Biopsy Procedure for obtaining a specimen, part of a diagnostic pathway. Day case admission."
+Title:       "Collect Specimen - Biopsy Procedure for obtaining a specimen, part of a diagnostic pathway. Day case admission."
 Description: """
 
 This is for background information around the specimen collection process, it is not considered part of this genomic specification.
