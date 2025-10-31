@@ -145,7 +145,7 @@ graph TD;
     DiagnosticReport --> |"Reads DiagnosticImplication (Condition) and Variant (Gene)"| Patient[fas:fa-user Patient]
 
     Consultant --> |"Records Condition (from Diagnostic Implication)"| EPR[fas:fa-database Electronic Patient Record]
-    GP--> |"Records Condition (from Diagnostic Implication)"| GPEPR[fas:fa-database GP Electronic Patient Record]
+    GP--> |"Records Condition (Genomic Disorder) or Observation (Genomic Disorder Carrier) based on Diagnostic Implication"| GPEPR[fas:fa-database GP Electronic Patient Record]
     
     GeneticCounseling --> |Obtains Family Structure and History| Patient
     GeneticCounseling --> |Records FamilyMemberHistory| GenomicCDR[fas:fa-database  Genomic Clinical Data Repository]
