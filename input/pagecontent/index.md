@@ -65,6 +65,11 @@ graph TD;
     EPR --> |5. Sends Laboratory Order| DiagnosticTesting[fas:fa-stethoscope Diagnostic Testing]
 ```
 
+For more details see:  
+
+- [Send Laboratory Order (IHE LTW)](LTW.html) NHS Trust
+- [Read & Search Laboratory Order (HIE)](HIE.html)
+
 ### Diagnostic Testing
 
 ```mermaid
@@ -87,6 +92,13 @@ graph TD;
 ```
 
 A detailed example of this process can be found in the [Example Scenario - Clinical and Genomic Workflow](ExampleScenario-ClinicalAndGenomicWorkflow.html).
+
+For more details see:
+
+- [Send Laboratory Report Data (IHE LTW)](LTW.html) - NHS Trust 
+- [Send Laboratory Report Document (HIE)](HIE.html#publish-a-document) - ICS/ICB
+- [Read & Search Laboratory Report Data (HIE)](HIE.html)
+- [Read & Seerch Laboratory Report Documents (HIE)](HIE.html)
 
 ### Specimen Collection
 
