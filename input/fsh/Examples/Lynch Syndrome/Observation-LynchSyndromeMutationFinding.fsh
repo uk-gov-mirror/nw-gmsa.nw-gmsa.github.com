@@ -1,5 +1,5 @@
 Instance: 4490c092-c78c-480a-8cb7-653b70113fd5
-InstanceOf: ObservationLynchSyndromeMutationFinding
+InstanceOf: Observation
 Title: "Observation - Lynch Syndrome Mutation Finding"
 Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 
