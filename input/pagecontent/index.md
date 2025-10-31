@@ -111,7 +111,7 @@ This workflow has been enhanced to support the sharing of laboratory reports (do
 |                                          | [Authorisation (OAuth2](authorisation.html)                          | OAUth2 [IHE IUA ITI-103 ITI-71 ITI-102](IUA.html)                                                                                  |                                                                         |                                                                                                   | 
 
 
-### Diagnostic Process
+## Diagnostic Process
 
 ### Test Order 
 

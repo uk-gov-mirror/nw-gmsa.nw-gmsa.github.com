@@ -14,8 +14,8 @@ Description: "evidenced by genomic diagnostic testing"
 
 * code
   * coding[+]
-    * code = #1365861003
-    * display = "Lynch syndrome gene mutation detected"
+    * code = #716318002
+    * display = "Lynch syndrome"
     * system = $sct
 
 
