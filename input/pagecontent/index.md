@@ -18,7 +18,7 @@ graph TD;
     A[Assessment]-->|Creates Observations| B;
     A--> |Needs Diagnostic Testing and Completes| T;
     B[Diagnosis]-->|Creates Condition| C;
-    T[Genomics Test Order Form]--> |"Sends laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
+    T[Genomics Test Order]--> |"Sends laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
     T --> |Asks for| S
     S[Specimen Collection] --> |Sends Specimen| AN;
     AN["Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
@@ -51,6 +51,19 @@ graph TD;
 
 Genomic diagnostic testing follows the same standardized process defined by the [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow) used in traditional laboratory testing.
 This workflow has been enhanced to support the sharing of laboratory reports (documents) through Integrated Care Systems (ICS). In addition, a new mechanism for sharing laboratory reports has been introduced to establish a regional genomic data repository.
+
+### Test Order 
+
+```mermaid
+graph TD;
+
+    Practitioner[fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
+    FormManager --> OrderEntry
+    Practitioner --> |3. Completes| OrderEntry[Order Form]
+    EPR[fas:fa-database Electronic Patient Record] --> |2. Pre Populates with existing data| OrderEntry 
+    OrderEntry --> |4. Submits Order| EPR
+    EPR --> |5. Sends Laboratory Order| DiagnosticTesting[fas:fa-stethoscope Diagnostic Testing]
+```
 
 ### Diagnostic Testing
 
