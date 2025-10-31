@@ -18,12 +18,12 @@ graph TD;
     A[Assessment]-->|Creates Observations| B;
     A--> |Needs Diagnostic Testing and Completes| T;
     B[Diagnosis]-->|Creates Condition| C;
-    T[Genomics Test Order]--> |"Sends laboratory or imaging order - LAB-1<br/>FHIR Message O21"| AN;
+    T[Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
     T --> |Asks for| S
     S[Specimen Collection] --> |Sends Specimen| AN;
     AN["Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
-    AN --> |"Creates laboratory or imaging report - LAB-3<br/>HL7 v2 ORU_R01"| B;
-    AN --> |Sends laboratory or imaging report| A;
+    AN --> |"Creates Laboratory Report - LAB-3<br/>HL7 v2 ORU_R01"| B;
+    AN --> |Sends Laboratory Report| A;
     C[Plan]-->|Creates Goals and Tasks| D;
     D[Implement/Interventions]-->|Actions Tasks| E;
     E[Evaluate]--> |Reviews Care| A;
@@ -51,6 +51,67 @@ graph TD;
 
 Genomic diagnostic testing follows the same standardized process defined by the [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow) used in traditional laboratory testing.
 This workflow has been enhanced to support the sharing of laboratory reports (documents) through Integrated Care Systems (ICS). In addition, a new mechanism for sharing laboratory reports has been introduced to establish a regional genomic data repository.
+
+
+## How to Read this IG
+
+<table >
+  <thead>
+    <tr>
+      <th></th>
+      <th>Menu Item</th>
+      <th>Description</th>
+      <th>Audience</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color: #E1D5E7">&nbsp;&nbsp;</td>
+      <td>Analysis and Design (Volume 1)</td>
+      <td>Description of the processes and corresponding technical frameworks</td>
+      <td>General</td>
+    </tr>
+    <tr>
+      <td style="background-color: #F8CECC">&nbsp;&nbsp;</td>
+      <td>Interfaces (Volume 2)</td>
+      <td>Description of the processes and corresponding technical frameworks (HL7 v2 and FHIR Interactions)</td>
+      <td>Detailed Technical (Integration Developer)</td>
+    </tr>
+    <tr>
+      <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
+      <td>Domain Archetype (Volume 3)</td>
+      <td>NHS North West Forms, Templates, Reports and Compositions</td>
+      <td>Data Modeling (Detailed Technical)</td>
+    </tr>
+    <tr>
+      <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
+      <td>Artefacts (Volume 4)</td>
+      <td>NHS North West Common Data Models</td>
+      <td>Detailed Technical</td>
+    </tr>
+    <tr>
+      <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
+      <td>Development</td>
+      <td>Testing, Suppport and Architecture</td>
+      <td>Detailed Technical (Developer)</td>
+    </tr>
+  </tbody>
+</table>
+
+| Diagnostic Process                       | Analysis and Design                                                  | Interfaces                                                                                                                         | Domain Archetype                                                        | Domain Entity (Resources)                                                                         |
+|------------------------------------------|----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| [Test Order](#test-order)                | [Send Laboratory Order (IHE LTW)](LTW.html)                          | HL7 FHIR [IHE LTW LAB-1](LAB-1.html)                                                                                               | [North West Genomics Test Order](Questionnaire-GenomicTestOrder.html)   | [ServiceRequest](StructureDefinition-ServiceRequest.html)                                         |
+|                                          | [Read & Search Laboratory Order (HIE)](HIE.html)                     | HL7 FHIR [IHE QEDm PCC-44](QEDm.html)                                                                                              |                                                                         | Various [Resource Profiles](artifacts.html#7)                                                     |  
+| [DiagnosticTesting](#diagnostic-testing) | [Send Laboratory Report Data (IHE LTW)](LTW.html)                    | HL7 FHIR [IHE LAB-3](LAB-3.html) and HL7 v2 ORU [LAB-3/R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message) | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) | [DiagnosticReport](StructureDefinition-DiagnosticReport.html)                                     |
+|                                          | [Send Laboratory Report Document (HIE)](HIE.html#publish-a-document) | HL7 v2 MDM [T02](hl7v2.html#mdm_t02-original-document-notification-and-content)                                                    | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) | [DocumentReference](StructureDefinition-DocumentReference.html)                                   |
+|                                          | [Read & Search Laboratory Report Data (HIE)](HIE.html)               | HL7 FHIR [IHE QEDm PCC-44](QEDm.html)                                                                                              |                                                                         | Various [Resource Profiles](artifacts.html#7)                                                     |                                                             | 
+|                                          | [Read & Seerch Laboratory Report Documents (HIE)](HIE.html)          | HL7 FHIR [IHE MHD ITI-66 and ITI-67](MHD.html)                                                                                     |                                                                         | [DocumentReference](StructureDefinition-DocumentReference.html)                                   | 
+| [Speciment Collection](#specimen-collection)                 |                                                                      |                                                                                                                                    |                                                                         | [Specimen](StructureDefinition-Specimen.html)                                                     |
+| Other                                    | [Patient Administration](PAM.html)                                   | HL7 FHIR [IHE PDQm ITI-78](QEDm.html)                                                                                              |                                                                         | [Patient](StructureDefinition-Patient.html) <br/> [Encounter](StructureDefinition-Encounter.html) |
+|                                          | [Authorisation (OAuth2](authorisation.html)                          | OAUth2 [IHE IUA ITI-103 ITI-71 ITI-102](IUA.html)                                                                                  |                                                                         |                                                                                                   | 
+
+
+### Diagnostic Process
 
 ### Test Order 
 
@@ -123,62 +184,6 @@ graph TD;
 ```
 
 A detailed example of this process can be found in the [Example Scenario - Collect Specimen](ExampleScenario-BiopsyProcedure.html).
-
-
-## How to Read this IG
-
-<table >
-  <thead>
-    <tr>
-      <th></th>
-      <th>Menu Item</th>
-      <th>Description</th>
-      <th>Audience</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="background-color: #E1D5E7">&nbsp;&nbsp;</td>
-      <td>Analysis and Design (Volume 1)</td>
-      <td>Description of the processes and corresponding technical frameworks</td>
-      <td>General</td>
-    </tr>
-    <tr>
-      <td style="background-color: #F8CECC">&nbsp;&nbsp;</td>
-      <td>Interfaces (Volume 2)</td>
-      <td>Description of the processes and corresponding technical frameworks (HL7 v2 and FHIR Interactions)</td>
-      <td>Detailed Technical (Integration Developer)</td>
-    </tr>
-    <tr>
-      <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
-      <td>Domain Archetype (Volume 3)</td>
-      <td>NHS North West Forms, Templates, Reports and Compositions</td>
-      <td>Data Modeling (Detailed Technical)</td>
-    </tr>
-    <tr>
-      <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
-      <td>Artefacts (Volume 4)</td>
-      <td>NHS North West Common Data Models</td>
-      <td>Detailed Technical</td>
-    </tr>
-    <tr>
-      <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
-      <td>Development</td>
-      <td>Testing, Suppport and Architecture</td>
-      <td>Detailed Technical (Developer)</td>
-    </tr>
-  </tbody>
-</table>
-
-| Analysis and Design                                                  | Interfaces                                                                                                                         | Domain Archetype                                                        | Domain Resources                                                                                  |
-|----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| [Send Laboratory Order (IHE LTW)](LTW.html)                          | HL7 FHIR [IHE LTW LAB-1](LAB-1.html)                                                                                               | [North West Genomics Test Order](Questionnaire-GenomicTestOrder.html)   | [ServiceRequest](StructureDefinition-ServiceRequest.html)                                         |
-| [Send Laboratory Report Data (IHE LTW)](LTW.html)                    | HL7 FHIR [IHE LAB-3](LAB-3.html) and HL7 v2 ORU [LAB-3/R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message) | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) | [DiagnosticReport](StructureDefinition-DiagnosticReport.html)                                     |
-| [Send Laboratory Report Document (HIE)](HIE.html#publish-a-document) | HL7 v2 MDM [T02](hl7v2.html#mdm_t02-original-document-notification-and-content)                                                    | [North West Genomics Test Report](Questionnaire-GenomicTestReport.html) | [DocumentReference](StructureDefinition-DocumentReference.html)                                   |
-| [Read & Search Laboratory Order or Report Data (HIE)](HIE.html)      | HL7 FHIR [IHE QEDm PCC-44](QEDm.html)                                                                                              |                                                                         | Various [Resource Profiles](artifacts.html#7)                                                     |                                                              | 
-| [Read & Seerch Laboratory Report Documents (HIE)](HIE.html)          | HL7 FHIR [IHE MHD ITI-66 and ITI-67](MHD.html)                                                                                     |                                                                         | [DocumentReference](StructureDefinition-DocumentReference.html)                                   | 
-| [Patient Administration](PAM.html)                                   | HL7 FHIR [IHE PDQm ITI-78](QEDm.html)                                                                                              |                                                                         | [Patient](StructureDefinition-Patient.html) <br/> [Encounter](StructureDefinition-Encounter.html) |
-| [Authorisation (OAuth2](authorisation.html)                          | OAUth2 [IHE IUA ITI-103 ITI-71 ITI-102](IUA.html)                                                                                  |                                                                         |                                                                                                   | 
 
 ## Data Modelling
 
