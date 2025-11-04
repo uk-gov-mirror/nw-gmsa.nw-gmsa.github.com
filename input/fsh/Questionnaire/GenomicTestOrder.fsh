@@ -315,7 +315,7 @@ Usage:  #definition
     * type = #string
     * linkId = "pedigreeNumber"
     * text = "G Number (Pedigree Number) - Order Group Number"
-    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.requisition"
+    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/Patient#Patient.identifier:PedigreeNumber"
 
 // Test request	Test request ID/Order ID
 
