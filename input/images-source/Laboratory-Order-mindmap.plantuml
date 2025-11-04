@@ -13,6 +13,7 @@ title "Genomic Laboratory Order"
 *** Order Details
 **** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
 **** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
+**** [[StructureDefinition-PlacerGroupNumber.html Placer Group Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Ordering Practitioner
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
