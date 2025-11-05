@@ -2,7 +2,7 @@ ValueSet: Organisation-LancashireAndSouthCumbria
 Id: OrganisationLancashireAndSouthCumbria
 Title: "Organisation Lancashire and South Cumbria ICS NHS Trusts"
 Description: """
-[North West Region](https://www.england.nhs.uk/system-and-organisational-oversight/system-directory/north-west-region/)
+Source: [NHS England - North West Region](https://www.england.nhs.uk/system-and-organisational-oversight/system-directory/north-west-region/)
 """
 * ^experimental  = false
 
