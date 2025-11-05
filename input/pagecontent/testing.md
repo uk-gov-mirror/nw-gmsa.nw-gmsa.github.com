@@ -13,6 +13,8 @@ The APIs are available on the [Health and Social Care Network (HSCN)](https://di
 
 ### Test Patients
 
+All test patients will eventually be on NHS England PDS FHIR API (Int environment).
+
 | NHS Number    | Surname                                       | Forename | Middle name | Gender | Date Of Birth | GP Surgery | Address line 1        | Address line 2 | Address line 3 | Address line 4 | Address line 5 | Postcode |
 |---------------|-----------------------------------------------|----------|-------------|--------|---------------|------------|-----------------------|----------------|----------------|----------------|----------------|----------|
 | 999 999 9468  | EDITESTPATIENT                                | ONE      | John        | M      | 1925-01-27    |            |                       |                |                |                |                |          |
