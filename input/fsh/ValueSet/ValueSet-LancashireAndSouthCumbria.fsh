@@ -8,10 +8,9 @@ Description: """
 
 * $ods-code#RXL "Blackpool Teaching Hospitals NHS Foundation Trust"
 
-/*
-   East Lancashire Hospitals NHS Trust
-   Lancashire and South Cumbria NHS Foundation Trust
-   Lancashire Teaching Hospitals NHS Foundation Trust
-   North West Ambulance Service NHS Trust
-   University Hospitals of Morecambe Bay NHS Foundation Trust
-*/
+* $ods-code#RXR "East Lancashire Hospitals NHS Trust"
+* $ods-code#RWS "Lancashire and South Cumbria NHS Foundation Trust"
+* $ods-code#RXN "Lancashire Teaching Hospitals NHS Foundation Trust"
+* $ods-code#RX7 "North West Ambulance Service NHS Trust"
+* $ods-code#RTX "University Hospitals of Morecambe Bay NHS Foundation Trust"
+
