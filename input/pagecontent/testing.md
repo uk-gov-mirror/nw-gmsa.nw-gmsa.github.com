@@ -11,6 +11,27 @@ The APIs are available on the [Health and Social Care Network (HSCN)](https://di
 |                     | Regional Integration Engine (RIE)       | https://10.165.194.217/gentietest/ESB                                            | See [Placer Order Management [LAB-1]](LAB-1.html) and [CapabilityStatement](https://10.165.194.217/gentietest/ESB/metadata) |
 |                     | Regional OAuth2 Server                  | https://10.165.194.217/gentietest/oauth2                                         |                                                                                                                             | 
 
+### Test Patients
+
+| NHS Number    | Surname        | Forename | Administrative Gender | Date Of Birth      | GP Surgery |
+|---------------|----------------|----------|-----------------------|--------------------|------------|
+| 999 999 9468  | EDITESTPATIENT | ONE      | F                     | 1945-01-27 |            |
+| 999 999 9476	 | EDITESTPATIENT | TWO      |                       |                    |            | 
+| 999 999 9484	 | EDITESTPATIENT | THREE    |                       |                    |            | 
+| 999 999 9492	 | EDITESTPATIENT | FOUR     |                       |                    |            | 
+| 999 999 9506	 | EDITESTPATIENT | FIVE     |                       |                    |            | 
+| 999 999 9514	 | EDITESTPATIENT | SIX      |                       |                    |            | 
+| 999 999 9522	 | EDITESTPATIENT | SEVEN    |                       |                    |            | 
+| 999 999 9530	 | EDITESTPATIENT | EIGHT    |                       |                    |            | 
+| 999 999 9549	 | EDITESTPATIENT | NINE     | F                     | 1950-11-13         |            | 
+| 999 999 9557	 | EDITESTPATIENT | TEN      |                       |                    |            | 
+| 999 999 9565	 | EDITESTPATIENT | ELEVEN   | F                     | 1930-04-14         |            | 
+| 999 999 9573	 | EDITESTPATIENT | TWELVE   |                       |                    |            | 
+| 999 999 9581	 | EDITESTPATIENT | THIRTEEN |                       |                    |            | 
+| 999 999 9603	 | EDITESTPATIENT | FOURTEEN |                       |                    |            | 
+|               | MANCHESTER     | Liam     | M                     | 1972-09-21         |  F81399          |
+|               | LIVERPOOL      | Paul     | M                     | 1942-06-18         | Y00175     |
+
 ### Security and authorisation
 
 This API has two access modes:
