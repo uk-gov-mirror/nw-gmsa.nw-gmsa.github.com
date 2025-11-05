@@ -13,7 +13,7 @@ The APIs are available on the [Health and Social Care Network (HSCN)](https://di
 
 ### Test Patients
 
-| NHS Number    | Surname        | Forename | Middle name | Administrative Gender | Date Of Birth | GP Surgery | Address line 1        | Address line 2 | Address line 3 | Address line 4 | Address line 5 | Postcode |
+| NHS Number    | Surname        | Forename | Middle name | Gender | Date Of Birth | GP Surgery | Address line 1        | Address line 2 | Address line 3 | Address line 4 | Address line 5 | Postcode |
 |---------------|----------------|----------|-------------|-----------------------|---------------|------------|-----------------------|----------------|----------------|----------------|----------------|----------|
 | 999 999 9468  | EDITESTPATIENT | ONE      | John        | M                     | 1925-01-27    |            |                       |                |                |                |                |          |
 | 999 999 9476	 | EDITESTPATIENT | TWO      |             | F                     | 1964-02-29    |            |                       |                |                |                |                |          |
