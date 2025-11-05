@@ -1,6 +1,6 @@
 ValueSet: Organisation-NorthWest
 Id: OrganisationNorthWest
-Title: "North West Secondary Care"
+Title: "Organisation North West Region NHS Trusts"
 Description: """
 [North West Region](https://www.england.nhs.uk/system-and-organisational-oversight/system-directory/north-west-region/)
 """
