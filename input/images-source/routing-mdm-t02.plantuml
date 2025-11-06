@@ -11,7 +11,7 @@ if (Patient has NHS Number) then (yes)
     :Infer ICS from Patient Postcode;
   endif
   switch (ICS)
-      case (North West Region)
+      case (North West Region\n(QOP, QE1 and QYG))
         :ICS Message Queue;
       case (Other or not found)
         :Dead Letter Queue;

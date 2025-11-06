@@ -9,7 +9,7 @@ else (no)
   if (Has Ordering Facility) then (yes)
     :Get ICS from OrganisationAffiliation from NHS England \nOrganisation Terminolology Data FHIR API;
     switch (ICS)
-      case (North West Region)
+      case (North West Region\n(QOP, QE1 and QYG))
         :Dead Letter Queue;
       case (Welsh)
         :DHCW Queue;
