@@ -4,7 +4,7 @@ title "NHS Trust Report Routing (ORU_R01)"
 start
 
 if (Ordering Facility in Region Distribution List) then (yes)
-  :Ordering Facility Queue;
+  :Ordering Facility Queue\nE.g. R0A, RBS, REP, etc;
 else (no)
   if (Has Ordering Facility) then (yes)
     :Get ICS from OrganisationAffiliation from NHS England \nOrganisation Terminolology Data FHIR API;
