@@ -97,6 +97,26 @@ Three types of messages are used within this workflow process:
     - Data is stored in the Clinic Data Repository (IRIS FHIR Repository).
     - Access is available via HL7 FHIR RESTful API.
 
+### Laboratory Report Routing - NHS Trust (ORU_R01)
+
+This routing is based on the ODS Code of the ordering facility.
+
+<figure>
+{%include routing-oru-r01.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Laboratory Report Routing - NHS Trust (ORU_R01)</p>
+</figure>
+<br clear="all">
+
+### Laboratory Report Message Routing - NHS ICS (MDM_T02)
+
+This routing is based on the GP Practice (ODS Code) of the Patient, failing that postcode is used to infer ICS.
+
+<figure>
+{%include routing-mdm-t02.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Laboratory Report Routing - Laboratory Report Message Routing - NHS ICS (MDM_T02)</p>
+</figure>
+<br clear="all">
+
 ## Security
 
 ### http Authorisation

@@ -1,0 +1,26 @@
+@startuml
+title "NHS ICS Report Routing (MDM_T02)"
+
+start
+
+if (Patient has NHS Number) then (yes)
+  :Get Patient from NHS England \nPersonal Demographics Service - FHIR API;
+  if (patient found and has GP Surgey) then (yes)
+    :Get ICS from OrganisationAffiliation from NHS England \nOrganisation Terminolology Data FHIR API;
+  else (no)
+    :Infer ICS from Patient Postcode;
+  endif
+  switch (ICS)
+      case (North West Region)
+        :ICS Message Queue;
+      case (Other or not found)
+        :Dead Letter Queue;
+    endswitch
+else (no)
+  :Dead Letter Queue;
+endif
+
+
+stop
+
+@enduml
