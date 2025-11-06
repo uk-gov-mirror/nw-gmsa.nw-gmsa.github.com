@@ -5,7 +5,7 @@ start
 
 if (Patient has NHS Number) then (yes)
   :Get Patient from NHS England \nPersonal Demographics Service - FHIR API;
-  if (patient found and has GP Surgey) then (yes)
+  if (Patient found and has GP Surgey) then (yes)
     :Get ICS from OrganisationAffiliation from NHS England \nOrganisation Terminolology Data FHIR API;
   else (no)
     :Infer ICS from Patient Postcode;
