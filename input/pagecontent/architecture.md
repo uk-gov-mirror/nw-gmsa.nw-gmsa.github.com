@@ -100,6 +100,7 @@ Three types of messages are used within this workflow process:
 ### Laboratory Report Routing - NHS Trust (ORU_R01)
 
 This routing is based on the ODS Code of the ordering facility.
+Note: Routing logic for rest of England and Wales if for illustration purposes, neither are implemented.
 
 <figure>
 {%include routing-oru-r01.svg%}
