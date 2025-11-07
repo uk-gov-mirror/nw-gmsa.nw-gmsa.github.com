@@ -1,0 +1,108 @@
+{
+  "resourceType": "Patient",
+  "id": "9999999514",
+  "meta": {
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/Patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus",
+      "extension": [
+        {
+          "url": "deathNotificationStatus",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus",
+                "version": "1.0.0",
+                "code": "2",
+                "display": "Formal - death notice received from Registrar of Deaths"
+              }
+            ]
+          }
+        },
+        {
+          "url": "systemEffectiveDate",
+          "valueDateTime": "2008-11-05T18:22:18+00:00"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
+      "valueAddress": {
+        "city": "Leeds",
+        "district": "Yorkshire",
+        "country": "01"
+      }
+    },
+    {
+      "url": "https://fhir.nhs.uk/StructureDefinition/Extension-PDS-RemovalFromRegistration",
+      "extension": [
+        {
+          "url": "removalFromRegistrationCode",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/CodeSystem/PDS-RemovalReasonExitCode",
+                "version": "1.0.0",
+                "code": "DEA",
+                "display": "Death"
+              }
+            ]
+          }
+        },
+        {
+          "url": "effectiveTime",
+          "valuePeriod": {
+            "start": "2008-11-05T18:22:18+00:00"
+          }
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
+      "value": "9999999514"
+    }
+  ],
+  "name": [
+    {
+      "id": "54fw",
+      "use": "usual",
+      "family": "E2EMsg2Cumm-49459127",
+      "given": [
+        "DaveKemp-23859227"
+      ],
+      "prefix": [
+        "Mr"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "id": "33xl",
+      "system": "phone",
+      "value": "01159313313",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1988-01-14",
+  "deceasedDateTime": "2008-04-14T00:00:00+00:00",
+  "address": [
+    {
+      "id": "50kx",
+      "use": "home",
+      "line": [
+        "16 WASPERTON LANE",
+        "BARFORD",
+        "WARWICK"
+      ],
+      "postalCode": "CV35 8DU"
+    }
+  ],
+  "multipleBirthInteger": 2
+}

@@ -1,0 +1,83 @@
+{
+  "resourceType": "Patient",
+  "id": "9999999476",
+  "meta": {
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/Patient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
+      "value": "9999999476"
+    }
+  ],
+  "name": [
+    {
+      "id": "4zor",
+      "use": "usual",
+      "family": "Jenkins",
+      "given": [
+        "Great",
+        "Northern",
+        "Diver"
+      ],
+      "prefix": [
+        "Mr"
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1962-02-01",
+  "address": [
+    {
+      "id": "4vtb",
+      "extension": [
+        {
+          "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey",
+          "extension": [
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType",
+                    "code": "PAF"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "value",
+              "valueString": "02526154"
+            }
+          ]
+        }
+      ],
+      "use": "home",
+      "line": [
+        "7 Brownings Mead",
+        "Dunsford",
+        "EXETER",
+        "Devon"
+      ],
+      "postalCode": "EX6 7JJ",
+      "period": {
+        "start": "2008-06-01"
+      }
+    }
+  ],
+  "generalPractitioner": [
+    {
+      "id": "4a1c",
+      "type": "Organization",
+      "identifier": {
+        "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+        "value": "B85023",
+        "period": {
+          "start": "2008-04-02"
+        }
+      }
+    }
+  ]
+}

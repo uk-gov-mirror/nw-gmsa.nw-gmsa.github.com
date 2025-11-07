@@ -1,0 +1,126 @@
+{
+  "resourceType": "Patient",
+  "id": "9999999506",
+  "meta": {
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/Patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference",
+      "extension": [
+        {
+          "url": "PreferredContactMethod",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod",
+                "code": "3",
+                "display": "Telephone"
+              }
+            ]
+          }
+        },
+        {
+          "url": "PreferredWrittenCommunicationFormat",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat",
+                "code": "12",
+                "display": "Braille"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
+      "value": "9999999506"
+    }
+  ],
+  "name": [
+    {
+      "id": "55z2",
+      "use": "usual",
+      "family": "Smith4232745897",
+      "given": [
+        "John4232745897",
+        "John4232745897"
+      ],
+      "prefix": [
+        "Mr"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "id": "35fl",
+      "system": "email",
+      "value": "joe.bloggs@myisp.co.uk",
+      "use": "home"
+    },
+    {
+      "id": "35fk",
+      "system": "phone",
+      "value": "tel:tel:01133065957",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1990-10-19",
+  "address": [
+    {
+      "id": "5246",
+      "extension": [
+        {
+          "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey",
+          "extension": [
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType",
+                    "code": "PAF"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "value",
+              "valueString": "2068048"
+            }
+          ]
+        }
+      ],
+      "use": "home",
+      "line": [
+        "HEXAGON HOUSE",
+        "PYNES HILL",
+        "RYDON LANE",
+        "EXETER",
+        "DEVON"
+      ],
+      "postalCode": "LL1 1EQ"
+    }
+  ],
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "system": "urn:ietf:bcp:47",
+            "version": "1.0.0",
+            "code": "fr",
+            "display": "French"
+          }
+        ]
+      }
+    }
+  ]
+}

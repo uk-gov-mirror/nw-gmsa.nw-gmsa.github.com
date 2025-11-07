@@ -1,0 +1,79 @@
+{
+  "resourceType": "Patient",
+  "id": "9999999492",
+  "meta": {
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/Patient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
+      "value": "9999999492"
+    }
+  ],
+  "name": [
+    {
+      "id": "4zsg",
+      "use": "usual",
+      "family": "Mondeo",
+      "given": [
+        "Ford"
+      ],
+      "prefix": [
+        "Mr"
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1933-03-03",
+  "address": [
+    {
+      "id": "4vxl",
+      "extension": [
+        {
+          "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey",
+          "extension": [
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType",
+                    "code": "PAF"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "value",
+              "valueString": "2444192"
+            }
+          ]
+        }
+      ],
+      "use": "home",
+      "line": [
+        "9 Anthony Road",
+        "EXETER"
+      ],
+      "postalCode": "EX1 2SS",
+      "period": {
+        "start": "2008-01-01"
+      }
+    }
+  ],
+  "generalPractitioner": [
+    {
+      "id": "4b3e",
+      "type": "Organization",
+      "identifier": {
+        "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+        "value": "B85023",
+        "period": {
+          "start": "2008-01-01"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "resourceType": "Patient",
+  "id": "9999999565",
+  "meta": {
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/Patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/patient-birthPlace",
+      "valueAddress": {
+        "country": "1"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
+      "value": "9999999565"
+    }
+  ],
+  "name": [
+    {
+      "id": "5eh6",
+      "use": "usual",
+      "family": "BRADFORD",
+      "given": [
+        "DENISE-BABY"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "id": "3au6",
+      "system": "phone",
+      "value": "01133975631",
+      "use": "home"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "2008-05-05",
+  "address": [
+    {
+      "id": "5amd",
+      "use": "home",
+      "line": [
+        "12 SCHOOL STREET",
+        "COTTINGLEY",
+        "BINGLEY",
+        "W YORKSHIRE"
+      ],
+      "postalCode": "BD16 1QB"
+    },
+    {
+      "id": "5ame",
+      "use": "temp",
+      "line": [
+        "Brook House",
+        "Brook Road",
+        "Heaton Chapel",
+        "Stockport",
+        "Cheshire"
+      ],
+      "postalCode": "SK4 5BZ"
+    }
+  ],
+  "multipleBirthInteger": 1
+}

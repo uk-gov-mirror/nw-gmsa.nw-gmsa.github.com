@@ -1,0 +1,80 @@
+{
+  "resourceType": "Patient",
+  "id": "9999999549",
+  "meta": {
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/Patient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
+      "value": "9999999549"
+    }
+  ],
+  "name": [
+    {
+      "id": "4zpl",
+      "use": "usual",
+      "family": "EYES",
+      "given": [
+        "Misty"
+      ],
+      "prefix": [
+        "Ms"
+      ]
+    }
+  ],
+  "gender": "female",
+  "birthDate": "2002-02-02",
+  "address": [
+    {
+      "id": "4vub",
+      "extension": [
+        {
+          "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey",
+          "extension": [
+            {
+              "url": "type",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType",
+                    "code": "PAF"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "value",
+              "valueString": "2444155"
+            }
+          ]
+        }
+      ],
+      "use": "home",
+      "line": [
+        "13 Anthony Road",
+        "EXETER",
+        "Devon"
+      ],
+      "postalCode": "EX1 2SS",
+      "period": {
+        "start": "2008-05-27"
+      }
+    }
+  ],
+  "generalPractitioner": [
+    {
+      "id": "4a20",
+      "type": "Organization",
+      "identifier": {
+        "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+        "value": "B85023",
+        "period": {
+          "start": "2008-01-01"
+        }
+      }
+    }
+  ]
+}
