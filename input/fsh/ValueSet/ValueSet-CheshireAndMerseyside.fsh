@@ -1,6 +1,6 @@
 ValueSet: Organisation-CheshireAndMerseyside
 Id: OrganisationCheshireAndMerseyside
-Title: "Organisation Cheshire and Merseyside ICS NHS Trusts"
+Title: "Organisation Cheshire and Merseyside ICS (QYG) NHS Trusts"
 Description: """
 Source: [NHS England - North West Region](https://www.england.nhs.uk/system-and-organisational-oversight/system-directory/north-west-region/)
 """

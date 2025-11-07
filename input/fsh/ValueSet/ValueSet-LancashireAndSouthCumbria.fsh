@@ -1,6 +1,6 @@
 ValueSet: Organisation-LancashireAndSouthCumbria
 Id: OrganisationLancashireAndSouthCumbria
-Title: "Organisation Lancashire and South Cumbria ICS NHS Trusts"
+Title: "Organisation Lancashire and South Cumbria ICS (QE1) NHS Trusts"
 Description: """
 Source: [NHS England - North West Region](https://www.england.nhs.uk/system-and-organisational-oversight/system-directory/north-west-region/)
 """
