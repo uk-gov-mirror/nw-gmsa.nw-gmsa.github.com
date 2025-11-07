@@ -1,15 +1,4 @@
-The APIs are available on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network)
-
-## Environments
-
-| Environment         | Service                                 | Base Url                                                                         | Capability Statement 'OAS'                                                                                                  |
-|---------------------|-----------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Development         |                                         |                                                                                  |                                                                                                                             |
-|                     | Regional Integration Engine (RIE)       | https://10.165.194.216/gentiedev/ESB                                             | See [Placer Order Management [LAB-1]](LAB-1.html) and [CapabilityStatement](https://10.165.194.216/gentiedev/ESB/metadata)  |
-|                     | Regional Clinical Data Repository (CDR) | https://10.165.194.216/irishealth/csp/healthshare/clinicaldatarepository/fhir/r4 | See [Query Existing Data [PCC-44]](PCC-44.html)                                                                             |
-| Integration Testing |                                         |                                                                                  |                                                                                                                             |
-|                     | Regional Integration Engine (RIE)       | https://10.165.194.217/gentietest/ESB                                            | See [Placer Order Management [LAB-1]](LAB-1.html) and [CapabilityStatement](https://10.165.194.217/gentietest/ESB/metadata) |
-|                     | Regional OAuth2 Server                  | https://10.165.194.217/gentietest/oauth2                                         |                                                                                                                             | 
+## Test 
 
 ### Test Patients
 
@@ -60,6 +49,20 @@ In all test cases the report is sent to the regional Genomic Clinical Data Repor
 | London        | To be determined | RBS                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
 | London        | To be determined | R0A                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
 
+## Environments
+
+The APIs are available on the [Health and Social Care Network (HSCN)](https://digital.nhs.uk/services/health-and-social-care-network)
+
+
+| Environment         | Service                                 | Base Url                                                                         | Capability Statement 'OAS'                                                                                                  |
+|---------------------|-----------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Development         |                                         |                                                                                  |                                                                                                                             |
+|                     | Regional Integration Engine (RIE)       | https://10.165.194.216/gentiedev/ESB                                             | See [Placer Order Management [LAB-1]](LAB-1.html) and [CapabilityStatement](https://10.165.194.216/gentiedev/ESB/metadata)  |
+|                     | Regional Clinical Data Repository (CDR) | https://10.165.194.216/irishealth/csp/healthshare/clinicaldatarepository/fhir/r4 | See [Query Existing Data [PCC-44]](PCC-44.html)                                                                             |
+| Integration Testing |                                         |                                                                                  |                                                                                                                             |
+|                     | Regional Integration Engine (RIE)       | https://10.165.194.217/gentietest/ESB                                            | See [Placer Order Management [LAB-1]](LAB-1.html) and [CapabilityStatement](https://10.165.194.217/gentietest/ESB/metadata) |
+|                     | Regional OAuth2 Server                  | https://10.165.194.217/gentietest/oauth2                                         |                                                                                                                             | 
+
 
 ### Security and authorisation
 
@@ -108,8 +111,5 @@ The FHIR Validator defaults to validating individual FHIR resources (not FHIR Bu
 ## Asking a FHIR Server
 
 [validator.fhir.org](https://validator.fhir.org/) provides a web-based interface to the Validator CLI jar. This defaults to international FHIR and the options tab can be used to specify specific packages and SNOMED editions (this is listed as `UK - 999000041000000102`). This IG is not currently published to the registry and so `ukcore` should be used instead using the latest release
-
-
-
 
 
