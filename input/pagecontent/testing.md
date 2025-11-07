@@ -38,6 +38,29 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 |                                                                 | [LEEDS](Patient-Patient-Leeds.html)           | Ricky    |             | M      | 1978-01-17                 | RB920                     | QWO     | Maison Lane           |                |                | LEEDS                     |                               | LS8 2HH  | 
 | [944 930 5552](Patient-Patient-OctaviaCHISLETT-9449305552.html) | CHISLETT                                      | Octavia  |             | F      | 2008-09-20                 |                           |         | 1 RAVENSFIELD GARDENS |                |                | EPSOM                     | SURREY                        | KT19 0ST |
 
+### Test Scenarios
+
+In all test cases the report is sent to the regional Genomic Clinical Data Reporsitory (CDR).
+
+| Given Patient | with ODS         | and Order Facility | then report is sent to NHS Trust              | and ICS Application       |
+|---------------|------------------|--------------------|-----------------------------------------------|---------------------------|
+| Manchester    | F81399 (QOP)     | RBS                | RBS (Alder Hey)                               | QOP GMCR                  |
+| Manchester    | F81399 (QOP)     | R0A                | R0A (Manchester University)                   | QOP GMCR                  |
+| Manchester    | F81399 (QOP)     | REP                | REP (Liverpool Womens)                        | QOP GMCR                  |
+| Liverpool     | Y00175 (QYG)     | RBS                | RBS (Alder Hey)                               | QYG Share2Care            |
+| Liverpool     | Y00175 (QYG)     | R0A                | R0A (Manchester University)                   | QYG Share2Care            |
+| Liverpool     | Y00175 (QYG)     | REP                | REP (Liverpool Womens)                        | QYG Share2Care            |
+| Leeds         | F81399 (QOP)     | RBS                | RBS (Alder Hey)                               | *not delivered (YHCR)*     |
+| Leeds         | F81399 (QOP)     | R0A                | R0A (Manchester University)                   | *not delivered (YHCR)*      |
+| Leeds         | F81399 (QOP)     | REP                | REP (Liverpool Womens)                        | *not delivered (YHCR)*      |
+| Leeds         | F81399 (QOP)     | To be determined   | *not delivered*                               | *not delivered (YHCR)*      |
+| Wrexham       | To be determined | RBS                | RBS (Alder Hey)                               | *not delivered (DWCW)*      |
+| Wrexham       | To be determined | R0A                | R0A (Manchester University)                   | *not delivered (DHCW)*      |
+| Wrexham       | To be determined | REP                | REP (Liverpool Womens)                        | *not delivered (DHCW)*      |
+| London        | To be determined | RBS                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
+| London        | To be determined | R0A                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
+
+
 ### Security and authorisation
 
 This API has two access modes:
