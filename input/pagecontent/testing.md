@@ -67,7 +67,7 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 
 In all test cases the report is sent to the regional Genomic Clinical Data Reporsitory (CDR).
 
-### Round Robin Tests (NHS Trust EPR -> LIMS -> EPR)
+### Round Robin Tests (NHS Trust - EPR -> LIMS -> NHS Trust - EPR and ICS)
 
 Diagnostic Testing are ordered and performed within the region, patient can be from within or outside the region.
 
