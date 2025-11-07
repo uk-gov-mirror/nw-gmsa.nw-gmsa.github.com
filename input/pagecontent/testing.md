@@ -69,7 +69,7 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 
 ### Test Scenarios
 
-In all test cases the report is sent to the regional Genomic Clinical Data Reporsitory (CDR).
+In all test cases the report is sent to the regional Genomic Clinical Data Repository (CDR).
 
 ### Round Robin Tests (NHS Trust - EPR -> LIMS -> NHS Trust - EPR and ICS)
 
