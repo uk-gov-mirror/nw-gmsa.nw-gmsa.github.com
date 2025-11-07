@@ -31,6 +31,10 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 
 In all test cases the report is sent to the regional Genomic Clinical Data Reporsitory (CDR).
 
+### Round Robin Tests (NHS Trust EPR -> LIMS -> EPR)
+
+Diagnostic Testing are ordered and performed within the region, patient can be from within or outside the region.
+
 | Given Patient | with ODS         | and Order Facility | then report is sent to NHS Trust              | and ICS Application       |
 |---------------|------------------|--------------------|-----------------------------------------------|---------------------------|
 | Manchester    | F81399 (QOP)     | RBS                | RBS (Alder Hey)                               | QOP GMCR                  |
@@ -42,12 +46,20 @@ In all test cases the report is sent to the regional Genomic Clinical Data Repor
 | Leeds         | F81399 (QOP)     | RBS                | RBS (Alder Hey)                               | *not delivered (YHCR)*     |
 | Leeds         | F81399 (QOP)     | R0A                | R0A (Manchester University)                   | *not delivered (YHCR)*      |
 | Leeds         | F81399 (QOP)     | REP                | REP (Liverpool Womens)                        | *not delivered (YHCR)*      |
-| Leeds         | F81399 (QOP)     | To be determined   | *not delivered*                               | *not delivered (YHCR)*      |
 | Wrexham       | To be determined | RBS                | RBS (Alder Hey)                               | *not delivered (DWCW)*      |
 | Wrexham       | To be determined | R0A                | R0A (Manchester University)                   | *not delivered (DHCW)*      |
 | Wrexham       | To be determined | REP                | REP (Liverpool Womens)                        | *not delivered (DHCW)*      |
-| London        | To be determined | RBS                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
-| London        | To be determined | R0A                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
+
+### Out of Area Tests (LIMS -> EPR)
+
+Diagnostic Testing is performed in the North West and Ordering Facility is outside the region.
+
+| Given Patient | with ODS         | and Order Facility | then report is sent to NHS Trust              | and ICS Application       |
+|---------------|------------------|--------------------|-----------------------------------------------|---------------------------|
+| Leeds         | F81399 (QOP)     | To be determined   | *not delivered*                               | *not delivered (YHCR)*      |
+| London        | To be determined | To be determined                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
+| London        | To be determined | To be determined                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
+
 
 ## Environments
 
