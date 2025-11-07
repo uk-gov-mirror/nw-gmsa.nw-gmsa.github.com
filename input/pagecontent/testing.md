@@ -13,7 +13,8 @@ The APIs are available on the [Health and Social Care Network (HSCN)](https://di
 
 ### Test Patients
 
-All test patients will eventually be on NHS England PDS FHIR API (Int environment).
+All test patients (with a NHS Number) are on NHS England [Personal Demographics Service - FHIR API](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir) (Int environment).
+
 The ODS code for GP Surgery MUST be a real code, this is used for routing reports to relevant ICS.
 
 | NHS Number                                                      | Surname                                       | Forename | Middle name | Gender | Date Of Birth <br/> (SMSP) | GP Surgery <br/> ODS Code | ICS     | Address line 1        | Address line 2 | Address line 3 | Address line 4 <br/> city | Address line 5 <br/> district | Postcode |
