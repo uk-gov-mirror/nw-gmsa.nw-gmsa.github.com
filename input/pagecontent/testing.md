@@ -63,10 +63,10 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 |                                                                 | [LIVERPOOL](Patient-Patient-Liverpool.html)   | Ned      |             | M      | 1942-06-18                 | Y00175                    | **QYG** | 20 Forthlin Road      |                |                | LIVERPOOL                 |                               | L18 9TN  |
 |                                                                 | [LANCASTER](Patient-Patient-Lancaster.html)   | Jaime    |             | M      | 1970-07-27                 | P81002                    | **QE1** |                       |
 |                                                                 | [LEEDS](Patient-Patient-Leeds.html)           | Rob      |             | M      | 1978-01-17                 | RB920                     | QWO     | Maison Lane           |                |                | LEEDS                     |                               | LS8 2HH  | 
-|                                                                 | [LONDON](Patient-Patient-London.html)         | Cersei   | 1973-10-03  | F      |                            | F83004                    |         |
-|                                                                 | [BIRMINGHAM](Patient-Patient-Birmingham.html) | Tommen   | 1999-09-07  | M      |                            | M85124                    |         |                       |
-|                                                                 | [WREXHAM](Patient-Patient-Wrexham.html)       | Myrcella | 1999-10-13  | F      |                            | W91022                    |         |
-|                                                                 | [NOTTINGHAM](Patient-Patient-Nottingham.html) | Lyarra   | 1924-01-05  | F      |                            |                           |         |                       |
+|                                                                 | [LONDON](Patient-Patient-London.html)         | Cersei   |             | F      | 1973-10-03                 | F83004                    |         |
+|                                                                 | [BIRMINGHAM](Patient-Patient-Birmingham.html) | Tommen   |             | M      | 1999-09-07                 | M85124                    |         |                       |
+|                                                                 | [WREXHAM](Patient-Patient-Wrexham.html)       | Myrcella |             | F      | 1999-10-13                 | W91022                    |         |
+|                                                                 | [NOTTINGHAM](Patient-Patient-Nottingham.html) | Lyarra   |             | F      | 1924-01-05                 |                           |         |                       |
 
 ```mermaid
 graph TD;
