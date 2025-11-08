@@ -4,8 +4,7 @@ Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Observation-re
 Id:             Observation
 Title:          "Observation"
 Description:    """
-<span class="badge badge-secondary">Patient Care</span>
-
+`Patient Care`
 """
 
 * identifier 1..* MS

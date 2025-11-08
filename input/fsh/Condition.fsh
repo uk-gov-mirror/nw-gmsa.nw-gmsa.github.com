@@ -3,7 +3,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Condition
 Id:             Condition
 Title:          "Condition"
 Description:    """
-<span class="badge badge-secondary">Patient Care</span>
+`Patient Care`
 """
 
 * identifier 1..* MS
