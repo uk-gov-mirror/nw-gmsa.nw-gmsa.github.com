@@ -19,7 +19,7 @@ Usage: #example
 
 * name.use = #official
 * name.family = "MANCHESTER"
-* name.given = "Jon"
+* name.given = "Sansa"
 
 * birthDate = "1972-09-21"
 
@@ -30,7 +30,7 @@ Usage: #example
   * city = "MANCHESTER"
   * postalCode = "M13 9PL"
 
-* gender = #male
+* gender = #female
 
 * contact.name.use = #official
 * contact.name.family = "MANCHESTER"

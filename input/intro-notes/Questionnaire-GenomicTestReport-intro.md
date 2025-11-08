@@ -177,10 +177,10 @@ This is for elaboration and subject to change.
 
 HL7 LRI (Ref A) Example 2 (5.9.1.2) - FOUND DISCRETE – TARGETED MUTATIONS ANALYSIS THAT STUDIES MANY MUTATIONS (106) 
 
-- [Patient Paul LIVERPOOL](Patient-Patient-Liverpool.html) <span class="badge badge-secondary">Patient Admin</span>
-- [Genomic Study- Inherited MMR deficiency (Lynch syndrome)](Procedure-f0036554-cd1a-463c-ac8a-d891ca409af9.html) <span class="badge badge-secondary">Genomics</span>
-- [Diagnostic Implication - Lynch syndrome](Observation-6beb613f-d303-42af-b025-86e8e0872061.html) <span class="badge badge-secondary">Genomics</span>
-- [Variant NTHL1](Observation-8385c2fd-313d-4fd5-b98e-d5ea4bae6f99.html) <span class="badge badge-secondary">Genomics</span>
+- [Patient Paul LIVERPOOL](Patient-Patient-Liverpool.html) <span class="badge badge-info">Patient Admin</span>
+- [Genomic Study- Inherited MMR deficiency (Lynch syndrome)](Procedure-f0036554-cd1a-463c-ac8a-d891ca409af9.html) <span class="badge badge-primary">Genomics</span>
+- [Diagnostic Implication - Lynch syndrome](Observation-6beb613f-d303-42af-b025-86e8e0872061.html) <span class="badge badge-primary">Genomics</span>
+- [Variant NTHL1](Observation-8385c2fd-313d-4fd5-b98e-d5ea4bae6f99.html) <span class="badge badge-primary">Genomics</span>
 
 #### Primary or Secondary Care Examples
 
@@ -196,9 +196,9 @@ HL7 LRI (Ref A) Example 2 (5.9.1.2) - FOUND DISCRETE – TARGETED MUTATIONS ANAL
 
 HL7 LRI (Ref A) Example 3 (5.9.1.3)  - SIMPLE VARIANT – MUTATION ANALYSIS WITH SEQUENCE PLUS DELETION-DUPLICATION STUDY
 
-- [Patient Jaime LANCASTER](Patient-Patient-Lancaster.html)  <span class="badge badge-secondary">Patient Admin</span>
-- [RelatedPerson](StructureDefinition-RelatedPerson-examples.html)  <span class="badge badge-secondary">Patient Admin</span>
-- [Genomic Study - Cystic fibrosis carrier testing](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html) <span class="badge badge-secondary">Genomics</span>
-- [Diagnostic Implication - Cystic Fibrosis Carrier](Observation-a954a98c-f427-4968-9022-8b760de66628.html) <span class="badge badge-secondary">Genomics</span>
-- [Variant CFTR](Observation-bca547c1-78a5-41be-8cfc-03c05805ac85.html) <span class="badge badge-secondary">Genomics</span>
+- [Patient Jaime LANCASTER](Patient-Patient-Lancaster.html)  <span class="badge badge-primary">Patient Admin</span>
+- [RelatedPerson](StructureDefinition-RelatedPerson-examples.html)  <span class="badge badge-info">Patient Admin</span>
+- [Genomic Study - Cystic fibrosis carrier testing](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html) <span class="badge badge-primary">Genomics</span>
+- [Diagnostic Implication - Cystic Fibrosis Carrier](Observation-a954a98c-f427-4968-9022-8b760de66628.html) <span class="badge badge-primary">Genomics</span>
+- [Variant CFTR](Observation-bca547c1-78a5-41be-8cfc-03c05805ac85.html) <span class="badge badge-primary">Genomics</span>
 
