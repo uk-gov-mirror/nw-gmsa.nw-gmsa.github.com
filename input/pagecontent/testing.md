@@ -70,15 +70,19 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 
 ```mermaid
 graph TD;
-    Nottingham((Nottingham<br/>Lyarra)) --> |Mother| Liverpool[Liverpool<br/>Ned]
-    Liverpool --> |Father| Leeds[Leeds<br/>Rob]
-    Liverpool --> |Father| Manchester((Manchester<br/>Sansa))
+    subgraph LynchSyndrome[Lynch Syndrome Scenario]
+        Nottingham((Nottingham<br/>Lyarra)) --> |Mother| Liverpool[Liverpool<br/>Ned]
+        Liverpool --> |Father| Leeds[Leeds<br/>Rob]
+        Liverpool --> |Father| Manchester((Manchester<br/>Sansa))
+    end
 
-    London((London<br/>Cersei)) --> |Mother| Birmmingham
-    London --> |Mother| Wrexham((Wrexham<br/>Myrcella))
-    Lancaster[Lancaster<br/>Jaime] --> |Father| Birmmingham[Birmmingham<br/>Tommen]
-    Lancaster --> |Father| Wrexham
-    London --> |Twin| Lancaster
+    subgraph CysticFibrosis[Cystic Fibrosis Scenario]
+        London((London<br/>Cersei)) --> |Mother| Birmmingham
+        London --> |Mother| Wrexham((Wrexham<br/>Myrcella))
+        Lancaster[Lancaster<br/>Jaime] --> |Father| Birmmingham[Birmmingham<br/>Tommen]
+        Lancaster --> |Father| Wrexham
+        London --> |Twin| Lancaster
+    end
 ```
 
 ### Test Scenarios
