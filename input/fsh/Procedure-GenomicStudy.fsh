@@ -3,6 +3,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Procedure
 Id:             Procedure-GenomicStudy
 Title:          "Procedure Genomic Study"
 Description:    """
+<span class="badge badge-primary">Genomics</span>
 """
 
 * subject 1..1 MS

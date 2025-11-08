@@ -3,6 +3,7 @@ Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/ge
 Id:             Observation-Genotype
 Title:          "Observation Genotype"
 Description:    """
+<span class="badge badge-primary">Genomics</span>
 """
 
 * identifier 1..* MS

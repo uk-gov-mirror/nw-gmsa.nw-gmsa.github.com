@@ -3,6 +3,7 @@ Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/di
 Id:             Observation-DiagnosticImplication
 Title:          "Observation Diagnostic Implication"
 Description:    """
+<span class="badge badge-primary">Genomics</span>
 Reference:
 - [FHIR Genomic Report - Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html)
 - [openEHR Genomic Variant Result](https://ckm.openehr.org/ckm/archetypes/1013.1.3759)
