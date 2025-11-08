@@ -3,12 +3,7 @@ Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/va
 Id:             Observation-Variant
 Title:          "Observation Variant"
 Description:    """
-`Genomics`
-
-Reference:
-- part of [openEHR Genomic Variant Result](https://ckm.openehr.org/ckm/archetypes/1013.1.3759)
-- [NHS England Genomics Education - Visual communication aid: Variants of uncertain significance (VUS)](https://www.genomicseducation.hee.nhs.uk/genotes/knowledge-hub/visual-communication-aid-variants-of-uncertain-significance-vus/)
-"""
+`Genomics`"""
 
 * identifier 1..* MS
 
