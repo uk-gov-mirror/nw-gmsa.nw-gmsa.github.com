@@ -23,8 +23,8 @@ Description: "Based on HL7 LRI Example 2 (Ref 5.9.1.2)"
 
 * derivedFrom = Reference(bca547c1-78a5-41be-8cfc-03c05805ac85)
 
-* subject = Reference(Patient-Manchester)
-* subject.display = "Liam MANCHESTER"
+* subject = Reference(Patient-Lancaster)
+* subject.display = "Jaime LANCASTER"
 
 * component[0].code = $loinc#53037-8 "Genetic variation clinical significance [Imp]"
 * component[=].valueCodeableConcept = $loinc#LA6668-3 "Pathogenic"

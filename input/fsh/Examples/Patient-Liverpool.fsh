@@ -1,6 +1,6 @@
 Instance: Patient-Liverpool
 InstanceOf: Patient
-Title: "Patient - Paul Liverpool NHS Number: 9876543210"
+Title: "Patient - Ned Liverpool NHS Number: 9876543210"
 Description: """
 Test Patient for Cheshire and Merseyside ICS
 """
@@ -19,7 +19,7 @@ Usage: #example
 
 * name.use = #official
 * name.family = "LIVERPOOL"
-* name.given = "Paul"
+* name.given = "Ned"
 
 * birthDate = "1942-06-18"
 

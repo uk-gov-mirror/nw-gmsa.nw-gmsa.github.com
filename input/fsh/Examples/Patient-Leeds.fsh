@@ -1,6 +1,6 @@
 Instance: Patient-Leeds
 InstanceOf: Patient
-Title: "Patient - Ricky Leeds NHS Number: 9321087654"
+Title: "Patient - Rob Leeds NHS Number: 9321087654"
 Description: """
 Test Patient for West Yorkshire ICB
 """
@@ -19,7 +19,7 @@ Usage: #example
 
 * name.use = #official
 * name.family = "LEEDS"
-* name.given = "Ricky"
+* name.given = "Rob"
 
 * birthDate = "1978-01-17"
 

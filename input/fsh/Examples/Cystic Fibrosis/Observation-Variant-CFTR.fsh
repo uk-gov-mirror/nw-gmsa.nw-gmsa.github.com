@@ -21,8 +21,8 @@ Description: "Based on HL7 LRI Example 2 (Ref 5.9.1.2)"
 
 * performer[+] = Reference(59577028-8fcc-4554-8b43-988561d41d9c)
 
-* subject = Reference(Patient-Manchester)
-* subject.display = "Liam MANCHESTER"
+* subject = Reference(Patient-Lancaster)
+* subject.display = "Jaime LANCASTER"
 
 //* method = $loinc#LA26398 "Sequencing"
 

@@ -19,7 +19,7 @@ Usage: #example
 
 * name.use = #official
 * name.family = "MANCHESTER"
-* name.given = "Liam"
+* name.given = "Jon"
 
 * birthDate = "1972-09-21"
 
