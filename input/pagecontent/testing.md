@@ -70,13 +70,13 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 
 ```mermaid
 graph TD;
-    Nottingham --> |Mother| Liverpool
-    Liverpool --> |Son| Leeds
-    Liverpool --> |Daughter| Manchester
+    Nottingham((Nottingham<br/>Lyarra)) --> |Mother| Liverpool[Liverpool<br/>Ned]
+    Liverpool --> |Father| Leeds[Leeds<br/>Rob]
+    Liverpool --> |Father| Manchester((Manchester<br/>Sansa))
 
-    London --> |Mother| Birmmingham
-    London --> |Mother| Wrexham
-    Lancaster --> |Father| Birmmingham
+    London((London<br/>Cersei)) --> |Mother| Birmmingham
+    London --> |Mother| Wrexham((Wrexham<br/>Myrcella))
+    Lancaster[Lancaster<br/>Jaime] --> |Father| Birmmingham[Birmmingham<br/>Tommen]
     Lancaster --> |Father| Wrexham
     London --> |Twin| Lancaster
 ```

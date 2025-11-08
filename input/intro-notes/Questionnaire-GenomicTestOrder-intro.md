@@ -20,6 +20,8 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 
 ## Diagnostic Order
 
+<span class="badge badge-info">Patient Admin</span> <span class="badge badge-primary">Diagnostic Testing</span> <span class="badge badge-primary">Genomics</span>
+
 | Name                                                  | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest                                               | HL7 FHIR Resource (Message + RESTful)                                                                                       |
 |-------------------------------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-----------------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Patient                                               |         |                                                                                             | 1..1        | [PID](hl7v2.html#pid)             | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject                                                               | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html)                                                    |
@@ -36,6 +38,8 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 
 ## Specimen
 
+<span class="badge badge-primary">Diagnostic Testing</span>
+
 | Name                                                  | LOINC   | Value Set / Data Type                                                                          | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest       | HL7 FHIR Resource (Message + RESTful)                                            |
 |-------------------------------------------------------|---------|------------------------------------------------------------------------------------------------|-------------|-----------------------------------|-------------------------------|----------------------------------------------------------------------------------|
 | Specimen ID                                           | 80398-1 |                                                                                                | 0..*        | [SPM](hl7v2.html#spm)             | specimen                      | [Specimen](StructureDefinition-Specimen.html).identifier[PlacerSpecimenNumber]   |
@@ -45,6 +49,8 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 Note: it is likely that source systems will use ORM_01 and not include specimen details. In this case it is suggested that the specimen details are captured as 'Ask at Order Entry Questions' and so provided as OBX segments.
 
 ## Supporting Information
+
+<span class="badge badge-primary">Genomics</span>
 
 | Name                                                                   | Code System         | Value Set / Data Type | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR Resource (Message + RESTful)                                    |
 |------------------------------------------------------------------------|---------------------|-----------------------|-------------|------------------------|--------------------------------------------------------------------------|
