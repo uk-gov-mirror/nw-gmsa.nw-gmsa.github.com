@@ -5,8 +5,6 @@ Id:             Observation
 Title:          "Observation"
 Description:    """
 <span class="badge badge-secondary">Patient Care</span>
-Reference
-- **NHS England HL7 v2** OBX [ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws)
 
 """
 

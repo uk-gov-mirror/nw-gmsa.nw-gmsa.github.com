@@ -4,7 +4,6 @@ Id:             RelatedPerson
 Title:          "RelatedPerson"
 Description:    """
 <span class="badge badge-info">Patient Admin</span>
-Placeholder for elaboration
 """
 
 

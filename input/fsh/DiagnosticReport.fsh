@@ -5,9 +5,6 @@ Id:             DiagnosticReport
 Title:          "Diagnostic Report"
 Description:    """
 <span class="badge badge-primary">Diagnostic Testing</span>
-Reference:
-- The Royal College of Radiologists [Reporting networks - understanding the technical options](https://www.rcr.ac.uk/media/wwtp2mif/rcr-publications_radiology-reporting-networks-understanding-the-technical-options_march-2022.pdf)
-- [NHS England Genomics DiagnosticReport](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/FHIRAssets/Profiles/All-Profiles/UKCore-DiagnosticReport) use text descriptions only, not the rendered profile.
 
 """
 

@@ -5,10 +5,6 @@ Id:             ServiceRequest
 Title:          "ServiceRequest"
 Description:    """
 <span class="badge badge-primary">Diagnostic Testing</span>
-Reference:
-- [NHS England Genomics ServiceRequest](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/FHIRAssets/Profiles/All-Profiles/UKCore-ServiceRequest) use text descriptions only, not the rendered profile.
-- [HL7 Europe Laboratory Report - ServiceRequest: Laboratory Order](https://build.fhir.org/ig/hl7-eu/laboratory/StructureDefinition-ServiceRequest-eu-lab.html)
-
 """
 
 //* extension[additionalContact] ^short = "Do not use, not supported. Use PractitionerRole instead."
