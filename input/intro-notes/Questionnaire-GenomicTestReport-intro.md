@@ -24,23 +24,35 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 
 ### Diagnostic Report
 
-<span class="badge badge-info">Patient Admin</span> <span class="badge badge-primary">Diagnostic Testing</span> <span class="badge badge-primary">Genomics</span>
-
 Metadata is data that applies to the patient's entire clinical pathway and so it extends beyond diagnostic tests.
 Test detail tends to be common across all diagnostic tests in a patient's pathway, not just genomics.
+
+<span class="badge badge-info">Patient Administration</span>
 
 | Name                                     | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 ORU_RO1 Message              | HL7 FHIR DiagnosticReport                                                               | HL7 FHIR Resource (RESTful)                               |
 |------------------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | Patient                                  |         |                                                                                             | 1..1        | [PID](hl7v2.html#pid)               | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).subject                   | [Patient](StructureDefinition-Patient.html)               |
 | Case Identification or Visit/Stay Number | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html) | 0..1        | [PV1](hl7v2.html#pv1)-19            | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).encounter                 | [Encounter](StructureDefinition-Encounter.html)           |
+
+<span class="badge badge-primary">Diagnostic Testing</span>
+
+| Name                                     | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 ORU_RO1 Message              | HL7 FHIR DiagnosticReport                                                               | HL7 FHIR Resource (RESTful)                               |
+|------------------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | Order Number                             |         | [Placer Order Number](https://nw-gmsa.github.io/R4/PlacerOrderNumber.html)                  | 1..1        | [ORC](hl7v2.html#orc)-2             | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).basedOn                   | [ServiceRequest](StructureDefinition-ServiceRequest.html) |
 | Report Number                            |         | [Report Number](StructureDefinition-ReportNumber.html)                                      | 1..1        | [OBR](hl7v2.html#obr)-3             | [[DiagnosticReport](StructureDefinition-DiagnosticReport.html).identifier[ReportNumber] |                                                           |
-| Genomic Test Code                        |         | [Genomic Test Code](ValueSet-GenomicTestCodes.html)                                         | 1..1        | [OBR](hl7v2.html#obr)-4             | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).code                      |                                                           |
+| Order Code                               |         | See below                                                                                   | 1..1        | [OBR](hl7v2.html#obr)-4             | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).code                      |                                                           |
 | Report date                              |         |                                                                                             | 1..1        | [OBR](hl7v2.html#obr)-7             | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).effectiveDateTime         |                                                           |
 | Results Interpreter                      |         | [England Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)          | 0..*        | [OBR](hl7v2.html#obr)-32 and OBR-33 | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).resultsInterpreter        | [Practitioner](StructureDefinition-Practitioner.html)     |                                                                                            
 | Performer (operator)                     |         | [England Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)          | 1..*        | [OBR](hl7v2.html#obr)-34            | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).performer[operator]       | [Practitioner](StructureDefinition-Practitioner.html)     |
 | Performer (organisation)                 |         | [Organisation Code](StructureDefinition-OrganisationCode.html)                              | 1..*        |                                     | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).performer[organisation]   | [Organizaton](StructureDefinition-Organizaton.html)       |
 | Specimen                                 | 80398-1 |                                                                                             | 0..1        | [SPM](hl7v2.html#spm)               | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).specimen                  | [Specimen](StructureDefinition-Specimen.html)             |
+
+<span class="badge badge-primary">Genomics</span>
+
+| Name                           | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 ORU_RO1 Message              | HL7 FHIR DiagnosticReport                                                               | HL7 FHIR Resource (RESTful)                               |
+|--------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| Order Code - Genomic Test Code |         | [Genomic Test Code](ValueSet-GenomicTestCodes.html)                                         | 1..1        | [OBR](hl7v2.html#obr)-4             | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).code                      |                                                           |
+
 
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-report.html" _target="_blank">Genomic Report</a> 
