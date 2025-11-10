@@ -30,6 +30,8 @@ erDiagram
     DomainEntity }|--|| DomainEvent : ideallyOne
 ```
 
+The concept of `Domain Archetype` is from [Data Mesh](https://en.wikipedia.org/wiki/Data_mesh), and this is being used to bridge the two architectures.
+
 A `domain archetype` can consist of many `archtypes` and `domain entities`, an archetype and entity can be the same.
 `Domain Event` is a key interaction with `Domain Driven Design`, ideally this should contain a single `Domain Event` as multiple events can become an [anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern).
 
