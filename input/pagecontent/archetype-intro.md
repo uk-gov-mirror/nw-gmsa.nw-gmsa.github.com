@@ -1,3 +1,4 @@
+## Overview 
 
 <figure>
 {%include Diagnostic-Workflow-mindmap.svg%}
@@ -9,7 +10,11 @@ This implementation guide is primarily focused on **Diagnostic Workflow** and ho
 - **Patient Care** and **Patient Administration** are generally found in NHS providers **Electronic Patient Record** systems
 - **Care Directory Services** is centrally defined by NHS England and has supporting API's provided by NHS England (e.g. ODS).
 
-In software design these are often called [domains](https://en.wikipedia.org/wiki/Domain-driven_design), **Genomic Diagnostic Workflow** sits in between several domains and in software architecture this is called a [bounded context](https://martinfowler.com/bliki/BoundedContext.html)
+In software design these are often called [domains](https://en.wikipedia.org/wiki/Domain-driven_design), **Genomic Diagnostic Workflow** sits in between several domains and in software architecture this is called a [bounded context](https://martinfowler.com/bliki/BoundedContext.html). 
+
+### Domain Archtype
+
+This section of the guide focuses on `health informatics` / `data architecture` / `information science covers` [Archetype](https://en.wikipedia.org/wiki/Archetype_(information_science))
 
 
 ## Diagnostic Report
