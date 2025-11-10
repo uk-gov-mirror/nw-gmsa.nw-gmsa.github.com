@@ -3,7 +3,7 @@ Parent:         Encounter
 Id:             HospitalSpell
 Title:          "Hospital Spell"
 Description:    """
-`Patient Administration`
+`Patient Administration` Related to [Yorkskhire and Humberside - EncounterGrouping](https://fhir.interweavedigital.com/R4/StructureDefinition-Interweave-EncounterGrouping.html)
 """
 
 * identifier 1..* MS

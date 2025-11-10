@@ -3,7 +3,7 @@ Parent:         Encounter
 Id:             Visit
 Title:          "Visit"
 Description:    """
-`Patient Administration`
+`Patient Administration` Equivalent to [Yorkskhire and Humberside - Encounter](https://fhir.interweavedigital.com/R4/StructureDefinition-Interweave-Encounter.html)
 """
 
 * identifier 1..* MS
