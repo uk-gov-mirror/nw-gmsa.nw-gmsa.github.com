@@ -15,10 +15,13 @@
 *** [[Questionnaire-GenomicTestReport.html Laboratory Test Report (ORU_R01)\nGenomic Test Report]]
 **** [[StructureDefinition-DiagnosticReport.html Diagnostic Report (OBR)]]
 *** [[StructureDefinition-Task.html Task]]
-*** [[StructureDefinition-Specimen Specimen (SPM)]]
+*** Biopsy / Sample Collection
+**** [[StructureDefinition-Specimen Specimen (SPM)]]
 ** [[StructureDefinition-Observation.html Observation (OBX)]]
 *** [[#genomic-observation Genomic Observation]]
-** [[StructureDefinition-DocumentReferencet.html Document Reference (OBX and XDS Document Entry)]]
+** [[StructureDefinition-Procedure.html Diagnostic Procedure (PR1)]]
+*** [[#genomic-procedure Genomic Procedure]]
+** [[StructureDefinition-DocumentReference.html Document Reference (OBX and XDS Document Entry)]]
 * Patient Care (Summary)
 ** [[StructureDefinition-Encounter.html Condition (DG1]]
 ** [[StructureDefinition-Procedure.html Procedure (PR1)]]

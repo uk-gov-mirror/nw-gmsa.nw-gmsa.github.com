@@ -51,6 +51,14 @@ In genomics, all these **archetype** definitions are interrelated and **designed
 <p class="figureTitle">Diagnostic Testing Bounded Contexts</p> 
 <br clear="all">
 
+### Genomic Observation
+
+- [Variant](Questionnaire-GenomicTestReport.html#variant)
+- [Diagnostic Implication](Questionnaire-GenomicTestReport.html#diagnostic-implication)
+
+### Genomic Procedure
+
+- [Genomic Study](Questionnaire-GenomicTestReport.html#genomic-study)
 
 ### Genomic Ordering and Reporting (Right Side)
 
