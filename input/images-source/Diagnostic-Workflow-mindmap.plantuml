@@ -2,7 +2,7 @@
 
 * Patient Administration
 ** [[StructureDefinition-Patient.html Patient (PID)]]
-** [[StructureDefinition-Encounter.html Encounter & Episode of Care  (PV1)]]
+** [[StructureDefinition-HospitalSpell.html Hospital Spell  (PV1)]]
 ** [[StructureDefinition-RelatedPerson.html Related Person (NK1)]]
 ** Care Directory
 *** [[StructureDefinition-Organization.html Organisation]]

@@ -1,5 +1,5 @@
 Instance: 984b8a89-4194-4eb4-a7ea-ca8049ebeea3
-InstanceOf: Encounter
+InstanceOf: HospitalSpell
 Title: "Encounter 'episode/stay' Example"
 Description: "TODO"
 
@@ -22,8 +22,8 @@ Description: "TODO"
 
 * period.start = "2025-01-29T10:37:26+00:00"
 
-* participant[attendingDoctor].type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#ATND
-* participant[attendingDoctor].individual.reference = "urn:uuid:ee9b8fcc-c233-43e1-b7fb-b58ce4cf1db8"
+* participant[admittingDoctor].type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#ADM
+* participant[admittingDoctor].individual.reference = "urn:uuid:ee9b8fcc-c233-43e1-b7fb-b58ce4cf1db8"
 
 * location[+]
   * location.identifier.system = "https://fhir.nhs.uk/Id/ods-site-code"

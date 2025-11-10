@@ -188,7 +188,7 @@ This is based on the definition of PV1 from [NHS England HL7 v2 ADT Message Spec
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pv1-to-encounter.html" _target="_blank">PV1 to FHIR Encounter</a> 
 <br/>
-<b>FHIR Profile:</b> <a href="StructureDefinition-Encounter.html" _target="_blank">Encounter</a> 
+<b>FHIR Profile:</b> <a href="StructureDefinition-HospitalSpell.html" _target="_blank">HospitalSpell</a> 
 </div>
 
 #### Examples
