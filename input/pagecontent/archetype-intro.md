@@ -23,6 +23,7 @@ To align these perspectives, this guide defines the following relationship:
 title: Archetype and Entites (Resource)
 ---
 erDiagram
+    direction LR
     DomainArchetype ||--|{ DomainEntity : hasMany
     DomainArchetype ||--|{ Archetype : hasMany
     Archetype ||..|| DomainEntity : canBeSame
