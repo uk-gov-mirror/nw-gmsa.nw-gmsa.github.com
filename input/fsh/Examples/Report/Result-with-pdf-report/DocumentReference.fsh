@@ -23,7 +23,6 @@ Description: "TODO"
   * identifier
     * value = "1001166717"
     * system = "http://www.acme.org/encounter/identifiers/R0A"
-    * type = $v2-0203#VN
     * assigner.identifier.system = $ods-code
     * assigner.identifier.value = "R0A"
 

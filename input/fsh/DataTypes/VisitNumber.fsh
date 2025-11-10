@@ -9,7 +9,7 @@ Reference
 This definition is compatible with [Yorkskhire and Humberside - Interweave-Encounter](https://fhir.interweavedigital.com/R4/StructureDefinition-Interweave-Encounter.html)
 """
 
-* type = $v2-0203#VN
+* type = $v2-0203#VN "Visit number"
 
 
 

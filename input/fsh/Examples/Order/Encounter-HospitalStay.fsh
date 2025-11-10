@@ -6,7 +6,7 @@ Description: "TODO"
 * status = #finished
 
 * identifier[+]
-  * type = $v2-0203#VN
+  * type = $v2-0203#AN
   * value = "1001166717"
   * system = "http://www.acme.org/encounter/identifiers/R0A"
   * assigner.identifier.system = $ods-code

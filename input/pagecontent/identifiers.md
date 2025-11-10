@@ -49,10 +49,10 @@ Changes to v2 and FHIR:
 
 | Organisation                                    | Assigning Authority - ODS Code (All) | Type (All) | System (FHIR) | OID (FHIR, v3 and IHE) | Alternate name | 
 |-------------------------------------------------|--------------------------------------|------------|---------------|------------------------|----------------|
-| Alder Hey Children’s NHS Foundation Trust       | RBS                                  | VN         |               |                        |                |
-| Liverpool Women’s Hospital NHS Foundation Trust | REP                                  | VN         |               |                        |                |
-| The Christie NHS Foundation Trust               | RBV                                  | VN         |               |                        |                |
-| Manchester University NHS Foundation Trust      | ROA                                  | VN         |               |                        |                |
+| Alder Hey Children’s NHS Foundation Trust       | RBS                                  | AN         |               |                        |                |
+| Liverpool Women’s Hospital NHS Foundation Trust | REP                                  | AN         |               |                        |                |
+| The Christie NHS Foundation Trust               | RBV                                  | AN         |               |                        |                |
+| Manchester University NHS Foundation Trust      | ROA                                  | AN         |               |                        |                |
 
 ## Observation (OBX)
 
