@@ -7,3 +7,5 @@ Description: """
 - [UKCoreSourceOfAdmission](https://simplifier.net/hl7fhirukcorer4/valueset-ukcore-sourceofadmission)
 """
 * ^experimental  = false
+
+* include codes from valueset https://fhir.hl7.org.uk/ValueSet/UKCore-SourceOfAdmission

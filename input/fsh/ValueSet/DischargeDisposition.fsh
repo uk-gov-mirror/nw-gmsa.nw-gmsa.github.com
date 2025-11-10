@@ -8,3 +8,4 @@ Description: """
 """
 * ^experimental  = false
 
+* include codes from valueset https://fhir.hl7.org.uk/ValueSet/UKCore-DischargeMethod

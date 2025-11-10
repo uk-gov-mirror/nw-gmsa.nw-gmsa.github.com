@@ -181,14 +181,18 @@ This is based on the definition of PV1 from [NHS England HL7 v2 ADT Message Spec
 |-----------|---------------------------|-------------|-------------|-----------------------------------------------------------------------------------|-----------------------------------------------|
 | PV1-1     | Set ID - PV1              | [PL](#pl)   | R           |                                                                                   | 1                                             |
 | PV1-3     | Assigned Patient Location |             | R           |                                                                                   | ^^^R0A09^^^^^^^R0A <br/> ^^^P1S8J^^^^^^^699X0 |
-| PV1-8     | Referring Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |                                                                                   
+| PV1-8     | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
+| PV1-8     | Referring Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
+| PV1-9     | Consulting Doctor         | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
 | PV1-10    | Hospital Service          |             | R           | [Service](ValueSet-service.html)                                                  | 311                                           |
+| PV1-17    | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
 | PV1-19    | Visit Number              | [CX](#cx)   | O - SHOULD  | [Hospital Provider Spell Identifier](StructureDefinition-HospitalProviderSpellIdentifier.html)                            | 12345^^^R0A                                   |                                    |
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pv1-to-encounter.html" _target="_blank">PV1 to FHIR Encounter</a> 
 <br/>
 <b>FHIR Profile:</b> <a href="StructureDefinition-HospitalSpell.html" _target="_blank">HospitalSpell</a> 
+<b>FHIR Profile:</b> <a href="StructureDefinition-Visit.html" _target="_blank">Visit</a> 
 </div>
 
 #### Examples
