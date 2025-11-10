@@ -3,7 +3,9 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter
 Id:             Encounter
 Title:          "Encounter"
 Description:    """
-`Patient Administration`
+`Patient Administration` `Base`, for implementation see
+- [Hospital Spell](StructureDefinition-HospitalSpell.html) - an admission (inpatient or outpatient)
+- [Visit](StructureDefinition-Visit.html) - an A&E attendance, a community contract, an OP attendance (Appointment), etc
 """
 
 * class 1..1 MS
