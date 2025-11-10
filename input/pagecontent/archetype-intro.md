@@ -6,18 +6,17 @@
 </figure>
 <br clear="all">
 
-This implementation guide is primarily focused on **Diagnostic Workflow** and how it fits in with the wider health data model is shown in the diagram above. 
-- **Patient Care** and **Patient Administration** are generally found in NHS providers **Electronic Patient Record** systems
-- **Care Directory Services** is centrally defined by NHS England and has supporting API's provided by NHS England (e.g. ODS).
+This implementation guide primarily focuses on the **Diagnostic Workflow** and how it integrates within the broader **health data model**, as illustrated in the diagram above.
+- **Patient Care** and **Patient Administration** are typically found in NHS providers **Electronic Patient Record** systems
+- **Care Directory Services** on the other hand, are centrally defined by NHS England, with supporting APIs also provided by NHS England (for example, the ODS API).
 
-In software design these are often called [domains](https://en.wikipedia.org/wiki/Domain-driven_design).
-**Genomic Diagnostic Workflow** sits in between several domains and in software architecture this is called a [bounded context](https://martinfowler.com/bliki/BoundedContext.html). 
+In software design, these areas are often referred to as [domains](https://en.wikipedia.org/wiki/Domain-driven_design). The **Genomic Diagnostic Workflow** operates across several of these domains — in software architecture terms, this is known as a [bounded context](https://martinfowler.com/bliki/BoundedContext.html). 
 
 ### Domain Archetype
 
-This section of the guide focuses on (`health informatics`/`data architecture`/`information science`) [Archetype](https://en.wikipedia.org/wiki/Archetype_(information_science)), this is a related concept to (`domain driven design`) `entity` models.
+This section of the guide explores the concept of a Domain [Archetype](https://en.wikipedia.org/wiki/Archetype_(information_science)) — a notion that connects ideas from health informatics, data architecture, and information science with domain-driven design entity models.
 
-To resolve this difference, this guide has adopted the following relationship:
+To align these perspectives, this guide defines the following relationship:
 
 ```mermaid
 ---
@@ -30,10 +29,11 @@ erDiagram
     DomainEntity }|--|| DomainEvent : ideallyOne
 ```
 
-The concept of `Domain Archetype` is from [Data Mesh](https://en.wikipedia.org/wiki/Data_mesh), and this is being used to bridge the two architectures.
+The **Domain Archetype** concept originates from [Data Mesh](https://en.wikipedia.org/wiki/Data_mesh) principles and serves as a bridge between data architecture and software architecture.
 
-A `domain archetype` can consist of many `archtypes` and `domain entities`, an archetype and entity can be the same.
-`Domain Event` is a key interaction with `Domain Driven Design`, ideally this should contain a single `Domain Event` as multiple events can become an [anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern).
+A **Domain Archetype** may encompass multiple **Archetypes** and **Domain Entities**.
+An **Archetype** and a **Domain Entity** can represent the same concept.
+A **Domain Event** reflects key interactions in Domain-Driven Design; ideally, each archetype or entity should correspond to a single **Domain Event**, since handling multiple events can lead to architectural [anti-patterns](https://en.wikipedia.org/wiki/Anti-pattern) - We should use event-driven message feeds rather than relying on batch data transfers (messages) or the physical exchange of [compositions](https://en.wikipedia.org/wiki/Clinical_Document_Architecture).
 
 | Domain Archetype            | Archetype                                          | Domain Entity     | Domain Event         |
 |-----------------------------|----------------------------------------------------|-------------------|----------------------|
@@ -41,7 +41,7 @@ A `domain archetype` can consist of many `archtypes` and `domain entities`, an a
 | Laboratory Order and Report | Genomic Reporting - HL7 FHIR Profile               | HL7 FHIR Resource | FHIR Workflow        |
 |                             | Genomic Module - openEHR Archetype                 |                   |                      |
 
-In genomics all the definitions of Archetype are related and so compatible with each other.
+In genomics, all these **archetype** definitions are interrelated and **designed to be mutually compatible**.
 
 ## Diagnostic Report
 
