@@ -3,7 +3,7 @@ Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/th
 Id:             Observation-TherapeuticImplication
 Title:          "Observation Therapeutic Implication"
 Description:    """
-`Genomics`
+`Genomic Observation`
 """
 
 * identifier 1..* MS

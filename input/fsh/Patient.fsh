@@ -3,7 +3,7 @@ Profile: Patient
 Parent: http://hl7.eu/fhir/laboratory/StructureDefinition/Patient-eu-lab
 Id: Patient
 Description: """
-<span class="badge badge-info">Patient Admin</span>
+<span class="badge badge-info">Patient Administration</span>
 """
 
 * extension contains https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-EthnicCategory named ethnicCategory 0..1

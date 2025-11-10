@@ -4,7 +4,7 @@ Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-la
 Id:             Specimen
 Title:          "Specimen"
 Description:    """
-<span class="badge badge-primary">Diagnostic Testing</span>
+<span class="badge badge-primary">Diagnostic Workflow</span>
 """
 
 * identifier 1..* MS

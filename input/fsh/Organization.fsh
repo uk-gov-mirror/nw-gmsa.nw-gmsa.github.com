@@ -3,7 +3,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Organization
 Id:             Organization
 Title:          "Organization"
 Description:    """
-`Patient Admin`
+`Care Directory`
 """
 
 * identifier 1..* MS

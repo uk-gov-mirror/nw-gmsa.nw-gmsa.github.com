@@ -5,7 +5,7 @@ Parent:         http://hl7.org/fhir/StructureDefinition/PractitionerRole
 Id:             PractitionerRole
 Title:          "PractitionerRole"
 Description:    """
-`Patient Admin`
+`Care Directory`
 """
 
 * practitioner 1..1 MS

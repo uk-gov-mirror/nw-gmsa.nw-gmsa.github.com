@@ -3,7 +3,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter
 Id:             Encounter
 Title:          "Encounter"
 Description:    """
-`Patient Admin`
+`Patient Administration`
 """
 
 * identifier 1..* MS

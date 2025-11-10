@@ -1,0 +1,27 @@
+@startmindmap
+
+* Patient Administration
+** [[StructureDefinition-Patient.html Patient (PID)]]
+** [[StructureDefinition-Encounter.html Encounter & Episode of Care  (PV1)]]
+** [[StructureDefinition-RelatedPerson.html Related Person (NK1)]]
+** Care Directory
+*** [[StructureDefinition-Organization.html Organisation]]
+*** [[StructureDefinition-Practitioner.html Practitioner]]
+*** [[StructureDefinition-PractitionerRole.html Practitioner Role]]
+* Diagnostic
+**  <b>Diagnostic Workflow</b>
+*** [[Questionnaire-GenomicTestOrder.html Laboratory Test Order (OML_O21)\nGenomic Test Order]]
+**** [[StructureDefinition-ServiceRequest.html Service Request (ORC)]]
+*** [[Questionnaire-GenomicTestReport.html Laboratory Test Report (ORU_R01)\nGenomic Test Report]]
+**** [[StructureDefinition-DiagnosticReport.html Diagnostic Report (OBR)]]
+*** [[StructureDefinition-Task.html Task]]
+*** [[StructureDefinition-Specimen Specimen (SPM)]]
+** [[StructureDefinition-Observation.html Observation (OBX)]]
+*** [[#genomic-observation Genomic Observation]]
+** [[StructureDefinition-DocumentReferencet.html Document Reference (OBX and XDS Document Entry)]]
+* Patient Care (Summary)
+** [[StructureDefinition-Encounter.html Condition (DG1]]
+** [[StructureDefinition-Procedure.html Procedure (PR1)]]
+** [[StructureDefinition-FamilyMemberHistory.html Family Member History]]
+
+@endmindmap

@@ -28,7 +28,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 | Patient                                               |         | [NHS Number](StructureDefinition-NHSNumber.html) [Medical Record Number](StructureDefinition-MedicalRecordNumber.html)                                                                                            | 1..1        | [PID](hl7v2.html#pid)             | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject                                                               | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html)                                                    |
 | Case Identification or Episode/Visit/Stay Number      | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html) | 0..1        | [PV1](hl7v2.html#pv1)-19          |                                                                       | [Encounter](StructureDefinition-Encounter.html).identifier or [EpisodeOfCare](StructureDefinition-EpisodeOfCare.html).identifier |
 
-<span class="badge badge-primary">Diagnostic Testing</span>
+<span class="badge badge-primary">Diagnostic Workflow</span>
 
 | Name                   | LOINC | Value Set / Data Type                                                              | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest                                                                 | HL7 FHIR Resource (Message + RESTful)                                      |
 |------------------------|-------|------------------------------------------------------------------------------------|-------------|-----------------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
@@ -45,7 +45,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 | Notes                  |       |                                                                                    | 0..*        | [NTE](hl7v2.html#nte)             | [ServiceRequest](StructureDefinition-ServiceRequest.html).note                          |                                                                            |
 | Specimen               |       | See Specimen below                                                                 | 0..*        | [SPM](hl7v2.html#spm)             | [ServiceRequest](StructureDefinition-ServiceRequest.html).specimen                      | [Specimen](StructureDefinition-Specimen.html)                              |  
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-primary">Diagnostic Genomics</span>
 
 | Name                                                  | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest                                               | HL7 FHIR Resource (Message + RESTful)                                                                                       |
 |-------------------------------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-----------------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +54,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 
 ## Specimen
 
-<span class="badge badge-primary">Diagnostic Testing</span>
+<span class="badge badge-primary">Diagnostic</span>
 
 | Name                                                  | LOINC   | Value Set / Data Type                                        | Cardinality | HL7 v2 OML_O21 Message            | HL7 FHIR ServiceRequest       | HL7 FHIR Resource (Message + RESTful)                                            |
 |-------------------------------------------------------|---------|--------------------------------------------------------------|-------------|-----------------------------------|-------------------------------|----------------------------------------------------------------------------------|
@@ -66,7 +66,7 @@ Note: it is likely that source systems will use ORM_01 and not include specimen 
 
 ## Supporting Information
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-primary">Diagnostic Genomics</span>
 
 | Name                                                                   | Code System         | Value Set / Data Type | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR Resource (Message + RESTful)                                    |
 |------------------------------------------------------------------------|---------------------|-----------------------|-------------|------------------------|--------------------------------------------------------------------------|

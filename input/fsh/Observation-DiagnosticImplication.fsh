@@ -3,7 +3,7 @@ Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/di
 Id:             Observation-DiagnosticImplication
 Title:          "Observation Diagnostic Implication"
 Description:    """
-`Genomics`
+`Genomic Observation`
 """
 
 * identifier 1..* MS

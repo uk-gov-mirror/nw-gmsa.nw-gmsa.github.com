@@ -3,7 +3,8 @@ Parent:         http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/va
 Id:             Observation-Variant
 Title:          "Observation Variant"
 Description:    """
-`Genomics`"""
+`Genomic Observation`
+"""
 
 * identifier 1..* MS
 

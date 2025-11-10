@@ -34,7 +34,7 @@ Test detail tends to be common across all diagnostic tests in a patient's pathwa
 | Patient                                  |         | [NHS Number](StructureDefinition-NHSNumber.html) [Medical Record Number](StructureDefinition-MedicalRecordNumber.html)        | 1..1        | [PID](hl7v2.html#pid)               | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).subject                   | [Patient](StructureDefinition-Patient.html)               |
 | Case Identification or Visit/Stay Number | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html) | 0..1        | [PV1](hl7v2.html#pv1)-19            | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).encounter                 | [Encounter](StructureDefinition-Encounter.html)           |
 
-<span class="badge badge-primary">Diagnostic Testing</span>
+<span class="badge badge-primary">Diagnostic Workflow</span>
 
 | Name                     | LOINC   | Value Set / Data Type                                                              | Cardinality | HL7 v2 ORU_RO1 Message                   | HL7 FHIR DiagnosticReport                                                              | HL7 FHIR Resource (RESTful)                               |
 |--------------------------|---------|------------------------------------------------------------------------------------|-------------|------------------------------------------|----------------------------------------------------------------------------------------|-----------------------------------------------------------|
@@ -49,7 +49,7 @@ Test detail tends to be common across all diagnostic tests in a patient's pathwa
 | Results                  |         | Domain specific - see below                                                        | 0..*        | [OBX](hl7v2.html#obx)                    | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).results                  | Varies                                                    |   
 | Narrative Report         |         | Domain specific - see below                                                        | 0..*        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).presentedForm            |                                                           |
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-primary">Genomic Observation </span>
 
 | Name                           | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 ORU_RO1 Message              | HL7 FHIR DiagnosticReport                                                               | HL7 FHIR Resource (RESTful)                               |
 |--------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------|
@@ -106,7 +106,7 @@ Description: [Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/ge
 This is for elaboration and subject to change.
 </div>
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-primary">Genomic Observation </span>
 
 See also [HL7 Genomic Reporting - Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html)
 
@@ -128,7 +128,7 @@ See also [HL7 Genomic Reporting - Genomic Study](https://build.fhir.org/ig/HL7/g
 This is for elaboration and subject to change.
 </div>
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-primary">Genomic Observation </span>
 
 TBC - This includes Gene studied [ID] (48018-6) and Gene mutations tested (36908-2). Maybe a requirement from oncology.
 This appears to be part of [FHIR R6 GenomicStudy](https://build.fhir.org/genomicstudy.html)
@@ -149,7 +149,7 @@ Description: [Genomic Observations](https://build.fhir.org/ig/HL7/genomics-repor
 This is for elaboration and subject to change.
 </div>
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-primary">Genomic Observation </span>
 
 | Name                                       | LOINC   | Value Set / Data Type                                                                                                                                      | Example                     | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                                                  |
 |--------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------|-------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -182,7 +182,7 @@ Description: [Genomic Implications](https://build.fhir.org/ig/HL7/genomics-repor
 This is for elaboration and subject to change.
 </div>
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-primary">Genomic Observation </span>
 
 | Name                                                   | LOINC   | Value Set / Data Type                                                                                                                                                                                                                                           | Example        | Cardinality | HL7 v2 OBX-4 | FHIR Observation Profile                                                                                                                                    |
 |--------------------------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|-------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -201,7 +201,7 @@ This is for elaboration and subject to change.
 
 HL7 LRI (Ref A) Example 2 (5.9.1.2) - FOUND DISCRETE – TARGETED MUTATIONS ANALYSIS THAT STUDIES MANY MUTATIONS (106) 
 
-- [Patient LIVERPOOL](Patient-Patient-Liverpool.html) <span class="badge badge-info">Patient Admin</span>
+- [Patient LIVERPOOL](Patient-Patient-Liverpool.html) <span class="badge badge-info">Patient Administration</span>
 - [Genomic Study- Inherited MMR deficiency (Lynch syndrome)](Procedure-f0036554-cd1a-463c-ac8a-d891ca409af9.html) <span class="badge badge-primary">Genomics</span>
 - [Diagnostic Implication - Lynch syndrome](Observation-6beb613f-d303-42af-b025-86e8e0872061.html) <span class="badge badge-primary">Genomics</span>
 - [Variant NTHL1](Observation-8385c2fd-313d-4fd5-b98e-d5ea4bae6f99.html) <span class="badge badge-primary">Genomics</span>
@@ -220,8 +220,8 @@ HL7 LRI (Ref A) Example 2 (5.9.1.2) - FOUND DISCRETE – TARGETED MUTATIONS ANAL
 
 HL7 LRI (Ref A) Example 3 (5.9.1.3)  - SIMPLE VARIANT – MUTATION ANALYSIS WITH SEQUENCE PLUS DELETION-DUPLICATION STUDY
 
-- [Patient LANCASTER](Patient-Patient-Lancaster.html) <span class="badge badge-info">Patient Admin</span>
-- [RelatedPerson](StructureDefinition-RelatedPerson-examples.html)  <span class="badge badge-info">Patient Admin</span>
+- [Patient LANCASTER](Patient-Patient-Lancaster.html) <span class="badge badge-info">Patient Administration</span>
+- [RelatedPerson](StructureDefinition-RelatedPerson-examples.html)  <span class="badge badge-info">Patient Administration</span>
 - [Genomic Study - Cystic fibrosis carrier testing](Procedure-7b362aa5-41a7-4168-94b4-f12dff0dfb2a.html) <span class="badge badge-primary">Genomics</span>
 - [Diagnostic Implication - Cystic Fibrosis Carrier](Observation-a954a98c-f427-4968-9022-8b760de66628.html) <span class="badge badge-primary">Genomics</span>
 - [Variant CFTR](Observation-bca547c1-78a5-41be-8cfc-03c05805ac85.html) <span class="badge badge-primary">Genomics</span>

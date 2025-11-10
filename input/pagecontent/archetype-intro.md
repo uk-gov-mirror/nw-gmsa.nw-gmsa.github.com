@@ -1,10 +1,18 @@
 
-The data model is divided into four main contexts (bounded areas):
+<figure>
+{%include Diagnostic-Workflow-mindmap.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Diagnostic Workflow - MindMap</p>
+</figure>
+<br clear="all">
 
-- Laboratory and Pathology Reporting
-- **Genomic Reporting** (focus of this guide)
-- Imaging Reporting
-- Diagnostic Testing Core (central integration context)
+This implementation guide is primarily focused on **Diagnostic Workflow** and how it fits in with the wider health data model is shown in the diagram above. 
+- **Patient Care** and **Patient Administration** are generally found in NHS providers **Electronic Patient Record** systems
+- **Care Directory Services** is centrally defined by NHS England and has supporting API's provided by NHS England (e.g. ODS).
+
+In software design these are often called [domains](https://en.wikipedia.org/wiki/Domain-driven_design), **Genomic Diagnostic Workflow** sits in between several domains and in software architecture this is called a [bounded context](https://martinfowler.com/bliki/BoundedContext.html)
+
+
+## Diagnostic Report
 
 <img style="padding:3px;width:60%;" src="BoundedContext.drawio.png" alt="Diagnostic Testing Bounded Contexts"/>
 <br clear="all">
@@ -12,26 +20,11 @@ The data model is divided into four main contexts (bounded areas):
 <br clear="all">
 
 
-## Diagnostic Testing Core (Center)
-
-This is the core shared context that links the other three domains; the data modeling is based on **Domain Entities** or resources. It includes common HL7 v2 and FHIR elements used across diagnostic workflows:
-
-- [Patient](StructureDefinition-Patient.html) – (HL7 v2 PID): Represents patient demographic and identification data.
-- Case / Spell – (HL7 FHIR [Encounter](StructureDefinition-Encounter.html) and v2 PV1): Represents the clinical encounter or episode of care.
-- [Diagnostic Report](StructureDefinition-DiagnosticReport.html) – (HL7 v2 OBR): The core diagnostic report entity summarizing results.
-- [Specimen](StructureDefinition-Specimen.html) – (HL7 v2 SPM): Represents the collected specimen or sample.
-- Diagnostic Order – (HL7 FHIR [ServiceRequest](StructureDefinition-ServiceRequest.html) and v2 ORC): Represents orders or requests for diagnostic services.
-- Results are specific to each subdomain. An overview of Genonic results is described in the next section.
-
-These core components enable interoperability and data exchange among different reporting domains.
-
-Note: Patient and Case/Spell are logically part of a Patient Administration domain.
-
-## Genomic Ordering and Reporting (Right Side)
+### Genomic Ordering and Reporting (Right Side)
 
 <figure>
 {%include LTW-model.svg%}
-<p id="fX.X.X.X-X" class="figureTitle">Archtypes High Level Model</p>
+<p id="fX.X.X.X-X" class="figureTitle">Archetypes High Level Model</p>
 </figure>
 <br clear="all">
 

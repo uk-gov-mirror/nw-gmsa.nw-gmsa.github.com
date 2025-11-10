@@ -2,7 +2,7 @@ Profile: Task
 Parent: http://hl7.org/fhir/StructureDefinition/Task
 Id: Task
 Description: """
-<span class="badge badge-info">Patient Admin</span>
+<span class="badge badge-info">Diagnostic Workflow</span>
 Based on [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html)
 """
 
