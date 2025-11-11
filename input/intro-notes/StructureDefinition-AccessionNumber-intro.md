@@ -1,3 +1,8 @@
+## Mapping
+
+- **HL7 FHIR** Specimen.accessionIdentifier (type = ACSN)
+- **HL7 v2** Accession ID (SPM-30)
+- **IHE XDS** referenceIdList
 
 In pathology and genomics, the accession number refers to the Specimen. 
 In imaging the accession number refers to the imaging test [RADIOLOGICAL ACCESSION NUMBER](https://www.datadictionary.nhs.uk/data_elements/radiological_accession_number.html)  

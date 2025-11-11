@@ -1,4 +1,8 @@
+## Mapping 
 
+- **HL7 FHIR** Patient.identifier (type = NH)
+- **HL7 v2** Patient Identifier List (PID-3)
+- **IHE XDS** sourcePatientId and patientId
 
 Format: NNNNNNNNNN
 - England, Wales and the Isle of Man value ranges: 400 000 000 to 499 999 999, and 600 000 000 to 799 999.

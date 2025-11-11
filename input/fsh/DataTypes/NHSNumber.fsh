@@ -8,9 +8,6 @@ Only traced NHS Number **SHOULD** be used, un-traced NHS Numbers **MUST** be cle
 """
 
 * ^purpose = """
-- **HL7 FHIR** Patient.identifier (type = NH)
-- **HL7 v2** Patient Identifier List (PID-3)
-- **IHE XDS** sourcePatientId and patientId
 """
 
 * system 1..1

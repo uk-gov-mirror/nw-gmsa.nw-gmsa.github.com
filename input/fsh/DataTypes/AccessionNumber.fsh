@@ -8,10 +8,6 @@ Uniquely identifies a Specimen across multiple laboratory systems.
 """
 
 * ^purpose = """
-- **HL7 FHIR** Specimen.accessionIdentifier (type = ACSN)
-- **HL7 v2** Accession ID (SPM-30)
-- **IHE XDS** referenceIdList
-
 """
 
 * ^keyword = #NHSDataDictionary

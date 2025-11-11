@@ -3,13 +3,15 @@ Parent:         http://hl7.org/fhir/StructureDefinition/Identifier
 Id:             PractitionerIdentifier
 Title:          "Practitioner Identifier"
 Description:     """
-- **NHS Data Model and Dictionary** [CONSULTANT CODE](https://www.datadictionary.nhs.uk/data_elements/consultant_code.html) and [GENERAL MEDICAL PRACTITIONER PPD CODE](https://www.datadictionary.nhs.uk/attributes/general_medical_practitioner_ppd_code.html).
-- **HL7 FHIR** Practitioner.identifier (type = LN)
-- **HL7 v2** Extended Composite Id Number And Name For Persons (XCN)
-- **IHE XDS** author
+'Care Directory' 'NHS Data Model and Dictionary' [CONSULTANT CODE](https://www.datadictionary.nhs.uk/data_elements/consultant_code.html) and [GENERAL MEDICAL PRACTITIONER PPD CODE](https://www.datadictionary.nhs.uk/attributes/general_medical_practitioner_ppd_code.html).
 """
 
 * ^purpose = """
+## Mapping
+
+- **HL7 FHIR** Practitioner.identifier (type = LN)
+- **HL7 v2** Extended Composite Id Number And Name For Persons (XCN)
+- **IHE XDS** author
 """
 
 
