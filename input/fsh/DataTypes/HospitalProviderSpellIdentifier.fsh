@@ -6,8 +6,6 @@ Description:     """
 `Patient Administration` 'NHS Data Model and Dictionary' [HOSPITAL PROVIDER SPELL IDENTIFIER](https://www.datadictionary.nhs.uk/data_elements/hospital_provider_spell_identifier.html)
 """
 
-"""
-
 * ^purpose = """
 ## Mapping
 
