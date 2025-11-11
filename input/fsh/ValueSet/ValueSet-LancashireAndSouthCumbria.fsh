@@ -1,4 +1,4 @@
-ValueSet: Organisation-LancashireAndSouthCumbria
+ValueSet: OrganisationLancashireAndSouthCumbria
 Id: OrganisationLancashireAndSouthCumbria
 Title: "Organisation Lancashire and South Cumbria ICS (QE1) NHS Trusts"
 Description: """

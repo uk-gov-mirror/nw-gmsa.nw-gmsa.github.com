@@ -1,4 +1,4 @@
-ValueSet: Organisation-CheshireAndMerseyside
+ValueSet: OrganisationCheshireAndMerseyside
 Id: OrganisationCheshireAndMerseyside
 Title: "Organisation Cheshire and Merseyside ICS (QYG) NHS Trusts"
 Description: """

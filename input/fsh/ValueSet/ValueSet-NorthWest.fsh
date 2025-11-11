@@ -1,4 +1,4 @@
-ValueSet: Organisation-NorthWest
+ValueSet: OrganisationNorthWest
 Id: OrganisationNorthWest
 Title: "Organisation North West Region NHS Trusts"
 Description: """

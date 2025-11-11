@@ -9,8 +9,8 @@ Description: "Based on HL7 LRI Example 2 (Ref 5.9.1.2)"
 
 * effectiveDateTime = "2025-10-23T10:37:26+00:00"
 
-* category[+] = http://terminology.hl7.org/CodeSystem/v2-0074#GE "Genetics"
-* category[+] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[geCategory] = http://terminology.hl7.org/CodeSystem/v2-0074#GE "Genetics"
+* category[labCategory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 * code
   * coding[+]

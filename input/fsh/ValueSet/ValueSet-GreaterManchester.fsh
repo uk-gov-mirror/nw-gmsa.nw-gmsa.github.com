@@ -1,4 +1,4 @@
-ValueSet: Organisation-GreaterManchester
+ValueSet: OrganisationGreaterManchester
 Id: OrganisationGreaterManchester
 Title: "Organisation Greater Manchester ICS (QOP) NHS Trusts"
 Description: """

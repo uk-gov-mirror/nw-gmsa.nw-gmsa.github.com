@@ -9,7 +9,7 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 
 * effectiveDateTime = "2025-10-23T10:37:26+00:00"
 
-* category[+] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 * performer[+] = Reference(59577028-8fcc-4554-8b43-988561d41d9c)
 
