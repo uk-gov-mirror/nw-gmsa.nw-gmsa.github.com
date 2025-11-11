@@ -3,7 +3,7 @@ Parent:         Procedure
 Id:             Procedure-GenomicStudy
 Title:          "Procedure Genomic Study"
 Description:    """
-<span class="badge badge-primary">Genomic Procedure</span>
+`Genomic Procedure`
 """
 
 * reasonCode 1..* MS

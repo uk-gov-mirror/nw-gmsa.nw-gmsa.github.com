@@ -4,7 +4,7 @@ Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/ServiceRequest
 Id:             ServiceRequest
 Title:          "ServiceRequest"
 Description:    """
-<span class="badge badge-primary">Diagnostic Workflow</span>
+`Diagnostic Workflow`
 """
 
 //* extension[additionalContact] ^short = "Do not use, not supported. Use PractitionerRole instead."

@@ -3,7 +3,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Practitioner
 Id:             Practitioner
 Title:          "Practitioner"
 Description:    """
-<span class="badge badge-info">Care Directory</span>
+`Care Directory`
 """
 
 * identifier 1..* MS

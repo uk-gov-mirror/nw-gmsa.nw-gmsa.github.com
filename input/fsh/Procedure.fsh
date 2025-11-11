@@ -3,7 +3,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Procedure
 Id:             Procedure
 Title:          "Procedure"
 Description:    """
-<span class="badge badge-primary">Patient Care</span>
+`Patient Care`
 """
 
 * subject 1..1 MS

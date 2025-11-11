@@ -4,7 +4,7 @@ Parent:         http://hl7.org/fhir/StructureDefinition/DiagnosticReport
 Id:             DiagnosticReport
 Title:          "Diagnostic Report"
 Description:    """
-<span class="badge badge-primary">Diagnostic Workflow</span>
+'Diagnostic Workflow'
 
 """
 
