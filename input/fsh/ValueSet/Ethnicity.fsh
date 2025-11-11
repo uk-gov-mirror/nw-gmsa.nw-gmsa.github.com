@@ -2,7 +2,7 @@ ValueSet: Ethnicity
 Id: ethnicity
 Title: "Ethnicity"
 Description: """
-- **NHS Data Model and Dictionary** [ETHNIC CATEGORY](https://www.datadictionary.nhs.uk/data_elements/ethnic_category.html)
+`NHS Data Model and Dictionary` [ETHNIC CATEGORY](https://www.datadictionary.nhs.uk/data_elements/ethnic_category.html)
 This extends [UKCoreEthnicCategory](https://simplifier.net/hl7fhirukcorer4/valueset-ukcore-ethniccategory) to include other categories for reasons stated in [Wikipedia: Classification of ethnicity in the United Kingdom](https://en.wikipedia.org/wiki/Classification_of_ethnicity_in_the_United_Kingdom#Healthcare)
 
 """
