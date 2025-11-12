@@ -5,10 +5,11 @@ Id:             DiagnosticReport
 Title:          "Diagnostic Report"
 Description:    """
 'Diagnostic Workflow'
-
 """
 
-// https://github.com/HL7/genomics-reporting/blob/master/input/fsh/CGGeneral.fsh
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #diagnostics "Diagnostics"
+* ^keyword[+] = #genomics "Genomics"
 
 * extension contains DiagnosticReportProcedure named procedure 0..*
 

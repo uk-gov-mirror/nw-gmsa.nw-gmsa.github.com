@@ -6,6 +6,10 @@ Description:    """
 `Patient Care`
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #patientcare "Patient Care"
+
+
 * identifier 1..* MS
 
 * subject 1..1 MS

@@ -5,6 +5,9 @@ Description: """
 `Diagnostic Workflow` Based on [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html)
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #workflow "Patient Care Workflow"
+
 * status MS
 * intent MS
 * code 1..1

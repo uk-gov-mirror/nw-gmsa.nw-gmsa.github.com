@@ -7,6 +7,10 @@ Description:    """
 `Diagnostic Workflow`
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #diagnostics "Diagnostics"
+* ^keyword[+] = #genomics "Genomics"
+
 * identifier 1..* MS
 * identifier only CorrelationIdentifier
 

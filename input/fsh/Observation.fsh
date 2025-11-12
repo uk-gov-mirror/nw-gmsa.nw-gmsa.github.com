@@ -7,6 +7,10 @@ Description:    """
 `Diagnostic`
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #patientcare "Patient Care"
+* ^keyword[+] = #diagnostics "Diagnostics"
+
 * identifier 1..* MS
 
 * performer only Reference(http://hl7.eu/fhir/laboratory/StructureDefinition/PractitionerRole-eu-lab  or Patient)

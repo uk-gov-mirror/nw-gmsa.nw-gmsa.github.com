@@ -6,4 +6,7 @@ Description:    """
 `Patient Care`
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #patientcare "Patient Care"
+
 

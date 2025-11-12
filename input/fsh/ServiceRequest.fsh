@@ -7,6 +7,10 @@ Description:    """
 `Diagnostic Workflow`
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #diagnostics "Diagnostics"
+* ^keyword[+] = #genomics "Genomics"
+
 //* extension[additionalContact] ^short = "Do not use, not supported. Use PractitionerRole instead."
 
 * identifier 1..* MS

@@ -8,6 +8,7 @@ Description:    """
 
 * ^keyword[+] = #archetype "Domain Analysis Model"
 * ^keyword[+] = #genomics "Genomics"
+* ^keyword[+] = #diagnostics "Diagnostics"
 
 * identifier 1..* MS
 
