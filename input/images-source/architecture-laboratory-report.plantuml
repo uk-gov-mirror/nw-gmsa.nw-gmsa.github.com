@@ -4,7 +4,7 @@
  component "Consumer" as EPR
  component "Consumer" as HIE
  component "Consumer (ICS)" as ICS
- component "Intermediary" as TIE
+ component "Intermediary\nRegional Integration Engine (RIE)" as TIE
  component "Clinical Data Repository\nHealth Information Exchange (HIE)" as CDR
 
  EPR -d[hidden]- ICS

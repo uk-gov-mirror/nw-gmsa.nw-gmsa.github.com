@@ -3,7 +3,7 @@
  component "Source" as LIMS
  component "Consumer" as EPR
  component "Consumer" as HIE
- component "Intermediary" as TIE
+ component "Intermediary\nRegional Integration Engine (RIE)" as TIE
  component "Clinical Data Repository\nHealth Information Exchange (HIE)" as CDR
 
  LIMS -r-> TIE : Send Event Notification\nHL7 FHIR OML_O21\nbased on IHE LTW LAB-1
