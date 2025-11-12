@@ -216,5 +216,5 @@ UK edition of SNOMED (83821000000107)
 |                      | Liverpool Womens NHS Foundation Trust        |
 |                      | The Christie NHS Foundation Trust            |
 |                      | NHS England                                  |
-| Enterprise Architect | **Kevin Mayfield** (Aire Logic/Mayfield IS)  |      
+| Enterprise Architect | Kevin Mayfield, Aire Logic & Mayfield IS     |      
 
