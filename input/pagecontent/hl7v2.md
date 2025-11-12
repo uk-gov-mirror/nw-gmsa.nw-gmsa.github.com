@@ -13,6 +13,8 @@ Content-Type: application/hl7-v2+er7
 
 ### References
 
+<span class="badge badge-primary">Diagnostic Workflow</span> 
+
  - [EPIC HL7 v2](https://open.epic.com/Interface/HL7v2) See **Outgoing Ancillary Orders** (EPR to RIE)
  - [MEDITECH HL7 v2](https://ehr.meditech.com/sites/default/files/documents/20240613/om-orders-outbound-24.pdf)
 
@@ -49,6 +51,7 @@ Content-Type: application/hl7-v2+er7
 ### References
 
 <span class="badge badge-primary">Diagnostic Workflow</span> 
+
 - [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
   - See Appendix A – Using ORU to Publish PDF Reports
 - The Royal College of Radiologists [Reporting networks - understanding the technical options](https://www.rcr.ac.uk/media/wwtp2mif/rcr-publications_radiology-reporting-networks-understanding-the-technical-options_march-2022.pdf)
