@@ -14,6 +14,8 @@ Description:     """
 - **IHE XDS** author
 """
 
+* ^keyword[+] = #NHSDataDictionary "NHS Data Dictionary"
+
 * system 1..1
 * system = $ods-code (exactly)
 * value 1..1

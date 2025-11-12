@@ -9,6 +9,7 @@ Only traced NHS Number **SHOULD** be used, un-traced NHS Numbers **MUST** be cle
 
 * ^purpose = """
 """
+* ^keyword[+] = #NHSDataDictionary "NHS Data Dictionary"
 
 * system 1..1
 * system = "https://fhir.nhs.uk/Id/nhs-number"

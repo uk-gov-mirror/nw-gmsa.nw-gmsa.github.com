@@ -10,7 +10,7 @@ Uniquely identifies a Specimen across multiple laboratory systems.
 * ^purpose = """
 """
 
-* ^keyword = #NHSDataDictionary
+* ^keyword[+] = #NHSDataDictionary "NHS Data Dictionary"
 
 * type = $v2-0203#ACSN
 * system ^short = "uri should be defined and unique supplying organisation."

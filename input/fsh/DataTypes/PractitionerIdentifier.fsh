@@ -14,6 +14,7 @@ Description:     """
 - **IHE XDS** author
 """
 
+* ^keyword[+] = #NHSDataDictionary "NHS Data Dictionary"
 
 * system 1..1
 * system from PractitionerIdentifiers
