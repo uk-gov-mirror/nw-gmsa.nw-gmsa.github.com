@@ -11,7 +11,7 @@ frame "Regional Placer Order Management [LAB-1]" as LAB1 {
 
  interface "HL7 v2.x\n**OML_O21/(ORM_O01)**" as HL7_ORM2
 
-  EPR -d-> HL7_ORM1
+      EPR -d-> HL7_ORM1
   HL7_ORM1 -d-> TIE
   TIE -d-> HL7_ORM2
 }

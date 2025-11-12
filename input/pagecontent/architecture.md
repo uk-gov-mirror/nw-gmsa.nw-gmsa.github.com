@@ -43,6 +43,12 @@ Three types of messages are used within this workflow process:
 
 ## Laboratory Order 
 
+<figure>
+{%include architecture-laboratory-order.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Laboratory Order - Overview</p>
+</figure>
+<br clear="all">
+
 ### Messaging with a copy sent to a FHIR Repository
 
 <img style="padding:3px;width:60%;" src="Phase 1c Repository.drawio.png" alt="Phase 1b"/>
@@ -64,9 +70,15 @@ Three types of messages are used within this workflow process:
 
 ## Laboratory Report
 
+<figure>
+{%include architecture-laboratory-report.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Laboratory Report - Overview</p>
+</figure>
+<br clear="all">
+
 <img style="padding:3px;width:60%;" src="Phase 2b ESB.drawio.png" alt="Phase 2b"/>
 <br clear="all">
-<p class="figureTitle">Phase 2 Detailed</p> 
+<p class="figureTitle">Laboratory Report - Detailed</p> 
 <br clear="all">
 
 - Source System
