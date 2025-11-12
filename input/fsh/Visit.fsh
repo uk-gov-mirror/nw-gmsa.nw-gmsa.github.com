@@ -6,6 +6,9 @@ Description:    """
 `Patient Administration` Equivalent to [Yorkskhire and Humberside - Encounter](https://fhir.interweavedigital.com/R4/StructureDefinition-Interweave-Encounter.html)
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #pam "Patient Administration"
+
 * identifier 1..* MS
 * identifier only CorrelationIdentifier
 

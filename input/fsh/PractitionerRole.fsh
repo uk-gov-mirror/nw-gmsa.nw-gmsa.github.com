@@ -7,6 +7,8 @@ Title:          "PractitionerRole"
 Description:    """
 `Care Directory`
 """
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #cds "Care Directory"
 
 * practitioner 1..1 MS
 //* practitioner.identifier 1..1

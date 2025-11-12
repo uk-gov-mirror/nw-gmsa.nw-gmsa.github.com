@@ -6,6 +6,9 @@ Description:    """
 `Genomic Observation`
 """
 
+* ^keyword[+] = #archetype "Domain Analysis Model"
+* ^keyword[+] = #genomics "Genomics"
+
 * identifier 1..* MS
 
 * performer only Reference(PractitionerRole or Patient)

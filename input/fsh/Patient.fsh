@@ -5,6 +5,8 @@ Id: Patient
 Description: """
 `Patient Administration`
 """
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #pam "Patient Administration"
 
 * extension contains https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-EthnicCategory named ethnicCategory 0..1
 * extension[ethnicCategory] ^short = "Ethnic Category. NHS England HL7 v2 PID-22 Ethnic Group"

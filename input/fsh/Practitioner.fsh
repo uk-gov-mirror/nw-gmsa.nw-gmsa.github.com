@@ -6,6 +6,9 @@ Description:    """
 `Care Directory`
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #cds "Care Directory"
+
 * identifier 1..* MS
 * identifier.system 1..1
 * identifier.value 1..1

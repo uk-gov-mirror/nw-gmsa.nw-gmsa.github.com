@@ -8,6 +8,9 @@ Description:    """
 - [Visit](StructureDefinition-Visit.html) - an A&E attendance, a community contract, an OP attendance (Appointment), etc
 """
 
+* ^keyword[+] = #core "Base"
+* ^keyword[+] = #pam "Patient Administration"
+
 * class 1..1 MS
 * type 0..1 MS
 * type from AdmissionMethod

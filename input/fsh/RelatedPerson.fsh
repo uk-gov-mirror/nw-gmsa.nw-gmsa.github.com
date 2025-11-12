@@ -6,4 +6,7 @@ Description:    """
 `Patient Administration`
 """
 
+* ^keyword[+] = #core "Core"
+* ^keyword[+] = #pam "Patient Administration"
+
 
