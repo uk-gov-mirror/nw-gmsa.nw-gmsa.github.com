@@ -6,10 +6,10 @@
  component "Intermediary\nRegional Integration Engine (RIE)" as TIE
  component "Clinical Data Repository\nHealth Information Exchange (HIE)" as CDR
 
- LIMS -r-> TIE : Send Event Notification\nHL7 FHIR OML_O21\nbased on IHE LTW LAB-1
- TIE -r-> EPR: Send Event Notification\nHL7 v2 OML_O21\nIHE LTW LAB-1\n(future FHIR Workflow - Task)
- TIE -d-> CDR: Populates
- HIE -u-> CDR: Query Genomic Data\nHL7 FHIR RESTful (read only)\nIHE QEDm PCC-44
+ LIMS -r-> TIE : **Send Event Notification**\nHL7 FHIR OML_O21\nbased on IHE LTW LAB-1
+ TIE -r-> EPR: **Send Event Notification**\nHL7 v2 OML_O21\nIHE LTW LAB-1\n(future FHIR Workflow - Task)
+ TIE -d-> CDR: **Populates**
+ HIE -u-> CDR: **Query Genomic Data**\nHL7 FHIR RESTful (read only)\nIHE QEDm PCC-44
 
 
 @enduml
