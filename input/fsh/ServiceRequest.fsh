@@ -93,7 +93,7 @@ Description:    """
 
 * encounter 0..1 MS
 * encounter ^short = "A reference identifier to the episode/stay/visit number in which the request was created. (HL7 v2 PV1-19)"
-* encounter only Reference(Encounter)
+* encounter only Reference(HospitalSpell)
 * encounter.identifier only HospitalProviderSpellIdentifier
 * encounter.identifier 0..1 MS
 * encounter.identifier insert Obligation(#SHALL:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
