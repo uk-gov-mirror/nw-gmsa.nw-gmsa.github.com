@@ -1,8 +1,8 @@
-Instance: Patient-Nottingham
+Instance: Patient-Warrington
 InstanceOf: Patient
-Title: "Patient - Nottingham"
+Title: "Patient - Warrington"
 Description: """
-Test Patient for Nottingham.
+Test Patient for Warrington
 """
 Usage: #example
 
@@ -10,14 +10,14 @@ Usage: #example
 * identifier[0].use = #official
 * identifier[0].type = $v2-0203#NH
 * identifier[0].system = $nhs-number
-* identifier[0].value = "9994497654"
-
+* identifier[0].value = "9662297654"
 
 * name.use = #official
-* name.family = "Nottingham"
-* name.given = "Lyarra"
+* name.family = "Warrington"
+* name.given = "Olenna"
 
-* birthDate = "1999-09-07"
+* birthDate = "1938-07-20"
 * deceasedBoolean = #true
 
 * gender = #female
+
