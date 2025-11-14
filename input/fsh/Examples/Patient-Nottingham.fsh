@@ -18,6 +18,6 @@ Usage: #example
 * name.given = "Lyarra"
 
 * birthDate = "1999-09-07"
-* deceasedBoolean = #true
+* deceasedBoolean = true
 
 * gender = #female

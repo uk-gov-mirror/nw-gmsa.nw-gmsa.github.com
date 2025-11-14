@@ -17,7 +17,7 @@ Usage: #example
 * name.given = "Olenna"
 
 * birthDate = "1938-07-20"
-* deceasedBoolean = #true
+* deceasedBoolean = true
 
 * gender = #female
 
