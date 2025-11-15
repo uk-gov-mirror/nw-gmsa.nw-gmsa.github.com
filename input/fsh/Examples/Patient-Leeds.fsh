@@ -41,5 +41,5 @@ Usage: #example
 
 * generalPractitioner[+]
   * identifier.system = $ods-code
-  * identifier.value = "RB920"
+  * identifier.value = "B86016"
   * display = "Shaftesbury Medical Centre & Church View Surgery"
