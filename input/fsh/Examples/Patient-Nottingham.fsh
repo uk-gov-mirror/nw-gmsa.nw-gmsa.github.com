@@ -21,3 +21,10 @@ Usage: #example
 * deceasedBoolean = true
 
 * gender = #female
+
+
+
+* generalPractitioner[+]
+  * identifier.system = $ods-code
+  * identifier.value = "C81010"
+  * display = "Moir Medical Centre"
