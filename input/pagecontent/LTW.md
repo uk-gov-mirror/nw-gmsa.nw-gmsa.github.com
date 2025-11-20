@@ -174,66 +174,6 @@ The detail of this form/template defines:
 
 After submitting the original order, the sample will be collected and sent to the Order Filler. The Order Filler will update the Test Order to include details such as a specimen collection date, order filler number, etc.
 
-### Use Case: Genomic Test Order following on from Pathology Test Order
-
-<img style="padding:3px;width:95%;" src="LTW Use Case 3.drawio.png" alt="Genomic LTW Business Process - Use Case 3"/>
-<br clear="all">
-<p class="figureTitle">Genomic LTW Business Process - Use Case 3</p> 
-<br clear="all">
-
-In this use case the original order is raised by the `Order Placer` and sent to a Pathology LIMS (`Pathology Order Filler`). The Pathology LIMS follows the processes outlined in [Use Case 1: Genomic Test Order](#use-case-genomic-test-order) and [Use Case 2: Genomic Test Report](#use-case-genomic-test-report) for pathology testing.  
-As part of this testing, the clinical process requires a genomics test to be performed.
-This genomics process is largely the same except for:
-- The order is sent as one interaction as the sample does not need to be collected.
-- The order should contain the pathology report detailing the results of the pathology tests.
-
-<figure>
-{%include LTW-usecase-3-sequence.svg%}
-<p id="fX.X.X.X-X" class="figureTitle">Multiple Diagnostic Tests - LAB-1 and LAB-3</p>
-</figure>
-<br clear="all">
-
-#### Main Process Flow
-
-- Initial Laboratory Order
-    - Step 1: The Order Placer submits a Laboratory Order O21 (LAB-1) to Order Filler (Pathology).
-    - Step 2: Order Filler (Pathology) sends back a Laboratory Report R01 (LAB-3).
-    - Note: As required by local clinical guidelines, this step can also include imaging orders.
-- Optional Path 1 – Genomic Order created by original order placer
-    - Condition: [Genomic Order created by original order placer].
-    - Note: The same specimen can be reused for multiple tests.
-    - Step 3: Order Placer submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
-    - Step 4: Specimen is sent from Order Placer to Genomics.
-    - Step 5: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) back to the Order Placer.
-- Optional Path 2 – Genomic Order created by Pathology
-    - Condition: [Order Filler (Pathology) creates Genomic Order].
-    - Note: The same specimen can be reused for multiple tests.
-    - Step 6: Order Filler (Pathology) submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
-    - Step 7: Specimen is sent from Pathology to Genomics.
-    - Step 8: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) to Order Filler (Pathology).
-    - Step 9: Pathology sends the Genomic Report R01 (LAB-3) to the Order Placer.
-
-#### Diagnostic Cancer Pathways
-
-This use case can often occur around cancer:
-
-<img style="padding:3px;width:20%;" src="cancer-diagnostics.png" alt="Cancer Diagnostics"/>
-<br clear="all">
-<p class="figureTitle">Cancer Diagnostics</p> 
-<br clear="all">
-
-##### Colorectal Cancer—Diagnostic Pathways Example
-
-The details of this are beyond the scope of this guide, for more details see [Getting It Right First Time (GIRFT) Best Practice Timed Diagnostic Cancer pathways ](https://gettingitrightfirsttime.co.uk/wp-content/uploads/2024/03/BestPracticeTimedDiagnosticCancerPathwayssummary-guide-March-24-V3.pdf)
-
-For information on `Genomic Tests on the bowel cancer cells`, see [macmillan.org.uk](https://www.macmillan.org.uk/cancer-information-and-support/bowel-cancer/tests-on-the-bowel-cancer-cells) and [NICE DG27 Molecular testing strategies for Lynch syndrome in people with colorectal cancer](https://www.nice.org.uk/guidance/dg27)
-
-<img style="padding:3px;width:90%;" src="ERIC.drawio.png" alt="Colorectal Cancer Diagnostics and Patient Referrals"/>
-<br clear="all">
-<p class="figureTitle">Colorectal Cancer Diagnostics and Patient Referrals</p> 
-<br clear="all">
-
-
 #### Relationship to NHS England Pathology
 
 This guide builds on the use cases described in the [NHS England Pathology FHIR Implementation Guide](https://simplifier.net/guide/pathology-fhir-implementation-guide/Home/Design/Background), extending them to support a wider range of stakeholders and introducing standards for the Laboratory Order LAB-1.
@@ -363,6 +303,90 @@ Key differences include:
 <br clear="all">
 <p class="figureTitle">Relationship to NHS England Genomic Order Management Service</p> 
 <br clear="all">
+
+## Reflex Order 
+
+A reflex order in a laboratory is a process where a second diagnostic test (e.g. Genomics)) is performed on an existing patient sample based on the results of an initial test, without a new order from the physician (original Order Placer). This practice helps provide more comprehensive diagnostic information efficiently, potentially leading to quicker diagnoses and avoiding the need for another specimen collection.
+
+### Use Case: Genomic Test Order following on from Pathology Test Order
+
+```mermaid
+graph TD;
+    OrderPlacer[Order Placer<br/>e.g. MFT EPIC] --> |"1. Sends Laboratory Order (Pathology)<br/>ORM_O01 or OML_O21"| OrderFiller["Order Filler (Pathology)<br/>e.g. MFT EPIC Beaker or CFT Shire"]
+    OrderPlacer --> |"2. Asks for (Orders)"| SpecimenCollection
+    SpecimenCollection[Specimen Collection] --> |3. Sends Specimen| OrderFiller
+    OrderFiller --> |4. Send Laboratory Report<br/>ORU_R01| OrderPlacer
+
+    subgraph Genomics["North West Genomics (Region)"]
+      OrderPlacerG["Order Placer (Pathology)"] --> |5. Send Laboratory Order<br/>OML_O21| OrderFillerG["Order Filler (Genomics)<br/>e.g. iGene"]
+      OrderPlacerG --> |6. Sends Specimen| OrderFillerG
+      OrderFillerG --> |7. Sends Laboratory Report<br/>ORU_R01| OrderPlacerG
+    end
+
+    OrderFiller --> OrderPlacerG
+    OrderFiller --> |8. Sends Laboratory Report<br/>ORU_R01| OrderPlacer
+```
+
+<img style="padding:3px;width:95%;" src="LTW Use Case 3.drawio.png" alt="Genomic LTW Business Process - Use Case 3"/>
+<br clear="all">
+<p class="figureTitle">Genomic LTW Business Process - Use Case 3</p> 
+<br clear="all">
+
+In this use case the original order is raised by the `Order Placer` and sent to a Pathology LIMS (`Pathology Order Filler`). The Pathology LIMS follows the processes outlined in [Use Case 1: Genomic Test Order](#use-case-genomic-test-order) and [Use Case 2: Genomic Test Report](#use-case-genomic-test-report) for pathology testing.  
+As part of this testing, the clinical process requires a genomics test to be performed.
+This genomics process is largely the same except for:
+- The order is sent as one interaction as the sample does not need to be collected.
+- The order should contain the pathology report detailing the results of the pathology tests.
+
+<figure>
+{%include LTW-usecase-3-sequence.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Multiple Diagnostic Tests - LAB-1 and LAB-3</p>
+</figure>
+<br clear="all">
+
+#### Main Process Flow
+
+- Initial Laboratory Order
+    - Step 1: The Order Placer submits a Laboratory Order O21 (LAB-1) to Order Filler (Pathology).
+    - Step 2: Order Filler (Pathology) sends back a Laboratory Report R01 (LAB-3).
+    - Note: As required by local clinical guidelines, this step can also include imaging orders.
+- Optional Path 1 – Genomic Order created by original order placer
+    - Condition: [Genomic Order created by original order placer].
+    - Note: The same specimen can be reused for multiple tests.
+    - Step 3: Order Placer submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
+    - Step 4: Specimen is sent from Order Placer to Genomics.
+    - Step 5: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) back to the Order Placer.
+- Optional Path 2 – Genomic Order created by Pathology
+    - Condition: [Order Filler (Pathology) creates Genomic Order].
+    - Note: The same specimen can be reused for multiple tests.
+    - Step 6: Order Filler (Pathology) submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
+    - Step 7: Specimen is sent from Pathology to Genomics.
+    - Step 8: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) to Order Filler (Pathology).
+    - Step 9: Pathology sends the Genomic Report R01 (LAB-3) to the Order Placer.
+
+#### Diagnostic Cancer Pathways
+
+This use case can often occur around cancer:
+
+<img style="padding:3px;width:20%;" src="cancer-diagnostics.png" alt="Cancer Diagnostics"/>
+<br clear="all">
+<p class="figureTitle">Cancer Diagnostics</p> 
+<br clear="all">
+
+##### Colorectal Cancer—Diagnostic Pathways Example
+
+The details of this are beyond the scope of this guide, for more details see [Getting It Right First Time (GIRFT) Best Practice Timed Diagnostic Cancer pathways ](https://gettingitrightfirsttime.co.uk/wp-content/uploads/2024/03/BestPracticeTimedDiagnosticCancerPathwayssummary-guide-March-24-V3.pdf)
+
+For information on `Genomic Tests on the bowel cancer cells`, see [macmillan.org.uk](https://www.macmillan.org.uk/cancer-information-and-support/bowel-cancer/tests-on-the-bowel-cancer-cells) and [NICE DG27 Molecular testing strategies for Lynch syndrome in people with colorectal cancer](https://www.nice.org.uk/guidance/dg27)
+
+<img style="padding:3px;width:90%;" src="ERIC.drawio.png" alt="Colorectal Cancer Diagnostics and Patient Referrals"/>
+<br clear="all">
+<p class="figureTitle">Colorectal Cancer Diagnostics and Patient Referrals</p> 
+<br clear="all">
+
+
+
+
 
 ## Work Order Management (LAB-4)
 
