@@ -62,14 +62,16 @@ Where the `Order Placer` sends the **Laboratory Order** to the `Order Filler`, t
 
 ```mermaid
 graph TD;
-    Receive["Order Placer<br/>(EPR or Order Comms)"] --> |Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
+    Receive["<b>Order Placer</b><br/>(EPR or Order Comms)"] --> |Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
     Receive --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| RIE
     OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine] 
     RIE --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| CDR[NW Genomics<br/>Clinical Data Repository]
     CDR --> |Send FHIR Event Notification| Any["Any <br/>(future)"]
     RIE --> |"Send Genomic Laboratory Order<br/>HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
     RIE --> |"Send Genomic Laboratory Order<br/>FHIR Transaction<br/>via NHS England Genomic Order Management Service"| GOMS["External<br/>Laboratory Information Management System<br/>(Future)"] 
-    
+    EHRTIE --> OrderFiller[<b>Order Filler</b>]
+    GOMS --> OrderFiller
+
     classDef green fill:#D5E8D4;
     classDef yellow fill:#FFF2CC;
     class RIE green;
@@ -263,7 +265,7 @@ graph TD;
     RIE --> |Sends HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
     RIE --> |Sends HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
     CDR --> |Sends FHIR Event Notification| Any["Any <br/>(future)"]
-    GOMS --> OrderPlacer[Order Placer]
+    GOMS --> OrderPlacer[<b>Order Placer</b>]
     EHRTIE --> OrderPlacer
     BOARD--> OrderPlacer
 
