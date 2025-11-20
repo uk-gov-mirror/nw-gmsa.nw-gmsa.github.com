@@ -18,10 +18,10 @@ graph TD;
     A[Assessment]-->|Creates Observations| B;
     A--> |Needs Diagnostic Testing and Completes| T;
     B[Diagnosis]-->|Creates Condition| C;
-    T[Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
+    T[<b>Order Placer</b><br/>Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
     T --> |Asks for| S
     S[Specimen Collection] --> |Sends Specimen| AN;
-    AN["Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
+    AN["<b>Order Filler</b><br/>Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
     AN --> |"Creates Laboratory Report - LAB-3<br/>HL7 v2 ORU_R01"| B;
     AN --> |Sends Laboratory Report| A;
     C[Plan]-->|Creates Goals and Tasks| D;
@@ -47,6 +47,7 @@ graph TD;
     class E orange
 
     class O,S,T,AN purple
+```
 ```
 
 Genomic diagnostic testing follows the same standardized process defined by the [IHE Laboratory Testing Workflow](https://wiki.ihe.net/index.php/Laboratory_Testing_Workflow) used in traditional laboratory testing.

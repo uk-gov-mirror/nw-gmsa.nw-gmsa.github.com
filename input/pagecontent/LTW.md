@@ -62,7 +62,7 @@ Where the `Order Placer` sends the **Laboratory Order** to the `Order Filler`, t
 
 ```mermaid
 graph TD;
-    Receive["Diagnostic Testing (LIMS)"] --> |Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
+    Receive["Order Placer<br/>(EPR or Order Comms)"] --> |Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
     Receive --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| RIE
     OR --> |"HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine] 
     RIE --> |"Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| CDR[NW Genomics<br/>Clinical Data Repository]
@@ -255,7 +255,7 @@ Key differences include:
 
 ```mermaid
 graph TD;
-    Receive["Diagnostic Testing (LIMS)"] --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
+    Receive["<b>Order Filler</b><br/>Diagnostic Testing (LIMS)"] --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
     RIE --> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| TIE[Middleware<br/>Acute Hospitals<br/>Trust Integration Engine] 
     TIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
     RIE--> |"Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
@@ -263,6 +263,9 @@ graph TD;
     RIE --> |Sends HL7 v2 MDM_T02 or IHE XDS| ICSTIE[Integrated Care System <br/> Document Repository]
     RIE --> |Sends HL7 FHIR R4<br/>Message O21| CDR[NW Genomics<br/>Clinical Data Repository]
     CDR --> |Sends FHIR Event Notification| Any["Any <br/>(future)"]
+    GOMS --> OrderPlacer[Order Placer]
+    EHRTIE --> OrderPlacer
+    BOARD--> OrderPlacer
 
     classDef green fill:#D5E8D4;
     classDef yellow fill:#FFF2CC;
