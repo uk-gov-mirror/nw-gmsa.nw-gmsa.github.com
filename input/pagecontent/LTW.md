@@ -312,13 +312,15 @@ A reflex order in a laboratory is a process where a second diagnostic test (e.g.
 ### Use Case: Genomic Test Order following on from Pathology Test Order
 
 ```mermaid
-graph TD;
-    OrderPlacer[Order Placer<br/>e.g. MFT EPIC] --> |"1. Sends Laboratory Order (Pathology)<br/>ORM_O01 or OML_O21"| OrderFiller["Order Filler (Pathology)<br/>e.g. MFT EPIC Beaker or CFT Shire"]
-    OrderPlacer --> |"2. Asks for (Orders)"| SpecimenCollection
-    SpecimenCollection[Specimen Collection] --> |3. Sends Specimen| OrderFiller
-    OrderFiller --> |4. Send Laboratory Report<br/>ORU_R01| OrderPlacer
 
-    subgraph Genomics["North West Genomics (Region)"]
+graph TD;
+    subgraph Pathology["Pathology - ICS"]
+        OrderPlacer[Order Placer<br/>e.g. MFT EPIC] --> |"1. Sends Laboratory Order (Pathology)<br/>ORM_O01 or OML_O21"| OrderFiller["Order Filler (Pathology)<br/>e.g. MFT EPIC Beaker or CFT Shire"]
+        OrderPlacer --> |"2. Asks for (Orders)"| SpecimenCollection
+        SpecimenCollection[Specimen Collection] --> |3. Sends Specimen| OrderFiller
+        OrderFiller --> |4. Send Laboratory Report<br/>ORU_R01| OrderPlacer
+    end 
+    subgraph Genomics["Genomics - Region"]
       OrderPlacerG["Order Placer (Pathology)"] --> |5. Send Laboratory Order<br/>OML_O21| OrderFillerG["Order Filler (Genomics)<br/>e.g. iGene"]
       OrderPlacerG --> |6. Sends Specimen| OrderFillerG
       OrderFillerG --> |7. Sends Laboratory Report<br/>ORU_R01| OrderPlacerG
@@ -326,6 +328,7 @@ graph TD;
 
     OrderFiller --> OrderPlacerG
     OrderFiller --> |8. Sends Laboratory Report<br/>ORU_R01| OrderPlacer
+
 ```
 
 <img style="padding:3px;width:95%;" src="LTW Use Case 3.drawio.png" alt="Genomic LTW Business Process - Use Case 3"/>
