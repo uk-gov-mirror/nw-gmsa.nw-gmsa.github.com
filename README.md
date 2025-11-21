@@ -21,8 +21,9 @@ curl --request POST --data-binary "@Specifications/iGene/ORU_R01_DLIMS.txt" http
 
 Note file must use \r mac line endings.
 
+curl --request POST --data-binary "@Specifications/iGene/ORU_R01_R125.1_R0A.txt" http://192.168.1.67:9980
+curl --request POST --data-binary "@Specifications/iGene/ORU_R01_R125.1_RBS.txt" http://192.168.1.67:9980
 curl --request POST --data-binary "@Specifications/iGene/ORU_R01_PDF.txt" http://192.168.1.67:9980
-curl --request POST --data-binary "@Specifications/iGene/ORU_R01_R125.1.txt" http://192.168.1.67:9980
 curl --request POST --data-binary "@Specifications/iGene/ORU_R01_DLIMS.txt" http://192.168.1.67:9980
 
 ### Windows 
