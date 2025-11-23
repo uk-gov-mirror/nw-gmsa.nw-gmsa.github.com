@@ -331,6 +331,10 @@ graph TD;
 
 ```
 
+<div class="alert alert-info" role="alert">
+<b>Specimen Event Tracking:</b> See LAB-40 HL7 v2.9 SET <a href="https://wiki.ihe.net/index.php/Specimen_Event_Tracking" _target="_blank">IHE Specimen Event Tracking (SET)</a> 
+</div>
+
 <img style="padding:3px;width:95%;" src="LTW Use Case 3.drawio.png" alt="Genomic LTW Business Process - Use Case 3"/>
 <br clear="all">
 <p class="figureTitle">Genomic LTW Business Process - Use Case 3</p> 
