@@ -232,7 +232,6 @@ A report is created by the clinical practice and sent to the order result tracke
 
 #### Send/Share Genomic Test Report
 
-
 <img style="padding:3px;width:95%;" src="LaboratoryReportExplainedPage1.drawio.png" alt="Genomic Report Page 1"/>
 <br clear="all">
 
