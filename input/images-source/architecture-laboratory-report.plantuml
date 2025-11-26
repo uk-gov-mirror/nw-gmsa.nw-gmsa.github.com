@@ -10,7 +10,7 @@
  EPR -d[hidden]- ICS
  LIMS -r-> TIE : **Send Event Notification**\nHL7 v2 ORU_R01\nIHE LTW LAB-3
  TIE -r-> EPR: **Send Event Notification**\nHL7 v2 ORU_R01\nIHE LTW LAB-3\n(future FHIR Workflow - Task)
- TIE -r-> ICS: **Send Event Notification**\nHL7 v2 MDM_T021\nrelated to IHE DSUBm ITI-112
+ TIE -r-> ICS: **Send Event Notification**\nHL7 v2 MDM_T02\nrelated to IHE DSUBm ITI-112
  TIE -d-> CDR: **Populates**
  HIE -u-> CDR: **Query Genomic Data**\nHL7 FHIR RESTful (read only)\nIHE QEDm PCC-44
 
