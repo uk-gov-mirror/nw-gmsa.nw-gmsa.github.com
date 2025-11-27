@@ -3,6 +3,8 @@ Id: GenomicTestCode
 Title: "NHS England Genomic Test Code"
 Description: """
 - [Genomic Test Directory](https://www.england.nhs.uk/publication/national-genomic-test-directories)
+
+HL7 v2 CodeSystem : England-GenomicTestDirectory
 """
 
 * ^name = "GenomicTestCode"
