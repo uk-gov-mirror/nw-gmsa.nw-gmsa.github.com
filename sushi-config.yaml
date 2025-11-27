@@ -105,6 +105,9 @@ pages:
   MHD.md:
     title: Mobile Access to Health Documents [MHD]
     generation: markdown
+  PDQm.md:
+    title: Patient Demographics Query for Mobile (PDQm)
+    generation: markdown
   DDD-Overview.md:
     title: Overview
     generation: markdown
@@ -208,6 +211,7 @@ menu:
 ##    Filler Order Management [LAB-2]: LAB-2.html
     Order Results Management [LAB-3] HL7 FHIR: LAB-3.html
     Order and Results [LAB-1] and [LAB-3] HL7 v2: hl7v2.html
+    Patient Demographics Query for Mobile [PDQm]: PDQm.html
     Query Summary Data [MHD]: MHD.html
     Query Detailed Data [QEDm]: QEDm.html
     Authorisation [IUA] : IUA.html
