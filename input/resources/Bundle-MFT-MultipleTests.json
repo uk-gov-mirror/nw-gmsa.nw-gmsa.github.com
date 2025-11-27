@@ -1,0 +1,669 @@
+{
+  "resourceType": "Bundle",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:4442d957-6164-406d-8e03-928b73fe4368",
+      "resource": {
+        "resourceType": "MessageHeader",
+        "destination": [
+          {
+            "endpoint": "https//fhir.mft.nhs.uk/Endpoint/iGene",
+            "receiver": {
+              "identifier": {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "SMHGEN"
+              }
+            }
+          }
+        ],
+        "eventCoding": {
+          "code": "O21",
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0003"
+        },
+        "focus": [
+          {
+            "reference": "urn:uuid:4b611d4e-eb8c-45cc-8d99-7113cd738476"
+          },
+          {
+            "reference": "urn:uuid:1de994f6-afd2-4f4f-8625-c3446eafb21f"
+          },
+          {
+            "reference": "urn:uuid:81673dd4-d2cb-450c-9bd0-823d83e360e3"
+          }
+        ],
+        "sender": {
+          "identifier": {
+            "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+            "value": "MFT"
+          }
+        },
+        "source": {
+          "endpoint": "https://fhir.north-west.england.nhs.uk/Endpoint/EpicBeaker",
+          "software": "NW GLH"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa",
+      "resource": {
+        "resourceType": "Patient",
+        "address": [
+          {
+            "city": "VERONA",
+            "district": "WI",
+            "line": [
+              "1979 MILKY WAY",
+              "\"\""
+            ],
+            "postalCode": "53593"
+          }
+        ],
+        "birthDate": "2013-10-21",
+        "gender": "female",
+        "identifier": [
+          {
+            "assigner": {
+              "identifier": {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "EPI"
+              }
+            },
+            "system": "https://nw-gmsa.github.io/Id/MR",
+            "type": {
+              "coding": [
+                {
+                  "code": "MR",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "207003"
+          }
+        ],
+        "name": [
+          {
+            "family": "Johnson",
+            "given": [
+              "Lori"
+            ],
+            "prefix": [
+              "\"\""
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1de2d529-52d5-4ccd-a963-88706212652e",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "practitioner": {
+          "display": "ARMITAGE, GEMMA",
+          "identifier": {
+            "system": "https://fhir.hl7.org.uk/Id/gmc-number",
+            "value": "999"
+          }
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8a32605f-cd8d-4de4-99ee-18d15319e6f1",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230056",
+              "display": "What Type of Referral Do You Require?",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230056-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "Standard"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:80eba090-2ff1-4aef-a83d-51ece6c0534b",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230048",
+              "display": "Please Select Clinical Indication(s)",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230048-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "M213: Glial and Glioneuronal Tumour Differential - Paediatric"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:44266ac3-e828-4504-974f-c1135a46d83a",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "231610",
+              "display": "Clinical Utility (Please Select as Appropriate and Provide Any Additional Information in the Comments Section)",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-231610-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "Patient management (determining therapeutic decisions and/or clinical investigations and/or surveillance programme)"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0830ea4f-805c-4a2d-9c99-11233e6bd4be",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230030",
+              "display": "Neoplastic Cell Content Level",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230030-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "<10%"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f06914c0-4528-4fa2-8796-1b23376734d4",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230038",
+              "display": "Please Confirm the Pathology Report will Accompany the Sample to the Laboratory",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230038-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "Yes"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0ddbd5eb-5e53-4081-92dc-a9b98b085fe9",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230027",
+              "display": "Email Addresses of Non-MFT Clinicians for Result Reports",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230027-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "peter.volek@mft.nhs.uk"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:68c50377-1c90-46d9-a686-f7b930bd461c",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230029",
+              "display": "Confirmation of Consent for Testing - MANDATORY Testing will not be performed without completed confirmation of consent",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230029-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "Completed Electronically on HIVE"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6e10e7c9-7a95-4aa8-b44c-5d0a2b59b93c",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230037",
+              "display": "Please Acknowledge That a DNA Sample Will be Stored in the Laboratory on Completion of Testing",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230037-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "Acknowledged"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3099afb2-c249-4614-9302-bee59c677fa6",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230039",
+              "display": "Are you the Patient�s Consultant?",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230039-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "No"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2655a4da-5185-4b54-bedf-96936262bf33",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "230049",
+              "display": "Name of Supervising Consultant",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "effectiveDateTime": "2025-11-11T07:47:48+00:00",
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-230049-IGENE"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "PETERS, ROBERT"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d04aebd3-caba-49fd-a9f9-a13d136419ff",
+      "resource": {
+        "resourceType": "Observation",
+        "code": {
+          "coding": [
+            {
+              "code": "46098-0",
+              "display": "Patient's Sex Assigned at Birth",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nwgenomics.nhs.uk/Id/ResourceIdentifier",
+            "value": "-1000162341-46098-0-"
+          }
+        ],
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "valueString": "F"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:acaebd96-afba-4e1d-bcad-d8f141e9698d",
+      "resource": {
+        "resourceType": "Specimen",
+        "status": "unavailable",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "SAMPLE: BL"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4b611d4e-eb8c-45cc-8d99-7113cd738476",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "authoredOn": "2025-11-11T07:47:48+00:00",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "116148004",
+                "system": "http://snomed.info/sct"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "M213.22",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://nw-gmsa.github.io/Id/PLAC",
+            "type": {
+              "coding": [
+                {
+                  "code": "PLAC",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "1000162341"
+          }
+        ],
+        "intent": "original-order",
+        "requester": {
+          "reference": "urn:uuid:1de2d529-52d5-4ccd-a963-88706212652e"
+        },
+        "requisition": {
+          "system": "https://nw-gmsa.github.io/Id/PLAC",
+          "type": {
+            "coding": [
+              {
+                "code": "PGN",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          },
+          "value": "1000162341"
+        },
+        "specimen": [
+          {
+            "reference": "urn:uuid:acaebd96-afba-4e1d-bcad-d8f141e9698d",
+            "type": "Specimen"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        },
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:8a32605f-cd8d-4de4-99ee-18d15319e6f1",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:80eba090-2ff1-4aef-a83d-51ece6c0534b",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:44266ac3-e828-4504-974f-c1135a46d83a",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:0830ea4f-805c-4a2d-9c99-11233e6bd4be",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:f06914c0-4528-4fa2-8796-1b23376734d4",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:0ddbd5eb-5e53-4081-92dc-a9b98b085fe9",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:68c50377-1c90-46d9-a686-f7b930bd461c",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:6e10e7c9-7a95-4aa8-b44c-5d0a2b59b93c",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:3099afb2-c249-4614-9302-bee59c677fa6",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:2655a4da-5185-4b54-bedf-96936262bf33",
+            "type": "Observation"
+          },
+          {
+            "reference": "urn:uuid:d04aebd3-caba-49fd-a9f9-a13d136419ff",
+            "type": "Observation"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1de994f6-afd2-4f4f-8625-c3446eafb21f",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "authoredOn": "2025-11-11T07:47:48+00:00",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "116148004",
+                "system": "http://snomed.info/sct"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "M213.13",
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://nw-gmsa.github.io/Id/PLAC",
+            "type": {
+              "coding": [
+                {
+                  "code": "PLAC",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "1000162341"
+          }
+        ],
+        "intent": "order",
+        "requester": {
+          "reference": "urn:uuid:1de2d529-52d5-4ccd-a963-88706212652e"
+        },
+        "requisition": {
+          "system": "https://nw-gmsa.github.io/Id/PLAC",
+          "type": {
+            "coding": [
+              {
+                "code": "PGN",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          },
+          "value": "1000162341"
+        },
+        "specimen": [
+          {
+            "reference": "urn:uuid:acaebd96-afba-4e1d-bcad-d8f141e9698d",
+            "type": "Specimen"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:81673dd4-d2cb-450c-9bd0-823d83e360e3",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "authoredOn": "2025-11-11T07:47:48+00:00",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "116148004",
+                "system": "http://snomed.info/sct"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://nw-gmsa.github.io/Id/PLAC",
+            "type": {
+              "coding": [
+                {
+                  "code": "PLAC",
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "1000162341"
+          }
+        ],
+        "intent": "order",
+        "requester": {
+          "reference": "urn:uuid:1de2d529-52d5-4ccd-a963-88706212652e"
+        },
+        "requisition": {
+          "system": "https://nw-gmsa.github.io/Id/PLAC",
+          "type": {
+            "coding": [
+              {
+                "code": "PGN",
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203"
+              }
+            ]
+          },
+          "value": "1000162341"
+        },
+        "specimen": [
+          {
+            "reference": "urn:uuid:acaebd96-afba-4e1d-bcad-d8f141e9698d",
+            "type": "Specimen"
+          }
+        ],
+        "status": "active",
+        "subject": {
+          "reference": "urn:uuid:0fed715c-983d-42a0-b513-ec5c422539aa"
+        }
+      }
+    }
+  ],
+  "identifier": {
+    "value": "748683741"
+  },
+  "timestamp": "2025-11-11T07:47:53+00:00",
+  "type": "message",
+  "id" : "748683741"
+}
