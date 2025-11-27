@@ -286,6 +286,7 @@ groups:
       - Observation/EPIC-OBX-8
       - Observation/EPIC-OBX-10
       - Observation/EPIC-OBX-11
+      - Bundle/748683741
   -ex-example-NHS-Genomics-Medicine-Service:
     name: "Example: NHS Genomics Medicine Service"
     description: "NHS Genomics Medicine Service"
