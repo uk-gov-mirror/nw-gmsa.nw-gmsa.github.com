@@ -3,10 +3,55 @@
 
 The architecture generally follows [Domain Driven Design [DDD]](https://en.wikipedia.org/wiki/Domain-driven_design), [Domain Driven Design](https://martinfowler.com/bliki/DomainDrivenDesign.html) and [Data Mesh](https://en.wikipedia.org/wiki/Data_mesh)
 
+The general architecture is shown below:
+
 <img style="padding:3px;width:60%;" src="Data Mesh Heaxagonal.drawio.png" alt="Data Mesh"/>
 <br clear="all">
 <p class="figureTitle">Data Mesh</p> 
 <br clear="all">
+
+Data Sharing is based on FHIR RESTful API's, and asynchronous messaging used to deliver the orders and reports in mostly HL7 v2 and IHE Laboratory Testing Workflow (LTW) based .
+
+The diagram below shows multiple interoperability pathways for exchanging diagnostic reports—either as structured data or documents—between systems.
+It maps out which standards (FHIR, HL7 v2, IHE, XDS/MHD), APIs, and NHS England national services (UGR, NIR, NRL, Genomic OMS, etc.) are involved depending on:
+
+- Which API is used
+   - Event API
+   - Data Sharing API
+- Whether an existing interface already exists
+- Whether the exchange is structured data or unstructured documents
+
+NHS England services are coded in blue, while currently implemented services are coded in green.
+
+```mermaid
+graph TD
+    B[Diagnostic Report Interoperabilty] --> C{"Options <br/>Both answers are likely"}
+    C -->|Event API| D{Existing Interface?}
+    C -->|Data Sharing API| E{Document <br/>or Data}
+    E --> |Data| Data[Structured]
+    E --> |Document| Documents[Unstructured Documents]
+    Data --> REST["FHIR RESTful API<br/>IHE Query for Existing Data (QEDm)"]
+    REST --> UGR[NHS England Unified Genomic Record]
+    Documents --> XDS["FHIR RESTful API<br/>IHE Mobile access to Health Documents (MHD) <br/>or XML SOAP IHE XDS <br/> e.g. NHS England NRL"]
+    XDS --> Format{Format}
+    Format --> |Binary| Binary[PDF, PMG, html, etc]
+    Format --> |Structured - Imaging| RAD[DICOM]
+    Format --> |Clinical Document - Laboratory| FHIRDocument["Structured and Unstructured<br/><br/>FHIR Document <br/> e.g. Internation Patient Summary (IPS), EU Laboratory and Imaging Reports, XPanDH/EU Hospital Discharge Report (HDR)"]  
+    D --> |Yes| V2{Structured or Unstructured} 
+    V2 --> |Structured| LTW[HL7 v2 ORU<br/>IHE Laboratory Testing Workflow LTW LAB-3<br/>and IHE RAD]
+    V2 --> |Unstructured| MDM[HL7 v2 MDM_T02 or MDM_T01]
+    MDM --> NRL["NHS England National Record Loactor Feed (POST DocumentReference)"]
+    D --> |No| Workflow[FHIR Workflow <br/> e.g. NHS England Genomic Order Management Service]
+    Workflow --> PubSub[FHIR Subscription]
+    LTW --> Pathology[FHIR Message <br/> e.g. NHS England Pathology]
+    RAD --> NIR[NHS England National Imaging Registry]
+
+    classDef blue fill:#DAE8FC;
+    classDef green fill:#D5E8D4;
+
+    class Pathology,UGR,NIR,FHIRDocument,XDS,NRL,Workflow blue
+    class LTW,REST,MDM green
+```
 
 ## Enterprise Integration
 
