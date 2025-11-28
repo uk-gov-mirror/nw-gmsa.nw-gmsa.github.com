@@ -25,13 +25,13 @@ NHS England services are coded in blue, while currently implemented services are
 
 ```mermaid
 graph TD
-    B[Diagnostic Report Interoperabilty] --> C{"Options <br/>Both answers are likely"}
+    B[Diagnostic Report Interoperabilty] --> C{"Options <br/>Both answers<br/>are likely"}
     C -->|Event API| D{Existing Interface?}
     C -->|Data Sharing API| E{Document <br/>or Data}
     E --> |Data| Data[Structured]
     E --> |Document<br/>and hybrid| Documents["Unstructured (and Clinical) Documents"]
     Data --> REST["FHIR RESTful API<br/>IHE Query for Existing Data (QEDm)"]
-    REST --> UGR[NHS England Unified Genomic Record]
+    REST --> UGR[NHS England Unified Genomic Record<br/>NHS England Patient Data Manager]
     Documents --> XDS["FHIR RESTful API<br/>IHE Mobile access to Health Documents (MHD) <br/>or XML SOAP IHE XDS <br/> e.g. NHS England NRL"]
     XDS --> Format{Format}
     Format --> |Binary| Binary[PDF, PMG, html, etc]
