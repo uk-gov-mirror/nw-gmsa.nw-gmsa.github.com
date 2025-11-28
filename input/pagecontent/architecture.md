@@ -32,11 +32,11 @@ graph TD
     E --> |Document<br/>and hybrid| Documents["Unstructured (and Clinical) Documents"]
     Data --> REST["FHIR RESTful API<br/>IHE Query for Existing Data (QEDm)"]
     REST --> UGR[NHS England Unified Genomic Record<br/>NHS England Patient Data Manager]
-    Documents --> XDS["FHIR RESTful API<br/>IHE Mobile access to Health Documents (MHD) <br/>or XML SOAP IHE XDS <br/> e.g. NHS England NRL"]
+    Documents --> XDS["FHIR RESTful API<br/>IHE Mobile access to Health Documents (MHD) <br/>or XML SOAP IHE XDS <br/>e.g. NHS England National Record Locator"]
     XDS --> Format{Format}
     Format --> |Binary| Binary[PDF, PMG, html, etc]
     Format --> |Structured - Imaging| RAD[DICOM]
-    Format --> |Clinical Document - Laboratory| FHIRDocument["Structured and Unstructured<br/><br/>FHIR Document <br/> e.g. Internation Patient Summary (IPS),<br/>EU Laboratory and Imaging Reports,<br/>XPanDH/EU Hospital Discharge Report (HDR)"]  
+    Format --> |Clinical Document - Laboratory| FHIRDocument["Structured and Unstructured<br/><br/>FHIR Document<br/>e.g. NHS England National Record Locator <br/> e.g. Internation Patient Summary (IPS),<br/>EU Laboratory and Imaging Reports,<br/>XPanDH/EU Hospital Discharge Report (HDR)"]  
     D --> |Yes| V2{Structured or<br/>Unstructured} 
     V2 --> |Structured| LTW[HL7 v2 ORU_R01<br/>IHE Laboratory Testing Workflow LTW LAB-3<br/>and IHE RAD]
     V2 --> |Unstructured| MDM[HL7 v2 MDM_T02 or MDM_T01 <br/> e.g. ICS/LHCRE Systems]
