@@ -36,11 +36,11 @@ graph TD
     XDS --> Format{Format}
     Format --> |Binary| Binary[PDF, PMG, html, etc]
     Format --> |Structured - Imaging| RAD[DICOM]
-    Format --> |Clinical Document - Laboratory| FHIRDocument["Structured and Unstructured<br/><br/>FHIR Document <br/> e.g. Internation Patient Summary (IPS), EU Laboratory and Imaging Reports, XPanDH/EU Hospital Discharge Report (HDR)"]  
+    Format --> |Clinical Document - Laboratory| FHIRDocument["Structured and Unstructured<br/><br/>FHIR Document <br/> e.g. Internation Patient Summary (IPS),<br/>EU Laboratory and Imaging Reports,<br/>XPanDH/EU Hospital Discharge Report (HDR)"]  
     D --> |Yes| V2{Structured or<br/>Unstructured} 
     V2 --> |Structured| LTW[HL7 v2 ORU_R01<br/>IHE Laboratory Testing Workflow LTW LAB-3<br/>and IHE RAD]
     V2 --> |Unstructured| MDM[HL7 v2 MDM_T02 or MDM_T01 <br/> e.g. ICS/LHCRE Systems]
-    MDM --> NRL["NHS England National Record Loactor Feed (POST DocumentReference)<br/>"]
+    MDM --> NRL["NHS England National Record Loactor Feed<br/>(POST DocumentReference)<br/>"]
     D --> |No| Workflow[FHIR Workflow <br/> e.g. NHS England Genomic Order Management Service]
     Workflow --> PubSub[FHIR Subscription]
     LTW --> Pathology[FHIR Message <br/> e.g. NHS England Pathology]
