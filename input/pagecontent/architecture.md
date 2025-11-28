@@ -39,8 +39,8 @@ graph TD
     Format --> |Clinical Document - Laboratory| FHIRDocument["Structured and Unstructured<br/><br/>FHIR Document <br/> e.g. Internation Patient Summary (IPS), EU Laboratory and Imaging Reports, XPanDH/EU Hospital Discharge Report (HDR)"]  
     D --> |Yes| V2{Structured or Unstructured} 
     V2 --> |Structured| LTW[HL7 v2 ORU<br/>IHE Laboratory Testing Workflow LTW LAB-3<br/>and IHE RAD]
-    V2 --> |Unstructured| MDM[HL7 v2 MDM_T02 or MDM_T01]
-    MDM --> NRL["NHS England National Record Loactor Feed (POST DocumentReference)"]
+    V2 --> |Unstructured| MDM[HL7 v2 MDM_T02 or MDM_T01 <br/> e.g. ICS/LHCRE Systems]
+    MDM --> NRL["NHS England National Record Loactor Feed (POST DocumentReference)<br/>"]
     D --> |No| Workflow[FHIR Workflow <br/> e.g. NHS England Genomic Order Management Service]
     Workflow --> PubSub[FHIR Subscription]
     LTW --> Pathology[FHIR Message <br/> e.g. NHS England Pathology]
@@ -51,6 +51,7 @@ graph TD
 
     class Pathology,UGR,NIR,FHIRDocument,XDS,NRL,Workflow blue
     class LTW,REST,MDM green
+
 ```
 
 ## Enterprise Integration
