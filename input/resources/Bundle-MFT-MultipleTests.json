@@ -65,7 +65,7 @@
             "assigner": {
               "identifier": {
                 "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                "value": "EPI"
+                "value": "R0A"
               }
             },
             "system": "https://nw-gmsa.github.io/Id/MR",
@@ -564,7 +564,7 @@
                 }
               ]
             },
-            "value": "1000162341"
+            "value": "1000162341-M213.13"
           }
         ],
         "intent": "order",
@@ -613,6 +613,7 @@
         "code": {
           "coding": [
             {
+              "code": "M213.23",
               "system": "https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds"
             }
           ]
@@ -628,7 +629,7 @@
                 }
               ]
             },
-            "value": "1000162341"
+            "value": "1000162341-M213.23"
           }
         ],
         "intent": "order",
