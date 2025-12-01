@@ -144,6 +144,8 @@ pages:
   mCSD.md:
     title: Care Services Discovery
     generation: markdown
+  hods.md:
+    title: Haematological Malignancy Diagnostic Services
 
 resources:
   Questionnaire/GenomicTestOrder:
