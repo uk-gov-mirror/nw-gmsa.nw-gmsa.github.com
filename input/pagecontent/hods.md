@@ -18,9 +18,9 @@ graph TD
     subgraph NWGenomics[North West Genomics]
         TestType{Test Type} --> |4b. Tests A, B, C, etc| GLHS
         TestType{Test Type} --> |4b. Tests A, B, C, etc| GLHI
-        GLHS["Laboratory Information Management System Shire (Shire CFT))"]
+        GLHS["Laboratory Information Management System<br/><br/>Shire"]
         GLHS --> |4c. Laboratory Report ORU_R01| RIE 
-        GLHI["Laboratory Information Management System Shire (iGene MFT))"]
+        GLHI["Laboratory Information Management System<br/><br/>iGene)"]
         GLHI --> |4c. Laboratory Report ORU_R01| RIE 
         
     end
