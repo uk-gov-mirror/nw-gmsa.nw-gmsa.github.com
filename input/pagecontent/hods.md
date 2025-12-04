@@ -5,12 +5,12 @@ After move of HODS from The Christie to Manchester Foundation Trust.
 ```mermaid
 graph LR
     NHSTrust --> |"1. (Manual) Laboratory Order Entry"| HODS
-    HODS --> |"2. (Manual) Laboratory Order + Specimen"| MFTReception{MFT Speciment Reception}
+    HODS --> |"2. (Manual) Laboratory Order + Specimen"| MFTReception{Specimen Reception}
     MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["Laboratory Information Management System (LIMS)"]
    
-    subgraph Laboratory[Laboratory MFT and/or CFT]
+    subgraph Laboratory[Greater Manchester Laboratory]
     
-        LIMS --> |3b. Laboratory Report ORU_R01| TIE[MFT Trust Integration Engine]
+        LIMS --> |3b. Laboratory Report ORU_R01| TIE[MFT/CFT Trust Integration Engine]
         
     end 
     TIE --> |3c. Laboratory Report ORU_R01| HODS
