@@ -3,7 +3,7 @@
 After move of HODS from The Christie to Manchester Foundation Trust.
 
 ```mermaid
-graph LR
+graph TD
     NHSTrust --> |"1. (Manual) Laboratory Order Entry"| HODS
     HODS --> |"2. (Manual) Laboratory Order + Specimen"| MFTReception{Specimen Reception}
     MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["Laboratory Information Management System (LIMS)"]
