@@ -1,4 +1,4 @@
-### Current Greater Manchester 
+### Greater Manchester 
 
 After move of HODS from The Christie to Manchester Foundation Trust.
 
@@ -36,7 +36,7 @@ graph TD
 - Reporting consultant writes the final combined report within HODS itself when all results are in (5)
 - When report is marked Closed , requesting clinicians are alerted by email (6) to log into HODS and view/export the PDF of the final report
 
-### Cheshire and Mersey GLH
+### Cheshire and Mersey
 
 For elaboration purposes only. This is a more detailed breakdown the the Genomic Tests.
 
