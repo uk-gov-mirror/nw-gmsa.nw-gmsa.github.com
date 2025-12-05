@@ -2,7 +2,7 @@ For reference only, this is an extract of work done by North West Childresn Canc
 
 ```mermaid
 graph TD
-    PTC["Primary Treatment Centre (PTC)"] --> |1. Sends Blood Tests Request| POSCU["Paediatric Oncology Shared Care Unit (PSOCU)"]
+    PTC["Primary Treatment Centre (PTC)"] --> |1. Sends Blood Tests Request| POSCU["Paediatric Oncology Shared Care Unit (POSCU)"]
     POSCU --> |2. Blood Collection Task| Collection["Blood Sample Taken<br/><br/>Community Nurse"] 
     Collection --> |3. Send Laboratory Order and Blood Specimen| SpecimenReception[Specimen Reception]
     SpecimenReception --> |4. Send Laboratory Order and Blood Specimen| LIMS[Performs Blood Test<br/><br/>Laboratory]
