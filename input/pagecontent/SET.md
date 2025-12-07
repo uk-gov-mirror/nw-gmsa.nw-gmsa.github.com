@@ -10,7 +10,7 @@
 
 See Ref 1 for details.
 
-<img style="padding:3px;width:20%;" src="SET_main_profile_image.jpg" alt="IHE SET Main Events"/>
+<img style="padding:3px;width:80%;" src="SET_main_profile_image.jpg" alt="IHE SET Main Events"/>
 <br clear="all">
 <p class="figureTitle">IHE SET Main Events</p> 
 <br clear="all">
