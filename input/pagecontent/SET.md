@@ -32,7 +32,7 @@ graph TD
     LIMS --> |7. Send Laboratory Report| POSCU
     LIMS --> |8. Send Laboratory Report| PTC
     PTC --> Prescription{Prescription Change Required?}
-    Prescription --> |8. Yes| Medication[Amend Prescription]
+    Prescription --> |9. Yes| Medication[Amend Prescription]
     Medication --> |10. Inform of prescription change| POSCU      
 ```
 
