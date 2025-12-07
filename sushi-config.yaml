@@ -147,9 +147,6 @@ pages:
   hods.md:
     title: Haematological Malignancy Diagnostic Services
     generation: markdown
-  bloods.md:
-    title: North West Children Cancer Bloods Services
-    generation: markdown
   SET.md:
     title: Specimen Event Tracking
     generation: markdown
