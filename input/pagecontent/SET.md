@@ -2,6 +2,7 @@
 ## References 
 
 1. [IHE Specimen Event Tracking](https://wiki.ihe.net/index.php/Specimen_Event_Tracking)
+2. [NHS MFT Transport of Samples](https://mft.nhs.uk/the-trust/other-departments/laboratory-medicine/cytology/diagnostic-cytopathology/requesting-of-investigations/transport-of-samples/)
 
 ## Actors and Transactions
 
