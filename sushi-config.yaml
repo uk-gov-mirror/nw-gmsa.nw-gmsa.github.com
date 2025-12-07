@@ -150,6 +150,9 @@ pages:
   bloods.md:
     title: North West Children Cancer Bloods Services
     generation: markdown
+  SET.md:
+    title: Specimen Event Tracking
+    generation: markdown
 
 resources:
   Questionnaire/GenomicTestOrder:
