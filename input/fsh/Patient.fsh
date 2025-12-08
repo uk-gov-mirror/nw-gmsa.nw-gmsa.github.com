@@ -29,13 +29,17 @@ Description: """
 * identifier contains
   MedicalRecordNumber 0..* MS
   and nhsNumber 0..* MS
+  and CHINumber 0..* MS
 //  solved via ServiceRequest.requisition and GenomicsPedigreeNumber 0..*
 
 * identifier[nhsNumber] only NHSNumber
-* identifier[nhsNumber] ^short = "UK National Health Identifiers"
+* identifier[nhsNumber] ^short = "UK National Health Identifiers England and Wales"
 //* identifier[nhsNumber].extension[nhsNumberVerificationStatus] ^short = "NOT REQUIRED. As all NHS Numbers **MUST** be *01 Number present and verified*, this status will be assumed."
 * identifier[MedicalRecordNumber] only MedicalRecordNumber
 * identifier[MedicalRecordNumber] ^short = "Medical Record Number"
+
+* identifier[CHINumber] only CHINumber
+* identifier[CHINumber] ^short = "COMMUNITY HEALTH INDEX NUMBER"
 //* identifier[GenomicsPedigreeNumber] only GenomicsPedigreeNumber
 //* identifier[GenomicsPedigreeNumber] ^short = "Genomics Pedigree Number"
 
