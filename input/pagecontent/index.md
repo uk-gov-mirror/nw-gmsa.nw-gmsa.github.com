@@ -164,12 +164,11 @@ For more details see:
 
 ## Inter Laboratary Workflow (ILW)
 
-For illustration purposes only, see [Specimen Event Tracking](SET.html)
-
+For illustration purposes only, see [Inter Laboratory Workflow](ILW.html)
 
 ## Specimen Event Tracking (SET)
 
-For illustration purposes only, see [Inter Laboratory Workflow](ILW.html)
+For illustration purposes only, see [Specimen Event Tracking](SET.html)
 
 ## Data Modelling
 
