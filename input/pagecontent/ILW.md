@@ -78,3 +78,7 @@ For elaboration purposes only. This is a more detailed breakdown the the Genomic
 ### NHS England Genomic Order Management Service FHIR API
 
 - [NHS England - Genomic Order Management Service FHIR API](https://digital.nhs.uk/developer/api-catalogue/genomic-order-management-service-fhir) a [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html) based service for managing orders and results at a national level.
+
+### NHS North West Childrens Cancer 
+
+See [Blood Tests](SET.html#blood-sample-collection) which includes inter-organisation workflows around laboratory testing. 
