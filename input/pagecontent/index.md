@@ -112,7 +112,7 @@ This workflow has been enhanced to support the sharing of laboratory reports (do
 |                                          | [Authorisation (OAuth2](authorisation.html)                          | OAUth2 [IHE IUA ITI-103 ITI-71 ITI-102](IUA.html)                                                                                  |                                                                         |                                                                                                   | 
 
 
-## Diagnostic Process
+## Laboratory Workflow (LTW)
 
 ### Test Order 
 
@@ -162,29 +162,14 @@ For more details see:
 - [Read & Search Laboratory Report Data (HIE)](HIE.html)
 - [Read & Seerch Laboratory Report Documents (HIE)](HIE.html)
 
-### Specimen Collection
+## Inter Laboratary Workflow (ILW)
 
-Specimen collection is not performed by a Genomics service, and this shows how genomics fits into that process. The diagram here is around a biopsy procedure, but the same principles apply to other specimen collection procedures.
+For illustration purposes only, see [Specimen Event Tracking](SET.html)
 
-```mermaid
-graph TD;
 
-    Oncology[Specialty e.g. Oncology] --> |"Asks for a biopsy (procedure)"| SpecialistTeam[fas:fa-user-md Specialist Team]
-    Oncology --> |"Asks for a diagnostic test (procedure)"| DiagnosticTesting[Diagnostic Testing]
-    SpecialistTeam --> Admits[Admits Patient]
-    Admits --> Performs[Performs Procedure]
-    Admits --> |"Gets Patient Summary <br/>(Conditions, Allergies and Current Medications)"| Patient
-    Admits --> |Update Patient Record| EPR
-    Performs --> Discharge[Discharges Patient]
-    Performs --> |Sends Specimen| DiagnosticTesting
-    Discharge --> |Discharge Letter| Patient["fas:fa-user Patient"]
-    Discharge --> |Send Discharge Letter| GP["fas:fa-user-md GP"]
-    Discharge --> |"Record procedure (as completed)"| EPR["fas:fa-database <i>Electronic Patient Record</i>"]
-    Discharge --> |Send Visit Notification| Consultant[fas:fa-user-md Consultant]
-    GP --> |"Store Discharge Letter"| GPEPR["fas:fa-database <i>GP Electronic Patient Record</i>"]
-```
+## Specimen Event Tracking (SET)
 
-A detailed example of this process can be found in the [Example Scenario - Collect Specimen](ExampleScenario-BiopsyProcedure.html).
+For illustration purposes only, see [Inter Laboratory Workflow](ILW.html)
 
 ## Data Modelling
 

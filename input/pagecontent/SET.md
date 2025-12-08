@@ -51,7 +51,6 @@ graph TD
 - (9) PTC may edit child's prescription on regimen in light of blood results and may need to recall patient  into hospital for additional tests
 - (10) If prescription is amended then PTC must notify POSCU
 
-
 ### Biopsy Procedure
 
 For information purposes only, this documention of a biopsy procedure in Nottingham University Hospital.
