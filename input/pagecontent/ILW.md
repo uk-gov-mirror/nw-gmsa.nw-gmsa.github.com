@@ -1,4 +1,25 @@
-### Greater Manchester 
+
+## References
+
+1. [IHE Inter Laboratory Workflow](https://wiki.ihe.net/index.php/Inter_Laboratory_Workflow)
+2. [IHE Pathology and Laboratory Medicine (PaLM) Technical Framework  - Volume 1](https://www.ihe.net/uploadedFiles/Documents/PaLM/IHE_PaLM_TF_Vol1.pdf)
+
+## Actors and Transactions
+
+## Overview
+
+See Ref 1 for details.
+
+<img style="padding:3px;width:80%;" src="Ihe_lab_ilw_proc.jpg" alt="IHE ILW Summary"/>
+<br clear="all">
+<p class="figureTitle">IHE ILW Summary</p> 
+<br clear="all">
+
+## Scenarios
+
+### Haematological Malignancy Diagnostic Services
+
+#### Greater Manchester
 
 After move of HODS from The Christie to Manchester Foundation Trust.
 
@@ -36,7 +57,7 @@ graph TD
 - Reporting consultant writes the final combined report within HODS itself when all results are in (5)
 - When report is marked Closed , requesting clinicians are alerted by email (6) to log into HODS and view/export the PDF of the final report
 
-### Cheshire and Mersey
+#### Cheshire and Mersey
 
 For elaboration purposes only. This is a more detailed breakdown the the Genomic Tests.
 
@@ -44,4 +65,3 @@ For elaboration purposes only. This is a more detailed breakdown the the Genomic
 <br clear="all">
 <p class="figureTitle">HODS Genomic Tests - Mersey and Cheshire GLH</p> 
 <br clear="all">
-

@@ -144,11 +144,11 @@ pages:
   mCSD.md:
     title: Care Services Discovery
     generation: markdown
-  hods.md:
-    title: Haematological Malignancy Diagnostic Services
-    generation: markdown
   SET.md:
     title: Specimen Event Tracking
+    generation: markdown
+  ILW.md:
+    title: Inter Laboratory Workflow
     generation: markdown
 
 resources:
