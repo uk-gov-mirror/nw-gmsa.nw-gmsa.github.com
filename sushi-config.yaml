@@ -145,10 +145,10 @@ pages:
     title: Care Services Discovery
     generation: markdown
   SET.md:
-    title: Specimen Event Tracking
+    title: Specimen Event Tracking (SET)
     generation: markdown
   ILW.md:
-    title: Inter Laboratory Workflow
+    title: Inter Laboratory Workflow (ILW)
     generation: markdown
 
 resources:
