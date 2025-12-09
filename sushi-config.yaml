@@ -294,8 +294,8 @@ groups:
       - Observation/EPIC-OBX-11
       - Bundle/748683741
   -ex-example-NHS-Genomics-Medicine-Service:
-    name: "Example: NHS Genomics Medicine Service"
-    description: "NHS Genomics Medicine Service"
+    name: "Example: NHS England Genomics Order Management Service"
+    description: "NHS England Genomics Order Management Service"
     resources:
       - Bundle/Bundle-NonWGSTestOrderForm-CancerSolidTumor-Example
       - Bundle/Bundle-NonWGSTestOrderForm-FetalScenario-Example
