@@ -67,6 +67,7 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 |                                                                 | BURNLEY                                       | Selyse   |             | F      | 1967-09-18                 |          | [Y00206](https://www.odsdatasearchandexport.nhs.uk/?search=generalorg&query=Y00206) | Manchester Road       |                                 |                         | Burnley                   | Lancashire                    | BB11 9SA |
 | (CHI Number)                                                    | GLASGOW                                       | Karsi    |             | F      | 1982-01-16                 |          |                                                                                     | J B Russell House     | Gartnavel Royal Hospital Campus | 1055 Great Western Road | Glasgow                   |                               | G12 0XH  |          
 
+
 ```mermaid
 graph TD;
     subgraph LynchSyndrome[Lynch Syndrome Scenario]
