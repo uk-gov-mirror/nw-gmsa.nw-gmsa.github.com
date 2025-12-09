@@ -10,9 +10,12 @@ Format: NNNNNNNNNN
 
 Values include a checksum, details can be found in [NHS NUMBER](https://www.datadictionary.nhs.uk/attributes/nhs_number.html)  
 
-| Field               | HL7 FHIR Identifier | OID / URI | HL7 v2 CX | HL7 FHIR Example                                 | HL7 v2 Example |
-|---------------------|---------------------|-----------|-----------|--------------------------------------------------|----------------|
-| Value               | value               |           | CX.1      | 9449305552                                       | 9449305552     |
-| Type                | type                |           | CX.5      | http://terminology.hl7.org/CodeSystem/v2-0203#NH | NH             |
-| Assigning Authority | assigner.identifier |           | CX.6      |                                                  | HSC            |
-| System              | system              |           | N/a       |                                                  | N/a            |
+
+
+| Field               | HL7 FHIR Identifier | OID / URI                 | HL7 FHIR Value                                   | HL7 v2 CX | HL7 v2 Value | Example    |
+|---------------------|---------------------|---------------------------|--------------------------------------------------|-----------|--------------|------------|
+| Value               | value               |                           | -                                                | CX.1      |              | 9449305552 |
+| Type                | type                |                           | http://terminology.hl7.org/CodeSystem/v2-0203#NH | CX.5      | NH           | -          |
+| Assigning Authority | assigner.identifier |                           |                                                  | CX.6      | HSC          | -          |
+| System              | system              |  |                | N/a       | N/a          | -          |
+
