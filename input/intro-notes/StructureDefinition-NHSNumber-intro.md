@@ -5,7 +5,7 @@
 - **IHE XDS** sourcePatientId and patientId
 
 Format: NNNNNNNNNN
-- England, Wales and the Isle of Man value ranges: 400 000 000 to 499 999 999, and 600 000 000 to 799 999.
+- England, Wales and the Isle of Man value ranges: 400 000 000 to 499 999 999, and 600 000 000 to 799 999 999.
 - Testing: 999 000 0000 to 999 999 9999 
 
 Values include a checksum, details can be found in [NHS NUMBER](https://www.datadictionary.nhs.uk/attributes/nhs_number.html)  
