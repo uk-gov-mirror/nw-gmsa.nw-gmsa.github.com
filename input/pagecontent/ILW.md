@@ -51,7 +51,7 @@ graph TD
         GLHS["Laboratory Information Management System<br/><br/>Shire"]
         GLHS --> |4c. Laboratory Report ORU_R01| RIE 
         GLHI["Laboratory Information Management System<br/><br/>iGene)"]
-        GLHI --> |4c. Laboratory Report ORU_R01| RIE 
+        GLHI --> |4c. Laboratory Report Currently manually uploaded, ideally ORU_R01| RIE 
         
     end
     RIE["Genomics Regional Integration Engine"] --> |4d. Laboratory Report ORU_R01| HODS
