@@ -31,6 +31,8 @@ curl --request POST --data-binary "@Specifications/iGene/ORU_R01_R125.1_REP.txt"
 
 curl --request POST --data-binary "@Specifications/iGene/ORU_R01_PDF.txt" http://192.168.1.67:9980
 curl --request POST --data-binary "@Specifications/iGene/ORU_R01_DLIMS.txt" http://192.168.1.67:9980
+curl --request POST --data-binary "@Specifications/iGene/ORU_R01_REP.txt" http://192.168.1.67:9980
+
 
 CHI Number example
 
