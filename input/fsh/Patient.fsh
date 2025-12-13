@@ -29,8 +29,7 @@ Description: """
 * identifier contains
   MedicalRecordNumber 0..* MS
   and nhsNumber 0..* MS
-  and CHINumber 0..* MS
-  and HSCNumber 0..* MS
+
 //  solved via ServiceRequest.requisition and GenomicsPedigreeNumber 0..*
 
 * identifier[nhsNumber] only NHSNumber
@@ -39,11 +38,6 @@ Description: """
 * identifier[MedicalRecordNumber] only MedicalRecordNumber
 * identifier[MedicalRecordNumber] ^short = "Medical Record Number"
 
-* identifier[CHINumber] only CHINumber
-* identifier[CHINumber] ^short = "UK National Health Identifiers: COMMUNITY HEALTH INDEX NUMBER (Scotland)"
-
-* identifier[HSCNumber] only HSCNumber
-* identifier[HSCNumber] ^short = "UK National Health Identifiers: HEALTH AND CARE NUMBER (Northern Ireland)"
 //* identifier[GenomicsPedigreeNumber] only GenomicsPedigreeNumber
 //* identifier[GenomicsPedigreeNumber] ^short = "Genomics Pedigree Number"
 
