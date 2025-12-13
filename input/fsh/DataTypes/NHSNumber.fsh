@@ -12,6 +12,6 @@ Only traced NHS Number **SHOULD** be used, un-traced NHS Numbers **MUST** be cle
 * ^keyword[+] = #NHSDataDictionary "NHS Data Dictionary"
 
 * system 1..1
-* system = "https://fhir.nhs.uk/Id/nhs-number"
+* system from UKNationalHealthIdentifiers
 * value 1..1
 * type = $v2-0203#NH (exactly)
