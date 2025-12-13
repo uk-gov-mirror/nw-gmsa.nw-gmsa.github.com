@@ -194,13 +194,12 @@ UK edition of SNOMED (83821000000107)
 
 ## Credits
 
-| Role(s)              | Contributor(s)                               | 
-|----------------------|----------------------------------------------|
-|                      | North West Genomic Medicine Service Alliance |
-|                      | Alder Hey Children's Hospital Trust          |
-|                      | Manchester University NHS Foundation Trust   |
-|                      | Liverpool Womens NHS Foundation Trust        |
-|                      | The Christie NHS Foundation Trust            |
-|                      | NHS England                                  |
-| Enterprise Architect | Kevin Mayfield, Aire Logic & Mayfield IS     |      
-
+| Role(s)        | Contributor(s)                               | 
+|----------------|----------------------------------------------|
+|                | North West Genomic Medicine Service Alliance |
+|                | Alder Hey Children's Hospital Trust          |
+|                | Manchester University NHS Foundation Trust   |
+|                | Liverpool Womens NHS Foundation Trust        |
+|                | The Christie NHS Foundation Trust            |
+|                | NHS England                                  |
+| Staff Engineer | Kevin Mayfield, Aire Logic & Mayfield IS     |      
