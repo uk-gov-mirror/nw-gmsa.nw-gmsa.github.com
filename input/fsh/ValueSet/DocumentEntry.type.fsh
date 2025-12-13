@@ -3,6 +3,7 @@ Id: document-entry-type
 Title: "DocumentEntry Type"
 Description: """
 - **Digital Health and Care Scotland**  [(EH4001) CLINICAL DOCUMENT INDEXING STANDARDS](https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf) LA Labs
+- [NHS England NRL -Record Type](https://github.com/NHSDigital/NRLF/blob/develop/resources/fhir/NRLF-RecordType-ValueSet.json)
 """
 * ^experimental  = false
 
