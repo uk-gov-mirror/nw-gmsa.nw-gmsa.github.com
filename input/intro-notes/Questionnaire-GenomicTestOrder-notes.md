@@ -6,9 +6,6 @@
 </figure>
 <br clear="all">
 
-### Ask at Order Entry questions and prior results
-
-See [Domain Archetype and Panels](DDD-Overview.html#domain-archetype-and-panels)
 
 ## Communication Model
 

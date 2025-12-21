@@ -68,6 +68,8 @@ Note: it is likely that source systems will use ORM_01 and not include specimen 
 
 <span class="badge badge-primary">Diagnostic Genomics</span>
 
+See also [Domain Archetype and Panels](DDD-Overview.html#domain-archetype-and-panels) for technical notes on how form questions are converted into HL7 v2/FHIR.
+
 | Name                                                                   | Code System            | Answer ValueSet                      | Cardinality | HL7 v2 OML_O21 Message | OBX-2 Value Type | HL7 FHIR Resource (Message + RESTful)                                    |
 |------------------------------------------------------------------------|------------------------|--------------------------------------|-------------|------------------------|------------------|--------------------------------------------------------------------------|
 | Patient is from consanguineous union?                                  | SNOMED 842009          | [YesNoUnknown](ValueSet-YNU.html)    | 0..1        | [OBX](hl7v2.html#obx)  |  CE               | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |
