@@ -19,11 +19,12 @@ title "Genomic Laboratory Order"
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
 **** [[https://www.datadictionary.nhs.uk/data_elements/local_treatment_category_code.html Local Treatment Category Code]]
 ***** Genomic Test Code [[CodeSystem-GenomicTestCode.html Test Directory Code]]
+**** Notes
 **** [[#specimen Specimen]]
 ***** Specimen Id
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
 ***** [[StructureDefinition-ShipmentTrackingNumber.html Shipment Tracking number]]
-*** [[#supporting-information Supporting Information]] Genomic\n(Ask At Order Entry Questions)
+*** [[#order-entry-questions Order Entry Questions]] Genomic\n(Supporting Information)
 **** Consent
 **** Pregnant
 **** Consanguineous union
