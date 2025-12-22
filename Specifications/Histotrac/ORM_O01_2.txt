@@ -1,0 +1,10 @@
+MSH|^~\&|Epic|Beaker|Histotrac|HISTOTRAC|20251222112514|LABBACKGROUND|ORM^O01|1966859864|T|2.5.1|||AL|NE
+PID|1||MRN^^R0A||TESTLN^TESTMN^TESTFN|| DOB |F|||||||||||NHS NUMBER|||||||||||N
+PV1|1|OP|MREHACL^^^MRI^^^^^Manchester Royal Infirmary Dept of Clinical Haematology^^DEPID||||G3397624^HUSSAIN^FAYYAZ^^^^^^GMCID^^^^GMCID||||||||||||1092085514|||||||||||||||||||||||||20251222093546
+ORC|NW|258918398^EPC||1092085514|||^^^20251222^^R^^||20251222111321|LABBACKGROUND^LAB^BACKGROUND^USER^||C7845274^ASSLAN^MONA^^^^^^GMCID^^^^GMCID|MREHACL^MRE HAEM CLINIC^DEPID^MRI^^^^^MRE HAEM CLINIC|||||PC082611^PC082611^^101221104^ZTDR MRI HAEMOTOLOGY \T\|||||||||||O
+OBR|1|258918398^EPC|1029693414^Beaker|CHIMBTP^CHIMERISM TESTING - PERFORMABLE^HISTOTRACEAP||20251222|20251222112305|||81352^DAVID^NEETHU^^|L|||20251222112509|Blood&Blood^^^Blood, Venou&Blood, Venous|C7845274^ASSLAN^MONA^^^^^^GMCID^^^^GMCID||||||||Lab|||^^^20251222^^R^^|||||||||20251222
+NTE|1||Specimen Source :->Blood (PB)|OSQ
+NTE|2||Patient Test(s):->Chimerism Peripheral Blood (PB)|OSQ
+NTE|3||Patient Test(s):->Chimerism CD3|OSQ
+NTE|4||Patient Test(s):->Chimerism CD15|OSQ
+NTE|5||Patient Comments:->Need to check with patient if she needs transport. C1 + 1 relative. Must travel alone
