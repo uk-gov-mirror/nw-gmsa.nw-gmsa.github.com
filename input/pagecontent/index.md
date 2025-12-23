@@ -1,3 +1,36 @@
+## Overview
+
+NHS North West Genomics is a new NHS service that consolidates clinical diagnostic service for genomic testing across the North West of England. This service is available across the UK.
+It is hosted by Manchester University NHS Foundation Trust.
+
+As part of this transition, existing electronic order and reporting systems will be supported by a regional integration engine (RIE) and a genomic clinical data repository.
+
+## Messaging
+
+### Point To Point Messaging
+
+The following diagram shows the [point to point](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PointToPointChannel.html) messaging between the order placer and order filler. The `order filler` is typically a Laboratory Information Management System (LIMS) and the `order placer` is typically a clinical system such as a Electronic Patient Record (EPR). Not all of these interactions will be electronic, for example the reports may be emailed, the orders may also be sent via email or sent with the specimen. 
+
+```mermaid
+graph LR
+    OrderPlacer --> |1. Laboratory Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderFiller --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+```
+
+In many NHS Trusts, this will include the use of a Trust Integration Engine (TIE) to support the point to point messaging.
+
+```mermaid
+graph LR
+
+    OrderPlacer --> |1. Laboratory Order<br/>HL7 v2 ORM_O01| TIE[Trust Integration Engine]
+    TIE --> |2. Laboratory Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderFiller --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
+    TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+```
+
+The TIE's will typically perform transformations between the different versions of HL7 v2 used by the Order Placer (e.g. EPR) and Order Filler (e.g. LIMS).
+
+
 
 
 ## How to Read this IG
