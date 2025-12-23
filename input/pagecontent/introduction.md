@@ -1,4 +1,3 @@
-## Introduction
 
 This guide is to support Genomic Testing Workflow at a regional level and is designed to be compatible with:
 
@@ -102,7 +101,7 @@ For more details see:
 - [Read & Search Laboratory Report Data (HIE)](HIE.html)
 - [Read & Seerch Laboratory Report Documents (HIE)](HIE.html)
 
-## Inter Laboratary Workflow (ILW)
+## Inter Laboratory Workflow (ILW)
 
 For illustration purposes only, see [Inter Laboratory Workflow](ILW.html)
 
