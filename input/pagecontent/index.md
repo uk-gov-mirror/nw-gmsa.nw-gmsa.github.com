@@ -77,6 +77,8 @@ graph LR
     end
 ```
 
+### Data Contracts
+
 This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
 
 - **Medical Record Number (MRN):** MRNs may overlap across Trusts, so they are augmented with the ODS code of the originating NHS organisation.
@@ -90,9 +92,17 @@ This data contract uses as <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" _t
 <a href="https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf" _target="_blank">IHE Europe Document Metadata</a> and <a href="https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf" _target="_blank">Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS</a> as core UK HL7/IHE standards.
 </div>
 
-Transformation of HL7 messages will not be performed by the RIE. Responsibility for message transformation remains with each NHS Trust’s TIE.
+The RIE will not perform transformation of HL7 messages. Responsibility for message transformation remains with each NHS Trust’s TIE and all parties are expected to use the same Data Contracts.
 
-Finally, HL7 itself does not define workflow expectations between Order Placers and Order Fillers. These are specified in the [IHE Laboratory Testing Workflow (LTW) and Inter Laboratory Workflow (ILW)](https://www.ihe.net/resources/technical_frameworks/#PaLM) profiles, which the RIE will follow.
+<div class="alert alert-success" role="alert">
+Data contracts are expected to apply to all message and payload formats i.e., HL7 v2, FHIR, DICOM and IHE XDS if used at a regional elvel will all following the same Data Contract. </div>
+
+### Event Contracts
+
+Finally, HL7 itself does not define workflow expectations between Order Placers and Order Fillers. These are specified in 
+
+- [IHE Laboratory Testing Workflow (LTW) and Inter Laboratory Workflow (ILW)](https://www.ihe.net/resources/technical_frameworks/#PaLM) profiles, which the RIE will follow.
+- IHE Specimen Event Tracking (SET) profile.
 
 ## Genomic Data and Document Sharing
 
@@ -104,6 +114,16 @@ This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.
 <p id="fX.X.X.X-X" class="figureTitle">Laboratory Report - Overview</p>
 </figure>
 <br clear="all">
+
+### API Contracts
+
+It is expected that the CDR will follow emerging IHE Europe standards for sharing clinical data and documents. At present these include:
+
+- [IHE Mobile access to Health Documents (MHD) ITI-66 and ITI-67](MHD.html) HL7 FHIR
+- [IHE Query for Existing Data for Mobile (QEDm) PCC-44](QEDm.html) HL7 FHIR
+- [IHE Patient Demographics Query for Mobile (PDQm) ITI-78](PDQm.html) HL7 FHIR
+- [IHE Internet User Authorization (IUA)](IUA.md) OAuth2
+- [IHE Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/index.html) HL7 FHIR
 
 ## How to Read this IG
 
