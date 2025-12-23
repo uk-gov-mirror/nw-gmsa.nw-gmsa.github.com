@@ -94,6 +94,16 @@ Transformation of HL7 messages will not be performed by the RIE. Responsibility 
 
 Finally, HL7 itself does not define workflow expectations between Order Placers and Order Fillers. These are specified in the [IHE Laboratory Testing Workflow (LTW) and Inter Laboratory Workflow (ILW)](https://www.ihe.net/resources/technical_frameworks/#PaLM) profiles, which the RIE will follow.
 
+## Genomic Data and Document Sharing
+
+One of the main issues with messaging is that it focuses on interactions betwee two parties, the order placer and the order filler. It does not address the wider sharing of genomic data and documents between NHS Trusts, GP Practices, and many other practitioners. To rectify this a central genomic clinical data repository will be established.
+This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html). This repository is populated by data being passed via the RIE. 
+
+<figure>
+{%include overview-hie.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Laboratory Report - Overview</p>
+</figure>
+<br clear="all">
 
 ## How to Read this IG
 

@@ -1,0 +1,20 @@
+@startuml
+
+ component "Order Placer" as EPR
+ component "Order Filler" as LIMS
+ component "Consumer\nStructured" as HIE
+ component "Consumer\nUnstructured" as HIEU
+ component "Intermediary\nRegional Integration Engine (RIE)" as TIE
+ component "Clinical Data Repository\nHealth Information Exchange (HIE)" as CDR
+
+
+
+ EPR -r-> TIE : **Send Laboratory Order**\nHL7 FHIR OML_O21\nbased on IHE LTW LAB-1
+ TIE -r-> LIMS: **Send Laboratory Order**\nHL7 v2 OML_O21\nIHE LTW LAB-1
+ LIMS -l-> TIE : **Send Genomic Report**\nHL7 v2 ORU_R01\nIHE LTW LAB-3
+ TIE -l-> EPR: **Send Genomic Report**\nHL7 v2 ORU_R01\nIHE LTW LAB-3
+ TIE -d-> CDR: **Populates**
+ HIE -u-> CDR: **Query Genomic Data**\nHL7 FHIR RESTful (read only)\nIHE QEDm PCC-44
+ HIEU -u-> CDR: **Query Genomic Report Documents**\nHL7 FHIR RESTful (read only)\nIHE MHD ITI-67 and ITI-68
+
+@enduml
