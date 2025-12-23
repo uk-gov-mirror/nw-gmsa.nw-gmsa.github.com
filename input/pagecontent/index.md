@@ -1,15 +1,17 @@
 ## Overview
 
-NHS North West Genomics is a new NHS service that consolidates clinical diagnostic service for genomic testing across the North West of England. This service is available across the UK.
-It is hosted by Manchester University NHS Foundation Trust.
+NHS North West Genomics is a new NHS service that brings together clinical diagnostic genomic testing services across the North West of England. While regionally delivered, the service supports genomic testing requests from across the UK.
+The service is hosted by Manchester University NHS Foundation Trust.
 
-As part of this transition, existing electronic order and reporting systems will be supported by a regional integration engine (RIE) and a genomic clinical data repository.
+As part of this transition, existing electronic ordering and reporting systems will be supported by a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable interoperability between local clinical systems and regional genomic laboratory services.
 
 ## Messaging
 
 ### Point To Point Messaging
 
-The following diagram shows the [point to point](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PointToPointChannel.html) messaging between the order placer and order filler. The `order filler` is typically a Laboratory Information Management System (LIMS) and the `order placer` is typically a clinical system such as a Electronic Patient Record (EPR). Not all of these interactions will be electronic, for example the reports may be emailed, the orders may also be sent via email or sent with the specimen. 
+The diagram below illustrates [point to point](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PointToPointChannel.html) messaging between an `Order Placer` and an `Order Filler`. The `Order Filler` is typically a Laboratory Information Management System (LIMS), while the `Order Placer` is usually a clinical system such as an Electronic Patient Record (EPR).
+
+Not all interactions will necessarily be electronic. For example, reports may be sent by email, and orders may be submitted via email or physically accompany the specimen.
 
 ```mermaid
 graph LR
@@ -17,7 +19,7 @@ graph LR
     OrderFiller --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
-In many NHS Trusts, this will include the use of a Trust Integration Engine (TIE) to support the point to point messaging.
+In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this point-to-point messaging.
 
 ```mermaid
 graph LR
@@ -28,11 +30,11 @@ graph LR
     TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
-The TIE's will typically perform transformations between the different versions of HL7 v2 used by the Order Placer (e.g. EPR) and Order Filler (e.g. LIMS).
+TIEs typically handle transformations between the different HL7 v2 variants used by Order Placers (e.g. EPRs) and Order Fillers (e.g. LIMS).
 
 ### Message Routing
 
-The regional service will potentially be providing services to over 20 NHS Trusts within the region, which includes many different types of clinical systems. The service itself, will include several different LIMS and other clinical systems.
+The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use.
 
 ```mermaid
 graph TD
@@ -47,9 +49,9 @@ graph TD
     end 
 
     subgraph GMSA[NHS North West Genomics]
-        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller1[Order Filler<br/>LIMS A]
+        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller1[Order Filler<br/>LIMS 1]
         OrderFiller1 --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE   
-        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller2[Order Filler<br/>LIMS B]
+        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller2[Order Filler<br/>LIMS 2]
         OrderFiller2 --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE          
     end 
     
@@ -59,9 +61,10 @@ graph TD
     RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01| TIE2 
 ```
 
-This is potentially a very complex system, but at its core, it is building on the existing interfaces with the RIE providing message distribution.
-The regional integration engine is adding [messaging routing](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageRoutingIntro.html) to existing interfaces. 
-To a large extent, the interactions are the same with the RIE sending reports back to the Order Placer, so if Aldey Hey ordered a test, Alder Hey will receive a labaroatory report back.
+While this architecture is complex, it builds on existing interfaces. The RIE’s primary role is message distribution and routing rather than altering the underlying interaction patterns.
+
+The Regional Integration Engine introduces message routing across the region. From a Trust perspective, interactions remain largely unchanged: reports are returned to the originating Order Placer. For example, if Alder Hey places an order, the laboratory report is returned to Alder Hey.
+
 
 ```mermaid
 graph LR
@@ -74,16 +77,22 @@ graph LR
     end
 ```
 
-This does require some level of coordination between the different NHS Trusts, and standardisation of HL7 (v2 and FHIR) across the region. Some of the main changes include:
+This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
 
-- Medical Record Number (MRN) - it is likely MRN used between different NHS Trusts will overlap, so the MRN is enhanced with ODS of the NHS Organisation.
-- NHS Number, CHI Number and HSNI become the main identifiers for patients. This also requires that NHS Number has been confirmed with national demopgraphic providers.
-- The use of SNOMED CT and LOINC for OBX/Observations. Local codes can still be used. 
-- Inclusion of Specimen in messaging, this includes using HL7 v2.5.1 OML_O21 and not ORM_O01. This is required due to the distributed testing of specimens in Genomic where several tests can be done on a single specimen for a mix of laboratories across the country.
+- **Medical Record Number (MRN):** MRNs may overlap across Trusts, so they are augmented with the ODS code of the originating NHS organisation.
+- **Patient Identifiers: NHS Number, CHI Number, and HSNI** become the primary patient identifiers. NHS Numbers must be verified against national demographic services.
+- **Clinical Coding: SNOMED CT and LOINC** are used for OBX segments and observations. Local codes may still be included where required.
+- **Specimen Messaging:** Specimen information must be included in orders, requiring the use of HL7 v2.5.1 OML_O21 rather than ORM_O01. This supports distributed genomic testing, where multiple tests may be performed on a single specimen across several laboratories.
 
-It is not feasible for transformation of HL7 to be performed by the RIE, so the RIE will be responsiblity for transformation of HL7 will remain with the NHS Trusts TIE.
+<div class="alert alert-success" role="alert">
+This data contract uses as <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" _target="_blank">Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide</a>,
+<a href="https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws" _target="_blank">NHS England HL7 v2 ADT Message Specification</a>, and for document metadata
+<a href="https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf" _target="_blank">IHE Europe Document Metadata</a> and <a href="https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf" _target="_blank">Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS</a> as core UK HL7/IHE standards.
+</div>
 
-HL7 does not define the workflow expectations and interactions between the Order Placer and Order Filler. This is present in [IHE Laboratory Testing Workflow (LTW) and Inter Laboratory Workflow (ILW)](https://www.ihe.net/resources/technical_frameworks/#PaLM), the RIE will adhere to these standards.
+Transformation of HL7 messages will not be performed by the RIE. Responsibility for message transformation remains with each NHS Trust’s TIE.
+
+Finally, HL7 itself does not define workflow expectations between Order Placers and Order Fillers. These are specified in the [IHE Laboratory Testing Workflow (LTW) and Inter Laboratory Workflow (ILW)](https://www.ihe.net/resources/technical_frameworks/#PaLM) profiles, which the RIE will follow.
 
 
 ## How to Read this IG

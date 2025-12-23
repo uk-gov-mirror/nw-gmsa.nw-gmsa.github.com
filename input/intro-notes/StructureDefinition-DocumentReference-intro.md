@@ -2,7 +2,7 @@
 ## Reference Standards
 
 * [IHE Europe Document Metadata](https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf) (this contains references to NHS England terminology)
-* [Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS ](https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf)
+* [Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS](https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf)
 * Switzerland [CH MHD DocumentReference Comprehensive](https://build.fhir.org/ig/ehealthsuisse/ch-epr-fhir/StructureDefinition-ch-mhd-documentreference-comprehensive.html)
 * [HL7 UK Core](https://simplifier.net/hl7fhirukcorer4/ukcore-documentreference)
 
