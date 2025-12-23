@@ -59,8 +59,9 @@ graph TD
     RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01| TIE2 
 ```
 
-This is potentially a very complex system, but at its core, it is building on the existing interfaces with the RIE providing message distribution. In effect, it is the regional postal service. 
-This does necessitate some level of coordination between the different NHS Trusts, and standardisation of HL7 (v2 and FHIR) across the region.
+This is potentially a very complex system, but at its core, it is building on the existing interfaces with the RIE providing message distribution.
+The regional integration engine is adding [messaging routing](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageRoutingIntro.html) to existing interfaces. 
+To a large extent, the interactions are the same with the RIE sending reports back to the Order Placer, so if Aldey Hey ordered a test, Alder Hey will receive a labaroatory report back.
 
 ```mermaid
 graph LR
@@ -73,6 +74,16 @@ graph LR
     end
 ```
 
+This does require some level of coordination between the different NHS Trusts, and standardisation of HL7 (v2 and FHIR) across the region. Some of the main changes include:
+
+- Medical Record Number (MRN) - it is likely MRN used between different NHS Trusts will overlap, so the MRN is enhanced with ODS of the NHS Organisation.
+- NHS Number, CHI Number and HSNI become the main identifiers for patients. This also requires that NHS Number has been confirmed with national demopgraphic providers.
+- The use of SNOMED CT and LOINC for OBX/Observations. Local codes can still be used. 
+- Inclusion of Specimen in messaging, this includes using HL7 v2.5.1 OML_O21 and not ORM_O01. This is required due to the distributed testing of specimens in Genomic where several tests can be done on a single specimen for a mix of laboratories across the country.
+
+It is not feasible for transformation of HL7 to be performed by the RIE, so the RIE will be responsiblity for transformation of HL7 will remain with the NHS Trusts TIE.
+
+HL7 does not define the workflow expectations and interactions between the Order Placer and Order Filler. This is present in [IHE Laboratory Testing Workflow (LTW) and Inter Laboratory Workflow (ILW)](https://www.ihe.net/resources/technical_frameworks/#PaLM), the RIE will adhere to these standards.
 
 
 ## How to Read this IG
