@@ -72,6 +72,9 @@ pages:
   index.md:
     title: Home
     generation: markdown
+  introduction.md:
+    title: Introduction
+    generation: markdown
   LTW.md:
     title: Laboratory Testing Workflow (LTW)
     generation: markdown
@@ -206,6 +209,7 @@ resources:
 menu:
   Home: index.html
   Analysis and Design (Volume 1) :
+    Introduction: introduction.html
     Laboratory Testing Workflow (LTW): LTW.html
     Health Information Exchange (HIE): HIE.html
     Care Services Discovery (mCSD): mCSD.html
