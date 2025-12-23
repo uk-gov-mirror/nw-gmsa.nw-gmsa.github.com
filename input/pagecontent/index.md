@@ -3,6 +3,45 @@
 NHS North West Genomics is a new NHS service that brings together clinical diagnostic genomic testing services across the North West of England. While regionally delivered, the service supports genomic testing requests from across the UK.
 The service is hosted by Manchester University NHS Foundation Trust.
 
+Like existing order and report systems, it is designed to fit into clinical workflows as follows (diagnostic testing is in purple):
+
+```mermaid
+graph TD;
+
+    A[Assessment]-->|Creates Observations| B;
+    A--> |Needs Diagnostic Testing and Completes| T;
+    B[Diagnosis]-->|Creates Condition| C;
+    T[<b>Order Placer</b><br/>Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
+    T --> |Asks for| S
+    S[Specimen Collection] --> |Sends Specimen| AN;
+    AN["<b>Order Filler</b><br/>Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
+    AN --> |"Creates Laboratory Report - LAB-3<br/>HL7 v2 ORU_R01"| B;
+    AN --> |Sends Laboratory Report| A;
+    C[Plan]-->|Creates Goals and Tasks| D;
+    D[Implement/Interventions]-->|Actions Tasks| E;
+    E[Evaluate]--> |Reviews Care| A;
+    
+    click T Questionnaire-GenomicTestOrder.html
+    click AN Questionnaire-GenomicTestReport.html
+    click S ExampleScenario-BiopsyProcedure.html
+
+    classDef purple fill:#E1D5E7;
+
+    classDef yellow fill:#FFF2CC;
+    classDef pink fill:#F8CECC
+    classDef green fill:#D5E8D4;
+    classDef blue fill:#DAE8FC;
+    classDef orange fill:#FFE6CC;
+
+    class A pink
+    class B yellow
+    class C green
+    class D blue
+    class E orange
+
+    class O,S,T,AN purple
+```
+
 As part of this transition, existing electronic ordering and reporting systems will be supported by a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable interoperability between local clinical systems and regional genomic laboratory services.
 
 ## Messaging
