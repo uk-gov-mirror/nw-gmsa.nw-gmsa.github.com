@@ -13,7 +13,7 @@ The following diagram shows the [point to point](https://www.enterpriseintegrati
 
 ```mermaid
 graph LR
-    OrderPlacer --> |1. Laboratory Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderPlacer --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
     OrderFiller --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
@@ -22,14 +22,56 @@ In many NHS Trusts, this will include the use of a Trust Integration Engine (TIE
 ```mermaid
 graph LR
 
-    OrderPlacer --> |1. Laboratory Order<br/>HL7 v2 ORM_O01| TIE[Trust Integration Engine]
-    TIE --> |2. Laboratory Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderPlacer --> |1. General Order<br/>HL7 v2 ORM_O01| TIE[Trust Integration Engine]
+    TIE --> |2. General Order<br/>HL7 v2 ORM_O01| OrderFiller
     OrderFiller --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
     TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
 The TIE's will typically perform transformations between the different versions of HL7 v2 used by the Order Placer (e.g. EPR) and Order Filler (e.g. LIMS).
 
+### Message Routing
+
+The regional service will potentially be providing services to over 20 NHS Trusts within the region, which includes many different types of clinical systems. The service itself, will include several different LIMS and other clinical systems.
+
+```mermaid
+graph TD
+    
+    subgraph NHSA[NHS Trust A]
+        OrderPlacer1[Order Placer] --> |General Order<br/>HL7 v2 ORM_O01| TIE1[Trust Integration Engine]
+        TIE1 --> |Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer1  
+    end 
+    subgraph NHSB[NHS Trust B]
+        OrderPlacer2[Order Placer] --> |General Order<br/>HL7 v2 ORM_O01| TIE2[Trust Integration Engine]
+        TIE2 --> |Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer2 
+    end 
+
+    subgraph GMSA[NHS North West Genomics]
+        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller1[Order Filler<br/>LIMS A]
+        OrderFiller1 --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE   
+        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller2[Order Filler<br/>LIMS B]
+        OrderFiller2 --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE          
+    end 
+    
+    TIE1 --> |Order<br/>HL7 v2 ORM_O01| RIE
+    RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01| TIE1 
+    TIE2 --> |Order<br/>HL7 v2 ORM_O01| RIE
+    RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01| TIE2 
+```
+
+This is potentially a very complex system, but at its core, it is building on the existing interfaces with the RIE providing message distribution. In effect, it is the regional postal service. 
+This does necessitate some level of coordination between the different NHS Trusts, and standardisation of HL7 (v2 and FHIR) across the region.
+
+```mermaid
+graph LR
+    OrderPlacer[Order Placer<br/><br/>NHS Trust inc. EPR and TIE] --> |1. Laboratory Order<br/>HL7 v2 OML_O21<br/><br/><b>IHE LTW LAB-1</b>| RIE[Regional Integration Engine]
+    RIE --> |4. Laboratory Report<br/>HL7 v2.5.1 ORU_R01<br/><br/><b>IHE LTW LAB-3</b>| OrderPlacer 
+
+    subgraph GMSA[NHS North West Genomics]
+        RIE --> |2. Laboratory Order<br/>HL7 v2 ORM_O01| OrderFiller
+        OrderFiller --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
+    end
+```
 
 
 
