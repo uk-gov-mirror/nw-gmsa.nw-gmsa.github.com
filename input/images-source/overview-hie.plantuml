@@ -1,9 +1,9 @@
 @startuml
 
- component "Order Placer" as EPR #Orchid
- component "Order Filler" as LIMS #Orchid
- component "Data Consumer" as HIE #Orchid
- component "Document Consumer" as HIEU #Orchid
+ component "Order Placer" as EPR #LightPink
+ component "Order Filler" as LIMS #LightPink
+ component "Data Consumer" as HIE #LightPink
+ component "Document Consumer" as HIEU #LightPink
  component "Intermediary\nRegional Integration Engine (RIE)" as TIE
  component "Clinical Data Repository\nHealth Information Exchange (HIE)" as CDR
 
