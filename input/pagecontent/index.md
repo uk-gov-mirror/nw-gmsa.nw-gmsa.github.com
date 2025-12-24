@@ -1,9 +1,8 @@
 ## Overview
 
-NHS North West Genomics is a new NHS service that brings together clinical diagnostic genomic testing services across the North West of England. While regionally delivered, the service supports genomic testing requests from across the UK.
-The service is hosted by Manchester University NHS Foundation Trust.
+Diagnostic testing plays a central role in supporting clinical processes by providing objective information that guides decision-making throughout a patient’s care journey. Its use spans from initial assessment to long-term management and evaluation of outcomes.
 
-Like existing order and report systems, it is designed to fit into clinical workflows as follows (diagnostic testing is in purple):
+Genomic diagnostic testing supports clinical decision making by analysing a patient’s DNA or RNA to identify genetic variations that influence disease risk, diagnosis, treatment, and prognosis. By providing highly specific, personalised information, it enhances the precision and effectiveness of clinical care.
 
 ```mermaid
 graph TD;
@@ -41,6 +40,9 @@ graph TD;
 
     class O,S,T,AN purple
 ```
+
+NHS North West Genomics is a new NHS service that brings together clinical diagnostic genomic testing services across the North West of England. While regionally delivered, the service supports genomic testing requests from across the UK.
+The service is hosted by Manchester University NHS Foundation Trust.
 
 As part of this transition, existing electronic ordering and reporting systems will be supported by a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable interoperability between local clinical systems and regional genomic laboratory services.
 
@@ -116,7 +118,7 @@ graph LR
     end
 ```
 
-### Data Contracts
+### Data Contracts (Domain Entities)
 
 This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
 
@@ -147,6 +149,17 @@ The RIE will not perform transformation of HL7 messages. Responsibility for mess
 
 <div class="alert alert-success" role="alert">
 Data contracts are expected to apply to all message and payload formats i.e., HL7 v2, FHIR, DICOM and IHE XDS if used at a regional elvel will all following the same Data Contract. </div>
+
+#### Domain Archetypes
+
+The Data Contracts are used to form Domain Archetypes which provide a high level model for both orders and reports. 
+
+| Domain Archetype                                            |
+|-------------------------------------------------------------|
+| [Genomic Test Order](Questionnaire-GenomicTestOrder.html)   |
+| [Genomic Test Report](Questionnaire-GenomicTestReport.html) |
+
+The domain archetypes also provide details around SNOMED CT and LOINC codes.
 
 ### Event Contracts
 
