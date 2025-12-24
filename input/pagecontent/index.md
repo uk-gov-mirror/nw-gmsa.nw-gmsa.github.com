@@ -131,6 +131,18 @@ This data contract uses as <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" _t
 <a href="https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf" _target="_blank">IHE Europe Document Metadata</a> and <a href="https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf" _target="_blank">Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS</a> as core UK HL7/IHE standards.
 </div>
 
+Key data contracts are: 
+
+| FHIR Resource                                                   | HL7 v2 Segment                                                   | IHE XDS         |
+|-----------------------------------------------------------------|------------------------------------------------------------------|-----------------|
+| [Patient](StructureDefinition-Patient.html)                     | [PID](hl7v2.html#pid)                                            |                 | 
+| [DiagnosticReport](StructureDefinition-DiagnosticReport.html)   | [OBR](hl7v2.html#obr)                                            |                 | 
+| [DocumentReference](StructureDefinition-DocumentReference.html) | [OBX type=ED](hl7v2.html#obx-type--ed) and [TXA](hl7v2.html#txa) | [DocumentEntry](StructureDefinition-DocumentReference.html) |
+| [Encounter](StructureDefinition-Encounter.html)                 | [PV1](hl7v2.html#pv1)                                            |                 |
+| [Observation](StructureDefinition-Observation.html)             | [OBX](hl7v2.html#obx)                                            |                 |
+| [ServiceRequest](StructureDefinition-ServiceRequest.html)       | [ORC](hl7v2.html#orc)                                            |                 |
+| [Specimen](StructureDefinition-Specimen.html)                   | [SPM](hl7v2.html#spm)                                            |                 |
+
 The RIE will not perform transformation of HL7 messages. Responsibility for message transformation remains with each NHS Trust’s TIE and all parties are expected to use the same Data Contracts.
 
 <div class="alert alert-success" role="alert">
@@ -140,8 +152,9 @@ Data contracts are expected to apply to all message and payload formats i.e., HL
 
 Finally, HL7 itself does not define workflow expectations between Order Placers and Order Fillers. These are specified in 
 
-- [IHE Laboratory Testing Workflow (LTW) and Inter Laboratory Workflow (ILW)](https://www.ihe.net/resources/technical_frameworks/#PaLM) profiles, which the RIE will follow.
-- IHE Specimen Event Tracking (SET) profile.
+- [IHE Laboratory Testing Workflow (LTW)](TLW.html) profile
+- [IHE Inter Laboratory Workflow (ILW)](ILW.mw) profile (Future)
+- [IHE Specimen Event Tracking (SET)](SET.html) profile (Future)
 
 ## Genomic Data and Document Sharing
 
