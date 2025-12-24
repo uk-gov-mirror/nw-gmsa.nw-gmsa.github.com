@@ -2,8 +2,8 @@
 
  component "Source" as LIMS
  component "Consumer" as EPR
- component "Consumer\nStructured" as HIE
- component "Consumer\nUnstructured" as HIEU
+ component "Data Consumer\n(Structured)" as HIE
+ component "Document Consumer\n(Unstructured)" as HIEU
  component "Consumer (ICS)" as ICS
  component "Intermediary\nRegional Integration Engine (RIE)" as TIE
  component "Clinical Data Repository\nHealth Information Exchange (HIE)" as CDR

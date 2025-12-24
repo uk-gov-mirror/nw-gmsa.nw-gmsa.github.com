@@ -2,7 +2,7 @@
 
  component "Source" as LIMS
  component "Consumer" as EPR
- component "Consumer" as HIE
+ component "Data Consumer" as HIE
  component "Intermediary\nRegional Integration Engine (RIE)" as TIE
  component "Clinical Data Repository\nHealth Information Exchange (HIE)" as CDR
 
@@ -10,7 +10,6 @@
  TIE -r-> EPR: **Send Event Notification**\nHL7 v2 OML_O21\nIHE LTW LAB-1\n(future FHIR Workflow - Task)
  TIE -d-> CDR: **Populates**
  HIE -u-> CDR: **Query Genomic Data**\nHL7 FHIR RESTful (read only)\nIHE QEDm PCC-44
-
 
 @enduml
 
