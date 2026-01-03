@@ -36,9 +36,9 @@ This guide **includes** the definition of data contracts for:
 
 ## Data Contract Change Process
 
-1. Data constraints or issues identified by data consumers. 
-2. Requirement or issues is recorded on [NH Genomics IG issues](https://github.com/nw-gmsa/nw-gmsa.github.com/issues)
-3. Business, suppliers and integration partners (the `NW Genomics Data Team`) review and comment on viability.
-4. Data contract is updated/created in this guide (as PR?)
-5. Change is reviewed and approved by the `NW Genomics Data Team`.
-6. Change is released.
+1. Data consumers identify data constraints or issues.
+2. Requirements or issues are logged in the [NH Genomics IG issues](https://github.com/nw-gmsa/nw-gmsa.github.com/issues)
+3. Business stakeholders, suppliers, and integration partners (collectively, the `NW Genomics Data Team`) review the item and assess its feasibility.
+4. The data contract is created or updated within this implementation guide (for example, via a pull request).
+5. The proposed change is reviewed and approved by the `NW Genomics Data Team`.
+6. Once approved, the change is released.
