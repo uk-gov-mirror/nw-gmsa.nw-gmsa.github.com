@@ -7,7 +7,7 @@ graph TD
     LIMS[LIMS] <--> |HL7 v2<br/>Orders & Reports| RIE
 
     subgraph HIE["Health Information Exchange"]
-        RIE[Regional Integration Engine] --> |Store<br/>HL7 FHIR| CDR[Clinical Data Repository]
+        RIE[Regional Integration Engine] --> |Store<br/>HL7 FHIR| CDR[Genomic Data Repository]
     end
     Clinician[Data Sharing<br/>Clinical Appls] --> |Read<br/>HL7 FHIR| CDR
     AI[Operational AI] --> |Read<br/>HL7 FHIR| CDR
