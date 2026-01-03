@@ -153,6 +153,9 @@ pages:
   ILW.md:
     title: Inter Laboratory Workflow (ILW)
     generation: markdown
+  data-contracts.md:
+    title: Data Contracts
+    generation: markdown
 
 resources:
   Questionnaire/GenomicTestOrder:
@@ -237,6 +240,7 @@ menu:
     Environments and Testing: testing.html
     Support: support.html
     Architecture: architecture.html
+    Data Contracts: data-contracts.html
 
 
 groups:
