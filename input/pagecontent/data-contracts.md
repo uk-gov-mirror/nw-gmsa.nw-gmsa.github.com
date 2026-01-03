@@ -7,16 +7,20 @@ graph TD
     LIMS[LIMS] <--> |HL7 v2<br/>Orders & Reports| RIE
 
     subgraph HIE["Health Information Exchange"]
-        RIE[Regional Integration Engine] --> |HL7 FHIR| CDR[Clinical Data Repository]
+        RIE[Regional Integration Engine] --> |Store<br/>HL7 FHIR| CDR[Clinical Data Repository]
     end
+    Clinician[Data Sharing<br/>Clinical Appls] --> |Read<br/>HL7 FHIR| CDR
+    AI[Operational AI] --> |Read<br/>HL7 FHIR| CDR
+    Ops["Operations Monitoring (Analytics)"] --> |Read<br/>HL7 FHIR| CDR
 
-    GA[Genomic Apps] --> |FHIR / v2| CDR
-    Clinician[Clinicians] --> |FHIR| CDR
-    AI[Operational AI] --> |FHIR| CDR
-    Ops["Operations Monitoring (Analytics)"] --> |FHIR| CDR
-
-    CDR --> OLAP[Data Warehouse<br/>Analytics and AI]
+    CDR --> OLAP[Data Warehouse]
+    A[Analytics and AI] --> OLAP
     OLAP --> FDP[Federated Data Platform]
+    A --> FDP
+
+    classDef green fill:#D5E8D4;
+
+    class FDP,OLAP,CDR,LIMS,EHR green
 ```
 
 The diagram above illustrates the scope of the data contracts covered by this guide. Specifically, it **excludes** the definition of data contracts for the following systems and domains:
