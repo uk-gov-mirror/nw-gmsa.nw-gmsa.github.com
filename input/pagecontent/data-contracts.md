@@ -2,22 +2,21 @@ Data contracts govern all interactions defined in this implementation guide. The
 
 
 ```mermaid
-graph TD;
+graph TD
+    EHR[EPR] <--> |HL7 v2<br/>Orders & Reports| RIE
+    LIMS[LIMS] <--> |HL7 v2<br/>Orders & Reports| RIE
 
-    EHR["EPR (Electronic Patient Record)"] <--> |**Data Contract**<br/>Laboratory Order and Reports<br/>HL7 v2 OML + ORU| RIE
-    GA["Genomic Applications"] --> |**Data Contract**<br/>HL7 v2/FHIR| CDR
-    subgraph DP["HIE (Health Information Exchange)"]
-        RIE[Regional Integration Engine] --> |**Data Contract**<br/>Data Pipeline<br/>HL7 FHIR| CDR["Clinical Data Repository<br/><br/>OLTP (Online Transaction Processing)"] 
-    end 
-    LIMS["LIMS (Laboratory Information Management System)"] <--> |**Data Contract**<br/>Laboratory Order and Reports<br/>HL7 v2 OML + ORU| RIE 
-        LIMS --> OLAP
-    Clinician["Clinician<br/>via national/regional record sharing"] --> |**Data Contract**<br/>HL7 FHIR| CDR
-    AI[Artificial Intelligence] --> |**Data Contract**<br/>HL7 FHIR| CDR
-    OP["Operations Monitoring (Data Analytics)"] --> |**Data Contract**<br/>HL7 FHIR| CDR
-    subgraph Analytics
-        OLAP["Data warehouse<br/><br/>OLAP (Online Analytical Processing)"]  --> FDP["FDP (Federated Data Platform)"]
+    subgraph HIE["Health Information Exchange"]
+        RIE[Regional Integration Engine] --> |HL7 FHIR| CDR[Clinical Data Repository]
     end
-    CDR --> OLAP
+
+    GA[Genomic Apps] --> |FHIR / v2| CDR
+    Clinician[Clinicians] --> |FHIR| CDR
+    AI[AI & Analytics] --> |FHIR| CDR
+    Ops[Operations Monitoring] --> |FHIR| CDR
+
+    CDR --> OLAP[Data Warehouse]
+    OLAP --> FDP[Federated Data Platform]
 ```
 
 The diagram above illustrates the scope of the data contracts covered by this guide. Specifically, it **excludes** the definition of data contracts for the following systems and domains:
