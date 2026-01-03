@@ -10,12 +10,12 @@ graph TD;
     A[Assessment]-->|Creates Observations| B;
     A--> |Needs Diagnostic Testing and Completes| T;
     B[Diagnosis]-->|Creates Condition| C;
-    T[<b>Order Placer</b><br/>Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
+    T[<b>Places Order</b><br/>Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
     T --> |Asks for| S
-    S[Specimen Collection] --> |Sends Specimen| AN;
-    AN["<b>Order Filler</b><br/>Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
-    AN --> |"Creates Laboratory Report - LAB-3<br/>HL7 v2 ORU_R01"| B;
-    AN --> |Sends Laboratory Report| A;
+    S[Specimen Collection and Managmeent] --> |Sends Specimen| AN;
+    AN["<b>Fills Order</b><br/>Diagnostic Testing, Data Analysis and Translation"] --> |"Requests further tests <br/>(reflex order)"| T;
+    AN --> |"Sends Laboratory Report - LAB-3<br/>HL7 v2 ORU_R01"| B;
+
     C[Plan]-->|Creates Goals and Tasks| D;
     D[Implement/Interventions]-->|Actions Tasks| E;
     E[Evaluate]--> |Reviews Care| A;
