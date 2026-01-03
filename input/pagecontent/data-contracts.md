@@ -9,7 +9,7 @@ graph TD
     subgraph HIE["Health Information Exchange"]
         RIE[Regional Integration Engine] --> |Store<br/>HL7 FHIR| CDR[Genomic Data Repository]
     end
-    Clinician[Data Sharing<br/>Clinical Appls] --> |Read<br/>HL7 FHIR| CDR
+    Clinician[Data Sharing<br/>Clinical Apps] --> |Read<br/>HL7 FHIR| CDR
     AI[Operational AI] --> |Read<br/>HL7 FHIR| CDR
     Ops["Operations Monitoring (Analytics)"] --> |Read<br/>HL7 FHIR| CDR
 
