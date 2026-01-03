@@ -11,7 +11,7 @@ graph TD
     end
     Clinician[Data Sharing<br/>Clinical Apps<br/>Single Patient Record] --> |Read<br/>HL7 FHIR| CDR
     AI[Operational AI] --> |Read<br/>HL7 FHIR| CDR
-    Ops["Operations Monitoring (Analytics)"] --> |Read<br/>HL7 FHIR| CDR
+    Ops["Operations Monitoring (Real Time Analytics)"] --> |Read<br/>HL7 FHIR| CDR
 
     CDR --> OLAP[Data Warehouse]
     A[Analytics and AI] --> OLAP
