@@ -12,10 +12,10 @@ graph TD
 
     GA[Genomic Apps] --> |FHIR / v2| CDR
     Clinician[Clinicians] --> |FHIR| CDR
-    AI[AI & Analytics] --> |FHIR| CDR
+    AI[Operational AI] --> |FHIR| CDR
     Ops[Operations Monitoring] --> |FHIR| CDR
 
-    CDR --> OLAP[Data Warehouse]
+    CDR --> OLAP[Data Warehouse, AI & Analytics]
     OLAP --> FDP[Federated Data Platform]
 ```
 
