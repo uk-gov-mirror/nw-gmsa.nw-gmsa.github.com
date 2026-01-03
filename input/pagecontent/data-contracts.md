@@ -42,3 +42,15 @@ This guide **includes** the definition of data contracts for:
 4. The data contract is created or updated within this implementation guide (for example, via a pull request).
 5. The proposed change is reviewed and approved by the `NW Genomics Data Team`.
 6. Once approved, the change is released.
+
+```mermaid
+flowchart TD
+    A[Data Consumer<br/>Identifies Issue or Constraint]
+    B[Log Requirement / Issue<br/>NH Genomics IG Issues]
+    C[NW Genomics Data Team<br/>Review & Feasibility Assessment]
+    D[Create or Update<br/>Data Contract<br/>Implementation Guide (PR)]
+    E[NW Genomics Data Team<br/>Review & Approval]
+    F[Release Change]
+
+    A --> B --> C --> D --> E --> F
+```
