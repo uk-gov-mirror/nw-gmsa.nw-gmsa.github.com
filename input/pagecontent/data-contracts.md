@@ -44,10 +44,10 @@ This guide **includes** the definition of data contracts for:
 
 ```mermaid
 flowchart TD
-    A[Data Consumer<br/>Identifies Issue or Constraint]
+    A[Data Consumer<br/>Identifies Issue or New Constraint]
     B[Log Requirement / Issue<br/>NH Genomics IG Issues]
     C[NW Genomics Data Team<br/>Review & Feasibility Assessment]
-    D[Create or Update<br/>Data Contract<br/>Implementation Guide (PR)]
+    D["Create or Update<br/>Data Contract<br/>Implementation Guide (PR)"]
     E[NW Genomics Data Team<br/>Review & Approval]
     F[Release Change]
 
