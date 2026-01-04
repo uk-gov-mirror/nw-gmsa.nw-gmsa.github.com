@@ -141,8 +141,8 @@ pages:
   identifiers.md:
     title: Identifiers and Codes
     generation: markdown
-  archetype-intro.md:
-    title: Domain Archetypes Introduction
+  data-intro.md:
+    title: Data Overview
     generation: markdown
   mCSD.md:
     title: Care Services Discovery
@@ -152,9 +152,6 @@ pages:
     generation: markdown
   ILW.md:
     title: Inter Laboratory Workflow (ILW)
-    generation: markdown
-  data-contracts.md:
-    title: Data Contracts
     generation: markdown
 
 resources:
@@ -230,8 +227,8 @@ menu:
     Authorisation [IUA] : IUA.html
 ##    Work Order Management [LAB-4]: LAB-4.html
 ##    Test Results Management [LAB-5]: LAB-5.html
-  Domain Archetype (Volume 3):
-    Introduction: archetype-intro.html
+  Data Models (Volume 3):
+    Data Overview: data-intro.html
     Genomic Test Order (Template): Questionnaire-GenomicTestOrder.html
    ## Genomic Test Report (Composition): StructureDefinition-Composition-GenomicReport.html
     Genomic Test Report (Template): Questionnaire-GenomicTestReport.html
@@ -240,8 +237,6 @@ menu:
     Environments and Testing: testing.html
     Support: support.html
     Architecture: architecture.html
-    Data Contracts: data-contracts.html
-
 
 groups:
   -ex-example-laboratory-order:
