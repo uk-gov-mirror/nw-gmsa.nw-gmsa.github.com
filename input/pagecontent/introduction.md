@@ -109,14 +109,6 @@ For illustration purposes only, see [Inter Laboratory Workflow](ILW.html)
 
 For illustration purposes only, see [Specimen Event Tracking](SET.html)
 
-## Data Modelling
-
-The data model used in this guide is a combination of data and workflow requirements from a variety of other guides.
-
-<img style="padding:3px;width:70%;" src="GenomicsIG.drawio.png" alt="North West GMSA IG"/>
-<br clear="all">
-<p class="figureTitle">North West GMSA IG</p> 
-<br clear="all">
 
 ## Testing
 

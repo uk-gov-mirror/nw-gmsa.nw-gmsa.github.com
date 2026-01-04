@@ -118,49 +118,6 @@ graph LR
     end
 ```
 
-### Data Contracts (Domain Entities)
-
-This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
-
-- **Medical Record Number (MRN):** MRNs may overlap across Trusts, so they are augmented with the ODS code of the originating NHS organisation.
-- **Patient Identifiers: NHS Number, CHI Number, and HSNI** become the primary patient identifiers. NHS Numbers must be verified against national demographic services.
-- **Clinical Coding: SNOMED CT and LOINC** are used for OBX segments and observations. Local codes may still be included where required.
-- **Specimen Messaging:** Specimen information must be included in orders, requiring the use of HL7 v2.5.1 OML_O21 rather than ORM_O01. This supports distributed genomic testing, where multiple tests may be performed on a single specimen across several laboratories.
-
-<div class="alert alert-success" role="alert">
-This data contract uses as <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" _target="_blank">Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide</a>,
-<a href="https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws" _target="_blank">NHS England HL7 v2 ADT Message Specification</a>, and for document metadata
-<a href="https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf" _target="_blank">IHE Europe Document Metadata</a> and <a href="https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf" _target="_blank">Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS</a> as core UK HL7/IHE standards.
-</div>
-
-Key data contracts are: 
-
-| FHIR Resource                                                   | HL7 v2 Segment                                                   | IHE XDS         |
-|-----------------------------------------------------------------|------------------------------------------------------------------|-----------------|
-| [Patient](StructureDefinition-Patient.html)                     | [PID](hl7v2.html#pid)                                            |                 | 
-| [DiagnosticReport](StructureDefinition-DiagnosticReport.html)   | [OBR](hl7v2.html#obr)                                            |                 | 
-| [DocumentReference](StructureDefinition-DocumentReference.html) | [OBX type=ED](hl7v2.html#obx-type--ed) and [TXA](hl7v2.html#txa) | [DocumentEntry](StructureDefinition-DocumentReference.html) |
-| [Encounter](StructureDefinition-Encounter.html)                 | [PV1](hl7v2.html#pv1)                                            |                 |
-| [Observation](StructureDefinition-Observation.html)             | [OBX](hl7v2.html#obx)                                            |                 |
-| [ServiceRequest](StructureDefinition-ServiceRequest.html)       | [ORC](hl7v2.html#orc)                                            |                 |
-| [Specimen](StructureDefinition-Specimen.html)                   | [SPM](hl7v2.html#spm)                                            |                 |
-
-The RIE will not perform transformation of HL7 messages. Responsibility for message transformation remains with each NHS Trust’s TIE and all parties are expected to use the same Data Contracts.
-
-<div class="alert alert-success" role="alert">
-Data contracts are expected to apply to all message and payload formats i.e., HL7 v2, FHIR, DICOM and IHE XDS if used at a regional elvel will all following the same Data Contract. </div>
-
-#### Domain Archetypes
-
-The Data Contracts are used to form Domain Archetypes which provide a high level model for both orders and reports. 
-
-| Domain Archetype                                            |
-|-------------------------------------------------------------|
-| [Genomic Test Order](Questionnaire-GenomicTestOrder.html)   |
-| [Genomic Test Report](Questionnaire-GenomicTestReport.html) |
-
-The domain archetypes also provide details around SNOMED CT and LOINC codes.
-
 ### Event Contracts
 
 Finally, HL7 itself does not define workflow expectations between Order Placers and Order Fillers. These are specified in 

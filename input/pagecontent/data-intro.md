@@ -54,11 +54,9 @@ This domain focuses on genomic and molecular diagnostics, and the main **Archety
 
 ### Data Contracts
 
-Data contracts govern all interactions defined in this implementation guide, and are used for all entities, messages (archetype) and events. They are primarily specified using HL7 FHIR; where applicable, mappings to HL7 v2 and IHE XDS will also be provided.
-
+Data contracts govern all interactions defined within this implementation guide and apply to all entities, messages (archetypes), and events. They are primarily specified using HL7 FHIR; where appropriate, mappings to HL7 v2 and IHE XDS are also provided.
 <div class="alert alert-info" role="alert">
-This guide although primarily using HL7 FHIR and V2 for interactions between health providers, it does not promote the use of these technical standards for data persistence in ERR, LIMS and analytics systems. Suppliers are free to use standards which may be more appropiate such as 
-<a href="https://openehr.org/" target="_blank">openEHR</a> for EHR systems or <a href="https://www.ga4gh.org/" target="_blank"> Global Alliance for Genomics and Health (GA4GH)</a> for research/system databases.   
+Although this guide primarily uses HL7 FHIR and HL7 v2 to support interactions between health providers, it does not mandate or promote the use of these technical standards for data persistence within EHR, LIMS, or analytics systems. Suppliers may adopt alternative standards where more appropriate, such as <a href="https://openehr.org/" target="_blank">openEHR</a> for electronic health record systems or the <a href="https://www.ga4gh.org/" target="_blank">Global Alliance for Genomics and Health (GA4GH)</a> standards for research and system databases.
 </div>
 
 ```mermaid
@@ -97,7 +95,28 @@ This guide **includes** the definition of data contracts for:
 - **Business-to-Business (B2B):** Use of HL7 v2 and HL7 FHIR for interactions between LIMS and EPR systems.
 - **Data Pipeline:** Use of HL7 v2, HL7 FHIR and IHE XDS for data exchange between the CDR and Regional Document Sharing systems such as IHE XDS, GMCR and National Record Locator. Note: data contract downgrades will be present in these pipelines.
 
-#### Main Data Contracts
+#### Differences between base HL7 FHIR and V2 standards (including UK Core)
+
+This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
+
+- **Medical Record Number (MRN):** MRNs may overlap across Trusts, so they are augmented with the ODS code of the originating NHS organisation.
+- **Patient Identifiers: NHS Number, CHI Number, and HSNI** become the primary patient identifiers. NHS Numbers must be verified against national demographic services.
+- **Clinical Coding: SNOMED CT and LOINC** are used for OBX segments and observations. Local codes may still be included where required.
+- **Specimen Messaging:** Specimen information must be included in orders, requiring the use of HL7 v2.5.1 OML_O21 rather than ORM_O01. This supports distributed genomic testing, where multiple tests may be performed on a single specimen across several laboratories.
+
+<div class="alert alert-success" role="alert">
+This data contract uses as <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" _target="_blank">Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide</a>,
+<a href="https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws" _target="_blank">NHS England HL7 v2 ADT Message Specification</a>, and for document metadata
+<a href="https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf" _target="_blank">IHE Europe Document Metadata</a> and <a href="https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf" _target="_blank">Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS</a> as core UK HL7/IHE standards.
+</div>
+
+The **RIE will not undertake any transformation of HL7 messages to meet external system or individual NHS Trust requirements**. Responsibility for transforming messages for supplier systems remains with each NHS Trust’s TIE. It is therefore the responsibility of the NHS Trust TIE to ensure that data is provided in the correct format for its system suppliers. Any amendments to this arrangement may be requested through the [change process](#data-contract-issues-and-change-process).
+
+<div class="alert alert-success" role="alert">
+Data contracts are expected to apply across all message and payload formats used at a regional level, including HL7 v2, FHIR, DICOM, and IHE XDS.
+</div>
+
+#### Key Data Contracts
 
 | Data Contract                                             | Type              | HL7 FHIR                                                        | HL7 v2 Segment                                           | IHE XDS           | HL7 v2 Message                                                                   | FHIR Message/Transaction                                             | 
 |-----------------------------------------------------------|-------------------|-----------------------------------------------------------------|----------------------------------------------------------|-------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -130,4 +149,13 @@ flowchart TD
 
     A --> B --> C --> D --> E --> F
 ```
+
+## Relationship to Other Guides
+
+The data model used in this guide is a combination of data and workflow requirements from a variety of other guides.
+
+<img style="padding:3px;width:70%;" src="GenomicsIG.drawio.png" alt="North West Genomics IG"/>
+<br clear="all">
+<p class="figureTitle">North West Genomics IG</p> 
+<br clear="all">
 
