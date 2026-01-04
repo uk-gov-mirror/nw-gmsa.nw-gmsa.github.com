@@ -95,7 +95,7 @@ This guide **includes** the definition of data contracts for:
 - **Business-to-Business (B2B):** Use of HL7 v2 and HL7 FHIR for interactions between LIMS and EPR systems.
 - **Data Pipeline:** Use of HL7 v2, HL7 FHIR and IHE XDS for data exchange between the CDR and Regional Document Sharing systems such as IHE XDS, GMCR and National Record Locator. Note: data contract downgrades will be present in these pipelines.
 
-### Differences between base HL7 FHIR and V2 standards (including UK Core)
+### Key Differences from base HL7 FHIR, HL7 V2 standards, and including UK Core
 
 This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
 
