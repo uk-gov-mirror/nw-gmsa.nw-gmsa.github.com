@@ -211,6 +211,8 @@ menu:
   Analysis and Design (Volume 1) :
     Introduction: introduction.html
     Laboratory Testing Workflow (LTW): LTW.html
+    Inter-Laboratory Workflow (ILW): ILW.html
+    Specimen Event Tracking (SET): SET.html
     Health Information Exchange (HIE): HIE.html
     Care Services Discovery (mCSD): mCSD.html
     Patient Administration (PAM): PAM.html
