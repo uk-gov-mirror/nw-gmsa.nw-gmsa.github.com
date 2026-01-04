@@ -99,7 +99,7 @@ This guide **includes** the definition of data contracts for:
 
 This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
 
-- **Patient Identifiers: Medical Record Number (MRN):** MRNs may overlap across Trusts, so they are augmented with the ODS code of the originating NHS organisation.
+- **Patient Identifiers: Medical Record Number (MRN):** MRNs may overlap across Trusts, so they are augmented with the ODS code of the originating NHS organisation (assigning authority).
 - **Patient Identifiers: NHS Number, CHI Number, and HSNI** become the primary patient identifiers. NHS Numbers must be verified against national demographic services. Patients may have multiple NHS identifiers.
 - **Order and Report Numbers:**: Must indicate type (e.g. placer or filler) and originating NHS provider (assigning authority).
 - **Clinical Coding: SNOMED CT and LOINC** are used for OBX segments and observations. The use of LOINC in genomics is a key requirement for cross-standard (HL7 v2, FHIR and openEHR) transformations, UK SNOMED CT will be added when supported at a national level. Local codes may still be included where required.
