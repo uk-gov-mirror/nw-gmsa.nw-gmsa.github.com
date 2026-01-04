@@ -106,7 +106,7 @@ This model requires coordination between NHS Trusts and regional standardisation
 - **Specimen:** Specimen identifiers must be included in orders, requiring the use of HL7 v2.5.1 OML_O21 (rather than ORM_O01) and ORU_R01. This supports distributed genomic testing, where multiple tests may be performed on a single specimen across several laboratories.
 
 <div class="alert alert-success" role="alert">
-These data contracts are based on the following UK HL7, NHS and IHE standards:
+These data contracts are based on the following UK HL7, NHS and IHE standards:<br/>
 <ul>
   <li>Laboratory reporting:
     <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" target="_blank">
