@@ -100,9 +100,9 @@ This guide **includes** the definition of data contracts for:
 This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
 
 - **Medical Record Number (MRN):** MRNs may overlap across Trusts, so they are augmented with the ODS code of the originating NHS organisation.
-- **Patient Identifiers: NHS Number, CHI Number, and HSNI** become the primary patient identifiers. NHS Numbers must be verified against national demographic services.
-- **Clinical Coding: SNOMED CT and LOINC** are used for OBX segments and observations. Local codes may still be included where required.
-- **Specimen Messaging:** Specimen information must be included in orders, requiring the use of HL7 v2.5.1 OML_O21 rather than ORM_O01. This supports distributed genomic testing, where multiple tests may be performed on a single specimen across several laboratories.
+- **Patient Identifiers: NHS Number, CHI Number, and HSNI** become the primary patient identifiers. NHS Numbers must be verified against national demographic services. Patients may have multiple NHS identifiers.
+- **Clinical Coding: SNOMED CT and LOINC** are used for OBX segments and observations. The use of LOINC in genomics is a key requirement for cross-standard (HL7 v2, FHIR and openEHR) transformations, UK SNOMED CT will be added when supported at a national level. Local codes may still be included where required.
+- **Specimen Messaging:** Specimen identifiers must be included in orders, requiring the use of HL7 v2.5.1 OML_O21 (rather than ORM_O01) and ORU_R01. This supports distributed genomic testing, where multiple tests may be performed on a single specimen across several laboratories.
 
 <div class="alert alert-success" role="alert">
 These data contracts are based on the following UK HL7, NHS and IHE standards:
