@@ -11,7 +11,7 @@ In software design, these areas are often referred to as [domains](https://en.wi
 </figure>
 <br clear="all">
 
-### Archetypes, Entities, and Events
+## Archetypes, Entities, and Events
 
 This guide uses the following concepts:
 
@@ -52,7 +52,7 @@ This domain focuses on genomic and molecular diagnostics, and the main **Archety
   - Diagnostic Implication – Links variants to clinical significance (e.g., pathogenicity, treatment implications).
 
 
-### Data Contracts
+## Data Contracts
 
 Data contracts govern all interactions defined within this implementation guide and apply to all entities, messages (archetypes), and events. They are primarily specified using HL7 FHIR; where appropriate, mappings to HL7 v2 and IHE XDS are also provided.
 <div class="alert alert-info" role="alert">
@@ -95,7 +95,7 @@ This guide **includes** the definition of data contracts for:
 - **Business-to-Business (B2B):** Use of HL7 v2 and HL7 FHIR for interactions between LIMS and EPR systems.
 - **Data Pipeline:** Use of HL7 v2, HL7 FHIR and IHE XDS for data exchange between the CDR and Regional Document Sharing systems such as IHE XDS, GMCR and National Record Locator. Note: data contract downgrades will be present in these pipelines.
 
-#### Differences between base HL7 FHIR and V2 standards (including UK Core)
+### Differences between base HL7 FHIR and V2 standards (including UK Core)
 
 This model requires coordination between NHS Trusts and regional standardisation of HL7 (v2 and FHIR). Key changes include:
 
@@ -116,7 +116,7 @@ The **RIE will not undertake any transformation of HL7 messages to meet external
 Data contracts are expected to apply across all message and payload formats used at a regional level, including HL7 v2, FHIR, DICOM, and IHE XDS.
 </div>
 
-#### Key Data Contracts
+### Key Data Contracts
 
 | Data Contract                                               | Type              | HL7 FHIR                                                        | HL7 v2 Segment                                           | IHE XDS                                                                          | HL7 v2 Message                                                                   | FHIR Message/Transaction                                                         | 
 |-------------------------------------------------------------|-------------------|-----------------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
@@ -130,7 +130,7 @@ Data contracts are expected to apply across all message and payload formats used
 | Observation                                                 | Entity            | [Observation](StructureDefinition-Observation.html)             | [OBX](hl7v2.html#obx)                                    |                                                                                  |                                                                                  |                                                                                  |
 | Document Metadata                                           | Entity & Event    | [DocumentReference](StructureDefinition-DocumentReference.html) | [TXA](hl7v2.html#txa) and [OBX](hl7v2.html#obx-type--ed) | Document Entry - [DocumentReference](StructureDefinition-DocumentReference.html) | [MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content)         | See [IHE MHD ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html)             |
 
-#### Data Contract Issues and Change Process
+### Data Contract Issues and Change Process
 
 1. Data consumers identify data constraints or issues.
 2. Requirements or issues are logged in the [NH Genomics IG issues](https://github.com/nw-gmsa/nw-gmsa.github.com/issues)
@@ -151,7 +151,7 @@ flowchart TD
     A --> B --> C --> D --> E --> F
 ```
 
-### Relationship to Other Guides
+## Relationship to Other Guides
 
 The data model used in this guide is a combination of data and workflow requirements from a variety of other guides.
 
