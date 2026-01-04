@@ -1,4 +1,3 @@
-## Overview 
 
 This implementation guide primarily focuses on the **Diagnostic Workflow** and how it integrates within the broader **health data model**, as illustrated in the diagram above.
 - **Patient Care** and **Patient Administration** are typically found in NHS providers **Electronic Patient Record** systems
@@ -53,7 +52,7 @@ This domain focuses on genomic and molecular diagnostics, and the main **Archety
   - Diagnostic Implication – Links variants to clinical significance (e.g., pathogenicity, treatment implications).
 
 
-## Data Contracts
+### Data Contracts
 
 Data contracts govern all interactions defined in this implementation guide, and are used for all entities, messages (archetype) and events. They are primarily specified using HL7 FHIR; where applicable, mappings to HL7 v2 and IHE XDS will also be provided.
 
@@ -98,7 +97,7 @@ This guide **includes** the definition of data contracts for:
 - **Business-to-Business (B2B):** Use of HL7 v2 and HL7 FHIR for interactions between LIMS and EPR systems.
 - **Data Pipeline:** Use of HL7 v2, HL7 FHIR and IHE XDS for data exchange between the CDR and Regional Document Sharing systems such as IHE XDS, GMCR and National Record Locator. Note: data contract downgrades will be present in these pipelines.
 
-### Main Data Contracts
+#### Main Data Contracts
 
 | Data Contract                                             | Type              | HL7 FHIR                                                        | HL7 v2 Segment                                           | IHE XDS           | HL7 v2 Message                                                                   | FHIR Message/Transaction                                             | 
 |-----------------------------------------------------------|-------------------|-----------------------------------------------------------------|----------------------------------------------------------|-------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -111,7 +110,7 @@ This guide **includes** the definition of data contracts for:
 | Observation                                               | Entity            | [Observation](StructureDefinition-Observation.html)             | [OBX](hl7v2.html#obx)                                    |                   |                                                                                  |                                                                      |
 | Document Metadata                                         | Entity & Event    | [DocumentReference](StructureDefinition-DocumentReference.html) | [TXA](hl7v2.html#txa) and [OBX](hl7v2.html#obx-type--ed) | Document Entry - [DocumentReference](StructureDefinition-DocumentReference.html) | [MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content)         | See [IHE MHD ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) |
 
-### Data Contract Issues and Change Process
+#### Data Contract Issues and Change Process
 
 1. Data consumers identify data constraints or issues.
 2. Requirements or issues are logged in the [NH Genomics IG issues](https://github.com/nw-gmsa/nw-gmsa.github.com/issues)

@@ -142,7 +142,7 @@ pages:
     title: Identifiers and Codes
     generation: markdown
   data-intro.md:
-    title: Data Overview
+    title: Data Contracts and Issue Reporting
     generation: markdown
   mCSD.md:
     title: Care Services Discovery
@@ -228,7 +228,7 @@ menu:
 ##    Work Order Management [LAB-4]: LAB-4.html
 ##    Test Results Management [LAB-5]: LAB-5.html
   Data Models (Volume 3):
-    Data Overview: data-intro.html
+    Data Contracts and Issue Reporting: data-intro.html
     Genomic Test Order (Template): Questionnaire-GenomicTestOrder.html
    ## Genomic Test Report (Composition): StructureDefinition-Composition-GenomicReport.html
     Genomic Test Report (Template): Questionnaire-GenomicTestReport.html
