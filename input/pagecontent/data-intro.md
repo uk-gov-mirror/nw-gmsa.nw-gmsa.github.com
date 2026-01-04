@@ -52,14 +52,15 @@ This domain focuses on genomic and molecular diagnostics, and the main **Archety
   - Variant – Represents a specific genetic variant or mutation.
   - Diagnostic Implication – Links variants to clinical significance (e.g., pathogenicity, treatment implications).
 
-<div class="alert alert-danger" role="alert">
-This guide although primarily using HL7 FHIR and V2 for interactions between health providers, it does not promote the use of these technical standards for data persistence in ERR, LIMS and analytics systems. Suppliers are free to use standards which may be more appropiate such as 
-<a href="https://openehr.org/" target="_blank">openEHR</a> for EHR systems or <a href="https://www.ga4gh.org/" target="_blank"> Global Alliance for Genomics and Health (GA4GH)</a> for research/system databases.   
-</div>
 
 ## Data Contracts
 
 Data contracts govern all interactions defined in this implementation guide, and are used for all entities, messages (archetype) and events. They are primarily specified using HL7 FHIR; where applicable, mappings to HL7 v2 and IHE XDS will also be provided.
+
+<div class="alert alert-info" role="alert">
+This guide although primarily using HL7 FHIR and V2 for interactions between health providers, it does not promote the use of these technical standards for data persistence in ERR, LIMS and analytics systems. Suppliers are free to use standards which may be more appropiate such as 
+<a href="https://openehr.org/" target="_blank">openEHR</a> for EHR systems or <a href="https://www.ga4gh.org/" target="_blank"> Global Alliance for Genomics and Health (GA4GH)</a> for research/system databases.   
+</div>
 
 ```mermaid
 graph TD
@@ -99,18 +100,18 @@ This guide **includes** the definition of data contracts for:
 
 ### Main Data Contracts
 
-| Data Contract     | Type              | HL7 FHIR                                                        | HL7 v2 Segment                                           | IHE XDS        | HL7 v2 Message                                                                   | FHIR Message/Transaction                                             | 
-|-------------------|-------------------|-----------------------------------------------------------------|----------------------------------------------------------|----------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| Laboratory Order  | Message/Archetype |                                                                 |                                                          |                | [OML_O21](hl7v2.html#oml_o21-laboratory-order)                                   |                                                                      |
-| Laboratory Report | Message/Archetype |                                                                 |                                                          |                | [ORU_R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message) |                                                                      |  
-| Patient           | Entity & Event    | [Patient](StructureDefinition-Patient.html)                     | [PID](hl7v2.html#pid)                                    |                |                                                                                  |                                                                      |
-| Organisation      | Entity            | [Organization](StructureDefinition-Organization.html)           |                                                          |                |                                                                                  |                                                                      |
-| Service Request   | Entity            | [ServiceRequest](StructureDefinition-ServiceRequest.html)       | [ORC](hl7v2.html#orc)                                    |                |                                                                                  |                                                                      | 
-| Diagnostic Report | Entity            | [DiagnosticReport](StructureDefinition-DiagnosticReport.html)   | [OBR](hl7v2.html#obr)                                    |                |                                                                                  |                                                                      |
-| Observation       | Entity            | [Observation](StructureDefinition-Observation.html)             | [OBX](hl7v2.html#obx)                                    |                |                                                                                  | |
-| Document Metadata | Entity & Event    | [DocumentReference](StructureDefinition-DocumentReference.html) | [TXA](hl7v2.html#txa) and [OBX](hl7v2.html#obx-type--ed) | Document Entry | [MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content)         | See [IHE MHD ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) |
+| Data Contract     | Type              | HL7 FHIR                                                        | HL7 v2 Segment                                           | IHE XDS           | HL7 v2 Message                                                                   | FHIR Message/Transaction                                             | 
+|-------------------|-------------------|-----------------------------------------------------------------|----------------------------------------------------------|-------------------|----------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Laboratory Order  | Message/Archetype |                                                                 |                                                          |                   | [OML_O21](hl7v2.html#oml_o21-laboratory-order)                                   |                                                                      |
+| Laboratory Report | Message/Archetype |                                                                 |                                                          |                   | [ORU_R01](hl7v2.html#oru_r01-unsolicited-transmission-of-an-observation-message) |                                                                      |  
+| Patient           | Entity & Event    | [Patient](StructureDefinition-Patient.html)                     | [PID](hl7v2.html#pid)                                    |                   |                                                                                  |                                                                      |
+| Organisation      | Entity            | [Organization](StructureDefinition-Organization.html)           |                                                          |                   |                                                                                  |                                                                      |
+| Service Request   | Entity            | [ServiceRequest](StructureDefinition-ServiceRequest.html)       | [ORC](hl7v2.html#orc)                                    |                   |                                                                                  |                                                                      | 
+| Diagnostic Report | Entity            | [DiagnosticReport](StructureDefinition-DiagnosticReport.html)   | [OBR](hl7v2.html#obr)                                    |                   |                                                                                  |                                                                      |
+| Observation       | Entity            | [Observation](StructureDefinition-Observation.html)             | [OBX](hl7v2.html#obx)                                    |                   |                                                                                  | |
+| Document Metadata | Entity & Event    | [DocumentReference](StructureDefinition-DocumentReference.html) | [TXA](hl7v2.html#txa) and [OBX](hl7v2.html#obx-type--ed) | Document Entry - [DocumentReference](StructureDefinition-DocumentReference.html) | [MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content)         | See [IHE MHD ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html) |
 
-### Data Contract Change Process
+### Data Contract Issues and Change Process
 
 1. Data consumers identify data constraints or issues.
 2. Requirements or issues are logged in the [NH Genomics IG issues](https://github.com/nw-gmsa/nw-gmsa.github.com/issues)
