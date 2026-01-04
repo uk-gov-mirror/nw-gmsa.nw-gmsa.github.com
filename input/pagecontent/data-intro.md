@@ -105,9 +105,34 @@ This model requires coordination between NHS Trusts and regional standardisation
 - **Specimen Messaging:** Specimen information must be included in orders, requiring the use of HL7 v2.5.1 OML_O21 rather than ORM_O01. This supports distributed genomic testing, where multiple tests may be performed on a single specimen across several laboratories.
 
 <div class="alert alert-success" role="alert">
-This data contract uses as <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" _target="_blank">Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide</a>,
-<a href="https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws" _target="_blank">NHS England HL7 v2 ADT Message Specification</a>, and for document metadata
-<a href="https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf" _target="_blank">IHE Europe Document Metadata</a> and <a href="https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf" _target="_blank">Digital Health and Care Scotland - (EH4001) CLINICAL DOCUMENT INDEXING STANDARDS</a> as core UK HL7/IHE standards.
+These data contracts are based on the following UK HL7, NHS and IHE standards:
+<ul>
+  <li>Laboratory reporting:
+    <a href="DHCW-HL7-v2-5-1-ORUR01-Specification.pdf" target="_blank">
+      Digital Health and Care Wales – HL7 ORU_R01 v2.5.1 Implementation Guide
+    </a>
+  </li>
+  <li>Laboratory reporting:
+    <a href="https://www.rcr.ac.uk/media/wwtp2mif/rcr-publications_radiology-reporting-networks-understanding-the-technical-options_march-2022.pdf" target="_blank">
+      Royal College of Radiologists HL7 Guide
+    </a>
+  </li>
+  <li>Patient administration:
+    <a href="https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws" target="_blank">
+      NHS England HL7 v2 ADT Message Specification
+    </a>
+  </li>
+  <li>Document metadata:
+    <a href="https://www.ihe-europe.net/sites/default/files/2017-11/IHE_ITI_XDS_Metadata_Guidelines_v1.0.pdf" target="_blank">
+      IHE Europe Document Metadata Guidelines
+    </a>
+  </li>
+  <li>Document type classification:
+    <a href="https://www.digihealthcare.scot/app/uploads/2024/05/CDI-Standard-V4.5-FINAL.pdf" target="_blank">
+      Digital Health and Care Scotland (EH4001) Clinical Document Indexing Standards
+    </a>
+  </li>
+</ul>
 </div>
 
 The **RIE will not undertake any transformation of HL7 messages to meet external system or individual NHS Trust requirements**. Responsibility for transforming messages for supplier systems remains with each NHS Trust’s TIE. It is therefore the responsibility of the NHS Trust TIE to ensure that data is provided in the correct format for its system suppliers. Any amendments to this arrangement may be requested through the [change process](#data-contract-issues-and-change-process).
