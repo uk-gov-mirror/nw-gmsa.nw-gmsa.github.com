@@ -1,21 +1,21 @@
 ## Overview 
 
+This implementation guide primarily focuses on the **Diagnostic Workflow** and how it integrates within the broader **health data model**, as illustrated in the diagram above.
+- **Patient Care** and **Patient Administration** are typically found in NHS providers **Electronic Patient Record** systems
+- **Care Directory Service** on the other hand, are centrally defined by NHS England, with supporting APIs also provided by NHS England (for example, the ODS API).
+
+In software design, these areas are often referred to as [domains](https://en.wikipedia.org/wiki/Domain-driven_design). The **Genomic Diagnostic Workflow** operates across several of these domains — in software architecture terms, this is known as a [bounded context](https://martinfowler.com/bliki/BoundedContext.html).
+
 <figure>
 {%include Diagnostic-Workflow-mindmap.svg%}
 <p id="fX.X.X.X-X" class="figureTitle">Diagnostic Workflow - MindMap</p>
 </figure>
 <br clear="all">
 
-This implementation guide primarily focuses on the **Diagnostic Workflow** and how it integrates within the broader **health data model**, as illustrated in the diagram above.
-- **Patient Care** and **Patient Administration** are typically found in NHS providers **Electronic Patient Record** systems
-- **Care Directory Service** on the other hand, are centrally defined by NHS England, with supporting APIs also provided by NHS England (for example, the ODS API).
-
-In software design, these areas are often referred to as [domains](https://en.wikipedia.org/wiki/Domain-driven_design). The **Genomic Diagnostic Workflow** operates across several of these domains — in software architecture terms, this is known as a [bounded context](https://martinfowler.com/bliki/BoundedContext.html). 
-
 ### Archetypes, Entities, and Events
 
-This guide uses the following concepts:  
-- 
+This guide uses the following concepts:
+
 - Health Informatics [Archetype](https://en.wikipedia.org/wiki/Archetype_(information_science)), this is model associated with messaging.
 - [Entities](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) such as HL7 v2 segments and FHIR resources.
 - [Events](https://en.wikipedia.org/wiki/Event_(computing)) such as HL7 v2 ADT and SET event feeds.
