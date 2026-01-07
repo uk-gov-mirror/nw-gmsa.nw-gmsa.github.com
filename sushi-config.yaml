@@ -153,6 +153,9 @@ pages:
   ILW.md:
     title: Inter Laboratory Workflow (ILW)
     generation: markdown
+  simple.md:
+    title: Simple
+    generation: markdown
 
 resources:
   Questionnaire/GenomicTestOrder:
