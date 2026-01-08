@@ -32,7 +32,7 @@ Used in HL7 v2 ORC, SPM and OBR, and FHIR ServiceRequest, Specimen and Diagnosti
 HL7 v2 
 
 ```
-1029467053^ROA-EPIC^https://nw-gmsa.github.io/Id/PLAC^URI|T25-8ZEA^699X0-iGene^https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier^URI
+1029467053^ROA-EPIC^urn:oid:1.2.840.114350.1.13.861.1.7.2.798268^URI|T25-8ZEA^699X0-iGene^https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier^URI
 ```
 
 HL7 FHIR
