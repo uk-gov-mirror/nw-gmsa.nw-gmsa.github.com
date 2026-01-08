@@ -5,20 +5,25 @@
 
 ## Overview
 
-Identifiers are used to identify entities in HL7 v2 and FHIR, in point to point messaging they are used to correlate messages between systems, typically two systems in the same organisation.
+Identifiers play a central role in both HL7 v2 and FHIR, enabling systems to uniquely reference and track entities such as patients, samples, orders, and clinical documents. In traditional point-to-point messaging, these identifiers are primarily used to correlate and reconcile messages exchanged between two systems—often those operating within the same organisation.
 
-The Regional Integration and Clinical Data Repository are scaling this to support Genomic Data accross the UK. In order to support this the following data contract for identifiers are proposed:
+As the Regional Integration and Clinical Data Repository evolves to support genomic data exchange at a national scale, the demands placed on identifier management increase significantly. Genomic workflows involve multiple laboratories, platforms, and services distributed across the UK, all of which must consistently recognise and reference the same entities throughout complex end-to-end processes.
 
-## Data Contract
+To meet these needs, a standardised and interoperable identifier model is required—one that ensures traceability, prevents collisions, supports cross-organisation communication, and aligns with national data-sharing patterns.
 
-### [EI - Entity Identifier](https://hl7-definition.caristix.com/v2/HL7v2.5.1/DataTypes/EI)
+The following identifier data contract is therefore proposed to underpin the reliable exchange, correlation, and lifecycle management of genomic data across the UK health ecosystem.
 
-| Field             | Optionality | Example Placer                    | Example Filler | HL7 FHIR Identifier | HL7 v2 EI              |                                                                                 |
-|-------------------|-------------|-----------------------------------|----------------|---------------------|------------------------|---------------------------------------------------------------------------------|
-| Entity Identifier | 1..1        | ABC123                            | T25-8ZEA       | Identifier.value    | EI.1                   |                                                                                 |
-| Namespace Id      | 1..1        | ROA-EPI                           | 699X0          |                     | EI.2                   |                                                                                 |
-| Universal Id      | 0..1        | https://nw-gmsa.github.io/Id/PLAC |                | Identifier.system   | EI.3                   | The example used here is a generic value, NHS Trusts should supply actual value |
-| Universal Id Type | 0..1        | URI                               |                |                     | EI.4 fixed value `URI` |                                                                                 |
+## Correlation Identifier Data Contract
+
+### [HL7 v2 EI - Entity Identifier](https://hl7-definition.caristix.com/v2/HL7v2.5.1/DataTypes/EI)
+
+| Field             | Optionality | Example Placer                    | Example Filler | HL7 FHIR Identifier | HL7 v2 EI                                                |                                                                                 |
+|-------------------|-------------|-----------------------------------|----------------|---------------------|----------------------------------------------------------|---------------------------------------------------------------------------------|
+| Entity Identifier | 1..1        | ABC123                            | T25-8ZEA       | Identifier.value    | EI.1                                                     |                                                                                 |
+| Namespace Id      | 1..1        | ROA-EPI                           | 699X0          |                     | EI.2                                                     |                                                                                 |
+| Universal Id      | 0..1        | https://nw-gmsa.github.io/Id/PLAC |                | Identifier.system   | EI.3                                                     | The example used here is a generic value, NHS Trusts should supply actual value |
+| Universal Id Type | 0..1        | URI                               |                |                     | EI.4 fixed value `URI`                                   |                                                                                 |
+ | Identifier Type Code | 1..1        | PLAC                              | FILL           | Identifier.type     | n/a - identifiers use seperate fields in HL7 v2 Messages |                                                                                 |
 
 #### Example
 
@@ -67,7 +72,7 @@ HL7 FHIR
 
 where ROA is the ODS code for Manchester University NHS Foundation Trust and 699XO is the ODS code from NW Region GLH
 
-### [CX - Extended Composite ID with Check Digit](https://hl7-definition.caristix.com/v2/HL7v2.5.1/DataTypes/CX)
+### [HL7 v2 CX - Extended Composite ID with Check Digit](https://hl7-definition.caristix.com/v2/HL7v2.5.1/DataTypes/CX)
 
 | Field                | Optionality | Example NHS Number | Example MRN | HL7 FHIR Identifier       | HL7 v2 CX | Notes                                                                                                                                                                                            |
 |----------------------|-------------|--------------------|-------------|---------------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
