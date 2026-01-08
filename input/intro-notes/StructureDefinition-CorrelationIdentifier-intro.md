@@ -31,8 +31,14 @@ Used in HL7 v2 ORC, SPM and OBR, and FHIR ServiceRequest, Specimen and Diagnosti
 
 HL7 v2 
 
+With EPIC Order Placer OID
 ```
-1029467053^ROA-EPIC^urn:oid:1.2.840.114350.1.13.861.1.7.2.798268^URI|T25-8ZEA^699X0-iGene^https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier^URI
+1029467053^ROA-EPIC^urn:oid:1.2.840.114350.1.13.861.1.7.2.798268^URI
+```
+
+With self assigned Report Identifier for iGene
+```
+T25-8ZEA^699X0-iGene^https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier^URI
 ```
 
 HL7 FHIR
@@ -89,8 +95,16 @@ Used in HL7 v2 PID and FHIR Patient.
 
 HL7 v2 
 
+NHS Number
+
 ```
-9219068409^^^NHS^NH~12067204^^^R0A^MR
+9219068409^^^NHS^NH
+```
+
+MFT MRN
+
+```
+12067204^^^R0A^MR
 ```
 
 HL7 FHIR 
