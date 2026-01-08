@@ -17,20 +17,22 @@ The following identifier data contract is therefore proposed to underpin the rel
 
 ### [HL7 v2 EI - Entity Identifier](https://hl7-definition.caristix.com/v2/HL7v2.5.1/DataTypes/EI)
 
-| Field             | Optionality | Example Placer                    | Example Filler | HL7 FHIR Identifier | HL7 v2 EI                                                |                                                                                 |
-|-------------------|-------------|-----------------------------------|----------------|---------------------|----------------------------------------------------------|---------------------------------------------------------------------------------|
-| Entity Identifier | 1..1        | ABC123                            | T25-8ZEA       | Identifier.value    | EI.1                                                     |                                                                                 |
-| Namespace Id      | 1..1        | ROA-EPI                           | 699X0          |                     | EI.2                                                     |                                                                                 |
-| Universal Id      | 0..1        | https://nw-gmsa.github.io/Id/PLAC |                | Identifier.system   | EI.3                                                     | The example used here is a generic value, NHS Trusts should supply actual value |
-| Universal Id Type | 0..1        | URI                               |                |                     | EI.4 fixed value `URI`                                   |                                                                                 |
- | Identifier Type Code | 1..1        | PLAC                              | FILL           | Identifier.type     | n/a - identifiers use seperate fields in HL7 v2 Messages |                                                                                 |
+Used in HL7 v2 ORC, SPM and OBR, and FHIR ServiceRequest, Specimen and DiagnosticReport.
+
+| Field             | Optionality | Example Placer                    | Example Filler | HL7 FHIR Identifier | HL7 v2 EI                                                |                                                                                                                                                                                                                             |
+|-------------------|-------------|-----------------------------------|----------------|---------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Entity Identifier | 1..1        | 1012233558                           | T25-8ZEA       | Identifier.value    | EI.1                                                     |                                                                                                                                                                                                                             |
+| Namespace Id      | 1..1        | ROA-EPI                           | 699X0-iGene    |                     | EI.2                                                     | This field is ODS code plus am existing Id for a system or a newly allocated one. The system is specified by the assigning authority/NHS Trust                                                                              |
+| Universal Id      | 0..1        | urn:oid:1.2.840.114350.1.13.861.1.7.2.798268 | https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier               | Identifier.system   | EI.3                                                     | The example used here is a generic value, NHS Trusts should supply actual value. Systems with a HL7 FHIR RESTful API e.g. EPIC and Meditech may have provided this value, the values in HL7 v2 and FHIR should be the same. |
+| Universal Id Type | 0..1        | URI                               | URI            |                     | EI.4 fixed value `URI`                                   |                                                                                                                                                                                                                             |
+| Identifier Type Code | 1..1        | PLAC                              | FILL           | Identifier.type     | n/a - identifiers use seperate fields in HL7 v2 Messages |                                                                                                                                                                                                                             |
 
 #### Example
 
 HL7 v2 
 
 ```
-1029467053^ROA-EPIC^https://nw-gmsa.github.io/Id/PLAC^URI|T25-8ZEA^699X0
+1029467053^ROA-EPIC^https://nw-gmsa.github.io/Id/PLAC^URI|T25-8ZEA^699X0-iGene^https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier^URI
 ```
 
 HL7 FHIR
@@ -56,7 +58,7 @@ HL7 FHIR
             "value": "T25-8ZEA"
           },
           {
-            "system": "https://nw-gmsa.github.io/Id/PLAC",
+            "system": "urn:oid:1.2.840.114350.1.13.861.1.7.2.798268",
             "type": {
               "coding": [
                 {
@@ -74,12 +76,14 @@ where ROA is the ODS code for Manchester University NHS Foundation Trust and 699
 
 ### [HL7 v2 CX - Extended Composite ID with Check Digit](https://hl7-definition.caristix.com/v2/HL7v2.5.1/DataTypes/CX)
 
-| Field                | Optionality | Example NHS Number | Example MRN | HL7 FHIR Identifier       | HL7 v2 CX | Notes                                                                                                                                                                                            |
-|----------------------|-------------|--------------------|-------------|---------------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Id Number            | 1..1        | 921 906 8409       | 12067204    | Identifier.value          | CX.1      |                                                                                                                                                                                                  |
-| Assigning Authority  | 1..1        | NHS                | ROA         | Identifier.assigner.value | CX.4      | For MRN the assigning authority shall be the NHS Trust ODS Code. <br/><br/>For NHS identifiers valid values are <br/> NHS - England and Wales <br/> HSNI - Northern Ireland <br/> CHI - Scotland |
-| Identifier Type Code | 1..1        | NH                 | MR          | Identifier.type           | CX.5      |                                                                                                                                                                                                  |
+Used in HL7 v2 PID and FHIR Patient.
 
+| Field                | Optionality | Example NHS Number                | Example MRN                     | HL7 FHIR Identifier       | HL7 v2 CX | Notes                                                                                                                                                                                            |
+|----------------------|-------------|-----------------------------------|---------------------------------|---------------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Id Number            | 1..1        | 921 906 8409                      | 12067204                        | Identifier.value          | CX.1      |                                                                                                                                                                                                  |
+| Assigning Authority  | 1..1        | NHS                               | ROA                             | Identifier.assigner.value | CX.4      | For MRN the assigning authority shall be the NHS Trust ODS Code. <br/><br/>For NHS identifiers valid values are <br/> NHS - England and Wales <br/> HSNI - Northern Ireland <br/> CHI - Scotland |
+| Identifier Type Code | 1..1        | NH                                | MR                              | Identifier.type           | CX.5      |                                                                                                                                                                                                  |
+| Universal Id         | 1..1        | https://fhir.nhs.uk/Id/nhs-number | https://nw-gmsa.github.io/Id/MR | Identifier.system         | N/a       |                                                                                                                                                                                                  |
 
 #### Example
 
