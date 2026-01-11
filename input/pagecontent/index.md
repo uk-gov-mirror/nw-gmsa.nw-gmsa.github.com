@@ -4,7 +4,7 @@ Diagnostic testing is essential to modern clinical care, offering objective info
 
 Genomic diagnostic testing contributes to this process by examining a patient’s DNA or RNA to detect genetic variations that influence disease susceptibility, diagnosis, treatment choices, and prognosis. By delivering highly specific and personalised insights, genomic testing improves the accuracy and effectiveness of clinical management.
 
-<img style="padding:3px;width:80%;" src="NWGenomicsOverview.jpg" alt="NW Genomics Overview"/>
+<img style="padding:3px;width:80%;" src="NWGenomicsOverview.png" alt="NW Genomics Overview"/>
 <br clear="all">
 
 NHS North West Genomics is a new regional NHS service that consolidates clinical genomic testing across the North West of England. Although the service is delivered regionally, it also processes genomic test requests from across the UK. The service is hosted by Manchester University NHS Foundation Trust.
