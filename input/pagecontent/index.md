@@ -1,8 +1,8 @@
 ## Business Overview
 
-Diagnostic testing plays a central role in supporting clinical processes by providing objective information that guides decision-making throughout a patient’s care journey. Its use spans from initial assessment to long-term management and evaluation of outcomes.
+Diagnostic testing is essential to modern clinical care, offering objective information that supports decision-making at every stage of a patient’s journey—from initial evaluation to long-term monitoring and assessment of outcomes.
 
-Genomic diagnostic testing supports clinical decision making by analysing a patient’s DNA or RNA to identify genetic variations that influence disease risk, diagnosis, treatment, and prognosis. By providing highly specific, personalised information, it enhances the precision and effectiveness of clinical care.
+Genomic diagnostic testing contributes to this process by examining a patient’s DNA or RNA to detect genetic variations that influence disease susceptibility, diagnosis, treatment choices, and prognosis. By delivering highly specific and personalised insights, genomic testing improves the accuracy and effectiveness of clinical management.
 
 ```mermaid
 graph TD;
@@ -41,10 +41,9 @@ graph TD;
     class O,S,T,AN purple
 ```
 
-NHS North West Genomics is a new NHS service that brings together clinical diagnostic genomic testing services across the North West of England. While regionally delivered, the service supports genomic testing requests from across the UK.
-The service is hosted by Manchester University NHS Foundation Trust.
+NHS North West Genomics is a new regional NHS service that consolidates clinical genomic testing across the North West of England. Although the service is delivered regionally, it also processes genomic test requests from across the UK. The service is hosted by Manchester University NHS Foundation Trust.
 
-As part of this transition, existing electronic ordering and reporting systems will be supported by a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable interoperability between local clinical systems and regional genomic laboratory services.
+As part of the service transition, existing systems for electronic test ordering and reporting will be enhanced through the introduction of a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable seamless data exchange between local clinical systems and regional genomic laboratory services.
 
 ## Technical Overview
 
@@ -77,8 +76,7 @@ TIEs typically handle transformations between the different HL7 v2 variants used
 
 The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use.
 
-A fraction of these interactions is shown below for laboratory reports, and the same principles apply to laboratory orders.
-
+The diagram shows a subset of these interactions for laboratory reports; equivalent patterns apply to laboratory orders.
 ```mermaid
 graph LR
     LIMSA[Order Filler<br>LIMS iGene] --> |Laboratory Report| RIE
@@ -93,10 +91,9 @@ graph LR
     RIE --> APPB[Chimerism]
 ```
 
-The main difference between the RIE and a TIE is that the RIE acts as a switchboard, where participants only need to interface with the RIE. This reduces the complexity of the NHS Trusts' integration, so they only need to interface with the RIE not the several LIMS. The same applies to the LIMS, they no longer need to interface with several EPR systems. 
-The NHS Trust TIE's will still need to perform transformations from the RIE to their own EPR systems. 
+The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
 
-As the RIE is regional, a number of changes are required to the HL7 v2 messages at an enterprise/regional level. These mostly involve making identifiers such as medical record numbers, order numbers and report numbers globally unique plus using SNOMED CT or LOINC to identify report observations or order questions. These are detailed in [Data Contract](data-intro.html), HL7 v2 exchanges are similarly standardised, following HL7 v2.5.1 standards and aligning to workflow guidance in the following IHE profiles: 
+Because the RIE operates at a regional level, certain HL7 v2 message components must be standardised or updated. These changes ensure global uniqueness for identifiers such as medical record numbers, order numbers, and report numbers. Standard terminology sets such as SNOMED CT and LOINC will be used to define observations and orderable items. These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles:
 
 #### API Contracts Part 1 – IHE Profiles and HL7 v2.5.1 Standards
 
@@ -106,8 +103,9 @@ As the RIE is regional, a number of changes are required to the HL7 v2 messages 
 
 ### Regional Data and Document Sharing
 
-One of the main issues with messaging is that it focuses on interactions between two parties, the order placer and the order filler. It does not address the wider sharing of genomic data and documents between NHS Trusts, GP Practices, and many other practitioners. To rectify this, a central genomic clinical data repository will be established.
-This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html). This repository is populated by data being passed via the RIE as shown in the diagram below: 
+Traditional messaging focuses solely on communication between two systems—the order placer and the order filler—and does not support wider sharing of genomic data across multiple organisations such as NHS Trusts, GP practices, or other clinical teams.
+
+To address this, a central Genomic Clinical Data Repository (CDR) will be established. This repository will provide a read-only [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html) and will be populated via data flows through the RIE.
 
 <figure>
 {%include overview-hie.svg%}
@@ -115,11 +113,11 @@ This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.
 </figure>
 <br clear="all">
 
-The [Data Contract](datta-intro.html) used in HL7 FHIR are the same as those used in the HL7 v2 exchanges. The RIE will adhere to IHE Profiles listed below, for IHE QEDm, IHE MHD and IHE PDQm this is roughly the same contracts used in several EPR systems (e.g. EPIC, Meditech and Oracle Millenium).
+The [Data Contract](datta-intro.html) and data structures used in the FHIR interfaces follow the same conventions as those used in the HL7 v2 message exchanges.
 
 #### API Contracts Part 2 – IHE Profiles and HL7 FHIR R4 Standards
 
-It is expected that the CDR will follow emerging IHE Europe standards for sharing clinical data and documents. At present these include:
+The CDR is expected to adopt emerging IHE Europe standards for clinical data and document sharing. These currently include:
 
 - [IHE Mobile access to Health Documents (MHD) ITI-66 and ITI-67](MHD.html) HL7 FHIR
 - [IHE Query for Existing Data for Mobile (QEDm) PCC-44](QEDm.html) HL7 FHIR
