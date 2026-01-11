@@ -4,42 +4,8 @@ Diagnostic testing is essential to modern clinical care, offering objective info
 
 Genomic diagnostic testing contributes to this process by examining a patient’s DNA or RNA to detect genetic variations that influence disease susceptibility, diagnosis, treatment choices, and prognosis. By delivering highly specific and personalised insights, genomic testing improves the accuracy and effectiveness of clinical management.
 
-```mermaid
-graph TD;
-
-    A[Assessment]-->|Creates Observations| B;
-    A--> |Needs Diagnostic Testing and Completes| T;
-    B[Diagnosis]-->|Creates Condition| C;
-    T[<b>Places Order</b><br/>Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
-    T --> |Asks for| S
-    S[Specimen Collection and Managmeent] --> |Sends Specimen| AN;
-    AN["<b>Fills Order</b><br/>Diagnostic Testing, Data Analysis and Translation"] --> |"Requests further tests <br/>(reflex order)"| T;
-    AN --> |"Sends Laboratory Report - LAB-3<br/>HL7 v2 ORU_R01"| B;
-
-    C[Plan]-->|Creates Goals and Tasks| D;
-    D[Implement/Interventions]-->|Actions Tasks| E;
-    E[Evaluate]--> |Reviews Care| A;
-    
-    click T Questionnaire-GenomicTestOrder.html
-    click AN Questionnaire-GenomicTestReport.html
-    click S ExampleScenario-BiopsyProcedure.html
-
-    classDef purple fill:#E1D5E7;
-
-    classDef yellow fill:#FFF2CC;
-    classDef pink fill:#F8CECC
-    classDef green fill:#D5E8D4;
-    classDef blue fill:#DAE8FC;
-    classDef orange fill:#FFE6CC;
-
-    class A pink
-    class B yellow
-    class C green
-    class D blue
-    class E orange
-
-    class O,S,T,AN purple
-```
+<img style="padding:3px;width:80%;" src="NWGenomicsOverview.jpg" alt="NW Genomics Overview"/>
+<br clear="all">
 
 NHS North West Genomics is a new regional NHS service that consolidates clinical genomic testing across the North West of England. Although the service is delivered regionally, it also processes genomic test requests from across the UK. The service is hosted by Manchester University NHS Foundation Trust.
 
