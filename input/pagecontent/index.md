@@ -1,4 +1,4 @@
-## Overview
+## Business Overview
 
 Diagnostic testing plays a central role in supporting clinical processes by providing objective information that guides decision-making throughout a patient’s care journey. Its use spans from initial assessment to long-term management and evaluation of outcomes.
 
@@ -46,9 +46,9 @@ The service is hosted by Manchester University NHS Foundation Trust.
 
 As part of this transition, existing electronic ordering and reporting systems will be supported by a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable interoperability between local clinical systems and regional genomic laboratory services.
 
-## Messaging
+## Technical Overview
 
-### Point To Point Messaging
+### Traditional Point-To-Point Messaging Transformation
 
 The diagram below illustrates [point to point](https://www.enterpriseintegrationpatterns.com/patterns/messaging/PointToPointChannel.html) messaging between an `Order Placer` and an `Order Filler`. The `Order Filler` is typically a Laboratory Information Management System (LIMS), while the `Order Placer` is usually a clinical system such as an Electronic Patient Record (EPR).
 
@@ -73,63 +73,43 @@ graph LR
 
 TIEs typically handle transformations between the different HL7 v2 variants used by Order Placers (e.g. EPRs) and Order Fillers (e.g. LIMS).
 
-### Message Routing
+### Regional Message Routing
 
 The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use.
 
-```mermaid
-graph TD
-    
-    subgraph NHSA[NHS Trust A]
-        OrderPlacer1[Order Placer] --> |General Order<br/>HL7 v2 ORM_O01| TIE1[Trust Integration Engine]
-        TIE1 --> |Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer1  
-    end 
-    subgraph NHSB[NHS Trust B]
-        OrderPlacer2[Order Placer] --> |General Order<br/>HL7 v2 ORM_O01| TIE2[Trust Integration Engine]
-        TIE2 --> |Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer2 
-    end 
-
-    subgraph GMSA[NHS North West Genomics]
-        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller1[Order Filler<br/>LIMS 1]
-        OrderFiller1 --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE   
-        RIE[Regional Integration Engine] --> |General Order<br/>HL7 v2 ORM_O01| OrderFiller2[Order Filler<br/>LIMS 2]
-        OrderFiller2 --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE          
-    end 
-    
-    TIE1 --> |Order<br/>HL7 v2 ORM_O01| RIE
-    RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01| TIE1 
-    TIE2 --> |Order<br/>HL7 v2 ORM_O01| RIE
-    RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01| TIE2 
-```
-
-While this architecture is complex, it builds on existing interfaces. The RIE’s primary role is message distribution and routing rather than altering the underlying interaction patterns.
-
-The Regional Integration Engine introduces message routing across the region. From a Trust perspective, interactions remain largely unchanged: reports are returned to the originating Order Placer. For example, if Alder Hey places an order, the laboratory report is returned to Alder Hey.
-
+A fraction of these interactions is shown below for laboratory reports, and the same principles apply to laboratory orders.
 
 ```mermaid
 graph LR
-    OrderPlacer[Order Placer<br/><br/>NHS Trust inc. EPR and TIE] --> |1. Laboratory Order<br/>HL7 v2 OML_O21<br/><br/><b>IHE LTW LAB-1</b>| RIE[Regional Integration Engine]
-    RIE --> |4. Laboratory Report<br/>HL7 v2.5.1 ORU_R01<br/><br/><b>IHE LTW LAB-3</b>| OrderPlacer 
-
-    subgraph GMSA[NHS North West Genomics]
-        RIE --> |2. Laboratory Order<br/>HL7 v2 ORM_O01| OrderFiller
-        OrderFiller --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
-    end
+    LIMSA[Order Filler<br>LIMS iGene] --> |Laboratory Report| RIE
+    LIMSB[Order Filler<br>LIMS Shire] --> RIE
+    LIMSC[Order Filler<br>HODS] --> RIE
+    LIMSD[Order Filler<br>Histotrac] --> RIE
+    RIE[Regional Integration Engine] --> |Laboratory Report| NHSA[NHS Trust A]
+    RIE --> NHSB[NHS Trust B] 
+    RIE --> |Laboratory Report| ICSA[NHS ICS A]
+    RIE --> ICSB[NHS ICS B]
+    RIE --> |Laboratory Report| APPA[HODS]
+    RIE --> APPB[Chimerism]
 ```
 
-### Event Contracts
+The main difference between the RIE and a TIE is that the RIE acts as a switchboard, where participants only need to interface with the RIE. This reduces the complexity of the NHS Trusts' integration, so they only need to interface with the RIE not the several LIMS. The same applies to the LIMS, they no longer need to interface with several EPR systems. 
+The NHS Trust TIE's will still need to perform transformations from the RIE to their own EPR systems. 
 
-Finally, HL7 itself does not define workflow expectations between Order Placers and Order Fillers. These are specified in 
+As the RIE is regional, a number of changes are required to the HL7 v2 messages at an enterprise/regional level. These mostly involve making identifiers such as medical record numbers, order numbers and report numbers globally unique plus using SNOMED CT or LOINC to identify report observations or order questions. These are detailed in [Data Contract](data-intro.html), HL7 v2 exchanges are similarly standardised, following HL7 v2.5.1 standards and aligning to workflow guidance in the following IHE profiles: 
+
+#### API Contracts Part 1 – IHE Profiles and HL7 v2.5.1 Standards
 
 - [IHE Laboratory Testing Workflow (LTW)](TLW.html) profile
 - [IHE Inter Laboratory Workflow (ILW)](ILW.mw) profile (Future)
 - [IHE Specimen Event Tracking (SET)](SET.html) profile (Future)
 
-## Genomic Data and Document Sharing
+### Regional Data and Document Sharing
 
-One of the main issues with messaging is that it focuses on interactions betwee two parties, the order placer and the order filler. It does not address the wider sharing of genomic data and documents between NHS Trusts, GP Practices, and many other practitioners. To rectify this a central genomic clinical data repository will be established.
+One of the main issues with messaging is that it focuses on interactions between two parties, the order placer and the order filler. It does not address the wider sharing of genomic data and documents between NHS Trusts, GP Practices, and many other practitioners. To rectify this a central genomic clinical data repository will be established.
 This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html). This repository is populated by data being passed via the RIE. 
+
+The [Data Contract](data-intro.html) used in HL7 FHIR are the same as those used in the HL7 v2 exchanges.
 
 <figure>
 {%include overview-hie.svg%}
@@ -137,7 +117,7 @@ This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.
 </figure>
 <br clear="all">
 
-### API Contracts
+#### API Contracts Part 2 – IHE Profiles and HL7 FHIR R4 Standards
 
 It is expected that the CDR will follow emerging IHE Europe standards for sharing clinical data and documents. At present these include:
 
@@ -173,7 +153,7 @@ It is expected that the CDR will follow emerging IHE Europe standards for sharin
     </tr>
     <tr>
       <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
-      <td>Domain Archetype (Volume 3)</td>
+      <td>Data Models (Volume 3)</td>
       <td>NHS North West Forms, Templates, Reports and Compositions</td>
       <td>Data Modeling (Detailed Technical)</td>
     </tr>
