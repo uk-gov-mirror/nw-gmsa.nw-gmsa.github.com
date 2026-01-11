@@ -106,16 +106,16 @@ As the RIE is regional, a number of changes are required to the HL7 v2 messages 
 
 ### Regional Data and Document Sharing
 
-One of the main issues with messaging is that it focuses on interactions between two parties, the order placer and the order filler. It does not address the wider sharing of genomic data and documents between NHS Trusts, GP Practices, and many other practitioners. To rectify this a central genomic clinical data repository will be established.
-This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html). This repository is populated by data being passed via the RIE. 
-
-The [Data Contract](data-intro.html) used in HL7 FHIR are the same as those used in the HL7 v2 exchanges.
+One of the main issues with messaging is that it focuses on interactions between two parties, the order placer and the order filler. It does not address the wider sharing of genomic data and documents between NHS Trusts, GP Practices, and many other practitioners. To rectify this, a central genomic clinical data repository will be established.
+This will provide a [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html). This repository is populated by data being passed via the RIE as shown in the diagram below: 
 
 <figure>
 {%include overview-hie.svg%}
 <p id="fX.X.X.X-X" class="figureTitle">Laboratory Report - Overview</p>
 </figure>
 <br clear="all">
+
+The [Data Contract](datta-intro.html) used in HL7 FHIR are the same as those used in the HL7 v2 exchanges. The RIE will adhere to IHE Profiles listed below, for IHE QEDm, IHE MHD and IHE PDQm this is roughly the same contracts used in several EPR systems (e.g. EPIC, Meditech and Oracle Millenium).
 
 #### API Contracts Part 2 – IHE Profiles and HL7 FHIR R4 Standards
 
