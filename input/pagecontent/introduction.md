@@ -95,14 +95,14 @@ The chimerism testing pathway within the NHS is used to monitor the success of a
 
 ```mermaid
 graph TD;
-    subgraph NHSTrust[**Order Placer** NHS Trust]
-        Practitioner[Consultant Haematologist<br/>Practitioner] --> |1. Creates Order| EPR[EPR]
+    subgraph NHSTrust[NHS Trust]
+        Practitioner[Consultant Haematologist<br/>Practitioner] --> |1. Creates Order| EPR[<b>Order Placer</b><br/>EPR]
         Practitioner --> |3. Asks For| Specimen[Sample Collection]
     end
     EPR --> |"2. Sends Laboratory Order<br/>M118.1 Short Tandem Repeat (STR)<br/>HL7 v2 ORM_O01 (MFT) or Manual Order Entry"| LIMS
     Specimen --> |4. Send Specimen| LIMS 
-    subgraph NWGenomics[**Order Filler** North West Genomics]
-        LIMS[**Order Filler**<br/>LIMS Telepath/iGene/Histotrac]
+    subgraph NWGenomics[North West Genomics]
+        LIMS[<b>Order Filler</b><br/>LIMS Telepath/iGene/Histotrac]
         LIMS --> |5a. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE["Regional Integration Engine"]
     end
     RIE --> |5b. Send Laboratory Report<br/>HL7 v2 ORU_R01| EPR
@@ -125,11 +125,11 @@ Future
 graph TD
 
     subgraph Trust[NHS Trust]
-        NHSTrust[**Order Placer**<br/>EPR]
+        NHSTrust[<b>Order Placer</b><br/>EPR]
     end 
     NHSTrust --> |"1. Create Laboratory Order<br/>Manual entry"| HODS
     HODS --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception{Specimen Reception}
-    MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["**Order Filler**<br/>Immunology LIMS"]
+    MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["<b>Order Filler</b><br/>Immunology LIMS"]
    
     subgraph Laboratory[NHS Trust Laboratory]
     
@@ -139,12 +139,12 @@ graph TD
     TIE --> |3c. Send Laboratory Report<br/>HL7 v2 ORU_R01| HODS
     MFTReception --> |"4a. Genomics Laboratory Order + Specimen<br/>Manual"| TestType
     subgraph NWGenomics[North West Genomics]
-        HODS["**Order Filler**<br/>HODS<br/>**Order Placer**"]
+        HODS["<b>Order Filler</b><br/>HODS<br/><b>Order Placer</b>"]
         TestType{Test Type} --> |4b. Tests A, B, C, etc| GLHS
         TestType{Test Type} --> |4b. Tests D, E etc| GLHI
-        GLHS["**Order Filler**<br/>LIMS Shire"]
+        GLHS["<b>Order Filler</b><br/>LIMS Shire"]
         GLHS --> |4c. Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| RIE 
-        GLHI["**Order Filler**<br/>LIMS iGene)"]
+        GLHI["<b>Order Filler</b><br/>LIMS iGene)"]
         GLHI --> |4c. Send Laboratory Report<br/>Manual upload| RIE 
         
     end
@@ -185,7 +185,7 @@ TBD - Starlims
 
 ```mermaid
 graph TD;
-    subgraph NHSTrust[**Order Placer**<br/>NHS Trust]
+    subgraph NHSTrust[<b>Order Placer</b><br/>NHS Trust]
         Practitioner[fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
         FormManager --> OrderEntry
         Practitioner --> |3. Completes| OrderEntry[Order Form]
@@ -194,7 +194,7 @@ graph TD;
 
         Practitioner --> |6. Asks for|Sample[Sample Collection]
     end
-    EPR --> |5. Sends Laboratory Order<br/>LAB-1 HL7 FHIR Message O21| DiagnosticTesting[**Order Filler**<br/>fas:fa-stethoscope Diagnostic Testing]
+    EPR --> |5. Sends Laboratory Order<br/>LAB-1 HL7 FHIR Message O21| DiagnosticTesting[<b>Order Filler</b><br/>fas:fa-stethoscope Diagnostic Testing]
     Sample --> DiagnosticTesting
 ```
 
@@ -209,12 +209,12 @@ For more details see:
 graph TD;
     Sample[Sample Collection] --> EXT
     Order --> EXT
-    subgraph OrderFiller[**Order Filler**<br/>North West Genomics]
+    subgraph OrderFiller[<b>Order Filler</b><br/>North West Genomics]
         EXT[DNA Extraction] --> SEQ[DNA Sequencing]
         SEQ --> AN[Mapping & Analysis]
         AN --> INT[Interpretation]
     end 
-    INT --> |Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| Practitioner[**Order Placer**<br/>fas:fa-user-md Practitioner]
+    INT --> |Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| Practitioner[<b>Order Placer</b><br/>fas:fa-user-md Practitioner]
 ```
 
 - Sample Collection: A sample of blood, saliva, skin, or tumor tissue is collected.
