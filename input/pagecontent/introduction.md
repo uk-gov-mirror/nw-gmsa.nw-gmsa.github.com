@@ -133,7 +133,7 @@ graph TD
 
 #### Cheshire and Mersey
 
-For elaboration purposes only. This is a more detailed breakdown the the Genomic Tests.
+For information purposes only. This is a more detailed breakdown of the Genomic Tests.
 
 <img style="padding:3px;width:60%;" src="HODS-MerseyAndCheshire.png" alt="HODS Genomic Tests - Mersey and Cheshire GLH"/>
 <br clear="all">
@@ -150,7 +150,7 @@ For elaboration purposes only. This is a more detailed breakdown the the Genomic
 ```mermaid
 graph TD;
 
-    Practitioner[fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
+    Practitioner[**Order Placer**<br/>fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
     FormManager --> OrderEntry
     Practitioner --> |3. Completes| OrderEntry[Order Form]
     EPR[fas:fa-database Electronic Patient Record] --> |2. Pre Populates with existing data| OrderEntry 
@@ -165,7 +165,23 @@ For more details see:
 
 #### Diagnostic Testing
 
+```mermaid
+graph TD;
+    Sample[Sample Collection] --> EXT
+    Order --> EXT
+    subgraph OrderFiller[**Order Filler**]
+        EXT[DNA Extraction] --> SEQ[DNA Sequencing]
+        SEQ --> AN[Mapping & Analysis]
+        AN --> INT[Interpretation]
+    end 
+    INT --> |Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| Practitioner[**Order Placer**<br/>fas:fa-user-md Practitioner]
+```
 
+- Sample Collection: A sample of blood, saliva, skin, or tumor tissue is collected.
+- DNA Extraction: In a lab, DNA is separated from the cells in the sample.
+- DNA Sequencing: The DNA is broken into small pieces, copied, and then "read" by a machine, revealing the order of its building blocks (bases).
+- Mapping & Analysis: Powerful computers match these short DNA "reads" to a reference genome (mapping) and then identify any variations or mutations.
+- Interpretation: Expert scientists analyze these variants to understand their potential impact on health, looking for links to diseases or responses to treatment.
 
 For more details see:
 
