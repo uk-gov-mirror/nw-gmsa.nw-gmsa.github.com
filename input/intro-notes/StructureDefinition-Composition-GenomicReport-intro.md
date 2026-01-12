@@ -41,7 +41,7 @@ is a mindmap
 
 is a mindmap
 
-### HL7 v2 Genetic Variant Reporting (ORU_R01)
+### HL7 v2 Genetic Variant Reporting (ORU_R01.txt)
 
 > This is not included in the current phase and is for reference purposes. 
 

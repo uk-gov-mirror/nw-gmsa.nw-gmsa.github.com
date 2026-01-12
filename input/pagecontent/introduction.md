@@ -112,6 +112,11 @@ graph TD;
     class EPR,LIMS,Specimen,Practitioner purple
 ```
 
+<img style="padding:3px;width:60%;" src="Chimerism-MFT.png" alt="Chimerism Genomic Tests - MFT"/>
+<br clear="all">
+<p class="figureTitle">Chimerism Genomic Tests - MFT</p> 
+<br clear="all">
+
 ### Haematological Malignancy Diagnostic Services
 
 Future
