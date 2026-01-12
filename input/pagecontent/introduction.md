@@ -185,11 +185,11 @@ TBD - Starlims
 
 ```mermaid
 graph TD;
-    subgraph NHSTrust[<b>Order Placer</b><br/>NHS Trust]
+    subgraph NHSTrust[NHS Trust]
         Practitioner[fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
         FormManager --> OrderEntry
         Practitioner --> |3. Completes| OrderEntry[Order Form]
-        EPR[fas:fa-database Electronic Patient Record] --> |2. Pre Populates with existing data| OrderEntry 
+        EPR[<b>Order Placer</b><br/>fas:fa-database Electronic Patient Record] --> |2. Pre Populates with existing data| OrderEntry 
         OrderEntry --> |4. Submits Order| EPR
 
         Practitioner --> |6. Asks for|Sample[Sample Collection]
@@ -209,12 +209,12 @@ For more details see:
 graph TD;
     Sample[Sample Collection] --> EXT
     Order --> EXT
-    subgraph OrderFiller[<b>Order Filler</b><br/>North West Genomics]
+    subgraph OrderFiller[<b>Order Filler</b> North West Genomics]
         EXT[DNA Extraction] --> SEQ[DNA Sequencing]
         SEQ --> AN[Mapping & Analysis]
         AN --> INT[Interpretation]
     end 
-    INT --> |Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| Practitioner[<b>Order Placer</b><br/>fas:fa-user-md Practitioner]
+    INT --> |Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| Practitioner[<b>Order Placer</b><br/>EPR]
 ```
 
 - Sample Collection: A sample of blood, saliva, skin, or tumor tissue is collected.
