@@ -158,7 +158,7 @@ For information purposes only. This is a more detailed breakdown of the Genomic 
 
 ```mermaid
 graph TD;
-    subgraph NHSTrust[**Order Placer**]
+    subgraph NHSTrust[**Order Placer**<br/>NHS Trust]
         Practitioner[fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
         FormManager --> OrderEntry
         Practitioner --> |3. Completes| OrderEntry[Order Form]
@@ -182,7 +182,7 @@ For more details see:
 graph TD;
     Sample[Sample Collection] --> EXT
     Order --> EXT
-    subgraph OrderFiller[**Order Filler**]
+    subgraph OrderFiller[**Order Filler**<br/>North West Genomics]
         EXT[DNA Extraction] --> SEQ[DNA Sequencing]
         SEQ --> AN[Mapping & Analysis]
         AN --> INT[Interpretation]
