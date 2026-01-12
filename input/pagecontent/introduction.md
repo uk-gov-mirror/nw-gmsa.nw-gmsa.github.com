@@ -104,10 +104,10 @@ graph TD
         NHSTrust[**Order Placer**<br/>EPR]
     end 
     NHSTrust --> |"1. Create Laboratory Order<br/>Manual entry"| HODS
-    HODS[**Order Filler**<br/>NW Genomics HODS<br/>**Order Placer**] --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception{Specimen Reception}
+    HODS --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception{Specimen Reception}
     MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["**Order Filler**<br/>Immunology LIMS"]
    
-    subgraph Laboratory[Greater Manchester Laboratory]
+    subgraph Laboratory[NHS Trust Laboratory]
     
         LIMS --> |3b. Send Laboratory Report<br/>HL7 v2 ORU_R01| TIE[Trust Integration Engine]
         
@@ -115,6 +115,7 @@ graph TD
     TIE --> |3c. Send Laboratory Report<br/>HL7 v2 ORU_R01| HODS
     MFTReception --> |"4a. Genomics Laboratory Order + Specimen<br/>Manual"| TestType
     subgraph NWGenomics[North West Genomics]
+        HODS["**Order Filler**<br/>HODS<br/>**Order Placer**"]
         TestType{Test Type} --> |4b. Tests A, B, C, etc| GLHS
         TestType{Test Type} --> |4b. Tests D, E etc| GLHI
         GLHS["**Order Filler**<br/>LIMS Shire"]
