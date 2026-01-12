@@ -18,12 +18,11 @@ graph TD;
     A[Assessment]-->|Creates Observations| B;
     A--> |Needs Diagnostic Testing and Completes| T;
     B[Diagnosis]-->|Creates Condition| C;
-    T[<b>Order Placer</b><br/>Genomics Test Order]--> |"Sends Laboratory Order - LAB-1<br/>FHIR Message O21"| AN;
+    T[<b>Order Placer</b><br/>Genomics Test Order]--> |"Sends Laboratory Order<br/>LAB-1 FHIR Message O21"| AN;
     T --> |Asks for| S
     S[Specimen Collection] --> |Sends Specimen| AN;
     AN["<b>Order Filler</b><br/>Diagnostic Testing"] --> |"Requests further tests <br/>(reflex order)"| T;
-    AN --> |"Creates Laboratory Report - LAB-3<br/>HL7 v2 ORU_R01"| B;
-    AN --> |Sends Laboratory Report| A;
+    AN --> |Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| A;
     C[Plan]-->|Creates Goals and Tasks| D;
     D[Implement/Interventions]-->|Actions Tasks| E;
     E[Evaluate]--> |Reviews Care| A;
@@ -58,12 +57,17 @@ This workflow has been enhanced to support the sharing of laboratory reports (do
 ```mermaid
 graph TD;
 
-
-    T[<b>Order Placer</b><br/>Genomics Test Order]--> |"Sends Laboratory Order - LAB-1"| AN;
-    T --> |Asks for| S
-    S[Specimen Collection] --> |Sends Specimen| AN;
-    AN["<b>Order Filler</b><br/>Diagnostic Testing"] --> |Sends Laboratory Report - LAB-3| T;
-
+    subgraph NHSTrust
+        T[<b>Order Placer</b><br/>EPR]--> |"1a. Sends Laboratory Order<br>LAB-1 HL7v2 ORM_O01/OML_O21"| TIE;
+        TIE[Trust Integration Engine] 
+    end
+    TIE --> |"1b. Sends Laboratory Order<br>LAB-1 FHIR Message O21"| AN;
+    T --> |2. Asks for| S
+    S[Specimen Collection] --> |3. Sends Specimen| AN;
+    subgraph NWGenomics
+        AN["<b>Order Filler</b><br/>Diagnostic Testing<br/>LIMS iGene"] --> |4a. Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| RIE;
+        RIE[Regional Integration Engine] --> |4b. Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| T;
+    end 
     click T Questionnaire-GenomicTestOrder.html
     click AN Questionnaire-GenomicTestReport.html
     click S ExampleScenario-BiopsyProcedure.html
@@ -85,37 +89,39 @@ graph TD;
     class O,S,T,AN purple
 ```
 
+### Chimerism
+
+TBD
+
 ### Haematological Malignancy Diagnostic Services
 
-#### Greater Manchester
-
-After move of HODS from The Christie to Manchester Foundation Trust.
+Future
 
 ```mermaid
 graph TD
-    NHSTrust --> |"1. (Manual) Laboratory Order Entry"| HODS
-    HODS --> |"2. (Manual) Laboratory Order + Specimen"| MFTReception{Specimen Reception}
-    MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["Laboratory Information Management System (LIMS)"]
+    NHSTrust[**Order Placer**<br/>NHS Trust] --> |"1. Create Laboratory Order<br/>Manual entry"| HODS
+    HODS[**Order Filler**<br/>NW Genomics HODS<br/>**Order Placer**] --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception{Specimen Reception}
+    MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["**Order Filler**<br/>Immunology LIMS"]
    
     subgraph Laboratory[Greater Manchester Laboratory]
     
-        LIMS --> |3b. Laboratory Report ORU_R01| TIE[MFT/CFT Trust Integration Engine]
+        LIMS --> |3b. Send Laboratory Report<br/>HL7 v2 ORU_R01| TIE[Trust Integration Engine]
         
     end 
-    TIE --> |3c. Laboratory Report ORU_R01| HODS
-    MFTReception --> |"4a. (Manual) Genomics Laboratory Order + Specimen"| TestType
+    TIE --> |3c. Send Laboratory Report<br/>HL7 v2 ORU_R01| HODS
+    MFTReception --> |"4a. Genomics Laboratory Order + Specimen<br/>Manual"| TestType
     subgraph NWGenomics[North West Genomics]
         TestType{Test Type} --> |4b. Tests A, B, C, etc| GLHS
-        TestType{Test Type} --> |4b. Tests A, B, C, etc| GLHI
-        GLHS["Laboratory Information Management System<br/><br/>Shire"]
-        GLHS --> |4c. Laboratory Report ORU_R01| RIE 
-        GLHI["Laboratory Information Management System<br/><br/>iGene)"]
-        GLHI --> |4c. Laboratory Report Currently manually uploaded, ideally ORU_R01| RIE 
+        TestType{Test Type} --> |4b. Tests D, E etc| GLHI
+        GLHS["**Order Filler**<br/>LIMS Shire"]
+        GLHS --> |4c. Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| RIE 
+        GLHI["**Order Filler**<br/>LIMS iGene)"]
+        GLHI --> |4c. Send Laboratory Report<br/>Manual upload| RIE 
         
     end
-    RIE["Genomics Regional Integration Engine"] --> |4d. Laboratory Report ORU_R01| HODS
+    RIE["Regional Integration Engine"] --> |4d. Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| HODS
     HODS --> |5. Write Consolidated Report| HODS
-    HODS --> |"6. (Email) Consolidated Laboratory Report"| NHSTrust
+    HODS --> |"6. Send Consolidated Laboratory Report<br/>Email"| NHSTrust
 ```
 
 - Trusts will place their orders directly in HODS (1). HODS prints a request form, this is sent with the samples to Central specimen reception at MFT (2a).
@@ -134,9 +140,7 @@ For elaboration purposes only. This is a more detailed breakdown the the Genomic
 <p class="figureTitle">HODS Genomic Tests - Mersey and Cheshire GLH</p> 
 <br clear="all">
 
-### Chimerism
 
-TBD
 
 ## Technical Overview
 
