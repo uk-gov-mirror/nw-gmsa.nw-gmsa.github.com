@@ -33,7 +33,7 @@ HL7 v2
 
 With EPIC Order Placer OID
 ```
-1029467053^ROA-EPIC^urn:oid:1.2.840.114350.1.13.861.1.7.2.798268^URI
+1029467053^ROA-EPI^urn:oid:1.2.840.114350.1.13.861.1.7.2.798268^URI
 ```
 
 With self assigned Report Identifier for iGene
