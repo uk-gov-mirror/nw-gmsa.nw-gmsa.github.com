@@ -99,7 +99,11 @@ Future
 
 ```mermaid
 graph TD
-    NHSTrust[**Order Placer**<br/>NHS Trust] --> |"1. Create Laboratory Order<br/>Manual entry"| HODS
+
+    subgraph Trust[NHS Trust]
+        NHSTrust[**Order Placer**<br/>EPR]
+    end 
+    NHSTrust --> |"1. Create Laboratory Order<br/>Manual entry"| HODS
     HODS[**Order Filler**<br/>NW Genomics HODS<br/>**Order Placer**] --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception{Specimen Reception}
     MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["**Order Filler**<br/>Immunology LIMS"]
    
@@ -122,6 +126,10 @@ graph TD
     RIE["Regional Integration Engine"] --> |4d. Send Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| HODS
     HODS --> |5. Write Consolidated Report| HODS
     HODS --> |"6. Send Consolidated Laboratory Report<br/>Email"| NHSTrust
+
+    classDef purple fill:#E1D5E7;
+
+    class NHSTrust,HODS,GLHS,GLHI,LIMS purple
 ```
 
 - Trusts will place their orders directly in HODS (1). HODS prints a request form, this is sent with the samples to Central specimen reception at MFT (2a).
