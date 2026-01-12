@@ -158,13 +158,17 @@ For information purposes only. This is a more detailed breakdown of the Genomic 
 
 ```mermaid
 graph TD;
+    subgraph NHSTrust[**Order Placer**]
+        Practitioner[fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
+        FormManager --> OrderEntry
+        Practitioner --> |3. Completes| OrderEntry[Order Form]
+        EPR[fas:fa-database Electronic Patient Record] --> |2. Pre Populates with existing data| OrderEntry 
+        OrderEntry --> |4. Submits Order| EPR
 
-    Practitioner[**Order Placer**<br/>fas:fa-user-md Practitioner] --> |1. Selects Order Form| FormManager
-    FormManager --> OrderEntry
-    Practitioner --> |3. Completes| OrderEntry[Order Form]
-    EPR[fas:fa-database Electronic Patient Record] --> |2. Pre Populates with existing data| OrderEntry 
-    OrderEntry --> |4. Submits Order| EPR
-    EPR --> |5. Sends Laboratory Order<br/>LAB-1 HL7 FHIR Message O21| DiagnosticTesting[fas:fa-stethoscope Diagnostic Testing]
+        Practitioner --> |6. Asks for|Sample[Sample Collection]
+    end
+    EPR --> |5. Sends Laboratory Order<br/>LAB-1 HL7 FHIR Message O21| DiagnosticTesting[**Order Filler**<br/>fas:fa-stethoscope Diagnostic Testing]
+    Sample --> DiagnosticTesting
 ```
 
 For more details see:
