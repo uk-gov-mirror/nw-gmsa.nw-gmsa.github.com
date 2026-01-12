@@ -57,14 +57,14 @@ This workflow has been enhanced to support the sharing of laboratory reports (do
 ```mermaid
 graph TD;
 
-    subgraph NHSTrust
+    subgraph NHSTrust[NHS Trust]
         T[<b>Order Placer</b><br/>EPR]--> |"1a. Sends Laboratory Order<br>LAB-1 HL7v2 ORM_O01/OML_O21"| TIE;
         TIE[Trust Integration Engine] 
     end
     TIE --> |"1b. Sends Laboratory Order<br>LAB-1 FHIR Message O21"| AN;
     T --> |2. Asks for| S
     S[Specimen Collection] --> |3. Sends Specimen| AN;
-    subgraph NWGenomics
+    subgraph NWGenomics[North West Genomics]
         AN["<b>Order Filler</b><br/>Diagnostic Testing<br/>LIMS iGene"] --> |4a. Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| RIE;
         RIE[Regional Integration Engine] --> |4b. Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| T;
     end 
@@ -139,7 +139,6 @@ For elaboration purposes only. This is a more detailed breakdown the the Genomic
 <br clear="all">
 <p class="figureTitle">HODS Genomic Tests - Mersey and Cheshire GLH</p> 
 <br clear="all">
-
 
 
 ## Technical Overview
