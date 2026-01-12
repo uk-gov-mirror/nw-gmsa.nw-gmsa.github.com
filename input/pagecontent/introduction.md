@@ -91,7 +91,21 @@ graph TD;
 
 ### Chimerism
 
-TBD
+The chimerism testing pathway within the NHS is used to monitor the success of a haematopoietic stem cell transplant (HSCT) and involves a specific process of sample collection, transport, and analysis guided by clinical consensus guidelines. The testing is requested by a patient's clinical team, not directly by the patient.
+
+```mermaid
+graph TD;
+    subgraph NHSTrust[**Order Placer** NHS Trust]
+        Practitioner[Consultant Haematologist<br/>Practitioner] --> |Creates Order| EPR[EPR or LIMS?]
+        Practitioner --> |Asks For| Specimen[Sample Collection]
+    end
+    EPR --> |"Sends Laboratory Order<br/>M118.1 Short Tandem Repeat (STR)<br/>HL7 v2 ORM_O01 (MFT)"| DNA
+    Specimen --> |Send Specimen| DNA 
+    subgraph NWGenonics[**Order Filler** North West Genomics]
+        DNA[Extraction, Sequencing and Analysis<br/>LIMS?] --> LIMS[Interpretation<br/>LIMS?]
+    end
+    LIMS --> |Send Laboratory Report<br/>HL7 v2 ORU_R01| Practitioner
+```
 
 ### Haematological Malignancy Diagnostic Services
 
