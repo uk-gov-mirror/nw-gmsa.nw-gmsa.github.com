@@ -89,8 +89,8 @@ graph LR
         NHSB[Order Placer<br/>NHS Trust B] 
         ICSA[NHS ICS A]
         ICSB[NHS ICS B]
-        APPA[HODS]
-        APPB[Chimerism]
+        APPA[NW Genomics Application 1]
+        APPB[NW Genomics Application 2]
     end 
 ```
 
