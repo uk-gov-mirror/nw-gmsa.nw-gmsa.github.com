@@ -42,20 +42,58 @@ TIEs typically handle transformations between the different HL7 v2 variants used
 
 The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use.
 
-The diagram shows a subset of these interactions for laboratory reports; equivalent patterns apply to laboratory orders.
+The diagram shows a subset of these interactions for laboratory orders:
+
 ```mermaid
 graph LR
-    LIMSA[Order Filler<br>LIMS iGene] --> |Laboratory Report| RIE
-    LIMSB[Order Filler<br>LIMS Shire] --> RIE
-    LIMSC[Order Filler<br>HODS] --> RIE
-    LIMSD[Order Filler<br>Histotrac] --> RIE
-    RIE[Regional Integration Engine] --> |Laboratory Report| NHSA[NHS Trust A]
-    RIE --> NHSB[NHS Trust B] 
-    RIE --> |Laboratory Report| ICSA[NHS ICS A]
-    RIE --> ICSB[NHS ICS B]
-    RIE --> |Laboratory Report| APPA[HODS]
-    RIE --> APPB[Chimerism]
+  
+    RIE[Regional Integration Engine]
+    NHSA --> |Laboratory Order HL7 & IHE LTW| RIE
+    NHSB --> RIE
+    RIE --> |Laboratory Order HL7| LIMSA
+    RIE --> LIMSB
+
+    subgraph DataContracts[Data Contract]
+        NHSA[Order Placer<br/>NHS Trust A]
+        NHSB[Order Placer<br/>NHS Trust B] 
+    end 
+      subgraph Multiple[Data Contracts & Mixed Standards]
+        LIMSA[<b>Order Filler</b><br>LIMS iGene]
+        LIMSB[<b>Order Filler</b><br>LIMS Shire]
+    end
 ```
+
+Equivalent patterns apply to laboratory reports.
+
+```mermaid
+graph LR
+    subgraph Multiple[Data Contracts & Mixed Standards]
+        LIMSA[<b>Order Filler</b><br>LIMS iGene]
+        LIMSB[<b>Order Filler</b><br>LIMS Shire]
+        LIMSC[<b>Order Filler</b><br>LIMS C]
+        LIMSD[<b>Order Filler</b><br>LIMS D]
+    end
+    LIMSA --> |Laboratory Report HL7| RIE
+    LIMSB --> RIE
+    LIMSC --> RIE
+    LIMSD --> RIE
+    RIE[Regional Integration Engine] --> |Laboratory Report HL7 & IHE LTW| NHSA
+    RIE --> NHSB
+    RIE --> |Document Notification HL7 & IHE XDS/MHD| ICSA
+    RIE --> ICSB
+    RIE --> |Laboratory Report & IHE LTW| APPB
+    RIE --> APPA
+
+    subgraph DataContracts[Data Contract]
+        NHSA[Order Placer<br/>NHS Trust A]
+        NHSB[Order Placer<br/>NHS Trust B] 
+        ICSA[NHS ICS A]
+        ICSB[NHS ICS B]
+        APPA[HODS]
+        APPB[Chimerism]
+    end 
+```
+
 
 The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
 
