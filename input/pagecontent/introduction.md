@@ -186,10 +186,18 @@ graph TD;
     end
     SpecimenA --> |2a. Send Specimen| LIMSA
     SpecimenB --> |2b. Send Specimen| LIMSB
-    EPRA --> |1a. Laboratory Order| LIMSA[<b>Order Filler</b><br/>Liverpool Labs LIMS Starlims]
-    EPRB --> |1b. Laboratory Order| LIMSB[<b>Order Filler</b><br/>Manchester Labs LIMS iGene]
+    EPRA --> |1a. Laboratory Order| LIMSA[<b>Order Filler</b><br/>Liverpool LIMS Starlims]
+    EPRB --> |1b. Laboratory Order| LIMSB[<b>Order Filler</b><br/>Manchester LIMS iGene]
 
     LIMSA <--> |3. Redistribution of Orders and Specimen by test type| LIMSB
+
+    LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
+    LIMSB --> |4a. Laboratory Report| RIE
+    RIE --> |4b. Laboratory Report| EPRA
+    RIE --> |4b. Laboratory Report| EPRB 
+
+    classDef purple fill:#E1D5E7;
+    class EPRA,EPRB,SpecimenA,SpecimenB,LIMSA,LIMSB purple;
 ```
 ## Technical Overview
 
