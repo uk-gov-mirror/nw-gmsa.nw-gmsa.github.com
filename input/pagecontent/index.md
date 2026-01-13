@@ -48,9 +48,9 @@ The diagram shows a subset of these interactions for laboratory orders:
 graph LR
   
     RIE[Regional Integration Engine]
-    NHSA --> |Laboratory Order HL7 & IHE LTW| RIE
+    NHSA --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
     NHSB --> RIE
-    RIE --> |Laboratory Order HL7| LIMSA
+    RIE --> |Laboratory Order<br/>HL7 v2 OML_O21| LIMSA
     RIE --> LIMSB
 
     subgraph DataContracts[Data Contract]
@@ -73,15 +73,15 @@ graph LR
         LIMSC[<b>Order Filler</b><br>LIMS C]
         LIMSD[<b>Order Filler</b><br>LIMS D]
     end
-    LIMSA --> |Laboratory Report HL7| RIE
+    LIMSA --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE
     LIMSB --> RIE
     LIMSC --> RIE
     LIMSD --> RIE
-    RIE[Regional Integration Engine] --> |Laboratory Report HL7 & IHE LTW| NHSA
+    RIE[Regional Integration Engine] --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| NHSA
     RIE --> NHSB
-    RIE --> |Document Notification HL7 & IHE XDS/MHD| ICSA
+    RIE --> |Document Notification<br/>HL7 MDM_T02<br/>IHE XDS/MHD| ICSA
     RIE --> ICSB
-    RIE --> |Laboratory Report & IHE LTW| APPB
+    RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| APPB
     RIE --> APPA
 
     subgraph DataContracts[Data Contract]
@@ -93,7 +93,6 @@ graph LR
         APPB[Chimerism]
     end 
 ```
-
 
 The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
 
