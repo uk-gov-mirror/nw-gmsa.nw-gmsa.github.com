@@ -212,7 +212,7 @@ graph TD;
     SpecimenA --> |2 Send Specimen| LIMSA
     EPRA --> |1 Laboratory Order| LIMSA[<b>Order Filler</b><br/>LIMS iGene]
     
-    LIMSA --> |3. Subcontracted Laboratory Order| LIMSB[<b>Order Filler</b><br/>Liverpool LIMS Starlims]
+    LIMSA --> |3. Subcontracted Laboratory Order| LIMSB[<b>Order Filler</b><br/>Liverpool Labs LIMS Starlims]
     
     LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
     LIMSB --> |4a. Laboratory Report| RIE
