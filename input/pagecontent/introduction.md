@@ -176,6 +176,7 @@ For information purposes only. This is a more detailed breakdown of the Genomic 
 ### Liverpool and Manchester Genetic Labs Integration
 
 TBD - Starlims
+
 ```mermaid
 graph TD;
     subgraph NHSTrustA[Cheshire and Mersey NHS Trust]
@@ -199,6 +200,28 @@ graph TD;
     classDef purple fill:#E1D5E7;
     class EPRA,EPRB,SpecimenA,SpecimenB,LIMSA,LIMSB purple;
 ```
+
+Alternative workflow
+
+```mermaid
+graph TD;
+    subgraph NHSTrustA[NHS Trust]
+        EPRA[<b>Order Placer</b>] --> |Asks For| SpecimenA[Sample Collection]
+    end
+ 
+    SpecimenA --> |2 Send Specimen| LIMSA
+    EPRA --> |1 Laboratory Order| LIMSA[<b>Order Filler</b><br/>LIMS iGene]
+    
+    LIMSA --> |3. Subcontracted Laboratory Order| LIMSB[<b>Order Filler</b><br/>Liverpool LIMS Starlims]
+    
+    LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
+    LIMSB --> |4a. Laboratory Report| RIE
+    RIE --> |4b. Laboratory Report| EPRA
+    
+    classDef purple fill:#E1D5E7;
+    class EPRA,SpecimenA,LIMSA,LIMSB purple;
+```
+
 ## Technical Overview
 
 ### Laboratory Workflow (LTW)
