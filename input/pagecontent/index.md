@@ -85,8 +85,8 @@ graph LR
     RIE --> APPA
 
     subgraph DataContracts[Data Contract]
-        NHSA[<b>Order Placer</b><br/>NHS Trust A]
-        NHSB[<b>Order Placer</b><br/>NHS Trust B] 
+        NHSA[<b>Order Placer</b><br/>NHS Trust/Board A]
+        NHSB[<b>Order Placer</b><br/>NHS Trust/Board B] 
         ICSA[NHS ICS A]
         ICSB[NHS ICS B]
         APPA[NW Genomics Application 1]
