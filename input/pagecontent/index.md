@@ -21,8 +21,8 @@ Not all interactions will necessarily be electronic. For example, reports may be
 
 ```mermaid
 graph LR
-    OrderPlacer --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
-    OrderFiller --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+    OrderPlacer[<b>Order Placer</b>] --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderFiller[<b>Order Filler</b>] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
 In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this point-to-point messaging.
@@ -30,9 +30,9 @@ In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this 
 ```mermaid
 graph LR
 
-    OrderPlacer --> |1. General Order<br/>HL7 v2 ORM_O01| TIE[Trust Integration Engine]
+    OrderPlacer[<b>Order Placer</b>] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE[Trust Integration Engine]
     TIE --> |2. General Order<br/>HL7 v2 ORM_O01| OrderFiller
-    OrderFiller --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
+    OrderFiller[<b>Order Filler</b>] --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
     TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
@@ -54,8 +54,8 @@ graph LR
     RIE --> LIMSB
 
     subgraph DataContracts[Data Contract]
-        NHSA[Order Placer<br/>NHS Trust A]
-        NHSB[Order Placer<br/>NHS Trust B] 
+        NHSA[<b>Order Placer</b><br/>NHS Trust A]
+        NHSB[<b>Order Placer</b><br/>NHS Trust B] 
     end 
       subgraph Multiple[Data Contracts & Mixed Standards]
         LIMSA[<b>Order Filler</b><br>LIMS iGene]
