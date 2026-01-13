@@ -176,7 +176,21 @@ For information purposes only. This is a more detailed breakdown of the Genomic 
 ### Liverpool and Manchester Genetic Labs Integration
 
 TBD - Starlims
+```mermaid
+graph TD;
+    subgraph NHSTrustA[Cheshire and Mersey NHS Trust]
+        EPRA[<b>Order Placer</b>] --> |Asks For| SpecimenA[Sample Collection]
+    end
+    subgraph NHSTrustB[Greater Manchester NHS Trust]
+        EPRB[<b>Order Placer</b>] --> |Asks For| SpecimenB[Sample Collection]
+    end
+    SpecimenA --> |2a. Send Specimen| LIMSA
+    SpecimenB --> |2b. Send Specimen| LIMSB
+    EPRA --> |1a. Laboratory Order| LIMSA[<b>Order Filler</b><br/>Liverpool Labs LIMS Starlims]
+    EPRB --> |1b. Laboratory Order| LIMSB[<b>Order Filler</b><br/>Manchester Labs LIMS iGene]
 
+    LIMSA <--> |3. Redistribution of Orders and Specimen by test type| LIMSB
+```
 ## Technical Overview
 
 ### Laboratory Workflow (LTW)
