@@ -102,7 +102,7 @@ graph TD;
     EPR --> |"2. Sends Laboratory Order<br/>M118.1 Short Tandem Repeat (STR)<br/>HL7 v2 ORM_O01 (MFT) or Manual Order Entry"| LIMS
     Specimen --> |4. Send Specimen| LIMS 
     subgraph NWGenomics[North West Genomics]
-        LIMS[<b>Order Filler</b><br/>LIMS Telepath/iGene/Histotrac]
+        LIMS[<b>Order Filler</b><br/>LIMS iGene/Histotrac]
         LIMS --> |5a. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE["Regional Integration Engine"]
     end
     RIE --> |5b. Send Laboratory Report<br/>HL7 v2 ORU_R01| EPR
