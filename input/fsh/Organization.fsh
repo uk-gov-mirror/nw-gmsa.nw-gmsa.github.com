@@ -15,3 +15,5 @@ Description:    """
 
 * identifier[odsOrganisationCode] only OrganisationCode
 * identifier[odsSiteCode] ^short = "DO NOT USE. Sites are to be handled as Locations."
+
+* address.extension contains http://hl7.org/fhir/StructureDefinition/geolocation named GeoLocation 0..1
