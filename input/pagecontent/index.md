@@ -1,4 +1,4 @@
-## Business Overview
+## Overview
 
 Diagnostic testing is essential to modern clinical care, offering objective information that supports decision-making at every stage of a patient’s journey—from initial evaluation to long-term monitoring and assessment of outcomes.
 
