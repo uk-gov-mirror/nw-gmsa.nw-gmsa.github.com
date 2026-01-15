@@ -51,32 +51,32 @@ The diagram shows a subset of these interactions for laboratory orders:
 ```mermaid
 graph LR
   
-    RIE["Regional Integration Engine (RIE)"]
+    
     NHSA --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
     NHSB --> RIE
     RIE --> |Laboratory Order<br/>HL7 v2 OML_O21| LIMSA
     RIE --> LIMSB
 
     subgraph DataContracts[Data Contract]
+    RIE["Regional Integration Engine (RIE)"]
         NHSA[<b>Order Placer</b><br/>NHS Trust A]
         NHSB[<b>Order Placer</b><br/>NHS Trust B] 
     end 
-      subgraph Multiple[Data Contracts & Mixed Standards]
-        LIMSA[<b>Order Filler</b><br>LIMS iGene]
-        LIMSB[<b>Order Filler</b><br>LIMS Shire]
-    end
+    LIMSA[<b>Order Filler</b><br>LIMS iGene]
+    LIMSB[<b>Order Filler</b><br>LIMS Shire]
+    
 ```
 
 Equivalent patterns apply to laboratory reports.
 
 ```mermaid
 graph LR
-    subgraph Multiple[Data Contracts & Mixed Standards]
-        LIMSA[<b>Order Filler</b><br>LIMS iGene]
-        LIMSB[<b>Order Filler</b><br>LIMS Shire]
-        LIMSC[<b>Order Filler</b><br>LIMS C]
-        LIMSD[<b>Order Filler</b><br>LIMS D]
-    end
+    
+    LIMSA[<b>Order Filler</b><br>LIMS iGene]
+    LIMSB[<b>Order Filler</b><br>LIMS Shire]
+    LIMSC[<b>Order Filler</b><br>LIMS C]
+    LIMSD[<b>Order Filler</b><br>LIMS D]
+   
     LIMSA --> |Laboratory Report<br/>HL7 v2 ORU_R01| RIE
     LIMSB --> RIE
     LIMSC --> RIE
@@ -89,6 +89,7 @@ graph LR
     RIE --> APPA
 
     subgraph DataContracts[Data Contract]
+        RIE["Regional Integration Engine (RIE)"]
         NHSA[<b>Order Placer</b><br/>NHS Trust/Board A]
         NHSB[<b>Order Placer</b><br/>NHS Trust/Board B] 
         ICSA[NHS ICS A]
@@ -97,6 +98,8 @@ graph LR
         APPB[NW Genomics Application 2]
     end 
 ```
+
+
 
 The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
 
@@ -110,11 +113,35 @@ Because the RIE operates at a regional level, certain HL7 v2 message components 
 
 Standard terminology sets such as SNOMED CT and LOINC will be used to define observations and orderable items. These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles:
 
-#### API Contracts Part 1 – IHE Profiles and HL7 v2.5.1 Standards
+##### API Contracts Part 1 – IHE Profiles and HL7 v2.5.1 Standards
 
 - [IHE Laboratory Testing Workflow (LTW)](TLW.html) profile
 - [IHE Inter Laboratory Workflow (ILW)](ILW.mw) profile (Future)
 - [IHE Specimen Event Tracking (SET)](SET.html) profile (Future)
+
+#### Practical Implementation
+
+From a practical perspective, the RIE is introduced into the existing point-to-point messaging flow. It is at this boundary—between the TIE and the RIE—that the use of the [Data Contracts](data-intro.html)
+, including HL7 v2.5.1, is mandated.
+
+Data Contracts are not mandated between the RIE and LIMS, nor between the TIE and EPR. For practical reasons, these systems may require changes in the future to align with the central Data Contracts.
+
+NHS Trust TIEs do not interface directly with the LIMS within NHS North West Genomics and, going forward, will not interface directly with LIMS from other regional genomic systems and NHS England Genomic Order Management Service. All such interactions will be managed by the RIE.
+
+```mermaid
+graph LR
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01/OML_O21| TIE
+    subgraph DataContract[Data Contract]
+        TIE["Trust Integration Engine (TIE)"]
+        RIE["Regional Integration Engine (RIE)"]
+    end 
+    TIE --> |2. General Order<br/>HL7 v2.5.1 OML_O21| RIE
+    RIE --> |3. General Order<br/>HL7 v2 ORM_O01| OrderFiller
+    
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
+    RIE --> |5. Laboratory Report<br/>HL7 v2.5.1 ORU_R01| TIE 
+    TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+```
 
 ### Regional Data and Document Sharing - Clinical Data Repository (CDR)
 
@@ -124,9 +151,8 @@ To address this, a central Genomic Clinical Data Repository (CDR) will be establ
 
 ```mermaid
 graph TD
-    CDR["Genomic Clinical Data Repository (CDR)"] 
-    
     subgraph DataContracts[Data Contract]
+        CDR["Genomic Clinical Data Repository (CDR)"]
         NHSA[<b>Data Consumer</b><br/>NHS GP/Trust/Board/ICS A]
         NHSB[<b>Document Consumer</b><br/>NHS GP/Trust/Board/ICS B] 
 
