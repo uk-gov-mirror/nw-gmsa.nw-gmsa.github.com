@@ -134,11 +134,11 @@ graph LR
         RIE["Regional Integration Engine (RIE)"]
     end 
     TIE --> |2. General Order<br/>HL7 v2.5.1 OML_O21| RIE
-    RIE --> |3. General Order<br/>HL7 v2 ORM_O01| OrderFiller
+    RIE --> |3. General Order<br/>HL7 v2 ORM_O01/OML_O21| OrderFiller
     
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
     RIE --> |5. Laboratory Report<br/>HL7 v2.5.1 ORU_R01| TIE 
-    TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+    TIE --> |6. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
 ### Regional Data and Document Sharing - Clinical Data Repository (CDR)
