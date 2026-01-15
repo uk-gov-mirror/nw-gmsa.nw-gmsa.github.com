@@ -30,7 +30,7 @@ In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this 
 ```mermaid
 graph LR
 
-    OrderPlacer[<b>Order Placer</b>] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE[Trust Integration Engine]
+    OrderPlacer[<b>Order Placer</b>] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
     TIE --> |2. General Order<br/>HL7 v2 ORM_O01| OrderFiller
     OrderFiller[<b>Order Filler</b>] --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
     TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
@@ -38,7 +38,7 @@ graph LR
 
 TIEs typically handle transformations between the different HL7 v2 variants used by Order Placers (e.g. EPRs) and Order Fillers (e.g. LIMS).
 
-### Regional Message Routing
+### Regional Message Routing - Regional Integration Engine (RIE)
 
 The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use.
 
@@ -47,7 +47,7 @@ The diagram shows a subset of these interactions for laboratory orders:
 ```mermaid
 graph LR
   
-    RIE[Regional Integration Engine]
+    RIE["Regional Integration Engine (RIE)"]
     NHSA --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
     NHSB --> RIE
     RIE --> |Laboratory Order<br/>HL7 v2 OML_O21| LIMSA
@@ -77,7 +77,7 @@ graph LR
     LIMSB --> RIE
     LIMSC --> RIE
     LIMSD --> RIE
-    RIE[Regional Integration Engine] --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| NHSA
+    RIE["Regional Integration Engine (RIE)"] --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| NHSA
     RIE --> NHSB
     RIE --> |Document Notification<br/>HL7 MDM_T02<br/>IHE XDS/MHD| ICSA
     RIE --> ICSB
@@ -104,17 +104,31 @@ Because the RIE operates at a regional level, certain HL7 v2 message components 
 - [IHE Inter Laboratory Workflow (ILW)](ILW.mw) profile (Future)
 - [IHE Specimen Event Tracking (SET)](SET.html) profile (Future)
 
-### Regional Data and Document Sharing
+### Regional Data and Document Sharing - Clinical Data Repository (CDR)
 
 Traditional messaging focuses solely on communication between two systems—the order placer and the order filler—and does not support wider sharing of genomic data across multiple organisations such as NHS Trusts, GP practices, or other clinical teams.
 
 To address this, a central Genomic Clinical Data Repository (CDR) will be established. This repository will provide a read-only [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html) and will be populated via data flows through the RIE.
 
-<figure>
-{%include overview-hie.svg%}
-<p id="fX.X.X.X-X" class="figureTitle">Laboratory Report - Overview</p>
-</figure>
-<br clear="all">
+```mermaid
+graph TD
+    CDR["Genomic Clinical Data Repository (CDR)"] 
+    
+    subgraph DataContracts[Data Contract]
+        NHSA[<b>Data Consumer</b><br/>NHS GP/Trust/Board/ICS A]
+        NHSB[<b>Document Consumer</b><br/>NHS GP/Trust/Board/ICS B] 
+
+        APPA[<b>Data Consumer</b><br/>Application 1]
+        APPB[<b>Document Consumer</b><br/>Application 2]
+    end
+    NHSE[<b>Document Consumer</b><br/>NHS England<br/>Summary Care Record<br/>National Record Locator] 
+
+    CDR --> |HL7 FHIR RESTful<br/>IHE QEDm| NHSA
+    CDR --> |HL7 FHIR RESTful<br/>IHE MHD| NHSB
+    CDR --> |HL7 FHIR RESTful| NHSE
+    CDR --> |HL7 FHIR RESTful<br/>IHE QEDm|APPA
+    CDR --> |HL7 FHIR RESTful<br/>IHE MHD| APPB
+```
 
 The [Data Contract](datta-intro.html) and data structures used in the FHIR interfaces follow the same conventions as those used in the HL7 v2 message exchanges.
 
@@ -127,6 +141,16 @@ The CDR is expected to adopt emerging IHE Europe standards for clinical data and
 - [IHE Patient Demographics Query for Mobile (PDQm) ITI-78](PDQm.html) HL7 FHIR
 - [IHE Internet User Authorization (IUA)](IUA.md) OAuth2
 - [IHE Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/index.html) HL7 FHIR
+
+### Health Information Exchange (HIE)
+
+Collectively, the Regional Integration Engine (RIE) and the Genomic Clinical Data Repository (CDR) form a Health Information Exchange (HIE) system.
+
+<figure>
+{%include overview-hie.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Health Information Exchange (HIE)</p>
+</figure>
+<br clear="all">
 
 ## How to Read this IG
 
