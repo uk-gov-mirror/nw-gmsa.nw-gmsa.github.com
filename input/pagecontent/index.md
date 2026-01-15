@@ -122,7 +122,7 @@ Standard terminology sets such as SNOMED CT and LOINC will be used to define obs
 #### Practical Implementation
 
 From a practical perspective, the RIE is introduced into the existing point-to-point messaging flow. It is at this boundary—between the TIE and the RIE—that the use of the [Data Contracts](data-intro.html)
-, including HL7 v2.5.1, is mandated.
+, including HL7 v2.5.1 and adoption of IHE LTW, is mandated.
 
 Data Contracts are not mandated between the RIE and LIMS, nor between the TIE and EPR. For practical reasons, these systems may require changes in the future to align with the central Data Contracts.
 
