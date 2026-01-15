@@ -111,9 +111,7 @@ Because the RIE operates at a regional level, certain HL7 v2 message components 
 - Visit Numbers (Spell or Episode Number)
 - Specimen identifiers (inc. ascension and pathology specimen identifiers)
 
-Standard terminology sets such as SNOMED CT and LOINC will be used to define observations and orderable items. These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles:
-
-##### API Contracts Part 1 – IHE Profiles and HL7 v2.5.1 Standards
+Standard terminology sets such as SNOMED CT and LOINC will be used to define observations and orderable items. These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles (**API Contracts**):
 
 - [IHE Laboratory Testing Workflow (LTW)](TLW.html) profile
 - [IHE Inter Laboratory Workflow (ILW)](ILW.mw) profile (Future)
@@ -170,9 +168,7 @@ graph TD
 
 The [Data Contract](datta-intro.html) and data structures used in the FHIR interfaces follow the same conventions as those used in the HL7 v2 message exchanges.
 
-#### API Contracts Part 2 – IHE Profiles and HL7 FHIR R4 Standards
-
-The CDR is expected to adopt emerging IHE Europe standards for clinical data and document sharing. These currently include:
+The CDR is expected to adopt emerging IHE Europe standards for clinical data and document sharing. These currently include (**API Contract**):
 
 - [IHE Mobile access to Health Documents (MHD) ITI-66 and ITI-67](MHD.html) HL7 FHIR
 - [IHE Query for Existing Data for Mobile (QEDm) PCC-44](QEDm.html) HL7 FHIR
