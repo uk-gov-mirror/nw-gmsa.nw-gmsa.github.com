@@ -100,7 +100,15 @@ graph LR
 
 The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
 
-Because the RIE operates at a regional level, certain HL7 v2 message components must be standardised or updated. These changes ensure global uniqueness for identifiers such as medical record numbers, order numbers, and report numbers. Standard terminology sets such as SNOMED CT and LOINC will be used to define observations and orderable items. These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles:
+Because the RIE operates at a regional level, certain HL7 v2 message components must be standardised or updated. These changes ensure global uniqueness for identifiers such as:
+
+- Patient identifiers: NHS Number (England and Wales), CHI Number (Scotland), HSCN Number (Northern Ireland), and individual NHS Trusts medical record numbers
+- Order numbers (placer and filler)
+- Report numbers
+- Visit Numbers (Spell or Episode Number)
+- Specimen identifiers (inc. ascension and pathology specimen identifiers)
+
+Standard terminology sets such as SNOMED CT and LOINC will be used to define observations and orderable items. These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles:
 
 #### API Contracts Part 1 – IHE Profiles and HL7 v2.5.1 Standards
 
