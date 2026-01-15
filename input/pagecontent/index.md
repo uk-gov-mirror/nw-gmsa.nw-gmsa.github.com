@@ -14,7 +14,7 @@ As part of the service transition, existing systems for electronic test ordering
 
 ## Technical Overview
 
-<img style="padding:3px;width:80%;" src="NWGenomicsOverview.png" alt="NW Genomics Technical Overview"/>
+<img style="padding:3px;width:80%;" src="NWGenomicsTechnicalOverview.png" alt="NW Genomics Technical Overview"/>
 <br clear="all">
 
 ### Traditional Point-To-Point Messaging Transformation
