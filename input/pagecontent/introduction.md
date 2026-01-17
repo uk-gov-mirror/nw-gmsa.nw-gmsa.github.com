@@ -135,7 +135,7 @@ graph TD
         TIE[Trust Integration Engine]
     end 
     EPR --> |"1. Create Laboratory Order<br/>Manual entry"| HODS
-    HODS --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception{Specimen Reception}
+    HODS --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception[Specimen Reception]
     MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["<b>Order Filler</b><br/>Immunology LIMS"]
    
     subgraph Laboratory["Laboratory - MFT"]
@@ -149,8 +149,8 @@ graph TD
     subgraph NWGenomics[North West Genomics]
         RIE["Regional Integration Engine"]
         HODS["<b>Order Filler</b><br/>HODS<br/><b>Order Placer</b>"]
-        TestType{Test Type} --> |4b. Tests A, B, C, etc| GLHS
-        TestType{Test Type} --> |4b. Tests D, E etc| GLHI
+        TestType[Test Distribution<br/>By Test Type] --> |4b. Tests A, B, C, etc| GLHS
+        TestType --> |4b. Tests D, E etc| GLHI
         GLHS["<b>Order Filler</b><br/>LIMS Shire"]
         GLHS --> |4c. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE 
         GLHI["<b>Order Filler</b><br/>LIMS iGene)"]
