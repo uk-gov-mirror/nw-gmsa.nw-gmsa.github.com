@@ -269,6 +269,8 @@ graph TD;
 
 ### Subcontracted and Reflex Orders
 
+See also [Inter Laboratory Workflow (ILW)](ILW.html)
+
 ```mermaid
 graph TD;
     subgraph NHSTrustA[NHS Trust]
