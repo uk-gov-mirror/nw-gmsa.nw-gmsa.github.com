@@ -22,11 +22,17 @@ Description:    "Core model following [IHE Basic Audit Log Patterns (BALP)](http
 
 * agent[client] ^short = "Client DNS or IP address"
 * agent[client].type = http://dicom.nema.org/resources/ontology/DCM#110153
+* agent[client].who only Reference(Organization)
+* agent[client].who.identifier only OrganisationCode
 
 * agent[server] ^short = "Server DNS or IP address"
 * agent[server].type = http://dicom.nema.org/resources/ontology/DCM#110152
+* agent[server].who only Reference(Organization)
+* agent[server].who.identifier only OrganisationCode
 
 * agent[user].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP
+* agent[user].who only Reference(Practitioner)
+* agent[user].who.identifier only PractitionerIdentifier
 
 * entity ^slicing.discriminator.type = #value
 * entity ^slicing.discriminator.path = "type"
