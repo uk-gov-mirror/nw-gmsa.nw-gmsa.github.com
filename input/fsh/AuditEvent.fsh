@@ -18,7 +18,7 @@ Description:    "Core model following [IHE Basic Audit Log Patterns (BALP)](http
   client 1..1 MS and user 0..1 and server 1..1
 
 * agent[client].type = http://dicom.nema.org/resources/ontology/DCM#110153
-* agent[client].type = http://dicom.nema.org/resources/ontology/DCM#110152
+* agent[server].type = http://dicom.nema.org/resources/ontology/DCM#110152
 * agent[user].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP
 
 * entity ^slicing.discriminator.type = #value
@@ -26,7 +26,8 @@ Description:    "Core model following [IHE Basic Audit Log Patterns (BALP)](http
 * entity ^slicing.rules = #open
 * entity ^slicing.ordered = false
 * entity contains
-  transaction 1..1 MS and query 0..1
+  transaction 1..1 MS and query 0..1 and patient 0..1
 
 * entity[transaction].type = https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#XrequestId
 * entity[query] = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
+* entity[patient] = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
