@@ -31,5 +31,5 @@ Description:    "Core model following [IHE Basic Audit Log Patterns (BALP)](http
 
 * entity[transaction].type = https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#XrequestId
 * entity[data] ^short = "also known as `query` in IHE BALP"
-* entity[data] = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
-* entity[patient] = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
+* entity[data].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
+* entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
