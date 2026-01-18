@@ -6,20 +6,26 @@ Description:    "Core model following [IHE Basic Audit Log Patterns (BALP)](http
 
 * type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
 
-* action 1..1
+* action 1..1 MS
 
-* agent 2..*
+* agent 2..* MS
 
 * agent ^slicing.discriminator.type = #value
 * agent ^slicing.discriminator.path = "type"
 * agent ^slicing.rules = #open
 * agent ^slicing.ordered = false
 * agent contains
-  clientOAuth2 1..1 MS and user 0..1 and server 1..1
+  oClient 1..1 MS and user 0..1 and server 1..1 and client 0..1
 
-* agent[clientOAuth2] ^short = "known as `oClient` in IHE BALP"
-* agent[clientOAuth2].type = http://dicom.nema.org/resources/ontology/DCM#110150
+* agent[oClient] ^short = "OAuth2 ClientID. Known as `oClient` in IHE BALP"
+* agent[oClient].type = http://dicom.nema.org/resources/ontology/DCM#110150
+
+* agent[client] ^short = "Client DNS or IP address"
+* agent[client].type = http://dicom.nema.org/resources/ontology/DCM#110153
+
+* agent[server] ^short = "Server DNS or IP address"
 * agent[server].type = http://dicom.nema.org/resources/ontology/DCM#110152
+
 * agent[user].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP
 
 * entity ^slicing.discriminator.type = #value
@@ -27,9 +33,18 @@ Description:    "Core model following [IHE Basic Audit Log Patterns (BALP)](http
 * entity ^slicing.rules = #open
 * entity ^slicing.ordered = false
 * entity contains
-  transaction 1..1 MS and data 0..1 and patient 0..1
+  transaction 1..1 MS and message 0..1 MS and data 0..1 and patient 0..1
 
+* entity[transaction] ^short = "(HL7 FHIR) RESTful HTTP Header: X-Request-ID"
 * entity[transaction].type = https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#XrequestId
+
+* entity[message] ^short = "HTTP Header: X-Correlation-ID, HL7 v2 MSH.10 - Message Control ID and HL7 FHIR Message Bundle.identifier.value"
+* entity[message].type = https://fhir.nwgenomics.nhs.uk/CodeSystem/BasicAuditEntityType#XcorrelationId
+
 * entity[data] ^short = "also known as `query` in IHE BALP"
 * entity[data].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
+
+* entity[patient] ^short = "Patient reference plus NHS Number"
 * entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
+* entity[patient].what only Reference(Patient)
+* entity[patient].what.identifier only NHSNumber
