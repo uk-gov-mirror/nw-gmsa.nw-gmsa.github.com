@@ -8,11 +8,24 @@ Description: """
 * ^keyword[+] = #core "Core"
 * ^keyword[+] = #workflow "Patient Care Workflow"
 
+* identifier only CorrelationIdentifier
+* groupIdentifier only CorrelationIdentifier
+
 * status MS
 * intent MS
 * code 1..1
+
 * for 1..1 MS
+* for only Reference(Patient)
 * for.identifier only NHSNumber
+
+* requester only Reference(PractitionerRole or Organization)
 * requester 1..1 MS
+* requester.identifier only OrganisationCode
+
+* owner only Reference(PractitionerRole or Organization)
 * owner 1..1 MS
+* owner.identifier only OrganisationCode
+
 * focus 1..1 MS
+* focus only Reference(ServiceRequest or Specimen)
