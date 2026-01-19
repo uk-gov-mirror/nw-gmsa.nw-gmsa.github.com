@@ -14,6 +14,7 @@ Description: """
 * status MS
 * intent MS
 * code 1..1
+* authoredOn 1..1
 
 * for 1..1 MS
 * for only Reference(Patient)
