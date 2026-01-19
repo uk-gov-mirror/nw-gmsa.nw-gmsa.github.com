@@ -20,6 +20,24 @@ See Ref 1 for details.
 
 ## Scenarios
 
+### Biopsy Procedure
+
+For information purposes only, this documention of a biopsy procedure in Nottingham University Hospital.
+
+```mermaid
+graph TD
+    Home --> |1. Patient Arrives| DayUnit
+    DayUnit --> |2. Performs Patient Admission| EHR
+    DayUnit --> |3. Patient Sent to| Biopsy
+    Biopsy --> |A. Collects Specimen| Biopsy
+    Biopsy --> |4. Patient sent back to| DayUnit
+    DayUnit -->  |5. Patient Discharged| Home
+    Biopsy --> |B. Sends Specimen| SpecimenReception[Specimen Reception]
+    SpecimenReception --> |C. Specimen Administration| LIMS[Diagnostic Testing - LIMS]
+```
+
+[Collect Specimen - Biopsy Procedure for obtaining a specimen, part of a diagnostic pathway. Day case admission.](ExampleScenario-BiopsyProcedure.html)
+
 ### Blood Sample Collection
 
 For information only, this is an extract of work done by North West Childresn Cancer and NHS England.
@@ -54,20 +72,3 @@ graph TD
 - (9) PTC may edit child's prescription on regimen in light of blood results and may need to recall patient  into hospital for additional tests
 - (10) If prescription is amended then PTC must notify POSCU
 
-### Biopsy Procedure
-
-For information purposes only, this documention of a biopsy procedure in Nottingham University Hospital.
-
-```mermaid
-graph TD
-    Home --> |1. Patient Arrives| DayUnit
-    DayUnit --> |2. Performs Patient Admission| EHR
-    DayUnit --> |3. Patient Sent to| Biopsy
-    Biopsy --> |A. Collects Specimen| Biopsy
-    Biopsy --> |4. Patient sent back to| DayUnit
-    DayUnit -->  |5. Patient Discharged| Home
-    Biopsy --> |B. Sends Specimen| SpecimenReception[Specimen Reception]
-    SpecimenReception --> |C. Specimen Administration| LIMS[Diagnostic Testing - LIMS]
-```
-
-[Collect Specimen - Biopsy Procedure for obtaining a specimen, part of a diagnostic pathway. Day case admission.](ExampleScenario-BiopsyProcedure.html)
