@@ -20,7 +20,7 @@ graph TD
     CreateTask --> |"'Process Genomic Test Request'<br/> Task (accepted)"| AutomationMananger[Automation Mananger] 
 
     UpdateTask --> |"'Process Genomic Test Request'<br/>Task (in-progress)"| AutomationMananger
-    LaboratoryReport --> IsOrderComplete{Is Order Completed?}
+    LaboratoryReport --> IsOrderComplete{Is Order Complete?}
     IsOrderComplete --> |Yes| CompleteTask
     IsOrderComplete -->  |No| UpdateTask[Update Task]
     CompleteTask -->  |"'Process Genomic Test Request'<br/>Task (completed)"| AutomationMananger
