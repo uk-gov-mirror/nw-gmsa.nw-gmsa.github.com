@@ -9,7 +9,10 @@ Description: """
 * ^keyword[+] = #workflow "Patient Care Workflow"
 
 * identifier only CorrelationIdentifier
+* identifier MS
+
 * groupIdentifier only CorrelationIdentifier
+* groupIdentifier MS
 
 * status MS
 * intent MS
