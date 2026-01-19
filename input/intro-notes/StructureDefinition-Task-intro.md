@@ -48,6 +48,8 @@ This model is based on a merge of NHS England Genomcis and AU eRequesting.
 | requester                             | identifier [Organisation Code ](StructureDefinition-OrganisationCode.html)                                                                           | 1..1        | Preferred [Organization][StructureDefinition-Organization.html]     |
 | owner                                 | identifier [Organisation Code ](StructureDefinition-OrganisationCode.html)                                                                           | 0..1        | Preferred [Organization][StructureDefinition-Organization.html]     |
 
+No SNOMED codes for genomic diagnostic testing found, codes are potentially children of `386053000 Evaluation procedure` 
+
 ### Caveats
 
 The logic for determining when an order is complete may not always be accurate. For example, the laboratory may decide to perform additional or follow-up tests on the same specimen.
