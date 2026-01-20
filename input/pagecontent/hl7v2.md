@@ -137,20 +137,20 @@ See also which are functionally equivalent and have a similar data model:
 
 This is based on the definition of MSH from [NHS England HL7 v2 ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws).
 
-| Field HL7 | Fieldname                          | Data Type   | Optionality | Identifier Type or ValueSet                                                                                                         | Example Values                                                                                                                  |
-|-----------|------------------------------------|-------------|-------------|-------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| MSH-1     | Field Separator                    |             | R           |                                                                                                                         | &#9;                                                                                                                            |                                                                                                                          | `                                                                                                         |
-| MSH-2     | Encoding Characters                |             | R           |                                                                                                                         | ^~\&                                                                                                                            |
-| MSH-3     | Sending Application                |             | R           |                                                                                                                         | iGene                                                                                                                           |
-| MSH-4     | Sending Facility                   | HD          | R           | [ODS Code](StructureDefinition-OrganisationCode.html)                                                                   | 699X0                                                                                                                           |
-| MSH-5     | Receiving Application              | HD          | R           |                                                                                                                         | EPIC                                                                                                                            |
-| MSH-6     | Receiving Facility                 |             | R           | [ODS Code](StructureDefinition-OrganisationCode.html)                                                                   | R0A                                                                                                                             |
-| MSH-7     | Date/Time Of Message               |             | R           |                                                                                                                         | 20170126143602                                                                                                                  |
-| MSH-9     | Message Type                       |             | R           |                                                                                                                         | ORU^R01^ORU_R01                                                                                                                 |
-| MSH-10    | Message Control ID                 |             | R           |                                                                                                                         | 2017012614360280000                                                                                                             |
-| MSH-11    | Processing ID                      |             | R           |                                                                                                                         | P                                                                                                                               |
-| MSH-12    | Version ID                         |             | R           |                                                                                                                         | 2.5.1                                                                                                                           |
-| MSH-13    | Accept AcknowledgmentType          |             | R           |                                                                                                                         | AL                                                                                                                              |
+| Field HL7 | Fieldname                 | Data Type | Optionality | Identifier Type or ValueSet                           | Example Values      |
+|-----------|---------------------------|-----------|-------------|-------------------------------------------------------|---------------------|
+| MSH-1     | Field Separator           |           | R           |                                                       | &#9;                | 
+| MSH-2     | Encoding Characters       |           | R           |                                                       | ^~\&                |
+| MSH-3     | Sending Application       |           | R           |                                                       | iGene               |
+| MSH-4     | Sending Facility          | HD        | R           | [ODS Code](StructureDefinition-OrganisationCode.html) | 699X0               |
+| MSH-5     | Receiving Application     | HD        | R           |                                                       | EPIC                |
+| MSH-6     | Receiving Facility        |           | R           | [ODS Code](StructureDefinition-OrganisationCode.html) | R0A                 |
+| MSH-7     | Date/Time Of Message      |           | R           |                                                       | 20170126143602      |
+| MSH-9     | Message Type              |           | R           |                                                       | ORU^R01^ORU_R01     |
+| MSH-10    | Message Control ID        |           | R           |                                                       | 2017012614360280000 |
+| MSH-11    | Processing ID             |           | R           |                                                       | P                   |
+| MSH-12    | Version ID                |           | R           |                                                       | 2.5.1               |
+| MSH-13    | Accept AcknowledgmentType |           | R           |                                                       | AL                  |
 {:.grid}
 
 ### PID
@@ -189,16 +189,16 @@ PID|1||633^^^R0A^MR~9449305552^^^^NH||CHISLETT^Octavia||20080920|F|||1 RAVENSFIE
 
 This is based on the definition of PV1 from [NHS England HL7 v2 ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws)
 
-| Field HL7 | Fieldname                 | Data Type   | Optionality | Identifier Type or ValueSet                                                                   | Example Values                                |
-|-----------|---------------------------|-------------|-------------|-----------------------------------------------------------------------------------|-----------------------------------------------|
-| PV1-1     | Set ID - PV1              | [PL](#pl)   | R           |                                                                                   | 1                                             |
-| PV1-3     | Assigned Patient Location |             | R           |                                                                                   | ^^^R0A09^^^^^^^R0A <br/> ^^^P1S8J^^^^^^^699X0 |
-| PV1-8     | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
-| PV1-8     | Referring Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
-| PV1-9     | Consulting Doctor         | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
-| PV1-10    | Hospital Service          |             | R           | [Service](ValueSet-service.html)                                                  | 311                                           |
-| PV1-17    | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
-| PV1-19    | Visit Number              | [CX](#cx)   | O - SHOULD  | [Hospital Provider Spell Identifier](StructureDefinition-HospitalProviderSpellIdentifier.html)                            | 12345^^^R0A                                   |                                    |
+| Field HL7 | Fieldname                 | Data Type   | Optionality | Identifier Type or ValueSet                                                                    | Example Values                                |
+|-----------|---------------------------|-------------|-------------|------------------------------------------------------------------------------------------------|-----------------------------------------------|
+| PV1-1     | Set ID - PV1              | [PL](#pl)   | R           |                                                                                                | 1                                             |
+| PV1-3     | Assigned Patient Location |             | R           |                                                                                                | ^^^R0A09^^^^^^^R0A <br/> ^^^P1S8J^^^^^^^699X0 |
+| PV1-8     | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
+| PV1-8     | Referring Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
+| PV1-9     | Consulting Doctor         | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
+| PV1-10    | Hospital Service          |             | R           | [Service](ValueSet-service.html)                                                               | 311                                           |
+| PV1-17    | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
+| PV1-19    | Visit Number              | [CX](#cx)   | O - SHOULD  | [Hospital Provider Spell Identifier](StructureDefinition-HospitalProviderSpellIdentifier.html) | 12345^^^R0A                                   |
 {:.grid}
 
 <div class="alert alert-info" role="alert">
@@ -220,15 +220,15 @@ PV1|1|O|^^^R0A09^^^^^^^R0A||||C3456789^Darwin^Samuel^^^Dr^^^GMC|||100|||||||||10
 
 This is based on the definition of ORC from [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf).
 
-| Field HL7 | Fieldname                | Data Type   | Optionality | Identifier Type or ValueSet                                                                   | Example Values                                                                                                                  |
-|-----------|--------------------------|-------------|-------------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| ORC-2     | Placer Order Number      | [EI](#ei)   | R           | [Placer Order Number](StructureDefinition-PlacerOrderNumber.html)                 | 1601737^R0A^150^L                                                                                                               |
-| ORC-3     | Filler Order Number      | [EI](#ei)   | R           | [Filler Order Number](StructureDefinition-FillerOrderNumber.html)                 | 1001166717^699X0^^255^ISO                                                                                                       |
-| ORC-4     | Placer Group Number      | [EI](#ei)   | R           | [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)                 | 1001166717^699X0^^255^ISO                                                                                                       |
-| ORC-5     | Order Status             |             | O           |                                                                                   |                                                                                                                                 |
-| ORC-9     | Date/Time of Transaction | TS          | O           |                                                                                   |                                                                                                                                 |
-| ORC-12    | Ordering Provider        | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC                                                                                               |
-| ORC-21    | Ordering Facility Name   | [XON](#xon) | R           | [Organisation Code](StructureDefinition-OrganisationCode.html)                    | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS                                                                                                                                |
+| Field HL7 | Fieldname                | Data Type   | Optionality | Identifier Type or ValueSet                                                | Example Values                                        |
+|-----------|--------------------------|-------------|-------------|----------------------------------------------------------------------------|-------------------------------------------------------|
+| ORC-2     | Placer Order Number      | [EI](#ei)   | R           | [Placer Order Number](StructureDefinition-PlacerOrderNumber.html)          | 1601737^R0A^150^L                                     |
+| ORC-3     | Filler Order Number      | [EI](#ei)   | R           | [Filler Order Number](StructureDefinition-FillerOrderNumber.html)          | 1001166717^699X0^^255^ISO                             |
+| ORC-4     | Placer Group Number      | [EI](#ei)   | R           | [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)          | 1001166717^699X0^^255^ISO                             |
+| ORC-5     | Order Status             |             | O           |                                                                            |                                                                                                                                 
+| ORC-9     | Date/Time of Transaction | TS          | O           |                                                                            |                                                                                                                                 
+| ORC-12    | Ordering Provider        | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC                     |
+| ORC-21    | Ordering Facility Name   | [XON](#xon) | R           | [Organisation Code](StructureDefinition-OrganisationCode.html)             | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS |
 {:.grid}
 
 <div class="alert alert-info" role="alert">
@@ -259,7 +259,7 @@ This is based on the definition of OBR from [Digital Health and Care Wales - HL7
 | OBR-7     | Observation Date/Time              | TS          | R for ORU_R01 |                                                                            | 20170126135745                                                              |
 | OBR-16    | Ordering Provider                  |             | R             | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC                                           |
 | OBR-22    | Results Rpt/Status Chng -Date/Time | TS          | R             |                                                                            | 20170126135745                                                              |
-| OBR-25    | Result Status                      |             |               |                                                                            | |
+| OBR-25    | Result Status                      |             |               |                                                                            |                                                                             |
 | OBR-32    | Principal Result Interpreter       | [NDL](#ndl) | O - SHOULD    | DiagnosticReport.resultsInterpreter[primaryReporter]                       |                                                                             |
 | OBR-33    | Assistant Result Interpreter       | [NDL](#ndl) | O - SHOULD    | DiagnosticReport.resultsInterpreter[secondaryReporter]                     |                                                                             |
 | OBR-34    | Technician                         | [NDL](#ndl) | O - SHOULD    | DiagnosticReport.performer[operator]                                       |                                                                             |                                                                             |
@@ -286,11 +286,11 @@ OBR|1|1601737^R0A|1001166717^699X0|R240.1^^England-GenomicTestDirectory||2025012
 Multiple NTE should be converted to a single FHIR Annotation using markdown
 
 | Field HL7 | Fieldname         | Data Type | Optionality | Identifier Type or ValueSet | Example Values |
-|-----------|-------------------|-----------|-------------|-------------|----------------|
-| NTE-1     | Set ID - NTE      |           |             |             |                | 
-| NTE-2     | Source of Comment |           |             |             |                | 
-| NTE-3     | Comment           |           |             |             |                | 
-| NTE-4     | Comment Type      |           |             |             |                | 
+|-----------|-------------------|-----------|-------------|-----------------------------|----------------|
+| NTE-1     | Set ID - NTE      |           |             |                             |                | 
+| NTE-2     | Source of Comment |           |             |                             |                | 
+| NTE-3     | Comment           |           |             |                             |                | 
+| NTE-4     | Comment Type      |           |             |                             |                | 
 {:.grid}
 
 <div class="alert alert-info" role="alert">

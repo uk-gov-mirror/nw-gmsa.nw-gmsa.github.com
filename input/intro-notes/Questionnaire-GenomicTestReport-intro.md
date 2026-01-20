@@ -33,6 +33,7 @@ Test detail tends to be common across all diagnostic tests in a patient's pathwa
 |------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------|
 | Patient                                  |         | [NHS Number](StructureDefinition-NHSNumber.html) [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 1..1        | [PID](hl7v2.html#pid)    | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).subject.identifier              | [Patient](StructureDefinition-Patient.html)                       |
 | Case Identification or Visit/Stay Number | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html)                            | 0..1        | [PV1](hl7v2.html#pv1)-19 | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).encounter.identifier | Encounter [HospitalSpell](StructureDefinition-HospitalSpell.html) |
+{:.grid}
 
 <span class="badge badge-primary">Diagnostic Workflow</span>
 
@@ -48,13 +49,14 @@ Test detail tends to be common across all diagnostic tests in a patient's pathwa
 | Specimen                 | 80398-1 | See [Genomic Test Order - Specimen](Questionnaire-GenomicTestOrder.html#specimen)                                              | 0..1        | [SPM](hl7v2.html#spm)                    | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).specimen.identifier                 | [Specimen](StructureDefinition-Specimen.html)             |
 | Results                  |         | Domain specific - see below                                                        | 0..*        | [OBX](hl7v2.html#obx)                    | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).results                  | Varies                                                    |   
 | Narrative Report         |         | Domain specific - see below                                                        | 0..*        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).presentedForm            |                                                           |
+{:.grid}
 
 <span class="badge badge-primary">Genomic Observation </span>
 
 | Name                           | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 ORU_RO1 Message              | HL7 FHIR DiagnosticReport                                                               | HL7 FHIR Resource (RESTful)                               |
 |--------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | Order Code - Genomic Test Code |         | [Genomic Test Code](ValueSet-GenomicTestCodes.html)                                         | 1..1        | [OBR](hl7v2.html#obr)-4             | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).code                      |                                                           |
-
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-report.html" _target="_blank">Genomic Report</a> 
@@ -95,6 +97,7 @@ A more detailed mapping of the results section of the laboratory report, see [Ge
 |-------------------|---------|----------|---------|-------------|------------------------------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Narrative Report  | 51969-4 |          |         | 1..1        | [OBX (type=ED)](hl7v2.html#obx-type--ed) | 1            | DiagnosticReport.presentedForm [Attachment](StructureDefinition-NWAttachment.html) and Binary                                                                                   |
 | Gene studied [ID] | 48018-6 |          | ACAD9   | 0..1        | [OBX](hl7v2.html#obx)                    | 1.a          | [Observation](StructureDefinition-Observation.html) Profile [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component:gene-studied |
+{:.grid}
 
 ### Genomic Study
 
@@ -115,6 +118,7 @@ See also [HL7 Genomic Reporting - Genomic Study](https://build.fhir.org/ig/HL7/g
 | Analysis method [Type]                      | Might be 81304-8  | [Genomic Study Type ValueSet](https://build.fhir.org/ig/HL7/genomics-reporting/ValueSet-genomic-study-type-vs.html) | SNP Array | 0..1        |            | [Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html).code  |
 | Gene disease assessed / Clinical Indication | 51967-8           |                                                                                                                     |           | 1..1        | 1.a        | [Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html).reasonCode                                                                    |
 | Genomic Test Outcome                        | TESTCOME (NWGMSA) | [Genomic Test Outcome Codes](ValueSet-GenomicTestOutcomeCodes.html)                                                 |           |             |            | [Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html).outcome                                                                       |                                                                                                                                                                                 |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-genomic-study.html" _target="_blank">Genomic Study</a> 
@@ -138,6 +142,7 @@ This appears to be part of [FHIR R6 GenomicStudy](https://build.fhir.org/genomic
 | regions                     |         |                                                     |         |             |              | [Genomic Study Analysis ](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html).extension[regions]             |
 | Genomic source class [Type] | 48002-0 | [Genetic variant source](https://loinc.org/LL378-1) | Somatic | 0..1        |            | [Genomic Study Analysis](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html).extension[genomic-source-class] |
 | specimen                    |         |                                                     |         |             |           | [Genomic Study Analysis](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study-analysis.html).extension[specimen]             |
+{:.grid}
 
 ### Findings / Observations
 
@@ -164,6 +169,7 @@ This is for elaboration and subject to change.
 | Genomic ref allele [ID]                    | 69547-8 |                                                                                                                                                            | C                           | 0..1        | 2a           | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[ref-allele]                        | 
 | Allelic phase                              | 82120-7 | [Allelic phase](https://loinc.org/LL4025-4)                                                                                                                | Maternal                    | 0..1        | 2a           | See 94186-4 below?                                                                                                                        |
 | Origin of germline genetic variant [Type]  | 94186-4 | [Origin of Genetic Variance](https://loinc.org/LL5489-1)                                                                                                   | Maternal                    | 0..1        | - n/a        | [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html).component[variant-inheritance]               |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html" _target="_blank">Variant</a> 
@@ -188,6 +194,7 @@ This is for elaboration and subject to change.
 |--------------------------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|-------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Genetic sequence variation clinical significance [Imp] | 53037-8 | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6)                                                                                                                                                                                   | Pathogenic    | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[clinical-significance] |
 | Probable Associated Phenotype                          | 81259-4 | NHS England [Genomic Clinical Indication Codes](ValueSet-GenomicClinicalIndicationCodes.html) <br/> ?? [SNOMED Genomic Disorder Carrier](ValueSet-GenomicDisorderCarrier.html) <br/> ?? [SNOMED Genetic Finding Detected](ValueSet-GenomicFindingDetected.html) | Lynch syndrome | 0..1        | 2a           | [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html).component[predicted-phenotype]   |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-diagnostic-implication.html" _target="_blank">Diagnostic Implication</a> 

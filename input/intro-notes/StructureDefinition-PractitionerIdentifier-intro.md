@@ -9,7 +9,7 @@
 | https://fhir.hl7.org.uk/Id/din-number    | 	                                 |       | 		NNNNNN	         | DOCTOR INDEX NUMBER	                                                                                                     |
 | https://fhir.nhs.uk/Id/sds-user-id       | 1.2.826.0.1285.0.2.0.65	          |       | 	N(*)             | SDS User ID	                                                                                                             |
 | https://fhir.nhs.uk/Id/gmc-reference-number | 2.16.840.1.113883.2.1.3.2.4.18.29 |       | NNNNNNN           | 	GMC Reference Number                                                                                                    |
-
+{:.grid}
 
 Format
 
@@ -29,3 +29,4 @@ Format
 | Radiographer prescriber (HCPC)    | 	RANNNNNN | RA088262 |
 | Dietician prescriber (HCPC)	      | DTNNNNNN  | DT012345 |
 | Paramedic prescriber (HCPC)	      | PANNNNNN  | PA054321 |
+{:.grid}

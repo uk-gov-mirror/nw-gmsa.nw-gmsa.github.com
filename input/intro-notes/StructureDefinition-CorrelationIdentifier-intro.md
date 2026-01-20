@@ -26,6 +26,7 @@ Used in HL7 v2 ORC, SPM and OBR, and FHIR ServiceRequest, Specimen and Diagnosti
 | Universal Id      | 0..1        | urn:oid:1.2.840.114350.1.13.861.1.7.2.798268 | https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier               | Identifier.system   | EI.3                                                     | The example used here is a generic value, NHS Trusts should supply actual value. Systems with a HL7 FHIR RESTful API e.g. EPIC and Meditech may have provided this value, the values in HL7 v2 and FHIR should be the same. |
 | Universal Id Type | 0..1        | URI                               | URI            |                     | EI.4 fixed value `URI`                                   |                                                                                                                                                                                                                             |
 | Identifier Type Code | 1..1        | PLAC                              | FILL           | Identifier.type     | n/a - identifiers use seperate fields in HL7 v2 Messages |                                                                                                                                                                                                                             |
+{:.grid}
 
 #### Example
 
@@ -90,6 +91,7 @@ Used in HL7 v2 PID and FHIR Patient.
 | Assigning Authority  | 1..1        | NHS                               | ROA                             | Identifier.assigner.value | CX.4      | For MRN the assigning authority shall be the NHS Trust ODS Code. <br/><br/>For NHS identifiers valid values are <br/> NHS - England and Wales <br/> HSNI - Northern Ireland <br/> CHI - Scotland |
 | Identifier Type Code | 1..1        | NH                                | MR                              | Identifier.type           | CX.5      |                                                                                                                                                                                                  |
 | Universal Id         | 1..1        | https://fhir.nhs.uk/Id/nhs-number | https://nw-gmsa.github.io/Id/MR | Identifier.system         | N/a       |                                                                                                                                                                                                  |
+{:.grid}
 
 #### Example
 

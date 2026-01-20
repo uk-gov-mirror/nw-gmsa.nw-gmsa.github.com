@@ -27,6 +27,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 |--------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------|---------------------------------------------------------------------|--------------------------------------------------------------------------|
 | Patient                                          |         | [NHS Number](StructureDefinition-NHSNumber.html) [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 1..1        | [PID](hl7v2.html#pid)    | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier   | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
 | Case Identification or Episode/Visit/Stay Number | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html)                            | 0..1        | [PV1](hl7v2.html#pv1)-19 | [ServiceRequest](StructureDefinition-ServiceRequest.html).encounter.identifier | Encounter [HospitalSpell](StructureDefinition-HospitalSpell.html)        |
+{:.grid}
 
 <span class="badge badge-primary">Diagnostic Workflow</span>
 
@@ -44,6 +45,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 | Supporting Information |       | Domain specific - See below                                                        | 0..*        | [OBX](hl7v2.html#obx)             | [ServiceRequest](StructureDefinition-ServiceRequest.html).supportingInformation         | Varies                                                                     |
 | Notes                  |       |                                                                                    | 0..*        | [NTE](hl7v2.html#nte)             | [ServiceRequest](StructureDefinition-ServiceRequest.html).note                          |                                                                            |
 | Specimen               |       | See Specimen below                                                                 | 0..*        | [SPM](hl7v2.html#spm)             | [ServiceRequest](StructureDefinition-ServiceRequest.html).specimen.identifier                      | [Specimen](StructureDefinition-Specimen.html)                              |  
+{:.grid}
 
 <span class="badge badge-primary">Diagnostic Genomics</span>
 
@@ -51,6 +53,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 |-------------------------------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|-----------------------------------|-----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Order Code - Genomic Test Code                        |         | [Genomic Test Directory](ValueSet-genomic-test-directory.html)                              | 1..1        | [OBR](hl7v2.html#obr)-4           | [ServiceRequest](StructureDefinition-ServiceRequest.html).code                                                                  |                                                                                                                             |
 | Suspected Condition - Clinical Indication / CITT code |         | [Genomic Condition Codes](ValueSet-genomic-condition-codes.html)                            | *..*        | [DG1](hl7v2.html#dg1)-3           | [ServiceRequest](StructureDefinition-ServiceRequest.html).reasonCode                                                            |                                                                                                                             |
+{:.grid}
 
 ## Specimen
 
@@ -61,6 +64,7 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 | Specimen ID                                           | 80398-1 |                                                              | 0..*        | [SPM](hl7v2.html#spm)             | specimen                      | [Specimen](StructureDefinition-Specimen.html).identifier[PlacerSpecimenNumber]   |
 | Specimen Accession Number                             | 80398-1 | [Accession Number](StructureDefinition-AccessionNumber.html) | 0..*        | [SPM](hl7v2.html#spm)             | specimen                      | [Specimen](StructureDefinition-Specimen.html).accessionIdentifier                |
 | Shipment Tracking Number                              | 97209-1 | [Shipment Tracking Number](StructureDefinition-ShipmentTrackingNumber.html)                                                         |             |                                   |                               | [Specimen](StructureDefinition-Specimen.html).identifier[ShipmentTrackingNumber] |                                                                                |
+{:.grid}
 
 Note: it is likely that source systems will use ORM_01 and not include specimen details. In this case it is suggested that the specimen details are captured as 'Ask at Order Entry Questions' and so provided as OBX segments.
 
@@ -81,3 +85,4 @@ See also [Domain Archetype and Panels](DDD-Overview.html#domain-archetype-and-pa
 | - Patient gestation                                                    | SNOMED 598151000005105 |                                      | 0..1        | [OBX](hl7v2.html#obx)  | NM                | [Observation](StructureDefinition-Observation.html).valueQuantity        |
 | Is this test for a pregnancy loss?                                     | SNOMED 17369002        | [YesNoUnknown](ValueSet-YNU.html)    | 0..1        | [OBX](hl7v2.html#obx)  | CE                 | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |                                                                          |
 | Is this test for a deceased infant?                                    | SNOMED 419099009       | [YesNoUnknown](ValueSet-YNU.html)    | 0..1        | [OBX](hl7v2.html#obx)  | CE                 | [Observation](StructureDefinition-Observation.html).valueCodeableConcept |                                                                          |
+{:.grid}

@@ -18,6 +18,7 @@ Format: NNNNNNNNNN, values include a checksum, details can be found in [NHS NUMB
 | Type                | type                |                           | http://terminology.hl7.org/CodeSystem/v2-0203#NH | CX.5      | NH           | -          |
 | Assigning Authority | assigner.identifier |                           |                                                  | CX.6      | NHS          | -          |
 | System              | system              | 2.16.840.1.113883.2.1.4.1 | **https://fhir.nhs.uk/Id/nhs-number**            | N/a       | N/a          | -          |
+{:.grid}
 
 ### CHI Number (Scotland)
 
@@ -29,6 +30,7 @@ Format: NNNNNNNNNN, values include a checksum, details can be found in [NHS NUMB
 | Type                | type                |                                   | http://terminology.hl7.org/CodeSystem/v2-0203#NH | CX.5      | NH           | -          |
 | Assigning Authority | assigner.identifier |                                   |                                                  | CX.6      | CHI          | -          |
 | System              | system              | 2.16.840.1.113883.2.1.3.2.4.16.53 | **urn:oid:2.16.840.1.113883.2.1.3.2.4.16.53**    | N/a       | N/a          | -          |
+{:.grid}
 
 ### Health and Care Number (Northern Ireland)
 
@@ -40,3 +42,4 @@ Format: NNNNNNNNNN, values include a checksum, details can be found in [NHS NUMB
 | Type                | type                |                           | http://terminology.hl7.org/CodeSystem/v2-0203#NH | CX.5      | NH           | -        |
 | Assigning Authority | assigner.identifier |                           |                                                  | CX.6      | HSC          | -        |
 | System              | system              |  | **https://fhir.nhs.uk/Id/hsc-number**            | N/a       | N/a          |          |
+{:.grid}
