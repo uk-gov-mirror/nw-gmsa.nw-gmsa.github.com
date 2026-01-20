@@ -32,7 +32,7 @@ graph TD
 
 ### Data Model
 
-This model is based on a merge of NHS England Genomcis and AU eRequesting.
+This model is based on a merge of NHS England Genomcis and [AU eRequesting Task Diagnostic Request](https://build.fhir.org/ig/hl7au/au-fhir-erequesting/StructureDefinition-au-erequesting-task-diagnosticrequest.html).
 
 | FHIR Task element                     | Value Set / Data Type                                                                                                                                | Cardinality | Reference                                                 |
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|-----------------------------------------------------------|
