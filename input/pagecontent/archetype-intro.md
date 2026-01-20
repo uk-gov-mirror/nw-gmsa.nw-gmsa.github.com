@@ -40,6 +40,7 @@ A **Domain Event** reflects key interactions in Domain-Driven Design; ideally, e
 | Laboratory Report           | HL7 Lab Results Interface (extends HL7 v2 ORU_R01) | HL7 v2 Segment    | HL7 v2 Event Message |
 | Laboratory Order and Report | Genomic Reporting - HL7 FHIR Profile               | HL7 FHIR Resource | FHIR Workflow        |
 |                             | Genomic Module - openEHR Archetype                 |                   |                      |
+{:.grid}
 
 In genomics, all these **archetype** definitions are interrelated and **designed to be mutually compatible**.
 

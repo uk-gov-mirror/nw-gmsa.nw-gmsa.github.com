@@ -16,6 +16,7 @@ Both guides are effectively merged in this guide and applied to both HL7 v2 and 
 | OBX (type = ED) | DocumentReference | DocumentEntry | Digital Health and Care Scotland and IHE Europe         | 
 | ORC             | ServiceRequest    |               | Digital Health and Care Wales (v2)                      |
 | OBR             | DiagnosticReport  |               | Digital Health and Care Wales (v2)                      | 
+{:.grid}
 
 This is also conformant with [HL7 UK Core](https://simplifier.net/guide/ukcoreversionhistory?version=current), which this extends.
 
@@ -33,8 +34,6 @@ Changes to v2 and FHIR:
 ### Example
 
 
-
-
 ### Conversion Table
 
 | Organisation                                    | Assigning Authority - ODS Code (All) | Type (All) | System (FHIR) | OID (FHIR, v3 and IHE) | Alternate name                       | 
@@ -43,7 +42,7 @@ Changes to v2 and FHIR:
 | Liverpool Women’s Hospital NHS Foundation Trust | REP                                  | MR         |               |                        |                                      |
 | The Christie NHS Foundation Trust               | RBV                                  | MR         |               |                        |                                      |
 | Manchester University NHS Foundation Trust      | ROA                                  | MR         |               |                        | Equivalent to internal v2 type = EPI |
-
+{:.grid}
 
 ## Encounter (PV1) 
 
@@ -53,6 +52,7 @@ Changes to v2 and FHIR:
 | Liverpool Women’s Hospital NHS Foundation Trust | REP                                  | AN         |               |                        |                |
 | The Christie NHS Foundation Trust               | RBV                                  | AN         |               |                        |                |
 | Manchester University NHS Foundation Trust      | ROA                                  | AN         |               |                        |                |
+{:.grid}
 
 ## Observation (OBX)
 
@@ -67,12 +67,14 @@ Changes to v2 and FHIR:
 | The Christie NHS Foundation Trust                   | RBV                                  | PLAC         |                                             |                        |                |
 | Manchester University NHS Foundation Trust          | ROA                                  | PLAC         |                                             |                        |                |
 | North West Genomic Medicine Service Alliance (GMSA) | 699X0                                | FILL       | https://fhir.nw-gmsa.nhs.uk/Id/FillerNumber |                        |                |
+{:.grid}
 
 ## DiagnosticReport
 
 | Organisation                                        | Assigning Authority - ODS Code (All) | Type (All) | System (FHIR)                                | OID (FHIR, v3 and IHE) | Alternate name | 
 |-----------------------------------------------------|--------------------------------------|------------|----------------------------------------------|------------------------|----------------|
 | North West Genomic Medicine Service Alliance (GMSA) | 699X0                                |            | https://fhir.nw-gmsa.nhs.uk/Id/GenomicReport |                        |                |
+{:.grid}
 
 ## Specimen
 
@@ -88,6 +90,7 @@ Changes to v2 and FHIR:
 |                                                     | ROA                                  | ASCN       |                                                    |                        |                |
 | North West Genomic Medicine Service Alliance (GMSA) | 699X0                                | SID        | https://fhir.nw-gmsa.nhs.uk/Id/Specimen            |                        |                |
 |                                                     | 699X0                                | ASCN       | https://fhir.nw-gmsa.nhs.uk/Id/AccessionIdentifier |                        |                |
+{:.grid}
 
 ## Notes
 

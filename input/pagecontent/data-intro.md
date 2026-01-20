@@ -43,6 +43,7 @@ The **Archetype** follows the **Domain Archetype** concept from [Data Mesh](http
 |                   | Genomic Reporting - HL7 FHIR Profile               | HL7 FHIR Resource | FHIR Workflow  |
 |                   | openEHR Genomic Module Archetypes                  |                   |                |
 | Health Document   | IHE XDS Submission Set                             |                   | HL7 v2 MDM_T01 |
+{:.grid}
 
 This domain focuses on genomic and molecular diagnostics, and the main **Archetypes** are: 
 
@@ -155,6 +156,7 @@ Data contracts are expected to apply across all message and payload formats used
 | Specimen                                                    | Entity            | [Specimen](StructureDefinition-Specimen.html)                   | [SPM](hl7v2.html#spm)                                    |                                                                                  | See [IHE Specimen Event Tracking](https://wiki.ihe.net/index.php/Specimen_Event_Tracking) (HL7 v2 SET)                                 |                                                                                  |
 | Observation                                                 | Entity            | [Observation](StructureDefinition-Observation.html)             | [OBX](hl7v2.html#obx)                                    |                                                                                  |                                                                                  |                                                                                  |
 | Document Metadata                                           | Entity & Event    | [DocumentReference](StructureDefinition-DocumentReference.html) | [TXA](hl7v2.html#txa) and [OBX](hl7v2.html#obx-type--ed) | Document Entry - [DocumentReference](StructureDefinition-DocumentReference.html) | [MDM_T02](hl7v2.html#mdm_t02-original-document-notification-and-content)         | See [IHE MHD ITI-105](https://profiles.ihe.net/ITI/MHD/ITI-105.html)             |
+{:.grid}
 
 ### Data Contract Issues and Change Process
 

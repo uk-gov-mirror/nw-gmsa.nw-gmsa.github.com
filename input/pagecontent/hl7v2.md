@@ -35,6 +35,7 @@ Content-Type: application/hl7-v2+er7
 | --- [OBX](#obx)           | 0..*        |                                                         |
 | - **SPECIMEN**            | 0..*        | Conditional - required for complete order               |
 | -- [SPM](#spm)            | 0..1        |                                                         |
+{:.grid}
 
 ## ORU_R01 Unsolicited transmission of an observation message
 
@@ -73,6 +74,7 @@ Content-Type: application/hl7-v2+er7
 | - [OBR](#obr)         | 1..*        |                                                         |
 | -- **OBSERVATION**    | 1..*        |                                                         |
 | -- [OBX](#obx)        | 1..*        |                                                         |
+{:.grid}
 
 <!--
 ### MASTER HL7 REPORTING PANEL
@@ -127,7 +129,7 @@ See also which are functionally equivalent and have a similar data model:
 | [TXA](#txa)   | 1..1        |                                                         |
 | **OBXNTE**    | 1..*        |                                                         |
 | - [OBX](#obx) | 1..1        |                                                         |
-
+{:.grid}
 
 ## Segments
 
@@ -149,6 +151,7 @@ This is based on the definition of MSH from [NHS England HL7 v2 ADT Message Spec
 | MSH-11    | Processing ID                      |             | R           |                                                                                                                         | P                                                                                                                               |
 | MSH-12    | Version ID                         |             | R           |                                                                                                                         | 2.5.1                                                                                                                           |
 | MSH-13    | Accept AcknowledgmentType          |             | R           |                                                                                                                         | AL                                                                                                                              |
+{:.grid}
 
 ### PID
 
@@ -164,6 +167,7 @@ This is based on the definition of PID from [NHS England HL7 v2 ADT Message Spec
 | PID-11    | Patient Address                    |           | R           |                                                                                                                               | 1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST                                                                                    |
 | PID-13    | Phone Number - Home                |           | R           |                                                                                                                               | 01656 123123^PRN^PH~07927655295^ORN^CP^NET^X.400^abc@home.com~01656 123123~01656123123^PRN^PH^^^abc@home.com~01656123123^PRN^PH |
 | PID-32    | Identity Reliability Code          |           | O           | Mandatory if the the NHS Number tracing status is not known.                                                                  | 01                                                                                                                              |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pid-to-patient.html" _target="_blank">PID to FHIR Patient</a> 
@@ -195,6 +199,7 @@ This is based on the definition of PV1 from [NHS England HL7 v2 ADT Message Spec
 | PV1-10    | Hospital Service          |             | R           | [Service](ValueSet-service.html)                                                  | 311                                           |
 | PV1-17    | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC             |  
 | PV1-19    | Visit Number              | [CX](#cx)   | O - SHOULD  | [Hospital Provider Spell Identifier](StructureDefinition-HospitalProviderSpellIdentifier.html)                            | 12345^^^R0A                                   |                                    |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pv1-to-encounter.html" _target="_blank">PV1 to FHIR Encounter</a> 
@@ -224,6 +229,7 @@ This is based on the definition of ORC from [Digital Health and Care Wales - HL7
 | ORC-9     | Date/Time of Transaction | TS          | O           |                                                                                   |                                                                                                                                 |
 | ORC-12    | Ordering Provider        | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC                                                                                               |
 | ORC-21    | Ordering Facility Name   | [XON](#xon) | R           | [Organisation Code](StructureDefinition-OrganisationCode.html)                    | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS                                                                                                                                |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-orc-to-servicerequest.html" _target="_blank">ORC to FHIR ServiceRequest</a> 
@@ -257,7 +263,7 @@ This is based on the definition of OBR from [Digital Health and Care Wales - HL7
 | OBR-32    | Principal Result Interpreter       | [NDL](#ndl) | O - SHOULD    | DiagnosticReport.resultsInterpreter[primaryReporter]                       |                                                                             |
 | OBR-33    | Assistant Result Interpreter       | [NDL](#ndl) | O - SHOULD    | DiagnosticReport.resultsInterpreter[secondaryReporter]                     |                                                                             |
 | OBR-34    | Technician                         | [NDL](#ndl) | O - SHOULD    | DiagnosticReport.performer[operator]                                       |                                                                             |                                                                             |
-
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion OML_O21:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-obr-to-servicerequest.html" _target="_blank">OBR to FHIR ServiceRequest</a> 
@@ -285,7 +291,7 @@ Multiple NTE should be converted to a single FHIR Annotation using markdown
 | NTE-2     | Source of Comment |           |             |             |                | 
 | NTE-3     | Comment           |           |             |             |                | 
 | NTE-4     | Comment Type      |           |             |             |                | 
-
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion OML_O21:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-nte-to-servicerequest.html" _target="_blank">NTE to FHIR ServiceRequest</a> 
@@ -327,6 +333,7 @@ NTE|19||Contact/Bleep No: 123
 |-----------|-------------------|-----------|-------------|-------------|----------------|
 | DG1-3     | Diagnosis Code    | [CE](#ce)          |             |             |                | 
 | DG1-4     | Diagnosis Description |           |             |             |                | 
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-dg1-to-condition.html" _target="_blank">DG1 to FHIR Condition</a> Note: In orders this is likely to be a coded entry in ServiceRequest.reasonCode as only a code is present.
@@ -354,7 +361,7 @@ This is based on the definition of OBX from [Digital Health and Care Wales - HL7
 | OBX-5     | Observation Value            | Varies    | R           |                         | LN^Yes^LA33-6 (value type=CE)<br/>UK3096580215 (value type=ST)<br/>20250512103726+0000 (value type=DT)          |
 | OBX-11    | Observation Result Status    |           | R           |                         | F                                                                                                               |
 | OBX-14    | Date/Time of the Observation | TS        | O - SHOULD  |                         | 20190514102417+0000                                                                                             |
-
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-obx-to-observation.html" _target="_blank">OBX to FHIR Observation</a> 
@@ -390,6 +397,7 @@ This is based on the definition of OBX from [Digital Health and Care Wales - HL7
 | OBX-5     | Observation Value            |         | R           |                                                          | MOL^IM^PDF^Base64^JVBERI0X...        |
 | OBX-11    | Observation Result Status    |           | R           |                                                          | F                                    |
 | OBX-14    | Date/Time of the Observation |           | O - SHOULD  |                                                          | 20190514102417+0000                  |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-obx-to-documentreference.html" _target="_blank">OBX to FHIR DocumentReference</a> 
@@ -421,6 +429,7 @@ This is based on the definition of SPM from [Digital Health and Care Wales - HL7
 | SPM-20    | Specimen Availability         |           | O           |                                                                             |                                                    |
 | SPM-30    | Accession ID                  |           | O           | [Accession Number](StructureDefinition-AccessionNumber.html)                |                                                    |
 | SPM-32    | Shipment Tracking Number      |           | O           | [Shipment Tracking Number](StructureDefinition-ShipmentTrackingNumber.html) |                                                    |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-spm-to-specimen.html" _target="_blank">SPM to FHIR Specimen</a> 
@@ -440,6 +449,7 @@ This is based on the definition of SPM from [Digital Health and Care Wales - HL7
 | TXA-17    | Document Completion Status          |           | R           |                                                           | F                                    |
 | TXA-24    | Folder Assignment                   | CWE       |             | [DocumentEntry Class](ValueSet-document-entry-class.html) |                                      |                    
 | TXA-25    | Document Title                      | ST        |             |                                                           |                                      |
+{:.grid}
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-txa-to-documentreference.html" _target="_blank">TXA to DocumentReference</a> 
@@ -527,7 +537,7 @@ In addition, this includes of PL.11 to hold organisation ODS code.
 |-----------|----------------------------------|-----------|-------------|-------------------------------------------------------------------------|----------------|
 | PL.4      | Facility                         | HD        | R           | [Organisation Site Code](StructureDefinition-OrganisationSiteIdentifier.html) | R0A09               |
 | PL.11     | Assigning Authority For Location | HD        | R           | [Organisation Code](StructureDefinition-OrganisationCode.html)          | R0A            | 
-
+{:.grid}
 
 ### NDL
 
@@ -539,6 +549,7 @@ This is based on the definitions of NDL from [Royal College of Radiologists](htt
 | NDL-1.CNN.2 | Family Name | ST        | O           | Surname         |                |
 | NDL-1.CNN.3 | Given  Name | ST        | O           | Forename        |                |
 | NDL-7       | Facility    | HD        | O           | [Organisation Code](StructureDefinition-OrganisationCode.html)         |                |
+{:.grid}
 
 ### XCN
 
