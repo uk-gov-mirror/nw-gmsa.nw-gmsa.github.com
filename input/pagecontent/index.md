@@ -243,7 +243,7 @@ Collectively, the Regional Integration Engine (RIE) and the Genomic Clinical Dat
 | <b>Specimen Collection</b> | [Specimen Event Tracking (SET)](SET.html)                            |                                                                                                                                    |                                                                         | [Specimen](StructureDefinition-Specimen.html)                                                     |
 | Other                      | [Patient Administration](PAM.html)                                   | HL7 FHIR [IHE PDQm ITI-78](QEDm.html)                                                                                              |                                                                         | [Patient](StructureDefinition-Patient.html) <br/> [Encounter](StructureDefinition-Encounter.html) |
 |                            | [Authorisation (OAuth2](authorisation.html)                          | OAUth2 [IHE IUA ITI-103 ITI-71 ITI-102](IUA.html)                                                                                  |                                                                         |                                                                                                   | 
-
+{:.grid}
 
 
 ## SNOMED CT
@@ -264,4 +264,5 @@ UK edition of SNOMED (83821000000107)
 |                | Liverpool Womens NHS Foundation Trust        |
 |                | The Christie NHS Foundation Trust            |
 |                | NHS England                                  |
-| Staff Engineer | Kevin Mayfield, Aire Logic & Mayfield IS     |      
+| Staff Engineer | Kevin Mayfield, Aire Logic & Mayfield IS     |  
+{:.grid}

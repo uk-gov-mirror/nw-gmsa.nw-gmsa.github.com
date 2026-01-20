@@ -47,6 +47,7 @@ This model is based on a merge of NHS England Genomcis and [AU eRequesting Task 
 | for                                   | identifier [NHS Number](StructureDefinition-NHSNumber.html)                                                                                          | 1..1        | [Patient](StructureDefinition-Patient.html)               |
 | requester                             | identifier [Organisation Code ](StructureDefinition-OrganisationCode.html)                                                                           | 1..1        | Preferred [Organization][StructureDefinition-Organization.html]     |
 | owner                                 | identifier [Organisation Code ](StructureDefinition-OrganisationCode.html)                                                                           | 0..1        | Preferred [Organization][StructureDefinition-Organization.html]     |
+{:.grid}
 
 No SNOMED codes for genomic diagnostic testing found, codes are potentially children of `386053000 Evaluation procedure` 
 
@@ -97,6 +98,7 @@ This model is based on a merge of NHS England Genomcis and AU eRequesting.
 | for                                          | identifier [NHS Number](StructureDefinition-NHSNumber.html)                                                                                     | 1..1        | [Patient](StructureDefinition-Patient.html)                     |
 | requester                                    | identifier [Organisation Code ](StructureDefinition-OrganisationCode.html)                                                                      | 1..1        | Preferred [Organization][StructureDefinition-Organization.html] |
 | owner                                        | identifier [Organisation Code ](StructureDefinition-OrganisationCode.html)                                                                      | 0..1        | Preferred [Organization][StructureDefinition-Organization.html]           |
+{:.grid}
 
 SNOMED codes for specimen collection exist, e.g. `2620001000004108 Specimen collection procedure`.
 
