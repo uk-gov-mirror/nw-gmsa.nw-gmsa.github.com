@@ -41,6 +41,7 @@ graph LR
 - Not a common pattern used internationally for 3rd party interoperability
 - Is not defined in the UK (i.e. HL7 UK Core) to the level of HL7 v2
 - More variations exist than HL7 v2
+- Endpoint systems are likely to be on v2 and so middleware is required to perform v2 to/from FHIR conversions
 
 ## HL7 FHIR RESTful Transaction and POST/PUT
 
@@ -66,6 +67,7 @@ graph LR
 - Not easy to define payloads, conformance is often done at resource level
 - Resources are not defined in the UK (i.e. HL7 UK Core) to the level of HL7 v2
 - More variations exist than HL7 v2
+- Endpoint systems are likely to be on v2 and so middleware is required to perform v2 to/from FHIR conversions
 
 ## HL7 FHIR Workflow
 
