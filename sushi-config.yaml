@@ -135,8 +135,8 @@ pages:
   IUA.md:
     title: OAuth2
     generation: markdown
-  workflow.md:
-    title: Workflow Options
+  interaction-options.md:
+    title: Workflow/Interaction Options
     generation: markdown
   identifiers.md:
     title: Identifiers and Codes
