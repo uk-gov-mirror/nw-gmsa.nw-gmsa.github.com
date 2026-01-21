@@ -227,16 +227,16 @@ graph LR
     TIE --> |6. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
-### Regional Data and Document Sharing - Clinical Data Repository (CDR)
+### Regional Data and Document Sharing - Genomic Data Repository (GDR)
 
 Traditional messaging focuses solely on communication between two systems—the order placer and the order filler—and does not support wider sharing of genomic data across multiple organisations such as NHS Trusts, GP practices, or other clinical teams.
 
-To address this, a central Genomic Clinical Data Repository (CDR) will be established. This repository will provide a read-only [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html) and will be populated via data flows through the RIE.
+To address this, a central Genomic Data Repository (GDR) will be established. This repository will provide a read-only [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html) and will be populated via data flows through the RIE.
 
 ```mermaid
 graph TD
     subgraph DataContracts[Data Contract]
-        CDR["Genomic Clinical Data Repository (CDR)"]
+        CDR["Genomic Data Repository (GDR)"]
         NHSA[<b>Data Consumer</b><br/>NHS GP/Trust/Board/ICS A]
         NHSB[<b>Document Consumer</b><br/>NHS GP/Trust/Board/ICS B] 
 
@@ -264,7 +264,7 @@ The CDR is expected to adopt emerging IHE Europe standards for clinical data and
 
 ### Health Information Exchange (HIE)
 
-Collectively, the Regional Integration Engine (RIE) and the Genomic Clinical Data Repository (CDR) form a Health Information Exchange (HIE) system.
+Collectively, the Regional Integration Engine (RIE) and the Genomic Data Repository (GDR) form a Health Information Exchange (HIE) system.
 
 <figure>
 {%include overview-hie.svg%}
