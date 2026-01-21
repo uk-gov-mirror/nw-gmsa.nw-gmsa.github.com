@@ -69,7 +69,7 @@ graph LR
 - More variations exist than HL7 v2
 - Endpoint systems are likely to be on v2 and so middleware is required to perform v2 to/from FHIR conversions
 
-## HL7 FHIR Workflow
+## HL7 FHIR Workflow and HL7 FHIR REST read only APIs
 
 Is a modernisation of all the previous methods, full FHIR workflow requires both the Order Placer and Order Filler to have a FHIR Repository. Examples:
 
