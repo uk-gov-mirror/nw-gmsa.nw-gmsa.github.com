@@ -86,7 +86,7 @@ Note: FHIR workflow described is based on the same FHIR Workflow described in [F
 | No FHIR Repository          | [HL7 v2 Message](#hl7-v2-message)              |                                                                                        | 
 |                             | [HL7 FHIR Message](#hl7-fhir-message)          |                                                                                        |
 |                             | FHIR Transaction is used internally only       | [HL7 FHIR RESTful Transaction and POST/PUT](#hl7-fhir-restful-transaction-and-postput) |
-| Has FHIR Repository         | not applicable                                 | Not supported, FHIR Transaction and POST/PUT must be used (above).                     |                                                                      |
+| Has FHIR Repository         | not applicable                                 | Not supported, FHIR Transaction and POST/PUT must be used (above).                     |
 {:.grid}
 
 ```mermaid
