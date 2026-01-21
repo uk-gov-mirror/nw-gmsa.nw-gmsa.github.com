@@ -89,7 +89,7 @@ sequenceDiagram
         OrderFiller ->> OrderPlacer: Task Diagnostic Request - Event Notification (FHIR Task (accepted))
         Note over OrderFiller: Starts Testing
          OrderFiller ->> OrderPlacer: Task Diagnostic Request - Event Notification (FHIR Task (in-progress))
-        Note over OrderFiller: Interpretation of reusults and writes Interprettation/Report
+        Note over OrderFiller: Interpretation of results and write Report
         OrderFiller ->> OrderPlacer: Task DiagnosticRequest - Event Notification (FHIR Task (completed))
         OrderPlacer ->> OrderFiller: Retrieve Laboratory Report (FHIR RESTful API Query)
     else is rejected 
