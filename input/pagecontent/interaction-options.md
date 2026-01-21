@@ -17,7 +17,7 @@ graph LR
 ### Disadvantages
 
 - Many variations exist
-- Often using early HL7 v2 and this often excludes Specimen/SPM information
+- Often using early HL7 v2 and this often excludes Specimen/SPM information. Differences in v2 versions are handled by Trust Integration Engines, lack of Specimen/SPM information may be more problematic.
 - Difficult for new market entrants to adopt
 
 ## HL7 FHIR Message
@@ -77,16 +77,21 @@ Is a modernisation of all the previous methods, full FHIR workflow requires both
 - Order Filler LIMS: Magentus.
 - Order Filler Middleware: NW Genomics Data Repository + Regional Integration Engine and NHS England Genomic Order Management System.
 
-Note: FHIR workflow described is based on the same FHIR Workflow described in [FHIR Genomics Implementation Guide - Interactions](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/Design/Interactions), however the mechanism for step 1 will vary. 
+Note: FHIR workflow described is based on the same FHIR Workflow described in [FHIR Genomics Implementation Guide - Interactions](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/Design/Interactions), in FHIR Worflow documentation this is known as [Option H: POST of Task to a workflow broker](https://build.fhir.org/workflow-management.html#optionh)
+
+<img style="padding:3px;width:80%;" src="workflow-optionh.png" alt="FHIR Workflow - Option H"/>
+<br clear="all">
+
+However the mechanisms for step 1 can vary. 
 
 ### Step 1 Variations
 
-| Order Placer/Filler Options | Methods to post to NW Genomics FHIR Repository | Methods to post to NHS England Genomics Order Management System                        |
-|-----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
-| No FHIR Repository          | [HL7 v2 Message](#hl7-v2-message)              |                                                                                        | 
-|                             | [HL7 FHIR Message](#hl7-fhir-message)          |                                                                                        |
-|                             | FHIR Transaction is used internally only       | [HL7 FHIR RESTful Transaction and POST/PUT](#hl7-fhir-restful-transaction-and-postput) |
-| Has FHIR Repository         | not applicable                                 | Not supported, FHIR Transaction and POST/PUT must be used (above).                     |
+| Order Placer/Filler Options | Methods to post to NW Genomics FHIR Repository                  | Methods to post to NHS England Genomics Order Management System                        |
+|-----------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| No FHIR Repository          | Send [HL7 v2 Message](#hl7-v2-message)                          |                                                                                        | 
+|                             | Send [HL7 FHIR Message](#hl7-fhir-message)                      |                                                                                        |
+|                             | (FHIR Transaction is used internally to store v2/FHIR Messages) | [HL7 FHIR RESTful Transaction and POST/PUT](#hl7-fhir-restful-transaction-and-postput) |
+| Has FHIR Repository         | not applicable                                                  | Not supported, FHIR Transaction and POST/PUT must be used (above).                     |
 {:.grid}
 
 ```mermaid
