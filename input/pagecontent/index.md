@@ -25,8 +25,8 @@ Not all interactions will necessarily be electronic. For example, reports may be
 
 ```mermaid
 graph LR
-    OrderPlacer[<b>Order Placer</b>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
-    OrderFiller[<b>Order Filler</b>LIMS] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
 In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this point-to-point messaging.
@@ -34,17 +34,62 @@ In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this 
 ```mermaid
 graph LR
 
-    OrderPlacer[<b>Order Placer</b>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
     TIE --> |2. General Order<br/>HL7 v2 ORM_O01| OrderFiller
-    OrderFiller[<b>Order Filler</b>LIMS] --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
     TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
 TIEs typically handle transformations between the different HL7 v2 variants used by Order Placers (e.g. EPRs) and Order Fillers (e.g. LIMS).
 
-### Regional Message Routing - Regional Integration Engine (RIE)
+### Initial Interoperability For Existing Messaging Flows
 
-The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use.
+Existing interfaces to NW Genomics LIMS will be migrated to use the Regional Integration Engine (RIE). The RIE performs similar functions to NHS Trust TIEs, and in the interim phase will perform pass through routing of messages only.
+
+```mermaid
+graph LR
+
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
+    TIE --> |2. General Order<br/>HL7 v2 ORM_O01| RIE
+    RIE["Regional Integration Engine (RIE)"] --> |3. General Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
+    RIE --> |5. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
+    TIE --> |6. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer
+```
+
+### Regional Interoperability - Regional Integration Engine (RIE)
+
+The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use. Following traditional point-to-point messaging, we can quickly end up with interoperability looking like this:
+
+```mermaid
+graph LR
+
+    OrderPlacerA[<b>Order Placer</b><br/>NHS Trust A]
+    OrderPlacerB[<b>Order Placer</b><br/>NHS Trust B]
+    OrderPlacerC[<b>Order Placer</b><br/>NHS Trust C]
+
+    LIMSA[<b>Order Filler</b><br>LIMS iGene]
+    LIMSB[<b>Order Filler</b><br>LIMS Shire]
+    LIMSC[<b>Order Filler</b><br>LIMS C]
+    LIMSD[<b>Order Filler</b><br>LIMS D]
+
+    OrderPlacerA --> LIMSA
+    OrderPlacerA --> LIMSB
+    OrderPlacerA --> LIMSC
+    OrderPlacerA --> LIMSD
+
+    OrderPlacerB --> LIMSA
+    OrderPlacerB --> LIMSB
+    OrderPlacerB --> LIMSC
+    OrderPlacerB --> LIMSD
+
+    OrderPlacerC --> LIMSA
+    OrderPlacerC --> LIMSB
+    OrderPlacerC --> LIMSC
+    OrderPlacerC --> LIMSD
+```
+
+To reduce this complexity, the RIE will route orders and reports between NHS Trusts ordering systems and North West Genomcis LIMS. Standards will be introduced between the RIE and the NHS Trust TIEs, for all message formats and interactions. The different formats will follow a single data model which is called a 'Data Contract'. 
 
 The diagram shows a subset of these interactions for laboratory orders:
 
@@ -123,8 +168,6 @@ graph LR
     RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| APPB
     RIE --> APPA
 ```
-
-
 
 The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
 
