@@ -39,7 +39,7 @@ graph LR
 ### Disadvantages
 
 - Not a common pattern used internationally for 3rd party interoperability
-- Is not defined in the UK to the level of HL7 v2
+- Is not defined in the UK (i.e. HL7 UK Core) to the level of HL7 v2
 - More variations exist than HL7 v2
 
 ## HL7 FHIR RESTful Transaction and POST/PUT
@@ -61,7 +61,7 @@ graph LR
 - Consumer business processing is moved the producer and this can be quite difficult to follow 
 - Not a common pattern used internationally for 3rd party interoperability
 - Not easy to define payloads, conformance is often done at resource level
-- Resources are not defined in the UK to the level of HL7 v2
+- Resources are not defined in the UK (i.e. HL7 UK Core) to the level of HL7 v2
 - More variations exist than HL7 v2
 
 ## HL7 FHIR Workflow
@@ -99,8 +99,11 @@ sequenceDiagram
 - Allows more conversational workflows and better order + specimen management.
 - Is the HL7 suggested method for modernising HL7 v2.
 - Can be combined with existing workflow, the query to get laboratory order/report can still be HL7 v2
+- Works with [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/) for Pub/Sub
 
 ### Disadvantages
 
 - Data standards followed in EPR and LIMS are mostly based on US Gov and HL7 Australia standards.
-- Limited understanding of this workflow, most NHS adoptions of FHIR has been FHIR Messaging. 
+  - Note: these are all UK Core conformant as this is defined at base level.
+- Limited understanding of this workflow, most NHS adoptions of FHIR has been FHIR Messaging
+- No event-notification has been defined, expect NHS Trusts to favour traditional routing such as distribution lists, etc.
