@@ -25,8 +25,8 @@ Not all interactions will necessarily be electronic. For example, reports may be
 
 ```mermaid
 graph LR
-    OrderPlacer[<b>Order Placer</b>] --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
-    OrderFiller[<b>Order Filler</b>] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+    OrderPlacer[<b>Order Placer</b>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
+    OrderFiller[<b>Order Filler</b>LIMS] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
 In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this point-to-point messaging.
@@ -34,9 +34,9 @@ In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this 
 ```mermaid
 graph LR
 
-    OrderPlacer[<b>Order Placer</b>] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
+    OrderPlacer[<b>Order Placer</b>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
     TIE --> |2. General Order<br/>HL7 v2 ORM_O01| OrderFiller
-    OrderFiller[<b>Order Filler</b>] --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
+    OrderFiller[<b>Order Filler</b>LIMS] --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
     TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
@@ -51,27 +51,60 @@ The diagram shows a subset of these interactions for laboratory orders:
 ```mermaid
 graph LR
   
-    
-    NHSA --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
+    subgraph NHSTrustA[NHS Trust A]
+        NHSA[<b>Order Placer</b><br/>EPR]
+      
+    end    
+
+    subgraph NHSTrustB[NHS Trust B]
+        NHSB[<b>Order Placer</b><br/>EPR] 
+        
+    end
+    subgraph DataContracts[Data Contract]
+        TIEA["NHS Trust A Integration Engine (TIE)"]
+        TIEB["NHS Trust B Integration Engine (TIE)"]
+        RIE["Regional Integration Engine (RIE)"]
+    end
+    NHSA --> |Laboratory Order<br/>HL7 ORM_O01| TIEA
+    NHSB --> |Laboratory Order<br/>HL7 OML_O21| TIEB 
+    TIEA --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
+    TIEB --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
+ 
     NHSB --> RIE
     RIE --> |Laboratory Order<br/>HL7 v2 OML_O21| LIMSA
     RIE --> LIMSB
-
-    subgraph DataContracts[Data Contract]
-    RIE["Regional Integration Engine (RIE)"]
-        NHSA[<b>Order Placer</b><br/>NHS Trust A]
-        NHSB[<b>Order Placer</b><br/>NHS Trust B] 
-    end 
+    RIE --> LIMSC
+    RIE --> LIMSD
+     
     LIMSA[<b>Order Filler</b><br>LIMS iGene]
     LIMSB[<b>Order Filler</b><br>LIMS Shire]
-    
+    LIMSC[<b>Order Filler</b><br>LIMS C]
+    LIMSD[<b>Order Filler</b><br>LIMS D]
 ```
 
 Equivalent patterns apply to laboratory reports.
 
 ```mermaid
 graph LR
-    
+    subgraph NHSTrustA[NHS Trust A]
+        NHSA[<b>Order Placer</b><br/>EPR]
+    end    
+
+    subgraph NHSTrustB[NHS Trust B]
+        NHSB[<b>Order Placer</b><br/>EPR] 
+    end
+
+    subgraph DataContracts[Data Contract]
+        RIE["Regional Integration Engine (RIE)"]
+        TIEA["NHS Trust A Integration Engine (TIE)"]
+        TIEB["NHS Trust B Integration Engine (TIE)"]
+  
+    end 
+    ICSA[NHS ICS A]
+    ICSB[NHS ICS B]
+    APPA[NW Genomics Application 1]
+    APPB[NW Genomics Application 2]
+
     LIMSA[<b>Order Filler</b><br>LIMS iGene]
     LIMSB[<b>Order Filler</b><br>LIMS Shire]
     LIMSC[<b>Order Filler</b><br>LIMS C]
@@ -81,22 +114,14 @@ graph LR
     LIMSB --> RIE
     LIMSC --> RIE
     LIMSD --> RIE
-    RIE["Regional Integration Engine (RIE)"] --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| NHSA
-    RIE --> NHSB
+    RIE["Regional Integration Engine (RIE)"] --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| TIEA
+    RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| TIEB
+    TIEA --> |Laboratory Report<br/>HL7 v2 ORU_R01| NHSA
+    TIEB --> |Laboratory Report<br/>HL7 v2 ORU_R01| NHSB
     RIE --> |Document Notification<br/>HL7 MDM_T02<br/>IHE XDS/MHD| ICSA
     RIE --> ICSB
     RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| APPB
     RIE --> APPA
-
-    subgraph DataContracts[Data Contract]
-        RIE["Regional Integration Engine (RIE)"]
-        NHSA[<b>Order Placer</b><br/>NHS Trust/Board A]
-        NHSB[<b>Order Placer</b><br/>NHS Trust/Board B] 
-        ICSA[NHS ICS A]
-        ICSB[NHS ICS B]
-        APPA[NW Genomics Application 1]
-        APPB[NW Genomics Application 2]
-    end 
 ```
 
 
