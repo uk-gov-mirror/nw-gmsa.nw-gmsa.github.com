@@ -48,8 +48,10 @@ Similar to the previous options but without the definition of payloads.
 
 ```mermaid
 graph LR
-    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |HL7 FHIR RESTful transaction and POST/PUT| OrderFiller
-    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |HL7 FHIR RESTful transaction and POST/PUT| OrderPlacer  
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |HL7 FHIR RESTful transaction| OrderFiller
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |HL7 FHIR RESTful GET/POST/PUT| OrderFiller
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |HL7 FHIR RESTful transaction| OrderPlacer  
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |HL7 FHIR RESTful GET/POST/PUT| OrderPlacer   
 ```
 
 ### Advantages
@@ -59,6 +61,7 @@ graph LR
 ### Disadvantages
 
 - Consumer business processing is moved the producer and this can be quite difficult to follow 
+- Can be a very `chatty` interface due to lookups (GET) needed for POST or PUT requests. 
 - Not a common pattern used internationally for 3rd party interoperability
 - Not easy to define payloads, conformance is often done at resource level
 - Resources are not defined in the UK (i.e. HL7 UK Core) to the level of HL7 v2
