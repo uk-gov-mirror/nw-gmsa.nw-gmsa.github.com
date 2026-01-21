@@ -42,7 +42,7 @@ graph LR
 
 TIEs typically handle transformations between the different HL7 v2 variants used by Order Placers (e.g. EPRs) and Order Fillers (e.g. LIMS).
 
-### Initial Interoperability For Existing Messaging Flows
+### Regional Integration Engine (RIE) – Initial Interoperability For Existing Messaging Flows
 
 Existing interfaces to NW Genomics LIMS will be migrated to use the Regional Integration Engine (RIE). The RIE performs similar functions to NHS Trust TIEs, and in the interim phase will perform pass through routing of messages only.
 
@@ -57,9 +57,9 @@ graph LR
     TIE --> |6. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer
 ```
 
-### Regional Interoperability - Regional Integration Engine (RIE)
+### Regional Integration Engine (RIE) - Regional Interoperability
 
-The regional service may support more than 20 NHS Trusts, each using different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use. Following traditional point-to-point messaging, we can quickly end up with interoperability looking like this:
+The regional genomic service supports more than 20 NHS Trusts, each potentially operating different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use. Under a traditional point-to-point integration model, this rapidly leads to a highly complex and fragile integration landscape.
 
 ```mermaid
 graph LR
@@ -89,9 +89,12 @@ graph LR
     OrderPlacerC --> LIMSD
 ```
 
-To reduce this complexity, the RIE will route orders and reports between NHS Trusts ordering systems and North West Genomcis LIMS. Standards will be introduced between the RIE and the NHS Trust TIEs, for all message formats and interactions. The different formats will follow a single data model which is called a 'Data Contract'. 
+To address this challenge, the RIE acts as a **central routing and interoperability hub**. All orders and reports are exchanged between NHS Trust ordering systems and North West Genomics LIMS platforms via the RIE.
 
-The diagram shows a subset of these interactions for laboratory orders:
+Rather than maintaining multiple bespoke integrations, each participant integrates once with the RIE. Trust Integration Engines remain responsible for transforming messages between local EPR systems and the regional standard used by the RIE.
+
+A key element of this approach is the introduction of `standardised message formats and interactions` between Trust TIEs and the RIE. These standards are based on a single, shared data model known as the `Data Contract`.
+
 
 ```mermaid
 graph LR
@@ -169,17 +172,32 @@ graph LR
     RIE --> APPA
 ```
 
+#### RIE vs Trust Integration Engine
+
+The primary distinction between a Regional Integration Engine and a Trust Integration Engine is scope:
+
+- **Trust Integration Engines** focus on internal interoperability within a single organisation.
+- The **Regional Integration Engine** operates at a regional level, providing centralised routing and orchestration across multiple organisations.
+
+This hub-and-spoke model significantly reduces integration complexity, improves maintainability, and supports consistent data quality across the region.
 The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
+
+#### Identifier and Codes (Terminology) Standardisation
 
 Because the RIE operates at a regional level, certain HL7 v2 message components must be standardised or updated. These changes ensure global uniqueness for identifiers such as:
 
-- Patient identifiers: NHS Number (England and Wales), CHI Number (Scotland), HSCN Number (Northern Ireland), and individual NHS Trusts medical record numbers
-- Order numbers (placer and filler)
-- Report numbers
-- Visit Numbers (Spell or Episode Number)
-- Specimen identifiers (inc. ascension and pathology specimen identifiers)
+- Patient identifiers: NHS Number (England and Wales), CHI Number (Scotland), HSCN Number (Northern Ireland), and local NHS Trust medical record numbers
+- Order identifiers: placer and filler order numbers
+- Report identifiers
+- Visit identifiers: spell or episode numbers
+- Specimen identifiers: including accession and pathology specimen identifiers
 
-Standard terminology sets such as SNOMED CT and LOINC will be used to define observations and orderable items. These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles (**API Contracts**):
+Standard clinical terminologies are used to ensure semantic interoperability:
+
+- SNOMED CT for clinical concepts
+- LOINC (and SNOMED CT) for laboratory observations and orderable items
+
+These requirements are outlined in the [Data Contract](data-intro.html). HL7 v2 message exchanges are aligned with HL7 v2.5.1 and the following IHE profiles (**API Contracts**):
 
 - [IHE Laboratory Testing Workflow (LTW)](TLW.html) profile
 - [IHE Inter Laboratory Workflow (ILW)](ILW.mw) profile (Future)
@@ -281,7 +299,7 @@ Collectively, the Regional Integration Engine (RIE) and the Genomic Clinical Dat
     <tr>
       <td style="background-color: #DAE8FC">&nbsp;&nbsp;</td>
       <td>Data Models (Volume 3)</td>
-      <td>NHS North West Forms, Templates, Reports and Compositions</td>
+      <td>NHS North West Forms, Templates, Reports, and Compositions</td>
       <td>Data Modeling (Detailed Technical)</td>
     </tr>
     <tr>
