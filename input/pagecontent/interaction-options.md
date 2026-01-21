@@ -112,3 +112,4 @@ sequenceDiagram
   - Note: these are all UK Core conformant as this is defined at base level.
 - Limited understanding of this workflow, most NHS adoptions of FHIR has been FHIR Messaging
 - No event-notification has been defined, expect NHS Trusts to favour traditional routing such as distribution lists, etc.
+- Endpoint systems are likely to be on v2 and so middleware is required to perform v2 to/from FHIR conversions, this is less effort than FHIR Message and Transaction.
