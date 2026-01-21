@@ -13,7 +13,7 @@ Usage: #example
 * identifier[0].value = "9012345678"
 * identifier[1].type = $v2-0203#MR
 * identifier[1].value = "Z12345"
-* identifier[1].system = "http://www.acme.org/patient/identifier"
+* identifier[1].system = "urn:oid:1.2.840.114350.1.13.611.3.7.5.737384.14"
 * identifier[1].assigner.identifier.system = $ods-code
 * identifier[1].assigner.identifier.value = "R0A"
 

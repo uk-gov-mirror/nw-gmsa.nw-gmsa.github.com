@@ -18,7 +18,7 @@ Usage: #example
 * identifier[1].assigner.identifier.value = "RBS"
 * identifier[2].type = $v2-0203#MR
 * identifier[2].value = "633"
-* identifier[2].system = "http://www.example.org/patient/identifier"
+* identifier[2].system = "urn:oid:1.2.840.114350.1.13.611.3.7.5.737384.14"
 * identifier[2].assigner.identifier.system = $ods-code
 * identifier[2].assigner.identifier.value = "R0A"
 
