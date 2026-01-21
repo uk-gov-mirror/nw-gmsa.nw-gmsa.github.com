@@ -73,20 +73,20 @@ graph LR
     LIMSC[<b>Order Filler</b><br>LIMS C]
     LIMSD[<b>Order Filler</b><br>LIMS D]
 
-    OrderPlacerA --> LIMSA
-    OrderPlacerA --> LIMSB
-    OrderPlacerA --> LIMSC
-    OrderPlacerA --> LIMSD
+    OrderPlacerA <--> LIMSA
+    OrderPlacerA <--> LIMSB
+    OrderPlacerA <--> LIMSC
+    OrderPlacerA <--> LIMSD
 
-    OrderPlacerB --> LIMSA
-    OrderPlacerB --> LIMSB
-    OrderPlacerB --> LIMSC
-    OrderPlacerB --> LIMSD
+    OrderPlacerB <--> LIMSA
+    OrderPlacerB <--> LIMSB
+    OrderPlacerB <--> LIMSC
+    OrderPlacerB <--> LIMSD
 
-    OrderPlacerC --> LIMSA
-    OrderPlacerC --> LIMSB
-    OrderPlacerC --> LIMSC
-    OrderPlacerC --> LIMSD
+    OrderPlacerC <--> LIMSA
+    OrderPlacerC <--> LIMSB
+    OrderPlacerC <--> LIMSC
+    OrderPlacerC <--> LIMSD
 ```
 
 To address this challenge, the RIE acts as a **central routing and interoperability hub**. All orders and reports are exchanged between NHS Trust ordering systems and North West Genomics LIMS platforms via the RIE.
