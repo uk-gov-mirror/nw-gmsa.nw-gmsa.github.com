@@ -69,7 +69,7 @@ graph LR
     OrderPlacerC[<b>Order Placer</b><br/>NHS Trust C]
 
     LIMSA[<b>Order Filler</b><br>LIMS iGene]
-    LIMSB[<b>Order Filler</b><br>LIMS Shire]
+    LIMSB[<b>Order Filler</b><br>LIMS B]
     LIMSC[<b>Order Filler</b><br>LIMS C]
     LIMSD[<b>Order Filler</b><br>LIMS D]
 
