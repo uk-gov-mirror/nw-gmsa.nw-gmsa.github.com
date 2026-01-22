@@ -114,6 +114,7 @@ Diagnostic Testing are ordered and performed within the region, patient can be f
 | Wrexham       | To be determined | RBS                | RBS (Alder Hey)                               | *not delivered (DWCW)*      |
 | Wrexham       | To be determined | R0A                | R0A (Manchester University)                   | *not delivered (DHCW)*      |
 | Wrexham       | To be determined | REP                | REP (Liverpool Womens)                        | *not delivered (DHCW)*      |
+{:.grid}
 
 ### Out of Area Tests (LIMS -> EPR)
 
@@ -124,6 +125,7 @@ Diagnostic Testing is performed in the North West and Ordering Facility is outsi
 | Leeds         | F81399 (QOP)     | To be determined   | *not delivered*                               | *not delivered (YHCR)*      |
 | London        | To be determined | To be determined                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
 | London        | To be determined | To be determined                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
+{:.grid}
 
 ### NHS England Test Patients
 
@@ -145,7 +147,7 @@ These patients are created in the NHS England Test Data Repository (TDR) and wer
 | [999 999 9573](Patient-9999999573.html)	                        | EDITESTPATIENT                                | TWELVE   |             | F (M)  | 1963-05-05 (1964-01-01)    |          |                                                                                     |                       |                |                |                           |                               | EX1 2SS  |
 | [999 999 9581](Patient-9999999581.html)	                        | EDITESTPATIENT                                | THIRTEEN |             | F      | 1960-01-01 (1930-05-14)    |          | B85023                                                                              |                       |                |                |                           |                               | EX2 5SE  |
 | [999 999 9603](Patient-9999999603.html)	                        | EDITESTPATIENT                                | FOURTEEN |             | M (F)  | 1984-11-06 (1939-07-05)    |          | B85023                                                                              |                       |                |                |                           |                               | ub4 0db  |
-
+{:.grid}
 
 ## Environments
 
@@ -160,7 +162,7 @@ The APIs are available on the [Health and Social Care Network (HSCN)](https://di
 | Integration Testing |                                                                                          |                                                                                  |                                                                                                                             |
 |                     | Genomics Regional Integration Engine (RIE)                                                        | https://gen-tie-test.nwgenomics.nhs.uk/gentietest/ESB                            | See [Placer Order Management [LAB-1]](LAB-1.html) and [CapabilityStatement](https://10.165.194.217/gentietest/ESB/metadata) |
 |                     | Genomics Regional OAuth2 Server                                                                   | https://gen-tie-test.nwgenomics.nhs.uk/gentietest/oauth2                                        |                                                                                                                             | 
-
+{:.grid}
 
 ### Security and authorisation
 
@@ -168,5 +170,3 @@ This API has two access modes:
 
 - Development - unrestricted access 
 - Integration Testing - OAuth2 [client-credentials](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/)
-
-
