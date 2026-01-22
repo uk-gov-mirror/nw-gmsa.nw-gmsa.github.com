@@ -18,6 +18,15 @@ graph LR
 - Well understood by delivery teams
 - Can be scaled up to enterprise use by addition of IHE LTW which defines cross organisation behaviour.
 
+### Scaling to Enterprise
+
+```mermaid
+graph LR
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 OML_O21<br/>IHE LTW LAB-1| OrderFiller
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| OrderPlacer  
+```
+
+
 ### Disadvantages
 
 - Many variations exist
