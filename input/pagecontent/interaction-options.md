@@ -18,6 +18,12 @@ graph LR
 - Well understood by delivery teams
 - Can be scaled up to enterprise use by addition of IHE LTW which defines cross organisation behaviour.
 
+### Disadvantages
+
+- Many variations exist
+- Often using early HL7 v2 and this often excludes Specimen/SPM information. Differences in v2 versions are handled by Trust Integration Engines, lack of Specimen/SPM information may be more problematic.
+- Difficult for new market entrants to adopt
+
 ### Scaling to Enterprise
 
 ```mermaid
@@ -26,12 +32,14 @@ graph LR
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| OrderPlacer  
 ```
 
+#### Advantages
 
-### Disadvantages
+- Tackles the 'many variant exist' issue.
+- Reduces the need for 3rd party commercial systems to resolve regional interoperability.
 
-- Many variations exist
-- Often using early HL7 v2 and this often excludes Specimen/SPM information. Differences in v2 versions are handled by Trust Integration Engines, lack of Specimen/SPM information may be more problematic.
-- Difficult for new market entrants to adopt
+#### Disadvantages
+
+- No UK or England data standards at this level, in HL7 v2 or FHIR format.
 
 ## HL7 FHIR Message
 
@@ -132,7 +140,7 @@ sequenceDiagram
 - No event-notification has been defined, expect NHS Trusts to favour traditional routing such as distribution lists, etc.
 - Endpoint systems are likely to be on v2 and so middleware is required to perform v2 to/from FHIR conversions, this is less effort than FHIR Message and Transaction.
 
-## Practical Implementation
+### Practical Implementation
 
 North West Genomics has used multiple interaction styles to populate the FHIR Repository.
 This is using a combination of all the above options.
@@ -154,9 +162,9 @@ It is possible that these use cases can be combined, for example, an order from 
 </div>
 
 
-### Step 1 -> 6
+#### Step 1 -> 6
 
-#### Current Implementation (Step 1 -> 4)
+##### Current Implementation (Step 1 -> 4)
 
 Currently, the Health Information Exchange (HIE) is implemented as:
 
@@ -201,7 +209,7 @@ The NW Genomics HIE:
 - Populates the FHIR Repository (GDR) with the FHIR Message
 - Creates a FHIR Task within the FHIR Repository (FHIR Workflow Step 3) and can send an event notification (FHIR Workflow Step 4),
 
-#### Retrieving Order Medicus and NHS England Genomic Order Management Service Implementation (Step 4 -> 6)
+##### Retrieving Order Medicus and NHS England Genomic Order Management Service Implementation (Step 4 -> 6)
 
 For orders originating from Laboratory, the following process is suggested:
 
@@ -238,7 +246,7 @@ The NW Genomics HIE:
 - Processes the order and generates a V2 Message
 - Sends the V2 Message to the Order Filler (LIMS)
 
-#### Sending Order NHS England Genomic Order Management Server Implementation (Step 4 -> 6)
+##### Sending Order NHS England Genomic Order Management Server Implementation (Step 4 -> 6)
 
 A suggestion design for working with the NHS England Genomic Order Management Server (GOMS) is:
 
@@ -279,7 +287,7 @@ The NW Genomics HIE:
 
 
  
-### Steps 7->10
+#### Steps 7->10
 
 ```mermaid
 graph TD
