@@ -82,18 +82,6 @@ Note: FHIR workflow described is based on the same FHIR Workflow described in [F
 <img style="padding:3px;width:80%;" src="workflow-optionh.png" alt="FHIR Workflow - Option H"/>
 <br clear="all">
 
-However the mechanisms for step 1 can vary. 
-
-### Step 1 Variations
-
-| Order Placer/Filler Options | Methods to post to NW Genomics FHIR Repository                  | Methods to post to NHS England Genomics Order Management System                        |
-|-----------------------------|-----------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| No FHIR Repository          | Send [HL7 v2 Message](#hl7-v2-message)                          |                                                                                        | 
-|                             | Send [HL7 FHIR Message](#hl7-fhir-message)                      |                                                                                        |
-|                             | (FHIR Transaction is used internally to store v2/FHIR Messages) | [HL7 FHIR RESTful Transaction and POST/PUT](#hl7-fhir-restful-transaction-and-postput) |
-| Has FHIR Repository         | not applicable                                                  | Not supported, FHIR Transaction and POST/PUT must be used (above).                     |
-{:.grid}
-
 ```mermaid
 sequenceDiagram
     participant OrderPlacer As Order Placer
@@ -130,3 +118,110 @@ sequenceDiagram
 - Limited understanding of this workflow, most NHS adoptions of FHIR has been FHIR Messaging
 - No event-notification has been defined, expect NHS Trusts to favour traditional routing such as distribution lists, etc.
 - Endpoint systems are likely to be on v2 and so middleware is required to perform v2 to/from FHIR conversions, this is less effort than FHIR Message and Transaction.
+
+## Practical Implementation
+
+North West Genomics has used multiple interaction styles to populate the FHIR Repository.
+This is using a combination of all the above options.
+
+At a high level there are two workflow styles:
+
+- IHE Laboratory Testing Workflow (LTW) - which at the implmentation level is HL7 v2 Message.
+- FHIR Workflow - which at the implmentation level is event based Messages and uses FHIR RESTful APIs.
+  - event-based messages are mostly implemented using FHIR Subscription (Pub/Sub), other message distribution (i.e. using FHIR Message) options have not been defined by IHE or HL7.
+
+### Step 1 -> 6
+
+Currently, the Health Information Exchange (HIE) is implemented as:
+
+```mermaid
+graph TD
+    subgraph TIE[NHS Trust TIE]
+        OrderPlacer[Order Placer] -->  V2Message1[HL7 V2 Message]
+    end
+
+    subgraph HIE[NW Genomics HIE]
+        FHIRMessage[FHIR Message]
+        V2Message[HL7 v2 Message]
+        Transaction[RESTful Transaction and PUT/POST]
+        FHIRRepository[FHIR Server/Repository]
+        OrderFiller
+    end
+    V2Message1 --> |Transform to FHIR Message| FHIRMessage
+    FHIRMessage--> |Transform to v2| V2Message
+    
+    FHIRMessage --> Transaction
+    V2Message --> OrderFiller
+    Transaction --> |FHIR Workflow Step 1 and Step 2 inferred| FHIRRepository
+
+    classDef pink fill:#F8CECC
+    classDef blue fill:#DAE8FC;
+    classDef grey fill:#F5F5F5;
+    
+    class OrderFiller grey;
+    class OrderPlacer pink
+    class FHIRRepository blue
+```
+
+The national Genomic Order Management at a practical level is 
+
+```mermaid
+graph LR
+
+    OrderPlacer
+    V2Message[V2 Message]
+   
+        Transaction[RESTful Transaction and PUT/POST]
+   
+    FHIRRepository 
+
+    OrderPlacer[Order Placer or Filler] --> V2Message
+    V2Message --> Transaction
+    Transaction --> |Step 1 and 7| FHIRRepository
+
+    classDef pink fill:#F8CECC
+    classDef blue fill:#DAE8FC;
+    
+    class OrderPlacer pink
+    class FHIRRepository blue
+```
+
+### Steps 7->10
+
+```mermaid
+graph TD
+
+    subgraph HIE[NW Genomics HIE]
+        V2Message["HL7 v2 Message Laboratory Report (Step 7)"]
+        Transaction[RESTful Transaction and PUT/POST]
+        FHIRRepository[FHIR Server/Repository]
+        Step10[FHIR Worflow Step 10]
+    end
+    subgraph TIE[NHS Trust TIE]
+        OrderPlacer
+        RetrieveReport 
+        V2Message1[HL7 V2 Message] 
+    end 
+
+    OrderFiller --> |Laboratory Report| V2Message
+    V2Message["V2 Message (FHIR Workflow Step 7)"] --> Transaction
+    Transaction --> |"FHIR Workflow Step 7 + 8 (inferred)"| FHIRRepository
+    FHIRRepository --> Step10
+    Step10[FHIR Worflow Step 10] --> |"(a)"| RetrieveReport[Retrieve Report]
+    RetrieveReport --> |"(b) HL7 FHIR RESTful Query"| FHIRRepository
+    RetrieveReport --> |"(c)"| V2Message1[HL7 v2 Message] 
+    V2Message1 --> OrderPlacer
+    V2Message --> OrderPlacer
+
+    classDef pink fill:#F8CECC
+    classDef blue fill:#DAE8FC;
+    classDef grey fill:#F5F5F5;
+    
+    class OrderFiller grey;
+    class OrderPlacer pink
+    class FHIRRepository blue
+```
+
+
+
+
