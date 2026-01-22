@@ -1,3 +1,7 @@
+<div class="alert alert-danger" role="alert">
+This is currently being elaborated and subject to change.
+</div>
+
 ## HL7 v2 Message
 
 Most common method
@@ -130,7 +134,20 @@ At a high level there are two workflow styles:
 - FHIR Workflow - which at the implmentation level is event based Messages and uses FHIR RESTful APIs.
   - event-based messages are mostly implemented using FHIR Subscription (Pub/Sub), other message distribution (i.e. using FHIR Message) options have not been defined by IHE or HL7.
 
+<div class="alert alert-info" role="alert">
+In the following section, North West Genomics Health Information Exchange (HIE), Laboratory/Medicus and NHS England England can all act as the <b>Workflow Broker</b>. This is all use case specific: 
+<ul>
+<li>Laboratory Order Placer to Genomic Order Filler: Medicus is the Workflow Broker</li>
+<li>NHS Trust Order Placaer to North West Genomic Order Filler: Medicus is the Workflow Broker</li>
+<li>North Genomic Order Placer to out of area Genomics Order Filler : Medicus is the Workflow Broker</li>
+</ul>
+It is possible that these use cases can be combined, for example, an order from Medicus Order Placer can go to an out-of-area Genomics Order Filler NHS England.
+</div>
+
+
 ### Step 1 -> 6
+
+#### Current Implementation (Step 1 -> 4)
 
 Currently, the Health Information Exchange (HIE) is implemented as:
 
@@ -152,7 +169,7 @@ graph TD
     
     FHIRMessage --> Transaction
     V2Message --> OrderFiller
-    Transaction --> |FHIR Workflow Step 1 and Step 2 inferred| FHIRRepository
+    Transaction --> |FHIR Workflow Step 1, 2 and Step 3 inferred| FHIRRepository
 
     classDef pink fill:#F8CECC
     classDef blue fill:#DAE8FC;
@@ -163,29 +180,96 @@ graph TD
     class FHIRRepository blue
 ```
 
-The national Genomic Order Management at a practical level is 
+The NHS Trust TIE:
+- Recieves an HL7 v2 Message from the Order Placer (EPR)
+- Generates a FHIR Message
+- Sends the FHIR Message to NW Genomic RIE (part of the HIE)
+
+The NW Genomics HIE:
+- Recieves an HL7 v2 Message from the Order Placer (EPR)
+- Generates a FHIR Message
+- Sends the v2 Message to the Order Filler (LIMS)
+- Populates the FHIR Repository (GDR) with the FHIR Message
+- Creates a FHIR Task within the FHIR Repository (FHIR Workflow Step 3) and can send an event notification (FHIR Workflow Step 4),
+
+#### Retrieving Order Medicus and NHS England Genomic Order Management Service Implementation (Step 4 -> 6)
+
+For orders originating from Laboratory, the following process is suggested:
 
 ```mermaid
-graph LR
-
-    OrderPlacer
-    V2Message[V2 Message]
-   
-        Transaction[RESTful Transaction and PUT/POST]
-   
-    FHIRRepository 
-
-    OrderPlacer[Order Placer or Filler] --> V2Message
-    V2Message --> Transaction
-    Transaction --> |Step 1 and 7| FHIRRepository
+graph TD
+    
+    subgraph HIE[NW Genomics HIE]
+        
+        RetrieveOrder --> |"(c)"| V2Message1[HL7 v2 Message] 
+        V2Message1 --> OrderFiller[Order Filler]
+        OrderFiller[Order Filler]
+    end
+    subgraph Lab["Workflow Broker (Medicus or NHS England) "]
+        Step2[FHIR Workflow Step 4]
+        FHIRRepository[FHIR Server/Repository]
+    end
+    Step2 --> |"Laboratory (a)"| RetrieveOrder[Retrieve Order]
+    RetrieveOrder --> |"(b) HL7 FHIR RESTful Query"| FHIRRepository
+    
 
     classDef pink fill:#F8CECC
     classDef blue fill:#DAE8FC;
+    classDef grey fill:#F5F5F5;
     
+    class OrderFiller grey;
     class OrderPlacer pink
     class FHIRRepository blue
 ```
 
+The NW Genomics HIE:
+
+- Recieves an event notification (FHIR Workflow Step 4) from the Worflow Broker (Medicus).
+- Retrieves the order from the FHIR Repository and generates an event notification (FHIR Workflow Step 5 - Task (accepted))
+- Processes the order and generates a V2 Message
+- Sends the V2 Message to the Order Filler (LIMS)
+
+#### Sending Order NHS England Genomic Order Management Server Implementation (Step 4 -> 6)
+
+A suggestion design for working with the NHS England Genomic Order Management Server (GOMS) is:
+
+```mermaid
+graph TD
+    
+    subgraph HIE[NW Genomics HIE]
+       FHIRMessage[FHIR Message]
+       ProcessMessage[Process Message]
+       Transaction[RESTful Transactions and Queries]    
+    end
+    
+    subgraph GOMS[NHS England Genomic Order Management Service]
+        FHIRRepository[FHIR Server/Repository]  
+    end
+
+    FHIRMessage --> ProcessMessage 
+    ProcessMessage --> Transaction
+    Transaction --> FHIRRepository
+    ProcessMessage --> Step2[FHIR Workflow Step 2]
+    Step2 --> |FHIR Workflow Step 3 - FHIR RESTful POST /Task| FHIRRepository
+
+    classDef pink fill:#F8CECC
+    classDef blue fill:#DAE8FC;
+    classDef grey fill:#F5F5F5;
+    
+    class OrderFiller grey;
+    class OrderPlacer pink
+    class FHIRRepository blue
+```
+
+The NW Genomics HIE:
+
+- Recieves an HL7 FHIR Message from the Order Placer (EPR)
+- Processes the Message 
+  - Converts the FHIR Message into a data pipeline to copy the order into the GOMS using FHIR Transactions and Queries.
+  - Performs FHIR Workflow Step 2 and POSTs the Task to the FHIR Repository (FHIR Workflow Step 3)
+
+
+ 
 ### Steps 7->10
 
 ```mermaid
