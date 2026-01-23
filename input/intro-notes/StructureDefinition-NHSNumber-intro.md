@@ -28,7 +28,7 @@ Format: NNNNNNNNNN, values include a checksum, details can be found in [NHS NUMB
 |---------------------|---------------------|-----------------------------------|--------------------------------------------------|-----------|--------------|------------|
 | Value               | value               |                                   | -                                                | CX.1      |              | 9449305552 |
 | Type                | type                |                                   | http://terminology.hl7.org/CodeSystem/v2-0203#NH | CX.5      | NH           | -          |
-| Assigning Authority | assigner.identifier |                                   |                                                  | CX.4      | CHI          | -          |
+| Assigning Authority | assigner.identifier |                                   | X24 for England and W00 for Wales                                                 | CX.4      | CHI          | -          |
 | System              | system              | 2.16.840.1.113883.2.1.3.2.4.16.53 | **urn:oid:2.16.840.1.113883.2.1.3.2.4.16.53**    | N/a       | N/a          | -          |
 {:.grid}
 
