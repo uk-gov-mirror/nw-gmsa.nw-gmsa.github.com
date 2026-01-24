@@ -183,6 +183,14 @@ PID|1||633^^^R0A^MR~9449305552^^^^NH||CHISLETT^Octavia||20080920|F|||1 RAVENSFIE
 
 > FHIR Resource Example: [Patient - Octavia CHISLETT NHS Number: 9449305552](Patient-Patient-OctaviaCHISLETT-9449305552.html)
 
+### PD1
+
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-pd1-to-patient.html" _target="_blank">PD1 to FHIR Patient</a> 
+<br/>
+<b>FHIR Profile:</b> <a href="StructureDefinition-Patient.html" _target="_blank">Patient</a> 
+</div>
+
 ### PV1 
 
 > The PV1 segment should represent the episode/stay/visit number, not a consultant episode. 
