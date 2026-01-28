@@ -6,16 +6,18 @@ start
 if (Patient has NHS Number) then (yes)
   :Get Patient from NHS England \nPersonal Demographics Service - FHIR API;
   if (Patient found and has GP Surgey) then (yes)
-    :Get ICS from OrganisationAffiliation from NHS England \nOrganisation Terminolology Data FHIR API;
-  else (no)
-    :Infer ICS from Patient Postcode;
-  endif
-  switch (ICS)
+    :Get ICS from NHS England \nOrganisation Terminolology Data FHIR API;
+    :Confirm ICS from Patient Postcode (GMCR only);
+    switch (ICS)
       case (North West Region\n(QOP, QE1 and QYG))
         :ICS Message Queue;
       case (Other or not found)
         :Dead Letter Queue;
     endswitch
+  else (no)
+    :Dead Letter Queue;
+  endif
+
 else (no)
   :Dead Letter Queue;
 endif

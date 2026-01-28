@@ -101,8 +101,12 @@ Three types of messages are used within this workflow process:
 <p class="figureTitle">Messaging + FHIR Repository</p> 
 <br clear="all">
 
-- Update Genomic Data Repository ([Wire Tap](https://www.enterpriseintegrationpatterns.com/patterns/messaging/WireTap.html))
+- Transformation and Enrichment (inside ESB)
   - First point of entry for HL7 FHIR O21 messages [Command Message](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CommandMessage.html).
+  - Call NHS England PDS & Enrich Content ([Content Enricher](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DataEnricher.html))
+    - Stores and enhances the message with additional data elements (GP Practice and ICS).
+    - Ensures only traced NHS Numbers are present in the message.
+- Update Genomic Data Repository ([Wire Tap](https://www.enterpriseintegrationpatterns.com/patterns/messaging/WireTap.html))
   - Updates internal genomic data repository using FHIR RESTful interactions. ([Messaging Gateway](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessagingGateway.html))
 - Router ([Message Router](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageRouter.html))
   - Routes messages based on order metadata.
@@ -133,6 +137,9 @@ Three types of messages are used within this workflow process:
 - Transformation and Enrichment (inside ESB)
   - Transform to HL7 FHIR Message ([Message Translator](https://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageTranslator.html) and FHIR [Canoncial Model](https://www.enterpriseintegrationpatterns.com/patterns/messaging/CanonicalDataModel.html))
     - Converts HL7 v2.3 message into a modern HL7 FHIR R01 message.
+  - Call NHS England PDS & Enrich Content ([Content Enricher](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DataEnricher.html))
+    - Stores and enhances the message with additional data elements (GP Practice and ICS).
+    - Ensures only traced NHS Numbers are present in the message.
   - Update Genomic Data Repository & Enrich Content ([Content Enricher](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DataEnricher.html))
     - Stores and enhances the message with additional data elements.
     - Provides a consistent, enriched dataset for downstream use.
@@ -167,7 +174,7 @@ Note: Routing logic for rest of England and Wales if for illustration purposes, 
 
 ### Laboratory Report Message Routing - NHS ICS (MDM_T02)
 
-This routing is based on the GP Practice (ODS Code) of the Patient, failing that postcode is used to infer ICS.
+This routing is based on the GP Practice (ODS Code) of the Patient, for GMCR (QOP OCS Code) a further check is performed on the Patients postcode (if patient postcode is not in GMCR region then send to the Dead Letter Queue).
 
 <figure>
 {%include routing-mdm-t02.svg%}
