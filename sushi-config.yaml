@@ -156,6 +156,10 @@ pages:
   simple.md:
     title: Simple
     generation: markdown
+  BPCC.md:
+    title: Digital Consent (IHE BPCC and PCF)
+    generation: markdown
+
 
 resources:
   Questionnaire/GenomicTestOrder:
@@ -220,6 +224,7 @@ menu:
     Care Services Discovery (mCSD): mCSD.html
     Patient Administration (PAM): PAM.html
     Authorisation (OAuth2): authorisation.html
+    Digital Consent (BPCC and PCF): BPCC.html
 
   Interfaces (Volume 2):
     Placer Order Management [LAB-1] HL7 FHIR: LAB-1.html
