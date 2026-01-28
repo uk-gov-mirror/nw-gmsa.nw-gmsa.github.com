@@ -7,4 +7,4 @@ Documentation Placeholder for future use
 1. [IHE Basic Patient Privacy Consents (BPPC)](https://profiles.ihe.net/ITI/TF/Volume1/ch-19.html)
 2. [IHE Privacy Consent on FHIR (PCF)](https://profiles.ihe.net/ITI/PCF/index.html)
 3. [Implementation of Digital Consent at Sandwell and West Birmingham NHS Trust: A Quality Improvement Project](https://bmjopenquality.bmj.com/content/14/4/e003606)
-
+4. [North West Genomics - Consent for a Genomic Test](https://mft.nhs.uk/app/uploads/2020/09/REGIONAL-GENETIC-SERVICE.pdf)
