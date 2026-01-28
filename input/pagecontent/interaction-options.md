@@ -90,6 +90,18 @@ graph LR
 - More variations exist than HL7 v2
 - Endpoint systems are likely to be on v2 and so middleware is required to perform v2 to/from FHIR conversions
 
+## HL7 FHIR RESTful GET and FHIR Server/Repository
+
+### Advantages
+
+- Becoming the default method for using HL7 FHIR
+  - Supported by EPIC, Cerner, Meditech, etc
+- Is part of the Genomic Data Repository (Intersystems FHIR Repository)
+
+### Disadvantages
+
+
+
 ## HL7 FHIR Workflow and HL7 FHIR REST read only APIs
 
 Is a modernisation of all the previous methods, full FHIR workflow requires both the Order Placer and Order Filler to have a FHIR Repository. Examples:
