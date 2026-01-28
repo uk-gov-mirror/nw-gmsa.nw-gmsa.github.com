@@ -92,6 +92,10 @@ graph LR
 
 ## HL7 FHIR RESTful GET and FHIR Server/Repository
 
+```mermaid
+graph LR
+    DataConsumer[<b>Data Consumer</b>] --> |HL7 FHIR RESTful GET<br/>read only| GenomicDataRepository[<b>Genomic Data Repository</b>]
+```
 ### Advantages
 
 - Becoming the default method for using HL7 FHIR
