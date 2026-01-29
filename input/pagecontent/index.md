@@ -27,6 +27,9 @@ Not all interactions will necessarily be electronic. For example, reports may be
 graph LR
     OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| OrderFiller
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |2. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+    
+    classDef purple fill:#E1D5E7;
+    class OrderPlacer,OrderFiller purple
 ```
 
 In many NHS Trusts, a Trust Integration Engine (TIE) is used to facilitate this point-to-point messaging.
@@ -37,7 +40,10 @@ graph LR
     OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
     TIE --> |2. General Order<br/>HL7 v2 ORM_O01| OrderFiller
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |3. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
-    TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
+    TIE --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer 
+    
+    classDef purple fill:#E1D5E7;
+    class OrderPlacer,OrderFiller purple 
 ```
 
 TIEs typically handle transformations between the different HL7 v2 variants used by Order Placers (e.g. EPRs) and Order Fillers (e.g. LIMS).
@@ -55,6 +61,9 @@ graph LR
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
     RIE --> |5. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
     TIE --> |6. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer
+    
+    classDef purple fill:#E1D5E7;
+    class OrderPlacer,OrderFiller purple
 ```
 
 ### Regional Integration Engine (RIE) - Regional Interoperability
@@ -233,7 +242,7 @@ graph LR
 
 Traditional messaging focuses solely on communication between two systems—the order placer and the order filler—and does not support wider sharing of genomic data across multiple organisations such as NHS Trusts, GP practices, or other clinical teams.
 
-To address this, a central Genomic Data Repository (GDR) will be established. This repository will provide a read-only [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html) and will be populated via data flows through the RIE.
+To address this, a central Genomic Data Repository (GDR) will be established. This repository will provide a read-only [FHIR RESTful (read only API)](https://hl7.org/fhir/R4/http.html) and will be populated via data flows through the RIE (See [Health Information Exhange (HIE)](#health-information-exchange-hie)) and will focus primarily on sharing data produced by NHS North West Genomics.
 
 ```mermaid
 graph TD
@@ -252,6 +261,9 @@ graph TD
     CDR --> |HL7 FHIR RESTful| NHSE
     CDR --> |HL7 FHIR RESTful<br/>IHE QEDm|APPA
     CDR --> |HL7 FHIR RESTful<br/>IHE MHD| APPB
+    
+    classDef purple fill:#E1D5E7;
+    class CDR,NHSA,NHSB,APPA,APPB,NHSE purple
 ```
 
 The [Data Contract](datta-intro.html) and data structures used in the FHIR interfaces follow the same conventions as those used in the HL7 v2 message exchanges.
@@ -263,16 +275,6 @@ The CDR is expected to adopt emerging IHE Europe standards for clinical data and
 - [IHE Patient Demographics Query for Mobile (PDQm) ITI-78](PDQm.html) HL7 FHIR
 - [IHE Internet User Authorization (IUA)](IUA.md) OAuth2
 - [IHE Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/index.html) HL7 FHIR
-
-### Health Information Exchange (HIE)
-
-Collectively, the Regional Integration Engine (RIE) and the Genomic Data Repository (GDR) form a Health Information Exchange (HIE) system.
-
-<figure>
-{%include overview-hie.svg%}
-<p id="fX.X.X.X-X" class="figureTitle">Health Information Exchange (HIE)</p>
-</figure>
-<br clear="all">
 
 ## Conversational (Event) Based Workflow
 
@@ -297,13 +299,16 @@ graph LR
     OrderFiller --> |Event Notification - FHIR Task| OrderPlacer  
 
     DataO --> |HL7 FHIR RESTful<r/>IHE QEDm/MHD/PDQm| DataF
-     DataF --> |HL7 FHIR RESTful<r/>IHE QEDm/MHD/PDQm| DataO
+    DataF --> |HL7 FHIR RESTful<r/>IHE QEDm/MHD/PDQm| DataO
+    
+    classDef purple fill:#E1D5E7;
+    class OrderPlacer,OrderFiller,DataO,DataF purple
 ```
 
 With this workflow, orders and reports are not sent directly between the order placer and order filler.
 Instead, the Order Placer and Filler converse with each other via FHIR Tasks.
 
-This is a change from a message-based workflow (see [EIP Messaging Patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging/)) to conversation-based workflow, see [EIP Conversation Patterns](https://www.enterpriseintegrationpatterns.com/patterns/conversation/index.html) 
+This is a change from a message-based workflow (see [EIP Messaging Patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging/)) to a conversation-based workflow, see [EIP Conversation Patterns](https://www.enterpriseintegrationpatterns.com/patterns/conversation/index.html) 
 
 Although this includes a number of exchanges between the Order Placer and Order Filler, it also allows a more realistic simulation of the real-world clinical workflow.
 
@@ -330,6 +335,20 @@ sequenceDiagram
         OrderFiller ->> OrderPlacer: Task Diagnostic Request - Event Notification (FHIR Task (rejected))
     end
 ```
+
+### Health Information Exchange (HIE)
+
+Conversational (Event) Based Workflow or Conversation Based Workflow is a new paradigm for clinical messaging, it requires both the Order Placer and the Order Filler to be able to share data using FHIR RESTful API's. 
+This may not always be possible, for example LIMS within NHS North West Genomics may not support FHIR RESTful API's and so the Genomic Data Repository (GDR) will be used to share genomic laboratory reports and other genomic data.
+If EPR systems do not support FHIR RESTful APIs, then the GDR will be used to share laboratory orders.
+
+Collectively, the Regional Integration Engine (RIE) and the Genomic Data Repository (GDR) form a Health Information Exchange (HIE) system.
+
+<figure>
+{%include overview-hie.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Health Information Exchange (HIE)</p>
+</figure>
+<br clear="all">
 
 ## How to Read this IG
 
