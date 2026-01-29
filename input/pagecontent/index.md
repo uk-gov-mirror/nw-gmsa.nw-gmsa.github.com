@@ -12,7 +12,7 @@ NHS North West Genomics is a new regional NHS service that consolidates clinical
 
 As part of the service transition, existing systems for electronic test ordering and reporting will be enhanced through the introduction of a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable seamless data exchange between local clinical systems and regional genomic laboratory services.
 
-## Technical Overview
+## Message Based Workflow
 
 <img style="padding:3px;width:80%;" src="NWGenomicsTechnicalOverview.png" alt="NW Genomics Technical Overview"/>
 <br clear="all">
@@ -227,6 +227,8 @@ graph LR
     TIE --> |6. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer  
 ```
 
+## Data and Document Sharing
+
 ### Regional Data and Document Sharing - Genomic Data Repository (GDR)
 
 Traditional messaging focuses solely on communication between two systems—the order placer and the order filler—and does not support wider sharing of genomic data across multiple organisations such as NHS Trusts, GP practices, or other clinical teams.
@@ -236,7 +238,7 @@ To address this, a central Genomic Data Repository (GDR) will be established. Th
 ```mermaid
 graph TD
     subgraph DataContracts[Data Contract]
-        CDR["Genomic Data Repository (GDR)"]
+        CDR["<b>Data Source</b>Genomic Data Repository (GDR)"]
         NHSA[<b>Data Consumer</b><br/>NHS GP/Trust/Board/ICS A]
         NHSB[<b>Document Consumer</b><br/>NHS GP/Trust/Board/ICS B] 
 
@@ -271,6 +273,63 @@ Collectively, the Regional Integration Engine (RIE) and the Genomic Data Reposit
 <p id="fX.X.X.X-X" class="figureTitle">Health Information Exchange (HIE)</p>
 </figure>
 <br clear="all">
+
+## Conversational (Event) Based Workflow
+
+### FHIR Workflow 
+
+The addition of data/document sharing using HL7 FHIR RESTful APIs allows message base workflow to be updated to Event Based Workflow, for details see [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html) 
+
+```mermaid
+graph LR
+    subgraph OrderPlacerM[Order Placer]
+        OrderPlacer[<b>Order Placer</b><br/>EPR]
+
+        DataO["<b>Data Source and Consumer</b>"]
+    end 
+    subgraph OrderFillerM[Order Filler]
+        OrderFiller[<b>Order Filler</b><br/>LIMS] 
+        DataF["<b>Data Source and Consumer</b>"]
+       
+    end 
+
+    OrderPlacer--> |Event Notification - FHIR Task| OrderFiller
+    OrderFiller --> |Event Notification - FHIR Task| OrderPlacer  
+
+    DataO --> |HL7 FHIR RESTful<r/>IHE QEDm/MHD/PDQm| DataF
+     DataF --> |HL7 FHIR RESTful<r/>IHE QEDm/MHD/PDQm| DataO
+```
+
+With this workflow, orders and reports are not sent directly between the order placer and order filler.
+Instead, the Order Placer and Filler converse with each other via FHIR Tasks.
+
+This is a change from a message-based workflow (see [EIP Messaging Patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging/)) to conversation-based workflow, see [EIP Conversation Patterns](https://www.enterpriseintegrationpatterns.com/patterns/conversation/index.html) 
+
+Although this includes a number of exchanges between the Order Placer and Order Filler, it also allows a more realistic simulation of the real-world clinical workflow.
+
+```mermaid
+
+sequenceDiagram
+    participant OrderPlacer As Order Placer
+    participant DataO as Data Source <br/> Order Placer
+    participant OrderFiller As Order Filler
+    participant DataF as Data Source <br/> Order Filler
+
+    OrderPlacer ->> DataO: Create Order
+    OrderPlacer ->> OrderFiller: DiagnosticRequest - Event Notification (FHIR Task (requested))
+    OrderFiller ->> DataO: Retrieve Laboratory Order (FHIR RESTful API Query) 
+    alt is accepted
+        OrderFiller ->> OrderPlacer: Task Diagnostic Request - Event Notification (FHIR Task (accepted))
+        Note over OrderFiller: Starts Testing
+         OrderFiller ->> OrderPlacer: Task Diagnostic Request - Event Notification (FHIR Task (in-progress))
+        Note over OrderFiller: Interpretation of results and write Report
+        OrderFiller ->> DataF: Creates Laboratory Order
+        OrderFiller ->> OrderPlacer: Task DiagnosticRequest - Event Notification (FHIR Task (completed))
+        OrderPlacer ->> DataF : Retrieve Laboratory Report (FHIR RESTful API Query)
+    else is rejected 
+        OrderFiller ->> OrderPlacer: Task Diagnostic Request - Event Notification (FHIR Task (rejected))
+    end
+```
 
 ## How to Read this IG
 
