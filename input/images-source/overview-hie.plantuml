@@ -1,13 +1,13 @@
 @startuml
 
- component "**Order Place**r" as EPR #MediumPurple
- component "**Order Filler**" as LIMS #MediumPurple
+ component "**Order Place**r" as EPR #Thistle
+ component "**Order Filler**" as LIMS #Thistle
  package "Health Information Exchange (HIE)" {
     component "Regional Integration Engine (RIE)" as TIE
-    component "**Dota Source**\nGenomic Clinical Data Repository (CDR)" as CDR #MediumPurple
+    component "**Dota Source**\nGenomic Clinical Data Repository (CDR)" as CDR #Thistle
  }
-component "**Data Consumer**" as HIE #MediumPurple
-component "**Document Consumer**" as HIEU #MediumPurple
+component "**Data Consumer**" as HIE #Thistle
+component "**Document Consumer**" as HIEU #Thistle
 
  EPR -r-> TIE : **Send Laboratory Order**\nHL7 FHIR OML_O21\nbased on IHE LTW LAB-1
  TIE -r-> LIMS: **Send Laboratory Order**\nHL7 v2 OML_O21\nIHE LTW LAB-1

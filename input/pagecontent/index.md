@@ -280,7 +280,7 @@ The CDR is expected to adopt emerging IHE Europe standards for clinical data and
 
 ### FHIR Workflow 
 
-The addition of data/document sharing using HL7 FHIR RESTful APIs allows message base workflow to be updated to Event Based Workflow, for details see [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html) 
+The introduction of data and document sharing using HL7 FHIR RESTful APIs enables a transition from a traditional message-based workflow to an event-based workflow (see [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html)).
 
 ```mermaid
 graph LR
@@ -304,13 +304,13 @@ graph LR
     classDef purple fill:#E1D5E7;
     class OrderPlacer,OrderFiller,DataO,DataF purple
 ```
+In this model, orders and reports are no longer exchanged directly between the Order Placer and the Order Filler. Instead, both systems communicate through FHIR Tasks, using event notifications to coordinate activities and state changes.
 
-With this workflow, orders and reports are not sent directly between the order placer and order filler.
-Instead, the Order Placer and Filler converse with each other via FHIR Tasks.
+This represents a shift from a message-oriented workflow (see [EIP Messaging Patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging/)) to a conversation-based workflow (see [EIP Conversation Patterns](https://www.enterpriseintegrationpatterns.com/patterns/conversation/index.html)). Rather than relying on single, transactional messages, the workflow is managed as an ongoing conversation between participants.
 
-This is a change from a message-based workflow (see [EIP Messaging Patterns](https://www.enterpriseintegrationpatterns.com/patterns/messaging/)) to a conversation-based workflow, see [EIP Conversation Patterns](https://www.enterpriseintegrationpatterns.com/patterns/conversation/index.html) 
+Although this approach involves multiple exchanges between the Order Placer and the Order Filler, it more accurately reflects real-world clinical workflows, where work progresses through a series of coordinated steps, acknowledgements, and state transitions rather than a single request–response interaction.
 
-Although this includes a number of exchanges between the Order Placer and Order Filler, it also allows a more realistic simulation of the real-world clinical workflow.
+It is anticipated that event notifications will be implemented using [FHIR Subscriptions](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/), which support a publish–subscribe (pub/sub) pattern, or alternatively through the [NHS England Multicast Notification Service API](https://digital.nhs.uk/developer/api-catalogue/multicast-notification-service).
 
 ```mermaid
 
@@ -336,13 +336,18 @@ sequenceDiagram
     end
 ```
 
+This diagram illustrates an event-based, conversation-driven laboratory ordering workflow using HL7 FHIR Tasks. 
+
+The Order Placer creates a diagnostic order and notifies the Order Filler via a FHIR Task. The Order Filler retrieves the order using FHIR RESTful queries, accepts or rejects the request, and communicates status updates (accepted, in-progress, completed, or rejected) back to the Order Placer through task-based event notifications. Laboratory testing, result interpretation, and report creation occur asynchronously, with reports retrieved by the Order Placer via FHIR RESTful APIs upon task completion.
+
 ### Health Information Exchange (HIE)
 
-Conversational (Event) Based Workflow or Conversation Based Workflow is a new paradigm for clinical messaging, it requires both the Order Placer and the Order Filler to be able to share data using FHIR RESTful API's. 
-This may not always be possible, for example LIMS within NHS North West Genomics may not support FHIR RESTful API's and so the Genomic Data Repository (GDR) will be used to share genomic laboratory reports and other genomic data.
-If EPR systems do not support FHIR RESTful APIs, then the GDR will be used to share laboratory orders.
+A conversational (event-based) workflow, also referred to as a conversation-based workflow, represents a modern approach to clinical messaging. This paradigm assumes that both the Order Placer and the Order Filler can share data using HL7 FHIR RESTful APIs.
 
-Collectively, the Regional Integration Engine (RIE) and the Genomic Data Repository (GDR) form a Health Information Exchange (HIE) system.
+In practice, this capability may not always be available. For example, Laboratory Information Management Systems (LIMS) within NHS North West Genomics may not support FHIR RESTful APIs. In such cases, the Genomic Data Repository (GDR) is used to share genomic laboratory reports and other genomic data. Similarly, if Electronic Patient Record (EPR) systems do not support FHIR RESTful APIs, the GDR is used to facilitate the sharing of laboratory orders.
+
+Together, the Regional Integration Engine (RIE) and the Genomic Data Repository (GDR) collectively constitute the Health Information Exchange (HIE).
+
 
 <figure>
 {%include overview-hie.svg%}
