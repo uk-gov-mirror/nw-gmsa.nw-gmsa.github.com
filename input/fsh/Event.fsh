@@ -24,3 +24,8 @@ Description:    "DRAFT"
 * focus contains
   Patient 1..1 MS
   and Resource 0..1 MS
+
+* focus[Patient] only Reference(Patient)
+* focus[Patient].identifier 1..1
+* focus[Patient].identifier only NHSNumber
+* focus[Patient].identifier ^short = "UK National Health Identifiers: NHS NUMBER (England and Wales)"

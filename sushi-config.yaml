@@ -230,7 +230,6 @@ menu:
     Placer Order Management [LAB-1] HL7 FHIR: LAB-1.html
 ##    Filler Order Management [LAB-2]: LAB-2.html
     Order Results Management [LAB-3] HL7 FHIR: LAB-3.html
-    Order and Results [LAB-1] and [LAB-3] HL7 v2: hl7v2.html
     Patient Demographics Query for Mobile [PDQm]: PDQm.html
     Query Summary Data [MHD]: MHD.html
     Query Detailed Data [QEDm]: QEDm.html
@@ -242,7 +241,9 @@ menu:
     Genomic Test Order (Template): Questionnaire-GenomicTestOrder.html
    ## Genomic Test Report (Composition): StructureDefinition-Composition-GenomicReport.html
     Genomic Test Report (Template): Questionnaire-GenomicTestReport.html
-  Artefacts (Volume 4): artifacts.html
+  Artefacts (Volume 4):
+    HL7 FHIR R4: artifacts.html
+    HL7 v2.5.1: hl7v2.html
   Development:
     Environments and Testing: testing.html
     Support: support.html
