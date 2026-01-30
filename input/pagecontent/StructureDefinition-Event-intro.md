@@ -29,3 +29,37 @@ This mapping is based on this example from MNS for `pds-change-of-gp2`
 | time |                            | Bundle.timestamp                      | 
 | subject | MessageHeader.focus[patient].reference.identifier.value |                       | 
 | dataref | MessageHeader.focus[resource].reference                 |                       | 
+
+The MNS example above is for a `pds-change-of-gp-2` event and is mapped to FHIR as 
+
+```json
+{
+  "resourceType": "Bundle",
+  "identifier": {
+    "value": "56e9d7db-d70a-48bf-95f8-e779a741382a"
+  },
+  "type": "message",
+  "timestamp": "2020-06-01T13:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:9a7e9fd9-d774-42ef-bd23-4397a1ba1b63",
+      "resource": {
+        "resourceType": "MessageHeader",
+        "eventCoding": {
+          "code": "pds-change-of-gp-2"
+        },
+        "source": {
+          "endpoint": "https://fhir.nhs.uk/Id/nhsSpineASID/477121000324"
+        },
+        "focus": {
+          "reference": "https://api.service.nhs.uk/personal-demographics/FHIR/R4/Patient/9912003888",
+          "identifier": {
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "value": "9912003888"
+          }
+        }
+      }
+    }
+  ]
+}
+```
