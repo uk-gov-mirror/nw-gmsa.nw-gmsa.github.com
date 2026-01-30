@@ -100,6 +100,7 @@ Content-Type: application/hl7-v2+er7
 | CNE          | 53037-8        | Genetic sequence           | LOINC                | 2a             | LA6668-3^Pathogenic^LN | [0..1]      | [ACMG_Clinical significance of genetic variation](https://loinc.org/LL4034-6) |
 | CWE          | 69548-6        | Genetic variant Assessment | LOINC                | 2a             | LA9633-4^Present^LN    | [0..1]      | [Genetic variant assessment](https://loinc.org/LL1971-2)                      |
 -->
+
 ## MDM_T02 Original document notification and content
 
 <div class="alert alert-info" role="alert">
@@ -593,109 +594,27 @@ MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS
 
 ### OML_O21 Laboratory Order
 
-#### Genomics Order with Coded Entries
-
-For the FHIR version see [Bundle 'Message' - Genomics Order with Coded Entries](Bundle-GenomicsOrderMessageCodedEntries.html)
-
-```aiignore
-MSH|^~\&|HIVE|R0A|LIMS|699X0|20241013103300+0000||OML^O21^OML_O21|urn:uuid:9612365d-52a4-4fab-87e7-8a09d753f095|T|2.4|||AL
-PID|1||633^^^R0A-EPI^MR~9449305552^^^NHS^NH||CHISLETT^Octavia||20080920|F|||1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST
-PV1|1|O|^^^R0A09^^^^^^^R0A||||C3456789^Darwin^Samuel^^^Dr^^^GMC|||100|||||||||1001166717|||||||||||||||||||||||||20250129103726+0000
-ORC|NW|1601737^R0A-EPI|1001166717^699X0||||||20250129|||C3456789^Darwin^Samuel^^^Dr^^^GMC|||||||||^^R0A^^^ODS
-OBR|1|1601737^R0A-EPI|1001166717^699X0|R240.1^^England-GenomicTestDirectory||20250129||||||||||C3456789^Darwin^Samuel^^^Dr^^^GMC
-NTE|1||Referral lab PLEASE do following tests:
-NTE|2||
-NTE|3||Test(s) required: WGS
-NTE|4||Sample type: Blood
-NTE|5||Transport used: Merlin Courier
-NTE|6||Tracking Number: ABC123
-NTE|7||Sample sent to: LWH Genetics
-NTE|8||By: PDAY on: 02/04/25
-NTE|9||
-NTE|10||Speciality Requesting Clinician: PAEDS
-NTE|11||Test Group: Neurology
-NTE|12||Ethnic Group: White British
-NTE|13||Patient is from consanguineous union? : Unknown
-NTE|14||Specimen Collection Status: Collect & send with order
-NTE|15||Infection Risk: No Specific Risk
-NTE|16||Clinical details:
-NTE|17||
-NTE|18||TESTING
-NTE|19||Contact/Bleep No: 123
-DG1|1||363349007^Malignant tumour of stomach^SNM3||20250129103726+0000
-DG1|2||363349007^Malignant tumour of stomach^SNM3
-OBX|1|CE|GENEAP^GENETICS TEST PERFORMABLE^NWGMSA|||||||||||20250129103726+0000
-OBX|2|CE|230056^What Type of Referral Do You Require?^NWGMSA||1186936003^Storage of specimen (procedure)^SNM3|||||||||20250129103726+0000
-OBX|3|CE|281269004^High infection risk sample^SNM3||LA32-8^No^LN|||||||||20250129103726+0000
-OBX|4|ST|230016^Test Type^NWGMSA||Diagnostic Screen/Test|||||||||20250129103726+0000
-OBX|5|CE|77386006^Pregnancy^SNM3||LA33-6^Yes^LN|||||||||20250129103726+0000
-OBX|6|ST|231284^Please Select R240 Test(s):^NWGMSA||R240.1: Targeted variant testing|||||||||20250129103726+0000
-OBX|7|ST|231285^Please Select R242 Test(s):^NWGMSA||R242.1: Targeted variant testing|||||||||20250129103726+0000
-OBX|8|ST|230027^Email Addresses of Non-MFT Clinicians for Result Reports^NWGMSA||charu|||||||||20250129103726+0000
-OBX|9|CE|762911000000102^Informed consent given for treatment^SNM3||LA33-6^Yes^LN|||||||||20250129103726+0000
-OBX|10|ST|230037^Please Acknowledge That a DNA Sample Will be Stored in the Laboratory on Completion of Testing^NWGMSA||Acknowledged|||||||||20250129103726+0000
-OBX|11|ST|230039^Is the Person Ordering the Test the Referring Clinician^NWGMSA||No|||||||||20250129103726+0000
-OBX|12|ST|unknown^Name of Supervising Clinician^NWGMSA||DESHPANDE, CHARULATA|||||||||20250129103726+0000
-OBX|13|ST|97209-1^Shipment tracking number^LN||UK3096580215|||||||||20250129103726+0000
-OBX|14|CE|842009^Consanguinity^SNM3||LA32-8^No^LN|||||||||20250129103726+0000
-OBX|15|DT|161714006^Estimated date of delivery^SNM3||20250512103726+0000|||||||||20250129103726+0000
-SPM|1|25GEN-029GN00001&R0A|^1001166717&699X0|258580003^Whole blood specimen^SNM3|||||||||||||20250129103726+0000|||Y
-```
-
-#### NonWGSTestOrderForm-CancerSolidTumor-Example
-
-For the FHIR version see [Bundle-NonWGSTestOrderForm-CancerSolidTumor-Example](Bundle-Bundle-NonWGSTestOrderForm-CancerSolidTumor-Example.html)
-
-```aiignore
-MSH|^~\&|HIVE|RAX|LIMS|RJZ|20241013103300+0000||OML^O21^OML_O21|156bb6ab-15e7-42f3-a819-ecd16a5b4fbd|T|2.4|||AL
-PID|1||9449307555^^^NHS^NH||Hadjkiss^Zelma||20110319||||2 Barclay Close^Fetcham^^^KT22 9SY
-ORC|NW||||||||20230908|||9999999998^Smith^Hazel^^^Dr.^^^SDS|||||||||Kingston Hospital NHS Foundation Trust^^RAX01^^^ODS
-OBR|1|||M119.5^Multi Target NGS Panel Small^England-GenomicTestDirectory||20230908||||||||||9999999998^Smith^Hazel^^^Dr.^^^SDS
-NTE|1||Free text for diagnosis/reason for referral, transplant, life status at time of request details/ e.g. malignant tumour - molecular assessment will aid management
-DG1|1||363358000^Malignant tumour of lung^SNM3
-DG1|2||relapse^Relapse^England-ReasonForTesting
-OBX|1|CE|128462008^Metastatic malignant neoplasm (disorder)^SNM3|||||||||||20230908
-OBX|2|CE|6574001^Necrosis (morphologic abnormality)^SNM3|||||||||||20230908
-SPM|1|RA257630||364611000000101^Tissue resection sample^SNM3|||||||||||||20230909110000Z|||Y
-```
+| Format                                                                                           | 
+|--------------------------------------------------------------------------------------------------|
+| [Original Hl7 v2 OML_O21](https://github.com/nw-gmsa/Testing/tree/main/Input/V2/O21)             |
+| [FHIR Message O21](https://github.com/nw-gmsa/Testing/tree/main/Output/FHIR/O21)                 |
+| [North West Genomics HL7 v2 OML_O21](https://github.com/nw-gmsa/Testing/tree/main/Output/V2/O21) |
+{:.grid}
 
 ### ORU_R01 Unsolicited transmission of an observation message
 
-This example is created from the original iGene Message in the next section, it is also enriched with data from the [original order example](#genomics-order-with-coded-entries).
-
-```aiignore
-MSH|^~\&|RIE|699X0|EPR|R0A|20250814094223+0000||ORU^R01^ORU_R01|ORIE-250814-0|T|2.5.1|||AL
-PID|1||9449305552^^^NHS^NH~633^^^R0A^MR||CHISLETT^Octavia||20080920|F|||1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST
-PV1|1||||||||||||||||||1001166717^^^R0A
-ORC|NW|1601737^R0A-EPI^urn:oid:1.2.840.114350.1.13.861.1.7.2.798268^URI|T25-01FU^699X0-IGENE^https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier^URI||||||||||||||||||Manchester University NHS Foundation Trust^^R0A^^^ODS
-OBR|1|1601737^R0A-EPI^urn:oid:1.2.840.114350.1.13.861.1.7.2.798268^URI|T25-01FU^699X0-IGENE^https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier^URI|R240.1^Specific target Targeted mutation testing^England-GenomicTestDirectory||||||||||||||||||20250814094116+0000|||F|||||||&Suttie&Fraser
-OBX|1|CE|TESTCOME^^NWGMSA||311^RESULT CONSISTENT WITH REFERRAL INDICATION^|||||||||20250129103726+0000
-OBX|2|CE|51967-8^Genetic disease assessed [ID]^LN|1.a|R240^^ClinicalIndication|||||||||20250129103726+0000
-OBX|3|ED|51969-4^Genetic analysis report^LN|1|^AP^PDF^Base64^JVBERi0xLjQKJeLjz9MKMiAwIG9iago8PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDIwNTM+PnN0cmVhbQp4nL1aWW/bRhBegG8yUMeOnbRpDBCojyR1Kd5HGgRBQUu0LcSWZB12lCcHMVrELZKX/rP+vn4zuxQpiqYUiwkIi0tyuXN9c+zQnxt/XDQcXw9NX7/40Di6aHQbtn5Cdy3dxEG/oWvrF7eNZsvSLVO/+Nh49vziL5qbTTH169v8S3gjtGzDc+WLtm7Z9KLJj7/cNJ4JS/TEQIzEqdDES5GIIcaaeIFRF0/ORUe0cN0UsTjimTGe03kywe1fxRi3NbEmTDzoYuqpWiLBFE34eJ3Gk4/EqanflHD77j3OH1jaSjmCKDSCQMrhzMtRzsA+yzHCOMHVMXM+L52J6zaPO7if1MBr6Bm+O+XVLPD6k9L35Lk4AxvE1Dpra8TMxFK9k78hCOm4h3OfNRlj/rqaUxRW3t8Sj3B+ClM2UzHyfAWuYbEOc9z4LLfUUwc6kjqxQTJR9u6AhS4T18QBrkibLYWDHb5HWp08ExuK3yuWoV2DIn3X8OxUkWFBj6fgYQQ+h+BiE8c5uB+BiS6eDHEei7e42wU7J+D9FGMNRzrrZAYFQ/HL9D1ggE2hiQAjkvoH8RjHmngIKONyCybcwnlbPMFI46ttsb2UvJ91yw+MKORHALQTWXrgBZilN/+8vTH1+B+9m1dDOgFKmL6JGPFb/mKe4tIKr39ijnfLhA0dy3DCaQAqOoPNUIrFJcwQr4oYZ4ZaievB5XqMX8LzOc47K5JkCa2oSsJ9+MQh3KxJLhKIoAYhcwRLhPSB/MFqEn57VJhBlc5gpwTcU8xZOR47M8RK9ZWId7UgwY+8Kqm2EUA28fcUvzR+KH5ekajteDNES6UjHPRJkyvLCF0uoHYA/9pbmY4duot0uady56pZhkgtCFEejPWjeMAG24U7PxBbNZhtQaTyYK6+Ks40QWXaykolotWRo1hs1ESYVFwdI4kMydmHvD3OBW0qyuqQuNr3ba7FZLVYm6zVse3byEquGTpVolowr1+TmBzscuRKxHzKNRMVo4/gNxo8iI7liqQakgzpw3Or9LEPPZxxWGxxDd2uQSvmDNESrcjgj8CvUgBFFo3v7lB8+V7a4bxRrR6PFZMAnpe1KIdjerVytgCYeeVsYbRD4+8GHdNapJxdxgypJq4JO65v30M9qxIlSV172TxUm5w5kt9Ozlom/guyJw3T8Ewr8vXiuddOZ1O4cbBZ1W8bnueq8adGf+mtrm8FVT0DMsMx56kBm0ETR9Qk2OG+ARV4Y7VVPeC99xW3MqgnEOL8lje6V6JbR7UZVJYtDjvEKbcC6sqneZIlcKGSbB+geQKoPMbVvYqze/Fm2wbY8yLTyLhzCty9KLQZ7mym5RxtSQGWxibQhZJEYtNR46/BphdUxiXiPIZo1CXKumyBak4REE++W+iOdM/2q5md0J4ohBkCdp5QmDh28eDVymj1TN2zzCo/Jp/Q2IfToEpgOOP+5CW7boebeyOxBu1xt6nN7aisStlYkkk6vtwwTuiGZGImYrlRwJiwefRpOiqer/mJ55pqDo2K52taUE5Rg9nTdUrwUzqYPV1neKzEIvJHlX4DxJ4Ouxnhrs0pmgrssdrPyGenSqVUgL8n9zvBYMyPUvjG+DvD9LccV9lD+yq29VTvUHZKtdQczZY7z88LgpuFn2xWCddF21PgjhiTh/i1GKlrCggxZp1NJdTwvM+9WintO9w5xKHx1oIkPGPvPCYsbWTM5jXqWXNd4bJpTmQUe8eZtgfs7WNQG021XFDfiKF/xFCXmy5NKTLhMEHKbIFVskPCAhyrmXcb9D9+0mJS0iDSzH3FkGxrZ03sdbZslxPoFdv8TCXThNehOUOmN1LvapxLZcM+ZoUThyPeKPdUi4p8VEb4rjRgmfrs0LDtgv7OqYGRE7bDPeiEkTBSTf4kc/j8cpZvBN5io5meYc9bLReZc5DPVD2LxtSeMd8n9GUxSxq1l9tFD9jisSqPE35zGVNmhhnkah35RFKJS009CyFafcjvXvJ1wh3/WCJQWjlmhyHX7yshR3co2YkcmdkrdeyEqGbtxdMClAkFi4nXMh/tIg/Z8HP+JmTjHqVPzlMBfNlCFNHEA/6eZaPCeoXRHj1u4vJlOvd3jhIBbmn07YjXdXixbA2+CRITyoMeyDY5XFgpWcqDNFvyMl0WyxFFGxd091cZ06jWZCa4rY2fN2VSe5Hh3B027vbpIowoaMcKhmUwaLMlT7jWGqrVCXabU/AeM6jSLJr369e8loTNSK01ZKdoK1CnzfQ3M/EjnmaMsbqXj3H3SDJlCnQDIyrorzQR1ZKGikmnGAjWWITUzbP+ZOayiQpaGsAij3XWaDzV+wGOTS66NgFlecjkxF8XMyOmSWH01fEqhQoZIsm2PXm1Or7hFsMxcX/BO6nhlNt5YmWYXWc8nLL1U+JFVOXDWipKHscdlV+6HE6JhzflUcl2jcir+NxUdI1DxXArlwh3FgDh6ywx3WDeXcWucRv9MfZoG9irkb1X/zzsBgtK/XxNkrrtIfNFZpBFQq48WJUjz6Mt8oLvjwOGR/oPEmP+ht1Z/SsX0bYrt+a7EP9cQWPI/xSh9p/Lfrc2Q8P3+RHtC4ggtlvqu7U19906nUDfrdM3+bt17qLyn1ecMNBt7K0rRRqrQDhgoaTL7nFn5LttOV1w6Szq3eRbaEUO8yuhlpj7D43FoMmvgDKjuMBqlq9ogIBWpDumYdmVDaETzgdbMiOvSNMBhWqKy/V||||||F
-```
-
-#### Original iGene Message
-
-```aiignore
-MSH|^~\&|IGENE|MFT|EPIC|MFT|20250814094223||ORU^R01|ORIE-250814-0|T|2.3
-PID||944 930 5552|||CHISLETT^Octavia||20080920|F|||||||||||944 930 5552
-ORC|RE|1601737^R0A|||||||||||||||||||Manchester University NHS Foundation Trust^^^^^R0A^^^ODS
-OBR|1|1601737^R0A|T25-01FU|SANGER^TEST: Sanger Sequencing^IGEAP||20250805||||||||202508110000||^^^^^^^^PROVID^^^^PROVID||||||20250814094116|||F||^^^202508090900|||||^Suttie^Fraser
-OBX|1|CE|SANGER^TEST: Sanger Sequencing^IGENE|PDF|^IGene^application/pdf^Base64^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
-OBX|2|CWE|TESTCOME^^NWGMSA||311^RESULT CONSISTENT WITH REFERRAL INDICATION^TESTOUTCOME|||||||||20250129103726+0000
-OBX|3|CE|R240.1^Specific target Targeted mutation testing^England-GenomicTestDirectory|||||||||||20250129103726+0000
-NTE|1|L|R240.1=PACKAGE: R240.1 - Diagnostic testing for known mutation(s) (Targeted mutation testing)
-```
+| Format                                                                                           | 
+|--------------------------------------------------------------------------------------------------|
+| [Original Hl7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/tree/main/Input/V2/R01)             |
+| [FHIR Message R01](https://github.com/nw-gmsa/Testing/tree/main/Output/FHIR/R01)                 |
+| [North West Genomics HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/tree/main/Output/V2/R01) |
+{:.grid}
 
 ### MDM_T02 Original document notification and content
 
-This example is created from the original iGene Message in the previous section, it is also enriched with data from the [original order example](#genomics-order-with-coded-entries).
-
-```
-MSH|^~\&|RIE|699X0|HIE|QOP|20250814094223+0000||MDM^T02|ORIE-250814-0|T|2.4|||AL
-EVN|T02|20250814094223+0000
-PID|1||9449305552^^^NHS^NH~633^^^R0A^MR||CHISLETT^Octavia||20080920|F|||1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST
-PV1|1||||||||||||||||||1001166717^^^R0A
-TXA||1054161000000101^Genetic report^SNM3||||20250814094116+0000||||||699X0-T25-01FU-SANGER-IGENE
-OBX|1|ED|1054161000000101^Genetic report^SNM3||^AP^PDF^Base64^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||||||F
-```
+| Format                                                                                           | 
+|--------------------------------------------------------------------------------------------------|
+| Source message is ORU_R01                                                                        |
+| [FHIR Message T02](https://github.com/nw-gmsa/Testing/tree/main/Output/FHIR/T02)                 |
+| [North West Genomics HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/tree/main/Output/V2/T02) |
+{:.grid}
