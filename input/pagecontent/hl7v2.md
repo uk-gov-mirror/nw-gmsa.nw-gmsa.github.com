@@ -154,6 +154,14 @@ This is based on the definition of MSH from [NHS England HL7 v2 ADT Message Spec
 | MSH-13    | Accept AcknowledgmentType |           | R           |                                                       | AL                  |
 {:.grid}
 
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-msh-to-messageheader.html" _target="_blank">MSH to FHIR MessageHeader</a> 
+<br/>
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-msh-to-bundle.html" _target="_blank">MSH to FHIR Bundle (message)</a> 
+<br/>
+<b>FHIR Profile:</b> <a href="StructureDefinition-MessageHeader.html" _target="_blank">MessageHeader</a> 
+</div>
+
 ### PID
 
 This is based on the definition of PID from [NHS England HL7 v2 ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws) and [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
