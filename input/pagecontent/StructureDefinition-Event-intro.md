@@ -1,6 +1,3 @@
-<div class="alert alert-info" role="alert">
-<b>HL7 v2 Segment:</b> <a href="hl7v2.html#pv1" _target="_blank">PV1</a>
-</div>
 
 Reference:
 - [NHS England - Multicast Notification Service API](https://digital.nhs.uk/developer/api-catalogue/multicast-notification-service)
@@ -29,6 +26,7 @@ This mapping is based on this example from MNS for `pds-change-of-gp2`
 | time |                            | Bundle.timestamp                      | 
 | subject | MessageHeader.focus[patient].reference.identifier.value |                       | 
 | dataref | MessageHeader.focus[resource].reference                 |                       | 
+{:.grid}
 
 The MNS example above is for a `pds-change-of-gp-2` event and is mapped to FHIR as 
 
@@ -63,3 +61,35 @@ The MNS example above is for a `pds-change-of-gp-2` event and is mapped to FHIR 
   ]
 }
 ```
+
+### Events Types
+
+#### Patient
+
+(For illustrative purposes only)
+
+| MNS Event Type           | Description | HL7/IHE Event Type | Description                             |
+|--------------------------|-------------|--------------------|-----------------------------------------|
+|                          |             | A28                | Add person information                  | 
+| pds-change-of-gp-2       |             | A31                | Update person information               |
+| pds-death-notification-2 |             | A31                |                                         |
+| gpreg-change-gp-req-1    |             | A31                |                                         |
+| nhs-number-change-2      |             | A40?               | Merge patient - patient identifier list |
+{:.grid}
+
+#### DiagnosticReport
+
+#### DocumentRefernce
+
+#### ServiceRequest
+
+#### Specimen
+
+| MNS Event Type | Description | HL7/IHE Event Type                                            | Description |
+|----------------|-------------|---------------------------------------------------------------|-------------|
+|                |             | Events are defined in [IHE Specimen Event Tracking](SET.html) |             |
+{:.grid }
+
+#### Task 
+
+
