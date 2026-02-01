@@ -212,6 +212,12 @@ resources:
   OperationOutcome/operation-outcome-validate:
     name: Output from a FHIR Validation
     exampleBoolean: true
+  DocumentReference/Y05868-d783361d-83fa-438f-977c-601f30ef5ceb:
+    name: NRL Patient Birmingham example - Original order not electronic
+    exampleBoolean: true
+  DocumentReference/Y05868-e2c368a8-2849-43c9-9f4e-758bac7c5396:
+    name: NRL Patient London example - Original order electronic from EPIC system
+    exampleBoolean: true
 
 menu:
   Home: index.html
@@ -314,3 +320,9 @@ groups:
       - Bundle/Bundle-NonWGSTestOrderForm-CancerSolidTumor-Example
       - Bundle/Bundle-NonWGSTestOrderForm-FetalScenario-Example
       - Bundle/Bundle-NonWGSTestOrderForm-Reanalysis-Example
+  -ex-nrl:
+    name: "Example: NHS England National Record Locator Service"
+    description: "NHS England National Record Locator Service"
+    resources:
+      - DocumentReference/Y05868-d783361d-83fa-438f-977c-601f30ef5ceb
+      - DocumentReference/Y05868-e2c368a8-2849-43c9-9f4e-758bac7c5396

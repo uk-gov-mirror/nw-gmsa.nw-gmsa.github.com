@@ -1,0 +1,203 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "Y05868-e2c368a8-2849-43c9-9f4e-758bac7c5396",
+  "meta": {
+    "lastUpdated": "2026-01-31T10:28:17.174Z",
+    "profile": [
+      "https://fhir.nwgenomics.nhs.uk/StructureDefinition/DocumentReference"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "FILL"
+          }
+        ]
+      },
+      "system": "https://fhir.north-west.england.nhs.uk/iGene/ReportIdentifier",
+      "value": "T25-6218",
+      "assigner": {
+        "identifier": {
+          "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+          "value": "699X0"
+        }
+      }
+    }
+  ],
+  "status": "current",
+  "type": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "887701000000100",
+        "display": "Emergency health care plan"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "734163000",
+          "display": "Care plan"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "identifier": {
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NH"
+          }
+        ]
+      },
+      "system": "https://fhir.nhs.uk/Id/nhs-number",
+      "value": "9737383230",
+      "assigner": {
+        "identifier": {
+          "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+          "value": "X26"
+        }
+      }
+    }
+  },
+  "date": "2026-01-31T07:22:18.863Z",
+  "author": [
+    {
+      "identifier": {
+        "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+        "value": "Y05868"
+      }
+    }
+  ],
+  "custodian": {
+    "identifier": {
+      "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+      "value": "Y05868"
+    }
+  },
+  "content": [
+    {
+      "extension": [
+        {
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/England/CodeSystem/England-NRLContentStability",
+                "code": "static",
+                "display": "Static"
+              }
+            ]
+          },
+          "url": "https://fhir.nhs.uk/England/StructureDefinition/Extension-England-ContentStability"
+        },
+        {
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/England/CodeSystem/England-NRLRetrievalMechanism",
+                "code": "SSP",
+                "display": "Spine Secure Proxy"
+              }
+            ]
+          },
+          "url": "https://fhir.nhs.uk/England/StructureDefinition/Extension-England-NRLRetrievalMechanism"
+        }
+      ],
+      "attachment": {
+        "contentType": "application/pdf",
+        "url": "https://gen-tie-test.nwgenomics.nhs.uk/cdr/fhir/r4/Binary/1654",
+        "creation": "2025-10-15T15:59:16+00:00"
+      },
+      "format": {
+        "system": "https://fhir.nhs.uk/England/CodeSystem/England-NRLFormatCode",
+        "code": "urn:nhs-ic:unstructured",
+        "display": "Unstructured Document"
+      }
+    }
+  ],
+  "context": {
+    "encounter": [
+      {
+        "type": "Encounter",
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "VN"
+              }
+            ]
+          },
+          "system": "https://nw-gmsa.github.io/Id/VN",
+          "value": "1001166717"
+        }
+      }
+    ],
+    "practiceSetting": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "907271000000106",
+          "display": "Genetics laboratory service"
+        }
+      ]
+    },
+    "sourcePatientInfo": {
+      "identifier": {
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR"
+            }
+          ]
+        },
+        "system": "https://nw-gmsa.github.io/Id/MR",
+        "value": "5678",
+        "assigner": {
+          "identifier": {
+            "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+            "value": "RPY-EPI"
+          }
+        }
+      }
+    },
+    "related": [
+      {
+        "identifier": {
+          "system": "https://fhir.nhs.uk/Id/nhsSpineASID",
+          "value": "230811201350"
+        }
+      },
+      {
+        "type": "ServiceRequest",
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PLAC"
+              }
+            ]
+          },
+          "system": "urn:oid:1.2.840.114350.1.13.861.1.7.2.798268",
+          "value": "1601716017",
+          "assigner": {
+            "identifier": {
+              "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+              "value": "ROA"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
