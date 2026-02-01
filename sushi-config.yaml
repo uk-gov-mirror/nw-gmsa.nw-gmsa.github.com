@@ -214,11 +214,11 @@ resources:
     exampleBoolean: true
   DocumentReference/Y05868-d783361d-83fa-438f-977c-601f30ef5ceb:
     name: NRL Patient Birmingham proof of concept example - Original order not electronic
-    description: type, category, custodian and author currently incorrect values
+    description: type, category, custodian and author are currently incorrect values
     exampleBoolean: true
   DocumentReference/Y05868-e2c368a8-2849-43c9-9f4e-758bac7c5396:
     name: NRL Patient London proof of concept example - Original order electronic from EPIC system
-    description: type, category, custodian and author currently incorrect values
+    description: type, category, custodian and author are currently incorrect values
     exampleBoolean: true
 
 menu:
