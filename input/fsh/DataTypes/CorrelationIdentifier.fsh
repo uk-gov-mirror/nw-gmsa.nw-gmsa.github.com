@@ -11,7 +11,7 @@ Core Data Contract for FHIR Identifier, v2 CX and EI
 
 * type 0..1 MS
 * type from NWIdentifierType
-* system 1..1 MS
+* system 0..1 MS
 * system ^short = "uri is defined by supplying organisation."
 * value 1..1 MS
 * value ^short = "The value MUST be unique to the organisation"
