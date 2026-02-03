@@ -10,10 +10,10 @@ Usage: #example
 * identifier[0].use = #official
 * identifier[0].type = $v2-0203#NH
 * identifier[0].system = $nhs-number
-* identifier[0].value = "9321087654"
+* identifier[0].value = "9737383222"
+
 * identifier[1].type = $v2-0203#MR
 * identifier[1].value = "L765432"
-* identifier[1].system = "http://www.acme.org/patient/identifier"
 * identifier[1].assigner.identifier.system = $ods-code
 * identifier[1].assigner.identifier.value = "RR8"
 
