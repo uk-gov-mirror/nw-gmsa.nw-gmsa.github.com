@@ -113,7 +113,7 @@
       ],
       "attachment": {
         "contentType": "application/pdf",
-        "url": "https://gen-tie-test.nwgenomics.nhs.uk/cdr/fhir/r4/Binary/1880",
+        "url": "https://gen-tie-test.nwgenomics.nhs.uk/cdr/fhir/r4/Binary/1929",
         "creation": "2025-10-15T15:59:16+00:00"
       },
       "format": {
@@ -137,7 +137,6 @@
               }
             ]
           },
-          "system": "https://fhir.nwgenomics.nhs.uk/Id/VN",
           "value": "1001166717",
           "assigner": {
             "identifier": {

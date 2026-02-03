@@ -107,7 +107,7 @@
       ],
       "attachment": {
         "contentType": "application/pdf",
-        "url": "https://gen-tie-test.nwgenomics.nhs.uk/cdr/fhir/r4/Binary/1785",
+        "url": "https://gen-tie-test.nwgenomics.nhs.uk/cdr/fhir/r4/Binary/1930",
         "creation": "2025-10-14T15:59:16+00:00"
       },
       "format": {
@@ -126,6 +126,25 @@
           "display": "Genetics laboratory service"
         }
       ]
+    },
+    "sourcePatientInfo": {
+      "identifier": {
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+              "code": "MR"
+            }
+          ]
+        },
+        "value": "1234567",
+        "assigner": {
+          "identifier": {
+            "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+            "value": "RXK"
+          }
+        }
+      }
     },
     "related": [
       {
@@ -146,7 +165,6 @@
               }
             ]
           },
-          "system": "https://fhir.nwgenomics.nhs.uk/Id/PLAC",
           "value": "1601716017",
           "assigner": {
             "identifier": {
