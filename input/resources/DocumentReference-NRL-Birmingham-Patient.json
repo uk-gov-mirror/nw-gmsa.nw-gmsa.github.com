@@ -107,7 +107,7 @@
       ],
       "attachment": {
         "contentType": "application/pdf",
-        "url": "https://gen-tie-test.nwgenomics.nhs.uk/cdr/fhir/r4/Binary/1930",
+        "url": "https://gen-tie-test.nwgenomics.nhs.uk/cdr/fhir/r4/Binary/2001",
         "creation": "2025-10-14T15:59:16+00:00"
       },
       "format": {
@@ -118,6 +118,10 @@
     }
   ],
   "context": {
+    "period": {
+      "start": "2025-10-14T15:59:16+00:00",
+      "end": "2025-10-14T15:59:16+00:00"
+    },
     "practiceSetting": {
       "coding": [
         {
