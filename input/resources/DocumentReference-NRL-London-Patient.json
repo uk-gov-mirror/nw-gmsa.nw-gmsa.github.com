@@ -17,7 +17,7 @@
           }
         ]
       },
-      "system": "https://fhir.nwgenomics.nhs.uk/iGene/ReportIdentifier",
+      "system": "https://fhir.nwgenomics.nhs.uk/iGene/ReportNumber",
       "value": "T25-6218",
       "assigner": {
         "identifier": {
@@ -221,7 +221,7 @@
               }
             ]
           },
-          "system": "https://fhir.nwgenomics.nhs.uk/iGene/ReportIdentifier",
+          "system": "https://fhir.nwgenomics.nhs.uk/iGene/ReportNumber",
           "value": "T25-6218",
           "assigner": {
             "identifier": {

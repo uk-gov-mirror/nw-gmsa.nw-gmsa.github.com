@@ -11,8 +11,8 @@ title "Genomic Laboratory Report"
 *** Case identification [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Report
 *** [[Questionnaire-GenomicTestOrder.html Order Details]]
-**** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
-**** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
+**** [[StructureDefinition-OrderPlacerNumber.html Placer Order Number]]
+**** [[StructureDefinition-OrderFillerNumber.html Filler Order Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
 **** [[https://www.datadictionary.nhs.uk/data_elements/local_treatment_category_code.html Local Treatment Category Code]]

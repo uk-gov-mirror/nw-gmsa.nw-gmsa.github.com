@@ -1,6 +1,6 @@
-Profile:        PlacerOrderNumber
+Profile:        OrderPlacerNumber
 Parent:         CorrelationIdentifier
-Id:             PlacerOrderNumber
+Id:             OrderPlacerNumber
 Title:          "Placer Order Number"
 Description:     """
 `Diagnostic Workflow`

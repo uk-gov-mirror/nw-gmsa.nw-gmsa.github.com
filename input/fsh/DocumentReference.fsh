@@ -34,25 +34,25 @@ Description:    """
 * context.related ^slicing.ordered = false
 
 * context.related contains
-  placerOrderNumber 0..1 MS and placerGroupNumber 0..1 MS and ReportIdentifier 0..1 MS
+  OrderPlacerNumber 0..1 MS and OrderGroupNumber 0..1 MS and ReportNumber 0..1 MS
 
-* context.related[placerOrderNumber] only Reference(ServiceRequest)
-* context.related[placerOrderNumber].type 1..1 MS
-* context.related[placerOrderNumber].type = "ServiceRequest"
-* context.related[placerOrderNumber].identifier 1..1
-* context.related[placerOrderNumber].identifier only PlacerOrderNumber
+* context.related[OrderPlacerNumber] only Reference(ServiceRequest)
+* context.related[OrderPlacerNumber].type 1..1 MS
+* context.related[OrderPlacerNumber].type = "ServiceRequest"
+* context.related[OrderPlacerNumber].identifier 1..1
+* context.related[OrderPlacerNumber].identifier only OrderPlacerNumber
 
-* context.related[placerGroupNumber] only Reference(ServiceRequest)
-* context.related[placerGroupNumber].type 1..1 MS
-* context.related[placerGroupNumber].type = "ServiceRequest"
-* context.related[placerGroupNumber].identifier 1..1
-* context.related[placerGroupNumber].identifier only PlacerGroupNumber
+* context.related[OrderGroupNumber] only Reference(ServiceRequest)
+* context.related[OrderGroupNumber].type 1..1 MS
+* context.related[OrderGroupNumber].type = "ServiceRequest"
+* context.related[OrderGroupNumber].identifier 1..1
+* context.related[OrderGroupNumber].identifier only OrderGroupNumber
 
-* context.related[ReportIdentifier] only Reference(DiagnosticReport)
-* context.related[ReportIdentifier].type 1..1 MS
-* context.related[ReportIdentifier].type = "DiagnosticReport"
-* context.related[ReportIdentifier].identifier 1..1
-* context.related[ReportIdentifier].identifier only FillerOrderNumber or ReportNumber
+* context.related[ReportNumber] only Reference(DiagnosticReport)
+* context.related[ReportNumber].type 1..1 MS
+* context.related[ReportNumber].type = "DiagnosticReport"
+* context.related[ReportNumber].identifier 1..1
+* context.related[ReportNumber].identifier only OrderFillerNumber
 
 * context.sourcePatientInfo only Reference(Patient)
 * context.sourcePatientInfo.identifier only MedicalRecordNumber

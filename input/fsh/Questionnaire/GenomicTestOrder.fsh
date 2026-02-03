@@ -324,7 +324,7 @@ Usage:  #definition
     * linkId = "LN/106194-4"
     * code[+] = $loinc#106194-4
     * text = "Test request ID/Order ID"
-    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:PlacerOrderNumber"
+    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:OrderPlacerNumber"
     * required = false
 
 // Test request	Priority
