@@ -26,11 +26,11 @@ Description: "TODO"
     * assigner.identifier.system = $ods-code
     * assigner.identifier.value = "R0A"
 
-* context.related[reportNumber].identifier.value = "1001166717"
-* context.related[reportNumber].identifier.system = "http://www.example.org/servicerequest/identifier"
+* context.related[fillerOrderNumber].identifier.value = "1001166717"
+* context.related[fillerOrderNumber].identifier.system = "http://www.example.org/servicerequest/identifier"
 //* context.related[reportNumber].identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#FILL
-* context.related[reportNumber].identifier.assigner.identifier.system = $ods-code
-* context.related[reportNumber].identifier.assigner.identifier.value = "699X0"
+* context.related[fillerOrderNumber].identifier.assigner.identifier.system = $ods-code
+* context.related[fillerOrderNumber].identifier.assigner.identifier.value = "699X0"
 
 * content[+]
   * attachment.contentType = #application/pdf
