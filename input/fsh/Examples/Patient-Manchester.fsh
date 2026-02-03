@@ -2,7 +2,7 @@ Instance: Patient-Manchester
 InstanceOf: Patient
 Title: "Patient - Sansa Manchester NHS Number: 9737383192"
 Description: """
-Test Patient for Cheshire and Merseyside ICS
+Test Patient for Greater Manchester ICS
 """
 Usage: #example
 

@@ -2,7 +2,7 @@ Instance: Patient-Birmingham
 InstanceOf: Patient
 Title: "Patient - Birmingham"
 Description: """
-Test Patient for Birmingham.
+Test Patient for Birmingham and Solihull ICB.
 """
 Usage: #example
 

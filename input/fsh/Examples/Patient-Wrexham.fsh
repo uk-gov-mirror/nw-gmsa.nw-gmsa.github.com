@@ -2,7 +2,7 @@ Instance: Patient-Wrexham
 InstanceOf: Patient
 Title: "Patient - Wrexham"
 Description: """
-Test Patient for Wrexham
+Test Patient for Wrexham and Wales
 """
 Usage: #example
 
