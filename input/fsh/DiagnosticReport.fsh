@@ -22,12 +22,8 @@ Description:    """
 * identifier ^slicing.description = "Slice based on the type"
 * identifier ^slicing.ordered = false
 * identifier contains
-  ReportNumber 0..1 MS and OrderFillerNumber 0..1 MS
+  OrderFillerNumber 0..1 MS
 
-* identifier[ReportNumber] only ReportNumber
-* identifier[ReportNumber] ^short = "Identifier assigned by the lab (Order Filler)"
-* identifier[ReportNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[ReportNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 * identifier[OrderFillerNumber] only OrderFillerNumber
 * identifier[OrderFillerNumber] ^short = "Identifier assigned by the lab (Order Filler)"
