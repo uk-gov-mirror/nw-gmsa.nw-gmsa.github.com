@@ -57,6 +57,8 @@ Description:    """
 * context.sourcePatientInfo only Reference(Patient)
 * context.sourcePatientInfo.identifier only MedicalRecordNumber
 
+* context.period 0..1 MS
+
 * subject 1..1
 * subject only Reference(Patient)
 * subject.identifier only NHSNumber
