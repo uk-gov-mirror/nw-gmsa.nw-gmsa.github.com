@@ -9,10 +9,10 @@ Pattern: FHIR RESTful + IHE [Mobile access to Health Documents (MHD)](https://pr
 ```mermaid
 sequenceDiagram
     participant Consumer As Document Consumer
-    participant Repository As Document Repository
+    participant Repository As Document Registry and Repository
 
     Consumer ->> Repository: Query Document Metadata
-    Registry -->> Consumer: List of DocumentReference
+    Repository -->> Consumer: List of DocumentReference
     Consumer ->> Consumer: Select Document entry
     Consumer ->> Repository: Retrieve Document (PDF)
     Repository -->> Consumer: PDF
