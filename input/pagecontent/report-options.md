@@ -1,4 +1,4 @@
-## Local Genomic Reports
+## Local/Regional Genomic Reports
 
 Allows a consumer to retrieve genomic reports either as structured or unstructured
 
@@ -27,6 +27,10 @@ sequenceDiagram
 
     Consumer ->> Repository: Query Data (Diagnostic Report, Observation, etc)
 ```
+
+### Workflow + Messages
+
+Note: most sharing of laboratory reports will be via HL7 v2 ORU_R01 messages to NHS Trusts and also Hl7 v2 MDM_T02 to ICS Shared Record Providers.
 
 ## National Genomic Reports
 
@@ -75,17 +79,16 @@ sequenceDiagram
     Consumer ->> RepositoryFacade: Retrieve Document (FHIR Document)
     RepositoryFacade ->> Repository: Query Data (Diagnostic Report, Observation, etc)
     RepositoryFacade ->> RepositoryFacade: Assemble FHIR Document
-
 ```
 
-### Workflow Modifications
+### Workflow + Events
 
 With the laboratory report shared, workflow can be altered to be event based. When a laboratory report is shared, a notification to the order placer and others who have subscribed to the event.
 This allows HL7 v2 ORU_R01 messages to be phased out. 
 
 Pattern: FHIR RESTful + IHE [Document Subscription for Mobile (DSUBm)](https://profiles.ihe.net/ITI/DSUBm/index.html)
 
-### Security Considerations
+## Security Considerations
 
 For local this would be using an OAuth2 Authorisation flow - see [Authorisation (OAuth2)](authorisation.html)
 In addition all queries would be audited e.g. follow IHE [Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/index.html)
