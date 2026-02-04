@@ -115,8 +115,8 @@ sequenceDiagram
     Consumer ->> Registry: Query Document Metadata
     Registry -->> Consumer: List of DocumentReference
     Consumer ->> Consumer: Select Document entry
-    Consumer ->> SSP: Retrieve Document (FHIR Document)
-    SSP ->> Repository: Retrieve Document (FHIR Document)
-    Repository -->> SSP: FHIR Document
+    Consumer ->> SSP: Retrieve Document (PDF/FHIR Document)
+    SSP ->> Repository: Retrieve Document (PDF/FHIR Document)
+    Repository -->> SSP: PDF/FHIR Document
     SSP -->> Consumer: FHIR Document
 ```
