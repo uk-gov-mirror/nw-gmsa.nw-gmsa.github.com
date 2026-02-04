@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  id="Definitions_GenomicTesting"
+                  targetNamespace="http://example.org/genomic-testing">
+
+  <!-- ===================================================== -->
+  <!-- COLLABORATION -->
+  <!-- ===================================================== -->
+  <bpmn:collaboration id="Collaboration_GenomicTesting">
+
+    <bpmn:participant id="Participant_PTC"
+                      name="Primary Treatment Centre"
+                      processRef="Process_PTC"/>
+
+    <bpmn:participant id="Participant_POSCU"
+                      name="Community Nurse / POSCU"
+                      processRef="Process_POSCU"/>
+
+    <bpmn:participant id="Participant_Lab"
+                      name="Genomic / Specialist Laboratory"
+                      processRef="Process_Lab"/>
+
+    <bpmn:messageFlow id="MF_Order_PTC_Lab"
+                      sourceRef="PTC_SendOrder"
+                      targetRef="Lab_ReceiveOrder"/>
+
+    <bpmn:messageFlow id="MF_Sample_POSCU_Lab"
+                      sourceRef="POSCU_SendSample"
+                      targetRef="Lab_ReceiveSample"/>
+
+    <bpmn:messageFlow id="MF_Results_Lab_PTC"
+                      sourceRef="Lab_SendResults"
+                      targetRef="PTC_ReceiveResults"/>
+
+    <bpmn:messageFlow id="MF_Results_Lab_POSCU"
+                      sourceRef="Lab_SendResults"
+                      targetRef="POSCU_ReceiveResults"/>
+
+    <bpmn:messageFlow id="MF_Confirm_POSCU_PTC"
+                      sourceRef="POSCU_ConfirmReceipt"
+                      targetRef="PTC_ReceiveConfirmation"/>
+
+  </bpmn:collaboration>
+
+  <!-- ===================================================== -->
+  <!-- PROCESS: PTC -->
+  <!-- ===================================================== -->
+  <bpmn:process id="Process_PTC" isExecutable="false">
+
+    <bpmn:startEvent id="PTC_Start" name="Clinical Need Identified"/>
+    <bpmn:userTask id="PTC_AssessNeed" name="Assess Need for Genomic Testing"/>
+    <bpmn:userTask id="PTC_ConfirmConsent" name="Confirm Consent & Capture Clinical Context"/>
+    <bpmn:serviceTask id="PTC_CreateOrder" name="Create Genomic Test Order"/>
+
+    <bpmn:intermediateThrowEvent id="PTC_SendOrder" name="Send Genomic Test Order">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateThrowEvent>
+
+    <bpmn:intermediateCatchEvent id="PTC_ReceiveResults" name="Receive Genomic Diagnostic Report">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateCatchEvent>
+
+    <bpmn:exclusiveGateway id="PTC_ActionGateway" name="Results Require Action?"/>
+
+    <bpmn:userTask id="PTC_MDTReview" name="Review Results in MDT"/>
+    <bpmn:userTask id="PTC_AmendPlan" name="Amend Diagnosis / Treatment Plan"/>
+
+    <bpmn:intermediateThrowEvent id="PTC_NotifyPOSCU" name="Notify POSCU of Care Plan Changes">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateThrowEvent>
+
+    <bpmn:intermediateCatchEvent id="PTC_ReceiveConfirmation" name="Receive Results Confirmation">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateCatchEvent>
+
+    <bpmn:endEvent id="PTC_End" name="Genomic-Informed Care Implemented"/>
+
+    <!-- SEQUENCE FLOWS -->
+    <bpmn:sequenceFlow sourceRef="PTC_Start" targetRef="PTC_AssessNeed"/>
+    <bpmn:sequenceFlow sourceRef="PTC_AssessNeed" targetRef="PTC_ConfirmConsent"/>
+    <bpmn:sequenceFlow sourceRef="PTC_ConfirmConsent" targetRef="PTC_CreateOrder"/>
+    <bpmn:sequenceFlow sourceRef="PTC_CreateOrder" targetRef="PTC_SendOrder"/>
+    <bpmn:sequenceFlow sourceRef="PTC_SendOrder" targetRef="PTC_ReceiveResults"/>
+    <bpmn:sequenceFlow sourceRef="PTC_ReceiveResults" targetRef="PTC_ActionGateway"/>
+
+    <bpmn:sequenceFlow sourceRef="PTC_ActionGateway" targetRef="PTC_MDTReview">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Yes</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+
+    <bpmn:sequenceFlow sourceRef="PTC_MDTReview" targetRef="PTC_AmendPlan"/>
+    <bpmn:sequenceFlow sourceRef="PTC_AmendPlan" targetRef="PTC_NotifyPOSCU"/>
+    <bpmn:sequenceFlow sourceRef="PTC_NotifyPOSCU" targetRef="PTC_End"/>
+
+    <bpmn:sequenceFlow sourceRef="PTC_ActionGateway" targetRef="PTC_End">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">No</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+
+  </bpmn:process>
+
+  <!-- ===================================================== -->
+  <!-- PROCESS: POSCU -->
+  <!-- ===================================================== -->
+  <bpmn:process id="Process_POSCU" isExecutable="false">
+
+    <bpmn:intermediateCatchEvent id="POSCU_ReceiveOrder" name="Receive Genomic Test Order">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateCatchEvent>
+
+    <bpmn:userTask id="POSCU_CollectSample" name="Collect Genomic Sample"/>
+    <bpmn:userTask id="POSCU_DocumentSample" name="Document Specimen Details"/>
+
+    <bpmn:intermediateThrowEvent id="POSCU_SendSample" name="Send Sample to Laboratory">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateThrowEvent>
+
+    <bpmn:intermediateCatchEvent id="POSCU_ReceiveResults" name="Receive Genomic Diagnostic Report">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateCatchEvent>
+
+    <bpmn:intermediateThrowEvent id="POSCU_ConfirmReceipt" name="Confirm Receipt of Results">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateThrowEvent>
+
+    <bpmn:endEvent id="POSCU_End"/>
+
+    <bpmn:sequenceFlow sourceRef="POSCU_ReceiveOrder" targetRef="POSCU_CollectSample"/>
+    <bpmn:sequenceFlow sourceRef="POSCU_CollectSample" targetRef="POSCU_DocumentSample"/>
+    <bpmn:sequenceFlow sourceRef="POSCU_DocumentSample" targetRef="POSCU_SendSample"/>
+    <bpmn:sequenceFlow sourceRef="POSCU_SendSample" targetRef="POSCU_ReceiveResults"/>
+    <bpmn:sequenceFlow sourceRef="POSCU_ReceiveResults" targetRef="POSCU_ConfirmReceipt"/>
+    <bpmn:sequenceFlow sourceRef="POSCU_ConfirmReceipt" targetRef="POSCU_End"/>
+
+  </bpmn:process>
+
+  <!-- ===================================================== -->
+  <!-- PROCESS: LAB -->
+  <!-- ===================================================== -->
+  <bpmn:process id="Process_Lab" isExecutable="false">
+
+    <bpmn:intermediateCatchEvent id="Lab_ReceiveOrder" name="Receive Genomic Test Order">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateCatchEvent>
+
+    <bpmn:intermediateCatchEvent id="Lab_ReceiveSample" name="Receive Genomic Sample">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateCatchEvent>
+
+    <bpmn:serviceTask id="Lab_Accession" name="Accession Sample & Verify Quality"/>
+
+    <bpmn:exclusiveGateway id="Lab_QualityGateway" name="Sample Suitable?"/>
+
+    <bpmn:serviceTask id="Lab_Testing" name="Perform Genomic Testing"/>
+    <bpmn:serviceTask id="Lab_Interpretation" name="Bioinformatics & Interpretation"/>
+    <bpmn:userTask id="Lab_Report" name="Author Genomic Diagnostic Report"/>
+
+    <bpmn:intermediateThrowEvent id="Lab_SendResults" name="Distribute Genomic Diagnostic Report">
+      <bpmn:messageEventDefinition/>
+    </bpmn:intermediateThrowEvent>
+
+    <bpmn:endEvent id="Lab_End"/>
+
+    <bpmn:sequenceFlow sourceRef="Lab_ReceiveOrder" targetRef="Lab_ReceiveSample"/>
+    <bpmn:sequenceFlow sourceRef="Lab_ReceiveSample" targetRef="Lab_Accession"/>
+    <bpmn:sequenceFlow sourceRef="Lab_Accession" targetRef="Lab_QualityGateway"/>
+
+    <bpmn:sequenceFlow sourceRef="Lab_QualityGateway" targetRef="Lab_Testing">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Yes</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+
+    <bpmn:sequenceFlow sourceRef="Lab_Testing" targetRef="Lab_Interpretation"/>
+    <bpmn:sequenceFlow sourceRef="Lab_Interpretation" targetRef="Lab_Report"/>
+    <bpmn:sequenceFlow sourceRef="Lab_Report" targetRef="Lab_SendResults"/>
+    <bpmn:sequenceFlow sourceRef="Lab_SendResults" targetRef="Lab_End"/>
+
+  </bpmn:process>
+
+</bpmn:definitions>
