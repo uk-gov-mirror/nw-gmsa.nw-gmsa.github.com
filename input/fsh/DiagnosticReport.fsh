@@ -22,17 +22,13 @@ Description:    """
 * identifier ^slicing.description = "Slice based on the type"
 * identifier ^slicing.ordered = false
 * identifier contains
-  ReportNumber 0..1 MS and FillerOrderNumber 0..1 MS
+  OrderFillerNumber 0..1 MS
 
-* identifier[ReportNumber] only ReportNumber
-* identifier[ReportNumber] ^short = "Identifier assigned by the lab (Order Filler)"
-* identifier[ReportNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[ReportNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
-* identifier[FillerOrderNumber] only FillerOrderNumber
-* identifier[FillerOrderNumber] ^short = "Identifier assigned by the lab (Order Filler)"
-* identifier[FillerOrderNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[FillerOrderNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* identifier[OrderFillerNumber] only OrderFillerNumber
+* identifier[OrderFillerNumber] ^short = "Identifier assigned by the lab (Order Filler)"
+* identifier[OrderFillerNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
+* identifier[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 
 * basedOn only CodeableReference
@@ -45,16 +41,16 @@ Description:    """
 * basedOn ^slicing.description = "Slice based on the type"
 * basedOn ^slicing.ordered = false
 * basedOn contains
-  fillerOrderNumber 0..1 MS
+  OrderFillerNumber 0..1 MS
 
-* basedOn[fillerOrderNumber] ^short = "Identifier assigned by the lab (ORC-3)"
-* basedOn[fillerOrderNumber].type 1..1 MS
-* basedOn[fillerOrderNumber].type = "ServiceRequest"
-* basedOn[fillerOrderNumber].identifier 1..1
-* basedOn[fillerOrderNumber].identifier only FillerOrderNumber
-* basedOn[fillerOrderNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* basedOn[fillerOrderNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
-* basedOn[fillerOrderNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* basedOn[OrderFillerNumber] ^short = "Identifier assigned by the lab (ORC-3)"
+* basedOn[OrderFillerNumber].type 1..1 MS
+* basedOn[OrderFillerNumber].type = "ServiceRequest"
+* basedOn[OrderFillerNumber].identifier 1..1
+* basedOn[OrderFillerNumber].identifier only OrderFillerNumber
+* basedOn[OrderFillerNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
+* basedOn[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* basedOn[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 
 * category ^slicing.discriminator.type = #value

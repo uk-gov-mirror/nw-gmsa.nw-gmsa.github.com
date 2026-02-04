@@ -55,14 +55,14 @@ Usage:  #definition
     * linkId = "LN/106194-4"
     * code[+] = $loinc#106194-4
     * text = "Test request ID/Order ID/Order Placer Number"
-    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:PlacerOrderNumber"
+    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:OrderPlacerNumber"
     * required = false
   * item[+]
     * type = #string
     * linkId = "LN/106183-7"
     * code[+] = $loinc#106183-7
     * text = "Order Filler Number"
-    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:FillerOrderNumber"
+    * definition = "https://fhir.nwgenomics.nhs.uk/StructureDefinition/ServiceRequest#ServiceRequest.identifier:OrderFillerNumber"
     * required = false
   * item[+]
     * type = #string

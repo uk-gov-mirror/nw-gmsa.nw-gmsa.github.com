@@ -22,21 +22,21 @@ Description:    """
 * identifier ^slicing.description = "Slice based on the type"
 * identifier ^slicing.ordered = false
 * identifier contains
-  PlacerOrderNumber 0..1 MS and FillerOrderNumber 0..1 MS
+  OrderPlacerNumber 0..1 MS and OrderFillerNumber 0..1 MS
 
-* identifier[PlacerOrderNumber] only PlacerOrderNumber
-* identifier[PlacerOrderNumber] ^short = "Identifier assigned by the Order Placer. (HL7 v2 ORC-2/OBR-2 Placer Order Number)"
-* identifier[PlacerOrderNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[PlacerOrderNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
-* identifier[PlacerOrderNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* identifier[OrderPlacerNumber] only OrderPlacerNumber
+* identifier[OrderPlacerNumber] ^short = "Identifier assigned by the Order Placer. (HL7 v2 ORC-2/OBR-2 Placer Order Number)"
+* identifier[OrderPlacerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
+* identifier[OrderPlacerNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* identifier[OrderPlacerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
-* identifier[FillerOrderNumber] only FillerOrderNumber
-* identifier[FillerOrderNumber] ^short = "Identifier assigned by the lab (Order Filler)"
-* identifier[FillerOrderNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[FillerOrderNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
-* identifier[FillerOrderNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* identifier[OrderFillerNumber] only OrderFillerNumber
+* identifier[OrderFillerNumber] ^short = "Identifier assigned by the lab (Order Filler)"
+* identifier[OrderFillerNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
+* identifier[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* identifier[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
-* requisition only PlacerGroupNumber
+* requisition only OrderGroupNumber
 * requisition ^short = "Identifier assigned by the Order Placer. (HL7 v2 ORC-4 Placer Group Number)"
 * requisition insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * requisition insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)

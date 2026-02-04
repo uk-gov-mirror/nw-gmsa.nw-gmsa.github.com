@@ -1,7 +1,7 @@
-Profile:        FillerOrderNumber
+Profile:        OrderFillerNumber
 Parent:         CorrelationIdentifier
-Id:             FillerOrderNumber
-Title:          "Filler Order Number"
+Id:             OrderFillerNumber
+Title:          "Order Filler Number"
 Description:     """
 `Diagnostic Workflow`
 """

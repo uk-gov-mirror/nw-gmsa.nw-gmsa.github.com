@@ -11,8 +11,8 @@ title "Genomic Laboratory Order"
 *** Case identification / Account Number [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Order
 *** Order Details
-**** [[StructureDefinition-PlacerOrderNumber.html Placer Order Number]]
-**** [[StructureDefinition-FillerOrderNumber.html Filler Order Number]]
+**** [[StructureDefinition-OrderPlacerNumber.html Placer Order Number]]
+**** [[StructureDefinition-OrderFillerNumber.html Filler Order Number]]
 **** [[StructureDefinition-PlacerGroupNumber.html Placer Group Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Ordering Practitioner
