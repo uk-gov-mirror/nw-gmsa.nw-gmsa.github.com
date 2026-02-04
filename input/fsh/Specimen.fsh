@@ -35,7 +35,7 @@ Description:    """
 * identifier[FillerSpecimenNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 * identifier[FillerSpecimenNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
-* identifier[AccessionNumber] only AccessionNumber
+* identifier[AccessionNumber] only SpecimenAccessionNumber
 * identifier[AccessionNumber] ^short = "Identifier assigned by the lab"
 * identifier[AccessionNumber] insert Obligation(#SHOULD:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * identifier[AccessionNumber] insert Obligation(#SHALL:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
@@ -50,7 +50,7 @@ Description:    """
 
 * accessionIdentifier ^short = "Discourage - in future FHIR versions accessionIdentifier becomes an identifier, it is recommeded to follow that convention"
 * accessionIdentifier 0..1
-* accessionIdentifier only AccessionNumber
+* accessionIdentifier only SpecimenAccessionNumber
 
 * subject 1..1 MS
 * subject only Reference(Patient)
