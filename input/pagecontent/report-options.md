@@ -12,8 +12,10 @@ sequenceDiagram
     participant Repository As Document Repository
 
     Consumer ->> Repository: Query Document Metadata
+    Registry -->> Consumer: List of DocumentReference
     Consumer ->> Consumer: Select Document entry
-    Consumer ->> Repository: Retrieve Document
+    Consumer ->> Repository: Retrieve Document (PDF)
+    Repository -->> Consumer: PDF
 ```
 
 ### Structured Data
@@ -26,6 +28,7 @@ sequenceDiagram
     participant Repository As Data Repository
 
     Consumer ->> Repository: Query Data (Diagnostic Report, Observation, etc)
+    Repository -->> Consumer :FHIR Resources
 ```
 
 ### Workflow + Messages
@@ -45,8 +48,10 @@ sequenceDiagram
     participant Repository As Document Repository
 
     Consumer ->> Registry: Query Document Metadata
+    Registry -->> Consumer: List of DocumentReference
     Consumer ->> Consumer: Select Document entry
     Consumer ->> Repository: Retrieve Document (PDF)
+    Repository -->> Consumer: PDF
 ```
 
 ### Structured Data (Composition)
@@ -60,8 +65,10 @@ sequenceDiagram
     participant Repository As Document Repository
 
     Consumer ->> Registry: Query Document Metadata
+    Registry -->> Consumer: List of DocumentReference
     Consumer ->> Consumer: Select Document entry
     Consumer ->> Repository: Retrieve Document (FHIR Document)
+    Repository -->> Consumer: FHIR Document
 ```
 
 Technically this would likely be implemented as a aggregation using the local structured API's (this is how YHCR is implementing International Patient Summary which is also a FHIR Document)
@@ -75,10 +82,13 @@ sequenceDiagram
     participant Repository As Data Repository
 
     Consumer ->> Registry: Query Document Metadata
+    Registry -->> Consumer: List of DocumentReference
     Consumer ->> Consumer: Select Document entry
     Consumer ->> RepositoryFacade: Retrieve Document (FHIR Document)
     RepositoryFacade ->> Repository: Query Data (Diagnostic Report, Observation, etc)
+    Repository -->> RepositoryFacade:FHIR Resources
     RepositoryFacade ->> RepositoryFacade: Assemble FHIR Document
+    RepositoryFacade -->> Consumer: FHIR Document
 ```
 
 ### Workflow + Events
@@ -93,4 +103,20 @@ Pattern: FHIR RESTful + IHE [Document Subscription for Mobile (DSUBm)](https://p
 For local this would be using an OAuth2 Authorisation flow - see [Authorisation (OAuth2)](authorisation.html)
 In addition all queries would be audited e.g. follow IHE [Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/index.html)
 
-For national, access to local repositories would be required would again use IHE BALP. The authentication is likely to be [SSP Retrieval](https://developer.nhs.uk/apis/nrl/retrieval_ssp.html)
+For national, access to local repositories would be required would again use IHE BALP. The authentication is likely to be [SSP Retrieval](https://developer.nhs.uk/apis/nrl/retrieval_ssp.html), this means the consumer does not talk directly to the repository.
+
+```mermaid
+sequenceDiagram
+    participant Consumer As Document Consumer
+    participant Registry As Document Registry<br/>National Record Locator Service
+    participant SSP As Spine Secure Proxy
+    participant Repository As Document Repository
+
+    Consumer ->> Registry: Query Document Metadata
+    Registry -->> Consumer: List of DocumentReference
+    Consumer ->> Consumer: Select Document entry
+    Consumer ->> SSP: Retrieve Document (FHIR Document)
+    SSP ->> Repository: Retrieve Document (FHIR Document)
+    Repository -->> SSP: FHIR Document
+    SSP -->> Consumer: FHIR Document
+```
