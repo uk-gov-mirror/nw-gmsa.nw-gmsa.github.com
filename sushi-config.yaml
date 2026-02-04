@@ -138,6 +138,9 @@ pages:
   interaction-options.md:
     title: Workflow/Interaction Options
     generation: markdown
+  report-options.md:
+    title: Report Options
+    generation: markdown
   identifiers.md:
     title: Identifiers and Codes
     generation: markdown
