@@ -125,7 +125,7 @@ Description:    """
 * resultsInterpreter.identifier 0..1
 * resultsInterpreter.identifier.system 1..1
 * resultsInterpreter.identifier.value 1..1
-* resultsInterpreter.type 1..1
+* resultsInterpreter.type 0..1
 * resultsInterpreter only Reference(Practitioner or PractitionerRole)
 
 * resultsInterpreter ^slicing.discriminator.type = #value
