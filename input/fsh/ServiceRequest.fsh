@@ -124,8 +124,7 @@ Description:    """
 
 * note MS
 
-* specimen 1..* MS
-
+* specimen 0..* MS
 
 * reasonCode MS
 * reasonCode from GenomicClinicalIndicationCodes (preferred)
