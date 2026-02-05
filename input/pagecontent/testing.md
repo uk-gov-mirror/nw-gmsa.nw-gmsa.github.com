@@ -42,7 +42,7 @@ All test patients (with a NHS Number) are on NHS England [Personal Demographics 
 
 The ODS code for GP Surgery MUST be a real code, this is used for routing reports to relevant ICS.
 
-#### NHS North West Genomcis Test Patients
+#### NHS North West Genomics Test Patients
 
 | NHS Number                                                      | Surname                                       | Forename | Middle name | Gender | Date Of Birth <br/> (SMSP) | Deceased | GP Surgery <br/> ODS Code                                                                                     | Address line 1        | Address line 2                  | Address line 3          | Address line 4 <br/> city | Address line 5 <br/> district | Postcode |
 |-----------------------------------------------------------------|-----------------------------------------------|----------|-------------|--------|----------------------------|----------|---------------------------------------------------------------------------------------------------------------|-----------------------|---------------------------------|-------------------------|---------------------------|-------------------------------|----------|
