@@ -20,6 +20,7 @@ HL7 v2 CodeSystem : England-GenomicTestDirectory
 * #R14.1 "Acutely unwell children with a likely monogenic disorder"
 * #R133.1 "Arrhythmogenic right ventricular cardiomyopathy"
 * #R391.1 "Barth syndrome"
+* #R125.1 "Thoracic aortic aneurysm or dissection (WES or Medium Panel)"
 * #R128.1 "Brugada syndrome and cardiac sodium channel disease"
 * #R129.1 "Catecholaminergic polymorphic VT"
 * #R132.1 "Dilated and Arrhythmogenic cardiomyopathy"
@@ -35,7 +36,7 @@ HL7 v2 CodeSystem : England-GenomicTestDirectory
 * #R138.1 "Sudden unexplained death or survivors of a cardiac event"
 * #R240.1 "Diagnostic testing for known variant(s)"
 * #R242.1 "Predictive testing for known familial variant(s)"
-
+* #R250.1
 * #R361.1 "Sickle cell, thalassaemia and other haemoglobinopathies trait or carrier testing"
 * #R361.2 "Sickle cell, thalassaemia and other haemoglobinopathies trait or carrier testing"
 * #R372.1 "Newborn screening for sickle cell disease in a transfused baby"
