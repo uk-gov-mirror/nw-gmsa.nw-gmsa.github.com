@@ -122,10 +122,10 @@ Description:    """
 * performer[operator].extension[performerFunction].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF
 * performer[operator].type = #Practitioner
 
-* resultsInterpreter.identifier 1..1
+* resultsInterpreter.identifier 0..1
 * resultsInterpreter.identifier.system 1..1
 * resultsInterpreter.identifier.value 1..1
-* resultsInterpreter.type 1..1
+* resultsInterpreter.type 0..1
 * resultsInterpreter only Reference(Practitioner or PractitionerRole)
 
 * resultsInterpreter ^slicing.discriminator.type = #value

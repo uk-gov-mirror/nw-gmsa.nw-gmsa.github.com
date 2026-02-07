@@ -50,3 +50,13 @@ Bucket for local codes
 * #SampleSentToName "Name of person who sent sample"
 
 * #TESTOUTCOME "NHS England Genomics Test Outcome"
+
+* #230056 "What Type of Referral Do You Require?"
+* #230016 "Test Type"
+* #231284 "Please Select R240 Test(s):"
+* #231285 "Please Select R242 Test(s):"
+* #230027 "Email Addresses of Non-MFT Clinicians for Result Reports"
+* #230037 "Please Acknowledge That a DNA Sample Will be Stored in the Laboratory on Completion of Testing"
+* #230039 "Is the Person Ordering the Test the Referring Clinician"
+* #GENEAP "GENETICS TEST PERFORMABLE"
+* #unknown "Unknown"
