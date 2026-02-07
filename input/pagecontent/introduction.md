@@ -141,6 +141,7 @@ THIS HAS NOT BEEN CLINICALLY VALIDATED
       - Re-interpreted as knowledge evolves
       - Referenced for future treatment decisions
     - PTC may request amended reports if variant classification changes
+    
 ---
 
 ## Use Case: Colorectal Diagnostic Pathway (Derby → Nottingham University Hospitals NHS Trust → North West Genomics)
