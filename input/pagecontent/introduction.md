@@ -91,41 +91,10 @@ graph TD;
     class O,S,T,AN purple
 ```
 
-### Chimerism
-
-The chimerism testing pathway within the NHS is used to monitor the success of a haematopoietic stem cell transplant (HSCT) and involves a specific process of sample collection, transport, and analysis guided by clinical consensus guidelines. The testing is requested by a patient's clinical team, not directly by the patient.
-
-```mermaid
- graph TD;
-    subgraph NHSTrust[NHS Trust]
-        Practitioner[Consultant Haematologist<br/>Practitioner] --> |1. Creates Order| EPR[<b>Order Placer</b><br/>EPR]
-        Practitioner --> |3. Asks For| Specimen[Sample Collection]
-        TIE[Trust Integration Engine] 
-    end
-    EPR --> |"2a. Sends Laboratory Order<br/>M118.1 Short Tandem Repeat (STR)<br/>HL7 v2 ORM_O01 (MFT)"| TIE
-    Specimen --> |4. Send Specimen| LIMS 
-    TIE --> |"2b. Sends Laboratory Order<br/>HL7 v2 ORM_O01"| RIE
-    subgraph NWGenomics[North West Genomics]
-        RIE --> |"2b. Sends Laboratory Order<br/>HL7 v2 ORM_O01"| LIMS
-        LIMS[<b>Order Filler</b><br/>LIMS Histotrac]
-        LIMS --> |5a. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE["Regional Integration Engine"]
-    end
-    RIE --> |5b. Send Laboratory Report<br/>HL7 v2 ORU_R01| TIE
-    TIE --> |5c. Send Laboratory Report<br/>HL7 v2 ORU_R01| EPR
-
-    classDef purple fill:#E1D5E7;
-
-    class EPR,LIMS,Specimen,Practitioner purple
-```
-
-<img style="padding:3px;width:60%;" src="Chimerism-MFT.png" alt="Chimerism Genomic Tests - MFT"/>
-<br clear="all">
-<p class="figureTitle">Chimerism Genomic Tests - MFT</p> 
-<br clear="all">
 
 ### Haematological Malignancy Diagnostic Services
 
-Future
+
 
 ```mermaid
 graph TD
@@ -134,38 +103,36 @@ graph TD
         EPR[<b>Order Placer</b><br/>EPR]
         TIE[Trust Integration Engine]
     end 
+    HODS["<b>Order Filler</b><br/>HODS<br/><b>Order Placer</b>"]
+    
     EPR --> |"1. Create Laboratory Order<br/>Manual entry"| HODS
-    HODS --> |"2. Send Laboratory Order + Specimen<br/>"| MFTReception[Specimen Reception]
+    HODS --> |"2. Send Laboratory Order (Immunology and/or Genomics) + Specimen<br/>"| MFTReception[Specimen Reception]
     MFTReception --> |"3a. (Manual) Immunology Laboratory Order + Specimen"| LIMS["<b>Order Filler</b><br/>Immunology LIMS"]
    
-    subgraph Laboratory["Laboratory - MFT"]
-    
+    subgraph Laboratory["Laboratory at NHS Trust"]
         LIMS --> |3b. Send Laboratory Report<br/>HL7 v2 ORU_R01| LIE[Laboratory<br/>Trust Integration Engine]
-        
     end 
-    LIE --> |3c. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE
-    RIE --> |3d and 4d. Send Laboratory Report<br/>HL7 v2 ORU_R01| HODS
-    MFTReception --> |"4a. Genomics Laboratory Order + Specimen<br/>Manual"| TestType
+
+    LIE --> |3c. Send Laboratory Report<br/>HL7 v2 ORU_R01| HODS
+    RIE --> |4d. Send Laboratory Report<br/>HL7 v2 ORU_R01| HODS
+    MFTReception --> |"4a. Genomics Laboratory Order <br/> Specimen most often entered into iGene"| TestType
+    
     subgraph NWGenomics[North West Genomics]
         RIE["Regional Integration Engine"]
-        HODS["<b>Order Filler</b><br/>HODS<br/><b>Order Placer</b>"]
-        TestType[Test Distribution<br/>By Test Type] --> |4b. Tests A, B, C, etc| GLHS
-        TestType --> |4b. Tests D, E etc| GLHI
-        GLHS["<b>Order Filler</b><br/>LIMS Shire"]
-        GLHS --> |4c. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE 
-        GLHI["<b>Order Filler</b><br/>LIMS iGene)"]
-        GLHI --> |4c. Send Laboratory Report<br/>| RIE 
-        
+    
+        TestType[Test Distribution<br/>By Test Type to a LIMS] --> |4b. Tests A, B, C, etc| GLH
+        GLH["<b>Order Filler</b><br/>LIMS Shire/iGene/StarLims"]
+        GLH --> |4c. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE     
     end
+    
     HODS --> |5. Write Consolidated Report| HODS
-    HODS --> |"6a. Send Consolidated Laboratory Report<br/>Email"| RIE
+    HODS --> |"6. Send Consolidated Laboratory Report<br/>Email or HL7 ORU_R01"| TIE
 
-    RIE --> |6b Send Laboratory Report| TIE
     TIE --> |Laboratory Report| EPR 
 
     classDef purple fill:#E1D5E7;
 
-    class NHSTrust,HODS,GLHS,GLHI,LIMS purple
+    class EPR,HODS,GLH,LIMS purple
 ```
 
 - Trusts will place their orders directly in HODS (1). HODS prints a request form, this is sent with the samples to Central specimen reception at MFT (2a).
@@ -177,97 +144,38 @@ graph TD
 
 #### Cheshire and Mersey
 
-For information purposes only. This is a more detailed breakdown of the Genomic Tests.
+For information purposes only. This is a more detailed breakdown of the Genomic Tests are distributed.
 
 <img style="padding:3px;width:60%;" src="HODS-MerseyAndCheshire.png" alt="HODS Genomic Tests - Mersey and Cheshire GLH"/>
 <br clear="all">
 <p class="figureTitle">HODS Genomic Tests - Mersey and Cheshire GLH</p> 
 <br clear="all">
 
-### Liverpool and Manchester Genetic Labs Integration
 
-TBD - Starlims
+#### Technical Implementation Option
 
-```mermaid
-graph TD;
-    subgraph NHSTrustA[Cheshire and Mersey NHS Trust]
-        EPRA[<b>Order Placer</b>] --> |2. Asks For| SpecimenA[Sample Collection]
-        TIEA["Trust Integration Engine"]
-
-        EPRA --> |1a. Laboratory Order| TIEA
-    end
-    subgraph NHSTrustB[Greater Manchester NHS Trust]
-        EPRB[<b>Order Placer</b>] --> |2. Asks For| SpecimenB[Sample Collection]
-        TIEB[Trust Integration Engine]
-        EPRB --> |1a. Laboratory Order| TIEB
-    end
-    SpecimenA --> |3. Send Specimen| LIMSA
-    SpecimenB --> |3. Send Specimen| LIMSB
-    subgraph NWGenomics[NW Genomics]
-    TIEA --> |1b. Laboratory Order| RIE
-    TIEB --> |1b. Laboratory Order| RIE
-    RIE --> |1c. Laboratory Order| LIMSA[<b>Order Filler</b><br/>Liverpool LIMS Starlims]
-    RIE --> |1c. Laboratory Order| LIMSB[<b>Order Filler</b><br/>Manchester LIMS iGene]
-
-    LIMSA <--> |3. Redistribution of Orders and Specimen by test type| LIMSB
-
-    LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
-    LIMSB --> |4a. Laboratory Report| RIE
-    end
-    RIE --> |4b. Laboratory Report| EPRA
-    RIE --> |4b. Laboratory Report| EPRB 
-
-    classDef purple fill:#E1D5E7;
-    class EPRA,EPRB,SpecimenA,SpecimenB,LIMSA,LIMSB purple;
-```
-
-## Future Options
-
-The introduction of the Regional Integration Engine (RIE) creates a single mechanism for sending orders and reports to the appropriate regional laboratories. It abstracts the differing order and reporting formats required by each LIMS, so these variations are hidden from the NHS Trusts.
-
-Orders can be delivered to each LIMS in two ways:
-
-- Automated Test Order Delivery – The RIE automatically routes orders to the correct LIMS based on the test type. For example, M118.1 Short Tandem Repeat (STR) orders get routed to histotrac LIMS.
-- Subcontracted and Reflex Orders – The RIE routes orders to a master LIMS (assumed to be iGene), which then subcontracts them to the other LIMS.
-
-While the Automated Test Order Delivery approach is technically simpler to implement, it may not support effective laboratory order and specimen management. NW Genomics will also receive reflex and subcontracted orders, particularly within Cancer Pathways. Additionally, with the upcoming NHS England Genomic Order Management System (GOMS), reflex and subcontracted orders are expected to increase from other NHS Genomics organisations.
-
-### Automated Test Order Delivery
+This relates to points 4a->4d in the diagram above.
 
 ```mermaid
-graph TD;
-    subgraph NHSTrustA[NHS Trust]
-        EPRA[<b>Order Placer</b>] --> |Asks For| SpecimenA[Sample Collection]
-        EPRA --> |1a. Laboratory Order| TIE[Trust Integration Engine]
-    end
- 
-    SpecimenA --> |2 Send Specimen| LIMSA
-    SpecimenA --> |2 Send Specimen| LIMSB
-    SpecimenA --> |2 Send Specimen| LIMSC
-    SpecimenA --> |2 Send Specimen| LIMSD
+graph LR
+    IGene[iGene] --> |"1. (New HL7 v2 OML_O21 feed from iGene)"| RIE[Regional Integration Engine] 
+    RIE --> |"2. Stores a copies of orders"| CDR[Genomic Data Repository]
+    StarLimsMiddleware["StarLims Middleware <br/>(May be RIE)"] --> |"3. Polls for (starlims) orders from CDR (FHIR RESTful)"| CDR
+    StarLimsMiddleware --> |"4. Stores starlims order"| StarLims
+    StarLimsMiddleware --> |"5. Gets Reports (poll?)"| StarLims
+    StarLimsMiddleware --> |"6. Stores report"| CDR
+    RIE --> |"7. Gets Reports (poll?)"| CDR
+    RIE --> |"8. Distributes Reports (HL7 v2 ORU_R01)"| HODS[HODS etc]
 
-    TIE --> |1b. Laboratory Order| RIE 
-    subgraph NWGenomics[NW Genomics]
-        RIE --> |1c. Laboratory Order| TD[Test Distribution<br/>By Test Type]
-        
-        TD --> |1d. Laboratory Order| LIMSA[<b>Order Filler</b><br/>LIMS iGene] 
-        TD --> |1d. Laboratory Order| LIMSB[<b>Order Filler</b><br/>LIMS Starlims]
-        TD --> |1d. Laboratory Order| LIMSC[<b>Order Filler</b><br/>LIMS Shire]
-        TD --> |1d. Laboratory Order| LIMSD[<b>Order Filler</b><br/>LIMS Histotrac]
-        
-        LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
-        LIMSB --> |4a. Laboratory Report| RIE
-        LIMSC --> |4a. Laboratory Report| RIE
-        LIMSD --> |4a. Laboratory Report| RIE
-    end
-    RIE --> |4b. Laboratory Report| TIE
-    TIE --> |4c. Laboratory Report| EPRA
-    
     classDef purple fill:#E1D5E7;
-    class EPRA,SpecimenA,LIMSA,LIMSB,LIMSC,LIMSD purple;
+    class OrderPlacer,OrderFiller purple
 ```
 
-### Subcontracted and Reflex Orders
+This infers automated order distribution between LIMS. This has questions around genomic specimen management, if the specimen management for genomics is going to be iGene, then orders to others LIMS are more accurately described as subcontracted orders. 
+
+##### Subcontracted Orders
+
+The RIE routes orders to a master LIMS (assumed to be iGene), which then subcontracts them to the other LIMS.
 
 See also [Inter Laboratory Workflow (ILW)](ILW.html)
 
@@ -279,9 +187,7 @@ graph TD;
     end
  
     SpecimenA --> |2 Send Specimen| LIMSA
-    SpecimenA --> |2 Send Specimen| LIMSB
-    SpecimenA --> |2 Send Specimen| LIMSC
-    SpecimenA --> |2 Send Specimen| LIMSD
+
 
     TIE --> |1b. Laboratory Order<br/>LAB-1| RIE 
     subgraph NWGenomics[NW Genomics]
@@ -289,18 +195,18 @@ graph TD;
         
         LIMSA --> |1d. Subcontracted Laboratory Order<br/>LAB-35| LIMSB[<b>Order Filler</b><br/>LIMS Starlims]
         LIMSA --> |1d. Subcontracted Laboratory Order<br/>LAB-35| LIMSC[<b>Order Filler</b><br/>LIMS Shire]
-        LIMSA --> |1d. Subcontracted Laboratory Order<br/>LAB-35| LIMSD[<b>Order Filler</b><br/>LIMS Histotrac]
+
         
         LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
         LIMSB --> |4a. Laboratory Report| RIE
         LIMSC --> |4a. Laboratory Report| RIE
-        LIMSD --> |4a. Laboratory Report| RIE
+
     end
     RIE --> |4b. Laboratory Report| TIE
     TIE --> |4c. Laboratory Report| EPRA
     
     classDef purple fill:#E1D5E7;
-    class EPRA,SpecimenA,LIMSA,LIMSB,LIMSC,LIMSD purple;
+    class EPRA,SpecimenA,LIMSA,LIMSB,LIMSC purple;
 ```
 
 ## Technical Overview
