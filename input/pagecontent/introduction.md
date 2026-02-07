@@ -58,6 +58,10 @@ This workflow has been enhanced to support the sharing of laboratory reports (do
 THIS HAS NOT BEEN CLINICALLY VALIDATED 
 </div>
 
+<img style="padding:3px;width:60%;" src="Cancer-NWCC.png" />
+<br clear="all">
+
+
 ### Actors
 
 - PTC: A Principal Treatment Centre (PTC) is a specialized hospital unit, primarily in the UK, responsible for the comprehensive diagnosis, treatment planning, and management of cancer in children, teenagers, and young adults (0–24 years).
@@ -151,6 +155,9 @@ THIS HAS NOT BEEN CLINICALLY VALIDATED
 </div>
 
 Ref: [NHS Impact - Best Practice Timed Diagnostic Cancer pathways](https://gettingitrightfirsttime.co.uk/wp-content/uploads/2024/03/BestPracticeTimedDiagnosticCancerPathwayssummary-guide-March-24-V3.pdf)
+
+<img style="padding:3px;width:60%;" src="Cancer-Colorectal.png" />
+<br clear="all">
 
 ---
 ### Patient Profile
