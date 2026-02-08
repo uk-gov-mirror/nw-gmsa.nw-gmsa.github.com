@@ -239,7 +239,7 @@ This is based on the definition of ORC from [Digital Health and Care Wales - HL7
 
 | Field HL7 | Fieldname                | Data Type   | Optionality | Identifier Type or ValueSet                                                | Example Values                                        |
 |-----------|--------------------------|-------------|-------------|----------------------------------------------------------------------------|-------------------------------------------------------|
-| ORC-2     | Placer Order Number      | [EI](#ei)   | R           | [Placer Order Number](StructureDefinition-OrderPlacerNumber.html)          | 1601737^R0A^150^L                                     |
+| ORC-2     | Placer Order Number      | [EI](#ei)   | R           | [Placer Order Number](StructureDefinition-OrderIdentifier.html)          | 1601737^R0A^150^L                                     |
 | ORC-3     | Filler Order Number      | [EI](#ei)   | R           | [Filler Order Number](StructureDefinition-OrderFillerNumber.html)          | 1001166717^699X0^^255^ISO                             |
 | ORC-4     | Placer Group Number      | [EI](#ei)   | R           | [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)          | 1001166717^699X0^^255^ISO                             |
 | ORC-5     | Order Status             |             | O           |                                                                            |                                                                                                                                 
@@ -269,7 +269,7 @@ This is based on the definition of OBR from [Digital Health and Care Wales - HL7
 | Field HL7 | Fieldname                          | Data Type   | Optionality   | Identifier Type or ValueSet                                                | Example Values                                                              |
 |-----------|------------------------------------|-------------|---------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | OBR-1     | Set ID - OBR                       |             | R             |                                                                            | 1                                                                           |
-| OBR-2     | Placer Order Number                | [EI](#ei)   | R             | [Placer Order Number](StructureDefinition-OrderPlacerNumber.html)          | 1601737^ R0A^150^L                                                          |
+| OBR-2     | Placer Order Number                | [EI](#ei)   | R             | [Placer Order Number](StructureDefinition-OrderIdentifier.html)          | 1601737^ R0A^150^L                                                          |
 | OBR-3     | Filler Order Number                | [EI](#ei)   | R             | [Filler Order Number](StructureDefinition-OrderFillerNumber.html)          | 1001166717^699X0^^255^ISO                                                   |
 | OBR-4     | Universal Service Identifier       |             | R             | [Genomic Test Directory](ValueSet-genomic-test-directory.html)             | R240.1^Diagnostic testing for known variant(s)^England-GenomicTestDirectory |
 | OBR-6     | Requested Date/Time                | TS          | R for OML_O21 |                                                                            | 20170126135745                                                              |

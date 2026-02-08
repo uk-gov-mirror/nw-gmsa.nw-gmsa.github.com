@@ -3,7 +3,7 @@ Parent:         CorrelationIdentifier
 Id:             ShipmentTrackingNumber
 Title:          "Shipment Tracking Number"
 Description:     """
-`Diagnostic Workflow` Uniquely identifies a Shipment Tracking Number
+`Diagnostic Workflow` HL7 IdentifierType: **STN** Shipment Tracking Number
 """
 
 * ^purpose = """

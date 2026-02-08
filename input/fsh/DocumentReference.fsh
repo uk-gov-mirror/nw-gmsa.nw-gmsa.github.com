@@ -34,13 +34,13 @@ Description:    """
 * context.related ^slicing.ordered = false
 
 * context.related contains
-  OrderPlacerNumber 0..1 MS and OrderGroupNumber 0..1 MS and ReportNumber 0..1 MS
+  OrderIdentifier 0..1 MS and OrderGroupNumber 0..1 MS and ReportIdentifier 0..1 MS
 
-* context.related[OrderPlacerNumber] only Reference(ServiceRequest)
-* context.related[OrderPlacerNumber].type 1..1 MS
-* context.related[OrderPlacerNumber].type = "ServiceRequest"
-* context.related[OrderPlacerNumber].identifier 1..1
-* context.related[OrderPlacerNumber].identifier only OrderPlacerNumber
+* context.related[OrderIdentifier] only Reference(ServiceRequest)
+* context.related[OrderIdentifier].type 1..1 MS
+* context.related[OrderIdentifier].type = "ServiceRequest"
+* context.related[OrderIdentifier].identifier 1..1
+* context.related[OrderIdentifier].identifier only OrderIdentifier
 
 * context.related[OrderGroupNumber] only Reference(ServiceRequest)
 * context.related[OrderGroupNumber].type 1..1 MS
@@ -48,11 +48,11 @@ Description:    """
 * context.related[OrderGroupNumber].identifier 1..1
 * context.related[OrderGroupNumber].identifier only OrderGroupNumber
 
-* context.related[ReportNumber] only Reference(DiagnosticReport)
-* context.related[ReportNumber].type 1..1 MS
-* context.related[ReportNumber].type = "DiagnosticReport"
-* context.related[ReportNumber].identifier 1..1
-* context.related[ReportNumber].identifier only OrderFillerNumber
+* context.related[ReportIdentifier] only Reference(DiagnosticReport)
+* context.related[ReportIdentifier].type 1..1 MS
+* context.related[ReportIdentifier].type = "DiagnosticReport"
+* context.related[ReportIdentifier].identifier 1..1
+* context.related[ReportIdentifier].identifier only ReportIdentifier
 
 * context.sourcePatientInfo only Reference(Patient)
 * context.sourcePatientInfo.identifier only MedicalRecordNumber

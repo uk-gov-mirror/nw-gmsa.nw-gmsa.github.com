@@ -10,15 +10,15 @@ Description: "First draft is based on Royal College of Radiologists HL7 v2 ORU c
 
 //* extension[DiagnosticReportCompositionR5].valueReference.reference = "http://madeup.example.com/Composition/123"
 
-* identifier[+]
+* identifier[ReportIdentifier]
   * value = "25edee2b-add8-4522-9fa2-1ee8f229bd75"
   * system = "http://www.acme.org/diagnosticreport/identifiers"
   * assigner.identifier.system = $ods-code
   * assigner.identifier.value = "699X0"
 
-* basedOn[OrderFillerNumber]
+* basedOn[OrderIdentifier]
   * type = "ServiceRequest"
-  * identifier.type = $v2-0203#FILL
+  * identifier.type = $v2-0203#PLAC
   * identifier.system = "http://www.acme.org/servicerequest"
   * identifier.value = "1001166717"
   * identifier.assigner.identifier.system = $ods-code

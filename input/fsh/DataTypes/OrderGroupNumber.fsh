@@ -3,7 +3,7 @@ Parent:         CorrelationIdentifier
 Id:             OrderGroupNumber
 Title:          "Order Group Number"
 Description:     """
-`Diagnostic Workflow`
+`Diagnostic Workflow` HL7 IdentifierType: **PGN** Placer Group Number
 """
 
 * ^purpose = """

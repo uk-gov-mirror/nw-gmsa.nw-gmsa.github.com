@@ -41,7 +41,7 @@ Both domain archetypes have a very strong focus on the use of [Correlation Ident
 In practice this means, the following FHIR resources will have the following identifiers within the `IHE Laboratory Testing Workflow` domain:
 
 - ServiceRequest
-  - [Placer Order Number](StructureDefinition-OrderPlacerNumber.html)
+  - [Placer Order Number](StructureDefinition-OrderIdentifier.html)
   - [Filler Order Number](StructureDefinition-OrderFillerNumber.html)
   - [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)
   - [Accession Number](StructureDefinition-AccessionNumber.html)

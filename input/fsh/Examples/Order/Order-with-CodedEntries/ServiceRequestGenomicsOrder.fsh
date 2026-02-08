@@ -5,11 +5,11 @@ Description: "TODO"
 
 * meta.versionId = "1.0"
 
-* identifier[OrderPlacerNumber].type = $v2-0203#PLAC
-* identifier[OrderPlacerNumber].value = "1601737"
-* identifier[OrderPlacerNumber].system = "urn:oid:1.2.840.114350.1.13.0.1.7.2.798268"
-* identifier[OrderPlacerNumber].assigner.identifier.system = $ods-code
-* identifier[OrderPlacerNumber].assigner.identifier.value = "R0A"
+* identifier[OrderIdentifier].type = $v2-0203#PLAC
+* identifier[OrderIdentifier].value = "1601737"
+* identifier[OrderIdentifier].system = "urn:oid:1.2.840.114350.1.13.0.1.7.2.798268"
+* identifier[OrderIdentifier].assigner.identifier.system = $ods-code
+* identifier[OrderIdentifier].assigner.identifier.value = "R0A"
 
 * identifier[OrderFillerNumber].type = $v2-0203#FILL
 * identifier[OrderFillerNumber].value = "1001166717"

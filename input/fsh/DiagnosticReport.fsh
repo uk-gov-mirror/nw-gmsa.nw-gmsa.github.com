@@ -22,13 +22,13 @@ Description:    """
 * identifier ^slicing.description = "Slice based on the type"
 * identifier ^slicing.ordered = false
 * identifier contains
-  OrderFillerNumber 0..1 MS
+  ReportIdentifier 0..1 MS
 
 
-* identifier[OrderFillerNumber] only OrderFillerNumber
-* identifier[OrderFillerNumber] ^short = "Identifier assigned by the lab (Order Filler)"
-* identifier[OrderFillerNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* identifier[ReportIdentifier] only ReportIdentifier
+* identifier[ReportIdentifier] ^short = "Identifier assigned by the lab (Order Filler)"
+* identifier[ReportIdentifier] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
+* identifier[ReportIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 
 * basedOn only CodeableReference
@@ -41,16 +41,16 @@ Description:    """
 * basedOn ^slicing.description = "Slice based on the type"
 * basedOn ^slicing.ordered = false
 * basedOn contains
-  OrderFillerNumber 0..1 MS
+  OrderIdentifier 0..1 MS
 
-* basedOn[OrderFillerNumber] ^short = "Identifier assigned by the lab (ORC-3)"
-* basedOn[OrderFillerNumber].type 1..1 MS
-* basedOn[OrderFillerNumber].type = "ServiceRequest"
-* basedOn[OrderFillerNumber].identifier 1..1
-* basedOn[OrderFillerNumber].identifier only OrderFillerNumber
-* basedOn[OrderFillerNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* basedOn[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
-* basedOn[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* basedOn[OrderIdentifier] ^short = "Identifier assigned by the placer (ORC-2)"
+* basedOn[OrderIdentifier].type 1..1 MS
+* basedOn[OrderIdentifier].type = "ServiceRequest"
+* basedOn[OrderIdentifier].identifier 1..1
+* basedOn[OrderIdentifier].identifier only OrderIdentifier
+* basedOn[OrderIdentifier] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
+* basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 
 * category ^slicing.discriminator.type = #value

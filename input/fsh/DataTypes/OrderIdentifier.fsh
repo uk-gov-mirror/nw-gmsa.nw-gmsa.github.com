@@ -1,9 +1,9 @@
-Profile:        OrderPlacerNumber
+Profile:        OrderIdentifier
 Parent:         CorrelationIdentifier
-Id:             OrderPlacerNumber
-Title:          "Order Placer Number"
+Id:             OrderIdentifier
+Title:          "Order Identifier"
 Description:     """
-`Diagnostic Workflow`
+`Diagnostic Workflow` HL7 IdentifierType: **PLAC** Placer Identifier
 """
 
 * ^purpose = """
