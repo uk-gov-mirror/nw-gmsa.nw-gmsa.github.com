@@ -41,20 +41,20 @@ Both domain archetypes have a very strong focus on the use of [Correlation Ident
 In practice this means, the following FHIR resources will have the following identifiers within the `IHE Laboratory Testing Workflow` domain:
 
 - ServiceRequest
-  - [Placer Order Number](StructureDefinition-OrderIdentifier.html)
-  - [Filler Order Number](StructureDefinition-OrderFillerNumber.html)
+  - [(Placer) Order Identifier](StructureDefinition-OrderIdentifier.html)
+  - Filler Order Number
   - [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)
-  - [Accession Number](StructureDefinition-AccessionNumber.html)
+  - [Accession Number](StructureDefinition-SpecimenAccessionNumber.html)
  
 - Specimen
   - identifier
-  - [Accession Number](StructureDefinition-AccessionNumber.html)
+  - [Accession Number](StructureDefinition-SpecimenAccessionNumber.html)
 - DiagnosticReport
   - identifier
-  - [Filler Order Number](StructureDefinition-OrderFillerNumber.html)
-  - [Accession Number](StructureDefinition-AccessionNumber.html)
+  - [Report Identifier](StructureDefinition-ReportIdentiier.html)
+  - [Accession Number](StructureDefinition-SpecimenAccessionNumber.html)
 - Patient (not strictly within the domain but included for HL7/IHE/NHSE compatability reasons)
-  - [NHS Number](StructureDefinition-NHSIdentifier.html)
+  - [NHS Identifier](StructureDefinition-NHSIdentifier.html)
   - [Medical Record Number](StructureDefinition-MedicalRecordNumber.html)
 - Encounter
   - [Episode Number](StructureDefinition-HospitalProviderSpellIdentifier.html)
