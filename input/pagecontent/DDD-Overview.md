@@ -54,7 +54,7 @@ In practice this means, the following FHIR resources will have the following ide
   - [Filler Order Number](StructureDefinition-OrderFillerNumber.html)
   - [Accession Number](StructureDefinition-AccessionNumber.html)
 - Patient (not strictly within the domain but included for HL7/IHE/NHSE compatability reasons)
-  - [NHS Number](StructureDefinition-NHSNumber.html)
+  - [NHS Number](StructureDefinition-NHSIdentifier.html)
   - [Medical Record Number](StructureDefinition-MedicalRecordNumber.html)
 - Encounter
   - [Episode Number](StructureDefinition-HospitalProviderSpellIdentifier.html)

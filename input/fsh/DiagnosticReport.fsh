@@ -66,7 +66,7 @@ Description:    """
 * subject 1..1
 * subject.identifier 1..1
 * subject only Reference(Patient)
-* subject.identifier only NHSNumber
+* subject.identifier only NHSIdentifier
 
 * effectiveDateTime 0..1 MS
 * effective[x] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)

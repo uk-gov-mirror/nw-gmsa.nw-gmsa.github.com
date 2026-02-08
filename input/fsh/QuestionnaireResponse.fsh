@@ -5,7 +5,7 @@ Title:          "QuestionnaireResponse"
 Description:    "DRAFT Initial elaboration"
 
 * subject 1..1 MS
-* subject.identifier only NHSNumber
+* subject.identifier only NHSIdentifier
 
 * encounter.identifier only HospitalProviderSpellIdentifier
 

@@ -18,7 +18,7 @@ skinparam svgDimensionStyle false
 
 
     entity "[[StructureDefinition-Patient.html Patient]]\n([[https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/Design/Clinicalheadings#Patient Patient]] or [[https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/Design/Clinicalheadings#Fetus Fetus]])" as PID {
-    [[StructureDefinition-NHSNumber.html NHSNumber]]
+    [[StructureDefinition-NHSIdentifier.html NHS Identifier]]
     [[StructureDefinition-MedicalRecordNumber.html MedicalRecordNumber]]
     }
 
@@ -86,7 +86,7 @@ skinparam svgDimensionStyle false
       }
 
       entity "[[StructureDefinition-Patient.html Patient]]" as patient {
-       [[StructureDefinition-NHSNumber.html NHSNumber]]
+       [[StructureDefinition-NHSIdentifier.html NHSIdentifier]]
         [[StructureDefinition-MedicalRecordNumber.html MedicalRecordNumber]]
         name
         address

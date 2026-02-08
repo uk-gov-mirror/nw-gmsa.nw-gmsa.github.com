@@ -53,4 +53,4 @@ Description:    "Core model following [IHE Basic Audit Log Patterns (BALP)](http
 * entity[patient] ^short = "Patient reference plus NHS Number"
 * entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
 * entity[patient].what only Reference(Patient)
-* entity[patient].what.identifier only NHSNumber
+* entity[patient].what.identifier only NHSIdentifier

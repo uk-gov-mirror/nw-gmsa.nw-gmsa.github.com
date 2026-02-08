@@ -5,14 +5,14 @@ title "Genomic Laboratory Report"
 * [[StructureDefinition-DiagnosticReport.html Diagnostic Report]]
 ** Patient Administration
 *** [[StructureDefinition-Patient.html Patient]]
-**** Identification [[StructureDefinition-NHSNumber.html NHSNumber]]
+**** Identification [[StructureDefinition-NHSIdentifier.html NHSIdentifier]]
 **** Identification [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
 **** Name, date of birth, ethnic category, etc.
 *** Case identification [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Report
 *** [[Questionnaire-GenomicTestOrder.html Order Details]]
-**** [[StructureDefinition-OrderIdentifier.html Placer Order Number]]
-**** [[StructureDefinition-OrderFillerNumber.html Filler Order Number]]
+**** [[StructureDefinition-OrderIdentifier.html Placer Order Identifier]]
+**** Filler Order Number
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
 **** [[https://www.datadictionary.nhs.uk/data_elements/local_treatment_category_code.html Local Treatment Category Code]]

@@ -8,7 +8,7 @@ Description:    """
 
 * subject 1..1 MS
 * subject.reference 1..1 MS
-* subject.identifier only NHSNumber
+* subject.identifier only NHSIdentifier
 
 * encounter 0..1 MS
 * encounter only Reference(Encounter)

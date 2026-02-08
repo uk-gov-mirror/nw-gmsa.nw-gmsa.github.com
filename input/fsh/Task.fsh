@@ -21,7 +21,7 @@ Description: """
 
 * for 1..1 MS
 * for only Reference(Patient)
-* for.identifier only NHSNumber
+* for.identifier only NHSIdentifier
 
 * requester only Reference(PractitionerRole or Organization)
 * requester 1..1 MS

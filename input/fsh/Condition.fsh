@@ -14,4 +14,4 @@ Description:    """
 
 * subject 1..1 MS
 * subject only Reference(Patient)
-* subject.identifier only NHSNumber
+* subject.identifier only NHSIdentifier

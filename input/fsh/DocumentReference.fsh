@@ -61,7 +61,7 @@ Description:    """
 
 * subject 1..1
 * subject only Reference(Patient)
-* subject.identifier only NHSNumber
+* subject.identifier only NHSIdentifier
 
 * author only Reference(Organization or Practitioner or PractitionerRole)
 * author.identifier only PractitionerIdentifier or OrganisationCode

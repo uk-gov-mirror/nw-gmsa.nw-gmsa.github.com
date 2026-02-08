@@ -113,7 +113,7 @@ Description:    """
 
 * subject 1..1 MS
 * subject only Reference(Patient)
-* subject.identifier only NHSNumber
+* subject.identifier only NHSIdentifier
 
 * basedOn 0..* MS
 * basedOn ^short = "SHALL reference a parent request where this ServiceRequest is based on a previous request, e.g. in the case of reanalysis and cascade testing, or Germline Late tests in the Tumour First/Germline Late scenario"

@@ -164,11 +164,11 @@
             "value": "9449307687",
             "extension":  [
               {
-                "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus",
+                "url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSIdentifierVerificationStatus",
                 "valueCodeableConcept": {
                   "coding":  [
                     {
-                      "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatusEngland",
+                      "system": "https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSIdentifierVerificationStatusEngland",
                       "version": "2.2.0",
                       "code": "01",
                       "display": "Number present and verified"

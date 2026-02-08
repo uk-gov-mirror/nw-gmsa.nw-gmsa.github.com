@@ -5,15 +5,15 @@ title "Genomic Laboratory Order"
 * [[#diagnostic-order Diagnostic Order]]
 ** Patient Administration
 *** [[StructureDefinition-Patient.html Patient]]
-**** Identification [[StructureDefinition-NHSNumber.html NHSNumber]]
+**** Identification [[StructureDefinition-NHSIdentifier.html NHS Identifier]]
 **** Identification [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
 **** Name, date of birth, ethnic category, etc.
 *** Case identification / Account Number [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
 ** Laboratory Order
 *** Order Details
-**** [[StructureDefinition-OrderIdentifier.html Placer Order Number]]
-**** [[StructureDefinition-OrderFillerNumber.html Filler Order Number]]
-**** [[StructureDefinition-PlacerGroupNumber.html Placer Group Number]]
+**** [[StructureDefinition-OrderIdentifier.html Placer Order Identifier]]
+**** Filler Order Number
+**** [[StructureDefinition-OrderGroupNumber.html Order Group Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Ordering Practitioner
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
@@ -22,7 +22,7 @@ title "Genomic Laboratory Order"
 **** Notes
 **** [[#specimen Specimen]]
 ***** Specimen Id
-***** [[StructureDefinition-AccessionNumber.html Accession Number]]
+***** [[StructureDefinition-SpecimenAccessionNumber.html Accession Number]]
 ***** [[StructureDefinition-ShipmentTrackingNumber.html Shipment Tracking number]]
 *** [[#order-entry-questions Order Entry Questions]] Genomic\n(Supporting Information)
 **** Consent

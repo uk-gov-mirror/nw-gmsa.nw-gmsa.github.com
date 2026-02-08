@@ -32,7 +32,7 @@ Description: """
 
 //  solved via ServiceRequest.requisition and GenomicsPedigreeNumber 0..*
 
-* identifier[nhsNumber] only NHSNumber
+* identifier[nhsNumber] only NHSIdentifier
 * identifier[nhsNumber] ^short = "UK National Health Identifiers: NHS NUMBER (England and Wales)"
 //* identifier[nhsNumber].extension[nhsNumberVerificationStatus] ^short = "NOT REQUIRED. As all NHS Numbers **MUST** be *01 Number present and verified*, this status will be assumed."
 * identifier[MedicalRecordNumber] only MedicalRecordNumber

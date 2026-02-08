@@ -5,7 +5,7 @@
 
     frame "Laboratory Order O21" as Composition {
       entity "[[StructureDefinition-Patient.html Patient]]" as PID {
-      [[StructureDefinition-NHSNumber.html NHSNumber]]
+      [[StructureDefinition-NHSIdentifier.html NHSIdentifier]]
       [[StructureDefinition-MedicalRecordNumber.html MedicalRecordNumber]]
       }
 
@@ -93,7 +93,7 @@
       }
 
       entity "[[StructureDefinition-Patient.html Patient]]" as patient {
-       [[StructureDefinition-NHSNumber.html NHSNumber]]
+       [[StructureDefinition-NHSIdentifier.html NHSIdentifier]]
         [[StructureDefinition-MedicalRecordNumber.html MedicalRecordNumber]]
         name
         address
