@@ -72,8 +72,8 @@ pages:
   index.md:
     title: Home
     generation: markdown
-  introduction.md:
-    title: Introduction
+  business-analysis.md:
+    title: Business Analysis
     generation: markdown
   LTW.md:
     title: Laboratory Testing Workflow (LTW)
@@ -135,10 +135,10 @@ pages:
   IUA.md:
     title: OAuth2
     generation: markdown
-  interaction-options.md:
+  workflow-interaction-options.md:
     title: Workflow/Interaction Options
     generation: markdown
-  report-options.md:
+  workflow-report-options.md:
     title: Report Options
     generation: markdown
   identifiers.md:
@@ -227,7 +227,6 @@ resources:
 menu:
   Home: index.html
   Analysis and Design (Volume 1) :
-    Introduction: introduction.html
     Laboratory Testing Workflow (LTW): LTW.html
     Inter-Laboratory Workflow (ILW): ILW.html
     Specimen Event Tracking (SET): SET.html

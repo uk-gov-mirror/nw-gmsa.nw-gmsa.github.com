@@ -96,7 +96,7 @@ Three types of messages are used within this workflow process:
 
 ### Messaging with a copy sent to a FHIR Repository
 
-<img style="padding:3px;width:60%;" src="Phase 1c Repository.drawio.png" alt="Phase 1b"/>
+<img style="padding:3px;width:90%;" src="Phase 1c Repository.drawio.png" alt="Phase 1b"/>
 <br clear="all">
 <p class="figureTitle">Messaging + FHIR Repository</p> 
 <br clear="all">
@@ -125,7 +125,7 @@ Three types of messages are used within this workflow process:
 </figure>
 <br clear="all">
 
-<img style="padding:3px;width:60%;" src="Phase 2b ESB.drawio.png" alt="Phase 2b"/>
+<img style="padding:3px;width:90%;" src="Phase 2b ESB.drawio.png" alt="Phase 2b"/>
 <br clear="all">
 <p class="figureTitle">Laboratory Report - Detailed</p> 
 <br clear="all">
