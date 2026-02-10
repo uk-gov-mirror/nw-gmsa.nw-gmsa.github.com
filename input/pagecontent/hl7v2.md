@@ -370,6 +370,10 @@ DG1|1||363349007^Malignant tumour of stomach^SNM3||20250129103726+0000
 
 This is based on the definition of OBX from [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
 
+#### OBX-5 TX, ED and FT
+
+For OBX-5 of type ED see [OBX (type = ED)](#obx-type--ed). When the type is TX or FT, and this is containing a report, it is recommended to convert the text to PFD or HTML and treat as type ED.
+
 | Field HL7 | Fieldname                    | Data Type | Optionality | Identifier Type or ValueSet         | Example Values                                                                                                  |
 |-----------|------------------------------|-----------|-------------|-------------------------|-----------------------------------------------------------------------------------------------------------------|
 | OBX-1     | Set ID – OBX                 |           | R           |                         | 1                                                                                                               |
