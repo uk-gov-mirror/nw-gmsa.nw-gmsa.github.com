@@ -11,7 +11,9 @@ Description:    """
 * ^keyword[+] = #diagnostics "Diagnostics"
 * ^keyword[+] = #genomics "Genomics"
 
-* extension contains DiagnosticReportProcedure named procedure 0..*
+* extension contains DiagnosticReportProcedure named procedure 0..* and http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo named supportingInfo 0..*
+
+
 
 * identifier 1..* MS
 * identifier only CorrelationIdentifier
