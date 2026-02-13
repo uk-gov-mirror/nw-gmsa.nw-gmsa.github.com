@@ -3,7 +3,7 @@ Parent:         http://hl7.eu/fhir/base/StructureDefinition/organization-eu-core
 Id:             Organization
 Title:          "Organization"
 Description:    """
-`Care Directory`
+`Care Directory` `HL7 Europe Core`
 """
 
 * ^keyword[+] = #core "Core"

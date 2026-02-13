@@ -1,9 +1,9 @@
 Profile:        Practitioner
-Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Practitioner
+Parent:         http://hl7.eu/fhir/base/StructureDefinition/practitioner-eu
 Id:             Practitioner
 Title:          "Practitioner"
 Description:    """
-`Care Directory`
+`Care Directory` `HL7 Europe Core`
 """
 
 * ^keyword[+] = #core "Core"
