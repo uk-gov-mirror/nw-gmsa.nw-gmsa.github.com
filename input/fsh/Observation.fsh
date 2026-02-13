@@ -11,6 +11,14 @@ Description:    """
 * ^keyword[+] = #patientcare "Patient Care"
 * ^keyword[+] = #diagnostics "Diagnostics"
 
+
+* category contains labCategory 1..1
+                and geCategory 1..1
+* category[labCategory].coding 1..1
+* category[labCategory].coding = $OBSCAT#laboratory
+* category[geCategory].coding 1..1
+* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
+
 * identifier 1..* MS
 
 * performer only Reference(http://hl7.eu/fhir/laboratory/StructureDefinition/PractitionerRole-eu-lab  or Patient)

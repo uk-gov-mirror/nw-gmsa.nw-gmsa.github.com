@@ -15,6 +15,8 @@ Alias: $GTOC = https://fhir.nwgenomics.nhs.uk/CodeSystem/GenomicTestOutcomeCode
 Alias: $genenames = http://www.genenames.org
 Alias: $ghgvs = http://varnomen.hgvs.org
 Alias: $refseq = http://www.ncbi.nlm.nih.gov/refseq
+Alias: $OBSCAT = http://terminology.hl7.org/CodeSystem/observation-category
+Alias: $DIAGNOSTICSERVICE = http://terminology.hl7.org/CodeSystem/v2-0074
 
 
 RuleSet: Obligation(code, actor)

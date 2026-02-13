@@ -148,6 +148,7 @@ Description:    """
 * result ^slicing.discriminator.path = "resolve()"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
+* result only Reference(Observation)
 * result contains
     diagnostic-implication 0..* and
     variant 0..*
