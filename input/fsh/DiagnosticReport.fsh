@@ -115,10 +115,10 @@ Description:    """
 //* performer ^slicing.description = "Slice based on the type"
 //* performer ^slicing.ordered = false
 * performer contains
-  organisation 1..1 and operator 0..*
+  operator 0..*
 
-* performer[organisation].identifier only OrganisationCode
-* performer[organisation].type = #Organization
+//* performer[organisation].identifier only OrganisationCode
+//* performer[organisation].type = #Organization
 
 * performer[operator].identifier only PractitionerIdentifier
 * performer[operator].extension[performerFunction].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF

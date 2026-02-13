@@ -12,10 +12,9 @@ Description:    """
 * ^keyword[+] = #diagnostics "Diagnostics"
 
 
-* category contains labCategory 1..1
-                and geCategory 1..1
-* category[labCategory].coding 1..1
-* category[labCategory].coding = $OBSCAT#laboratory
+* category contains geCategory 1..1
+//* category[labCategory].coding 1..1
+//* category[labCategory].coding = $OBSCAT#laboratory
 * category[geCategory].coding 1..1
 * category[geCategory].coding = $DIAGNOSTICSERVICE#GE
 
