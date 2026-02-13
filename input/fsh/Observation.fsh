@@ -53,3 +53,22 @@ Description:    """
 * valueString.extension contains http://hl7.org/fhir/StructureDefinition/rendering-markdown named valueMarkdown 0..*
 
 * referenceRange MS
+
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "resolve()"
+* derivedFrom ^slicing.rules = #open
+* derivedFrom ^slicing.description = "Slice based on the reference profile pattern"
+
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component ^slicing.description = "Slice based on the component.code pattern"
+* component contains conclusion-string 0..1
+* component[conclusion-string] ^short = "Clinical Conclusion"
+* component[conclusion-string] ^definition = "Concise and clinically contextualized summary conclusion (interpretation/impression) of the observation"
+* component[conclusion-string] ^requirements = "Need to be able to provide a conclusion that is not lost among the basic result data."
+* component[conclusion-string] ^comment = "An example would be the interpretative information, typically canned, about a variant identified in the patient."
+* component[conclusion-string].code = TbdCodesCS#conclusion-string
+* component[conclusion-string].code ^short = "conclusion-string"
+//* component[conclusion-string].value[x] only string
+* component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"

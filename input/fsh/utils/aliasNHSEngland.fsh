@@ -17,7 +17,7 @@ Alias: $ghgvs = http://varnomen.hgvs.org
 Alias: $refseq = http://www.ncbi.nlm.nih.gov/refseq
 Alias: $OBSCAT = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $DIAGNOSTICSERVICE = http://terminology.hl7.org/CodeSystem/v2-0074
-
+Alias: $LNC = http://loinc.org
 
 RuleSet: Obligation(code, actor)
 * ^extension[$Obligation][+].extension[code].valueCode = {code}
