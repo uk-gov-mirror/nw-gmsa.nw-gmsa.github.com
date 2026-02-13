@@ -42,6 +42,6 @@ Description:    """
 * valueDateTime MS
 * valueString MS
 
-* valueString.extension contains http://hl7.org/fhir/StructureDefinition/rendering-markdown named markdown 0..*
+* valueString.extension contains http://hl7.org/fhir/StructureDefinition/rendering-markdown named valueMarkdown 0..*
 
 * referenceRange MS
