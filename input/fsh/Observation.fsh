@@ -40,3 +40,5 @@ Description:    """
 * valueCodeableConcept MS
 * valueQuantity MS
 * valueDateTime MS
+
+* referenceRange MS
