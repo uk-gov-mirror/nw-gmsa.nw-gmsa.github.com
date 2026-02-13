@@ -12,11 +12,11 @@ Description:    """
 * ^keyword[+] = #diagnostics "Diagnostics"
 
 
-* category contains geCategory 1..1
+* category contains genomicsCategory 1..1
 //* category[labCategory].coding 1..1
 //* category[labCategory].coding = $OBSCAT#laboratory
-* category[geCategory].coding 1..1
-* category[geCategory].coding = $DIAGNOSTICSERVICE#GE
+* category[genomicsCategory].coding 1..1
+* category[genomicsCategory].coding = $DIAGNOSTICSERVICE#GE
 
 * identifier 1..* MS
 
