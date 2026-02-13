@@ -383,17 +383,17 @@ This is based on the definition of OBX from [Digital Health and Care Wales - HL7
 
 #### OBX-2 Value Type
 
-| HL7 Value Type          | OBX-5 FHIR Observation Mapping                                                                      | FHIR DiagnosticReport                                                        |
-|-------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| Coded Entry (CE)        | Obsveration.valueCodeableConcept                                                                    | DiagnosticReport.result                                                      |
-| Date (DT)               | Observation.valueDateTime                                                                           | DiagnosticReport.result                                                      |
-| Embedded documents (ED) | n/a, convert OBX-5 to Binary and the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed) | DiagnosticReport.presentedForm or DiagnosticReport.extension(supportingInfo) |
-| Formatted Text (FT)     | Observation.valueString, HL7 v2.x formatting should be converted to markdown                        | DiagnosticReport.result                                                      |
-| Numeric (NM) | Observation.valueQuantity | DiagnosticReport.result                                                      |
-| Reference Pointer (RP)  | n/a, convert the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed)                     | DiagnosticReport.presentedForm or DiagnosticReport.extension(supportingInfo) |
-| String Data (ST)        | Observation.valueString                                                                             | DiagnosticReport.result                                                      |
-| Time (TM)               | Observation.valueTime                                                                              | DiagnosticReport.result                                                      |
-| Text Data (TX)          | Observation.valueString, newline is represented as `\n`                                             | DiagnosticReport.result                                                      |
+| HL7 Value Type                 | OBX-5 FHIR Observation Mapping                                                                      | FHIR DiagnosticReport                                                        |
+|--------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| Coded Entry ([CE](#ce)         | Obsveration.valueCodeableConcept                                                                    | DiagnosticReport.result                                                      |
+| Date (DT)                      | Observation.valueDateTime                                                                           | DiagnosticReport.result                                                      |
+| Embedded documents ([ED](#ed)) | n/a, convert OBX-5 to Binary and the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed) | DiagnosticReport.presentedForm or DiagnosticReport.extension(supportingInfo) |
+| Formatted Text (FT)            | Observation.valueString, HL7 v2.x formatting should be converted to markdown                        | DiagnosticReport.result                                                      |
+| Numeric ([NM](#nm)             | Observation.valueQuantity | DiagnosticReport.result                                                      |
+| Reference Pointer (RP)         | n/a, convert the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed)                     | DiagnosticReport.presentedForm or DiagnosticReport.extension(supportingInfo) |
+| String Data (ST)               | Observation.valueString                                                                             | DiagnosticReport.result                                                      |
+| Time (TM)                      | Observation.valueTime                                                                              | DiagnosticReport.result                                                      |
+| Text Data (TX)                 | Observation.valueString, newline is represented as `\n`                                             | DiagnosticReport.result                                                      |
 {:.grid}
 
 For discussion: 
@@ -545,6 +545,17 @@ Medical Record Number
 633^^^R0A^MR
 ```
 
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-datatype-ce-to-codeableconcept.html" _target="_blank">CE to FHIR CodeableConcept</a>
+</div>
+
+### ED 
+
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-datatype-ed-to-documentreference.html" _target="_blank">ED to FHIR DocumentReference</a>
+</div>
+
+
 ### EI 
 
 Entity Identifier.
@@ -588,6 +599,12 @@ This is based on the definitions of NDL from [Royal College of Radiologists](htt
 | NDL-1.CNN.3 | Given  Name | ST        | O           | Forename        |                |
 | NDL-7       | Facility    | HD        | O           | [Organisation Code](StructureDefinition-OrganisationCode.html)         |                |
 {:.grid}
+
+### NM
+
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-datatype-nm-to-quantity.html" _target="_blank">NM to FHIR Quantity</a>
+</div>
 
 ### XCN
 
