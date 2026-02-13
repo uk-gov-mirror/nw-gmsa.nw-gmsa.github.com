@@ -10,8 +10,8 @@ Description:    """
 * ^keyword[+] = #core "Core"
 * ^keyword[+] = #diagnostics "Diagnostics"
 * ^keyword[+] = #genomics "Genomics"
-
-* extension contains DiagnosticReportProcedure named procedure 0..* and http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo named supportingInfo 0..*
+// this is not allowed in R4 http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
+* extension contains DiagnosticReportProcedure named procedure 0..* and http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.supportingInfo named supportingInfo 0..*
 
 
 * identifier 1..* MS
