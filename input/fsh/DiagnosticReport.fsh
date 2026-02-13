@@ -117,8 +117,8 @@ Description:    """
 * performer contains
   operator 0..*
 
-//* performer[organisation].identifier only OrganisationCode
-//* performer[organisation].type = #Organization
+//* performer[organization].identifier only OrganisationCode
+//* performer[organization].type = #Organization
 
 * performer[operator].identifier only PractitionerIdentifier
 * performer[operator].extension[performerFunction].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF

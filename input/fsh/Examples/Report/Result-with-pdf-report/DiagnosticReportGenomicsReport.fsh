@@ -45,7 +45,7 @@ Description: "First draft is based on Royal College of Radiologists HL7 v2 ORU c
 
 * effectiveDateTime = "2023-09-07T11:45:41+00:00"
 
-* performer[organisation]
+* performer[organization]
   * identifier.system = $ods-code
   * identifier.value = "699X0"
   * type = #Organization
