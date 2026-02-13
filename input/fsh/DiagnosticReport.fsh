@@ -55,11 +55,11 @@ Description:    """
 * basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 
-* category ^slicing.discriminator.type = #value
-* category ^slicing.discriminator.path = "coding"
-* category ^slicing.rules = #open
-* category ^slicing.description = "Slice based on the category code pattern"
-* category ^slicing.ordered = false
+//* category ^slicing.discriminator.type = #value
+//* category ^slicing.discriminator.path = "coding"
+//* category ^slicing.rules = #open
+//* category ^slicing.description = "Slice based on the category code pattern"
+//* category ^slicing.ordered = false
 * category contains Genetics 1..1
 
 * category[Genetics].coding 1..1 MS
@@ -109,11 +109,11 @@ Description:    """
       http://hl7.org/fhir/StructureDefinition/event-performerFunction named performerFunction 0..1
 * performer only Reference(Practitioner or Organization)
 
-* performer ^slicing.discriminator.type = #pattern
-* performer ^slicing.discriminator.path = "type"
-* performer ^slicing.rules = #open
-* performer ^slicing.description = "Slice based on the type"
-* performer ^slicing.ordered = false
+//* performer ^slicing.discriminator.type = #pattern
+//* performer ^slicing.discriminator.path = "type"
+//* performer ^slicing.rules = #open
+//* performer ^slicing.description = "Slice based on the type"
+//* performer ^slicing.ordered = false
 * performer contains
   organisation 1..1 and operator 0..*
 
@@ -130,11 +130,11 @@ Description:    """
 * resultsInterpreter.type 0..1
 * resultsInterpreter only Reference(Practitioner or PractitionerRole)
 
-* resultsInterpreter ^slicing.discriminator.type = #value
-* resultsInterpreter ^slicing.discriminator.path = "type"
-* resultsInterpreter ^slicing.rules = #open
-* resultsInterpreter ^slicing.description = "Slice based on the type"
-* resultsInterpreter ^slicing.ordered = false
+//* resultsInterpreter ^slicing.discriminator.type = #value
+//* resultsInterpreter ^slicing.discriminator.path = "type"
+//* resultsInterpreter ^slicing.rules = #open
+//* resultsInterpreter ^slicing.description = "Slice based on the type"
+//* resultsInterpreter ^slicing.ordered = false
 * resultsInterpreter contains
   primaryReporter 0..*
 
