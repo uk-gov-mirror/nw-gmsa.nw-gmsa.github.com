@@ -370,9 +370,6 @@ DG1|1||363349007^Malignant tumour of stomach^SNM3||20250129103726+0000
 
 This is based on the definition of OBX from [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
 
-#### OBX-5 TX, ED and FT
-
-For OBX-5 of type ED see [OBX (type = ED)](#obx-type--ed). When the type is TX or FT, and this is containing a report, it is recommended to convert the text to PFD or HTML and treat as type ED.
 
 | Field HL7 | Fieldname                    | Data Type | Optionality | Identifier Type or ValueSet         | Example Values                                                                                                  |
 |-----------|------------------------------|-----------|-------------|-------------------------|-----------------------------------------------------------------------------------------------------------------|
@@ -383,6 +380,26 @@ For OBX-5 of type ED see [OBX (type = ED)](#obx-type--ed). When the type is TX o
 | OBX-11    | Observation Result Status    |           | R           |                         | F                                                                                                               |
 | OBX-14    | Date/Time of the Observation | TS        | O - SHOULD  |                         | 20190514102417+0000                                                                                             |
 {:.grid}
+
+#### OBX-2 Value Type
+
+| HL7 Value Type          | OBX-5 FHIR Observation Mapping                                                                      | FHIR DiagnosticReport                                                        |
+|-------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| Coded Entry (CE)        | Obsveration.valueCodeableConcept                                                                    | DiagnosticReport.result                                                      |
+| Date (DT)               | Observation.valueDateTime                                                                           | DiagnosticReport.result                                                      |
+| Embedded documents (ED) | n/a, convert OBX-5 to Binary and the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed) | DiagnosticReport.presentedForm or DiagnosticReport.extension(supportingInfo) |
+| Formatted Text (FT)     | Observation.valueString, HL7 v2.x formatting should be converted to markdown                        | DiagnosticReport.result                                                      |
+| Numeric (NM) | Observation.valueQuantity | DiagnosticReport.result                                                      |
+| Reference Pointer (RP)  | n/a, convert the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed)                     | DiagnosticReport.presentedForm or DiagnosticReport.extension(supportingInfo) |
+| String Data (ST)        | Observation.valueString                                                                             | DiagnosticReport.result                                                      |
+| Time (TM)               | Observation.valueTime                                                                              | DiagnosticReport.result                                                      |
+| Text Data (TX)          | Observation.valueString, newline is represented as `\n`                                             | DiagnosticReport.result                                                      |
+{:.grid}
+
+For discussion: 
+
+- Many reports will use FT or TX for the report (Genetic Report (1054161000000101) and Laboratort Report (4241000179101)), the preferred way to represent this is to use the DiagnosticReport.presentedForm with FT/TX text converted to PDF.
+- Only ED/RP documents which are reports should use the DiagnosticReport.presentedForm, others should use DiagnosticReport.extension(supportingInfo).
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-obx-to-observation.html" _target="_blank">OBX to FHIR Observation</a> 
@@ -406,7 +423,7 @@ OBX|4|ST|230016^Test Type^https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionI
 > FHIR Resource Example: [Pregnancy Expected Delivery Date (value type=DT)](Observation-OBX-PregnancyExpectedDeliveryDate.html)
 
 
-### OBX (type = ED)
+#### OBX (type = ED)
 
 This is based on the definition of OBX from [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
 

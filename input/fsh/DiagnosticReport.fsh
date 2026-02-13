@@ -14,7 +14,6 @@ Description:    """
 * extension contains DiagnosticReportProcedure named procedure 0..* and http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo named supportingInfo 0..*
 
 
-
 * identifier 1..* MS
 * identifier only CorrelationIdentifier
 
