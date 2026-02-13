@@ -40,5 +40,8 @@ Description:    """
 * valueCodeableConcept MS
 * valueQuantity MS
 * valueDateTime MS
+* valueString MS
+
+* valueString.extension contains http://hl7.org/fhir/StructureDefinition/rendering-markdown named markdown 0..*
 
 * referenceRange MS
