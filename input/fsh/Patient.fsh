@@ -3,7 +3,7 @@ Profile: Patient
 Parent: http://hl7.eu/fhir/laboratory/StructureDefinition/Patient-eu-lab
 Id: Patient
 Description: """
-`Patient Administration`
+`Patient Administration` `HL7 Europe Laboratory`
 """
 * ^keyword[+] = #core "Core"
 * ^keyword[+] = #pam "Patient Administration"

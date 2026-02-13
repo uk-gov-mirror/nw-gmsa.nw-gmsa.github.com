@@ -1,8 +1,10 @@
 Profile:        CompositionGenomicReport
-Parent:         http://hl7.org/fhir/StructureDefinition/Composition
+//Parent:         http://hl7.org/fhir/StructureDefinition/Composition
+Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Composition-eu-lab
 Id:             Composition-GenomicReport
 Title:          "Composition Genomic Report"
 Description:    """
+`Diagnostic` `HL7 Europe Laboratory`
 """
 
 * identifier 1..1 MS
@@ -44,7 +46,7 @@ Description:    """
 * custodian.identifier only OrganisationCode
 
 * section 1..* MS
-* section.text 1..1 MS
+//* section.text MS
 * section.title 1..1
 * section.code 1..1
 * section.code from http://hl7.org/fhir/ValueSet/doc-section-codes
@@ -53,13 +55,13 @@ Description:    """
 * section.code.coding.code 1..1
 
 
-* section ^slicing.discriminator[0].type = #value
-* section ^slicing.discriminator[=].path = "code"
-* section ^slicing.ordered = false
-* section ^slicing.rules = #open
-* section ^short = "Sections composing the report"
-* section ^definition = "The root of the sections that make up the report."
-* section.text 1.. MS
+//* section ^slicing.discriminator[0].type = #value
+//* section ^slicing.discriminator[=].path = "code"
+//* section ^slicing.ordered = false
+//* section ^slicing.rules = #open
+//* section ^short = "Sections composing the report"
+//* section ^definition = "The root of the sections that make up the report."
+//* section.text 1.. MS
 * section contains
     InformationRecipient 0..* MS
     and Order 0..* MS

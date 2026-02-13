@@ -4,7 +4,7 @@ Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Observation-re
 Id:             Observation
 Title:          "Observation"
 Description:    """
-`Diagnostic`
+`Diagnostic` `HL7 Europe Laboratory`
 """
 
 * ^keyword[+] = #core "Core"

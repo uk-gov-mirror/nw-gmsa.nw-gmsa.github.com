@@ -4,7 +4,7 @@ Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/ServiceRequest
 Id:             ServiceRequest
 Title:          "ServiceRequest"
 Description:    """
-`Diagnostic Workflow`
+`Diagnostic Workflow` `HL7 Europe Laboratory`
 """
 
 * ^keyword[+] = #core "Core"

@@ -1,5 +1,5 @@
 Profile:        Composition
-Parent:         http://hl7.org/fhir/StructureDefinition/Composition
+Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Composition-eu-lab
 Id:             Composition
 Title:          "Composition"
 Description:    """
