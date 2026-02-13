@@ -1,5 +1,5 @@
 Profile:        OrganisationCode
-Parent:         http://hl7.org/fhir/StructureDefinition/Identifier
+Parent:         CorrelationIdentifier
 Id:             OrganisationCode
 Title:          "Organisation Code"
 Description:     """

@@ -13,6 +13,5 @@ Description:     """
 """
 
 * type = $v2-0203#VN "Visit number"
-
-
+* assigner 1..1 MS
 

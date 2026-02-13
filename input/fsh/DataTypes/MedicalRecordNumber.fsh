@@ -21,6 +21,7 @@ Description:     """
 * system ^example.valueString = "1.2.840.114350.1.13.0.1.7.5.737384.0"
 * system ^example.label = "EPIC EPI OID"
 
+* assigner 1..1
 * assigner ^short = "Assigning Facility"
 * assigner.identifier.system = $ods-code
 * assigner.identifier.value ^example.valueString = "R0A"

@@ -16,3 +16,4 @@ Description:     """
 
 * type = $v2-0203#PLAC
 * value 1..1
+* assigner 1..1

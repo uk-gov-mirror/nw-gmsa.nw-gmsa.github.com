@@ -16,7 +16,7 @@ Core Data Contract for FHIR Identifier, v2 CX and EI
 * value 1..1 MS
 * value ^short = "The value MUST be unique to the organisation"
 
-* assigner 1..1 MS
+* assigner 0..1 MS
 * assigner.identifier 1..1 MS
 * assigner.identifier.value 1..1 MS
 * assigner.identifier.system 1..1 MS

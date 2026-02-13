@@ -16,3 +16,4 @@ This is related to [RADIOLOGICAL ACCESSION NUMBER](https://www.datadictionary.nh
 * type = $v2-0203#ACSN
 * system ^short = "uri should be defined and unique supplying organisation."
 * value 1..1
+* assigner 1..1
