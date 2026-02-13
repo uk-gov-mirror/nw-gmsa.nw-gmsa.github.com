@@ -1,6 +1,6 @@
 Profile:        Observation
 //Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Observation
-Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Observation-resultslab-eu-lab
+Parent:         http://hl7.eu/fhir/base/StructureDefinition/medicalTestResult-eu-core
 Id:             Observation
 Title:          "Observation"
 Description:    """
@@ -21,10 +21,11 @@ Description:    """
 
 * identifier 1..* MS
 
-* performer only Reference(http://hl7.eu/fhir/laboratory/StructureDefinition/PractitionerRole-eu-lab  or Patient)
+* performer only Reference(PractitionerRole)
 
 * status ^short = "Observation Status  (HL7 v2 OBX-11)"
 
+* subject only Reference(Patient)
 * subject 1..1 MS
 * subject.reference 1..1 MS
 * subject.identifier only NHSIdentifier

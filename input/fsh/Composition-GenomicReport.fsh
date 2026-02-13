@@ -12,7 +12,7 @@ Description:    """
 
 * subject 1..1
 * subject.reference 1..1
-* subject only Reference(Patient)
+* subject only Reference(http://hl7.eu/fhir/laboratory/StructureDefinition/Patient-eu-lab)
 * subject.identifier only NHSIdentifier
 * relatesTo.target[x] only Identifier or Reference(Composition)
 * custodian.identifier only OrganisationCode

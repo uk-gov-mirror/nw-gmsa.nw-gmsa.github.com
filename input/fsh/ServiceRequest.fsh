@@ -1,6 +1,6 @@
 Profile:        ServiceRequest
-//Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-ServiceRequest
-Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/ServiceRequest-eu-lab
+Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-ServiceRequest
+//Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/ServiceRequest-eu-lab
 Id:             ServiceRequest
 Title:          "ServiceRequest"
 Description:    """

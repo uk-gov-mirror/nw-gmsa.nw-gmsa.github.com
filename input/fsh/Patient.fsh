@@ -1,6 +1,6 @@
 Profile: Patient
 //Parent: https://fhir.hl7.org.uk/StructureDefinition/UKCore-Patient
-Parent: http://hl7.eu/fhir/laboratory/StructureDefinition/Patient-eu-lab
+Parent: http://hl7.eu/fhir/base/StructureDefinition/patient-eu-core
 Id: Patient
 Description: """
 `Patient Administration` `HL7 Europe Laboratory`
