@@ -14,5 +14,5 @@ iGene Test Codes
 // Ethnic
 
 * #SANGER "TEST: Sanger Sequencing"
-* #R125_Cardiology "PANEL: R125.1, R125.2 - Thoracic aortic aneurysm and dissection v1.2"
+* #R125_Cardiology "PANEL : R125.1, R125.2 - Thoracic aortic aneurysm and dissection v1.2"
 * #CCP19v1_R112 "PANEL: R112.1 - Factor II deficiency v1.0"
