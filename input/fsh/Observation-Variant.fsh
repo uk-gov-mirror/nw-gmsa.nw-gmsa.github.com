@@ -10,10 +10,11 @@ Description:    """
 * ^keyword[+] = #genomics "Genomics"
 * ^keyword[+] = #diagnostics "Diagnostics"
 
+* code = $loinc#69548-6
 
-* code MS
-* valueCodeableConcept MS
-* method MS
+//* code MS
+//* valueCodeableConcept MS
+//* method MS
 //* component[allelic-state] MS
 //* component[representative-coding-hgvs] MS
 //* component[genomic-ref-seq] MS
