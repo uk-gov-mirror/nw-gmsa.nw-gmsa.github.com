@@ -1,9 +1,9 @@
 Profile:        Condition
-Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Condition
+Parent:         http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core
 Id:             Condition
 Title:          "Condition"
 Description:    """
-`Patient Care`
+`Patient Care` `HL7 Europe Core`
 """
 
 * ^keyword[+] = #core "Core"

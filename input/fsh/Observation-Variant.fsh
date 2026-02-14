@@ -3,7 +3,7 @@ Parent:         Observation
 Id:             Observation-Variant
 Title:          "Observation Variant"
 Description:    """
-`Genomic Observation` Placeholder for [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html)
+`HL7 Genomics Reporting` Placeholder for [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html)
 """
 
 * ^keyword[+] = #archetype "Domain Analysis Model"

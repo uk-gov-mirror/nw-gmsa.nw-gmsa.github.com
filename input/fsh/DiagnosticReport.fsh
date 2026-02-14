@@ -5,7 +5,7 @@ Parent:         http://hl7.eu/fhir/base/StructureDefinition/diagnosticReport-eu-
 Id:             DiagnosticReport
 Title:          "Diagnostic Report"
 Description:    """
-'Diagnostic Workflow'
+'Diagnostic Workflow' `HL7 Europe Core`
 """
 
 * ^keyword[+] = #core "Core"

@@ -3,7 +3,7 @@ Parent:         Observation
 Id:             Observation-DiagnosticImplication
 Title:          "Observation Diagnostic Implication"
 Description:    """
-`Genomic Observation` Placeholder for [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html)
+`HL7 Genomics Reporting` Placeholder for [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html)
 """
 
 * ^keyword[+] = #archetype "Domain Analysis Model"

@@ -3,7 +3,7 @@ Parent:         Procedure
 Id:             Procedure-GenomicStudy
 Title:          "Procedure Genomic Study"
 Description:    """
-`Genomic Procedure`
+`HL7 Genomics Reporting`
 """
 
 * ^keyword[+] = #archetype "Domain Analysis Model"

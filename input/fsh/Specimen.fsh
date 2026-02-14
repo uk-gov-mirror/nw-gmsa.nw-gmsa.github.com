@@ -4,7 +4,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Specimen
 Id:             Specimen
 Title:          "Specimen"
 Description:    """
-`Diagnostic Workflow` `HL7 Europe Laboratory`
+`Diagnostic Workflow`
 """
 
 * ^keyword[+] = #core "Core"

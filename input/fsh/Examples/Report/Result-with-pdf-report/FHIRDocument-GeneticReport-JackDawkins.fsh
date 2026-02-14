@@ -1,9 +1,10 @@
 Instance: Composition-GenomicsReport-OctaviaCHISLETT
-InstanceOf: Composition
+InstanceOf: CompositionGenomicReport
 Title: "Composition - Genomics Report Octavia CHISLETT"
 Description: "Composition - Genomics Report Octavia CHISLETT"
 Usage: #example
 
+* identifier.value = "30551ce1-5a28-4356-b684-1e639094ad4d"
 * status = #final
 * type = $sct#1054161000000101 "Genetic report"
 //* meta.versionId = 3
