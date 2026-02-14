@@ -62,8 +62,9 @@ Description:    """
 //* category ^slicing.ordered = false
 * category contains Genetics 1..1
 
-* category[Genetics].coding 1..1 MS
-* category[Genetics].coding = http://terminology.hl7.org/CodeSystem/v2-0074#GE
+// Looks like this has is fixe on EU Core newer than hl7.fhir.eu.base#2.0.0-ballot based on FHIR 4.0.1. Generated 2025-12-19
+//* category[Genetics].coding 1..1 MS
+//* category[Genetics].coding = http://terminology.hl7.org/CodeSystem/v2-0074#GE
 
 * subject 1..1
 * subject.identifier 1..1
@@ -120,9 +121,9 @@ Description:    """
 //* performer[organization].identifier only OrganisationCode
 //* performer[organization].type = #Organization
 
-* performer[operator].identifier only PractitionerIdentifier
-* performer[operator].extension[performerFunction].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF
-* performer[operator].type = #Practitioner
+//* performer[operator].identifier only PractitionerIdentifier
+//* performer[operator].extension[performerFunction].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF
+//* performer[operator].type = #Practitioner
 
 * resultsInterpreter.identifier 0..1
 * resultsInterpreter.identifier.system 1..1
