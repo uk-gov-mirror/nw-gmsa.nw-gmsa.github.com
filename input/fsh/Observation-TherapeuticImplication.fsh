@@ -10,6 +10,4 @@ Description:    """
 * ^keyword[+] = #genomics "Genomics"
 * ^keyword[+] = #diagnostics "Diagnostics"
 
-* code MS
-//* derivedFrom[variant] MS
-//* derivedFrom[variant] only Reference(Variant)
+* code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#therapeutic-implication

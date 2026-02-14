@@ -10,3 +10,4 @@ Description:    """
 * ^keyword[+] = #genomics "Genomics"
 * ^keyword[+] = #diagnostics "Diagnostics"
 
+* code = $loinc#84413-4
