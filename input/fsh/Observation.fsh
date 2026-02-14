@@ -39,6 +39,7 @@ Description:    """
 * code ^short = "The type of observation (code / type). (HL7 v2 OBX-3)"
 
 * value[x] ^short = "Actual result (HL7 v2 OBX-5)"
+* value[x].extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Observation.value named value-r5 0..1
 
 * effective[x] ^short = "Clinically relevant time/time-period for observation (HL7 v2 OBX-14)"
 * effective[x] insert Obligation(#SHOULD:populate-if-known, https://nw-gmsa.github.io/ActorDefinition/OrderFiller)
