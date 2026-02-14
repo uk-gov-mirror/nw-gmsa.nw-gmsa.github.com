@@ -69,6 +69,12 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 | (CHI Number)                                                    | GLASGOW                                       | Karsi    |             | F      | 1982-01-16                 |          |                                                                                                               | J B Russell House     | Gartnavel Royal Hospital Campus | 1055 Great Western Road | Glasgow                   |                               | G12 0XH  |          
 {:.grid}
 
+In HL7 [Lab Results Interface (LRI)(), the Gene Variant examples are mapped to the following test patients:
+
+- Example Gene Variant 1 Galactosemia - 9737383281 Margaery Congleton
+- Example Gene Variant 2 Cystic Fibrosis - 9737383214 Jamie Lancaster
+- Example Gene Variant 3 Lynch Syndrome - 9737383206 Ned Liverpool
+
 ```mermaid
 graph TD;
     subgraph LynchSyndrome[Lynch Syndrome Scenario]
@@ -85,7 +91,7 @@ graph TD;
         London --> |Twin| Lancaster
     end
     
-    subgraph TBD[To be determined Scenario]
+    subgraph TBD[Galactosemia Scenario]
         Warrington((Warrington<br/>Olenna)) --> |Mother| Northwich 
         Northwich[Northwich<br/>Mace] --> |Father| Congleton((Congleton<br/>Margaery))
     end
