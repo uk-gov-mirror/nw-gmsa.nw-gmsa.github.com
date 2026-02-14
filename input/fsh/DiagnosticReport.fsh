@@ -143,20 +143,20 @@ Description:    """
 
 * specimen 0..* MS
 
-
-* result ^slicing.discriminator.type = #profile
-* result ^slicing.discriminator.path = "resolve()"
-* result ^slicing.rules = #open
-* result ^slicing.description = "Slice based on the reference profile and code pattern"
 * result only Reference(Observation)
-* result contains
-    diagnostic-implication 0..* and
-    variant 0..*
 
-* result[variant] MS
-* result[variant] only Reference(ObservationVariant)
-* result[diagnostic-implication] MS
-* result[diagnostic-implication] only Reference(ObservationDiagnosticImplication)
+
+//* result ^slicing.discriminator.type = #profile
+//* result ^slicing.discriminator.path = "resolve()"
+//* result ^slicing.rules = #open
+//* result ^slicing.description = "Slice based on the reference profile and code pattern"
+//* result contains
+//    diagnostic-implication 0..* and
+//   variant 0..*
+//* result[variant] MS
+//* result[variant] only Reference(ObservationVariant)
+//* result[diagnostic-implication] MS
+//* result[diagnostic-implication] only Reference(ObservationDiagnosticImplication)
 
 * presentedForm 1..* MS
 * presentedForm ^short = "a reference to the full report (presentedForm)"
