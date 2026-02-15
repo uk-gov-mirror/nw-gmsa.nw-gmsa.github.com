@@ -1,7 +1,7 @@
-Profile:        ObservationVariant
+Profile:        Variant
 Parent:         Observation
-Id:             Observation-Variant
-Title:          "Observation Variant"
+Id:             Variant
+Title:          "Variant (Observation)"
 Description:    """
 `HL7 Genomics Reporting`
 """

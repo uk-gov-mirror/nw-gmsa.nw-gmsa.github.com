@@ -1,7 +1,7 @@
-Profile:        ObservationDiagnosticImplication
+Profile:        DiagnosticImplication
 Parent:         Observation
-Id:             Observation-DiagnosticImplication
-Title:          "Observation Diagnostic Implication"
+Id:             DiagnosticImplication
+Title:          "Diagnostic Implication (Observation)"
 Description:    """
 `HL7 Genomics Reporting`
 """

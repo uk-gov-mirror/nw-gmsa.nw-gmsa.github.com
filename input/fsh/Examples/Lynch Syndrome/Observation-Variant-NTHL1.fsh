@@ -1,5 +1,5 @@
 Instance: 8385c2fd-313d-4fd5-b98e-d5ea4bae6f99
-InstanceOf: ObservationVariant
+InstanceOf: Variant
 Title: "Variant - NTHL1"
 Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 
@@ -22,7 +22,7 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 * performer[+] = Reference(59577028-8fcc-4554-8b43-988561d41d9c)
 
 * subject = Reference(Patient-Liverpool)
-* subject.display = "Paul LIVERPOOL"
+* subject.display = "Nedl LIVERPOOL"
 
 * method = $loinc#LA26398 "Sequencing"
 

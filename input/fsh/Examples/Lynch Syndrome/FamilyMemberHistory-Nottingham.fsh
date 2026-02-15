@@ -6,7 +6,7 @@ Description: "FamilyMemberHistory - Sarah-Jane Nottingham"
 * status = #partial
 
 * patient = Reference(Patient-Liverpool)
-* patient.display = "Paul LIVERPOOL"
+* patient.display = "Nedl LIVERPOOL"
 
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "mother"
 

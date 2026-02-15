@@ -1,5 +1,5 @@
 Instance: f0036554-cd1a-463c-ac8a-d891ca409af9
-InstanceOf: ProcedureGenomicStudy
+InstanceOf: GenomicStudy
 Title: "Genomic Study - Lynch Syndrome"
 Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 
@@ -16,7 +16,7 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 * asserter = Reference(59577028-8fcc-4554-8b43-988561d41d9c)
 
 * subject = Reference(Patient-Liverpool)
-* subject.display = "Paul LIVERPOOL"
+* subject.display = "Nedl LIVERPOOL"
 
 * reasonCode[+]
   * coding[+]

@@ -20,7 +20,7 @@ Description: "evidenced by pathology diagnostic testing"
 
 
 * subject = Reference(Patient-Liverpool)
-* subject.display = "Paul LIVERPOOL"
+* subject.display = "Nedl LIVERPOOL"
 
 * evidence[+]
   * detail[+].display = "Pathology Diagnostic Report"

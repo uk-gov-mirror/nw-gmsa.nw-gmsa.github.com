@@ -1,5 +1,5 @@
 Instance: 7b362aa5-41a7-4168-94b4-f12dff0dfb2a
-InstanceOf: ProcedureGenomicStudy
+InstanceOf: GenomicStudy
 Title: "Genomic Study - Cystic Fibrosis"
 Description: "Based on HL7 LRI Example 1 (Ref 5.9.1.2)"
 

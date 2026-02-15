@@ -1,5 +1,5 @@
 Instance: bca547c1-78a5-41be-8cfc-03c05805ac85
-InstanceOf: ObservationVariant
+InstanceOf: Variant
 Title: "Variant - CFTR"
 Description: "Based on HL7 LRI Example 2 (Ref 5.9.1.2)"
 

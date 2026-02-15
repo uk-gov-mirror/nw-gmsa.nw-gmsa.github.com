@@ -1,7 +1,7 @@
-Profile:        ProcedureGenomicStudy
+Profile:        GenomicStudy
 Parent:         Procedure
-Id:             Procedure-GenomicStudy
-Title:          "Procedure Genomic Study"
+Id:             GenomicStudy
+Title:          "Genomic Study (Procedure)"
 Description:    """
 `HL7 Genomics Reporting`
 """

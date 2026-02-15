@@ -16,7 +16,7 @@ Description: "Based on HL7 LRI Example 3 (Ref 5.9.1.3)"
 * derivedFrom = Reference(8385c2fd-313d-4fd5-b98e-d5ea4bae6f99)
 
 * subject = Reference(Patient-Liverpool)
-* subject.display = "Paul LIVERPOOL"
+* subject.display = "Nedl LIVERPOOL"
 
 * code = $sct#1365861003 "Lynch syndrome gene mutation detected"
 

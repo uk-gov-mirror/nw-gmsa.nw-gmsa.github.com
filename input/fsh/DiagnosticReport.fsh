@@ -12,8 +12,7 @@ Description:    """
 * ^keyword[+] = #diagnostics "Diagnostics"
 * ^keyword[+] = #genomics "Genomics"
 // this is not allowed in R4 http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo
-* extension contains DiagnosticReportProcedure named procedure 0..* and http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.supportingInfo named supportingInfo 0..*
-
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.study named studyR5 0..* and http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.supportingInfo named supportingInfoR5 0..*
 
 * identifier 1..* MS
 * identifier only CorrelationIdentifier
@@ -155,9 +154,9 @@ Description:    """
     diagnostic-implication 0..* and
    variant 0..*
 * result[variant] MS
-* result[variant] only Reference(ObservationVariant)
+* result[variant] only Reference(Variant)
 * result[diagnostic-implication] MS
-* result[diagnostic-implication] only Reference(ObservationDiagnosticImplication)
+* result[diagnostic-implication] only Reference(DiagnosticImplication)
 
 * presentedForm 1..* MS
 * presentedForm only NWAttachment

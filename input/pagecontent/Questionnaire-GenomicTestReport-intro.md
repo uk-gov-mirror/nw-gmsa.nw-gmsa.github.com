@@ -123,7 +123,7 @@ See also [HL7 Genomic Reporting - Genomic Study](https://build.fhir.org/ig/HL7/g
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-genomic-study.html" _target="_blank">Genomic Study</a> 
 <br/>
-<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-Procedure-GenomicStudy.html" _target="_blank">Procedure Genomic Study</a> 
+<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-GenomicStudy.html" _target="_blank">Procedure Genomic Study</a> 
 </div>
 
 #### Genomic Study Analysis

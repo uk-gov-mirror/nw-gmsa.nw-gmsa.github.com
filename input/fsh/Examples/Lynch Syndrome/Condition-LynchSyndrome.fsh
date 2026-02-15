@@ -20,7 +20,7 @@ Description: "evidenced by genomic diagnostic testing"
 
 
 * subject = Reference(Patient-Liverpool)
-* subject.display = "Paul LIVERPOOL"
+* subject.display = "Nedl LIVERPOOL"
 
 * evidence[+]
   * detail[+] = Reference(6beb613f-d303-42af-b025-86e8e0872061)
