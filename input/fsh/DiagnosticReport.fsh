@@ -118,7 +118,7 @@ Description:    """
 * performer contains
   operator 0..*
 
-//* performer[organization].identifier only OrganisationCode
+* performer[organization].identifier only OrganisationCode
 //* performer[organization].type = #Organization
 
 //* performer[operator].identifier only PractitionerIdentifier
@@ -136,11 +136,11 @@ Description:    """
 //* resultsInterpreter ^slicing.rules = #open
 //* resultsInterpreter ^slicing.description = "Slice based on the type"
 //* resultsInterpreter ^slicing.ordered = false
-* resultsInterpreter contains
-  primaryReporter 0..*
+//* resultsInterpreter contains
+//  primaryReporter 0..*
 
-* resultsInterpreter[primaryReporter].identifier only PractitionerIdentifier
-* resultsInterpreter[primaryReporter].type = #Practitioner
+* resultsInterpreter[author].identifier only PractitionerIdentifier
+//* resultsInterpreter[primaryReporter].type = #Practitioner
 
 * specimen 0..* MS
 
@@ -160,7 +160,6 @@ Description:    """
 * result[diagnostic-implication] only Reference(ObservationDiagnosticImplication)
 
 * presentedForm 1..* MS
-* presentedForm ^short = "a reference to the full report (presentedForm)"
 * presentedForm only NWAttachment
 
 * conclusionCode 0..* MS
