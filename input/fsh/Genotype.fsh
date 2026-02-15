@@ -1,7 +1,7 @@
-Profile:        ObservationGenotype
+Profile:        Genotype
 Parent:         Observation
-Id:             Observation-Genotype
-Title:          "Observation Genotype"
+Id:             Genotype
+Title:          "Genotype (Observation)"
 Description:    """
 `HL7 Genomics Reporting` Placeholder for [Genotype](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genotype.html)
 """

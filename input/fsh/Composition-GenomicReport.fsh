@@ -103,7 +103,7 @@ Description:    """
 * section[GenomicImplication] ^short = "Implication"
 * section[GenomicImplication].title = "Implication"
 * section[GenomicImplication].code = $loinc#59768-2 "Procedure indications"
-* section[GenomicImplication].entry only Reference(DiagnosticImplication or Observation-TherapeuticImplication or http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence)
+* section[GenomicImplication].entry only Reference(DiagnosticImplication or TherapeuticImplication or http://hl7.org/fhir/uv/genomics-reporting/StructureDefinition/molecular-consequence)
 
 * section[RecommendedActions] ^short = "Recommended Actions"
 * section[RecommendedActions].title = "Recommended Actions"

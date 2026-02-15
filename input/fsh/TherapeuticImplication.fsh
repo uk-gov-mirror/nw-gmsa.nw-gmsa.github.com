@@ -1,7 +1,7 @@
-Profile:        ObservationTherapeuticImplication
+Profile:        TherapeuticImplication
 Parent:         Observation
-Id:             Observation-TherapeuticImplication
-Title:          "Observation Therapeutic Implication"
+Id:             TherapeuticImplication
+Title:          "Therapeutic Implication (Observation)"
 Description:    """
 `HL7 Genomics Reporting` Placeholder for [TherapeuticImplication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html)
 """
