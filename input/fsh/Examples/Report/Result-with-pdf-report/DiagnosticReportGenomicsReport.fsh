@@ -58,7 +58,7 @@ Description: "First draft is based on Royal College of Radiologists HL7 v2 ORU c
   * display = "FICTITIOUS, Ralph"
   * extension[performerFunction].valueCodeableConcept.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF
 
-* resultsInterpreter[primaryReporter]
+* resultsInterpreter[author]
   * type = "Practitioner"
   * identifier.system = "https://fhir.hl7.org.uk/Id/gmc-number"
   * identifier.value = "C1234567"

@@ -140,7 +140,7 @@ Description:    """
 //  primaryReporter 0..*
 
 * resultsInterpreter[author].identifier only PractitionerIdentifier
-//* resultsInterpreter[primaryReporter].type = #Practitioner
+//* resultsInterpreter[author].type = #Practitioner
 
 * specimen 0..* MS
 
