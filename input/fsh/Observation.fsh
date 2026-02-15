@@ -75,5 +75,5 @@ Description:    """
 * component[conclusion-string] ^comment = "An example would be the interpretative information, typically canned, about a variant identified in the patient."
 * component[conclusion-string].code = TbdCodesCS#conclusion-string
 * component[conclusion-string].code ^short = "conclusion-string"
-//* component[conclusion-string].value[x] only string
+* component[conclusion-string].value[x] only string or Quantity
 * component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"
