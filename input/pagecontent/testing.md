@@ -65,15 +65,16 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 | 9737383362                                                      | BROUGH                                        | Gilly    |             | F      | 1989-07-01                 |          | [A82038](https://www.odsdatasearchandexport.nhs.uk/?search=generalorg&query=A82038)                           | Townhead House        | Brough                          | Sowerby                 | KIRKBY STEPHEN            |                               | CA17 4EG |
 | 9737383370                                                      | BLACKBURN                                     | Robert   |             | M      | 1965-01-14                 |          | [Y02657](https://www.odsdatasearchandexport.nhs.uk/?search=generalorg&query=Y02657)                           | King William Street   |                                 |                         | Blackburn                 | Lancashire                    | BB1 7DY  |
 | 9737383389                                                      | BURNLEY                                       | Selyse   |             | F      | 1967-09-18                 |          | [Y00206](https://www.odsdatasearchandexport.nhs.uk/?search=generalorg&query=Y00206)                           | Manchester Road       |                                 |                         | Burnley                   | Lancashire                    | BB11 9SA |
-| 9737383397                                                      | TAMESIDE                                      | Hodor    |             | M      | 27/07/1960                 |          | Y00206                                                                                                        | Stockport Road        |                                 |                         | Tameside                  |                               | OL7 0NS  |   
+| 9737383397                                                      | TAMESIDE                                      | Hodor    |             | M      | 1960-07-27         |          | Y00206                                                                                                        | Stockport Road        |                                 |                         | Tameside                  |                               | OL7 0NS  |   
 | (CHI Number)                                                    | GLASGOW                                       | Karsi    |             | F      | 1982-01-16                 |          |                                                                                                               | J B Russell House     | Gartnavel Royal Hospital Campus | 1055 Great Western Road | Glasgow                   |                               | G12 0XH  |          
 {:.grid}
 
 In HL7 [Lab Results Interface (LRI)(), the Gene Variant examples are mapped to the following test patients:
 
-- Example Gene Variant 1 Galactosemia - 9737383281 Margaery Congleton
+- Example Gene Variant 1 Galactosemia - 9737383281 Margaery Congleton (Not a UK Test Code)
 - Example Gene Variant 2 Cystic Fibrosis - 9737383214 Jamie Lancaster
 - Example Gene Variant 3 Lynch Syndrome - 9737383206 Ned Liverpool
+- Example 4 Infantile Epilepsy - Shireen Chester (26 May 2019)
 
 ```mermaid
 graph TD;
