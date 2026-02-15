@@ -134,7 +134,7 @@ Diagnostic Testing is performed in the North West and Ordering Facility is outsi
 | London        | To be determined | To be determined                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
 {:.grid}
 
-### NHS England Test Patients
+### NHS England EDI  Test Patients
 
 These patients are created in the NHS England Test Data Repository (TDR) and were used for previous national programmes (from HSCIC and NHS Digital)
 
