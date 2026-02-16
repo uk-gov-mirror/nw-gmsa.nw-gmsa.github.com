@@ -13,10 +13,7 @@ Description:    """
 
 
 * category contains genomicsCategory 1..1
-//* category[labCategory].coding 1..1
-//* category[labCategory].coding = $OBSCAT#laboratory
-* category[genomicsCategory].coding 1..1
-* category[genomicsCategory].coding = $DIAGNOSTICSERVICE#GE
+* category[genomicsCategory] = $DIAGNOSTICSERVICE#GE
 
 * identifier 1..* MS
 
