@@ -51,7 +51,7 @@ Description: "First draft is based on Royal College of Radiologists HL7 v2 ORU c
   * type = #Organization
   * display = "NW GLH"
 
-* performer[operator]
+* performer[+]
   * type = "Practitioner"
   * identifier.system = "https://fhir.hl7.org.uk/Id/gmc-number"
   * identifier.value = "C1234567"
