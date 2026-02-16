@@ -146,8 +146,8 @@ Description:    """
 * result only Reference(Observation)
 
 
-* result ^slicing.discriminator.type = #value
-* result ^slicing.discriminator.path = "resolve().code"
+* result ^slicing.discriminator.type = #profile
+* result ^slicing.discriminator.path = "resolve()"
 * result ^slicing.rules = #open
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
 * result contains
