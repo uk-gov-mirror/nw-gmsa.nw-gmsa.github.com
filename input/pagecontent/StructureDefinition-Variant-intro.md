@@ -1,3 +1,7 @@
+<div class="alert alert-info" role="alert">
+<b>HL7 Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html" _target="_blank">Variant</a>
+</div>
+
 Reference: 
 
 - HL7 FHIR Genomic Reporting [Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html)

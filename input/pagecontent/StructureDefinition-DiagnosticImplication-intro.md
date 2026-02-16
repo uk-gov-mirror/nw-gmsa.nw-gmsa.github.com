@@ -1,4 +1,8 @@
 
+<div class="alert alert-info" role="alert">
+<b>HL7 Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html" _target="_blank">Diagnostic Implication</a>
+</div>
+
 Reference:: 
 
 - HL7 FHIR Genomic Reporting [Diagnostic Implication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-diagnostic-implication.html)

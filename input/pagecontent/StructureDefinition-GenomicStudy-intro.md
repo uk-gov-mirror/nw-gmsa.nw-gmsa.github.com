@@ -1,3 +1,7 @@
+<div class="alert alert-info" role="alert">
+<b>HL7 Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html" _target="_blank">Genomic Study</a>
+</div>
+
 Reference::
 
 - HL7 FHIR Genomic Reporting [Genomic Study](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html)
