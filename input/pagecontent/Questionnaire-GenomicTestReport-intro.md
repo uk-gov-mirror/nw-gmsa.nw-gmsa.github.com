@@ -174,7 +174,7 @@ This is for elaboration and subject to change.
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html" _target="_blank">Variant</a> 
 <br/>
-<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-Observation-Variant.html" _target="_blank">Observation Variant</a> 
+<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-Variant.html" _target="_blank">Variant (Observation)</a> 
 </div>
 
 
@@ -199,7 +199,7 @@ This is for elaboration and subject to change.
 <div class="alert alert-info" role="alert">
 <b>HL7 FHIR Genomic Reporting:</b> <a href="https://hl7.org/fhir/uv/genomics-reporting/StructureDefinition-diagnostic-implication.html" _target="_blank">Diagnostic Implication</a> 
 <br/>
-<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-Observation-DiagnosticImplication.html" _target="_blank">Observation Diagnostic Implication</a> 
+<b>Localised (NW Genomics) version:</b> <a href="StructureDefinition-DiagnosticImplication.html" _target="_blank">Diagnostic Implication (Observation)</a> 
 </div>
 
 ## Examples
