@@ -114,8 +114,8 @@ Description:    """
 //* performer ^slicing.rules = #open
 //* performer ^slicing.description = "Slice based on the type"
 //* performer ^slicing.ordered = false
-* performer contains
-  operator 0..*
+
+//* performer contains operator 0..*
 
 * performer[organization].identifier only OrganisationCode
 //* performer[organization].type = #Organization
