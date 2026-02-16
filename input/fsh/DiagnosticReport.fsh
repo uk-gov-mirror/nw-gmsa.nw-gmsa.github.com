@@ -152,7 +152,10 @@ Description:    """
 * result ^slicing.description = "Slice based on the reference profile and code pattern"
 * result contains
     diagnostic-implication 0..* and
-   variant 0..*
+   variant 0..* and
+   genomic-study 0..1
+* result[genomic-study]
+* result[genomic-study] only Reference(GenomicStudyPanel)
 * result[variant] MS
 * result[variant] only Reference(Variant)
 * result[diagnostic-implication] MS
