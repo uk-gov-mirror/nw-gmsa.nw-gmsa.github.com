@@ -72,9 +72,22 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 In HL7 [Lab Results Interface (LRI)(), the Gene Variant examples are mapped to the following test patients:
 
 - Example Gene Variant 1 Galactosemia - 9737383281 Margaery Congleton (Not a UK Test Code)
-- Example Gene Variant 2 Cystic Fibrosis - 9737383214 Jamie Lancaster
-- Example Gene Variant 3 Lynch Syndrome - 9737383206 Ned Liverpool
-- Example 4 Infantile Epilepsy - 9737383346 Ygritte HAWES 
+- Example Gene Variant 2 Cystic Fibrosis (R185) - 9737383214 Jamie Lancaster
+  - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Input/V2/R01/LRI-GeneVariant-2.txt) 
+  - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-2.txt.pdf)
+  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-2.txt.json)
+- Example Gene Variant 3 Lynch Syndrome (R210) - 9737383206 Ned Liverpool
+  - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Input/V2/R01/LRI-GeneVariant-3.txt)
+  - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-3.txt.pdf)
+  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-3.txt.json)
+- Example 4 Infantile Epilepsy - 9737383346 Ygritte HAWES
+  - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Input/V2/R01/LRI-GeneVariant-4.txt)
+  - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-4.txt.pdf) 
+  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-4.txt.json)
+- Example 5 Learning Disability - 9737383346 Hodor TAMESIDE
+  - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Input/V2/R01/LRI-GeneVariant-5.txt)
+  - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-5.txt.pdf)
+  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-5.txt.json)
 
 ```mermaid
 graph TD;
