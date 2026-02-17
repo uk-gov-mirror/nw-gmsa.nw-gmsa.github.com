@@ -71,7 +71,7 @@ The ODS code for GP Surgery MUST be a real code, this is used for routing report
 
 In HL7 [Lab Results Interface (LRI)](https://confluence.hl7.org/download/attachments/25559919/2018%2004%2003%20-%20V2%20LRI%20-%20Ch.%205%20CG%20and%20Code%20System%20Tables.pdf?api=v2), the Gene Variant examples are mapped to the following test patients:
 
-- Example Gene Variant 1 Galactosemia - 9737383281 Margaery CONGLETON (Not a UK Test Code)
+- Example Gene Variant 1 Galactosemia (Not a UK Test Code) - 9737383281 Margaery CONGLETON 
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Input/V2/R01/LRI-GeneVariant-1.txt)
   - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-1.txt.pdf)
   - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-1.txt.json)
