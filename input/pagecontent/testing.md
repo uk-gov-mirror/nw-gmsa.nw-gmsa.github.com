@@ -75,27 +75,27 @@ In HL7 [Lab Results Interface (LRI)](https://confluence.hl7.org/download/attachm
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Output/V2/R01/LRI-GeneVariant-1.txt)
   - [HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/TO2/MDM_T02_LRI-GeneVariant-1.txt)
   - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-1.txt.pdf)
-  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-1.txt.json) - internal version
+  - [HL7 FHIR Message](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-1.txt.json) - internal use only
 - Example Gene Variant 2 Cystic Fibrosis (R185) - 9737383214 Jamie LANCASTER
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Output/V2/R01/LRI-GeneVariant-2.txt) 
   - [HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/TO2/MDM_T02_LRI-GeneVariant-2.txt)
   - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-2.txt.pdf)
-  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-2.txt.json)- internal version
+  - [HL7 FHIR Message](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-2.txt.json)- internal use only
 - Example Gene Variant 3 Lynch Syndrome (R210) - 9737383206 Ned LIVERPOOL
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Output/V2/R01/LRI-GeneVariant-3.txt)
   - [HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/TO2/MDM_T02_LRI-GeneVariant-3.txt)
   - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-3.txt.pdf)
-  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-3.txt.json)- internal version
+  - [HL7 FHIR Message](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-3.txt.json) - internal use only
 - Example 4 Infantile Epilepsy (R59)- 9737383346 Ygritte HAWES
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Output/V2/R01/LRI-GeneVariant-4.txt)
   - [HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/TO2/MDM_T02_LRI-GeneVariant-4.txt)
   - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-4.txt.pdf) 
-  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-4.txt.json)- internal version
+  - [HL7 FHIR Message](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-4.txt.json) - internal use only
 - Example 5 Learning Disability (R377) - 9737383346 Hodor TAMESIDE
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/R01/LRI-GeneVariant-5.txt)
   - [HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/TO2/MDM_T02_LRI-GeneVariant-5.txt)
   - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-5.txt.pdf)
-  - [HL7 FHIR](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-5.txt.json)- internal version
+  - [HL7 FHIR Message](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-5.txt.json) - internal use only
 
 ```mermaid
 graph TD;
