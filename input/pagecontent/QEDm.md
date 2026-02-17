@@ -216,9 +216,9 @@ Accept: application/fhir+json
 
 ---
 
-Searching for a [Variant](StructureDefinition-Observation-Variant.html) Observation with a specific gene (LOINC 48018-6 - Gene studied [ID]) of `NTHL1`.
+Searching for a [Variant](StructureDefinition-Observation-Variant.html) Observation with a specific gene (LOINC 48018-6 - Gene studied [ID]) of `7127` (MLH1).
 ```
-GET [base]/Observation?combo-code=http://loinc.org|48018-6&combo-code-value-concept=NTHL1
+GET [base]/Observation?combo-code=http://loinc.org|48018-6&combo-value-concept=7127
 Accept: application/fhir+json
 ```
 [Response](Bundle-187a20ef-9b81-4c83-84f7-140c210f8706.json.html)
