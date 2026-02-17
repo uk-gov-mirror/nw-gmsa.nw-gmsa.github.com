@@ -80,7 +80,7 @@ In HL7 [Lab Results Interface (LRI)](https://confluence.hl7.org/download/attachm
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Output/V2/R01/LRI-GeneVariant-2.txt) 
   - [HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/TO2/MDM_T02_LRI-GeneVariant-2.txt)
   - [PDF Laboratory Report](https://github.com/nw-gmsa/Testing/blob/main/Output/PDF/R01/LRI-GeneVariant-2.txt.pdf)
-  - [HL7 FHIR Message](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-2.txt.json)- internal use only
+  - [HL7 FHIR Message](https://github.com/nw-gmsa/Testing/blob/main/Output/FHIR/R01/LRI-GeneVariant-2.txt.json) - internal use only
 - Example Gene Variant 3 Lynch Syndrome (R210) - 9737383206 Ned LIVERPOOL
   - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Output/V2/R01/LRI-GeneVariant-3.txt)
   - [HL7 v2 MDM_T02](https://github.com/nw-gmsa/Testing/blob/main/Outpyt/V2/TO2/MDM_T02_LRI-GeneVariant-3.txt)
