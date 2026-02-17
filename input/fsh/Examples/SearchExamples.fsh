@@ -46,7 +46,7 @@ Description: """
 Example search results for a Genomic Variant Gene = `NTHL1`
 """
 Usage: #example
-* insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Observation?combo-code=http://loinc.org|48018-6&combo-code-value-concept=NTHL1]])
+* insert SearchBundle(1, [[https://example.nhs.uk/FHIR/R4/Observation?combo-code=http://loinc.org|48018-6&combo-value-concept=HGNC:8028]])
 * insert EntryMatch(Observation, 8385c2fd-313d-4fd5-b98e-d5ea4bae6f99)
 
 Instance: 92a0a6c6-404f-4347-8de4-fa1c457a037e
