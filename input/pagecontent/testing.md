@@ -119,42 +119,6 @@ graph TD;
     end
 ```
 
-
-### Test Scenarios
-
-In all test cases the report is sent to the regional Genomic Clinical Data Repository (CDR).
-
-### Round Robin Tests (NHS Trust - EPR -> LIMS -> NHS Trust - EPR and ICS)
-
-Diagnostic Testing are ordered and performed within the region, patient can be from within or outside the region.
-
-| Given Patient | with ODS         | and Order Facility | then report is sent to NHS Trust              | and ICS Application       |
-|---------------|------------------|--------------------|-----------------------------------------------|---------------------------|
-| Manchester    | F81399 (QOP)     | RBS                | RBS (Alder Hey)                               | QOP GMCR                  |
-| Manchester    | F81399 (QOP)     | R0A                | R0A (Manchester University)                   | QOP GMCR                  |
-| Manchester    | F81399 (QOP)     | REP                | REP (Liverpool Womens)                        | QOP GMCR                  |
-| Liverpool     | Y00175 (QYG)     | RBS                | RBS (Alder Hey)                               | QYG Share2Care            |
-| Liverpool     | Y00175 (QYG)     | R0A                | R0A (Manchester University)                   | QYG Share2Care            |
-| Liverpool     | Y00175 (QYG)     | REP                | REP (Liverpool Womens)                        | QYG Share2Care            |
-| Leeds         | F81399 (QOP)     | RBS                | RBS (Alder Hey)                               | *not delivered (YHCR)*     |
-| Leeds         | F81399 (QOP)     | R0A                | R0A (Manchester University)                   | *not delivered (YHCR)*      |
-| Leeds         | F81399 (QOP)     | REP                | REP (Liverpool Womens)                        | *not delivered (YHCR)*      |
-| Wrexham       | To be determined | RBS                | RBS (Alder Hey)                               | *not delivered (DWCW)*      |
-| Wrexham       | To be determined | R0A                | R0A (Manchester University)                   | *not delivered (DHCW)*      |
-| Wrexham       | To be determined | REP                | REP (Liverpool Womens)                        | *not delivered (DHCW)*      |
-{:.grid}
-
-### Out of Area Tests (LIMS -> EPR)
-
-Diagnostic Testing is performed in the North West and Ordering Facility is outside the region.
-
-| Given Patient | with ODS         | and Order Facility | then report is sent to NHS Trust              | and ICS Application       |
-|---------------|------------------|--------------------|-----------------------------------------------|---------------------------|
-| Leeds         | F81399 (QOP)     | To be determined   | *not delivered*                               | *not delivered (YHCR)*      |
-| London        | To be determined | To be determined                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
-| London        | To be determined | To be determined                | *not delivered - future via NHS England GOMS* | *not supported (OneLondon)* |
-{:.grid}
-
 ### NHS England EDI  Test Patients
 
 These patients are created in the NHS England Test Data Repository (TDR) and were used for previous national programmes (from HSCIC and NHS Digital)
