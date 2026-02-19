@@ -23,6 +23,12 @@ Usage:  #definition
     * equivalence = #equivalent
 
 * group.element[+]
+  * code = #122556008 "Cord blood specimen"
+  * target[+]
+    * code = #"SAMPLE: BL"
+    * equivalence = #equivalent
+
+* group.element[+]
   * code = #122575003 "Urine specimen"
   * target[+]
     * code = #"SAMPLE: Urine"
@@ -55,24 +61,101 @@ Usage:  #definition
 * group.element[+]
   * code = #258450006 "Cerebrospinal fluid specimen"
   * target[+]
-    * code = #"SAMPLE: Cystic fluid"
+    * code = #"SAMPLE: CSF"
     * equivalence = #equivalent
 
 
+* group.element[+]
+  * code = #119373006 "Amniotic fluid specimen"
+  * target[+]
+    * code = #"SAMPLE: AF"
+    * equivalence = #equivalent
 
-//* #"SAMPLE: PERICARDIAL FLUID" "Pericardial fluid"
-//* #"SAMPLE: No sample received" "No Sample Received"
-//* #"SAMPLE: Lyophilised cell pellet" "Lyophilised cell pellet"
-//* #"Cystic fluid"
-//* #"SAMPLE: CVB	Chorionic" "Villus Biopsy"
-//* #"SAMPLE: Cult Cells" "Cultured Cells"
-//* #"SAMPLE: CSF" "Cerebrospinal fluid"
-//* #"SAMPLE: BSP" "Blood Spot"
-//* #"SAMPLE: BS" "Buccal Swab"
-//* #"SAMPLE: BM" "Bone Marrow"
+* group.element[+]
+  * code = #309201001 "Ascitic fluid specimen"
+  * target[+]
+    * code = #"SAMPLE: Ascitic fluid"
+    * equivalence = #equivalent
 
-//* #"SAMPLE: Ascitic fluid" "Ascitic Fluid"
-//* #"SAMPLE: AF" "Amniotic Fluid"
-//* #"Pl F" "Pleural fluid"
+* group.element[+]
+  * code = #258580003 "Whole blood specimen"
+  * target[+]
+    * code = #"SAMPLE: BL"
+    * equivalence = #equivalent
+
+
+* group.element[+]
+  * code = #737357006 "Fetal blood specimen"
+  * target[+]
+    * code = #"SAMPLE: BL"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #122555007 "Venous blood specimen"
+  * target[+]
+    * code = #"SAMPLE: BL"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #440500007 "Dried blood spot specimen"
+  * target[+]
+    * code = #"SAMPLE: BSP"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #119359002 "Bone marrow specimen"
+  * target[+]
+    * code = #"SAMPLE: BM"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #733104004 "Swab from buccal mucosa"
+  * target[+]
+    * code = #"SAMPLE: BS"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #258565009 "Chorionic villi specimen"
+  * target[+]
+    * code = #"SAMPLE: CVB"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #702451000 "Cultured cells substance"
+  * target[+]
+    * code = #"SAMPLE: Cult Cells"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #441652008 "Formalin-fixed paraffin-embedded tissue specimen"
+  * target[+]
+    * code = #"SAMPLE: FFPE-SL"
+    * equivalence = #related-to
+  * target[+]
+    * code = #"SAMPLE: FFPE-SH"
+    * equivalence = #related-to
+  * target[+]
+    * code = #"SAMPLE: FFPE-PCS"
+    * equivalence = #related-to
+
+* group.element[+]
+  * code = #3040001000004100 "Paraffin embedded tissue block specimen"
+  * target[+]
+    * code = #"SAMPLE: FFPE-WB"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #122571007 "Pericardial fluid specimen"
+  * target[+]
+    * code = #"SAMPLE: PERICARDIAL FLUID"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #418564007 "Pleural fluid specimen"
+  * target[+]
+    * code = #"SAMPLE: PLF"
+    * equivalence = #equivalent
+
+
 
 
