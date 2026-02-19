@@ -79,7 +79,7 @@ sequenceDiagram
         OrderFillerGenomics -->> OrderFillerSpecialty: Returns Laboratory Report (Report Identifier 2 , Order Identifier 3 & Visit/Spell Number A)
     end
 
-    OrderFillerSpecialty -->> OrderPlacer: Returns Report (Report Identifier 3, Order Identifier 1 & Visit/Spell Number A)
+    OrderFillerSpecialty -->> OrderPlacer: Returns (Discharge/Hospital?) Report (Report Identifier 3, Order Identifier 1 & Visit/Spell Number A)
 ```
 
 ### Reflex Order
