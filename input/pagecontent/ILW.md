@@ -54,7 +54,7 @@ sequenceDiagram
     OrderFillerGenomics -->> OrderPlacer: Returns Laboratory Report (Report Identifier 1 & Order Identifier 1. Optional Visit/Spell Number A)
 ```
 
-### Diagnostic Testing Orchestrated by Service 
+### Orchestrated Order 
 
 e.g. HODS.
 
