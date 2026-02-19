@@ -42,7 +42,8 @@ See [Blood Tests](SET.html#blood-sample-collection) which includes inter-organis
 
 Variations on the basic TLW scenario. 
 
-Order Filler MUST respond with a Report Identifier and the original Order Identifier (if supplied) in the laboratory report.
+Order Order Placer MUST include Ordering Facility (ODS Code) if the Order Filler is outside the organisation (i.e. ICS Pathology Lab or Regional Genomics Lab).
+Order Filler MUST respond with a Report Identifier and the Order Identifier (if supplied in the Order) in the laboratory report.
 
 ```mermaid
 sequenceDiagram
@@ -58,6 +59,7 @@ sequenceDiagram
 e.g. HODS.
 
 The specialty is responsible for sending a consolidated report to the Order Placer.
+For both the Pathology and Genomics Orders, the original Order Identifier SHOULD be included in the order (ServiceRequest.basedOn)
 
 ```mermaid
 sequenceDiagram
@@ -86,6 +88,8 @@ Is this around cancer? Is similar to above but both Lab and Genomics use the spe
 
 Who has the responsibility for sending the genomic report to the Order Placer?
 
+For the Reflex Order, the original Order Identifier SHOULD be included in the order (ServiceRequest.basedOn)
+
 ```mermaid
 sequenceDiagram
     participant OrderPlacer
@@ -97,7 +101,7 @@ sequenceDiagram
     OrderPlacer ->> OrderFillerPathology: Places Order (Order Identifier 1, Visit/Spell Number A and Specimen Accession Number X)
     OrderFillerPathology -->> OrderPlacer: Returns Report (Report Identifier 1, Order Identifier 1, Visit/Spell Number A  and Specimen Accession Number X)
    
-    alt Genomic Diagnostic Testing
+    alt Reflex (Genomic) Diagnostic Testing
         OrderFillerPathology ->> OrderFillerGenomics: Places Laboratory Order (Order (Filler) Identifier 2,  Visit/Spell Number A and Specimen Accession Number X)
         OrderFillerGenomics -->> OrderFillerPathology: Returns Laboratory Report (Report Identifier 2, Order Identifier 2, Visit/Spell Number A and Specimen Accession Number X)
     end
@@ -108,6 +112,7 @@ sequenceDiagram
 
 Genomic Lab sub contracts to another Genomics Lab for testing.
 
+For the Sub Contracted Order, the original Order Identifier SHOULD be included in the order (ServiceRequest.basedOn)
 
 ```mermaid
 sequenceDiagram
