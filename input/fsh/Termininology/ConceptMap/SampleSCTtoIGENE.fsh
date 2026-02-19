@@ -130,13 +130,13 @@ Usage:  #definition
   * code = #441652008 "Formalin-fixed paraffin-embedded tissue specimen"
   * target[+]
     * code = #"SAMPLE: FFPE-SL"
-    * equivalence = #related-to
+    * equivalence = #relatedto
   * target[+]
     * code = #"SAMPLE: FFPE-SH"
-    * equivalence = #related-to
+    * equivalence = #relatedto
   * target[+]
     * code = #"SAMPLE: FFPE-PCS"
-    * equivalence = #related-to
+    * equivalence = #relatedto
 
 * group.element[+]
   * code = #3040001000004100 "Paraffin embedded tissue block specimen"
