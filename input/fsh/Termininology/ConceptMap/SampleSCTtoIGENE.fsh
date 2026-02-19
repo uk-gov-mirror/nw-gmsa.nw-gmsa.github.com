@@ -13,7 +13,7 @@ Usage:  #definition
 * sourceCanonical = "https://fhir.nwgenomics.nhs.uk/ValueSet/specimen-type"
 
 * group.source = "http://snomed.info/sct"
-* group.targetVersion = "http://snomed.info/sct/83821000000107"
+* group.sourceVersion = "http://snomed.info/sct/83821000000107"
 * group.target = "https://fhir.nwgenomics.nhs.uk/CodeSystem/IGENE"
 
 * group.element[+]
