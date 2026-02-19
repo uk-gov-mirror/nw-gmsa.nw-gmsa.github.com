@@ -40,6 +40,19 @@ See [Blood Tests](SET.html#blood-sample-collection) which includes inter-organis
 
 ## Options 
 
+Variations on the basic TLW scenario. 
+
+Order Filler MUST respond with a Report Identifier and the original Order Identifier (if supplied) in the laboratory report.
+
+```mermaid
+sequenceDiagram
+    participant OrderPlacer
+    participant OrderFillerGenomics
+
+    OrderPlacer ->> OrderFillerGenomics: Places Laboratory Order (Order Identifier 1. Optional Visit/Spell Number A)
+    OrderFillerGenomics -->> OrderPlacer: Returns Laboratory Report (Report Identifier 1 & Order Identifier 1. Optional Visit/Spell Number A)
+```
+
 ### Diagnostic Testing Orchestrated by Service 
 
 e.g. HODS.
