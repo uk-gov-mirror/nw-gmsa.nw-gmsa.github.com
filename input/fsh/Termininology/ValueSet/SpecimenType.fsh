@@ -6,6 +6,7 @@ A subset of [HL7 Europe Laboratory Report ValueSet: Specimen Types](https://buil
 """
 
 * ^experimental  = false
+* $sct#119297000 "Blood specimen"
 * $sct#119373006 "Amniotic fluid specimen"
 * $sct#309201001 "Ascitic fluid specimen"
 * $sct#258580003 "Whole blood specimen"
