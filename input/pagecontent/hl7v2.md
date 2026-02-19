@@ -456,6 +456,8 @@ OBX|1|ED|1054161000000101^Genetic report^SNM3||MOL^IM^PDF^Base64^JVBERi0x...||||
 
 This is based on the definition of SPM from [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
 
+Specimen Type is SNOMED CT, not HL7 v2 Table 0487, for conversion to SNOMED see [HL7 Terminology - hl7VS-specimenType](https://terminology.hl7.org/7.0.1/ValueSet-v2-0487.html)
+
 | Field HL7 | Fieldname                     | Data Type | Optionality | Identifier Type or ValueSet                                                 | Example Values                                     |
 |-----------|-------------------------------|-----------|-------------|-----------------------------------------------------------------------------|----------------------------------------------------|
 | SPM-2     | Specimen ID                   |           | O           | Placer Specimen Number^Filler Specimen Number                               | 25GEN-029GN00001&R0A                               |
