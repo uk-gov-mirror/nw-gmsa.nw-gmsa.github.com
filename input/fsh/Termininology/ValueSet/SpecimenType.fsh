@@ -38,9 +38,10 @@ A subset of [HL7 Europe Laboratory Report ValueSet: Specimen Types](https://buil
 * $sct#122575003 "Urine specimen"
 * $sct#441673008 "Ribonucleic acid specimen (specimen)"
 
-* $nwgmsa#CellPellet "Cell Pellet"
-* $nwgmsa#LiquidBiopsy "Liquid Biopsy"
-* $nwgmsa#FFPEShavings "FFPE - Shavings"
-* $nwgmsa#FFPESlides "FFPE - Slides"
-* $nwgmsa#FFPEPositivelyChargedSlides "FFPE - Positively Charged Slides"
-* $nwgmsa#FFPEWaxBlock "FFPE - Wax block"
+* $igene#"SAMPLE: Cell Pellet" "Cell Pellet"
+* $igene#"SAMPLE: Liquid Biopsy" "Liquid Biopsy"
+* $igene#"SAMPLE: FFPE-SH" "FFPE - Shavings"
+* $igene#"SAMPLE: FFPE-SL" "FFPE - Slides"
+* $igene#"SAMPLE: FFPE-PCS" "FFPE - Positively Charged Slides"
+* $igene#"SAMPLE: FFPE-WB" "FFPE - Wax block"
+

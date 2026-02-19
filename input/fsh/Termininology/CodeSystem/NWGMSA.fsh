@@ -29,14 +29,7 @@ Bucket for local codes
 * #CancerGeneticTesting "Cancer Genetic Testing (procedure)"
 
 
-// Specimen Type
 
-* #CellPellet "Cell Pellet"
-* #LiquidBiopsy "Liquid Biopsy"
-* #FFPEShavings "FFPE - Shavings"
-* #FFPESlides "FFPE - Slides"
-* #FFPEPositivelyChargedSlides "FFPE - Positively Charged Slides"
-* #FFPEWaxBlock "FFPE - Wax block"
 
 // Order Entry Codes
 

@@ -1,8 +1,8 @@
 Instance: SampleSCTtoIGENE
 InstanceOf: ConceptMap
-Title: "Sample Type (SNOMED) to iGene"
+Title: "Sample Type (SNOMED) to iGene Specimen Type"
 Description: """
-Sample Type (SNOMED) to iGene
+Sample Type (SNOMED) to iGene Specimen Type
 """
 Usage:  #definition
 

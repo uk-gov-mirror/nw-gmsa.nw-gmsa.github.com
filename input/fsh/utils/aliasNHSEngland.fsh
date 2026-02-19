@@ -5,6 +5,7 @@ Alias: $Obligation = http://hl7.org/fhir/StructureDefinition/obligation
 Alias: $test-directory = https://fhir.nhs.uk/CodeSystem/England-GenomicTestDirectory
 Alias: $bcp13 = urn:ietf:bcp:13
 Alias: $nwgmsa = https://fhir.nwgenomics.nhs.uk/CodeSystem/NWGMSA
+Alias: $igene = https://fhir.nwgenomics.nhs.uk/CodeSystem/IGENE
 Alias: $MFTEPIC = https://fhir.nwgenomics.nhs.uk/CodeSystem/MFTQuestionIds
 Alias: $EthnicEngland = https://fhir.hl7.org.uk/CodeSystem/UKCore-EthnicCategoryEngland
 Alias: $EthnicWales = https://fhir.hl7.org.uk/CodeSystem/UKCore-EthnicCategoryWales
