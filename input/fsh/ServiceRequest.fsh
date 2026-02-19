@@ -22,19 +22,13 @@ Description:    """
 * identifier ^slicing.description = "Slice based on the type"
 * identifier ^slicing.ordered = false
 * identifier contains
-  OrderIdentifier 0..1 MS and OrderFillerNumber 0..1 MS
+  OrderIdentifier 0..1 MS
 
 * identifier[OrderIdentifier] only OrderIdentifier
 * identifier[OrderIdentifier] ^short = "Identifier assigned by the Order Placer. (HL7 v2 ORC-2/OBR-2 Placer Order Number)"
 * identifier[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * identifier[OrderIdentifier] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 * identifier[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
-
-* identifier[OrderFillerNumber]
-* identifier[OrderFillerNumber] ^short = "Identifier assigned by the lab (Order Filler)"
-* identifier[OrderFillerNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
-* identifier[OrderFillerNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 * requisition only OrderGroupNumber
 * requisition ^short = "Identifier assigned by the Order Placer. (HL7 v2 ORC-4 Placer Group Number)"
@@ -118,7 +112,7 @@ Description:    """
 * basedOn 0..* MS
 * basedOn ^short = "SHALL reference a parent request where this ServiceRequest is based on a previous request, e.g. in the case of reanalysis and cascade testing, or Germline Late tests in the Tumour First/Germline Late scenario"
 * basedOn only Reference(ServiceRequest)
-* basedOn.identifier only CorrelationIdentifier
+* basedOn.identifier only OrderIdentifier
 
 * priority from RequestPriority (required)
 

@@ -30,7 +30,7 @@ Description:    """
 * identifier[ReportIdentifier] ^short = "Identifier assigned by the lab (Order Filler)"
 * identifier[ReportIdentifier] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * identifier[ReportIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
-
+* identifier[ReportIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 
 * basedOn only CodeableReference
 * basedOn.identifier 1..1 MS
@@ -49,9 +49,9 @@ Description:    """
 * basedOn[OrderIdentifier].type = "ServiceRequest"
 * basedOn[OrderIdentifier].identifier 1..1
 * basedOn[OrderIdentifier].identifier only OrderIdentifier
-* basedOn[OrderIdentifier] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 
 
 //* category ^slicing.discriminator.type = #value
@@ -71,9 +71,9 @@ Description:    """
 * subject.identifier only NHSIdentifier
 
 * effectiveDateTime 0..1 MS
-* effective[x] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* effective[x] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* effective[x] insert Obligation(#SHOULD:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * effective[x] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
+* effective[x] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 
 * issued 0..1
 

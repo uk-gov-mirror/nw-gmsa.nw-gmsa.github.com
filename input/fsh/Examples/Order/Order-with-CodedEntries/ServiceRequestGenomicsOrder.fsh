@@ -11,11 +11,11 @@ Description: "TODO"
 * identifier[OrderIdentifier].assigner.identifier.system = $ods-code
 * identifier[OrderIdentifier].assigner.identifier.value = "R0A"
 
-* identifier[OrderFillerNumber].type = $v2-0203#FILL
-* identifier[OrderFillerNumber].value = "1001166717"
-* identifier[OrderFillerNumber].system = "http://www.acme.org/servicerequest"
-* identifier[OrderFillerNumber].assigner.identifier.system = $ods-code
-* identifier[OrderFillerNumber].assigner.identifier.value = "699X0"
+//* identifier[OrderFillerNumber].type = $v2-0203#FILL
+//* identifier[OrderFillerNumber].value = "1001166717"
+//* identifier[OrderFillerNumber].system = "http://www.acme.org/servicerequest"
+//* identifier[OrderFillerNumber].assigner.identifier.system = $ods-code
+//* identifier[OrderFillerNumber].assigner.identifier.value = "699X0"
 
 * status = #active
 * intent = #order
