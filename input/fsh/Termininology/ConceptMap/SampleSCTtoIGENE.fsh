@@ -17,18 +17,53 @@ Usage:  #definition
 * group.target = "https://fhir.nwgenomics.nhs.uk/CodeSystem/IGENE"
 
 * group.element[+]
-  * code = #119297000
+  * code = #119297000 "Blood specimen"
   * target[+]
     * code = #"SAMPLE: BL"
     * equivalence = #equivalent
 
-//* #"SAMPLE: Urine" "Urine"
-//* #"SAMPLE: TC" "Tissue"
-//* #"SAMPLE: SALIVA" "Saliva"
+* group.element[+]
+  * code = #122575003 "Urine specimen"
+  * target[+]
+    * code = #"SAMPLE: Urine"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #441479001 "Fresh tissue specimen"
+  * target[+]
+    * code = #"SAMPLE: TC"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #16214131000119100 "Frozen tissue section specimen"
+  * target[+]
+    * code = #"SAMPLE: TC"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #119342007 "Saliva specimen"
+  * target[+]
+    * code = #"SAMPLE: SALIVA"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #309147000 "Thyroid cyst fluid specimen"
+  * target[+]
+    * code = #"SAMPLE: Cystic fluid"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #258450006 "Cerebrospinal fluid specimen"
+  * target[+]
+    * code = #"SAMPLE: Cystic fluid"
+    * equivalence = #equivalent
+
+
+
 //* #"SAMPLE: PERICARDIAL FLUID" "Pericardial fluid"
 //* #"SAMPLE: No sample received" "No Sample Received"
 //* #"SAMPLE: Lyophilised cell pellet" "Lyophilised cell pellet"
-//* #"SAMPLE: Cystic fluid" "Cystic fluid"
+//* #"Cystic fluid"
 //* #"SAMPLE: CVB	Chorionic" "Villus Biopsy"
 //* #"SAMPLE: Cult Cells" "Cultured Cells"
 //* #"SAMPLE: CSF" "Cerebrospinal fluid"
