@@ -56,7 +56,7 @@ sequenceDiagram
 
 ### Orchestrated Order 
 
-e.g. HODS.
+e.g. Haematology and oncology services
 
 The specialty is responsible for sending a consolidated report to the Order Placer.
 For both the Pathology and Genomics Orders, the original Order Identifier SHOULD be included in the order (ServiceRequest.basedOn)
