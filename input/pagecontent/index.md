@@ -24,14 +24,19 @@ Although NW GMSA is hosted by Manchester University NHS Foundation Trust, it ope
 <img style="padding:3px;width:80%;" src="Design IHE.drawio.png" alt="NW Genomics Technical Overview"/>
 <br clear="all">
 
-At present, LIMS and EPR systems across the North West use a range of HL7 v2–based workflows. 
+At present, LIMS and EPR systems across the North West use a range of HL7 v2 Message based workflows, this remains the case with the RIE (centre and right of the above diagram). 
 To reduce this variation, the IHE Laboratory Testing Workflow (LTW) profile and region-wide genomic messaging standards (HL7 v2.5.1 and FHIR R4) have been adopted. This standardisation applies to interactions between the NW GMSA Regional Integration Engine (RIE) and NHS Trust Integration Engines (TIEs). Interactions between LIMS and EPR systems, as well as the internal integration engine configurations within trusts, remain unchanged.
 
 For external systems and NHS Trusts, NW Genomics LIMS will present as a single system with unified ordering and reporting interfaces. Direct point-to-point integrations between individual NHS Trust EPR systems and the NW LIMS will not be supported.
 
 The NW Genomics HL7 v2 + FHIR specifications and the IHE LTW standards are detailed in this Implementation Guide.
 
-In addition, NW Genomics is delivering a Genomic Clinical Repository (GCR) to support broader sharing of genomic test results across NHS Trusts, Integrated Care Systems (ICSs), and other Genomic Medicine Service Alliances (GMSAs).
+In addition, NW Genomics is delivering a Genomic Clinical Repository (GCR) to support broader sharing of genomic test results across NHS Trusts, Integrated Care Systems (ICSs), and other Genomic Medicine Service Alliances (GMSAs). This GCR is populated by 'wire-taps' on existing workflows and solely HL7 FHIR R4 based plus IHE QEDm and MHD profiles to provide an additional layer of standardisation.
+
+<div class="alert alert-info" role="alert">
+Although two HL7 standards are used, the data model is identical.
+</div>
+
 
 ### Genomic Document Sharing
 
