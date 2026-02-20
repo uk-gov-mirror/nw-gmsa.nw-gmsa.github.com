@@ -161,7 +161,9 @@ pages:
   BPPC.md:
     title: Digital Consent (IHE BPPC and PCF)
     generation: markdown
-
+  design.md:
+    title: Design
+    generation: markdown
 
 resources:
   Questionnaire/GenomicTestOrder:
@@ -226,6 +228,7 @@ resources:
 menu:
   Home: index.html
   Analysis and Design (Volume 1) :
+    Design Overview: design.html
     Laboratory Testing Workflow (LTW): LTW.html
     Inter-Laboratory Workflow (ILW): ILW.html
     Specimen Event Tracking (SET): SET.html
