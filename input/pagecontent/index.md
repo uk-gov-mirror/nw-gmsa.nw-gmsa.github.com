@@ -42,7 +42,7 @@ The solution is aligned with the [IHE Mobile Health Document Sharing (MHDS)](htt
 <br clear="all">
 
 For the initial phase, genomic reports will be published in **PDF format**. 
-In later phases, the target format is the[HL7 Europe Laboratory Report](https://build.fhir.org/ig/hl7-eu/laboratory/en/), aligning with the (anticipated) strategic direction for [NHS England Pathology FHIR](https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dapb4101-pathology-and-laboratory-medicine-reporting-information-standard/implementation/pathology-fhir-specification/), which specifies FHIR-based pathology reporting.
+In later phases, the target format is the [HL7 Europe Laboratory Report](https://build.fhir.org/ig/hl7-eu/laboratory/en/), aligning with the (anticipated) strategic direction for [NHS England Pathology FHIR](https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dapb4101-pathology-and-laboratory-medicine-reporting-information-standard/implementation/pathology-fhir-specification/), which specifies FHIR-based pathology reporting.
 
 ## How to Read this IG
 
