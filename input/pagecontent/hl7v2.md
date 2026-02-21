@@ -383,18 +383,18 @@ This is based on the definition of OBX from [Digital Health and Care Wales - HL7
 
 #### OBX-2 Value Type
 
-| HL7 Value Type                 | OBX-5 FHIR Observation Mapping                                                                      | FHIR DiagnosticReport                                                                                                            |
-|--------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Coded Entry ([CE](#ce))        | Obsveration.valueCodeableConcept                                                                    | DiagnosticReport.result                                                                                                          |
-| Date (DT)                      | Observation.valueDateTime                                                                           | DiagnosticReport.result                                                                                                          |
-| Embedded documents ([ED](#ed)) | n/a, convert OBX-5 to Binary and the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed) | DiagnosticReport.extension(supportingInfo) - for reports, the Binary should be referenced via DiagnosticReport.presentedForm.url |
-| Formatted Text (FT)            | Observation.valueString, HL7 v2.x formatting should be converted to markdown                        | DiagnosticReport.result                                                                                                          |
-| Numeric ([NM](#nm))            | Observation.valueQuantity | DiagnosticReport.result                                                                                                          |
-| Reference Pointer (RP)         | n/a, convert the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed)                     | DiagnosticReport.extension(supportingInfo) - for reports, the value is mapped to DiagnosticReport.presentedForm.url              |
-| Structured Numeric ([SN](#sn)) | Observation.valueQuantity | DiagnosticReport.result                                                                                                          |
-| String Data (ST)               | Observation.valueString                                                                             | DiagnosticReport.result                                                                                                          |
-| Time (TM)                      | Observation.valueTime                                                                              | DiagnosticReport.result                                                                                                          |
-| Text Data (TX)                 | Observation.valueString, newline is represented as `\n`                                             | DiagnosticReport.result                                                                                                          |
+| HL7 Value Type                                        | OBX-5 FHIR Observation Mapping                                                                      | FHIR DiagnosticReport                                                                                                            |
+|-------------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| Coded Entry ([CE](#ce), [CWE](#cwe) and [CNE](#cne) ) | Obsveration.valueCodeableConcept                                                                    | DiagnosticReport.result                                                                                                          |
+| Date (DT)                                             | Observation.valueDateTime                                                                           | DiagnosticReport.result                                                                                                          |
+| Embedded documents ([ED](#ed))                        | n/a, convert OBX-5 to Binary and the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed) | DiagnosticReport.extension(supportingInfo) - for reports, the Binary should be referenced via DiagnosticReport.presentedForm.url |
+| Formatted Text (FT)                                   | Observation.valueString, HL7 v2.x formatting should be converted to markdown                        | DiagnosticReport.result                                                                                                          |
+| Numeric ([NM](#nm))                                   | Observation.valueQuantity | DiagnosticReport.result                                                                                                          |
+| Reference Pointer (RP)                                | n/a, convert the OBX to FHIR DocumentReference [OBX (type = ED)](#obx-type--ed)                     | DiagnosticReport.extension(supportingInfo) - for reports, the value is mapped to DiagnosticReport.presentedForm.url              |
+| Structured Numeric ([SN](#sn))                        | Observation.valueQuantity | DiagnosticReport.result                                                                                                          |
+| String Data (ST)                                      | Observation.valueString                                                                             | DiagnosticReport.result                                                                                                          |
+| Time (TM)                                             | Observation.valueTime                                                                              | DiagnosticReport.result                                                                                                          |
+| Text Data (TX)                                        | Observation.valueString, newline is represented as `\n`                                             | DiagnosticReport.result                                                                                                          |
 {:.grid}
 
 For discussion: 
@@ -511,6 +511,18 @@ SPM|1|25GEN-029GN00001&R0A|^1001166717&699X0|258580003^Whole blood specimen^SNM3
 This applies to HL7 v2 ORU_R01 feeds to the RIE.
 
 ORC-3, ORC-12 (XCN) and ORC-21 (XON) **SHALL** be populated.
+
+### CNE 
+
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-datatype-cne-to-codeableconcept.html" _target="_blank">CNE to FHIR CodeableConcept</a>
+</div>
+
+### CWE
+
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/datatype_maps.html" _target="_blank">CWE to FHIR Value[x]</a>
+</div>
 
 ### CE 
 
