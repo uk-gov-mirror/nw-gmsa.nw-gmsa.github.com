@@ -25,6 +25,8 @@ Description: "TODO"
 * participant[admittingDoctor].type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#ADM
 * participant[admittingDoctor].individual.reference = "urn:uuid:ee9b8fcc-c233-43e1-b7fb-b58ce4cf1db8"
 
+* serviceType = $sct#892761000000102 "Clinical haematology service"
+
 * location[+]
   * location.identifier.system = "https://fhir.nhs.uk/Id/ods-site-code"
   * location.identifier.value = "R0A09"
