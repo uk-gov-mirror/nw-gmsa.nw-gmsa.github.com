@@ -651,6 +651,11 @@ Example
 MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS
 ```
 
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-datatype-xon-to-organization.html" _target="_blank">XON to FHIR Organization</a>
+</div>
+
+
 ## HL7 v2 to FHIR Message Conversion
 
 - [HL7 Version 2 to FHIR - Message OML_O21 to Bundle Map](https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-message-oml-o21-to-bundle.html)
