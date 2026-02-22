@@ -12,7 +12,7 @@ title "Genomic Laboratory Order"
 *** Service Type [[ValueSet-service.html Service]]
 ** Laboratory Order
 *** Order Details
-**** [[StructureDefinition-OrderIdentifier.html Placer Order Identifier]]
+**** [[StructureDefinition-OrderIdentifier.html Order Identifier (Placer)]]
 **** Filler Order Number
 **** [[StructureDefinition-OrderGroupNumber.html Order Group Number]]
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]

@@ -228,7 +228,7 @@ This is based on the definition of PV1 from [NHS England HL7 v2 ADT Message Spec
 #### Examples
 
 ```
-PV1|1|O|^^^R0A09^^^^^^^R0A||||C3456789^Darwin^Samuel^^^Dr^^^GMC|||100|||||||||1001166717|||||||||||||||||||||||||20250129103726+0000
+PV1|1|I|^^^R0A09^^^^^^^R0A||||C3456789^Darwin^Samuel^^^Dr^^^GMC|||892761000000102^Clinical haematology service^SNM3|||||||||1001166717^^^R0A^AN|||||||||||||||||||||||||20250129103726+0000
 ```
 
 > FHIR Resource Example: [Encounter 'episode/stay' Example](Encounter-984b8a89-4194-4eb4-a7ea-ca8049ebeea3.html)

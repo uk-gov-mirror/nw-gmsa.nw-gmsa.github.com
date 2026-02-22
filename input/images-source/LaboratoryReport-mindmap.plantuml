@@ -12,7 +12,7 @@ title "Genomic Laboratory Report"
 *** Service Type [[ValueSet-service.html Service]]
 ** Laboratory Report
 *** [[Questionnaire-GenomicTestOrder.html Order Details]]
-**** [[StructureDefinition-OrderIdentifier.html Placer Order Identifier]]
+**** [[StructureDefinition-OrderIdentifier.html Order Identifier (Placer)]]
 **** Filler Order Number
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
 **** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
