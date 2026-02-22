@@ -3,12 +3,13 @@
 title "Genomic Laboratory Order"
 
 * [[#diagnostic-order Diagnostic Order]]
-** Patient Administration
-*** [[StructureDefinition-Patient.html Patient]]
-**** Identification [[StructureDefinition-NHSIdentifier.html NHS Identifier]]
-**** Identification [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
-**** Name, date of birth, ethnic category, etc.
+** Patient Demographics
+*** Identification [[StructureDefinition-NHSIdentifier.html NHS Identifier]]
+*** Identification [[StructureDefinition-MedicalRecordNumber.html Medical Record Number]]
+*** Name, date of birth, post code, etc.
+** Hospital Spell
 *** Case identification / Account Number [[StructureDefinition-HospitalProviderSpellIdentifier.html Hospital Provider Spell Identifier]]
+*** Service Type [[ValueSet-service.html Service]]
 ** Laboratory Order
 *** Order Details
 **** [[StructureDefinition-OrderIdentifier.html Placer Order Identifier]]

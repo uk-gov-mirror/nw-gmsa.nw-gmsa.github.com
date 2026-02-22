@@ -27,13 +27,25 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 Metadata is data that applies to the patient's entire clinical pathway and so it extends beyond diagnostic tests.
 Test detail tends to be common across all diagnostic tests in a patient's pathway, not just genomics.
 
-<span class="badge badge-info">Patient Administration</span>
+<span class="badge badge-info">Patient Demographics</span>
 
-| Name                                     | LOINC   | Value Set / Data Type                                                                                                          | Cardinality | HL7 v2 ORU_RO1 Message   | HL7 FHIR DiagnosticReport                                                          | HL7 FHIR Resource (RESTful)                                       |
-|------------------------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------|-------------|--------------------------|------------------------------------------------------------------------------------|-------------------------------------------------------------------|
-| Patient                                  |         | [NHS Identifier](StructureDefinition-NHSIdentifier.html) [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 1..1        | [PID](hl7v2.html#pid)    | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).subject.identifier              | [Patient](StructureDefinition-Patient.html)                       |
-| Case Identification or Visit/Stay Number | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html)                                    | 0..1        | [PV1](hl7v2.html#pv1)-19 | [DiagnosticReport](StructureDefinition-DiagnosticReport.html).encounter.identifier | Encounter [HospitalSpell](StructureDefinition-HospitalSpell.html) |
+
+| Name                  | LOINC | Value Set / Data Type                                                 | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR ServiceRequest                                                      | HL7 FHIR Resource (Message + RESTful)                                    |
+|-----------------------|-------|-----------------------------------------------------------------------|-------------|------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| NHS Number            |       | [NHS Number](StructureDefinition-NHSIdentifier.html)  | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
+| Medical Record Number |       | [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
 {:.grid}
+
+<span class="badge badge-info">Hospital Spell</span>
+
+Treat as mandatory for reflex or subcontracted orders.
+
+| Name                                  | LOINC   | Value Set / Data Type                                                                       | Cardinality | HL7 v2 OML_O21 Message   | HL7 FHIR ServiceRequest                                                        | HL7 FHIR Resource (Message + RESTful)                                        |
+|---------------------------------------|---------|---------------------------------------------------------------------------------------------|-------------|--------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| Hospital Service                      |         | [Service](ValueSet-service.html)                                                            | 0..1        | [PV1](hl7v2.html#pv1)-10 |                                                                                | Encounter.serviceType                                                        | 
+| Case Identification or Account Number | 56797-4 | [HospitalProviderSpellIdentifier](StructureDefinition-HospitalProviderSpellIdentifier.html) | 0..1        | [PV1](hl7v2.html#pv1)-19 | [ServiceRequest](StructureDefinition-ServiceRequest.html).encounter.identifier | Encounter.identifier [HospitalSpell](StructureDefinition-HospitalSpell.html) |
+{:.grid}
+
 
 <span class="badge badge-primary">Diagnostic Workflow</span>
 
