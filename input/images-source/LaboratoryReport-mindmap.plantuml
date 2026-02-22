@@ -15,8 +15,9 @@ title "Genomic Laboratory Report"
 **** [[StructureDefinition-OrderIdentifier.html Order Identifier (Placer)]]
 **** Filler Order Number
 **** Ordering Facility [[StructureDefinition-OrganisationCode.html Organisation Code]]
-**** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
-**** [[https://www.datadictionary.nhs.uk/data_elements/local_treatment_category_code.html Local Treatment Category Code]]
+**** Reason Code
+***** Gene disease assessed [[CodeSystem-GenomicClinicalIndication.html Clinical Indication]]
+**** [[https://www.datadictionary.nhs.uk/data_elements/local_treatment_category_code.html (Order) Procedure Code]]
 ***** Genomic Test Code [[CodeSystem-GenomicTestCode.html Test Directory Code]]
 **** [[StructureDefinition-Specimen.html Specimen]]
 ***** [[StructureDefinition-AccessionNumber.html Accession Number]]
