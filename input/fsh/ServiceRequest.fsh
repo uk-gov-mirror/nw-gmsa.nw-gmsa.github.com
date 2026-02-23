@@ -126,13 +126,13 @@ Description:    """
 * supportingInfo 0..*
 * supportingInfo only Reference(Observation or DocumentReference)
 
-* supportingInfo ^slicing.discriminator.type = #value
-* supportingInfo ^slicing.discriminator.path = "type"
+* supportingInfo ^slicing.discriminator.type = #profile
+* supportingInfo ^slicing.discriminator.path = "$this.resolve()"
 * supportingInfo ^slicing.rules = #open
 * supportingInfo ^slicing.description = "Slice based on the coding.system"
 * supportingInfo ^slicing.ordered = false
 * supportingInfo contains
-  AskAtOrderQuestions 0..1 and clinicalContext 0..1
+  OrderEntryQuestions 0..1 and clinicalContext 0..1
 
 //* supportingInfo[PriorResult] ^short = "Equivalent of HL7 v2 OML_O21 PRIOR RESULT (as PDF)"
 //* supportingInfo[PriorResult] only Reference(DiagnosticReport)
@@ -140,8 +140,8 @@ Description:    """
 //* supportingInfo[PriorResult].identifier 1..1
 //* supportingInfo[PriorResult].identifier only CorrelationIdentifier
 
-* supportingInfo[AskAtOrderQuestions] only Reference(Observation)
-* supportingInfo[AskAtOrderQuestions].type = #Observation
+* supportingInfo[OrderEntryQuestions] only Reference(Observation)
+* supportingInfo[OrderEntryQuestions].type = #Observation
 
 * supportingInfo[clinicalContext] only Reference(DocumentReference)
 * supportingInfo[clinicalContext].type = #DocumentReference
