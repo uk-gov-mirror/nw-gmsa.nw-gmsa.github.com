@@ -134,14 +134,6 @@ Description:    """
 * supportingInfo contains
   OrderEntryQuestions 0..1 and clinicalContext 0..1
 
-//* supportingInfo[PriorResult] ^short = "Equivalent of HL7 v2 OML_O21 PRIOR RESULT (as PDF)"
-//* supportingInfo[PriorResult] only Reference(DiagnosticReport)
-//* supportingInfo[PriorResult].type = #DiagnosticReport
-//* supportingInfo[PriorResult].identifier 1..1
-//* supportingInfo[PriorResult].identifier only CorrelationIdentifier
-
 * supportingInfo[OrderEntryQuestions] only Reference(Observation)
-* supportingInfo[OrderEntryQuestions].type = #Observation
 
 * supportingInfo[clinicalContext] only Reference(DocumentReference)
-* supportingInfo[clinicalContext].type = #DocumentReference
