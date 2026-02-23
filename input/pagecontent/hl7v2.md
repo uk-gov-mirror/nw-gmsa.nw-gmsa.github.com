@@ -239,9 +239,9 @@ This is based on the definition of ORC from [Digital Health and Care Wales - HL7
 
 | Field HL7 | Fieldname                | Data Type   | Optionality                                  | Identifier Type or ValueSet                                                | Example Values                                        |
 |-----------|--------------------------|-------------|----------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------|
-| ORC-2     | Placer Order Number      | [EI](#ei)   | R <span class="badge badge-danger">S</span> | [Placer Order Number](StructureDefinition-OrderIdentifier.html)          | 1601737^R0A^150^L                                     |
-| ORC-3     | Filler Order Number      | [EI](#ei)   | O                                            | [Filler Order Number](StructureDefinition-OrderFillerNumber.html)          | 1001166717^699X0^^255^ISO                             |
-| ORC-4     | Placer Group Number      | [EI](#ei)   | O <span class="badge badge-danger">S</span>                                           | [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)          | 1001166717^699X0^^255^ISO                             |
+| ORC-2     | Placer Order Number      | [EI](#ei)   | R <span class="badge badge-danger">S</span> | [Order Identifier](StructureDefinition-OrderIdentifier.html)               | 1601737^R0A^150^L                                     |
+| ORC-3     | Filler Order Number      | [EI](#ei)   | O                                            | [Report Identifier](StructureDefinition-ReportIdentifier.html)             | 1001166717^699X0^^255^ISO                             |
+| ORC-4     | Placer Group Number      | [EI](#ei)   | O <span class="badge badge-danger">S</span>                                           | [Order Group Number](StructureDefinition-OrderGroupNumber.html)           | 1001166717^699X0^^255^ISO                             |
 | ORC-5     | Order Status             |             | O                                            |                                                                            |                                                                                                                                 
 | ORC-9     | Date/Time of Transaction | TS          | O                                            |                                                                            |                                                                                                                                 
 | ORC-12    | Ordering Provider        | [XCN](#xcn) | O                                            | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC                     |
@@ -469,7 +469,7 @@ Specimen Type is SNOMED CT, not HL7 v2 Table 0487, for conversion to SNOMED see 
 | SPM-17    | Specimen Collection Date/Time | TS        | O           |                                                                             |                                                    |
 | SPM-18    | Specimen Received Date/Time   | TS        | O           |                                                                             |                                                    |
 | SPM-20    | Specimen Availability         |           | O           |                                                                             |                                                    |
-| SPM-30    | Accession ID                  |           | O <span class="badge badge-danger">S</span>          | [Accession Number](StructureDefinition-AccessionNumber.html)                |                                                    |
+| SPM-30    | Accession ID                  |           | O <span class="badge badge-danger">S</span>          | [Specimen Accession Number](StructureDefinition-SpecimenAccessionNumber.html)       |                                                    |
 | SPM-32    | Shipment Tracking Number      |           | O           | [Shipment Tracking Number](StructureDefinition-ShipmentTrackingNumber.html) |                                                    |
 {:.grid}
 
