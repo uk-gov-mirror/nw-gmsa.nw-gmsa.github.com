@@ -69,14 +69,14 @@ Description:    """
 * orderDetail.coding[GenomicTestDirectory].system = $GTD
 
 
-* category 1..* MS
+* category 1..*
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "coding.system"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Slice based on the coding.system"
 * category ^slicing.ordered = false
 * category contains
-  GenomicProcedure 0..1 MS and GenomicsWholeCaseSequencing 0..1 MS
+  GenomicProcedure 0..1  and GenomicsWholeCaseSequencing 0..1
 
 
 * category[GenomicProcedure].coding.code = #116148004
@@ -103,7 +103,7 @@ Description:    """
 
 * authoredOn 1..1 MS
 
-* occurrence[x] 0..1 MS
+* occurrence[x] 0..1
 
 * subject 1..1 MS
 * subject only Reference(Patient)
@@ -116,14 +116,14 @@ Description:    """
 
 * priority from RequestPriority (required)
 
-* note MS
+* note
 
 * specimen 0..* MS
 
-* reasonCode MS
+* reasonCode
 * reasonCode from GenomicClinicalIndicationCodes (preferred)
 
-* supportingInfo 0..* MS
+* supportingInfo 0..*
 //* supportingInfo only Reference(ObservationPanel or Observation or DiagnosticReport or QuestionnaireResponse or DocumentReference)
 
 * supportingInfo ^slicing.discriminator.type = #value
@@ -132,12 +132,12 @@ Description:    """
 * supportingInfo ^slicing.description = "Slice based on the coding.system"
 * supportingInfo ^slicing.ordered = false
 * supportingInfo contains
-  PriorResult 0..1 MS and PatientSummary 0..1 MS
+  PriorResult 0..1 and PatientSummary 0..1
 
 * supportingInfo[PriorResult] ^short = "Equivalent of HL7 v2 OML_O21 PRIOR RESULT (as PDF)"
 * supportingInfo[PriorResult] only Reference(DiagnosticReport)
 * supportingInfo[PriorResult].type = #DiagnosticReport
-* supportingInfo[PriorResult].identifier 1..1 MS
+* supportingInfo[PriorResult].identifier 1..1
 * supportingInfo[PriorResult].identifier only CorrelationIdentifier
 
 * supportingInfo[PatientSummary] only Reference(DocumentReference)

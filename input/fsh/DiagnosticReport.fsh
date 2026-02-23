@@ -65,7 +65,7 @@ Description:    """
 //* category[Genetics].coding 1..1 MS
 //* category[Genetics].coding = http://terminology.hl7.org/CodeSystem/v2-0074#GE
 
-* subject 1..1
+* subject 1..1 MS
 * subject.identifier 1..1
 * subject only Reference(Patient)
 * subject.identifier only NHSIdentifier
@@ -156,24 +156,24 @@ Description:    """
    genomic-study 0..1
 * result[genomic-study]
 * result[genomic-study] only Reference(GenomicStudyPanel)
-* result[variant] MS
+
 * result[variant] only Reference(Variant)
-* result[diagnostic-implication] MS
+
 * result[diagnostic-implication] only Reference(DiagnosticImplication)
 
 * presentedForm 1..* MS
 * presentedForm only NWAttachment
 
-* conclusionCode 0..* MS
+* conclusionCode 0..*
 
-* conclusionCode.coding 1..* MS
+* conclusionCode.coding 1..*
 * conclusionCode.coding ^slicing.discriminator.type = #value
 * conclusionCode.coding ^slicing.discriminator.path = "system"
 * conclusionCode.coding ^slicing.rules = #open
 * conclusionCode.coding ^slicing.description = "Slice based on the system"
 * conclusionCode.coding ^slicing.ordered = false
 * conclusionCode.coding contains
-   GenomicTestOutcomeCode 1..1 MS
+   GenomicTestOutcomeCode 1..1
 
 * conclusionCode.coding[GenomicTestOutcomeCode] ^short = "Genomic Test Outcome Code"
 * conclusionCode.coding[GenomicTestOutcomeCode] from GenomicTestOutcomeCodes

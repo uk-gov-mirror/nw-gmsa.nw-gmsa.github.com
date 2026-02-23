@@ -11,8 +11,8 @@ Description:    """
 * ^keyword[+] = #core "Base"
 * ^keyword[+] = #pam "Patient Administration"
 
-* class 1..1 MS
-* type 0..1 MS
+* class 1..1
+* type 0..1
 * type from AdmissionMethod
 * serviceType 0..1 MS
 * serviceType from Service
@@ -24,10 +24,10 @@ Description:    """
 * location.location only Reference(Location)
 * location.location.identifier only OrganisationSiteIdentifier
 
-* period MS
-* participant MS
+* period
+* participant
 * identifier.value MS
-* period.start MS
+* period.start
 
 * hospitalization.admitSource from AdmissionSource
 * hospitalization.dischargeDisposition from DischargeDisposition

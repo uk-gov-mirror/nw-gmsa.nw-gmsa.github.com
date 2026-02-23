@@ -11,7 +11,7 @@ Description: """
 * extension contains https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-EthnicCategory named ethnicCategory 0..1
 * extension[ethnicCategory] ^short = "Ethnic Category. NHS England HL7 v2 PID-22 Ethnic Group"
 
-* extension[sex-for-clinical-use] MS
+* extension[sex-for-clinical-use]
 
 * identifier 1..* MS
 * identifier.assigner ^short = "Assigning Facility"
@@ -41,14 +41,13 @@ Description: """
 //* identifier[GenomicsPedigreeNumber] only GenomicsPedigreeNumber
 //* identifier[GenomicsPedigreeNumber] ^short = "Genomics Pedigree Number"
 
-* address.postalCode 1..1 MS
+* address.postalCode 1..1
 
 * name 1..* MS
 * gender 0..1 MS
 * birthDate 1..1 MS
 
-* name.family MS
-* name.given MS
-
-* deceasedDateTime MS
+* name.family
+* name.given
+* deceasedDateTime
 
