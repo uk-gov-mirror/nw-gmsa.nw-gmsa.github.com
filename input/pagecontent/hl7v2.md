@@ -13,7 +13,7 @@ Content-Type: application/hl7-v2+er7
 
 ### References
 
-<span class="badge badge-primary">Diagnostic Workflow</span> 
+<span class="badge badge-danger">Diagnostic Workflow</span> 
 
  - [EPIC HL7 v2](https://open.epic.com/Interface/HL7v2) See **Outgoing Ancillary Orders** (EPR to RIE)
  - [MEDITECH HL7 v2](https://ehr.meditech.com/sites/default/files/documents/20240613/om-orders-outbound-24.pdf)
@@ -51,13 +51,13 @@ Content-Type: application/hl7-v2+er7
 
 ### References
 
-<span class="badge badge-primary">Diagnostic Workflow</span> 
+<span class="badge badge-danger">Diagnostic Workflow</span> 
 
 - [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
   - See Appendix A – Using ORU to Publish PDF Reports
 - The Royal College of Radiologists [Reporting networks - understanding the technical options](https://www.rcr.ac.uk/media/wwtp2mif/rcr-publications_radiology-reporting-networks-understanding-the-technical-options_march-2022.pdf)
 
-<span class="badge badge-primary">Genomics</span>
+<span class="badge badge-danger">Genomics</span>
 
 - [HL7 Version 2.5.1 Implementation Guide: Lab Results Interface (LRI), Release 1 from May 2017](https://confluence.hl7.org/download/attachments/25559919/2018%2004%2003%20-%20V2%20LRI%20-%20Ch.%205%20CG%20and%20Code%20System%20Tables.pdf?api=v2) includes **Data Standards**
 - [EPIC HL7 v2](https://open.epic.com/Interface/HL7v2) See **Discrete Genomic Results** (RIE to EPIC EPR)
@@ -169,9 +169,9 @@ This is based on the definition of PID from [NHS England HL7 v2 ADT Message Spec
 | Field HL7 | Fieldname                          | Data Type | Optionality | Identifier Type or ValueSet                                                                                                               | Example Values                                                                                                                  |
 |-----------|------------------------------------|-----------|-------------|-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
 | PID-1     | Set ID-PID                         |           | R           |                                                                                                                               | 1                                                                                                                               |
-| PID-3     | Patient Identifier List            | [CX](#cx) | R <span class="badge badge-primary">S</span>          | [NHS Number](StructureDefinition-NHSIdentifier.html) <br/> [Medical Record Number](StructureDefinition-MedicalRecordNumber.html). | 633^^^R0A^MR~9449305552^^^NHS^NH                                                                                                |
-| PID-5     | Patient Name                       |           | R <span class="badge badge-primary">S</span>          |                                                                                                                               | CHISLETT^Octavia^^Miss                                                                                                          |
-| PID-7     | Date/Time of Birth                 |           | R <span class="badge badge-primary">S</span>          |                                                                                                                               | 20080920                                                                                                                        |
+| PID-3     | Patient Identifier List            | [CX](#cx) | R <span class="badge badge-danger">S</span>          | [NHS Number](StructureDefinition-NHSIdentifier.html) <br/> [Medical Record Number](StructureDefinition-MedicalRecordNumber.html). | 633^^^R0A^MR~9449305552^^^NHS^NH                                                                                                |
+| PID-5     | Patient Name                       |           | R <span class="badge badge-danger">S</span>          |                                                                                                                               | CHISLETT^Octavia^^Miss                                                                                                          |
+| PID-7     | Date/Time of Birth                 |           | R <span class="badge badge-danger">S</span>          |                                                                                                                               | 20080920                                                                                                                        |
 | PID-8     | Administrative Sex                 |           | R           |                                                                                                                               | F                                                                                                                               |
 | PID-11    | Patient Address                    |           | R           |                                                                                                                               | 1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST                                                                                    |
 | PID-13    | Phone Number - Home                |           | R           |                                                                                                                               | 01656 123123^PRN^PH~07927655295^ORN^CP^NET^X.400^abc@home.com~01656 123123~01656123123^PRN^PH^^^abc@home.com~01656123123^PRN^PH |
@@ -213,9 +213,9 @@ This is based on the definition of PV1 from [NHS England HL7 v2 ADT Message Spec
 | PV1-8     | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC                 |  
 | PV1-8     | Referring Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC                 |  
 | PV1-9     | Consulting Doctor         | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC                 |  
-| PV1-10    | Hospital Service          |             | R <span class="badge badge-primary">S</span>          | [Service](ValueSet-service.html)                                                               | 892761000000102^Clinical haematology service^SNM3 |
+| PV1-10    | Hospital Service          |             | R <span class="badge badge-danger">S</span>          | [Service](ValueSet-service.html)                                                               | 892761000000102^Clinical haematology service^SNM3 |
 | PV1-17    | Admitting Doctor          | [XCN](#xcn) | R           | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)                     | C3456789^Darwin^Samuel^^^Dr^^^GMC                 |  
-| PV1-19    | Visit Number              | [CX](#cx)   | O <span class="badge badge-primary">S</span>  | [Hospital Provider Spell Identifier](StructureDefinition-HospitalProviderSpellIdentifier.html) | 12345^^^R0A                                       |
+| PV1-19    | Visit Number              | [CX](#cx)   | O <span class="badge badge-danger">S</span>  | [Hospital Provider Spell Identifier](StructureDefinition-HospitalProviderSpellIdentifier.html) | 12345^^^R0A                                       |
 {:.grid}
 
 <div class="alert alert-info" role="alert">
@@ -239,13 +239,13 @@ This is based on the definition of ORC from [Digital Health and Care Wales - HL7
 
 | Field HL7 | Fieldname                | Data Type   | Optionality                                  | Identifier Type or ValueSet                                                | Example Values                                        |
 |-----------|--------------------------|-------------|----------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------|
-| ORC-2     | Placer Order Number      | [EI](#ei)   | R <span class="badge badge-primary">S</span> | [Placer Order Number](StructureDefinition-OrderIdentifier.html)          | 1601737^R0A^150^L                                     |
+| ORC-2     | Placer Order Number      | [EI](#ei)   | R <span class="badge badge-danger">S</span> | [Placer Order Number](StructureDefinition-OrderIdentifier.html)          | 1601737^R0A^150^L                                     |
 | ORC-3     | Filler Order Number      | [EI](#ei)   | O                                            | [Filler Order Number](StructureDefinition-OrderFillerNumber.html)          | 1001166717^699X0^^255^ISO                             |
-| ORC-4     | Placer Group Number      | [EI](#ei)   | O <span class="badge badge-primary">S</span>                                           | [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)          | 1001166717^699X0^^255^ISO                             |
+| ORC-4     | Placer Group Number      | [EI](#ei)   | O <span class="badge badge-danger">S</span>                                           | [Placer Group Number](StructureDefinition-PlacerGroupNumber.html)          | 1001166717^699X0^^255^ISO                             |
 | ORC-5     | Order Status             |             | O                                            |                                                                            |                                                                                                                                 
 | ORC-9     | Date/Time of Transaction | TS          | O                                            |                                                                            |                                                                                                                                 
 | ORC-12    | Ordering Provider        | [XCN](#xcn) | O                                            | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html) | C3456789^Darwin^Samuel^^^Dr^^^GMC                     |
-| ORC-21    | Ordering Facility Name   | [XON](#xon) | R  <span class="badge badge-primary">S</span>                                          | [Organisation Code](StructureDefinition-OrganisationCode.html)             | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS |
+| ORC-21    | Ordering Facility Name   | [XON](#xon) | R  <span class="badge badge-danger">S</span>                                          | [Organisation Code](StructureDefinition-OrganisationCode.html)             | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS |
 {:.grid}
 
 <div class="alert alert-info" role="alert">
@@ -269,11 +269,11 @@ This is based on the definition of OBR from [Digital Health and Care Wales - HL7
 | Field HL7 | Fieldname                          | Data Type   | Optionality                                  | Identifier Type or ValueSet                                                       | Example Values                                                              |
 |-----------|------------------------------------|-------------|----------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | OBR-1     | Set ID - OBR                       |             | R                                            |                                                                                   | 1                                                                           |
-| OBR-2     | Placer Order Number                | [EI](#ei)   | O <span class="badge badge-primary">S</span> | [Order Identifier](StructureDefinition-OrderIdentifier.html)                      | 1601737^ R0A^150^L                                                          |
-| OBR-3     | Filler Order Number                | [EI](#ei)   | R <span class="badge badge-primary">S</span> | [Report Identifier](StructureDefinition-ReportIdentifier.html)                   | 1001166717^699X0^^255^ISO                                                   |
-| OBR-4     | Universal Service Identifier       |             | R <span class="badge badge-primary">S</span>                                           | [Genomic Test Directory](ValueSet-genomic-test-directory.html)                    | R240.1^Diagnostic testing for known variant(s)^England-GenomicTestDirectory |
+| OBR-2     | Placer Order Number                | [EI](#ei)   | O <span class="badge badge-danger">S</span> | [Order Identifier](StructureDefinition-OrderIdentifier.html)                      | 1601737^ R0A^150^L                                                          |
+| OBR-3     | Filler Order Number                | [EI](#ei)   | R <span class="badge badge-danger">S</span> | [Report Identifier](StructureDefinition-ReportIdentifier.html)                   | 1001166717^699X0^^255^ISO                                                   |
+| OBR-4     | Universal Service Identifier       |             | R <span class="badge badge-danger">S</span>                                           | [Genomic Test Directory](ValueSet-genomic-test-directory.html)                    | R240.1^Diagnostic testing for known variant(s)^England-GenomicTestDirectory |
 | OBR-6     | Requested Date/Time                | TS          | R for OML_O21                                |                                                                                   | 20170126135745                                                              |
-| OBR-7     | Observation Date/Time              | TS          | R for ORU_R01 <span class="badge badge-primary">S</span>                               |                                                                                   | 20170126135745                                                              |
+| OBR-7     | Observation Date/Time              | TS          | R for ORU_R01 <span class="badge badge-danger">S</span>                               |                                                                                   | 20170126135745                                                              |
 | OBR-16    | Ordering Provider                  |             | R                                            | [Practitioner Identifier](StructureDefinition-PractitionerIdentifier.html)        | C3456789^Darwin^Samuel^^^Dr^^^GMC                                           |
 | OBR-22    | Results Rpt/Status Chng -Date/Time | TS          | R                                            |                                                                                   | 20170126135745                                                              |
 | OBR-25    | Result Status                      |             |                                              |                                                                                   |                                                                             |
@@ -375,9 +375,9 @@ This is based on the definition of OBX from [Digital Health and Care Wales - HL7
 | Field HL7 | Fieldname                    | Data Type | Optionality | Identifier Type or ValueSet         | Example Values                                                                                                  |
 |-----------|------------------------------|-----------|-------------|-------------------------|-----------------------------------------------------------------------------------------------------------------|
 | OBX-1     | Set ID – OBX                 |           | R           |                         | 1                                                                                                               |
-| OBX-2     | Value Type                   |           | R <span class="badge badge-primary">S</span>          | See next section for ED | CE                                                                                                              |
-| OBX-3     | Observation Identifier       | [CE](#ce) | R <span class="badge badge-primary">S</span>          |                         | 842009^Consanguinity^SNM3<br/>97209-1^Shipment tracking number^LN<br/>161714006^Estimated date of delivery^SNM3 |
-| OBX-5     | Observation Value            | Varies    | R <span class="badge badge-primary">S</span>          |                         | LN^Yes^LA33-6 (value type=CE)<br/>UK3096580215 (value type=ST)<br/>20250512103726+0000 (value type=DT)          |
+| OBX-2     | Value Type                   |           | R <span class="badge badge-danger">S</span>          | See next section for ED | CE                                                                                                              |
+| OBX-3     | Observation Identifier       | [CE](#ce) | R <span class="badge badge-danger">S</span>          |                         | 842009^Consanguinity^SNM3<br/>97209-1^Shipment tracking number^LN<br/>161714006^Estimated date of delivery^SNM3 |
+| OBX-5     | Observation Value            | Varies    | R <span class="badge badge-danger">S</span>          |                         | LN^Yes^LA33-6 (value type=CE)<br/>UK3096580215 (value type=ST)<br/>20250512103726+0000 (value type=DT)          |
 | OBX-11    | Observation Result Status    |           | R           |                         | F                                                                                                               |
 | OBX-14    | Date/Time of the Observation | TS        | O - SHOULD  |                         | 20190514102417+0000                                                                                             |
 {:.grid}
@@ -432,9 +432,9 @@ This is based on the definition of OBX from [Digital Health and Care Wales - HL7
 | Field HL7 | Fieldname                    | Data Type | Optionality | Identifier Type or ValueSet                                          | Example Values                       |
 |-----------|------------------------------|-----------|-------------|----------------------------------------------------------|--------------------------------------|
 | OBX-1     | Set ID – OBX                 |           | R           |                                                          | 1                                    |
-| OBX-2     | Value Type                   | ED        | R <span class="badge badge-primary">S</span>          |                                                          | ED                                   |
-| OBX-3     | Observation Identifier       | [ED](#ed) | R <span class="badge badge-primary">S</span>          | [Document Entry Type](ValueSet-document-entry-type.html) | 1054161000000101^Genetic report^SNM3 |
-| OBX-5     | Observation Value            |         | R <span class="badge badge-primary">S</span>          |                                                          | MOL^IM^PDF^Base64^JVBERI0X...        |
+| OBX-2     | Value Type                   | ED        | R <span class="badge badge-danger">S</span>          |                                                          | ED                                   |
+| OBX-3     | Observation Identifier       | [ED](#ed) | R <span class="badge badge-danger">S</span>          | [Document Entry Type](ValueSet-document-entry-type.html) | 1054161000000101^Genetic report^SNM3 |
+| OBX-5     | Observation Value            |         | R <span class="badge badge-danger">S</span>          |                                                          | MOL^IM^PDF^Base64^JVBERI0X...        |
 | OBX-11    | Observation Result Status    |           | R           |                                                          | F                                    |
 | OBX-14    | Date/Time of the Observation |           | O - SHOULD  |                                                          | 20190514102417+0000                  |
 {:.grid}
@@ -462,14 +462,14 @@ Specimen Type is SNOMED CT, not HL7 v2 Table 0487, for conversion to SNOMED see 
 | Field HL7 | Fieldname                     | Data Type | Optionality | Identifier Type or ValueSet                                                 | Example Values                                     |
 |-----------|-------------------------------|-----------|-------------|-----------------------------------------------------------------------------|----------------------------------------------------|
 | SPM-2     | Specimen ID                   |           | O           | Placer Specimen Number^Filler Specimen Number                               | 25GEN-029GN00001&R0A                               |
-| SPM-3     | Specimen Parent IDs           |           | O <span class="badge badge-primary">S</span>          |                                                                             | ^1001166717&699X0                                  |
-| SPM-4     | Specimen Type                 |           | O <span class="badge badge-primary">S</span>          | [Specimen Type](ValueSet-specimen-type.html)                                | 119325001^Skin specimen^SNM3                       |
+| SPM-3     | Specimen Parent IDs           |           | O <span class="badge badge-danger">S</span>          |                                                                             | ^1001166717&699X0                                  |
+| SPM-4     | Specimen Type                 |           | O <span class="badge badge-danger">S</span>          | [Specimen Type](ValueSet-specimen-type.html)                                | 119325001^Skin specimen^SNM3                       |
 | SPM-8     | Specimen Source Site          |           | O           |                                                                             | 299706009^Bone structure of wrist and/or hand^SNM3 |
 | SPM-9     | Specimen Source Site Modifier |           | O           |                                                                             | 7771000^Left^SNM3                                  |
 | SPM-17    | Specimen Collection Date/Time | TS        | O           |                                                                             |                                                    |
 | SPM-18    | Specimen Received Date/Time   | TS        | O           |                                                                             |                                                    |
 | SPM-20    | Specimen Availability         |           | O           |                                                                             |                                                    |
-| SPM-30    | Accession ID                  |           | O <span class="badge badge-primary">S</span>          | [Accession Number](StructureDefinition-AccessionNumber.html)                |                                                    |
+| SPM-30    | Accession ID                  |           | O <span class="badge badge-danger">S</span>          | [Accession Number](StructureDefinition-AccessionNumber.html)                |                                                    |
 | SPM-32    | Shipment Tracking Number      |           | O           | [Shipment Tracking Number](StructureDefinition-ShipmentTrackingNumber.html) |                                                    |
 {:.grid}
 
