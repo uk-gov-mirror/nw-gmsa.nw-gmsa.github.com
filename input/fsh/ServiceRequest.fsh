@@ -124,7 +124,7 @@ Description:    """
 * reasonCode from GenomicClinicalIndicationCodes (preferred)
 
 * supportingInfo 0..*
-//* supportingInfo only Reference(ObservationPanel or Observation or DiagnosticReport or QuestionnaireResponse or DocumentReference)
+* supportingInfo only Reference(Observation or DocumentReference)
 
 * supportingInfo ^slicing.discriminator.type = #value
 * supportingInfo ^slicing.discriminator.path = "type"
@@ -132,13 +132,16 @@ Description:    """
 * supportingInfo ^slicing.description = "Slice based on the coding.system"
 * supportingInfo ^slicing.ordered = false
 * supportingInfo contains
-  PriorResult 0..1 and PatientSummary 0..1
+  AskAtOrderQuestions 0..1 and clinicalContext 0..1
 
-* supportingInfo[PriorResult] ^short = "Equivalent of HL7 v2 OML_O21 PRIOR RESULT (as PDF)"
-* supportingInfo[PriorResult] only Reference(DiagnosticReport)
-* supportingInfo[PriorResult].type = #DiagnosticReport
-* supportingInfo[PriorResult].identifier 1..1
-* supportingInfo[PriorResult].identifier only CorrelationIdentifier
+//* supportingInfo[PriorResult] ^short = "Equivalent of HL7 v2 OML_O21 PRIOR RESULT (as PDF)"
+//* supportingInfo[PriorResult] only Reference(DiagnosticReport)
+//* supportingInfo[PriorResult].type = #DiagnosticReport
+//* supportingInfo[PriorResult].identifier 1..1
+//* supportingInfo[PriorResult].identifier only CorrelationIdentifier
 
-* supportingInfo[PatientSummary] only Reference(DocumentReference)
-* supportingInfo[PatientSummary].type = #DocumentReference
+* supportingInfo[AskAtOrderQuestions] only Reference(Observation)
+* supportingInfo[AskAtOrderQuestions].type = #Observation
+
+* supportingInfo[clinicalContext] only Reference(DocumentReference)
+* supportingInfo[clinicalContext].type = #DocumentReference
