@@ -12,7 +12,7 @@ Description:    """
 * ^keyword[+] = #genomics "Genomics"
 
 * identifier 1..* MS
-* identifier only CorrelationIdentifier
+//* identifier only CorrelationIdentifier
 
 
 * identifier ^slicing.discriminator.type = #value
