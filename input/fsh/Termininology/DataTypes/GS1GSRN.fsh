@@ -1,6 +1,6 @@
-Profile:        GS1GSRN
+Profile:        GS1GSRIN
 Parent:         Identifier
-Id:             GS1GSRN
+Id:             GS1GSRIN
 Title:          "GS1 Global Service Relation Number (GSRN)"
 Description:     """
 `Patient Administration` HL7 IdentifierType: **PI** Patient Identifier
