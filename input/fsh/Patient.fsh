@@ -29,7 +29,7 @@ Description: """
 * identifier contains
   MedicalRecordNumber 0..* MS
   and nhsNumber 0..* MS
-  and SRIN 0..1
+  and GS1GSRN 0..1
 
 //  solved via ServiceRequest.requisition and GenomicsPedigreeNumber 0..*
 
