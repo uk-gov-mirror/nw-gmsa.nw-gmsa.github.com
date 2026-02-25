@@ -23,6 +23,7 @@ Description:    """
 * identifier contains
   GS1SRIN 0..1 MS
 
+* identifier[GS1SRIN] only GS1SRIN
 
 * class 1..1
 * type 0..1
