@@ -3,7 +3,7 @@ Parent:         Identifier
 Id:             GS1SRIN
 Title:          "GS1 Service Relation Instance Number (SRIN)"
 Description:     """
-`Patient Administration` HL7 IdentifierType: **MR** Medical record number
+`Patient Administration` HL7 IdentifierType: **AN/VN** Account/Visit number
 'NHS Data Model and Dictionary'  [GS1 SERVICE RELATION INSTANCE NUMBER](https://www.datadictionary.nhs.uk/attributes/gs1_service_relation_instance_number.html)
 [GS1 Pathology](https://gs1hospital.gs1.org/pathology/)
 """
