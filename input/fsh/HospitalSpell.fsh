@@ -9,14 +9,6 @@ Description:    """
 * ^keyword[+] = #core "Core"
 * ^keyword[+] = #pam "Patient Administration"
 
-* identifier 1..* MS
-* identifier only CorrelationIdentifier
-
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "type"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.description = "Slice based on the type"
-* identifier ^slicing.ordered = false
 * identifier contains
   HospitalSpellIdentifier 0..1 MS
 

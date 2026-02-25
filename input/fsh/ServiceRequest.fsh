@@ -25,7 +25,7 @@ Description:    """
   OrderIdentifier 0..1 MS
 
 * identifier[OrderIdentifier] only OrderIdentifier
-* identifier[OrderIdentifier] ^short = "Identifier assigned by the Order Placer. (HL7 v2 ORC-2/OBR-2 Placer Order Number)"
+* identifier[OrderIdentifier] ^short = "Identifier assigned by the Order Placer. (HL7 v2 ORC-2/OBR-2 Placer Order Number and GS1 )"
 * identifier[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * identifier[OrderIdentifier] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 * identifier[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)

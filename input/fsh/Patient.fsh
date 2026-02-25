@@ -29,6 +29,7 @@ Description: """
 * identifier contains
   MedicalRecordNumber 0..* MS
   and nhsNumber 0..* MS
+  and SRIN 0..1
 
 //  solved via ServiceRequest.requisition and GenomicsPedigreeNumber 0..*
 
@@ -37,6 +38,8 @@ Description: """
 //* identifier[nhsNumber].extension[nhsNumberVerificationStatus] ^short = "NOT REQUIRED. As all NHS Numbers **MUST** be *01 Number present and verified*, this status will be assumed."
 * identifier[MedicalRecordNumber] only MedicalRecordNumber
 * identifier[MedicalRecordNumber] ^short = "Medical Record Number"
+* identifier[GS1GSRN] only GS1GSRN
+* identifier[GS1GSRN] ^short = "GS1 Global Service Relation Number"
 
 //* identifier[GenomicsPedigreeNumber] only GenomicsPedigreeNumber
 //* identifier[GenomicsPedigreeNumber] ^short = "Genomics Pedigree Number"

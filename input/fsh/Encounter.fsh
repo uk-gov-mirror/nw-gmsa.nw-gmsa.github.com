@@ -11,6 +11,19 @@ Description:    """
 * ^keyword[+] = #core "Base"
 * ^keyword[+] = #pam "Patient Administration"
 
+
+* identifier 1..* MS
+
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "type"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.description = "Slice based on the type"
+* identifier ^slicing.ordered = false
+
+* identifier contains
+  GS1SRIN 0..1 MS
+
+
 * class 1..1
 * type 0..1
 * type from AdmissionMethod
