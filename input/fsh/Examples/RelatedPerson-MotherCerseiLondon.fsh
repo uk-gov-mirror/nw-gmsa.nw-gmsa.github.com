@@ -25,7 +25,7 @@ Usage: #example
 
 * patient = Reference(Patient-FetusLondon)
 * patient.identifier.system = "urn:oid:1.2.840.114350.1.13.611.3.7.5.737384.14"
-* patient.identifier.system = "67890"
+* patient.identifier.value = "67890"
 * patient.identifier.assigner.identifier.system = $ods-code
 * patient.identifier.assigner.identifier.value = "RPY"
 
