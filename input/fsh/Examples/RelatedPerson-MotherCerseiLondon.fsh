@@ -28,3 +28,7 @@ Usage: #example
 * patient.identifier.system = "67890"
 * patient.identifier.assigner.identifier.system = $ods-code
 * patient.identifier.assigner.identifier.value = "RPY"
+
+* birthDate = "1973-10-03"
+
+* gender = #female

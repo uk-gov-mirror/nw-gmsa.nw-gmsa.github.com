@@ -18,3 +18,5 @@ Usage: #example
 * name.use = #temp
 * name.family = "London"
 * name.given = "Baby"
+
+* birthDate = "2026"
