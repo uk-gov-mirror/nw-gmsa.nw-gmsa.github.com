@@ -48,7 +48,7 @@ Description: """
 
 * name 1..* MS
 * gender 0..1 MS
-* birthDate 0..1 MS
+* birthDate MS
 
 * name.family
 * name.given
