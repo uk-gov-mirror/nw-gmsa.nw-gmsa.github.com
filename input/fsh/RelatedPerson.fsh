@@ -33,3 +33,5 @@ Description:    """
 
 * patient
 * patient.identifier only MedicalRecordNumber
+
+* birthDate MS
