@@ -24,6 +24,7 @@ Content-Type: application/hl7-v2+er7
 |---------------------------|-------------|---------------------------------------------------------|
 | [MSH](#msh)               | 1..1        |                                                         |
 | [PID](#pid)               | 1..1        |                                                         |
+| [NK1](#nk1)               | 0..*        | For a fetus, this shall be the mother.                  |
 | [PV1](#pv1)               | 0..1        | PV1 should be populated if PV1-19 Visit Number is known |
 | **ORDER**                 | 1..*        |                                                         |
 | - [ORC](#orc)             | 1..*        |                                                         |
@@ -69,6 +70,7 @@ Content-Type: application/hl7-v2+er7
 | [MSH](#msh)           | 1..1        |                                                         |
 | [PID](#pid)           | 1..1        |                                                         |
 | [PV1](#pv1)           | 0..1        | PV1 should be populated if PV1-19 Visit Number is known |
+| [NK1](#nk1)          | 0..*        | For a fetus, this shall be the mother.                  |
 | **ORDER OBSERVATION** | 1..*        |                                                         |
 | - [ORC](#orc)         | 1..*        |                                                         |
 | - [OBR](#obr)         | 1..*        |                                                         |
@@ -166,16 +168,16 @@ This is based on the definition of MSH from [NHS England HL7 v2 ADT Message Spec
 
 This is based on the definition of PID from [NHS England HL7 v2 ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws) and [Digital Health and Care Wales - HL7 ORU_R01 2.5.1 Implementation Guide](DHCW-HL7-v2-5-1-ORUR01-Specification.pdf)
 
-| Field HL7 | Fieldname                          | Data Type | Optionality | Identifier Type or ValueSet                                                                                                               | Example Values                                                                                                                  |
-|-----------|------------------------------------|-----------|-------------|-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| PID-1     | Set ID-PID                         |           | R           |                                                                                                                               | 1                                                                                                                               |
-| PID-3     | Patient Identifier List            | [CX](#cx) | R <span class="badge badge-danger">S</span>          | [NHS Number](StructureDefinition-NHSIdentifier.html) <br/> [Medical Record Number](StructureDefinition-MedicalRecordNumber.html). | 633^^^R0A^MR~9449305552^^^NHS^NH                                                                                                |
-| PID-5     | Patient Name                       |           | R <span class="badge badge-danger">S</span>          |                                                                                                                               | CHISLETT^Octavia^^Miss                                                                                                          |
-| PID-7     | Date/Time of Birth                 |           | R <span class="badge badge-danger">S</span>          |                                                                                                                               | 20080920                                                                                                                        |
-| PID-8     | Administrative Sex                 |           | R           |                                                                                                                               | F                                                                                                                               |
-| PID-11    | Patient Address                    |           | R           |                                                                                                                               | 1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST                                                                                    |
-| PID-13    | Phone Number - Home                |           | R           |                                                                                                                               | 01656 123123^PRN^PH~07927655295^ORN^CP^NET^X.400^abc@home.com~01656 123123~01656123123^PRN^PH^^^abc@home.com~01656123123^PRN^PH |
-| PID-32    | Identity Reliability Code          |           | O           | Mandatory if the the NHS Number tracing status is not known.                                                                  | 01                                                                                                                              |
+| Field HL7 | Fieldname                          | Data Type | Optionality                                 | Identifier Type or ValueSet                                                                                                               | Example Values                                                                                                                  |
+|-----------|------------------------------------|-----------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| PID-1     | Set ID-PID                         |           | R                                           |                                                                                                                               | 1                                                                                                                               |
+| PID-3     | Patient Identifier List            | [CX](#cx) | R <span class="badge badge-danger">S</span> | [NHS Number](StructureDefinition-NHSIdentifier.html) <br/> [Medical Record Number](StructureDefinition-MedicalRecordNumber.html). | 633^^^R0A^MR~9449305552^^^NHS^NH                                                                                                |
+| PID-5     | Patient Name                       |           | R <span class="badge badge-danger">S</span> |                                                                                                                               | CHISLETT^Octavia^^Miss                                                                                                          |
+| PID-7     | Date/Time of Birth                 |           | R <span class="badge badge-danger">S</span> |                                                                                                                               | 20080920                                                                                                                        |
+| PID-8     | Administrative Sex                 |           | O                                           |                                                                                                                               | F                                                                                                                               |
+| PID-11    | Patient Address                    |           | R                                           |                                                                                                                               | 1 RAVENSFIELD GARDENS^^EPSOM^SURREY^KT19 0ST                                                                                    |
+| PID-13    | Phone Number - Home                |           | R                                           |                                                                                                                               | 01656 123123^PRN^PH~07927655295^ORN^CP^NET^X.400^abc@home.com~01656 123123~01656123123^PRN^PH^^^abc@home.com~01656123123^PRN^PH |
+| PID-32    | Identity Reliability Code          |           | O                                           | Mandatory if the the NHS Number tracing status is not known.                                                                  | 01                                                                                                                              |
 {:.grid}
 
 <div class="alert alert-info" role="alert">
@@ -199,6 +201,24 @@ PID|1||633^^^R0A^MR~9449305552^^^^NH||CHISLETT^Octavia||20080920|F|||1 RAVENSFIE
 <br/>
 <b>FHIR Profile:</b> <a href="StructureDefinition-Patient.html" _target="_blank">Patient</a> 
 </div>
+
+### NK1
+
+| Field HL7 | Fieldname                                  | Data Type | Optionality | Identifier Type or ValueSet                                                                                   | Example Values                       |
+|-----------|--------------------------------------------|-----------|-------------|---------------------------------------------------------------------------------------------------------------|--------------------------------------|
+| NK1-2     | Name                                       | XPN       | O           |                                                                                                               | London^Cersei                        |
+| NK1-3     | Relationship                               | CWE       | R           | [UKCorePersonRelationshipType](https://simplifier.net/hl7fhirukcorer4/valueset-ukcore-personrelationshiptype) | MTH                                  | 
+| NK1.15    | Administrative Sex                         | IS        | O           |                                                                                                               | F                                    |
+| NK1-16    | Date/Time of Birth                         | TS        | O           |                                                                                                               | 19731003                             | 
+| NK1-33    | Next of Kin/Associated Party's Identifiers | CX        | R           |                                                                                                               | 9737383230^^^NHS^NH~1234567^^^RPY^MR |
+{:.grid}
+
+<div class="alert alert-info" role="alert">
+<b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-segment-nk1-to-relatedperson.html" _target="_blank">NK1 to FHIR RelatedPerson</a> 
+<br/>
+<b>FHIR Profile:</b> <a href="StructureDefinition-RelatedPerson.html" _target="_blank">RelatedPerson</a> 
+</div>
+
 
 ### PV1 
 
