@@ -8,5 +8,5 @@ Reference:
 
 RelatedPerson will often be used to represent a mother when testing a fetus (Patient). For example: 
 
-- **RelatedPerson** [Mother Cersei London]()
+- **RelatedPerson** [Mother Cersei London](RelatedPerson-RelatedPerson-MotherCerseiLondon.html)
 - **Patient** [Fetus Baby London](Patient-Patient-FetusLondon.html) 
