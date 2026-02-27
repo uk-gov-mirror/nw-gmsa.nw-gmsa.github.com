@@ -14,6 +14,6 @@ Description:     """
 - **HL7 v2** Placer Order Number (ORC-2).
 """
 
-* type = $v2-0203#PLAC
+* type from http://hl7.org/fhir/ValueSet/organization-type
 * value 1..1
 * assigner 1..1
