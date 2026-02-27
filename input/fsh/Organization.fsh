@@ -26,5 +26,6 @@ Description:    """
 
 * identifier[odsOrganisationCode] only OrganisationCode
 
+* partOf.identifier only OrganisationCode
 
 //* address.extension contains http://hl7.org/fhir/StructureDefinition/geolocation named GeoLocation 0..1

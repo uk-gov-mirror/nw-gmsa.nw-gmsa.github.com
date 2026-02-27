@@ -114,7 +114,7 @@ pages:
     title: Overview
     generation: markdown
   hl7v2.md:
-    title: HL7 v2 Artefacts
+    title: HL7 v2 Standards
     generation: markdown
   architecture.md:
     title: Architecture
