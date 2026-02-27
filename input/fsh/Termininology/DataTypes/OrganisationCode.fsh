@@ -19,3 +19,4 @@ Description:     """
 * system 1..1
 * system = $ods-code (exactly)
 * value 1..1
+* type from http://hl7.org/fhir/ValueSet/organization-type
