@@ -642,7 +642,7 @@ This is based on the definitions of NDL from [Royal College of Radiologists](htt
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-datatype-nm-to-quantity.html" _target="_blank">NM to FHIR Quantity</a>
 </div>
 
-## SN
+### SN
 
 <div class="alert alert-info" role="alert">
 <b>v2 to FHIR Conversion:</b> <a href="https://build.fhir.org/ig/HL7/v2-to-fhir/ConceptMap-datatype-sn-to-quantity.html" _target="_blank">SN to FHIR Quantity</a>
@@ -664,7 +664,16 @@ C3456789^Darwin^Samuel^^^Dr^^^GMC
 ### XON 
 
 Extended Composite Name and Identification Number for Organizations.
-The definition of XON from [NHS England HL7 v2 ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws) **SHOULD** be followed and **SHALL** be used in ORC-21.
+The definition of XON from [NHS England HL7 v2 ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws) should be followed and **SHALL** be used in ORC-21.
+
+| Field HL7 | Fieldname            | Data Type | Optionality | Identifier Type or ValueSet                                          | Example Values                             |
+|-----------|----------------------|-----------|-------------|----------------------------------------------------------------------|--------------------------------------------|
+| XON-1     | Organization Name    | ST        | R           |                                                                      | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST |
+| XON-3     | Id Number            | NM        | R           | [Organisation Code](StructureDefinition-OrganisationIdentifier.html) | R0A                                        |
+| XON-6     | Assigning Authority  | ST        | R           |                                                                      | ODS                                        |
+| XON.7     | Identifier Type Code | ID        | R           |                                                                      |   |                                   
+{:.grid}
+
 
 Example
 

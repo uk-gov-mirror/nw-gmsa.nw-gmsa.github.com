@@ -38,5 +38,12 @@ This `reference` may be able to point to `Care Service Directory` services provi
 
 and so continuing conventions used in HL7 v2, i.e. no Organization resources will be present in FHIR Messaging.
 
- 
+## Data Mappings
+
+| NHS Data Dictionary                                                                      | FHIR Organization              | HL7 v2 XON | NHS England Organisation Data Terminology - FHIR API |
+|------------------------------------------------------------------------------------------|--------------------------------|------------|------------------------------------------------------|
+| Name of Organisation                                                                     | Organization.name              | XON-1      | Organisation.name                                    |
+| [Organsiation Code](https://www.datadictionary.nhs.uk/attributes/organisation_code.html) | Organization.identifier.value  | XON-3      | Organization.identifier.value                        | 
+|                                                                                          | Organization.identifier.system | XON-6      | Organization.identifier.system                       |
+| ODS Organisation Role                                                                    | Organization.type              | XON-7      | Organisation.extension[ODSOrganisationRole]                             | 
 
