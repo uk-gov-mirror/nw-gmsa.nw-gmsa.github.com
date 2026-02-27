@@ -666,19 +666,24 @@ C3456789^Darwin^Samuel^^^Dr^^^GMC
 Extended Composite Name and Identification Number for Organizations.
 The definition of XON from [NHS England HL7 v2 ADT Message Specification](https://drive.google.com/drive/folders/1FRkyZvWpZB1nCKbvQbo-eW_q9VtlR3Ws) should be followed and **SHALL** be used in ORC-21.
 
-| Field HL7 | Fieldname            | Data Type | Optionality | Identifier Type or ValueSet                                          | Example Values                             |
-|-----------|----------------------|-----------|-------------|----------------------------------------------------------------------|--------------------------------------------|
-| XON-1     | Organization Name    | ST        | R           |                                                                      | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST |
-| XON-3     | Id Number            | NM        | R           | [Organisation Code](StructureDefinition-OrganisationIdentifier.html) | R0A                                        |
-| XON-6     | Assigning Authority  | ST        | R           |                                                                      | ODS                                        |
-| XON.7     | Identifier Type Code | ID        | R           |                                                                      |   |                                   
+| Field HL7 | Fieldname            | Data Type | Optionality | Identifier Type or ValueSet                                                                                                                                                                   | Example Values                             |
+|-----------|----------------------|-----------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| XON-1     | Organization Name    | ST        | R           |                                                                                                                                                                                               | MANCHESTER UNIVERSITY NHS FOUNDATION TRUST |
+| XON-3     | Id Number            | NM        | R           | [Organisation Code](StructureDefinition-OrganisationIdentifier.html) <br/> [Organisation Site Code](StructureDefinition-OrganisationSiteIdentifier.html) when present XON-8 must be populated | R0A or R0A02                               |
+| XON-6     | Assigning Authority  | ST        | R           |                                                                                                                                                                                               | ODS                                        |
+| XON.7     | Identifier Type Code | ID        | O           |                                                                                                                                                                                               |                                            |                                   
+| XON-8     | Assigning Facility   | HD        | O           | [Organisation Code](StructureDefinition-OrganisationIdentifier.html)                                                                                                                          | R0A                                        |
 {:.grid}
 
 
 Example
 
 ```aiignore
-MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS
+MANCHESTER UNIVERSITY NHS FOUNDATION TRUST^^R0A^^^ODS^R0A
+```
+
+```aiignore
+Manchester Royal Infirmary^^R0A02^^^ODS^R0A
 ```
 
 <div class="alert alert-info" role="alert">
