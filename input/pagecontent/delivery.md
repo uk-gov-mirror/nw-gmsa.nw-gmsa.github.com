@@ -34,7 +34,7 @@ gantt
     section FHIR Workflow and Specimen Management
         FHIR Workflow  : 2026-04-01, 365d
         FHIR Subscription  : 2026-04-01, 365d
-        IHE Inter Laboratory Workflow (v2 or FHIR Workflow)        : 2026-04-01, 365d
+        IHE Inter Laboratory Workflow ILW (v2 or FHIR Workflow)        : 2026-04-01, 365d
         IHE Specimen Event Tracking : 2026-04-01, 365d
         IHE Basic Audit Logging Patterns BALP (HL7 FHIR): 2026-04-01, 365d
         NHS England National Record Locator (IHE MHDS/HL7 FHIR): 2026-04-01, 365d
