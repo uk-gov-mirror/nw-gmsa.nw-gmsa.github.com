@@ -131,6 +131,9 @@ pages:
   deployment.md:
     title: Deployment
     generation: markdown
+  delivery.md:
+    title: Delivery Overview
+    generation: markdown
   IUA.md:
     title: OAuth2
     generation: markdown
