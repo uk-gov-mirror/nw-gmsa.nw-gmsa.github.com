@@ -6,7 +6,7 @@ Description:    "`IHE BALP` Core model following [IHE Basic Audit Log Patterns (
 
 //* type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
 
-* action 1..1 MS
+* action 0..1 MS
 
 * agent 2..* MS
 

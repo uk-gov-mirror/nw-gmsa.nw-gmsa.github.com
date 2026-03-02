@@ -1,4 +1,4 @@
-Instance: Order-FHIR
+Instance: Order-FHIRMessage
 InstanceOf: AuditEvent
 Title: "FHIR O21 Order"
 Description: """
@@ -6,10 +6,8 @@ FHIR Message O21 Order
 """
 Usage: #example
 
-//* type = $DCM#110109 "Order Record"
-* type = $audit#rest "RESTful Operation"
-
-* action = http://hl7.org/fhir/audit-event-action#C
+* type = $DCM#110109 "Order Record"
+//* type =  http://dicom.nema.org/resources/ontology/DCM#110109	"Order Record"
 
 * recorded = "2024-10-13T10:33:00+00:00"
 
@@ -28,7 +26,7 @@ Usage: #example
 
 * source.type = http://terminology.hl7.org/CodeSystem/security-source-type#4
 * source.observer.type = "Device"
-* source.observer.identifier.value = "RIE"
+* source.observer.identifier.value = "RIE-EnterpriseServiceBus"
 
 * entity[message]
   * type = https://fhir.nwgenomics.nhs.uk/CodeSystem/BasicAuditEntityType#XcorrelationId
@@ -44,7 +42,7 @@ Usage: #example
 
 * entity[patient]
   * type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
-  * what = Reference(Patient-OctaviaCHISLETT-9449305552)
+// Not known at this point  * what = Reference(Patient-OctaviaCHISLETT-9449305552)
   * what.identifier
     * system = $nhs-number
     * value = "9449305552"
