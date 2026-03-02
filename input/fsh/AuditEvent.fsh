@@ -39,13 +39,17 @@ Description:    "`IHE BALP` Core model following [IHE Basic Audit Log Patterns (
 * entity ^slicing.rules = #open
 * entity ^slicing.ordered = false
 * entity contains
-  transaction 1..1 MS and message 0..1 MS and query 0..1 and patient 0..1
+  transaction 1..1 MS and message 0..1 MS and event 0..1 MS and query 0..1 and patient 0..1
 
 * entity[transaction] ^short = "(HL7 FHIR) RESTful HTTP Header: X-Request-ID"
 * entity[transaction].type = https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#XrequestId
 
 * entity[message] ^short = "HTTP Header: X-Correlation-ID, HL7 v2 MSH.10 - Message Control ID and HL7 FHIR Message Bundle.identifier.value"
 * entity[message].type = https://fhir.nwgenomics.nhs.uk/CodeSystem/BasicAuditEntityType#XcorrelationId
+
+* entity[event] ^short = "FHIR Message and V2 Message event-trigger"
+* entity[event].type = https://fhir.nwgenomics.nhs.uk/CodeSystem/BasicAuditEntityType#event
+* entity[event].lifecycle 1..1
 
 * entity[query] ^short = "also known as `data` in IHE BALP"
 * entity[query].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2

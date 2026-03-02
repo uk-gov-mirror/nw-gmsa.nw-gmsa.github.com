@@ -34,6 +34,10 @@ Usage: #example
   * type = https://fhir.nwgenomics.nhs.uk/CodeSystem/BasicAuditEntityType#XcorrelationId
   * what.identifier.value = "urn:uuid:9612365d-52a4-4fab-87e7-8a09d753f095"
 
+* entity[event]
+  * type = https://fhir.nwgenomics.nhs.uk/CodeSystem/BasicAuditEntityType#event
+  * lifecycle = http://terminology.hl7.org/CodeSystem/v2-0003#O21
+
 * entity[transaction]
   * type = https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#XrequestId
   * what.identifier.value = "407094"
@@ -41,3 +45,6 @@ Usage: #example
 * entity[patient]
   * type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
   * what = Reference(Patient-OctaviaCHISLETT-9449305552)
+  * what.identifier
+    * system = $nhs-number
+    * value = "9449305552"
