@@ -4,7 +4,7 @@ Id:             AuditEvent
 Title:          "AuditEvent"
 Description:    "`IHE BALP` Core model following [IHE Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/index.html)"
 
-* type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
+//* type = http://terminology.hl7.org/CodeSystem/audit-event-type#rest
 
 * action 1..1 MS
 
@@ -22,13 +22,13 @@ Description:    "`IHE BALP` Core model following [IHE Basic Audit Log Patterns (
 
 * agent[client] ^short = "Client DNS or IP address"
 * agent[client].type = http://dicom.nema.org/resources/ontology/DCM#110153
-* agent[client].who only Reference(Organization)
-* agent[client].who.identifier only OrganisationCode
+//* agent[client].who only Reference(Organization)
+//* agent[client].who.identifier only OrganisationCode
 
 * agent[server] ^short = "Server DNS or IP address"
 * agent[server].type = http://dicom.nema.org/resources/ontology/DCM#110152
-* agent[server].who only Reference(Organization)
-* agent[server].who.identifier only OrganisationCode
+//* agent[server].who only Reference(Organization)
+//* agent[server].who.identifier only OrganisationCode
 
 * agent[user].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#IRCP
 * agent[user].who only Reference(Practitioner)
