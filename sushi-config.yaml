@@ -33,6 +33,7 @@ dependencies:
   hl7.fhir.uv.sdc: 3.0.0
   hl7.fhir.extensions.r5: 4.0.1
   hl7.fhir.uv.xver-r5.r4: 0.0.1-snapshot-2
+  ihe.iti.balp: 1.1.4
 
 FSHOnly: false
 # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters

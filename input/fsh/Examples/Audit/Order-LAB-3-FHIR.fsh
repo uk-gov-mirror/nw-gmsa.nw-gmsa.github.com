@@ -1,4 +1,4 @@
-Instance: Order-FHIRMessage
+Instance: Order-LAB-3
 InstanceOf: AuditEvent
 Title: "AuditEvent Placer Order Management [LAB-1] V2/FHIR/V2 Order"
 Description: """
