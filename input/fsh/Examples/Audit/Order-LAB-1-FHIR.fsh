@@ -1,4 +1,4 @@
-Instance: Order-LAB-3
+Instance: Order-LAB-1
 InstanceOf: AuditEvent
 Title: "AuditEvent Placer Order Management [LAB-1] V2/FHIR/V2 Order"
 Description: """
@@ -8,6 +8,7 @@ Usage: #example
 
 * type = $DCM#110109 "Order Record"
 //* type =  http://dicom.nema.org/resources/ontology/DCM#110109	"Order Record"
+* subtype = urn:ihe:event-type-code#LAB-1
 
 * recorded = "2024-10-13T10:33:00+00:00"
 

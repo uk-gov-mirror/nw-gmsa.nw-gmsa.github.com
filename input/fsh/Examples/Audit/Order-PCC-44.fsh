@@ -8,6 +8,7 @@ Usage: #example
 
 //* type = $DCM#110109 "Order Record"
 * type = $audit#rest "RESTful Operation"
+* subtype = urn:ihe:event-type-code#PCC-44
 
 * action = http://hl7.org/fhir/audit-event-action#E
 
@@ -30,7 +31,7 @@ Usage: #example
 * source.observer.type = "Device"
 * source.observer.identifier.value = "RIE-Repository"
 
-* entity[query]
+* entity[restful]
   * type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
   * query = "U2VydmljZVJlcXVlc3Q/cGF0aWVudD1QYXRpZW50LU9jdGF2aWFDSElTTEVUVC05NDQ5MzA1NTUy"
 
