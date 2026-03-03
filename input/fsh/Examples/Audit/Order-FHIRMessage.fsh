@@ -1,8 +1,8 @@
 Instance: Order-FHIRMessage
 InstanceOf: AuditEvent
-Title: "FHIR O21 Order"
+Title: "AuditEvent Placer Order Management [LAB-1] V2/FHIR/V2 Order"
 Description: """
-FHIR Message O21 Order
+AuditEvent Placer Order Management [LAB-1] V2/FHIR O21 Order
 """
 Usage: #example
 
