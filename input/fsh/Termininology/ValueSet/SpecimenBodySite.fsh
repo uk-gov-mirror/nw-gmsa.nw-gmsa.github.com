@@ -8,3 +8,4 @@ A subset of [HL7 Europe Laboratory Report ValueSet: Specimen Types](https://buil
 * ^experimental  = false
 
 * include codes from system https://fhir.hl7.org.uk/CodeSystem/ISUBTYPE
+

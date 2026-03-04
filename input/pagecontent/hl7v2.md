@@ -479,18 +479,18 @@ This is based on the definition of SPM from [Digital Health and Care Wales - HL7
 
 Specimen Type is SNOMED CT, not HL7 v2 Table 0487, for conversion to SNOMED see [HL7 Terminology - hl7VS-specimenType](https://terminology.hl7.org/7.0.1/ValueSet-v2-0487.html)
 
-| Field HL7 | Fieldname                     | Data Type   | Optionality                                 | Identifier Type or ValueSet                                                 | Example Values                                     |
-|-----------|-------------------------------|-------------|---------------------------------------------|-----------------------------------------------------------------------------|----------------------------------------------------|
-| SPM-2     | Specimen ID                   |             | O                                           | Placer Specimen Number^Filler Specimen Number                               | 25GEN-029GN00001&R0A                               |
-| SPM-3     | Specimen Parent IDs           |             | O <span class="badge badge-danger">S</span> |                                                                             | ^1001166717&699X0                                  |
-| SPM-4     | Specimen Type                 | [CWE](#cwe) | R <span class="badge badge-danger">S</span> | [Specimen Type](ValueSet-specimen-type.html)                                | 119325001^Skin specimen^SNM3                       |
-| SPM-8     | Specimen Source Site          | [CWE](#cwe)         | O <span class="badge badge-danger">S</span>                                          |                                                                             | 299706009^Bone structure of wrist and/or hand^SNM3 |
-| SPM-9     | Specimen Source Site Modifier |             | O                                           |                                                                             | 7771000^Left^SNM3                                  |
-| SPM-17    | Specimen Collection Date/Time | TS          | O                                           |                                                                             |                                                    |
-| SPM-18    | Specimen Received Date/Time   | TS          | O                                           |                                                                             |                                                    |
-| SPM-20    | Specimen Availability         |             | O                                           |                                                                             |                                                    |
-| SPM-30    | Accession ID                  |             | O <span class="badge badge-danger">S</span> | [Specimen Accession Number](StructureDefinition-SpecimenAccessionNumber.html)       |                                                    |
-| SPM-32    | Shipment Tracking Number      |             | O                                           | [Shipment Tracking Number](StructureDefinition-ShipmentTrackingNumber.html) |                                                    |
+| Field HL7 | Fieldname                     | Data Type   | Optionality                                 | Identifier Type or ValueSet                                                   | Example Values                                     |
+|-----------|-------------------------------|-------------|---------------------------------------------|-------------------------------------------------------------------------------|----------------------------------------------------|
+| SPM-2     | Specimen ID                   |             | O                                           | Placer Specimen Number^Filler Specimen Number                                 | 25GEN-029GN00001&R0A                               |
+| SPM-3     | Specimen Parent IDs           |             | O <span class="badge badge-danger">S</span> |                                                                               | ^1001166717&699X0                                  |
+| SPM-4     | Specimen Type                 | [CWE](#cwe) | R <span class="badge badge-danger">S</span> | [Specimen Type](ValueSet-specimen-type.html)                                  | 119325001^Skin specimen^SNM3                       |
+| SPM-8     | Specimen Source Site          | [CWE](#cwe) | O <span class="badge badge-danger">S</span> | [Specimen Body Site](ValueSet-specimen-bodysite.html)                         | 299706009^Bone structure of wrist and/or hand^SNM3 |
+| SPM-9     | Specimen Source Site Modifier |             | O                                           |                                                                               | 7771000^Left^SNM3                                  |
+| SPM-17    | Specimen Collection Date/Time | TS          | O                                           |                                                                               |                                                    |
+| SPM-18    | Specimen Received Date/Time   | TS          | O                                           |                                                                               |                                                    |
+| SPM-20    | Specimen Availability         |             | O                                           |                                                                               |                                                    |
+| SPM-30    | Accession ID                  |             | O <span class="badge badge-danger">S</span> | [Specimen Accession Number](StructureDefinition-SpecimenAccessionNumber.html) |                                                    |
+| SPM-32    | Shipment Tracking Number      |             | O                                           | [Shipment Tracking Number](StructureDefinition-ShipmentTrackingNumber.html)   |                                                    |
 {:.grid}
 
 <div class="alert alert-info" role="alert">

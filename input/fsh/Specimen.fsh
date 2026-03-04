@@ -1,10 +1,10 @@
 Profile:        Specimen
-Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Specimen
-//Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-lab
+//Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Specimen
+Parent:         http://hl7.eu/fhir/laboratory/StructureDefinition/Specimen-eu-lab
 Id:             Specimen
 Title:          "Specimen"
 Description:    """
-`Diagnostic Workflow`
+`Diagnostic Workflow` `Specimen Collection`
 """
 
 * ^keyword[+] = #core "Core"
@@ -53,6 +53,7 @@ Description:    """
 * collection.collected[x] only dateTime
 * collection.collectedDateTime 0..1 MS
 * collection.bodySite MS
+* collection.bodySite from SpecimenBodySite
 * collection.quantity MS
 
 * type MS
