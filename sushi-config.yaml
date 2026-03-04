@@ -81,6 +81,9 @@ pages:
   PAM.md:
     title: Patient Administration (PAM)
     generation: markdown
+  LBL.md:
+    title: Laboratory Specimen Barcode Labeling (LBL)
+    generation: markdown
   HPD.md:
     title: Healthcare Provider Directory (HPD)
     generation: markdown
