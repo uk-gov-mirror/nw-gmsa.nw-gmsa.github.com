@@ -23,6 +23,9 @@ Usage: #example
 * identifier[2].assigner.identifier.system = $ods-code
 * identifier[2].assigner.identifier.value = "RBS"
 
+* identifier[3].type = $v2-0203#PI
+* identifier[3].value = "801850508989737383192"
+
 * name.use = #official
 * name.family = "MANCHESTER"
 * name.given = "Sansa"

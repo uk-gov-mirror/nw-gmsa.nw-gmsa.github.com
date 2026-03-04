@@ -19,6 +19,10 @@ Usage: #example
 * identifier[MedicalRecordNumber].assigner.identifier.value = "RXK"
 * identifier[MedicalRecordNumber].value = "1234567"
 
+* identifier[+]
+  * type = $v2-0203#PI
+  * value = "801850508989737383249"
+
 * name.use = #official
 * name.family = "Birmingham"
 * name.given = "Tommen"

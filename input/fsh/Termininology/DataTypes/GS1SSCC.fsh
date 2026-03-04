@@ -9,4 +9,4 @@ Description:     """
 """
 
 * type = $v2-0203#STN (exactly)
-* system = "urn:oid:2.51.2.8019"
+* system = "urn:oid:2.51.2"
