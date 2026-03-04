@@ -17,7 +17,13 @@ Usage:  #definition
 * group.target = "https://fhir.nwgenomics.nhs.uk/CodeSystem/ISUBTYPE"
 
 * group.element[+]
-  * code = #119297000 "Blood specimen"
+  * code = #119199005 "Lung part"
   * target[+]
-    * code = #"Lung"
+    * code = #"LUNG"
+    * equivalence = #equivalent
+
+* group.element[+]
+  * code = #119216005 "Liver part"
+  * target[+]
+    * code = #"LIVER"
     * equivalence = #equivalent
