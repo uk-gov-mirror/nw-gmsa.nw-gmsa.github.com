@@ -62,7 +62,7 @@ sequenceDiagram
     participant RepositoryICS As Document Registry + Repository<br/>ICS e.g. GMCR
 
     Note over Producer,Repository: Adding document to the NW Repository
-    Producer ->> Repository: FHIR Message, Transaction or HL7 v2 MDM_T02 
+    Producer ->> Repository: FHIR Message or HL7 v2 ORU_R01 
     Note over Repository,RepositoryICS: Adding document to the NW Repository
     Repository ->> RepositoryICS: HL7 v2 MDM_T02 
     Note over Consumer,Repository: Retrieving documents from the Repository
@@ -152,7 +152,7 @@ sequenceDiagram
     participant Repository As Document Repository<br/>NW Genomic Data Repository
 
     Note over Producer,Repository: Adding document to the Repository
-    Producer ->> Repository: FHIR Message, Transaction or HL7 v2 MDM_T02 
+    Producer ->> Repository: FHIR Message or HL7 v2 ORU_R01 
     Note over Registry,Repository: Adding document Metadata to the Registry
     Repository ->> Registry: FHIR RESTful POST /DocumentReference
     Note over Consumer,Repository: Retrieving documents from the Registry and Repository
