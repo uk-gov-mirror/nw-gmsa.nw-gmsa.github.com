@@ -1,4 +1,4 @@
-Instance: SampleSCTtoIGENE
+Instance: SampleTypeSCTtoIGENE
 InstanceOf: ConceptMap
 Title: "Sample Type (SNOMED) to iGene Specimen Type"
 Description: """
@@ -6,7 +6,7 @@ Sample Type (SNOMED) to iGene Specimen Type
 """
 Usage:  #definition
 
-* url = "https://fhir.nwgenomics.nhs.uk/ConceptMap/SampleSCTtoIGENE"
+* url = "https://fhir.nwgenomics.nhs.uk/ConceptMap/SampleTypeSCTtoIGENE"
 * version = "0.0.1"
 * status = #draft
 
