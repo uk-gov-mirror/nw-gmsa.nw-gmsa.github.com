@@ -1,8 +1,8 @@
 CodeSystem: ISUBTYPE
 Id: ISUBTYPE
-Title: "iGene Sub Sample Type"
+Title: "iGene Sample Sub Type"
 Description: """
-iGene Sub Sample Type
+iGene Sample Sub Type
 """
 
 * ^content = #fragment

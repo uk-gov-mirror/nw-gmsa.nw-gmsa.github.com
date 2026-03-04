@@ -7,5 +7,5 @@ Intent is to use SNOMED CT [H:7 ValueSet Body Site](https://hl7.org/fhir/R4/valu
 
 * ^experimental  = false
 
-* include codes from system https://fhir.hl7.org.uk/CodeSystem/ISUBTYPE
+* include codes from system https://fhir.nwgenomics.nhs.uk/CodeSystem/ISUBTYPE
 
