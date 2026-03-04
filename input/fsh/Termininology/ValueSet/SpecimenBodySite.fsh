@@ -2,7 +2,7 @@ ValueSet: SpecimenBodySite
 Id: specimen-bodysite
 Title: "Specimen Body Site"
 Description: """
-A subset of [HL7 Europe Laboratory Report ValueSet: Specimen Types](https://build.fhir.org/ig/hl7-eu/laboratory/ValueSet-lab-specimenType-eu-lab.html)
+Intent is to use SNOMED CT [H:7 ValueSet Body Site](https://hl7.org/fhir/R4/valueset-body-site.html)
 """
 
 * ^experimental  = false
