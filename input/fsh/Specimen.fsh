@@ -52,6 +52,8 @@ Description:    """
 
 * collection.collected[x] only dateTime
 * collection.collectedDateTime 0..1 MS
+* collection.bodySite MS
+* collection.quantity MS
 
 * type MS
 * type from SpecimenType (required)
@@ -59,6 +61,4 @@ Description:    """
 * collection.collector 0..1 MS
 * collection.collector only Reference(PractitionerRole)
 
-* collection.bodySite MS
 
-* collection.quantity MS
