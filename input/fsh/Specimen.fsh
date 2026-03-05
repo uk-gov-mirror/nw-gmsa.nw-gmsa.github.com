@@ -27,8 +27,10 @@ Description:    """
 
 * identifier[PlacerSpecimenNumber].type = $v2-0203#PLAC
 * identifier[PlacerSpecimenNumber] ^short = "Identifier assigned by the Order Placer."
-* identifier[PlacerSpecimenNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
 * identifier[PlacerSpecimenNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* identifier[PlacerSpecimenNumber] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/Requestor)
+* identifier[PlacerSpecimenNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
+* identifier[PlacerSpecimenNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/Subcontractor)
 * identifier[PlacerSpecimenNumber] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 * identifier[FillerSpecimenNumber].type = $v2-0203#FILL

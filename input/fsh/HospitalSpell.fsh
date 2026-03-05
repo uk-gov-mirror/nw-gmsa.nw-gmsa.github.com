@@ -14,8 +14,10 @@ Description:    """
 
 * identifier[HospitalSpellIdentifier] only HospitalProviderSpellIdentifier
 * identifier[HospitalSpellIdentifier] ^short = "Identifier assigned by the Order Placer"
+* identifier[HospitalSpellIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 * identifier[HospitalSpellIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
-* identifier[HospitalSpellIdentifier] insert Obligation(#SHALL:populate, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
+* identifier[HospitalSpellIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/Requestor)
+* identifier[HospitalSpellIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/Subcontractor)
 * identifier[HospitalSpellIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/AutomationManager)
 
 //* participant.individual only Reference(Practitioner or PractitionerRole)
