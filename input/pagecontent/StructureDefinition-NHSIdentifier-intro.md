@@ -43,3 +43,11 @@ Format: NNNNNNNNNN, values include a checksum, details can be found in [NHS NUMB
 | Assigning Authority | assigner.identifier |                           |                                                  | CX.4      | HSC          | -        |
 | System              | system              |  | **https://fhir.nhs.uk/Id/hsc-number**            | N/a       | N/a          |          |
 {:.grid}
+
+## Identifier.system
+
+| Name              | System                                       |
+|-------------------|----------------------------------------------|
+| England and Wales | ttps://fhir.nhs.uk/Id/nhs-number |
+| Scotland          | urn:oid:2.16.840.1.113883.2.1.3.2.4.16.53 |
+| Northern Ireland   | https://fhir.nhs.uk/Id/hsc-number         |  

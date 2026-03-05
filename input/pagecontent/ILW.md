@@ -9,6 +9,11 @@ This is currently being elaborated and subject to change.
 
 ## Actors and Transactions
 
+| Actor                                               | Definition                                                                                                                                                                                             |
+|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Requestor](ActorDefinition-Requestor.html)         | A hospital laboratory that subcontracts a part of an Order or of an Order Group to another laboratory, e.g. Pathology or HODS. Is known in IHE TLW as [Order Placer](ActorDefinition-OrderPlacer.html) |
+| [Subcontractor](ActorDefinition-Subcontractor.html) | Receives Sub-orders, acknowledges specimen arrival and sends back results fulfilling these Sub-orders, e.g. Genomics. Is known in IHE TLW as [Order Filler](ActorDefinition-OrderFiller.html)                                                           |
+
 ## Overview
 
 See Ref 1 for details.
@@ -47,8 +52,8 @@ Order Filler MUST respond with a Report Identifier and the Order Identifier (if 
 
 ```mermaid
 sequenceDiagram
-    participant OrderPlacer
-    participant OrderFillerGenomics
+    participant OrderPlacer as Requestor<br/>(Order Placer - Laboratory) 
+    participant OrderFillerGenomics as Subcontractor<br/>(Order Filler - Genomics Laboratory) 
 
     OrderPlacer ->> OrderFillerGenomics: Places Laboratory Order (Order Identifier 1. Optional Visit/Spell Number A)
     OrderFillerGenomics -->> OrderPlacer: Returns Laboratory Report (Report Identifier 1 & Order Identifier 1. Optional Visit/Spell Number A)
@@ -63,10 +68,10 @@ For both the Pathology and Genomics Orders, the original Order Identifier SHOULD
 
 ```mermaid
 sequenceDiagram
-    participant OrderPlacer
-    participant OrderFillerSpecialty 
-    participant OrderFillerPathology
-    participant OrderFillerGenomics
+    participant OrderPlacer as Order Placer
+    participant OrderFillerSpecialty as Requestor<br/>(Order Filler - Specialty)  
+    participant OrderFillerPathology as Subcontractor<br/>(Order Filler - Pathology Laboratory)
+    participant OrderFillerGenomics as Subcontractor<br/>(Order Filler - Genomics Laboratory)
   
 
     OrderPlacer ->> OrderFillerSpecialty: Places Order (Order Identifier 1 & Visit/Spell Number A)
@@ -92,12 +97,11 @@ For the Reflex Order, the original Order Identifier SHOULD be included in the or
 
 ```mermaid
 sequenceDiagram
-    participant OrderPlacer
+    participant OrderPlacer as Order Placer
 
-    participant OrderFillerPathology
-    participant OrderFillerGenomics
+    participant OrderFillerPathology as Requestor<br/>(Order Filler - Pathology Laboratory) 
+    participant OrderFillerGenomics as Subcontractor<br/>(Order Filler - Genomics Laboratory)
   
-
     OrderPlacer ->> OrderFillerPathology: Places Order (Order Identifier 1, Visit/Spell Number A and Specimen Accession Number X)
     OrderFillerPathology -->> OrderPlacer: Returns Report (Report Identifier 1, Order Identifier 1, Visit/Spell Number A  and Specimen Accession Number X)
    
@@ -116,10 +120,10 @@ For the Sub Contracted Order, the original Order Identifier SHOULD be included i
 
 ```mermaid
 sequenceDiagram
-    participant OrderPlacer
+    participant OrderPlacer as Order Placer
 
-    participant OrderFillerGenomics1
-    participant OrderFillerGenomics2
+    participant OrderFillerGenomics1 as Requestor<br/>(Order Filler - Genomic Laboratory 1) 
+    participant OrderFillerGenomics2 as Subcontractor<br/>(Order Filler - Genomic Laboratory 2)
   
 
     OrderPlacer ->> OrderFillerGenomics1: Places Order (Order Identifier 1, Visit/Spell Number A and Specimen Accession Number X)

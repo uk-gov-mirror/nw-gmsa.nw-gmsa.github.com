@@ -4,6 +4,12 @@
 - [HL7 v2 XON – Extended Composite Name and Identification Number for Organisations](https://hl7-definition.caristix.com/v2/HL7v2.5.1/DataTypes/XON)
 - [IHE Mobile Care Services Discovery (mCSD)](https://profiles.ihe.net/ITI/mCSD/volume-1.html)
 
+## Identifier.system
+
+| Name | System                                       |
+|------|----------------------------------------------|
+| ODS  | https://fhir.nhs.uk/Id/ods-organization-code |
+
 ## Organization (Resource) or Reference by Organization Identity
 
 In message paradigms, especially HL7 v2 `laboratory order (OML_O21/ORM_O01)` and `unsolicitied observations (ORU_R01)` it is common to use the XON (Extended Composite Name and Identification Number for Organisations). The FHIR equivalent to this datatype is FHIR [Reference](https://hl7.org/fhir/R4/references.html)
