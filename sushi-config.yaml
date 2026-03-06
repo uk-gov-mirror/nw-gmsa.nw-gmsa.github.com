@@ -145,7 +145,7 @@ pages:
     title: Workflow/Interaction Options
     generation: markdown
   workflow-report-options.md:
-    title: Report Options
+    title: Genomic Report Sharing Options
     generation: markdown
   identifiers.md:
     title: Identifiers and Codes
