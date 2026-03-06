@@ -69,6 +69,7 @@ For document sharing within **Integrated Care Systems (ICS)** or **LHCRE platfor
 - HL7 v2 MDM_T02
 
 This message type is used for clinical document distribution
+
 Examples:
 
 - [HL7 v2 ORU_R01](https://github.com/nw-gmsa/Testing/blob/main/Input/V2/R01/ORU_R01_R125.1_R0A.txt)
@@ -86,6 +87,12 @@ sequenceDiagram
     Note over Repository,RepositoryICS: Adding document to a LHCRE/ICS Repository
     Repository ->> RepositoryICS: HL7 v2 MDM_T02 
 ```
+
+Both the HL7 v2 ORU_R01 and HL7 v2 MDM_T02 messages are used in secondary, ICS and regional integrations. For integrations with General Practice these patterns are also followed with several variations including:
+
+- Kettering XML using MESH (this is related to HL7 v2 MDM_T02)
+- GP Connect Send Document (FHIR STU3) using MESH (this is related to HL7 v2 MDM_T02)
+- NHS England Pathology API's including EDIFACT, ASTM and FHIR Document using MESH. Note HL7 v2 ORU_R01 is also supported by primary care systems.
 
 See also England national pattern [Structured/Unstructured Documents + Events](#structuredunstructured-documents--events)
 
