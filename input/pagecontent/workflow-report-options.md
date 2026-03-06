@@ -65,7 +65,11 @@ Typical resources returned include:
 Within NW Genomics, reports are initially shared with the NW Genomic Data Repository.
 
 <div class="alert alert-info" role="alert">
-<b>Pattern:</b> <a href="TLW.html" _target="_blank">IHE Laboratory Testing Workflow (LTW)</a> 
+<b>Pattern:</b> <a href="TLW.html" _target="_blank">IHE Laboratory Testing Workflow (LTW) [LAB-3]</a> for ORU_R01 
+</div>
+<br/>
+<div class="alert alert-info" role="alert"> 
+<b>Pattern:</b> <a href="https://profiles.ihe.net/ITI/MHD/ITI-105.html" _target="_blank">IHE MHD = Simplified Publish [ITI-105]</a> for MDM_T02 
 </div>
 
 The most common inbound format is:
@@ -100,7 +104,18 @@ sequenceDiagram
     Producer ->> RepositoryICS: HL7 v2 MDM_T02 
 ```
 
-#### Sending and Adding Genomic Report Documents to General Practice
+
+
+## Future? National Genomic Reports
+
+<div class="alert alert-danger" role="alert">
+This is a collection of notes from a variety of sources - a current situation report. It does not represent a final decision.
+</div>
+
+At the national level, genomic reports could be discoverable via the National Record Locator (NRL).
+The NRL stores document metadata only, while the documents themselves remain within the originating repositories.
+
+### Sending and Adding Genomic Report Documents to General Practice
 
 Both the HL7 v2 ORU_R01 and HL7 v2 MDM_T02 messages are used in secondary, ICS and regional integrations. For integrations with General Practice these patterns are also followed with several variations including:
 
@@ -110,12 +125,6 @@ Both the HL7 v2 ORU_R01 and HL7 v2 MDM_T02 messages are used in secondary, ICS a
 
 Note: On a practical level, the majority of these interactions start in HL7 v2 ORU_R01 format and are converted to GP formats within Order Comms software.
 
-See also England national pattern [Structured/Unstructured Documents + Events](#structuredunstructured-documents--events)
-
-## National Genomic Reports
-
-At the national level, genomic reports could be discoverable via the National Record Locator (NRL).
-The NRL stores document metadata only, while the documents themselves remain within the originating repositories.
 
 ### Query Genomic Report - Nationaal Record Locator Service (NRL)
 
