@@ -88,14 +88,16 @@ Examples:
 ```mermaid
 sequenceDiagram
     participant Producer As Document Producer<br/>via NW Regional Integration Engine
-    participant Consumer As Document Consumer
-    participant Repository As Document Registry + Repository<br/>NW Genomic Data Repository
-    participant RepositoryICS As Document Registry + Repository<br/>ICS e.g. GMCR
+    participant Repository As Document Consumer<br/>NW Genomic Data Repository
+    participant Trust As Document Consumer<br/>NHS Trust
+    participant RepositoryICS As Document Consumer<br/>ICS e.g. GMCR
 
-    Note over Producer,Repository: Adding document to the NW Repository
-    Producer ->> Repository: FHIR Message or HL7 v2 ORU_R01 
-    Note over Repository,RepositoryICS: Adding document to a LHCRE/ICS Repository
-    Repository ->> RepositoryICS: HL7 v2 MDM_T02 
+    Note over Producer,Repository: Adding Report to the NW Repository
+    Producer ->> Repository: FHIR Message O21 or HL7 v2 ORU_R01 
+    Note over Producer,Trust: Sending Report to a NHS Trust
+    Producer ->> Trust: HL7 v2 ORU_R01 
+    Note over Producer,RepositoryICS: Adding document to a NHS LHCRE/ICS Repository
+    Producer ->> RepositoryICS: HL7 v2 MDM_T02 
 ```
 
 #### Sending and Adding Genomic Report Documents to General Practice
