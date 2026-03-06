@@ -13,7 +13,9 @@ Reports can be accessed either as documents (PDF) or as structured data.
 
 ### Query Genomic Report - Documents (PDF)
 
-Pattern: FHIR RESTful + IHE [Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html) 
+<div class="alert alert-info" role="alert">
+<b>Pattern:</b> <a href="https://profiles.ihe.net/ITI/MHD/index.html" _target="_blank">IHE Mobile access to Health Documents (MHD)</a> 
+</div>
 
 ```mermaid
 sequenceDiagram
@@ -35,7 +37,11 @@ This approach allows a consumer to:
 
 ### Query Genomic Reports - Data
 
-Pattern: FHIR RESTful + IHE [Query for Existing Data for Mobile (QEDm)](https://profiles.ihe.net/PCC/QEDm/index.html) also following [HL7 Genomic Report](https://build.fhir.org/ig/HL7/genomics-reporting/)
+<div class="alert alert-info" role="alert">
+<b>Pattern:</b> <a href="https://profiles.ihe.net/PCC/QEDm/index.html" _target="_blank">IHE Query for Existing Data for Mobile (QEDm)</a> 
+</div>
+
+Also following [HL7 Genomic Report](https://build.fhir.org/ig/HL7/genomics-reporting/)
 
 ```mermaid
 sequenceDiagram
@@ -54,9 +60,13 @@ Typical resources returned include:
 - ServiceRequest
 - supporting genomic profiles (Diganotic Implication and Variants)
 
-### Adding Genomic Report Documents to the Regional and LHCRE/ICS Repositories
+### Sending and Adding Genomic Report Documents to NHS Trusts, Regional and LHCRE/ICS Repositories
 
 Within NW Genomics, reports are initially shared with the NW Genomic Data Repository.
+
+<div class="alert alert-info" role="alert">
+<b>Pattern:</b> <a href="TLW.html" _target="_blank">IHE Laboratory Testing Workflow (LTW)</a> 
+</div>
 
 The most common inbound format is:
 
@@ -88,11 +98,15 @@ sequenceDiagram
     Repository ->> RepositoryICS: HL7 v2 MDM_T02 
 ```
 
+#### Sending and Adding Genomic Report Documents to General Practice
+
 Both the HL7 v2 ORU_R01 and HL7 v2 MDM_T02 messages are used in secondary, ICS and regional integrations. For integrations with General Practice these patterns are also followed with several variations including:
 
 - Kettering XML using MESH (this is related to HL7 v2 MDM_T02)
-- GP Connect Send Document (FHIR STU3) using MESH (this is related to HL7 v2 MDM_T02)
+- [GP Connect Send Document (FHIR STU3)](https://digital.nhs.uk/developer/api-catalogue/gp-connect-send-document-fhir) using MESH (this is related to HL7 v2 MDM_T02)
 - NHS England Pathology API's including EDIFACT, ASTM and FHIR Document using MESH. Note HL7 v2 ORU_R01 is also supported by primary care systems.
+
+Note: On a practical level, the majority of these interactions start in HL7 v2 ORU_R01 format and are converted to GP formats within Order Comms software.
 
 See also England national pattern [Structured/Unstructured Documents + Events](#structuredunstructured-documents--events)
 
@@ -101,11 +115,14 @@ See also England national pattern [Structured/Unstructured Documents + Events](#
 At the national level, genomic reports could be discoverable via the National Record Locator (NRL).
 The NRL stores document metadata only, while the documents themselves remain within the originating repositories.
 
-### ### Query Genomic Report - Nationaal Record Locator Service (NRL)
+### Query Genomic Report - Nationaal Record Locator Service (NRL)
 
-Pattern: FHIR RESTful + IHE [Mobile Health Document Sharing](https://profiles.ihe.net/ITI/MHDS/index.html) - this is essentially the same as [Query Genomic Report - Documents (PDF)](#query-genomic-report---documents-pdf), but the registry is now a separate service.
+<div class="alert alert-info" role="alert">
+<b>Pattern:</b> <a href="https://profiles.ihe.net/ITI/MHDS/index.html" _target="_blank">IHE Mobile Health Document Sharing (MHDS)</a> 
+</div>
+This is essentially the same as [Query Genomic Report - Documents (PDF)](#query-genomic-report---documents-pdf), but the registry is now a separate service.
 
-This pattern is similar to the regional document query pattern, but introduces a separate registry service.
+This pattern is similar to the regional document query pattern but introduces a separate registry service.
 The registry provides document metadata and indicates where the document can be retrieved.
 
 ```mermaid
@@ -127,6 +144,12 @@ sequenceDiagram
 ```
 
 Initially, genomic reports are expected to be shared as PDF documents.
+
+#### Clinical Document Architecture (CDA) and FHIR Document
+
+<div class="alert alert-info" role="alert">
+<b>Pattern:</b> <a href="https://wiki.ihe.net/index.php/Sharing_Laboratory_Reports" _target="_blank">IHE Sharing Laboratory Reports (XD-LAB)</a> 
+</div>
 
 However, this is likely to evolve toward FHIR Document format, which enables both:
 
@@ -153,7 +176,9 @@ The existing HL7 v2 MDM_T02 message is transformed into:
 - an event notification e.g. HL7 v2 T01 or IHE DSUBm (FHIR)
 - a FHIR REST interaction
 
-Pattern: FHIR RESTful + IHE [Document Subscription for Mobile (DSUBm)](https://profiles.ihe.net/ITI/DSUBm/index.html)
+<div class="alert alert-info" role="alert">
+<b>Pattern:</b> <a href="https://profiles.ihe.net/ITI/DSUBm/index.html" _target="_blank">IHE Document Subscription for Mobile (DSUBm)</a> 
+</div>
 
 ```mermaid
 sequenceDiagram
