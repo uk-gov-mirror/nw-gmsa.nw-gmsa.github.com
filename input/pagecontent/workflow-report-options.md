@@ -112,10 +112,10 @@ sequenceDiagram
 This is a collection of notes from a variety of sources - a current situation report. It does not represent a final decision.
 </div>
 
-At the national level, genomic reports could be discoverable via the National Record Locator (NRL).
+At the national level, laboratory, genomics and imaging reports could be discoverable via the National Record Locator (NRL).
 The NRL stores document metadata only, while the documents themselves remain within the originating repositories.
 
-### Sending and Adding Genomic Report Documents to General Practice
+### Sending and Adding Diagnotic Report Documents to General Practice
 
 Both the HL7 v2 ORU_R01 and HL7 v2 MDM_T02 messages are used in secondary, ICS and regional integrations. For integrations with General Practice these patterns are also followed with several variations including:
 
@@ -126,7 +126,7 @@ Both the HL7 v2 ORU_R01 and HL7 v2 MDM_T02 messages are used in secondary, ICS a
 Note: On a practical level, the majority of these interactions start in HL7 v2 ORU_R01 format and are converted to GP formats within Order Comms software.
 
 
-### Query Genomic Report - Nationaal Record Locator Service (NRL)
+### Query Diagnostic Report - Nationaal Record Locator Service (NRL)
 
 <div class="alert alert-info" role="alert">
 <b>Pattern:</b> <a href="https://profiles.ihe.net/ITI/MHDS/index.html" _target="_blank">IHE Mobile Health Document Sharing (MHDS)</a> 
