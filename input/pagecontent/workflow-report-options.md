@@ -106,7 +106,7 @@ sequenceDiagram
 
 
 
-## Future? National Genomic Reports
+## Future? National Diagnostic Reports
 
 <div class="alert alert-danger" role="alert">
 This is a collection of notes from a variety of sources - a current situation report. It does not represent a final decision.
