@@ -126,7 +126,7 @@ Both the HL7 v2 ORU_R01 and HL7 v2 MDM_T02 messages are used in secondary, ICS a
 Note: On a practical level, the majority of these interactions start in HL7 v2 ORU_R01 format and are converted to GP formats within Order Comms software.
 
 
-### Query Diagnostic Report - Nationaal Record Locator Service (NRL)
+### Query Diagnostic Report – National Record Locator Service (NRL)
 
 <div class="alert alert-info" role="alert">
 <b>Pattern:</b> <a href="https://profiles.ihe.net/ITI/MHDS/index.html" _target="_blank">IHE Mobile Health Document Sharing (MHDS)</a> 
