@@ -216,6 +216,37 @@ sequenceDiagram
     Producer ->> Consumer: Cloudwatch Formatted JSON
 ```
 
+### Event Notifications and Retrieval of Genomic Report Document from NRL
+
+This may be the replacement for HL7 v2 MDM_T02, NHS England Transfer of Care and GP Connect Send Document (FHIR STU3). 
+It is a combination of the patterns above.
+
+```mermaid
+sequenceDiagram
+
+    title IHE Mobile Health Document Sharing (MHDS)
+    participant EventProducer As Event Producer<br/>(ICS/Regional) Diagnostic Service
+    participant EventConsumer As Event Consumer<br/>Document Consumer
+    participant Registry As Document Registry<br/>National Record Locator Service
+    participant Repository As Document Repository<br/>(ICS/Regional) Repository
+   
+    
+    alt NHS England Multicast Notification Service
+        Note over EventProducer,EventConsumer: Event Notification 
+        EventProducer ->> EventConsumer: Cloudwatch Formatted JSON
+        Note over EventConsumer,Repository: Retrieve Document
+        EventConsumer ->> Registry: Get Document Metadata [IHE MHD ITI-67]
+        EventConsumer ->> Repository: Get Document [IHE MHD ITI-68]<br/>Current: PDF<br/>Future: NHS England Pathology Report (EU Laboratory Report)<br/>and EU Imaging Report 
+    else HL7/IHE Event Notifications
+        Note over EventProducer,EventConsumer: Event Notification 
+        EventProducer ->> EventConsumer: HL7 v2 MDM_T01 or IHE DSUBm [ITI-112]
+        Note over EventConsumer,Repository: Retrieve Document
+        EventConsumer ->> Repository: Get Document [IHE MHD ITI-68]<br/>Current: PDF<br/>Future: NHS England Pathology Report (EU Laboratory Report)<br/>and EU Imaging Report 
+    end 
+```
+
+
+
 ## Security Considerations
 
 Local and regional integrations typically use an OAuth2 authorization flow.
