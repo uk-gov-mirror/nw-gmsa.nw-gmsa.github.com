@@ -1,18 +1,17 @@
-Instance: QueryExistingData
+Instance: HealthDataAPI
 InstanceOf: CapabilityStatement
 Title: "CapabilityStatement for NW GMSA Clinical Data Repository"
 Usage: #definition
 
 * description = """
-Is based on
-- [IHE Query for Existing Data for Mobile (QEDm)](https://build.fhir.org/ig/IHE/QEDm/branches/master/PCC-44.html)
+Is based on [EURIDICE Health Data API](https://euridice.org/eu-health-data-api/), which we are using as FHIR R4 version of [Care Connect API](https://nhsconnect.github.io/CareConnectAPI/)
 
 The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor](https://editor.swagger.io/)
 """
-* name = "QueryExistingData"
+* name = "EURIDICE Health Data API"
 * status = #draft
 * experimental = false
-* date = "2025-07-11"
+* date = "2026-03-08"
 * kind = #capability
 * fhirVersion = #4.0.1
 * format[+] = #application/fhir+xml

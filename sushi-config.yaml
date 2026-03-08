@@ -252,6 +252,7 @@ menu:
     Patient Demographics Query for Mobile [PDQm]: PDQm.html
     Query Summary Data [MHD]: MHD.html
     Query Detailed Data [QEDm]: QEDm.html
+    Health Data API: CapabilityStatement-HealthDataAPI.html
     Authorisation [IUA] : IUA.html
 ##    Work Order Management [LAB-4]: LAB-4.html
 ##    Test Results Management [LAB-5]: LAB-5.html
