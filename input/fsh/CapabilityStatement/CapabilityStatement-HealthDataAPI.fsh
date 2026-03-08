@@ -22,6 +22,47 @@ The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor]
     * service = http://terminology.hl7.org/CodeSystem/restful-security-service#OAuth
     * description = "Recommend [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html)"
 
+// Patient
+
+* insert ResourceWithExpectation(#DocumentReference, DocumentReference, #SHALL)
+* rest.resource[=]
+  * documentation = """
+  EURIDICE Patient Matching - IHE  [Find Document References [ITI-67]](https://profiles.ihe.net/ITI/MHD/ITI-67.html)
+  """
+
+* insert InteractionWithExpectation(#read, #SHALL)
+* insert InteractionWithExpectation(#search-type, #SHALL)
+
+* insert SearchParamWithExpectation(_id, #token, #SHALL)
+* insert WithSearchParamDocumentation()
+
+* insert SearchParamWithExpectation(active, #token, #SHALL)
+* insert WithSearchParamDocumentation(Whether the patient record is active)
+
+* insert SearchParamWithExpectation(family, #string, #SHALL)
+* insert WithSearchParamDocumentation(A portion of the family name of the patient)
+
+* insert SearchParamWithExpectation(given, #string, #SHALL)
+* insert WithSearchParamDocumentation(A portion of the given name of the patient)
+
+* insert SearchParamWithExpectation(identifier, #token, #SHALL)
+* insert WithSearchParamDocumentation(A patient identifier)
+
+* insert SearchParamWithExpectation(telecom, #token, #SHALL)
+* insert WithSearchParamDocumentation(The value in any kind of telecom details of the patient)
+
+* insert SearchParamWithExpectation(birthdate, #date, #SHALL)
+* insert WithSearchParamDocumentation(The patient's date of birth)
+
+* insert SearchParamWithExpectation(address, #string, #SHALL)
+* insert WithSearchParamDocumentation([[A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text]])
+
+* insert SearchParamWithExpectation(gender, #token, #SHALL)
+* insert WithSearchParamDocumentation(Gender of the patient)
+
+//* insert SearchParamWithExpectation(mothersMaidenName, #token, #SHALL)
+//* insert WithSearchParamDocumentation()
+
 
 // Binary
 
@@ -104,7 +145,7 @@ The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor]
 * insert SearchParamWithExpectation(code, #token, #SHALL)
 * insert WithSearchParamDocumentation(The code of the observation type)
 
-* insert SearchParamWithExpectation(status, #status, #SHALL)
+* insert SearchParamWithExpectation(status, #token, #SHALL)
 * insert WithSearchParamDocumentation(The status of the observation type)
 
 * insert SearchParamWithExpectation(date, #date, #SHALL)
