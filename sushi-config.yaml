@@ -249,9 +249,9 @@ menu:
     Placer Order Management [LAB-1] HL7 FHIR: LAB-1.html
 ##    Filler Order Management [LAB-2]: LAB-2.html
     Order Results Management [LAB-3] HL7 FHIR: LAB-3.html
-    Patient Demographics Query for Mobile [PDQm]: PDQm.html
-    Query Summary Data [MHD]: MHD.html
-    Query Detailed Data [QEDm]: QEDm.html
+    Patient Matching [PDQm]: PDQm.html
+    Document Exchange [MHD]: MHD.html
+    Resource Access [QEDm]: QEDm.html
 ##    Health Data API: CapabilityStatement-HealthDataAPI.html
     Authorisation [IUA] : IUA.html
 ##    Work Order Management [LAB-4]: LAB-4.html

@@ -41,9 +41,10 @@ The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor]
   EURIDICE Document Exchange - IHE Mobile access to Health Documents (MHD) [Find Document References [ITI-67]](https://profiles.ihe.net/ITI/MHD/ITI-67.html)
   """
 
+* insert InteractionWithExpectation(#read, #SHALL)
 * insert InteractionWithExpectation(#search-type, #SHALL)
 
-// ServiceRequest
+// DiagnosticReport
 
 * insert ResourceWithExpectation(#DiagnosticReport, DiagnosticReport, #SHALL)
 * rest.resource[=]
@@ -59,6 +60,52 @@ The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor]
 
 * insert SearchParamWithExpectation(code, #token, #SHALL)
 * insert WithSearchParamDocumentation(The code of the observation type)
+
+* insert SearchParamWithExpectation(date, #date, #SHALL)
+* insert WithSearchParamDocumentation([[Obtained date/time. If the obtained element is a period, a date that falls in the period. The date modifiers ge,le,gt,lt SHALL be supported.]])
+
+* insert SearchParamWithExpectation(patient, #reference, #SHALL)
+* insert WithSearchParamDocumentation(Search by subject - a patient)
+
+* insert SearchParamCombinationWithExpectation(#SHALL)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(category)
+
+* insert SearchParamCombinationWithExpectation(#SHALL)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(category)
+* insert RequiringSearchParam(code)
+
+* insert SearchParamCombinationWithExpectation(#SHALL)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(category)
+* insert RequiringSearchParam(date)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(category)
+* insert RequiringSearchParam(code)
+* insert RequiringSearchParam(date)
+
+// Observation
+
+* insert ResourceWithExpectation(#Observation, Observation, #SHALL)
+* rest.resource[=]
+  * documentation = """
+  EURIDICE Resource access - Query for Existing Data for Mobile (QEDm) [Mobile Query Existing Data [PCC-44]](https://build.fhir.org/ig/IHE/QEDm/branches/master/PCC-44.html)
+  """
+
+* insert InteractionWithExpectation(#read, #SHALL)
+* insert InteractionWithExpectation(#search-type, #SHALL)
+
+* insert SearchParamWithExpectation(category, #token, #SHALL)
+* insert WithSearchParamDocumentation(The classification of the type of observation)
+
+* insert SearchParamWithExpectation(code, #token, #SHALL)
+* insert WithSearchParamDocumentation(The code of the observation type)
+
+* insert SearchParamWithExpectation(status, #status, #SHALL)
+* insert WithSearchParamDocumentation(The status of the observation type)
 
 * insert SearchParamWithExpectation(date, #date, #SHALL)
 * insert WithSearchParamDocumentation([[Obtained date/time. If the obtained element is a period, a date that falls in the period. The date modifiers ge,le,gt,lt SHALL be supported.]])
