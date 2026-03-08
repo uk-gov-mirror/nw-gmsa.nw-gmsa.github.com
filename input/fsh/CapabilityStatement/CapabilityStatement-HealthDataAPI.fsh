@@ -69,3 +69,19 @@ The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor]
 * insert SearchParamCombinationWithExpectation(#SHALL)
 * insert RequiringSearchParam(patient)
 * insert RequiringSearchParam(category)
+
+* insert SearchParamCombinationWithExpectation(#SHALL)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(category)
+* insert RequiringSearchParam(code)
+
+* insert SearchParamCombinationWithExpectation(#SHALL)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(category)
+* insert RequiringSearchParam(date)
+
+* insert SearchParamCombinationWithExpectation(#SHOULD)
+* insert RequiringSearchParam(patient)
+* insert RequiringSearchParam(category)
+* insert RequiringSearchParam(code)
+* insert RequiringSearchParam(date)

@@ -82,8 +82,6 @@ The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor]
 * insert SearchParamWithExpectation(_lastUpdated, #date, #SHALL)
 * insert WithSearchParamDocumentation(The data the message was last updated)
 
-
-
 * rest[=].interaction[+]
   * code = #transaction
 
