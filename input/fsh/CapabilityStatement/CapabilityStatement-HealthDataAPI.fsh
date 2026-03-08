@@ -24,10 +24,10 @@ The `OpenAPISwagger Definition file` below, can be viewed using [Swagger Editor]
 
 // Patient
 
-* insert ResourceWithExpectation(#DocumentReference, DocumentReference, #SHALL)
+* insert ResourceWithExpectation(#Patient, Patient, #SHALL)
 * rest.resource[=]
   * documentation = """
-  EURIDICE Patient Matching - IHE  [Find Document References [ITI-67]](https://profiles.ihe.net/ITI/MHD/ITI-67.html)
+  EURIDICE Patient Matching - IHE Patient Demographics Query for Mobile (PDQm) [Mobile Patient Demographics Query [ITI-78]](https://profiles.ihe.net/ITI/PDQm/ITI-78.html)
   """
 
 * insert InteractionWithExpectation(#read, #SHALL)

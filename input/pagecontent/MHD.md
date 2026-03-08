@@ -14,6 +14,16 @@ The search parameters are based on [FHIR Search](https://hl7.org/fhir/R4/search.
 
 [Retrieve Document [ITI-68]](https://profiles.ihe.net/ITI/MHD/ITI-68.html)
 
+<table style="">
+    <tr>
+        <td>
+            <div class="alert alert-danger" role="alert">
+            <b>FHIR CapabilityStatement:</b> <a href="CapabilityStatement-HealthDataAPI.html#Binary1-2" _target="_blank">Binary</a> 
+            </div>
+        </td>
+	</tr>
+</table>
+
 ### Read
 
 <div class="alert alert-success" role="alert">
@@ -21,11 +31,19 @@ GET [base]/Binary/{id}
 </div>
 
 ## DocumentReference [ITI-67]
+<div class="alert alert-danger" role="alert">
+This is currently being elaborated and subject to change.
+</div>
 
 [Find Document References [ITI-67]](https://profiles.ihe.net/ITI/MHD/ITI-67.html)
 
 <table style="">
     <tr>
+        <td>
+            <div class="alert alert-danger" role="alert">
+            <b>FHIR CapabilityStatement:</b> <a href="CapabilityStatement-HealthDataAPI.html#DocumentReference1-3" _target="_blank">DocumentReference</a> 
+            </div>
+        </td>
         <td>
             <div class="alert alert-info" role="alert">
             <b>FHIR Profile:</b> <a href="StructureDefinition-DocumentReference.html" _target="_blank">DocumentReference</a> 

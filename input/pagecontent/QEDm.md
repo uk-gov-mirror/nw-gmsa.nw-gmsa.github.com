@@ -59,6 +59,11 @@ Accept: application/fhir+json
 <table style="">
     <tr>
         <td>
+            <div class="alert alert-danger" role="alert">
+            <b>FHIR CapabilityStatement:</b> <a href="CapabilityStatement-HealthDataAPI.html#DiagnosticReport1-4" _target="_blank">DiagnosticReport</a> 
+            </div>
+        </td>
+        <td>
             <div class="alert alert-info" role="alert">
             <b>FHIR Profile:</b> <a href="StructureDefinition-DiagnosticReport.html" _target="_blank">DiagnosticReport</a> 
             </div>
@@ -169,6 +174,11 @@ Accept: application/fhir+json
 
 <table style="">
     <tr>
+        <td>
+            <div class="alert alert-danger" role="alert">
+            <b>FHIR CapabilityStatement:</b> <a href="CapabilityStatement-HealthDataAPI.html#Observation1-5" _target="_blank">Observation</a> 
+            </div>
+        </td>
         <td>
           <div class="alert alert-info" role="alert">
             <b>FHIR Profile:</b> <a href="StructureDefinition-Observation.html" _target="_blank">Observation</a> 

@@ -14,6 +14,11 @@ The search parameters are based on [FHIR Search](https://hl7.org/fhir/R4/search.
 <table style="">
     <tr>
         <td>
+            <div class="alert alert-danger" role="alert">
+            <b>FHIR CapabilityStatement:</b> <a href="CapabilityStatement-HealthDataAPI.html#Patient1-1" _target="_blank">Patient</a> 
+            </div>
+        </td>
+        <td>
             <div class="alert alert-info" role="alert">
             <b>FHIR Profile:</b> <a href="StructureDefinition-Patient.html" _target="_blank">Patient</a> 
             </div>
