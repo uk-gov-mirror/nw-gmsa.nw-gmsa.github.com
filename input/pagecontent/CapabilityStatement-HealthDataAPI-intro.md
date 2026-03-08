@@ -10,7 +10,7 @@ This API for the NW GMSA Clinical Data Repository is based on the following API 
 
 The search parameters are based on [FHIR Search](https://hl7.org/fhir/R4/search.html) which provides detailed description of the parameters and value types.
 
-## Document Exchange
+## Document Exchange - IHE Mobile access to Health Documents [MHD] 
 
 ### Binary [ITI-68]
 
