@@ -13,14 +13,14 @@ subgraph Producer;
     rB[Consumer Business Logic]
 
     rest --> rB
-    Agg["FHIR Document\n(Aggregation Layer)"]
+    Agg["FHIR Document<br/>(Aggregation Layer)"]
     Agg --> s
 end 
 
 subgraph Consumer
     B[Business Logic]
     d[Desination]
-    B --> |"FHIR RESTful (PUT/POST)/nOptional"| d
+    B --> |"FHIR RESTful (PUT/POST)<br/>Optional"| d
     d --> restC["FHIR RESTful (GET)"]
 end 
 
