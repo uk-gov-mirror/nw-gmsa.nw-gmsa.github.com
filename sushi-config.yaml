@@ -171,6 +171,9 @@ pages:
   design.md:
     title: Design
     generation: markdown
+  exchange.md:
+    title: Exchange
+    generation: markdown
 
 resources:
   Questionnaire/GenomicTestOrder:
@@ -246,6 +249,7 @@ menu:
     Digital Consent (BPPC and PCF): BPPC.html
 
   Interfaces (Volume 2):
+    Exchange Overview: exchange.html
     Placer Order Management [LAB-1] HL7 FHIR: LAB-1.html
 ##    Filler Order Management [LAB-2]: LAB-2.html
     Order Results Management [LAB-3] HL7 FHIR: LAB-3.html

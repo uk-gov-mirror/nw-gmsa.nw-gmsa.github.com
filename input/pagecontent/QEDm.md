@@ -242,61 +242,6 @@ Accept: application/fhir+json
 ```
 [Response](Bundle-92a0a6c6-404f-4347-8de4-fa1c457a037e.json.html)
 
-
-## Patient
-
-
-<table style="">
-    <tr>
-        <td>
-           <div class="alert alert-info" role="alert">
-            <b>FHIR Profile:</b> <a href="StructureDefinition-Patient.html" _target="_blank">Patient</a> 
-            </div>
-        </td>
-        <td>
-            <div class="alert alert-secondary" role="alert">
-                <b>Related to HL7 v2 Segment:</b> <a href="hl7v2.html#pid" _target="_blank">PID</a> 
-            </div>
-        </td>
-	</tr>
-</table>
-
-
-### Read
-
-<div class="alert alert-success" role="alert">
-GET [base]/Patient/{id}
-</div>
-
-### Search
-
-<div class="alert alert-success" role="alert">
-GET [base]/Patient?[parameter]=[value]]
-</div>
-
-| Parameter    | Type      | Search                                         | Note                               |
-|--------------|-----------|------------------------------------------------|------------------------------------|
-| _lastUpdated | date      | GET [base]/Patient?_lastUpdated=[date]      | Date the resource was last updated |
-| identifier   | token     | GET [base]/Patient?identifier=[system&#124;][code] | A patient identifier               |
-
-#### Example
-
-Searching for a Patient via NHS Number.
-```
-GET [base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9449305552
-Accept: application/fhir+json
-```
-[Response](Bundle-PDQSearchResults.json.html)
-
----
-
-Searching for a Patient via Medical Record Number.
-```
-GET [base]/Patient?identifier=http://www.acme.org/patient/identifier|A12356565
-Accept: application/fhir+json
-```
-[Response](Bundle-c39fc97b-e99f-47b2-8660-d3d6b8840d20.json.html)
-
 ## ServiceRequest
 
 <table style="">
