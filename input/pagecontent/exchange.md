@@ -5,8 +5,8 @@ subgraph Producer;
     s[Source]
     s --> v2E
     s --> v2D
-    v2E["HL7 v2 (Event)"]
-    v2D["HL7 v2 (Document)"]
+    v2E["HL7 v2 Event Message"]
+    v2D["HL7 v2 Document Message"]
     s --> fMessage["FHIR Message (Document)"]
     s --> fEvent["FHIR Message (Event) and Subscription"]
     s --> rest["FHIR RESTful (PUT/POST) and Transaction"]
