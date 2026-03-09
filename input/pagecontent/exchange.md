@@ -20,7 +20,7 @@ end
 subgraph Consumer
     B[Business Logic]
     d[Desination]
-    B --> |"FHIR RESTful (PUT/POST)\nOptional"| d
+    B --> |"FHIR RESTful (PUT/POST)/nOptional"| d
     d --> restC["FHIR RESTful (GET)"]
 end 
 
