@@ -130,7 +130,7 @@ pages:
     title: Support
     generation: markdown
   security.md:
-    title: Security
+    title: API Security
     generation: markdown
   deployment.md:
     title: Deployment
