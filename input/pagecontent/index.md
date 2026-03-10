@@ -15,6 +15,23 @@ NHS North West Genomics is a new regional NHS service that consolidates clinical
 
 As part of the service transition, existing systems for electronic test ordering and reporting will be enhanced through the introduction of a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable seamless data exchange between local clinical systems and regional genomic laboratory services.
 
+## Process Overview
+
+```mermaid
+sequenceDiagram
+    participant clinician as Order Placer<br/>Clinician (EHR)
+    participant nurse as Specimen Collection<br/>Clinician/Nurse
+    participant LIMS as Order Filler<br/>LIMS 
+
+    clinician ->> clinician: Creates Order
+    clinician ->> LIMS: Sends Laboratory Order
+    clinician ->> nurse: Requests specimen collection
+    nurse ->> nurse: Collect Specimen
+    nurse ->> LIMS: Ship Specimen
+    LIMS ->> LIMS: Perform Test
+    LIMS ->> LIMS: Write Report
+    LIMS ->> clinician: Sends Laboratory Report
+```
 ## Design Overview
 
 ### Standardising HL7-based Workflows
