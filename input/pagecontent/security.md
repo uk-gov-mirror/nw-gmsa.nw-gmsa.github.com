@@ -83,7 +83,7 @@ See [IHE Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/volu
 graph TD;
 
 creator[Audit Creator]
-repository[Audit repository]
+repository[(Audit repository)]
 consumer[Audit Consumer]
 
 creator --> |"Record Audit Event [ITI-20]"| repository
