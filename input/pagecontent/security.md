@@ -2,20 +2,20 @@
 ```mermaid
 graph LR;
 
-consumer@{shape: circle, label: "Data Consumer"}
+consumer([Data Consumer])
 
 subgraph APIGateway
     enc[Encryption]
     rate{Rate Limiting}
     id[Identification and Authentication] 
 end
+
 subgraph DataPlatform
     auth{Access Control and Authorisation}
     audit1[Audit Logging]
-    api@{shape: cyl, label: "FHIR Repository"}
+    api[(FHIR Repository)]
     consent[Consent]
 end
-
 
 consumer --> |request| enc
 enc --> rate
@@ -83,7 +83,7 @@ See [IHE Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/volu
 graph TD;
 
 creator[Audit Creator]
-repository@{shape: cloud, label: "Audit repository"}
+repository[Audit repository]
 consumer[Audit Consumer]
 
 creator --> |"Record Audit Event [ITI-20]"| repository
