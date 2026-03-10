@@ -32,9 +32,9 @@ audit1 --> |response| consumer
 
 ## Encryption
 
-Protocols: TLS 1.2 is the minimum; TLS 1.3 is recommended.
-Prohibitions: TLS 1.0, 1.1, and SSL are forbidden.
-Authentication: Mutual authentication (TLS-MA) is frequently required for API interactions. Note NHS England APIM recommends using Signed JWT Authentication.
+- Protocols: TLS 1.2 is the minimum; TLS 1.3 is recommended.
+- Prohibitions: TLS 1.0, 1.1, and SSL are forbidden.
+- Authentication: Mutual authentication (TLS-MA) is frequently required for API interactions. Note NHS England APIM recommends using Signed JWT Authentication.
 
 ## Rate Limiting
 
