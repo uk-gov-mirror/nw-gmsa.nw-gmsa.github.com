@@ -29,6 +29,39 @@ api --> audit1
 audit1 --> |response| consumer
 ```
 
+```mermaid
+sequenceDiagram
+
+participant consumer as Data Consumer
+participant enc as Encryption
+participant rate as Rate Limiting
+participant id as Identification and Authentication 
+participant auth as Access Control and Authorisation
+participant audit1 as Audit Logging
+participant api as FHIR Repository
+
+
+consumer ->> enc: Request
+enc ->> rate: Request
+alt Ok
+    rate ->> id: Request <br/> (authentication is a separate process)
+    alt Ok 
+       id ->> auth: Request 
+       alt Ok
+            auth ->> audit1: Request
+            audit1 ->> api: Request
+            api -->> audit1: Response
+            audit1 -->> consumer: Response
+       else Issue 
+        auth -->> consumer : 403 Forbidden error
+       end 
+    else Issue
+       id -->> consumer : 401 Unauthorized error
+    end 
+else Issue
+    rate -->> consumer: 503 Service Unavailable error 
+end  
+```
 
 ## Encryption
 
