@@ -2,23 +2,22 @@
 ```mermaid
 graph LR;
 
-consumer[Data Consumer]
+consumer@{shape: circle, label: "Data Consumer"}
 
 subgraph APIGateway
     enc[Encryption]
     rate{Rate Limiting}
     id[Identification and Authentication] 
 end
-
 subgraph DataPlatform
     auth{Access Control and Authorisation}
     audit1[Audit Logging]
-    api[FHIR Repository]
+    api@{shape: cyl, label: "FHIR Repository"}
     consent[Consent]
 end
 
 
-consumer --> enc
+consumer --> |request| enc
 enc --> rate
 rate --> |ok| id
 rate --> |busy| consumer
@@ -27,7 +26,7 @@ audit1 --> auth
 auth --> |accept| api
 auth --> |reject| audit1
 api --> audit1
-audit1 --> consumer
+audit1 --> |response| consumer
 ```
 
 
