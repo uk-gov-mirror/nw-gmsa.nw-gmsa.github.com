@@ -33,6 +33,7 @@ Usage: #example
 
 * entity[restful]
   * type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
+  * role = http://terminology.hl7.org/CodeSystem/object-role#4 "Domain Resource"
   * query = "U2VydmljZVJlcXVlc3Q/cGF0aWVudD1QYXRpZW50LU9jdGF2aWFDSElTTEVUVC05NDQ5MzA1NTUy"
 
 * entity[transaction]

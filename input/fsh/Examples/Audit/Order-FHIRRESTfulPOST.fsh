@@ -38,6 +38,10 @@ Usage: #example
   * type = https://profiles.ihe.net/ITI/BALP/CodeSystem/BasicAuditEntityType#XrequestId
   * what.identifier.value = "407094"
 
+* entity[restful]
+  * type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2
+  * role = http://terminology.hl7.org/CodeSystem/object-role#4 "Domain Resource"
+
 * entity[patient]
   * type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1
   * role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
