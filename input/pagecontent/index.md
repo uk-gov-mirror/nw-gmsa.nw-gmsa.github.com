@@ -40,6 +40,10 @@ sequenceDiagram
 ```
 ## Design Overview
 
+The technical design focuses on automating interactions between the order placer and the order filler, while enabling genomic data and related documents to be shared through a FHIR repository for access by other clinicians and healthcare providers.
+
+The design is based on international standards, including several from Integrating the Healthcare Enterprise (IHE) as well as technical standards from Health Level Seven International (HL7). It also aligns with European HL7 and IHE technical guidance https://euridice.org/ and complies with NHS England data standards https://www.datadictionary.nhs.uk/.
+
 ### Standardising HL7-based Workflows
 
 Although NW GMSA is hosted by Manchester University NHS Foundation Trust, it operates in practice as a distinct organisation. It has its own Trust Integration Engine (TIE), referred to as the Regional Integration Engine (RIE).
