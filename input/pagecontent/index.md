@@ -17,6 +17,12 @@ As part of the service transition, existing systems for electronic test ordering
 
 ## Process Overview
 
+The laboratory testing workflow begins when a clinician, known as the **Order Placer**, creates a request for a procedure in the electronic health record (EHR). In genomics, this order may request testing for a specific genetic or genomic condition. The order is then sent or shared with the laboratory, which acts as the **Order Filler**.
+
+A separate request is typically issued for **Specimen Collection**. This step may involve collecting a blood sample or performing a biopsy. Once the specimen is collected, it is shipped to the laboratory. The shipment is often accompanied by a printed laboratory order, and both the specimen and the order are usually labeled with barcodes to ensure accurate identification and tracking.
+
+After the laboratory receives both the order and the specimen, the requested tests are performed. Based on the results, the laboratory prepares a report summarizing the findings. This laboratory report is then sent or shared with the original Order Placer clinician.
+
 ```mermaid
 sequenceDiagram
     participant clinician as Order Placer<br/>Clinician (EHR)
