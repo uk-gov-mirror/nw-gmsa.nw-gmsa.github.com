@@ -1,6 +1,6 @@
 
 ```mermaid
-graph LR;
+graph;
 
 consumer((Data Consumer))
 
