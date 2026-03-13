@@ -142,7 +142,7 @@ HL7 FHIR has several interaction styles which can replace HL7 v2.
 graph LR;
 
 subgraph Producer;
-    s[Source]
+    s[Data Source]
     s --> v2E
 
     v2E["HL7 v2 Event Message"]
@@ -151,7 +151,7 @@ end
 
 subgraph Consumer
     B[Business Logic]
-    d[Desination]
+    d[Data Consumer]
     B --> d
 end 
 
