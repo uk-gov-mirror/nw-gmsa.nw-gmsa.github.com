@@ -10,10 +10,10 @@ The architecture consists of three primary components:
    Routes and standardises messaging between organisations.
 
 2. **Genomic Data Repository (GDR)**  
-   A central read-only repository for genomic data and reports.
+   A central read-only repository for genomic data and reports. Also known as a **Data Platform**
 
 3. **API Gateway (APIM)**  
-   Provides external data access to the GDR and provides a secure API for clinical systems.
+   Provides external data access to the GDR and also provides [API Security](api-security.html).
 
 Together these components form the **Health Information Exchange (HIE)**
 for the North West Genomic Medicine Service Alliance.
@@ -34,7 +34,7 @@ Problems:
 
 - High maintenance cost
 - Complex transformation logic
-- Difficult onboarding of new systems
+- Challenging onboarding of new systems
 - Limited use clinical terminology
 
 ## RIE Integration Model

@@ -129,7 +129,7 @@ pages:
   support.md:
     title: Support
     generation: markdown
-  security.md:
+  api-security.md:
     title: API Security
     generation: markdown
   deployment.md:
@@ -245,7 +245,7 @@ menu:
     Health Information Exchange (HIE): HIE.html
     Care Services Discovery (mCSD): mCSD.html
     Patient Administration (PAM): PAM.html
-    API Security: security.html
+    API Security: api-security.html
   Interfaces (Volume 2):
     Exchange Overview: exchange.html
     Placer Order Management [LAB-1] HL7 FHIR: LAB-1.html
