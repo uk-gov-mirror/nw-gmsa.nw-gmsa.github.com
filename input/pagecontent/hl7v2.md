@@ -504,10 +504,10 @@ Specimen Type is SNOMED CT, not HL7 v2 Table 0487, for conversion to SNOMED see 
 | Field HL7 | Fieldname                           | Data Type | Optionality | Identifier Type or ValueSet                               | Example Values                       |
 |-----------|-------------------------------------|-----------|-------------|-----------------------------------------------------------|--------------------------------------|
 | TXA-1     | Set ID - TXA                        |           | R           |                                                           | 1                                    |
-| TXA.2     | Document Type                       | [CWE](#cwe)       | R           | [Document Entry Type](ValueSet-document-entry-type.html)  | 1054161000000101^Genetic report^SNM3 |
+| TXA-2     | Document Type                       | [CWE](#cwe)       | R           | [Document Entry Type](ValueSet-document-entry-type.html)  | 1054161000000101^Genetic report^SNM3 |
 | TXA-4     | Activity Date/Time                  | TS        | R           |                                                           |                                      |
-| TXA.5     | Primary Activity Provider Code/Name | XCN       |             |                                                           |                                      |
-| TXA.12    | Unique Document Number              | [EI](#ei) | R           |                                                           | 1001166717^699X0                     |
+| TXA-5     | Primary Activity Provider Code/Name | XCN       |             |                                                           |                                      |
+| TXA-12    | Unique Document Number              | [EI](#ei) | R           |                                                           | 1001166717^699X0                     |
 | TXA-17    | Document Completion Status          |           | R           |                                                           | F                                    |
 | TXA-24    | Folder Assignment                   | [CWE](#cwe)       |             | [DocumentEntry Class](ValueSet-document-entry-class.html) |                                      |                    
 | TXA-25    | Document Title                      | ST        |             |                                                           |                                      |
