@@ -35,6 +35,7 @@ Problems:
 - High maintenance cost
 - Complex transformation logic
 - Difficult onboarding of new systems
+- Limited use clinical terminology
 
 ## RIE Integration Model
 
@@ -46,7 +47,7 @@ Benefits:
 
 - Reduced integration complexity
 - Centralised routing and ordchestration
-- Standardised message formats
+- Standardised message formats and data standards
 
 ## Architectural Principles
 
@@ -143,11 +144,9 @@ HL7 FHIR has several interaction styles which can replace HL7 v2.
 - [FHIR Document](https://hl7.org/fhir/R4/documents.html) Clinical documents are the FHIR version of HL7 v3 Clinical Document Architecture (CDA).
 
 
-### Messaging
+### Event Message – HL7 v2 Event Message and FHIR Message (Event) and Subscription
 
-#### Event Message – HL7 v2 Event Message and FHIR Message (Event) and Subscription
-
-##### Advantages
+#### Advantages
 
 - High level of support in secondary care
 - Scales well in large enterprise environments and has proven to be reliable for health administration events.
@@ -277,9 +276,7 @@ classDef pink fill:#F8CECC
 class rest,rB pink
 ```
 
-## Data Sharing
-
-### FHIR RESTful (GET)
+### Data and Document Sharing - FHIR RESTful (GET)
 
 #### Advantages
 
@@ -323,7 +320,7 @@ class restC,v2E,fEvent,Agg green
 
 ```
 
-### Clinical Documents - FHIR Document
+### Document Sharing Format - Clinical Documents (FHIR Document)
 
 #### Advantages
 
