@@ -92,32 +92,8 @@ Two complementary exchange patterns are used:
 {:.grid}
 
 
-```mermaid
-graph TD
-
-EPR[EPR / Order Placer]
-TIE["Trust Integration Engine (TIE)"]
-subgraph HIE["Health Information Exchange (HIE)"]
-    RIE["Regional Integration Engine (RIE)"]
-    GDR["Genomic Data Repository (GDR)"]
-   APIM["API Gateway (APIM)"]
-end
-LIMS[LIMS / Order Filler]
-DC["Data Consumer"]
-
-
-EPR --> |Document Messaging| TIE
-TIE --> RIE
-RIE --> |Document Messaging| LIMS
-RIE --> |"RESTful API (GET/PUT/POST/DELETE)"| GDR
-RIE --> |Event Messaging| EPR
-EPR --> |"RESTful API (GET)"| APIM
-DC --> |"RESTful API (GET)"| APIM
-APIM --> |"RESTful API (GET)"| GDR 
-
-classDef purple fill:#E1D5E7;
-class EPR,TIE,LIMS,DC purple
-```
+<img style="padding:3px;width:80%;" src="HIE.png" alt="NHS England NRL Design"/>
+<br clear="all">
 
 ## HL7 v2 and FHIR Exchange
 
