@@ -12,7 +12,7 @@ The architecture consists of three primary components:
 2. **Genomic Data Repository (GDR)**  
    A central read-only repository for genomic data and reports.
 
-3. **API Management (APIM)**  
+3. **API Gateway (APIM)**  
    Provides external data access to the GDR and provides a secure API for clinical systems.
 
 Together these components form the **Health Information Exchange (HIE)**
@@ -96,20 +96,23 @@ graph TD
 
 EPR[EPR / Order Placer]
 TIE["Trust Integration Engine (TIE)"]
-RIE["Regional Integration Engine (RIE)"]
+subgraph HIE["Health Information Exchange (HIE)"]
+    RIE["Regional Integration Engine (RIE)"]
+    GDR["Genomic Data Repository (GDR)"]
+   APIM["API Gateway (APIM)"]
+end
 LIMS[LIMS / Order Filler]
-GDR["Genomic Data Repository (GDR)"]
 DC["Data Consumer"]
-HIE["API Management (APIM)"]
+
 
 EPR --> |Document Messaging| TIE
 TIE --> RIE
 RIE --> |Document Messaging| LIMS
-RIE --> GDR
+RIE --> |"RESTful API (GET/PUT/POST/DELETE)"| GDR
 RIE --> |Event Messaging| EPR
-EPR --> |RESTful API| HIE
-DC --> |RESTful API| HIE
-HIE -->|RESTful API| GDR 
+EPR --> |"RESTful API (GET)"| APIM
+DC --> |"RESTful API (GET)"| APIM
+APIM --> |"RESTful API (GET)"| GDR 
 
 classDef purple fill:#E1D5E7;
 class EPR,TIE,LIMS,DC purple
