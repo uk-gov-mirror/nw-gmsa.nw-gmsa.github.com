@@ -1,3 +1,130 @@
+## Genomic Data Exchange Overview
+
+The North West Genomics data exchange architecture enables secure and
+standardised communication between NHS Trust clinical systems and
+regional genomic laboratory services.
+
+The architecture consists of three primary components:
+
+1. **Regional Integration Engine (RIE)**  
+   Routes and standardises messaging between organisations.
+
+2. **Genomic Data Repository (GDR)**  
+   A central read-only repository for genomic data and reports.
+
+3. **API Management (APIM)**  
+   Provides external data access to the GDR and provides a secure API for clinical systems.
+
+Together these components form the **Health Information Exchange (HIE)**
+for the North West Genomic Medicine Service Alliance.
+
+Key goals:
+
+- Reduce point-to-point integrations
+- Standardise HL7 and FHIR interactions
+- Enable cross-organisation genomic data sharing
+- Support modern event-driven workflows
+
+## Traditional Integration Model
+
+Historically, each NHS Trust integrated directly with laboratory systems.
+This resulted in multiple bespoke integrations.
+
+Problems:
+
+- High maintenance cost
+- Complex transformation logic
+- Difficult onboarding of new systems
+
+## RIE Integration Model
+
+The Regional Integration Engine introduces a **hub-and-spoke model**.
+
+Each participant integrates once with the RIE.
+
+Benefits:
+
+- Reduced integration complexity
+- Centralised routing and ordchestration
+- Standardised message formats
+
+## Architectural Principles
+
+The exchange architecture is based on several core principles.
+
+### Hub-and-Spoke Integration
+
+All participating organisations integrate with a Regional Integration Engine (RIE) rather than building direct integrations with each other.
+
+This approach:
+- reduces integration complexity
+- centralises routing and transformation
+- simplifies onboarding of new systems
+
+### Standards-Based Interoperability
+
+The exchange uses widely adopted healthcare interoperability standards including:
+
+- HL7 v2 messaging
+- HL7 FHIR APIs
+- SNOMED CT terminology
+- IHE interoperability profiles
+
+### Event-Driven Workflow
+
+Modern workflows are supported through:
+
+- FHIR Tasks
+- event notifications
+- workflow status updates
+
+This enables clinical systems to respond dynamically to laboratory workflow events.
+
+### Separation of Messaging and Data Access
+
+Two complementary exchange patterns are used:
+
+| Pattern                 | Purpose |
+|-------------------------|---------|
+| Messaging |	Operational workflow communication |
+| APIs                    | Access to structured genomic data |
+{:.grid}
+
+
+```mermaid
+graph TD
+
+EPR[EPR / Order Placer]
+TIE["Trust Integration Engine (TIE)"]
+RIE["Regional Integration Engine (RIE)"]
+LIMS[LIMS / Order Filler]
+GDR["Genomic Data Repository (GDR)"]
+DC["Data Consumer"]
+HIE["API Management (APIM)"]
+
+EPR --> |Document Messaging| TIE
+TIE --> RIE
+RIE --> |Document Messaging| LIMS
+RIE --> GDR
+RIE --> |Event Messaging| EPR
+EPR --> |API| HIE
+DC --> |API| HIE
+HIE -->|API| GDR 
+
+classDef purple fill:#E1D5E7;
+class EPR,TIE,LIMS,DC purple
+```
+
+## HL7 v2 and FHIR Exchange
+
+Exhange has two high-level styles:
+
+- Messaging which sends data between applications/organisations. This breaks down into two sub-styles:
+  - Event Messaging which sends asynchronous event notifications between applications
+  - Document Messaging which sends structured clinical data between applications
+- Data Sharing which shares data between applications/organisations
+
+The general trend is to use FHIR RESTful (GET) for data sharing. 
 
 HL7 v2 is the most common exchange format for healthcare data. It has two basic interaction styles:
 
@@ -10,14 +137,14 @@ HL7 FHIR has several interaction styles which can replace HL7 v2.
 - [FHIR RESTful (GET)](https://hl7.org/fhir/R4/http.html) which provides a read only API to the source data. This is one of the most common interaction style using FHIR.
 - [FHIR Message (Event) and Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/) is a modernised version of HL7 v2 which focuses on event notifications only similar to HL7 v2 ADT and MDM_T01 events (but not orders and reports).
 - [FHIR RESTful (PUT/POST)](https://hl7.org/fhir/R4/http.html) which provides a read and write API to the desintiation data. Note this moves the consumer business logic to the consumer and so can be considered an anti-pattern for enterprise level exchanges.
+- [FHIR Document](https://hl7.org/fhir/R4/documents.html) Clinical documents are the FHIR version of HL7 v3 Clinical Document Architecture (CDA).
 
-Like HL7 v3 CDA, FHIR also supports a clinical document model called [FHIR Document](https://hl7.org/fhir/R4/documents.html)
 
-## Messaging
+### Messaging
 
-### Event Message – HL7 v2 Event Message and FHIR Message (Event) and Subscription
+#### Event Message – HL7 v2 Event Message and FHIR Message (Event) and Subscription
 
-#### Advantages
+##### Advantages
 
 - High level of support in secondary care
 - Scales well in large enterprise environments and has proven to be reliable for health administration events.
@@ -114,12 +241,13 @@ class v2D,fMessage yellow
 #### Advantages
 
 - Modern API restful API to populate a database/EHR
+- Suitable for internal data engineering
 
 #### Disadvantages
 
 - Business logic is in the consumer
 - Consumer data rules are with the producer
-- Does not scale well in large enterprise environments
+- Does not scale in large enterprise environments
 
 ```mermaid
 
