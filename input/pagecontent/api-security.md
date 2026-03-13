@@ -4,13 +4,13 @@ graph LR;
 
 consumer((Data Consumer))
 
-subgraph APIGateway
+subgraph APIGateway[API Gateway]
     enc[Encryption]
     rate[Rate Limiting]
     id[Identification and Authentication] 
 end
 
-subgraph DataPlatform
+subgraph DataPlatform[Data Platform]
     auth[Access Control and Authorisation]
     audit1[Audit Logging]
     api[(FHIR Repository)]
