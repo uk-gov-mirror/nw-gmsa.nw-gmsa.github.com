@@ -107,9 +107,9 @@ TIE --> RIE
 RIE --> |Document Messaging| LIMS
 RIE --> GDR
 RIE --> |Event Messaging| EPR
-EPR --> |API| HIE
-DC --> |API| HIE
-HIE -->|API| GDR 
+EPR --> |RESTful API| HIE
+DC --> |RESTful API| HIE
+HIE -->|RESTful API| GDR 
 
 classDef purple fill:#E1D5E7;
 class EPR,TIE,LIMS,DC purple
@@ -214,7 +214,7 @@ class restC,v2E,fEvent,Agg green
 graph LR;
 
 subgraph Producer;
-    s[Source]
+    s[Data Source]
     v2D["HL7 v2 Document Message"]
     s --> v2D
     s --> fMessage["FHIR Message (Document)"]
@@ -223,7 +223,7 @@ end
 
 subgraph Consumer
     B[Business Logic]
-    d[Desination]
+    d[Data Consumer]
     B --> d
 end 
 
@@ -254,7 +254,7 @@ class v2D,fMessage yellow
 graph LR;
 
 subgraph Producer;
-    s[Source]
+    s[Data Source]
      s --> rest["FHIR RESTful (PUT/POST) and Transaction"]
     rB[Business Logic]
 
@@ -264,7 +264,7 @@ end
 
 subgraph Consumer
 
-    d[Desination]
+    d[Data Consumer]
 end 
 
 rB --> d
