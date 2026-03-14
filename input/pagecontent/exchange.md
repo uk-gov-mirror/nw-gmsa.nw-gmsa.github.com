@@ -214,7 +214,7 @@ classDef yellow fill:#FFF2CC;
 class v2D,fMessage yellow
 ```
 
-### FHIR RESTful (PUT/POST) and Transaction
+### Document/Event Message - FHIR RESTful (PUT/POST) and Transaction
 
 #### Advantages
 
@@ -223,8 +223,8 @@ class v2D,fMessage yellow
 
 #### Disadvantages
 
-- Business logic is in the consumer
-- Consumer data rules are with the producer
+- Data Consumer Business logic plus data rules are placed with the Data Source; this can be challenging to manage.
+- The number of RESTful API interacctions can be quite high
 - Does not scale in large enterprise environments
 
 ```mermaid
