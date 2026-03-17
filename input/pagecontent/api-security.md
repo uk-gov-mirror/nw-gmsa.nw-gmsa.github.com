@@ -1,6 +1,6 @@
 
 ```mermaid
-graph;
+graph LR
 
 consumer((Data Consumer))
 
@@ -24,6 +24,7 @@ id --> audit1
 audit1 --> auth
 auth -->  api
 api --> audit1
+
 
 ```
 
