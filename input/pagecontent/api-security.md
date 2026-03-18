@@ -64,9 +64,15 @@ end
 
 ## Encryption
 
-- Protocols: TLS 1.2 is the minimum; TLS 1.3 is recommended.
-- Prohibitions: TLS 1.0, 1.1, and SSL are forbidden.
-- Authentication: Mutual authentication (TLS-MA) is frequently required for API interactions. Note NHS England APIM recommends using Signed JWT Authentication.
+| Transport level integration | Requirement | 
+|-----------------------------|-------------|
+| Protocols | TLS 1.2 is the minimum; TLS 1.3 is recommended. |
+| Prohibitions | TLS 1.0, 1.1, and SSL are forbidden. |
+| Authentication | Mutual authentication (TLS-MA) is frequently required for API interactions. Note NHS England APIM recommends using Signed JWT Authentication. |
+| Ciphers | TLS_AES_256_GCM_SHA384 |
+| Mutual Authentication | MUST only accept client certificates issued by the NHS England Digital Deployment Issue and Resolution (DIR) team <br/>MUST only accept client certificates with a valid Spine ‘chain of trust’ (that is, linked to the Spine SubCA and RootCA)<br/> MUST only accept client certificates which have not expired or been revoked |
+| Content compression | MUST support GZIP compression |
+| Transfer encoding | MUST support chunked transfer encoding |
 
 ## Rate Limiting
 
@@ -77,7 +83,7 @@ TODO
 Only system-to-system identification is currently supported.
 NHS England identification: 
 
-- Pracitioner openID [NHS England CIS2 Authentication](https://digital.nhs.uk/services/care-identity-service/applications-and-services/cis2-authentication)
+- Practitioner openID [NHS England CIS2 Authentication](https://digital.nhs.uk/services/care-identity-service/applications-and-services/cis2-authentication)
 - Patient openID [NHS England NHS login](https://digital.nhs.uk/services/nhs-login)
 
 ## Access Control and Authorisation
