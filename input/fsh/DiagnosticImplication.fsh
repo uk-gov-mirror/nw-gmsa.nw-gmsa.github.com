@@ -26,7 +26,7 @@ Description:    """
 * component[clinical-significance].code ^short = "53037-8"
 * component[clinical-significance].value[x] only CodeableConcept or Quantity
 * component[clinical-significance].value[x] 1..1
-* component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (example)
+//* component[clinical-significance].value[x] from http://loinc.org/vs/LL4034-6 (example)
 * component[clinical-significance].value[x] ^short = "Pathogenic | Likely pathogenic | Uncertain significance | Likely benign | Benign"
 
 * component[predicted-phenotype] ^short = "Predicted phenotype"
