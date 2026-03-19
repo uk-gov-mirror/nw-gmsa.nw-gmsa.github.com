@@ -37,10 +37,10 @@ Description:    """
 
 * value[x] ^short = "Actual result (HL7 v2 OBX-5)"
 
-* value[x].extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Observation.value named value-r5 0..1
-* value[x].extension[value-r5]
-  * value[x] only Attachment
-  * ^short = "only for result of type Attachment"
+//* value[x].extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-Observation.value named value-r5 0..1
+//* value[x].extension[value-r5]
+//  * value[x] only Attachment
+//  * ^short = "only for result of type Attachment"
 
 * effective[x] ^short = "Clinically relevant time/time-period for observation (HL7 v2 OBX-14)"
 * effective[x] insert Obligation(#SHOULD:populate-if-known, https://nw-gmsa.github.io/ActorDefinition/OrderFiller)
@@ -70,7 +70,7 @@ Description:    """
 * component[conclusion-string] ^definition = "Concise and clinically contextualized summary conclusion (interpretation/impression) of the observation"
 * component[conclusion-string] ^requirements = "Need to be able to provide a conclusion that is not lost among the basic result data."
 * component[conclusion-string] ^comment = "An example would be the interpretative information, typically canned, about a variant identified in the patient."
-* component[conclusion-string].code = TbdCodesCS#conclusion-string
+* component[conclusion-string].code = http://hl7.org/fhir/uv/genomics-reporting/CodeSystem/tbd-codes-cs#conclusion-string
 * component[conclusion-string].code ^short = "conclusion-string"
 * component[conclusion-string].value[x] only string or Quantity
 * component[conclusion-string].value[x] ^short = "Summary conclusion (interpretation/impression)"

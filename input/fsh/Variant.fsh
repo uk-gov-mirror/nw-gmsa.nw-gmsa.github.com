@@ -24,7 +24,7 @@ Description:    """
 * component[gene-studied].value[x] only CodeableConcept or Quantity
 * component[gene-studied].value[x] ^short = "The HGNC gene symbol is to be used as display text and the HGNC gene ID used as the code. If no HGNC code issued for this gene yet, NCBI gene IDs SHALL be used."
 * component[gene-studied].value[x] 1..1
-* component[gene-studied].value[x] from HGNCVS (extensible)
+//* component[gene-studied].value[x] from HGNCVS (extensible)
 
 * component[representative-transcript-ref-seq].code = $LNC#51958-7
 * component[representative-transcript-ref-seq].code ^short = "51958-7"
