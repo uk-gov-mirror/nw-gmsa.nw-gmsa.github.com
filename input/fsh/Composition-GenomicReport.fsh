@@ -43,7 +43,7 @@ Description:    """
 * attester.party.identifier only PractitionerIdentifier
 
 * custodian only Reference(Organization)
-* custodian.identifier only OrganisationCode
+//* custodian.identifier only OrganisationCode
 
 * section 1..* MS
 //* section.text MS
