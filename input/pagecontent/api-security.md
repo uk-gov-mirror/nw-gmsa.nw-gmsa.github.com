@@ -18,6 +18,7 @@ end
 subgraph DataPlatform[Data Platform]
     auth[Access Control and Authorisation]
     audit1[Audit Logging]
+    data[Data Security]
     api[(FHIR Repository)]
 end
 
@@ -27,10 +28,9 @@ rate --> id
 
 id --> audit1
 audit1 --> auth
-auth -->  api
+auth -->  data 
+data --> api
 api --> audit1
-
-
 ```
 
 ```mermaid
