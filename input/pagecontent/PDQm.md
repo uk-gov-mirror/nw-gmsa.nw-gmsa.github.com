@@ -4,6 +4,7 @@ This is currently being elaborated and subject to change.
 
 This API for the NW GMSA Clinical Data Repository is based on the following API contracts:
 
+- [EURIDICE EU Health Data API - Patient Matching](https://hl7.eu/fhir/health-data-api/1.0.0-ballot/en/patient-match.html)
 - [IHE Mobile Patient Demographics Query [ITI-78]](https://profiles.ihe.net/ITI/PDQm/ITI-78.html)
 - [INTEROPen/NHS England Care Connect API](https://nhsconnect.github.io/CareConnectAPI) updated to FHIR R4.
 

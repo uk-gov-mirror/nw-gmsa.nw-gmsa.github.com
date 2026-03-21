@@ -4,7 +4,8 @@ This is currently being elaborated and subject to change.
 
 This API for the NW GMSA Clinical Data Repository is based on the following API contracts:
 
-- [IHE Mobile Query Existing Data [PCC-44]](https://build.fhir.org/ig/IHE/QEDm/branches/master/PCC-44.html)
+- [EURIDICE EU Health Data API - Resource Access](https://hl7.eu/fhir/health-data-api/1.0.0-ballot/en/resource-access.html)
+- [IHE Mobile Query Existing Data [PCC-44]](https://build.fhir.org/ig/IHE/QEDm/branches/master/PCC-44.html) and [International Patient Access (IPA)](https://hl7.org/fhir/uv/ipa/)
 - [INTEROPen/NHS England Care Connect API](https://nhsconnect.github.io/CareConnectAPI) updated to FHIR R4.
 
 The search parameters are based on [FHIR Search](https://hl7.org/fhir/R4/search.html) which provides detailed description of the parameters and value types.

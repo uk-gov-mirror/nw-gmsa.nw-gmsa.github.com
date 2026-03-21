@@ -1,6 +1,7 @@
 
 ## Referenced Standards
 
+- [EURIDICE EU Health Data API - Authorization](https://hl7.eu/fhir/health-data-api/en/authorization.html)]
 - [IHE Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html)
 
 ### Get Authorization Server Metadata [ITI-103]

@@ -5,6 +5,7 @@ This is currently being elaborated and subject to change.
 
 This API for the NW GMSA Clinical Data Repository is based on the following API contracts:
 
+- [EURIDICE EU Health Data API - Document Exchange](https://hl7.eu/fhir/health-data-api/1.0.0-ballot/en/document-exchange.html)
 - [IHE Mobile access to Health Documents [MHD]](https://profiles.ihe.net/ITI/MHD/index.html)
 - [INTEROPen/NHS England Care Connect API](https://nhsconnect.github.io/CareConnectAPI) updated to FHIR R4.
 
