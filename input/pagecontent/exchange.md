@@ -91,9 +91,46 @@ Two complementary exchange patterns are used:
 | APIs                    | Access to structured genomic data |
 {:.grid}
 
-
+<!--
 <img style="padding:3px;width:80%;" src="HIE.png" alt="NHS England NRL Design"/>
 <br clear="all">
+-->
+
+```mermaid
+graph TD
+
+EPR[EPR / Order Placer]
+TIE["Trust Integration Engine (TIE)"]
+
+subgraph HIE["Health Information Exchange (HIE)"]
+    RIE["Regional Orchestration Engine (RIE)"]
+    GDR["Genomic Data Repository (GDR)"]
+   APIG["API Gateway (APIG)"]
+end
+
+subgraph APIM[API Gateway to NHS England APIM]
+    PDS["Personnel Demographic Service (PDS)"]
+    ODS["Organisation Terminology Service (ODS)"]
+    NRL["Nationa Record Locator Service (NRL)"]
+end 
+
+LIMS[LIMS / Order Filler]
+DC["Data and Document Consumer"]
+
+
+EPR --> |Document Messaging| TIE
+TIE --> RIE
+RIE --> |Document Messaging| LIMS
+RIE --> |"RESTful API (GET/PUT/POST/DELETE)"| GDR
+RIE --> |Event Messaging| EPR
+EPR --> |"RESTful API (GET)"| APIG
+DC --> |"RESTful API (GET)"| APIG
+APIG --> |"RESTful API (GET)"| GDR
+RIE --> |RESTful API| APIM
+
+classDef purple fill:#E1D5E7;
+class EPR,TIE,LIMS,DC purple
+```
 
 ## HL7 v2 and FHIR Exchange
 

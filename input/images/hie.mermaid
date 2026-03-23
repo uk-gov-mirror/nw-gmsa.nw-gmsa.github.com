@@ -3,13 +3,21 @@ graph TD
 
 EPR[EPR / Order Placer]
 TIE["Trust Integration Engine (TIE)"]
+
 subgraph HIE["Health Information Exchange (HIE)"]
-    RIE["Regional Integration Engine (RIE)"]
+    RIE["Regional Orchestration Engine (RIE)"]
     GDR["Genomic Data Repository (GDR)"]
-   APIM["API Gateway (APIM)"]
+   APIG["API Gateway (APIG)"]
 end
+
+subgraph APIM[API Gateway to NHS England APIM]
+    PDS["Personnel Demographic Service (PDS)"]
+    ODS["Organisation Terminology Service (ODS)"]
+    NRL["Nationa Record Locator Service (NRL)"]
+end
+
 LIMS[LIMS / Order Filler]
-DC["Data Consumer"]
+DC["Data and Document Consumer"]
 
 
 EPR --> |Document Messaging| TIE
@@ -17,9 +25,10 @@ TIE --> RIE
 RIE --> |Document Messaging| LIMS
 RIE --> |"RESTful API (GET/PUT/POST/DELETE)"| GDR
 RIE --> |Event Messaging| EPR
-EPR --> |"RESTful API (GET)"| APIM
-DC --> |"RESTful API (GET)"| APIM
-APIM --> |"RESTful API (GET)"| GDR
+EPR --> |"RESTful API (GET)"| APIG
+DC --> |"RESTful API (GET)"| APIG
+APIG --> |"RESTful API (GET)"| GDR
+RIE --> |RESTful API| APIM
 
 classDef purple fill:#E1D5E7;
 class EPR,TIE,LIMS,DC purple
