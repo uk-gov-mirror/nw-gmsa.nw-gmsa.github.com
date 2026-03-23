@@ -12,7 +12,7 @@ The architecture consists of three primary components:
 2. **Genomic Data Repository (GDR)**  
    A central read-only repository for genomic data and reports. Also known as a **Data Platform**
 
-3. **API Gateway (APIM)**  
+3. **API Gateway (APIG)**  
    Provides external data access to the GDR and also provides [API Security](api-security.html).
 
 Together these components form the **Health Information Exchange (HIE)**
