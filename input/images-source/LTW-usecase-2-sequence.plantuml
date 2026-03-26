@@ -3,7 +3,7 @@
 hide footbox
 
 participant "Order Placer" as EPR
-participant "Intermediary\nNW GLH Regional Integration Engine (RIE)" as TIE
+participant "Intermediary\nNW GLH Regional Orchestration Engine (RIE)" as TIE
 participant "Order Filler" as LIMS
 
 LIMS -> LIMS: Perform Diagnostic Test

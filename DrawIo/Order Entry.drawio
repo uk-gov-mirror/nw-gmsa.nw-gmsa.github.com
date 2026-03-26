@@ -16,7 +16,7 @@
         <mxCell id="9aMlFRcbkQoLYjUKlvyp-38" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="1024.5" y="584" width="65.5" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="9aMlFRcbkQoLYjUKlvyp-24" value="Laboratory Information Management System (LIMS) &lt;br&gt;and Intermediary&amp;nbsp;&lt;br&gt;(Regional Integration Engine)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="9aMlFRcbkQoLYjUKlvyp-24" value="Laboratory Information Management System (LIMS) &lt;br&gt;and Intermediary&amp;nbsp;&lt;br&gt;(Regional Orchestration Engine)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="960" y="130" width="320" height="270" as="geometry" />
         </mxCell>
         <mxCell id="9aMlFRcbkQoLYjUKlvyp-22" value="Intermediary&amp;nbsp;&lt;br&gt;(Trust Integration Engine)" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">

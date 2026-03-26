@@ -5,7 +5,7 @@ frame "Regional Order Results management [LAB-3]" as LAB3 {
 
 component "**Order Filler**\n\nGenomic Laboratory Hub (GLH) LIMS" as LIMS
 
-component "**Intermediary**\n\nNW GLH Regional Integration Engine (RIE)" as TIE
+component "**Intermediary**\n\nNW GLH Regional Orchestration Engine (RIE)" as TIE
 
 component "**Order Result Tracker**" as user
 

@@ -13,7 +13,7 @@ Genomic diagnostic testing contributes to this process by examining a patient’
 
 NHS North West Genomics is a new regional NHS service that consolidates clinical genomic testing across the North West of England. Although the service is delivered regionally, it also processes genomic test requests from across the UK. The service is hosted by Manchester University NHS Foundation Trust.
 
-As part of the service transition, existing systems for electronic test ordering and reporting will be enhanced through the introduction of a Regional Integration Engine (RIE) and a Genomic Clinical Data Repository. These components enable seamless data exchange between local clinical systems and regional genomic laboratory services.
+As part of the service transition, existing systems for electronic test ordering and reporting will be enhanced through the introduction of a Regional Orchestration Engine (RIE) and a Genomic Clinical Data Repository. These components enable seamless data exchange between local clinical systems and regional genomic laboratory services.
 
 ## Process Overview
 
@@ -46,13 +46,13 @@ The design is based on international standards, including several from Integrati
 
 ### Standardising HL7-based Workflows
 
-Although NW GMSA is hosted by Manchester University NHS Foundation Trust, it operates in practice as a distinct organisation. It has its own Trust Integration Engine (TIE), referred to as the Regional Integration Engine (RIE).
+Although NW GMSA is hosted by Manchester University NHS Foundation Trust, it operates in practice as a distinct organisation. It has its own Trust Integration Engine (TIE), referred to as the Regional Orchestration Engine (RIE).
 
 <img style="padding:3px;width:80%;" src="Design IHE.drawio.png" alt="NW Genomics Technical Overview"/>
 <br clear="all">
 
 At present, LIMS and EPR systems across the North West use a range of HL7 v2 Message based workflows, this remains the case with the RIE (centre and right of the above diagram). 
-To reduce this variation, the IHE Laboratory Testing Workflow (LTW) profile and region-wide genomic messaging standards (HL7 v2.5.1 and FHIR R4) have been adopted. This standardisation applies to interactions between the NW GMSA Regional Integration Engine (RIE) and NHS Trust Integration Engines (TIEs). Interactions between LIMS and EPR systems, as well as the internal integration engine configurations within trusts, remain unchanged.
+To reduce this variation, the IHE Laboratory Testing Workflow (LTW) profile and region-wide genomic messaging standards (HL7 v2.5.1 and FHIR R4) have been adopted. This standardisation applies to interactions between the NW GMSA Regional Orchestration Engine (RIE) and NHS Trust Integration Engines (TIEs). Interactions between LIMS and EPR systems, as well as the internal integration engine configurations within trusts, remain unchanged.
 
 For external systems and NHS Trusts, NW Genomics LIMS will present as a single system with unified ordering and reporting interfaces. Direct point-to-point integrations between individual NHS Trust EPR systems and the NW LIMS will not be supported.
 

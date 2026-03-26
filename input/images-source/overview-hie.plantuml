@@ -3,7 +3,7 @@
  component "**Order Place**r" as EPR #Thistle
  component "**Order Filler**" as LIMS #Thistle
  package "Health Information Exchange (HIE)" {
-    component "Regional Integration Engine (RIE)" as TIE
+    component "Regional Orchestration Engine (RIE)" as TIE
     component "**Dota Source**\nGenomic Clinical Data Repository (CDR)" as CDR #Thistle
  }
 component "**Data Consumer**" as HIE #Thistle

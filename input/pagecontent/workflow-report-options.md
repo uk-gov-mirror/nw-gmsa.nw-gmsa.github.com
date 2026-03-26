@@ -91,7 +91,7 @@ Examples:
 
 ```mermaid
 sequenceDiagram
-    participant Producer As Document Producer<br/>via NW Regional Integration Engine
+    participant Producer As Document Producer<br/>via NW Regional Orchestration Engine
     participant Repository As Document Consumer<br/>NW Genomic Data Repository
     participant Trust As Document Consumer<br/>NHS Trust
     participant RepositoryICS As Document Consumer<br/>ICS e.g. GMCR
@@ -194,7 +194,7 @@ The existing HL7 v2 MDM_T02 message is transformed into:
 ```mermaid
 sequenceDiagram
     participant Producer As Event Producer<br/>NW Genomic Data Repository
-    participant Consumer As Event Consumer<br/>NW Regional Integration Engine
+    participant Consumer As Event Consumer<br/>NW Regional Orchestration Engine
     participant Registry As Document Registry<br/>National Record Locator Service
 
    

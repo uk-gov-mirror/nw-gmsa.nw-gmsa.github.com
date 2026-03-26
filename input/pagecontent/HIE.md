@@ -79,7 +79,7 @@ The outline of this approach is shown below and is related to a similar approach
 ```mermaid
 graph TD;
 
-    LIMS[Genomics<br/>LIMS] --> |" HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine];
+    LIMS[Genomics<br/>LIMS] --> |" HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Orchestration Engine];
     RIE --> |"Sends HL7 FHIR R4<br/>Message R01"| CDR[NW Genomics<br/>Clinical Data Repository]
     CDR --> |Publish Report Event| SUB[FHIR Subscription<br/>Event-Notifications]
     SUB --> |Deliver Report Event| EPR["Recipient<br/>e.g. GP Foundation System"]

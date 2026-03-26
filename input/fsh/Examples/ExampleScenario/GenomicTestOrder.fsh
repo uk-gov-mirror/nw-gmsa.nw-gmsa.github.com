@@ -14,7 +14,7 @@ Usage: #definition
 * insert ActorEntity(forms, "Form Manager",   [[This may be part of the EPR or be paper based]])
 * insert ActorEntity(epr, "Electronic Patient Record",   [[ NHS Trust [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(tie, "Trust Integration Engine",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
-* insert ActorEntity(rie, "Regional Integration Engine",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
+* insert ActorEntity(rie, "Regional Orchestration Engine",   [[ [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])
 * insert ActorEntity(filler, "Order Filler",         [[ [Order Filler](ActorDefinition-OrderFiller.html) ]])
 * insert ActorEntity(cdr, "Regional Clinical Data Repository",   [[ Clinical Data Repository ]])
 

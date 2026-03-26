@@ -66,7 +66,7 @@ graph TD;
     OrderPlacer["<b>Order Placer</b><br/>(EPR or Order Comms)"] --> |1. Send Genomic Laboratory Order<br/>HL7 v2 ORM_O01 or OML_O21| OR[Acute Hospitals<br/>Trust Integration Engine]
        OrderPlacer --> |"2. Asks for (Order)"| SpecimenCollection
     SpecimenCollection[Specimen Collection] --> |3. Sends Specimen| OrderFiller
-    OR --> |"1a. HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Integration Engine] 
+    OR --> |"1a. HL7 FHIR Message O21<br/>(IHE LTW)"| RIE[Middleware<br/>Regional Orchestration Engine] 
     RIE --> |"1c. Send Genomic Laboratory Order<br/>HL7 FHIR Message O21<br/>(IHE LTW)"| CDR[NW Genomics<br/>Clinical Data Repository]
     CDR --> |1d. Send FHIR Event Notification| Any["Any <br/>(future)"]
     RIE --> |"1b. Send Genomic Laboratory Order<br/>HL7 v2 OML_O21<br/>(IHE LTW)"| EHRTIE[NW Genomics<br/>Laboratory Information Management System] 
@@ -120,7 +120,7 @@ This archetype definition can also support [HL7 Structured Data Capture](https:/
 
 #### Submit Genomic Test Order Form
 
-The completed form is submitted to the Regional Integration Engine using:
+The completed form is submitted to the Regional Orchestration Engine using:
 
 <div class="alert alert-info" role="alert">
 <b>Interaction:</b> <a href="LAB-1.html" _target="_blank">Genomic Test Order O21</a> 
@@ -199,7 +199,7 @@ Key differences include:
 
 ```mermaid
 graph TD;
-    OrderFiller["<b>Order Filler</b><br/>Diagnostic Testing (LIMS)"] --> |"1. Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Integration Engine] 
+    OrderFiller["<b>Order Filler</b><br/>Diagnostic Testing (LIMS)"] --> |"1. Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| RIE[Middleware<br/>NW Genomics<br/>Regional Orchestration Engine] 
     RIE --> |"1a. Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| TIE[Middleware<br/>Acute Hospitals<br/>Trust Integration Engine] 
     TIE--> |"1a. Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| EHRTIE[North West<br/>NHS Trust<br/>EHR] 
     RIE--> |"1a. Sends HL7 v2 ORU_R01<br/>(IHE LTW)"| BOARD["NHS Wales<br/>Health Board<br/> (future?)"]
@@ -295,7 +295,7 @@ This guide builds on the use cases outlined in [NHS England Genomic Order Manage
 Key differences include:
 
 - **Workflow basis:** The [IHE Laboratory and Testing Worflow LTW](https://www.ihe.net/uploadedFiles/Documents/PaLM/IHE_PaLM_TF_Vol1.pdf) serves as the primary reference for describing laboratory testing processes.
-- **Message translation and code conversion:** The Regional Integration Engine (RIE) handles translations and code mappings to and from the Genomic Order Management Service FHIR API.
+- **Message translation and code conversion:** The Regional Orchestration Engine (RIE) handles translations and code mappings to and from the Genomic Order Management Service FHIR API.
 - **Routing of orders and reports:** The RIE routes orders and reports for other GMSAs through the Genomic Order Management Service FHIR API.
 - **Regional workflow consistency:** Existing regional workflows remain largely unchanged, with both HL7 v2 and FHIR standardised across the region.
 - **Report compatibility:** Reports are aligned with neighbouring Welsh NHS systems, using DHCW HL7 v2 ORU as the core model for both HL7 v2 and FHIR in the North West.

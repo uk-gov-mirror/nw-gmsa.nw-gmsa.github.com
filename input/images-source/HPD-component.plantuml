@@ -6,7 +6,7 @@ frame "Provider Information Feed [ITI-59]" as PIX {
 
   component "**Provider Information Consumer**\nNW Genomic Laboratory Hub (LIMS)" as LIMS
   component "**Provider Information Source**" as EPR
-  component "Intermediary\nNorth West GLH Regional Integration Engine (RIE)" as TIE
+  component "Intermediary\nNorth West GLH Regional Orchestration Engine (RIE)" as TIE
   component "**Provider Information Consumer**\nNHS England Genomic\nOrder Management System (GOMS)" as GOMS
 
  interface "HL7 v2 MFN_M02 (or [[https://profiles.ihe.net/ITI/TF/Volume2/ITI-59.html IHE  ITI-59]])" as HL7_ORM1

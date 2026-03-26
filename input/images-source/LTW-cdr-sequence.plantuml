@@ -7,7 +7,7 @@ hide footbox
 title "Traditional Messaging plus Enterprise Clinical Data Repository"
 
 participant "Order Placer" as EPR
-participant "Intermediary\nRegional Integration Engine (RIE)" as TIE
+participant "Intermediary\nRegional Orchestration Engine (RIE)" as TIE
 participant "Enterprise\nClinical Data Repository" as CDR
 participant "Order Filler" as LIMS
 

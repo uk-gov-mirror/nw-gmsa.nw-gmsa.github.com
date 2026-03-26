@@ -5,7 +5,7 @@ hide footbox
 title "Communication Task, Subscription and Event Notifications"
 
 participant "Practitioner" as practitioner
-participant "Regional Integration Engine" as RIE
+participant "Regional Orchestration Engine" as RIE
 
 
 opt FHIR Subscription

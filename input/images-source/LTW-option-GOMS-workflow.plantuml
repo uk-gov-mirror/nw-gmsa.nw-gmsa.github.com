@@ -6,7 +6,7 @@ title "Traditional (v2 and IHE LTW) and FHIR Workflow Combined"
 
 
 participant "Order Placer\nNHS Trust system" as OrderPlacerTIE
-participant "Regional Integration Engine\nacting as Order Placer/Filler" as OrderPlacer
+participant "Regional Orchestration Engine\nacting as Order Placer/Filler" as OrderPlacer
 participant "Order Filler\nNHS England GOMS\nRemote GMSA" as OrderFiller
 
 

@@ -5,7 +5,7 @@
  component "Data Consumer\n(Structured)" as HIE
  component "Document Consumer\n(Unstructured)" as HIEU
  component "Consumer (ICS)" as ICS
- component "Intermediary\nRegional Integration Engine (RIE)" as TIE
+ component "Intermediary\nRegional Orchestration Engine (RIE)" as TIE
  component "Genomic Data Repository\nHealth Information Exchange (HIE)" as CDR
 
  EPR -d[hidden]- ICS

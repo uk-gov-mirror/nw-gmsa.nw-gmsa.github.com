@@ -31,25 +31,38 @@ graph LR
 
 TIEs typically handle transformations between the different HL7 v2 variants used by Order Placers (e.g. EPRs) and Order Fillers (e.g. LIMS).
 
-### Regional Integration Engine (RIE) – Initial Interoperability For Existing Messaging Flows
+### Regional Orchestration Engine (RIE) – Initial Interoperability For Existing Messaging Flows
 
-Existing interfaces to NW Genomics LIMS will be migrated to use the Regional Integration Engine (RIE). The RIE performs similar functions to NHS Trust TIEs, and in the interim phase will perform pass through routing of messages only.
+To support ordering and reporting at a regional level, [IHE Laboratory Testing Workflow (LTW)](LTW.html) will be adopted using HL7 v2.5.1 message formats. This includes moving from ORM_O01 to OML_O21 to support the SPM (Specimen) segment.
+
+```mermaid
+graph LR
+    OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>IHE LTW LAB-1<br/>HL7 v2.5.1 OML_O21| OrderFiller
+    OrderFiller[<b>Order Filler</b><br/>LIMS] --> |2. Laboratory Report<br/>IHE LTW LAB-3<br/>HL7 v2.5.1 ORU_R01| OrderPlacer  
+    
+    classDef purple fill:#E1D5E7;
+    class OrderPlacer,OrderFiller purple
+```
+
+Existing interfaces to NW Genomics LIMS will be migrated to use the Regional Orchestration Engine (RIE). The RIE performs similar functions to NHS Trust TIEs, and in the interim phase will perform pass through routing of messages only.
+Note the use of the IHE LTW profile and the HL7 v2.5.1 message format is only expected to be implemented between the NHS Trust TIE and Regional RIE..
 
 ```mermaid
 graph LR
 
     OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
-    TIE --> |2. General Order<br/>HL7 v2 ORM_O01| RIE
-    RIE["Regional Integration Engine (RIE)"] --> |3. General Order<br/>HL7 v2 ORM_O01| OrderFiller
+    TIE --> |2. General Order<br/>IHE LTW LAB-1<br/>HL7 v2.5.1 OML_O21 or FHIR Message O21| RIE
+    RIE["Regional Orchestration Engine (RIE)"] --> |3. General Order<br/>HL7 v2 ORM_O01| OrderFiller
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
-    RIE --> |5. Laboratory Report<br/>HL7 v2 ORU_R01| TIE
+    RIE --> |5. Laboratory Report<br/>IHE LTW LAB-3<br/>HL7 v2.5.1 ORU_R01| TIE
     TIE --> |6. Laboratory Report<br/>HL7 v2 ORU_R01| OrderPlacer
     
     classDef purple fill:#E1D5E7;
     class OrderPlacer,OrderFiller purple
 ```
 
-### Regional Integration Engine (RIE) - Regional Interoperability
+
+### Regional Orchestration Engine (RIE) - Regional Interoperability
 
 The regional genomic service supports more than 20 NHS Trusts, each potentially operating different clinical systems. Within NHS North West Genomics itself, multiple LIMS and supporting clinical systems are in use. Under a traditional point-to-point integration model, this rapidly leads to a highly complex and fragile integration landscape.
 
@@ -103,7 +116,7 @@ graph LR
     subgraph DataContracts[Data Contract]
         TIEA["NHS Trust A Integration Engine (TIE)"]
         TIEB["NHS Trust B Integration Engine (TIE)"]
-        RIE["Regional Integration Engine (RIE)"]
+        RIE["Regional Orchestration Engine (RIE)"]
     end
     NHSA --> |Laboratory Order<br/>HL7 ORM_O01| TIEA
     NHSB --> |Laboratory Order<br/>HL7 OML_O21| TIEB 
@@ -135,7 +148,7 @@ graph LR
     end
 
     subgraph DataContracts[Data Contract]
-        RIE["Regional Integration Engine (RIE)"]
+        RIE["Regional Orchestration Engine (RIE)"]
         TIEA["NHS Trust A Integration Engine (TIE)"]
         TIEB["NHS Trust B Integration Engine (TIE)"]
   
@@ -154,7 +167,7 @@ graph LR
     LIMSB --> RIE
     LIMSC --> RIE
     LIMSD --> RIE
-    RIE["Regional Integration Engine (RIE)"] --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| TIEA
+    RIE["Regional Orchestration Engine (RIE)"] --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| TIEA
     RIE --> |Laboratory Report<br/>HL7 v2 ORU_R01<br/>IHE LTW LAB-3| TIEB
     TIEA --> |Laboratory Report<br/>HL7 v2 ORU_R01| NHSA
     TIEB --> |Laboratory Report<br/>HL7 v2 ORU_R01| NHSB
@@ -166,13 +179,13 @@ graph LR
 
 #### RIE vs Trust Integration Engine
 
-The primary distinction between a Regional Integration Engine and a Trust Integration Engine is scope:
+The primary distinction between a Regional Orchestration Engine and a Trust Integration Engine is scope:
 
 - **Trust Integration Engines** focus on internal interoperability within a single organisation.
-- The **Regional Integration Engine** operates at a regional level, providing centralised routing and orchestration across multiple organisations.
+- The **Regional Orchestration Engine** operates at a regional level, providing centralised routing and orchestration across multiple organisations.
 
 This hub-and-spoke model significantly reduces integration complexity, improves maintainability, and supports consistent data quality across the region.
-The main distinction between a Regional Integration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
+The main distinction between a Regional Orchestration Engine (RIE) and a Trust Integration Engine is that the RIE functions as a central routing hub. Each participant connects only to the RIE rather than individually integrating with multiple other systems. This significantly reduces integration complexity. Trust TIEs will still be responsible for transforming messages between their internal EPR systems and the RIE.
 
 #### Identifier and Codes (Terminology) Standardisation
 
@@ -209,7 +222,7 @@ graph LR
     OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01/OML_O21| TIE
     subgraph DataContract[Data Contract]
         TIE["Trust Integration Engine (TIE)"]
-        RIE["Regional Integration Engine (RIE)"]
+        RIE["Regional Orchestration Engine (RIE)"]
     end 
     TIE --> |2. General Order<br/>HL7 v2.5.1 OML_O21| RIE
     RIE --> |3. General Order<br/>HL7 v2 ORM_O01/OML_O21| OrderFiller
@@ -329,7 +342,7 @@ A conversational (event-based) workflow, also referred to as a conversation-base
 
 In practice, this capability may not always be available. For example, Laboratory Information Management Systems (LIMS) within NHS North West Genomics may not support FHIR RESTful APIs. In such cases, the Genomic Data Repository (GDR) is used to share genomic laboratory reports and other genomic data. Similarly, if Electronic Patient Record (EPR) systems do not support FHIR RESTful APIs, the GDR is used to facilitate the sharing of laboratory orders.
 
-Together, the Regional Integration Engine (RIE) and the Genomic Data Repository (GDR) collectively constitute the Health Information Exchange (HIE).
+Together, the Regional Orchestration Engine (RIE) and the Genomic Data Repository (GDR) collectively constitute the Health Information Exchange (HIE).
 
 
 <figure>

@@ -6,7 +6,7 @@ frame "Patient Identity Feed [ITI-8 (or ITI-104)]" as PIX {
 
   component "**Order Filler**\n\nNW Genomic Laboratory Hub (LIMS)" as LIMS
   component "**Patient Identity Source**" as EPR
-  component "**Intermediary**\n\nNorth West GLH Regional Integration Engine (RIE)" as TIE
+  component "**Intermediary**\n\nNorth West GLH Regional Orchestration Engine (RIE)" as TIE
   component "**Out of Area - Order Fillerr**\n\nNHS England Genomic\nOrder Management System (GOMS)" as GOMS
 
  interface "IHE ITI-8 (or ITI-104)\nHL7 v2 A31 (or FHIR) Event" as HL7_ORM1

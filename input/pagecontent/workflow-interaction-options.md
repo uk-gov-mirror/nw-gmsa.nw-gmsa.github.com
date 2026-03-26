@@ -112,7 +112,7 @@ Is a modernisation of all the previous methods, full FHIR workflow requires both
 
 - Order Placer EPR systems: EPIC, Oracle and Meditech
 - Order Filler LIMS: Magentus.
-- Order Filler Middleware: NW Genomics Data Repository + Regional Integration Engine and NHS England Genomic Order Management System.
+- Order Filler Middleware: NW Genomics Data Repository + Regional Orchestration Engine and NHS England Genomic Order Management System.
 
 Note: FHIR workflow described is based on the same FHIR Workflow described in [FHIR Genomics Implementation Guide - Interactions](https://simplifier.net/guide/fhir-genomics-implementation-guide/Home/Design/Interactions), in FHIR Worflow documentation this is known as [Option H: POST of Task to a workflow broker](https://build.fhir.org/workflow-management.html#optionh)
 

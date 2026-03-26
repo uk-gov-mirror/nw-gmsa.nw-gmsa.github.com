@@ -66,7 +66,7 @@ graph TD
     LIMS[LIMS] <--> |HL7 v2<br/>Orders & Reports| RIE
 
     subgraph HIE["Health Information Exchange"]
-        RIE[Regional Integration Engine] --> |Store<br/>HL7 FHIR| CDR[Genomic Data Repository]
+        RIE[Regional Orchestration Engine] --> |Store<br/>HL7 FHIR| CDR[Genomic Data Repository]
     end
     Clinician[Data Sharing<br/>Clinical Apps<br/>Single Patient Record] --> |Read<br/>HL7 FHIR| CDR
     AI[Operational AI] --> |Read<br/>HL7 FHIR| CDR
@@ -92,7 +92,7 @@ The diagram above illustrates the scope of the data contracts covered by this gu
 This guide **includes** the definition of data contracts for:
 
 - **Business-to-Business (B2B):** Use of HL7 FHIR to read data from the Clinical Data Repository.
-- **Data Pipeline:** Internal use of HL7 FHIR for data exchange between the Regional Integration Engine and the Clinical Data Repository.
+- **Data Pipeline:** Internal use of HL7 FHIR for data exchange between the Regional Orchestration Engine and the Clinical Data Repository.
 - **Business-to-Business (B2B):** Use of HL7 v2 and HL7 FHIR for interactions between LIMS and EPR systems.
 - **Data Pipeline:** Use of HL7 v2, HL7 FHIR and IHE XDS for data exchange between the CDR and Regional Document Sharing systems such as IHE XDS, GMCR and National Record Locator. Note: data contract downgrades will be present in these pipelines.
 

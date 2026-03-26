@@ -7,7 +7,7 @@
 
   participant "Clinical Data Consumer" as DocumentConsumer
 
-  participant "Health Information Exchange\nRegional Integration Engine (RIE)" as RIE
+  participant "Health Information Exchange\nRegional Orchestration Engine (RIE)" as RIE
 
   participant "Clinical Data Source\nNW GMSA" as CDR1
 

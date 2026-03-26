@@ -6,7 +6,7 @@ regional genomic laboratory services.
 
 The architecture consists of three primary components:
 
-1. **Regional Integration Engine (RIE)**  
+1. **Regional Orchestration Engine (RIE)**  
    Routes and standardises messaging between organisations.
 
 2. **Genomic Data Repository (GDR)**  
@@ -39,7 +39,7 @@ Problems:
 
 ## RIE Integration Model
 
-The Regional Integration Engine introduces a **hub-and-spoke model**.
+The Regional Orchestration Engine introduces a **hub-and-spoke model**.
 
 Each participant integrates once with the RIE.
 
@@ -55,7 +55,7 @@ The exchange architecture is based on several core principles.
 
 ### Hub-and-Spoke Integration
 
-All participating organisations integrate with a Regional Integration Engine (RIE) rather than building direct integrations with each other.
+All participating organisations integrate with a Regional Orchestration Engine (RIE) rather than building direct integrations with each other.
 
 This approach:
 - reduces integration complexity

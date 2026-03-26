@@ -32,7 +32,7 @@
 
 ### Regional Integration
 
-- RIE (Regional Integration Engine) provides centralized routing for multiple trusts
+- RIE (Regional Orchestration Engine) provides centralized routing for multiple trusts
 - Supports out-of-region ordering (~10% orders from Scotland, NI, Wales, Midlands)
 - Enables seamless connectivity via HSCN infrastructure
 
@@ -62,7 +62,7 @@
 
 The Gen-Tie/Gen-HIE architecture you've implemented effectively bridges the gap between traditional EPR systems and specialized genomic medicine services, bringing computerized provider order entry (CPOE) benefits specifically to the complex world of genomic testing.
 
-## Understanding the Role of a Regional Integration Engine (RIE)
+## Understanding the Role of a Regional Orchestration Engine (RIE)
 
 Imagine you have many people who all need to talk to each other
 

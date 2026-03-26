@@ -37,7 +37,7 @@
         <mxCell id="jgpSiwze4TK5Q7L4IDOj-10" value="&lt;b&gt;Other Clinical Data Repository&lt;/b&gt;&lt;br&gt;(e.g. MFT EPIC, GMCR, Alder Hey Meditech, etc)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;dashPattern=12 12;fillStyle=hatch;" vertex="1" parent="1">
           <mxGeometry x="490" y="400" width="220" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="jgpSiwze4TK5Q7L4IDOj-12" value="Provided by Regional Integration Engine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="jgpSiwze4TK5Q7L4IDOj-12" value="Provided by Regional Orchestration Engine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
           <mxGeometry x="560" y="285" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="jgpSiwze4TK5Q7L4IDOj-13" value="Provided by FHIR Repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">

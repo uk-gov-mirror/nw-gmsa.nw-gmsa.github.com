@@ -1,6 +1,6 @@
 Instance: RegionalIntegrationEngine
 InstanceOf: CapabilityStatement
-Title: "CapabilityStatement for NW GMSA Regional Integration Engine for Genomics"
+Title: "CapabilityStatement for NW GMSA Regional Orchestration Engine for Genomics"
 Usage: #definition
 
 * description = """

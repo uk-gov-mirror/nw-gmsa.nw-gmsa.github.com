@@ -5,7 +5,7 @@ title "Genomic Order Component Model - IHE LTW LAB-4"
 frame "Regional Placer Order Management [LAB-1]" as LAB1 {
   component "**Order Filler**\n\nNW Genomic Laboratory Hub (LIMS)" as LIMS
   component "**Order Placer**\nRegional" as EPR
-  component "**Intermediary**\nNorth West GLH Regional Integration Engine (RIE)" as TIE
+  component "**Intermediary**\nNorth West GLH Regional Orchestration Engine (RIE)" as TIE
 
  interface "HL7 FHIR Message\n**Laboratory Order O21**" as HL7_ORM1
 

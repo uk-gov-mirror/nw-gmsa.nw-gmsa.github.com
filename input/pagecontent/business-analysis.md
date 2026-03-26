@@ -249,7 +249,7 @@ graph TD;
     subgraph NWGenomics[North West Genomics]
         RIE --> |"1c. Sends Laboratory Order<br>LAB-1 HL7 v2 OML_O21"| AN;
         AN["<b>Order Filler</b><br/>Diagnostic Testing<br/>LIMS iGene"] --> |4a. Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| RIE;
-        RIE[Regional Integration Engine] --> |4b. Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| TIE;
+        RIE[Regional Orchestration Engine] --> |4b. Sends Laboratory Report<br/>LAB-3 HL7 v2 ORU_R01| TIE;
     end 
     click T Questionnaire-GenomicTestOrder.html
     click AN Questionnaire-GenomicTestReport.html
@@ -298,7 +298,7 @@ graph TD
     MFTReception --> |"4a. Genomics Laboratory Order <br/> Specimen most often entered into iGene"| TestType
     
     subgraph NWGenomics[North West Genomics]
-        RIE["Regional Integration Engine"]
+        RIE["Regional Orchestration Engine"]
     
         TestType[Test Distribution<br/>By Test Type to a LIMS] --> |4b. Tests A, B, C, etc| GLH
         GLH["<b>Order Filler</b><br/>LIMS Shire/iGene/StarLims"]
@@ -338,7 +338,7 @@ This relates to points 4a->4d in the diagram above.
 
 ```mermaid
 graph LR
-    IGene[iGene] --> |"1. (New HL7 v2 OML_O21 feed from iGene)"| RIE[Regional Integration Engine] 
+    IGene[iGene] --> |"1. (New HL7 v2 OML_O21 feed from iGene)"| RIE[Regional Orchestration Engine] 
     RIE --> |"2. Stores a copies of orders"| CDR[Genomic Data Repository]
     StarLimsMiddleware["StarLims Middleware <br/>(May be RIE)"] --> |"3. Polls for (starlims) orders from CDR (FHIR RESTful)"| CDR
     StarLimsMiddleware --> |"4. Stores starlims order"| StarLims
@@ -377,7 +377,7 @@ graph TD;
         LIMSA --> |1d. Subcontracted Laboratory Order<br/>LAB-35| LIMSC[<b>Order Filler</b><br/>LIMS Shire]
 
         
-        LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
+        LIMSA --> |4a. Laboratory Report| RIE[Regional Orchestration Engine]
         LIMSB --> |4a. Laboratory Report| RIE
         LIMSC --> |4a. Laboratory Report| RIE
 

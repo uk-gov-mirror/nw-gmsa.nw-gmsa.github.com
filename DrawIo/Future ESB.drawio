@@ -4,7 +4,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="SpyZkMs1lM7mogaTS6Ty-48" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Regional Integration Engine - NHS England Genomic Order Management Registry Adaptor&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=bottom;" vertex="1" parent="1">
+        <mxCell id="SpyZkMs1lM7mogaTS6Ty-48" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Regional Orchestration Engine - NHS England Genomic Order Management Registry Adaptor&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=bottom;" vertex="1" parent="1">
           <mxGeometry x="20" y="-230" width="950" height="800" as="geometry" />
         </mxCell>
         <mxCell id="SpyZkMs1lM7mogaTS6Ty-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;" edge="1" parent="1" source="SpyZkMs1lM7mogaTS6Ty-3" target="SpyZkMs1lM7mogaTS6Ty-2">
@@ -140,7 +140,7 @@
         <mxCell id="o5wvPpWDI44FTp9hOl_Q-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="o5wvPpWDI44FTp9hOl_Q-12" target="SpyZkMs1lM7mogaTS6Ty-33">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="o5wvPpWDI44FTp9hOl_Q-28" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Regional Integration Engine&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Enterprise Service Bus&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="o5wvPpWDI44FTp9hOl_Q-28" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Regional Orchestration Engine&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Enterprise Service Bus&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="-480" y="140" width="320" height="140" as="geometry" />
         </mxCell>
         <mxCell id="o5wvPpWDI44FTp9hOl_Q-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;endArrow=none;dashed=0;html=1;strokeColor=#808080;strokeWidth=2;" edge="1" parent="1" source="o5wvPpWDI44FTp9hOl_Q-31" target="o5wvPpWDI44FTp9hOl_Q-30">

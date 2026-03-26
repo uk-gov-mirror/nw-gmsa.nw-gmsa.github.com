@@ -9,7 +9,7 @@ component "Electronic Patient\nRecord (EPR)" as EPR
 
 component "Electronic Document\nManagement Systems (EDMS)" as EDMS
 
-component "**Intermediary**\nNW GLH Regional Integration Engine (RIE)" as TIE
+component "**Intermediary**\nNW GLH Regional Orchestration Engine (RIE)" as TIE
 component "NHS England Genomic Order Management Service" as GOMS
 
 frame "Document/Report Event Notification (to RIE)" as xNofify1 {

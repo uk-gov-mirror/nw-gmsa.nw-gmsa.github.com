@@ -11,7 +11,7 @@ Usage: #definition
 * name = "Genomic Test Report"
 
 * insert ActorEntity(filler, "Order Filler",         [[ [Order Filler](ActorDefinition-OrderFiller.html) ]])
-* insert ActorEntity(rie, "Regional Integration Engine",   [[ [Intermediary](ActorDefinition-Intermediary.html) ]])
+* insert ActorEntity(rie, "Regional Orchestration Engine",   [[ [Intermediary](ActorDefinition-Intermediary.html) ]])
 * insert ActorEntity(tie, "Trust Integration Engine",   [[ [Intermediary](ActorDefinition-Intermediary.html) ]])
 //* insert ActorEntity(placer, "Order Placer",         [[ [Order Placer](ActorDefinition-OrderPlacer.html) ]])
 * insert ActorEntity(epr, "Order Placer/Electronic Patient Record",   [[ NHS Trust [Provider Information Source](ActorDefinition-ProviderInformationSource.html) ]])

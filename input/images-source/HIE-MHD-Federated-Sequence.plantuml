@@ -6,7 +6,7 @@
 
   participant "Document Consumer MHD" as DocumentConsumer
 
-  participant "Intermediary\nRegional Integration Engine (RIE)" as RIE
+  participant "Intermediary\nRegional Orchestration Engine (RIE)" as RIE
 
   participant "Master Patient Index\nMPI" as MPI
 

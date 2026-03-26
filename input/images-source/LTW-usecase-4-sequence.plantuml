@@ -3,7 +3,7 @@
 hide footbox
 
 participant "Order Placer" as EPR
-participant "Automation Manager\nRegional Integration Engine" as RIE
+participant "Automation Manager\nRegional Orchestration Engine" as RIE
 participant "Order Filler\n(North West GMSA)" as LIMSP
 participant "Order Filler\n(other GMSA)" as LIMSG
 

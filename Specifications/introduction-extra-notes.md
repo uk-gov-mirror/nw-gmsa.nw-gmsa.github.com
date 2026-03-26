@@ -16,7 +16,7 @@ The chimerism testing pathway within the NHS is used to monitor the success of a
     subgraph NWGenomics[North West Genomics]
         RIE --> |"2b. Sends Laboratory Order<br/>HL7 v2 ORM_O01"| LIMS
         LIMS[<b>Order Filler</b><br/>LIMS Histotrac]
-        LIMS --> |5a. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE["Regional Integration Engine"]
+        LIMS --> |5a. Send Laboratory Report<br/>HL7 v2 ORU_R01| RIE["Regional Orchestration Engine"]
     end
     RIE --> |5b. Send Laboratory Report<br/>HL7 v2 ORU_R01| TIE
     TIE --> |5c. Send Laboratory Report<br/>HL7 v2 ORU_R01| EPR
@@ -54,7 +54,7 @@ graph TD;
         TD --> |1d. Laboratory Order| LIMSC[<b>Order Filler</b><br/>LIMS Shire]
         TD --> |1d. Laboratory Order| LIMSD[<b>Order Filler</b><br/>LIMS Histotrac]
         
-        LIMSA --> |4a. Laboratory Report| RIE[Regional Integration Engine]
+        LIMSA --> |4a. Laboratory Report| RIE[Regional Orchestration Engine]
         LIMSB --> |4a. Laboratory Report| RIE
         LIMSC --> |4a. Laboratory Report| RIE
         LIMSD --> |4a. Laboratory Report| RIE

@@ -9,7 +9,7 @@ Internet
 ]
 
 node network <<router>> [
-Genomics Regional Integration Engine - HSCN
+Genomics Regional Orchestration Engine - HSCN
 
 ----
 DNS Name: gen-tie-test.nw-gmsa.nhs.uk????

@@ -173,7 +173,7 @@ This modernisation is central to the [NHS England Genomic Order Management Servi
 
 - Order Creation
   - The NHS Trust system creates a laboratory order (Order O21, IHE LTW LAB-1).
-  - This order is sent to the Regional Integration Engine.
+  - This order is sent to the Regional Orchestration Engine.
 - Order Fulfillment Request
   - The RIE sends an Order Fulfillment Task (requested) to the Order Filler.
 - Order Details Query
@@ -217,12 +217,12 @@ Future expansions will include notifications from the national [Genomic Order Ma
 ####  Flow Description:
 
 - Subscription (FHIR Subscription)
-  - The Practitioner sends a subscription request (e.g., to an Order, Report, or other clinical resource) to the Regional Integration Engine.
+  - The Practitioner sends a subscription request (e.g., to an Order, Report, or other clinical resource) to the Regional Orchestration Engine.
   - This is based on the FHIR Subscription standard.
 - Communication Request
   - Alternatively, the Practitioner may send a CommunicationRequest Task to the Integration Engine.
   - The Integration Engine converts this task into a Subscription, ensuring the Practitioner will receive updates when relevant events occur.
 - Event Notification (when event occurs)
-  - Once the subscribed event occurs (e.g., new lab report, status update, or order completion), the Regional Integration Engine sends an Event Notification back to the Practitioner.
+  - Once the subscribed event occurs (e.g., new lab report, status update, or order completion), the Regional Orchestration Engine sends an Event Notification back to the Practitioner.
   - This closes the loop, ensuring the Practitioner is informed in real time.
 

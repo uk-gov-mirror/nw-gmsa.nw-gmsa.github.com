@@ -3,7 +3,7 @@
 frame "Regional Placer Order Management [LAB-1]" as LAB1 {
   component "**Order Filler**\n\nNW Genomic Laboratory Hub (LIMS)" as LIMS
   component "**Order Placer**\n\nRegional" as EPR
-  component "**Intermediary**\n\nNW GLH Regional Integration Engine (RIE)" as TIE
+  component "**Intermediary**\n\nNW GLH Regional Orchestration Engine (RIE)" as TIE
 
  interface "HL7 FHIR Message\n**Laboratory Order O21**" as HL7_ORM1
 

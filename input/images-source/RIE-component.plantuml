@@ -5,7 +5,7 @@
   agent "**Order Filler**\n\nNW GLH LIMS" as Filler
 
   agent "**Order Result Tracker**\n\ne.g. EPR" as Tracker
-  agent "**Intermediary**\n\nNW GLH Regional Integration Engine" as RIE
+  agent "**Intermediary**\n\nNW GLH Regional Orchestration Engine" as RIE
 
   frame "Out of Area Communication (Future)" as future {
     agent "**Intermediary**\n\nNHS England Gemonic\nOrder Management Service" as GOMS

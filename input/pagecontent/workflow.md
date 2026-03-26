@@ -199,7 +199,7 @@ These exchanges typically use an [Aggregator](https://www.enterpriseintegrationp
 
 - Clinical Data Consumer
   - The system or application (e.g., a clinical portal) that initiates the query to retrieve patient data.
-- Health Information Exchange - Regional Integration Engine (RIE)
+- Health Information Exchange - Regional Orchestration Engine (RIE)
   - Acts as the central orchestrator that receives the query and distributes it across multiple data sources.
 - Clinical Data Sources
   - Examples shown:

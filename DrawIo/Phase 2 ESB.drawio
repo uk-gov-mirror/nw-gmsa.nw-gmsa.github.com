@@ -7,7 +7,7 @@
         <mxCell id="Bf6PE_DJ97KZ6822lBHe-4" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="-60" y="20" width="120" height="580" as="geometry" />
         </mxCell>
-        <mxCell id="HnpPnAv44DMsRuAQf5Vg-59" value="Regional Integration Engine - Enterprise Service Bus" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="HnpPnAv44DMsRuAQf5Vg-59" value="Regional Orchestration Engine - Enterprise Service Bus" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="70" y="100" width="670" height="480" as="geometry" />
         </mxCell>
         <mxCell id="SpyZkMs1lM7mogaTS6Ty-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="SpyZkMs1lM7mogaTS6Ty-21" target="HnpPnAv44DMsRuAQf5Vg-40">

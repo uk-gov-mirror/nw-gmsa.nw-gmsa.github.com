@@ -39,7 +39,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZXFyEixmDXkOCJC5mELR-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Intermediary&lt;/b&gt;&lt;br&gt;Regional Integration Engine" vertex="1">
+        <mxCell id="ZXFyEixmDXkOCJC5mELR-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Intermediary&lt;/b&gt;&lt;br&gt;Regional Orchestration Engine" vertex="1">
           <mxGeometry height="49.25" width="160" x="710" y="159.75" as="geometry" />
         </mxCell>
         <mxCell id="ZXFyEixmDXkOCJC5mELR-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="&lt;font style=&quot;font-size: 8px; line-height: 0%;&quot;&gt;&lt;b&gt;IHE LTW LAB-1&lt;/b&gt;&lt;br&gt;North West FHIR Laboratory Order O21&lt;br&gt;&lt;/font&gt;" vertex="1">
@@ -59,7 +59,7 @@
             <mxPoint x="1225.75" y="405.75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZXFyEixmDXkOCJC5mELR-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Intermediary&lt;/b&gt;&lt;br&gt;Regional Integration Engine" vertex="1">
+        <mxCell id="ZXFyEixmDXkOCJC5mELR-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Intermediary&lt;/b&gt;&lt;br&gt;Regional Orchestration Engine" vertex="1">
           <mxGeometry height="49.25" width="160" x="710" y="500" as="geometry" />
         </mxCell>
         <mxCell id="ZXFyEixmDXkOCJC5mELR-10" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=0;endArrow=none;strokeWidth=3;fillColor=#f8cecc;strokeColor=#b85450;">

@@ -5,7 +5,7 @@ title "Asynchronous Message Acknowledgement"
 hide footbox
 
 participant "Order Placer" as EPR
-participant "Intermediary\nNW GLH Regional Integration Engine (RIE)" as TIE
+participant "Intermediary\nNW GLH Regional Orchestration Engine (RIE)" as TIE
 participant "Order Filler" as LIMS
 
 LIMS --> TIE: Response HL7 v2 Message\n**ORL_O22?**

@@ -4,10 +4,10 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="_b9NuXSDLzWbAmvTPXuV-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="Regional Integration Engine&lt;div&gt;(Repository Service)&lt;/div&gt;" vertex="1">
+        <mxCell id="_b9NuXSDLzWbAmvTPXuV-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="Regional Orchestration Engine&lt;div&gt;(Repository Service)&lt;/div&gt;" vertex="1">
           <mxGeometry height="180" width="420" x="790" y="520" as="geometry" />
         </mxCell>
-        <mxCell id="HnpPnAv44DMsRuAQf5Vg-59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="Regional Integration Engine&lt;br&gt;(Enterprise Service Bus)" vertex="1">
+        <mxCell id="HnpPnAv44DMsRuAQf5Vg-59" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="Regional Orchestration Engine&lt;br&gt;(Enterprise Service Bus)" vertex="1">
           <mxGeometry height="550" width="1110" x="100" y="710" as="geometry" />
         </mxCell>
         <mxCell id="7jtiY5M9mVHTs9dgm_Sb-16" edge="1" parent="1" source="SpyZkMs1lM7mogaTS6Ty-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="_b9NuXSDLzWbAmvTPXuV-6">
