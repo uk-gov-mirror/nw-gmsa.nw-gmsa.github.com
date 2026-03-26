@@ -243,18 +243,22 @@ To address this, a central Genomic Data Repository (GDR) will be established. Th
 ```mermaid
 graph TD
     subgraph DataContracts[Data Contract]
-        CDR["<b>Data Source</b>Genomic Data Repository (GDR)"]
-        NHSA[<b>Data Consumer</b><br/>NHS GP/Trust/Board/ICS A]
-        NHSB[<b>Document Consumer</b><br/>NHS GP/Trust/Board/ICS B] 
-
-        APPA[<b>Data Consumer</b><br/>Application 1]
-        APPB[<b>Document Consumer</b><br/>Application 2]
+        CDR["<b>Data Source</b><br/>Genomic Data Repository (GDR)"]
+        subgraph DocS[Document Sharing IHE MHD]
+                NHSB[<b>Document Consumer</b><br/>NHS GP/Trust/Board/ICS B] 
+          APPB[<b>Document Consumer</b><br/>Application 2]
+        end
+        subgraph DataS[Data Shareing IHE QEDm/IPA]
+            NHSA[<b>Data Consumer</b><br/>NHS GP/Trust/Board/ICS A]
+            APPA[<b>Data Consumer</b><br/>Application 1]
+        end
     end
-    NHSE[<b>Document Consumer</b><br/>NHS England<br/>Summary Care Record<br/>National Record Locator] 
-
+    subgraph DocN[Document Sharing IHE MHDS]
+        NHSE[<b>Document Consumer</b><br/>National Record Locator<br/>Unified Genomic Record] 
+    end 
     CDR --> |HL7 FHIR RESTful<br/>IHE QEDm| NHSA
     CDR --> |HL7 FHIR RESTful<br/>IHE MHD| NHSB
-    CDR --> |HL7 FHIR RESTful| NHSE
+    CDR --> |HL7 FHIR RESTful<br/>IHE MHD| NHSE
     CDR --> |HL7 FHIR RESTful<br/>IHE QEDm|APPA
     CDR --> |HL7 FHIR RESTful<br/>IHE MHD| APPB
     
