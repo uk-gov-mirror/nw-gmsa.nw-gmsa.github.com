@@ -187,3 +187,29 @@ See [SSP Retrieval](https://webarchive.nationalarchives.gov.uk/ukgwa/20250306000
 <img style="padding:3px;width:80%;" src="retrieval_concept_diagram.png" alt="NW Genomics Technical Overview"/>
 <br clear="all">
 
+Combination of NW Genomics API Security and NHS Digital API Security
+
+```mermaid
+graph LR
+
+consumer((Data Consumer))
+
+
+subgraph Provider
+   APIGateway[API Gateway]
+   DP[Data Platform] 
+
+end
+
+subgraph Spine[NHS England Spine]
+    SSP
+end
+
+consumer --> SSP
+SSP --> APIGateway
+APIGateway --> DP
+DP ---> APIGateway
+APIGateway ---> SSP
+SSP ---> consumer
+```
+
