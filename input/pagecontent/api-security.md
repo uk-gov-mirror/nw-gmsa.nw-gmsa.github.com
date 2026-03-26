@@ -18,19 +18,21 @@ end
 subgraph DataPlatform[Data Platform]
     auth[Access Control and Authorisation]
     audit1[Audit Logging]
+    consent[Patient Consent]
     data[Data Security]
-    api[(FHIR Repository)]
+    api[(Genomic Data Repository<br/>FHIR Repository)]
 end
 
-consumer --> |request| enc
+consumer --> |request| APIGateway
 enc --> rate
 rate --> id
 
-id --> audit1
+APIGateway --> DataPlatform
+
 audit1 --> auth
-auth -->  data 
-data --> api
-api --> audit1
+auth -->  data
+data --> consent 
+consent --> api
 ```
 
 ```mermaid
@@ -66,8 +68,9 @@ else Issue
     rate -->> consumer: 503 Service Unavailable error 
 end  
 ```
+## API Gateway 
 
-## Encryption
+### Encryption
 
 | Transport level integration | Requirement | 
 |-----------------------------|-------------|
@@ -79,11 +82,11 @@ end
 | Content compression | MUST support GZIP compression |
 | Transfer encoding | MUST support chunked transfer encoding |
 
-## Rate Limiting
+### Rate Limiting
 
 TODO 
 
-## Identification and Authentication
+### Identification and Authentication
 
 Only system-to-system identification is currently supported.
 NHS England identification: 
@@ -91,9 +94,11 @@ NHS England identification:
 - Practitioner openID [NHS England CIS2 Authentication](https://digital.nhs.uk/services/care-identity-service/applications-and-services/cis2-authentication)
 - Patient openID [NHS England NHS login](https://digital.nhs.uk/services/nhs-login)
 
-## Access Control and Authorisation
+## Data Platform
 
-### OAuth2
+### Access Control and Authorisation
+
+#### OAuth2
 
 - [EURIDICE EU Health Data API - Authorization](https://hl7.eu/fhir/health-data-api/en/authorization.html)]
 
@@ -114,17 +119,13 @@ Any Trust Integration can act as the Authorisation Client or Resource Server in 
 - The client then performs requests to the resource server using the `Access Token` (authorisation = Bearer {accessToken})
 - The resource **MUST** check the token is valid using **Introspect Token (ITI-102)**, invalid tokens will be rejected using a 403 Forbidden http code.
 
-### Self Contained Tokens and JWT
+#### Self Contained Tokens and JWT
 
 See also [NHS England Security and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation)
 
 FHIR Resource Scopes are used to define the permissions a client has to access a FHIR resource. See [SMART - App Launch: Scopes and Launch Context](https://build.fhir.org/ig/HL7/smart-app-launch/scopes-and-launch-context.html)
 
-## Patient Consent 
-
-TODO See [IHE Privacy Consent on FHIR (PCF)](https://profiles.ihe.net/ITI/PCF/volume-1.html)
-
-## Audit Logging
+### Audit Logging
 
 See [IHE Basic Audit Log Patterns (BALP)](https://profiles.ihe.net/ITI/BALP/volume-1.html)
 
@@ -139,4 +140,50 @@ creator --> |"Record Audit Event [ITI-20]"| repository
 consumer --> |"Retrieve ATNA Audit Event [ITI-81]"| repository
 ```
 
+### Patient Consent
+
+TODO See [IHE Privacy Consent on FHIR (PCF)](https://profiles.ihe.net/ITI/PCF/volume-1.html)
+
+### Data Security
+
+All interactions must conform to this Implementation Guide, details on testing and validation are available in the [Testing](testing.html) section.
+
+## NRL and Spine Security Proxy (SSP)
+
+Based on [National Record Locator - FHIR API v3 - Producer](https://digital.nhs.uk/developer/api-catalogue/national-record-locator-fhir/v3/producer)
+
+```mermaid
+graph LR
+
+consumer((Document Consumer))
+
+registry["Document Registry<br/>National Record Locator (NRL)"]
+
+
+SSP["Spine Security Proxy (SSP)"]
+
+
+subgraph DataPlatform[Data Platform]
+    auth[Access Control and Authorisation]
+    audit1[Audit Logging]
+    data[Data Security]
+    api[(Genomic Data Repository)]
+end
+
+consumer --> |Find Patient Patient Documents| registry
+consumer --> |Retrieve Document| SSP
+
+SSP --> DataPlatform
+
+auth --> audit1
+audit1 --> data 
+data --> api
+```
+
+### SSP Provider Security
+
+See [SSP Retrieval](https://webarchive.nationalarchives.gov.uk/ukgwa/20250306000638/https://developer.nhs.uk/apis/nrl/retrieval_ssp.html)
+
+<img style="padding:3px;width:80%;" src="retrieval_concept_diagram.png" alt="NW Genomics Technical Overview"/>
+<br clear="all">
 
