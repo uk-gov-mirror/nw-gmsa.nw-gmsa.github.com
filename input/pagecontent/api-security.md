@@ -208,8 +208,6 @@ end
 consumer --> SSP
 SSP --> APIGateway
 APIGateway --> DP
-DP ---> APIGateway
-APIGateway ---> SSP
-SSP ---> consumer
+
 ```
 
