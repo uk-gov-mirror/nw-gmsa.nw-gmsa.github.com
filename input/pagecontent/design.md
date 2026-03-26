@@ -51,7 +51,7 @@ Note the use of the IHE LTW profile and the HL7 v2.5.1 message format is only ex
 graph LR
 
     OrderPlacer[<b>Order Placer</b><br/>EPR] --> |1. General Order<br/>HL7 v2 ORM_O01| TIE["Trust Integration Engine (TIE)"]
-    TIE --> |2. General Order<br/>IHE LTW LAB-1<br/>HL7 v2.5.1 OML_O21 or FHIR Message O21| RIE
+    TIE --> |2. Laboratory Order<br/>IHE LTW LAB-1<br/>HL7 v2.5.1 OML_O21 or FHIR Message O21| RIE
     RIE["Regional Orchestration Engine (RIE)"] --> |3. General Order<br/>HL7 v2 ORM_O01| OrderFiller
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
     RIE --> |5. Laboratory Report<br/>IHE LTW LAB-3<br/>HL7 v2.5.1 ORU_R01| TIE
@@ -118,7 +118,7 @@ graph LR
         TIEB["NHS Trust B Integration Engine (TIE)"]
         RIE["Regional Orchestration Engine (RIE)"]
     end
-    NHSA --> |Laboratory Order<br/>HL7 ORM_O01| TIEA
+    NHSA --> |General Order<br/>HL7 ORM_O01| TIEA
     NHSB --> |Laboratory Order<br/>HL7 OML_O21| TIEB 
     TIEA --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
     TIEB --> |Laboratory Order<br/>HL7 OML_O21<br/>HE LTW LAB-1| RIE
@@ -224,7 +224,7 @@ graph LR
         TIE["Trust Integration Engine (TIE)"]
         RIE["Regional Orchestration Engine (RIE)"]
     end 
-    TIE --> |2. General Order<br/>HL7 v2.5.1 OML_O21| RIE
+    TIE --> |2. Laboratory Order<br/>HL7 v2.5.1 OML_O21| RIE
     RIE --> |3. General Order<br/>HL7 v2 ORM_O01/OML_O21| OrderFiller
     
     OrderFiller[<b>Order Filler</b><br/>LIMS] --> |4. Laboratory Report<br/>HL7 v2 ORU_R01| RIE
