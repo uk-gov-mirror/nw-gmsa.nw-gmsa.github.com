@@ -151,6 +151,12 @@ All interactions must conform to this Implementation Guide, details on testing a
 ## NRL and Spine Security Proxy (SSP)
 
 Based on [National Record Locator - FHIR API v3 - Producer](https://digital.nhs.uk/developer/api-catalogue/national-record-locator-fhir/v3/producer)
+and [SSP Retrieval](https://webarchive.nationalarchives.gov.uk/ukgwa/20250306000638/https://developer.nhs.uk/apis/nrl/retrieval_ssp.html)
+
+<img style="padding:3px;width:80%;" src="retrieval_concept_diagram.png" alt="NW Genomics Technical Overview"/>
+<br clear="all">
+
+Initial NW Genomics Design.
 
 ```mermaid
 graph LR
@@ -162,52 +168,27 @@ registry["Document Registry<br/>National Record Locator (NRL)"]
 
 SSP["Spine Security Proxy (SSP)"]
 
-
+subgraph Platform 
+subgraph APIGateway[API Gateway]
+  PKI[Validation of PKI credentials]
+end
 subgraph DataPlatform[Data Platform]
     auth[Access Control and Authorisation]
     audit1[Audit Logging]
     data[Data Security]
     api[(Genomic Data Repository)]
 end
+end 
 
 consumer --> |Find Patient Patient Documents| registry
 consumer --> |Retrieve Document| SSP
 
-SSP --> DataPlatform
+SSP --> APIGateway
+APIGateway --> DataPlatform
 
 auth --> audit1
 audit1 --> data 
 data --> api
 ```
 
-### SSP Provider Security
-
-See [SSP Retrieval](https://webarchive.nationalarchives.gov.uk/ukgwa/20250306000638/https://developer.nhs.uk/apis/nrl/retrieval_ssp.html)
-
-<img style="padding:3px;width:80%;" src="retrieval_concept_diagram.png" alt="NW Genomics Technical Overview"/>
-<br clear="all">
-
-Combination of NW Genomics API Security and NHS Digital API Security
-
-```mermaid
-graph LR
-
-consumer((Data Consumer))
-
-
-subgraph Provider
-   APIGateway[API Gateway]
-   DP[Data Platform] 
-
-end
-
-subgraph Spine[NHS England Spine]
-    SSP
-end
-
-consumer --> SSP
-SSP --> APIGateway
-APIGateway --> DP
-
-```
 
