@@ -156,6 +156,25 @@ and [SSP Retrieval](https://webarchive.nationalarchives.gov.uk/ukgwa/20250306000
 <img style="padding:3px;width:80%;" src="retrieval_concept_diagram.png" alt="NW Genomics Technical Overview"/>
 <br clear="all">
 
+### SSP Mapping 
+
+| SSP                                        | Description                                                                                                                                                                                                          | NW FHIR AuditEvent         | Http Header      |
+|--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|------------------|
+| Ssp-TraceID                                | Consumer’s TraceID - a unique identifier provided by the consumer (i.e. GUID/UUID).                                                                                                                                  | entity[transaction]        | X-Request-ID     |
+| Ssp-From	                                  | Consumer’s ASID                                                                                                                                                                                                      | agent[client].who (Device) |                  |
+| Ssp-To                                     | Provider’s ASID.                                                                                                                                                                                                     | agent[server].who (Device) |                  |
+| Ssp-InteractionID	                         | Spine’s Interaction ID. <br/> The interaction ID for retrieving a record referenced in an NRL pointer is a fixed value, specific to the NRL service: <br/> urn:nhs:names:services:nrl:DocumentReference.content.read | action (and?)              |                  |
+| HTTP Response Body (if the request failed) |                                                                                                                                                                                                                      | outcomeDesc                |                  |
+| HTTP Status Code                           |                                                                                                                                                                                                                      | outcome                    |                  |
+| Response Datetime                          |                                                                                                                                                                                                                      | recorded                   |                  |
+| HTTP Request URL                           |                                                                                                                                                                                                                      | 	entity[restful]           |                  |
+| ODS Code                                   |                                                                                                                                                                                                                      | agent[client]              |                  |
+| Record version or equivalent               |                                                                                                                                                                                                                      |                            |                  |
+| Request Datetime                           |                                                                                                                                                                                                                      | recorded                   |                  |
+| Trace ID                                   |                                                                                                                                                                                                                      | entity[message]            | X-Correlation-ID |
+| User ID                                    |                                                                                                                                                                                                                      | agent[user]                           |                  |
+
+
 Initial NW Genomics Design.
 
 ```mermaid

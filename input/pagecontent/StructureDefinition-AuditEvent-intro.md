@@ -20,7 +20,8 @@ This is currently being elaborated and subject to change.
 |                             | agent[server]             | ODS Code                | Server DNS or IP address                                                              |
 | Restful/Message Transaction | entity[transaction]       |                         | Middleware Message ID or (HL7 FHIR) RESTful HTTP Header: X-Request-ID                 |
 | Message Type                | entity[event].lifecycle   |                         | HL7 V2 MSH-9 Message Type [HL7 Events](http://terminology.hl7.org/CodeSystem/v2-0003) |
-| Message ID                  | entity[message] |                         | HL7 V2 MSH-10 Message Control ID (HL7 FHIR) RESTful HTTP Header: X-Request-ID         |
+| Message ID                  | entity[message] |                         | HL7 V2 MSH-10 Message Control ID (HL7 FHIR) RESTful HTTP Header: X-Correlation-ID     |
 | RESTful Query               | entity[restful]             |                         | also known as `data` in IHE BALP                                                      |
 | Patient                     | entity[patient]           | NHS Number              | Patient reference plus NHS Number                                                     |
+| Outcome | outcome || 
 {:.grid}
