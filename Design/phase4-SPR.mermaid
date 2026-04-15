@@ -1,0 +1,28 @@
+graph TD
+
+DC["Document Consumer (Structured)"]
+
+Registry[Document Registry<br/>National Record Locator]
+Repository[Document Repository<br/>]
+
+subgraph RIE[Orchestration and Data Platform];
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    Agg@{ shape: docs, label: "Aggregation Layer<br/>Final Report"}
+
+    API["API Gateway<br/>(FHIR Facade)"]
+    API --> Agg
+    Agg --> |Genomic Data<br/>FHIR RESTful + Resource| GDR
+end
+
+DC --> |Find Document References| Registry
+DC --> |Retrieve Document| Repository
+UGR@{ shape: cyl, label: "Unified Genomic Record"}
+
+Repository --> API
+Repository --> UGR
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class EPR,TIE,LIMS,DC,Registry,Repository purple;
+class DM,HL7UK pink;

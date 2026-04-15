@@ -1,0 +1,92 @@
+graph LR
+
+subgraph EHR;
+    epic[EHR<br/>EPIC Hive MFT]
+    meditechAH[EHR<br/>Meditech AH]
+    meditechLW[EHR<br/>Meditech LW]
+end
+
+subgraph GenomicLIMS;
+    StarLIMS
+    iGene[LIMS<br/>IGene]
+    Shire
+    Clarity[Clarity Sample Inventory Management]
+end
+
+subgraph PathologyLIMS;
+    epicBeaker[EPIC Beaker MFT]
+    Magentus[Magentus LIMS Lancs+South Cumbria & Merseyside+Cheshire]
+end
+
+Watson
+Illumina[Illumnina Bedspace]
+CliniSys[CliniSys GLIMS]
+OpenSpecimen
+
+
+
+subgraph DNASequencing;
+    Thermofisher
+end
+
+subgraph Analyser;
+    Cepheid[Cepheid]
+end
+
+subgraph CDS[Decision Support];
+    Congenica[Congenica?]
+end
+
+
+
+subgraph HIE[Health Information Exchange];
+    RIE["Regional Orchestration Engine (RIE)"]
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    VCFFHIR["VCF to FHIR Genomic Report"]
+    FHIRVCF@{ shape: docs, label: "Variant & Sequence Phase Relationship"}
+    FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, DocumentReference and Specimen"}
+    FHIRCDS@{ shape: docs, label: "DiagnosticReport, PCR Observation, Diagnostic Implication, Theraputic Implication and Molecular Consequence"}
+end
+
+
+VCF["BioInformaticsPipeline<br/>FASTQ to VCF"]
+
+
+EHR --> |Lab Orders HL7 O21| RIE
+RIE --> |Lab Orders HL7 O21| GenomicLIMS
+GenomicLIMS --> |Lab Reports HL7 R01| RIE
+
+
+
+RIE --> |Lab Reports HL7 R01| EHR
+RIE --> |Lab Reports HL7 R01| PathologyLIMS
+
+
+
+PathologyLIMS --> |Lab Orders HL7 O21| RIE
+
+
+Cepheid --> |Lab Reports HL7 R01| RIE
+Cepheid --> |Lab Orders HL7 QBP Query| RIE
+
+
+DNASequencing --> |FASTQ| VCF
+
+VCF --> |VCF| VCFFHIR
+VCFFHIR --> FHIRVCF
+FHIRVCF --> GDR
+
+VCF --> |VCF| CDS
+CDS --> FHIRCDS
+FHIRCDS --> GDR
+
+RIE --> FHIRLIMS
+FHIRLIMS --> GDR
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+
+class GDR,RIE,VCFFHIR pink;
+

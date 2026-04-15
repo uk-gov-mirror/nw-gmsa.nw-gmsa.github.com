@@ -1,0 +1,40 @@
+graph LR
+
+
+
+subgraph GenomicLIMS;
+    iGene[LIMS<br/>IGene]
+end
+
+
+subgraph Analyser;
+    Cepheid[Cepheid]
+end
+
+
+
+
+subgraph HIE[Health Information Exchange];
+    RIE["Regional Orchestration Engine (RIE)"]
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, DocumentReference and Specimen"}
+end
+
+
+Cepheid --> |Lab Reports HL7 R01| RIE
+Cepheid --> |Lab Orders HL7 QBP Query| RIE
+
+RIE --> |CSV Import| iGene
+iGene --> |Worksheet CSV| RIE
+RIE --> |FHIR RESTful| GDR
+
+
+RIE --> FHIRLIMS
+FHIRLIMS --> GDR
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+
+class GDR,RIE,VCFFHIR pink;

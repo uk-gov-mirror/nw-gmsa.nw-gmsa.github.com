@@ -1,0 +1,32 @@
+graph TD
+
+DC["Document Consumer"]
+DC2["Data Consumer"]
+
+Registry[Document Registry]
+Repository[Document Repository]
+DataRepository[Data Repository]
+
+subgraph RIE[Orchestration and Data Platform];
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+
+    API["API Gateway<br/>(FHIR Facade)"]
+    API --> GDR
+end
+
+DC --> |Find Document References| Registry
+DC --> |Retrieve Document| Repository
+DC2 --> |Query API| DataRepository
+
+Repository --> API
+Registry --> API
+DataRepository --> API
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class DataRepository,DC,DC2,Registry,Repository purple;
+class DM,HL7UK pink;
+
+

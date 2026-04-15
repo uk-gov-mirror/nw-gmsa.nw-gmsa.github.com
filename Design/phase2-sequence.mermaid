@@ -1,0 +1,15 @@
+sequenceDiagram
+
+title Notify and Retrieve - Hybrid HL7 v2 and FHIR RESTful
+
+participant OrderPlacer As Order Placer & Data Consumer<br/>(NEY Genomics and<br/>NW Pathology)
+participant OrderFiller As Order Filler<br/>(NW Genomics)
+participant GDR as Genomic Data Repository<br/>(NW Genomics)
+
+
+Note over OrderPlacer,OrderFiller: Summary Genomic Report<br/>(Event Notification)
+OrderFiller ->> OrderPlacer: HL7 v2 ORU_R01
+Note over OrderPlacer,GDR: Detailed Genomic Data
+OrderPlacer ->> GDR: RESTful Query (HL7 FHIR)<br/>IHE/HL7 Eurdice Health Data API
+GDR -->> OrderPlacer: Genomic Data<br/>(HL7 Genomic Reporting)
+

@@ -1,0 +1,37 @@
+graph LR
+
+subgraph NHSE[NHS England];
+    FDP@{ shape: cyl, label: "Federated Data Platform"}
+    UGR@{ shape: cyl, label: "Unified Genomic Record"}
+end
+
+
+subgraph RIE[Orchestration and Data Platform];
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    Agg@{ shape: docs, label: "Aggregation Layer<br/>Final Report"}
+    Agg --> |Genomic Data<br/>FHIR RESTful + Resource| GDR
+    API["API Gateway<br/>(FHIR Facade)"]
+end
+
+subgraph Analytics[Analytics and Bioinformatics Pipelines];
+     GDW@{ shape: cyl, label: "Genomic Data Warehouse"}
+     BIO[Bioinformatics Pipeline]
+end
+
+GDW --> |NHS England Genomic Testing Report| FDP
+BIO --> |NHS England Upload Genomic Data| FDP
+
+DC["Documet Consumer (Structured)"]
+
+API --> |Genomic Data<br/>FHIR RESTful + Resource| GDR
+DC --> |Genomic Report<br/>FHIR Document| UGR
+UGR --> |Genomic Report<br/>FHIR Document| API
+API --> |Genomic Report<br/>FHIR Document| Agg
+FDP <--> UGR
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class EPR,TIE,LIMS,DC,Registry purple;
+class DM,HL7UK pink;
+
