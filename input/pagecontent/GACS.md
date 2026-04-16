@@ -4,7 +4,7 @@ This is currently being elaborated and subject to change.
 
 ## Reference Standards
 
-1. Genomic Archive and Communication (GACS) 
+1. Genomic Archive and Communication System (GACS) 
    - https://healthit.gov/wp-content/uploads/2025/03/sync_for_genes_report_november_2017.pdf
    - https://www.researchgate.net/publication/361146233_Building_a_Genome_Archiving_and_Communication_System_Integrated_into_a_Health_Information_Systems
 2. Health Information Exchange (HIE)
