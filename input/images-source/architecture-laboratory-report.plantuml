@@ -6,7 +6,7 @@
  component "Document Consumer\n(Unstructured)" as HIEU
  component "Consumer (ICS)" as ICS
  component "Intermediary\nRegional Orchestration Engine (RIE)" as TIE
- component "Genomic Data Repository\nHealth Information Exchange (HIE)" as CDR
+ component "Genomic Data Repository\nGenomic Archiving and Communication System (GACS)" as CDR
 
  EPR -d[hidden]- ICS
  LIMS -r-> TIE : **Send Genomic Report**\nHL7 v2 ORU_R01\nIHE LTW LAB-3

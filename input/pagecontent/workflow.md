@@ -177,7 +177,7 @@ Scope: This option is initially aimed at regional and national level workflows. 
   - This can be extended to include pub/sub using [FHIR Subscription](https://build.fhir.org/ig/HL7/fhir-subscription-backport-ig/index.html)  
 
 
-### Federated Genomic Data Access and Health Information Exchange (HIE) Option
+### Federated Genomic Data Access and Genomic Archiving and Communication System (GACS) Option
 
 This approach enables real-time, federated access to patient data spread across multiple NHS organizations, without needing to centralize all data. It supports **clinical portals** that provide clinicians with a holistic view of patient information while respecting data sovereignty and system independence.
 Notable examples of this pattern include:
@@ -199,7 +199,7 @@ These exchanges typically use an [Aggregator](https://www.enterpriseintegrationp
 
 - Clinical Data Consumer
   - The system or application (e.g., a clinical portal) that initiates the query to retrieve patient data.
-- Health Information Exchange - Regional Orchestration Engine (RIE)
+- Genomic Archiving and Communication System - Regional Orchestration Engine (RIE)
   - Acts as the central orchestrator that receives the query and distributes it across multiple data sources.
 - Clinical Data Sources
   - Examples shown:

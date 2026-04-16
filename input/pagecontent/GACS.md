@@ -4,7 +4,7 @@ This is currently being elaborated and subject to change.
 
 ## Reference Standards
 
-1. Health Information Exchange (IHE)
+1. Health Information Exchange (HIE)
    - [IHE HIE White Paper](https://profiles.ihe.net/ITI/HIE-Whitepaper/)
    - [HL7 Intermediataries White Paper](https://confluence.hl7.org/spaces/FHIR/pages/144967060/Intermediaries+White+Paper)
 2. [IHE Cross-Enterprise Document Sharing (XDS.b)](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) XML

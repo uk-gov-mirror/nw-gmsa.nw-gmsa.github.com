@@ -87,8 +87,8 @@ pages:
   HPD.md:
     title: Healthcare Provider Directory (HPD)
     generation: markdown
-  HIE.md:
-    title: Health Information Exchange (HIE)
+  GACS.md:
+    title: Genomic Archiving and Communication System (GACS)
     generation: markdown
   LAB-1.md:
     title: Placer Order Management [LAB-1]
@@ -242,7 +242,7 @@ menu:
     Laboratory Testing Workflow (LTW): LTW.html
     Inter-Laboratory Workflow (ILW): ILW.html
     Specimen Event Tracking (SET): SET.html
-    Health Information Exchange (HIE): HIE.html
+    Genomic Archiving and Communication System (GACS): GACS.html
     Care Services Discovery (mCSD): mCSD.html
     Patient Administration (PAM): PAM.html
     API Security: api-security.html

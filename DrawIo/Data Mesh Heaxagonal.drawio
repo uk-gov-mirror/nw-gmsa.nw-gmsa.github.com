@@ -118,7 +118,7 @@
         <mxCell id="U9sZ-D53BlCDA6lc3gA6-4" value="Electronic Patient Records (EPR) and Laboratory Information Systems (LIMS)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="620" y="200" width="140" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="U9sZ-D53BlCDA6lc3gA6-5" value="Health Information Exchange (HIE)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="U9sZ-D53BlCDA6lc3gA6-5" value="Genomic Archiving and Communication System (GACS)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="620" y="280" width="140" height="60" as="geometry" />
         </mxCell>
       </root>

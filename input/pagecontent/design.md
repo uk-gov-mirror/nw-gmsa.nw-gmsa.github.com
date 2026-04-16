@@ -340,17 +340,17 @@ This diagram illustrates an event-based, conversation-driven laboratory ordering
 
 The Order Placer creates a diagnostic order and notifies the Order Filler via a FHIR Task. The Order Filler retrieves the order using FHIR RESTful queries, accepts or rejects the request, and communicates status updates (accepted, in-progress, completed, or rejected) back to the Order Placer through task-based event notifications. Laboratory testing, result interpretation, and report creation occur asynchronously, with reports retrieved by the Order Placer via FHIR RESTful APIs upon task completion.
 
-### Health Information Exchange (HIE)
+### Genomic Archiving and Communication System (GACS)
 
 A conversational (event-based) workflow, also referred to as a conversation-based workflow, represents a modern approach to clinical messaging. This paradigm assumes that both the Order Placer and the Order Filler can share data using HL7 FHIR RESTful APIs.
 
 In practice, this capability may not always be available. For example, Laboratory Information Management Systems (LIMS) within NHS North West Genomics may not support FHIR RESTful APIs. In such cases, the Genomic Data Repository (GDR) is used to share genomic laboratory reports and other genomic data. Similarly, if Electronic Patient Record (EPR) systems do not support FHIR RESTful APIs, the GDR is used to facilitate the sharing of laboratory orders.
 
-Together, the Regional Orchestration Engine (RIE) and the Genomic Data Repository (GDR) collectively constitute the Health Information Exchange (HIE).
+Together, the Regional Orchestration Engine (RIE) and the Genomic Data Repository (GDR) collectively constitute the Genomic Archiving and Communication System (GACS).
 
 
 <figure>
 {%include overview-hie.svg%}
-<p id="fX.X.X.X-X" class="figureTitle">Health Information Exchange (HIE)</p>
+<p id="fX.X.X.X-X" class="figureTitle">Genomic Archiving and Communication System (GACS)</p>
 </figure>
 <br clear="all">

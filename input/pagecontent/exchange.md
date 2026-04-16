@@ -15,7 +15,7 @@ The architecture consists of three primary components:
 3. **API Gateway (APIG)**  
    Provides external data access to the GDR and also provides [API Security](api-security.html).
 
-Together these components form the **Health Information Exchange (HIE)**
+Together these components form the **Genomic Archiving and Communication System (GACS)**
 for the North West Genomic Medicine Service Alliance.
 
 Key goals:
@@ -102,7 +102,7 @@ graph TD
 EPR[EPR / Order Placer]
 TIE["Trust Integration Engine (TIE)"]
 
-subgraph HIE["Health Information Exchange (HIE)"]
+subgraph HIE["Genomic Archiving and Communication System (GACS)"]
     RIE["Regional Orchestration Engine (RIE)"]
     GDR["Genomic Data Repository (GDR)"]
    APIG["API Gateway (APIG)"]

@@ -111,7 +111,7 @@
         <mxCell id="yU3ElABQZjIhGrlI_ipJ-1" value="HL7 over http&lt;br&gt;OAuth2" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/ios-web-user-interface-multi-circle-flat-vol-3/512/Authorisation_lock_padlock_password_privacy_safe_security-128.png" vertex="1" parent="1">
           <mxGeometry x="1080" y="875" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="ck6UTDwcm1I5cA8ir3R7-1" value="Health Information Exchange (HIE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="ck6UTDwcm1I5cA8ir3R7-1" value="Genomic Archiving and Communication System (GACS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="1136.5" y="720" width="120" height="60" as="geometry" />
         </mxCell>
       </root>

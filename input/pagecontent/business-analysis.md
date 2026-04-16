@@ -413,7 +413,7 @@ graph TD;
 For more details see:
 
 - [Send Laboratory Order (IHE LTW)](LTW.html) NHS Trust
-- [Read & Search Laboratory Order (HIE)](HIE.html)
+- [Read & Search Laboratory Order (HIE)](GACS.html)
 
 #### Diagnostic Testing
 
@@ -438,9 +438,9 @@ graph TD;
 For more details see:
 
 - [Send Laboratory Report Data (IHE LTW)](LTW.html) - NHS Trust
-- [Send Laboratory Report Document (HIE)](HIE.html#publish-a-document) - ICS/ICB
-- [Read & Search Laboratory Report Data (HIE)](HIE.html)
-- [Read & Seerch Laboratory Report Documents (HIE)](HIE.html)
+- [Send Laboratory Report Document (HIE)](GACS.html#publish-a-document) - ICS/ICB
+- [Read & Search Laboratory Report Data (HIE)](GACS.html)
+- [Read & Seerch Laboratory Report Documents (HIE)](GACS.html)
 
 ### Inter Laboratory Workflow (ILW)
 

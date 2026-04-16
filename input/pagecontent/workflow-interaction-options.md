@@ -168,7 +168,7 @@ At a high level there are two workflow styles:
   - event-based messages are mostly implemented using FHIR Subscription (Pub/Sub), other message distribution (i.e. using FHIR Message) options have not been defined by IHE or HL7.
 
 <div class="alert alert-info" role="alert">
-In the following section, North West Genomics Health Information Exchange (HIE), Laboratory/Medicus and NHS England England can all act as the <b>Workflow Broker</b>. This is all use case specific: 
+In the following section, North West Genomics Genomic Archiving and Communication System (GACS), Laboratory/Medicus and NHS England England can all act as the <b>Workflow Broker</b>. This is all use case specific: 
 <ul>
 <li>Laboratory Order Placer to Genomic Order Filler: Medicus is the Workflow Broker</li>
 <li>NHS Trust Order Placaer to North West Genomic Order Filler: Medicus is the Workflow Broker</li>
@@ -182,7 +182,7 @@ It is possible that these use cases can be combined, for example, an order from 
 
 ##### Current Implementation (Step 1 -> 4)
 
-Currently, the Health Information Exchange (HIE) is implemented as:
+Currently, the Genomic Archiving and Communication System (GACS) is implemented as:
 
 ```mermaid
 graph TD

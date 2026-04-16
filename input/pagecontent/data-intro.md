@@ -65,7 +65,7 @@ graph TD
     EHR[EPR] <--> |HL7 v2<br/>Orders & Reports| RIE
     LIMS[LIMS] <--> |HL7 v2<br/>Orders & Reports| RIE
 
-    subgraph HIE["Health Information Exchange"]
+    subgraph HIE["Genomic Archiving and Communication System"]
         RIE[Regional Orchestration Engine] --> |Store<br/>HL7 FHIR| CDR[Genomic Data Repository]
     end
     Clinician[Data Sharing<br/>Clinical Apps<br/>Single Patient Record] --> |Read<br/>HL7 FHIR| CDR

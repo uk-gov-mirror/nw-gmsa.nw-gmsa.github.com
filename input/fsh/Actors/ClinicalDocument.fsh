@@ -16,7 +16,7 @@ Standards specific definitions:
 - [HL7 v3 Clinical Document Architecture](https://en.wikipedia.org/wiki/Clinical_Document_Architecture)
 - [openEHR](https://specifications.openehr.org/releases/RM/latest/ehr.html)
 
-HL7 FHIR Document Standards for use with [Health Document Sharing](HIE.html):
+HL7 FHIR Document Standards for use with [Health Document Sharing](GACS.html):
 
 - [HL7 International Patient Summary Implementation Guide](https://build.fhir.org/ig/HL7/fhir-ips/)
 - [HL7 Europe Laboratory Report](https://build.fhir.org/ig/hl7-eu/laboratory/)

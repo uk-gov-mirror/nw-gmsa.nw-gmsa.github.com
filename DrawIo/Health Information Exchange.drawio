@@ -25,7 +25,7 @@
         <mxCell id="jgpSiwze4TK5Q7L4IDOj-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="jgpSiwze4TK5Q7L4IDOj-3" target="jgpSiwze4TK5Q7L4IDOj-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jgpSiwze4TK5Q7L4IDOj-3" value="&lt;b&gt;Health Information Exchange (HIE)&lt;/b&gt;&lt;br&gt;(Federated Query)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="jgpSiwze4TK5Q7L4IDOj-3" value="&lt;b&gt;Genomic Archiving and Communication System (GACS)&lt;/b&gt;&lt;br&gt;(Federated Query)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
           <mxGeometry x="320" y="270" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="jgpSiwze4TK5Q7L4IDOj-6" value="&lt;b&gt;Clinical Data Repository&lt;/b&gt;&lt;br&gt;(North West GMSA)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
