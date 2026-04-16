@@ -4,12 +4,16 @@ This is currently being elaborated and subject to change.
 
 ## Reference Standards
 
-1. Health Information Exchange (HIE)
+1. Genomic Archive and Communication (GACS) 
+   - https://healthit.gov/wp-content/uploads/2025/03/sync_for_genes_report_november_2017.pdf
+   - https://www.researchgate.net/publication/361146233_Building_a_Genome_Archiving_and_Communication_System_Integrated_into_a_Health_Information_Systems
+2. Health Information Exchange (HIE)
    - [IHE HIE White Paper](https://profiles.ihe.net/ITI/HIE-Whitepaper/)
    - [HL7 Intermediataries White Paper](https://confluence.hl7.org/spaces/FHIR/pages/144967060/Intermediaries+White+Paper)
-2. [IHE Cross-Enterprise Document Sharing (XDS.b)](https://profiles.ihe.net/ITI/TF/Volume1/ch-10.html) XML
-3. [IHE Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html) HL7 FHIR
-4. [IHE Query for Existing Data Mobile (QEDm)](https://profiles.ihe.net/PCC/QEDm/index.html) HL7 FHIR
+3. [EU Health Data API](https://euridice.org/eu-health-data-api/)
+   - [IHE Patient Demographics Query for Mobile (PDQm)](https://profiles.ihe.net/ITI/PDQm/index.html) HL7 FHIR
+   - [IHE Mobile access to Health Documents (MHD)](https://profiles.ihe.net/ITI/MHD/index.html) HL7 FHIR   
+   - [HL7 International Patient Access (IPA)](https://hl7.org/fhir/uv/ipa/)/[IHE Query for Existing Data Mobile (QEDm)](https://profiles.ihe.net/PCC/QEDm/index.html) HL7 FHIR
 
 ## Actors and Transactions
 
