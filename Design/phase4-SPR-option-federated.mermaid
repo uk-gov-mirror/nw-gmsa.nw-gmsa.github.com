@@ -1,13 +1,15 @@
 graph TD
 
-DC["Document Consumer (Structured)"]
+DC["Document Consumer (PDF)"]
 
 Registry[Document Registry<br/>National Record Locator]
 Repository[Document Repository<br/>]
 
-subgraph RIE[Orchestration and Data Platform];
+subgraph RIE["NW Genomic Archiving and Communication System (GACS)"];
+
     GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
     Agg@{ shape: docs, label: "Aggregation Layer<br/>Final Report"}
+    DocumentNotificationService
 
     API["API Gateway<br/>(FHIR Facade)"]
     API --> Agg
@@ -16,10 +18,10 @@ end
 
 DC --> |Find Document References| Registry
 DC --> |Retrieve Document| Repository
-UGR@{ shape: cyl, label: "Unified Genomic Record"}
+
+DocumentNotificationService --> |POST FHIR DocumentReference| Registry
 
 Repository --> API
-Repository --> UGR
 
 classDef purple fill:#E1D5E7;
 classDef pink fill:#F8CECC;

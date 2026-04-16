@@ -1,0 +1,30 @@
+graph TD
+
+DC["Document Consumer (Structured)"]
+
+subgraph NHSEngland
+    Registry[Document Registry<br/>National Record Locator]
+    Repository[Document Repository]
+    UGR@{ shape: cyl, label: "FHIR Store"}
+end
+
+subgraph RIE["NW Genomic Archiving and Communication System (GACS)"];
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+
+    Agg2@{ shape: docs, label: "Aggregation Pipeline<br/>Asemble FHIR Document Genomic Report"}
+end
+
+DC --> |Find Document References| Registry
+DC --> |Retrieve Document| Repository
+
+
+Repository --> UGR
+GDR --> Agg2
+Agg2 --> |FHIR Document Bundle| UGR
+Agg2 --> |FHIR DocumentReference| Registry
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class EPR,TIE,LIMS,DC,Registry,Repository purple;
+class DM,HL7UK pink;

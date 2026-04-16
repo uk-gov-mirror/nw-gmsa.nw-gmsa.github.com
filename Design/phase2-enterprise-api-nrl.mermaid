@@ -1,0 +1,30 @@
+graph TD
+
+DC["Document Consumer"]
+
+Registry[Document Registry<br/>National Record Locator Service]
+Repository[Document Repository]
+
+
+subgraph RIE["NW Genomic Archiving and Communication System (GACS)"];
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    DocumentNotificationService
+
+    API["API Gateway<br/>(FHIR Facade)"]
+    API --> GDR
+end
+
+DC --> |Find Document References| Registry
+DC --> |Retrieve Document| Repository
+
+Repository --> API
+
+DocumentNotificationService --> |POST FHIR DocumentReference| Registry
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class DataRepository,DC,DC2,Registry,Repository purple;
+class DM,HL7UK pink;
+
+
