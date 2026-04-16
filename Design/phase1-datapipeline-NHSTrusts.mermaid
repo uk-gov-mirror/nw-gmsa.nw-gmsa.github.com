@@ -18,22 +18,23 @@ subgraph Analysis[Data Analysis];
 end
 
 
-subgraph RIE[Orchestration and Data Platform];
+subgraph RIE["Genomic Archiving and Communication System (GACS)"];
 
-    Report@{ shape: docs, label: "Final Report"}
-    FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, DocumentReference and Specimen"}
+    Report["Regional Integration Engine (RIE)"]
+    FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, Observation, DocumentReference and Specimen"}
 
     GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
 end
 
 Data --> Analysis
 
+EPR@{ shape: cyl, label: "NHS Trust EHR"}
 
-EPR@{ shape: cyl, label: "NHS Trust EHR & ICS"}
 
-
-LIMS --> |HL7 v2 ORU_R01| Report
-Report --> |PDF + Metadata<br/>HL7 v2 ORU_R01 or MDM_T02| EPR
+LIMS --> |HL7 v2 ORU_R01 Report| Report
+Report --> |HL7 O21 Order| LIMS
+Report --> |PDF + Metadata<br/>HL7 v2 ORU_R01| EPR
+EPR --> |HL7 O21 Order| Report
 Report --> FHIRLIMS
 FHIRLIMS --> GDR
 

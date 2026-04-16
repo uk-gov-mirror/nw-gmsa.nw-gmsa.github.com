@@ -1,0 +1,30 @@
+graph LR
+
+subgraph Analysis[Data Analysis];
+    LIMS["LIMS Shire"]
+end
+
+subgraph RIE["Genomic Archiving and Communication System (GACS)"];
+
+    Report["Regional Integration Engine"]
+    FHIRLIMS@{ shape: docs, label: "Patient, DiagnosticReport and DocumentReference"}
+
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+end
+
+EPR@{ shape: cyl, label: "HODS"}
+
+
+LIMS --> |HL7 v2 ORU_R01| Report
+Report --> |HL7 v2 ORU_R01| EPR
+Report --> FHIRLIMS
+FHIRLIMS --> GDR
+
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class EPR,TIE,LIMS,DC,Registry purple;
+
+class GDR,FHIRLIMS pink;
