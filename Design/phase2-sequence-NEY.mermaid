@@ -1,0 +1,17 @@
+sequenceDiagram
+
+participant DataSource As Data Source<br/>NW Genomics Analysis and Communication System (GACS)
+participant DataConsumer As Data Consumer<br/>NEY Genomics
+
+note over DataConsumer,DataSource: Poll for new or updated orders
+DataConsumer ->> DataSource: GET ServiceRequest?_lastUpdate={date}<br/>(ideally this will be for NEY orgs only)
+DataSource -->> DataConsumer: search results
+alt forEach result
+    note over DataConsumer,DataSource: Get detailed diagnostic report
+    DataConsumer ->> DataSource: GET /DiagnosticReport?_id=131890877&_include=DiagnosticReport:result&_include=DiagnosticReport:subject&_include=DiagnosticReport:based-on
+    DataSource -->> DataConsumer: search results
+    note over DataConsumer,DataSource: Get unstructured report (PDF)
+    DataConsumer ->> DataSource: GET /Binary (link is in DiagnosticReport.presentedForm)
+    DataSource -->> DataConsumer: PDF Document
+    DataConsumer -->> DataConsumer: Store results
+end
