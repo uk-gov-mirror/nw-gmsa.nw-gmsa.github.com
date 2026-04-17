@@ -1,0 +1,42 @@
+graph LR
+
+subgraph Analysis[Reporting];
+
+    LIMS["LIMS iGene"]
+
+end
+
+
+subgraph GACS["Genomic Archiving and Communication System (GACS)"];
+    RIE["Regional Orchestration Engine (RIE)"]
+    FHIRLIMS@{ shape: docs, label: "includes DocumentReference and Binary (Diagnostic Report PDF)"}
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(Document Repository in NRL Terminology)"}
+    DocumentNotificationService
+end
+
+subgraph APIM[NHS England API Management];
+    PDS["Personnel Demographic Service (PDS)"]
+    ODS["Organisation Terminology Service (ODS)"]
+    NRL["National Record Locator Service<br/>Document Registry"]
+end
+
+ DC@{ shape: cloud, label: "Document Consumer"}
+
+LIMS --> |HL7 v2 ORU_R01 Report| RIE
+
+RIE --> |3.| FHIRLIMS
+FHIRLIMS --> GDR
+RIE --> |1. Patient Matching| PDS
+RIE --> |2. Organisation Lookups| ODS
+RIE --> |4.| DocumentNotificationService
+
+DC --> |a. Find Document References| NRL
+DC --> |b. Retrieve Document| GDR
+DocumentNotificationService --> |5. POST /DocumentReference| NRL
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class EPR,TIE,LIMS,DC purple;
+
+class GDR,FHIRLIMS pink

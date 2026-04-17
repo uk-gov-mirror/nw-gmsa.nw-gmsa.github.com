@@ -1,0 +1,67 @@
+graph LR
+
+
+Watson
+Illumina[Illumnina Bedspace]
+CliniSys[CliniSys GLIMS]
+OpenSpecimen
+
+
+
+subgraph DNASequencing;
+    Thermofisher
+end
+
+subgraph Analyser;
+    Cepheid[Cepheid]
+end
+
+subgraph CDS["Genomic Clinical Decision Support (GCDS)"];
+    Congenica[Congenica?]
+    GenoO["Gen-O?"]
+end
+
+subgraph HIE["Genomic Archiving and Communication System (GACS)"];
+    RIE["Regional Orchestration Engine (RIE)"]
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    VCFFHIR["VCF to FHIR Genomic Report"]
+    FHIRVCF@{ shape: docs, label: "Variant & Sequence Phase Relationship"}
+    FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, DocumentReference and Specimen"}
+    FHIRCDS@{ shape: docs, label: "DiagnosticReport, PCR Observation, Diagnostic Implication, Theraputic Implication and Molecular Consequence"}
+    DRSVCF@{ shape: docs, label: "GA4GH - WGS Data (CRAM), Genetic Varians (VCF) and WES Data (BAM)"}
+end
+
+
+VCF["BioInformaticsPipeline<br/>FASTQ to VCF"]
+
+
+PathologyLIMS --> |Lab Orders HL7 O21| RIE
+
+
+Cepheid --> |Lab Reports HL7 R01| RIE
+Cepheid --> |Lab Orders HL7 QBP Query| RIE
+
+
+DNASequencing --> |FASTQ| VCF
+
+VCF --> |VCF| VCFFHIR
+VCFFHIR --> FHIRVCF
+FHIRVCF --> GDR
+
+VCF --> |VCF| CDS
+CDS --> FHIRCDS
+FHIRCDS --> GDR
+
+VCF --> DRSVCF
+DRSVCF --> GDR
+
+RIE --> FHIRLIMS
+FHIRLIMS --> GDR
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+
+class GDR,RIE,VCFFHIR pink;
+

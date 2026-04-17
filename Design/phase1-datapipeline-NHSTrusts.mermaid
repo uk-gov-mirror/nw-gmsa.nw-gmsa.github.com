@@ -1,32 +1,23 @@
 graph LR
 
-subgraph Gen ["Data Generation"];
 
-    Data@{ shape: docs, label: "Raw Data:<br/>VCF Data Files<br/>Metadata"}
-
-end
 
 subgraph Analysis[Data Analysis];
 
-    Assessment@{ shape: docs, label: "Genomic Assessment"}
-
     LIMS["LIMS iGene"]
-
-
-    Assessment --> LIMS
 
 end
 
 
 subgraph RIE["Genomic Archiving and Communication System (GACS)"];
 
-    Report["Regional Integration Engine (RIE)"]
+    Report["Regional Orchestration Engine (RIE)"]
     FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, Observation, DocumentReference and Specimen"}
 
     GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
 end
 
-Data --> Analysis
+
 
 EPR@{ shape: cyl, label: "NHS Trust EHR"}
 
