@@ -1,0 +1,19 @@
+sequenceDiagram
+
+participant DataConsumer As Data Consumer<br/>NEY Genomics
+participant APIGateway
+participant DataSource As Data Source<br/>NW Genomics Analysis and Communication System (GACS)
+
+
+note over DataConsumer,DataSource: Poll for new or updated orders
+DataConsumer ->> APIGateway: GET DiagnosticReport/$GMSARetrieve?_lastUpdate={date}&GMSA={ODSCode}
+APIGateway ->> APIGateway: Get a list of NHS Trust within GMSA region
+APIGateway ->> DataSource: GET ServiceRequest?_lastUpdate={date}&requestor={list of NHS Trusts}
+DataSource -->> APIGateway: search results
+alt forEach result
+    note over APIGateway,DataSource: Get detailed diagnostic report
+    APIGateway ->> DataSource: GET /DiagnosticReport?_id={order id}}&_include=DiagnosticReport:result&_include=DiagnosticReport:subject&_include=DiagnosticReport:based-on
+    DataSource -->> APIGateway: search results
+end
+APIGateway ->> APIGateway: Aggregate results
+APIGateway -->> DataConsumer: RPC results
