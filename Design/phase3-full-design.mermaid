@@ -1,0 +1,36 @@
+graph TD
+
+subgraph NWGMSA;
+
+    GACS@{shape: cyl, label: "Genomic Archiving and Communication System (GACS)"}
+    GCDS["Genomic Clinical Decision Support (GCDS)"]
+    BIO[Bioinformatcs Pipeline]
+    GR[Genomic Reporting]
+
+    BIO --> |GA4GH| GCDS
+
+    BIO --> |Store Variants and other Genomic Finding| GACS
+    GCDS --> |Store Genomic Implication| GACS
+    GR --> |Store Genomic Report| GACS
+    BIO --> GR
+    GCDS --> GR
+end
+
+EHR["External<br/>Non Genomic Consultants"]
+INTEHR[Home Nation and International<br/>Consultants<br/>via NHS England infrastructure]
+Informatics["External<br/>Bio Informatics<br/>via NHS England infrastructure"]
+Analytics["External<br/>Analytics and AI"]
+
+EHR --> |"RESTful Queries (FHIR)"| GACS
+GACS --> |HL7 Reports ORU_R01| EHR
+GACS --> |HL7 Reports MDM_T02| EHR
+Analytics --> |"RESTful Queries (FHIR & GA4GH DRS)"| GACS
+Informatics --> |"RESTful Queries (GA4GH DRS)"| GACS
+
+INTEHR <--> |"NHS England/EU HL7 Genomic Report<br/>FHIR Document"| GACS
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class BIO,GR,GCDS purple;
+class GACS pink;
