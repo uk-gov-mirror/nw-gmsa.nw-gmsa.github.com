@@ -1,0 +1,47 @@
+graph
+
+subgraph TD GACS["Genomic Archive and Communication System (GACS)"];
+    subgraph RIE["Regional Orchestration Engine (RIE)"];
+        DataPipeLines
+        MessagingBus
+        AggregationLayer
+    end
+
+    FHIRRepository[Intersystems FHIR Repository<br/><br/>Data Repository]
+    S3[AWS S3 Bukcet or Azure<br/><br/>Blob Storage]
+
+    subgraph APIGateway;
+        APIGatewayNHS[NEY Genomics<br/>FHIR Facade]
+        APIGatewayUGR[UGR Data Store - Federated Object Store Facade]
+    end
+    MessagingBus --> |Data Feeds| FHIRRepository
+    MessagingBus --> |Document Feeds| S3
+    DataPipeLines --> |Data Feeds - GA4GH Objects| S3
+end
+
+UGR[UGR Data Store - FHIR Store<br/><br/>Document Repository]
+
+AggregationLayer --> |2. Document Feed<br/>FHIR Document| UGR
+AggregationLayer --> |1. Data Query API| FHIRRepository
+
+DataConsumer[Data Consumer]
+DocumentConsumer[Document Consumer]
+DataProducer[Data Producer]
+
+DataConsumer --> |Query Data API<br/>FHIR RESTful| APIGatewayNHS
+DataConsumer --> |Query Data API<br/>GA4GH DRS| APIGatewayUGR
+
+DocumentConsumer --> |Query Document API| UGR
+APIGatewayNHS --> FHIRRepository
+APIGatewayNHS --> S3
+
+APIGatewayUGR --> FHIRRepository
+APIGatewayUGR --> S3
+
+DataProducer --> |Data Feed<br/>HL7 and GA4GH| RIE
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class RIE,FHIRRepository purple;
+class UGR,APIGatewayUGR pink;
