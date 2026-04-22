@@ -8,7 +8,7 @@ Repository[Document Repository]
 DataRepository[Data Repository]
 
 subgraph RIE[Orchestration and Data Platform];
-    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Repository)"}
 
     API["API Gateway<br/>(FHIR Facade)"]
     API --> GDR

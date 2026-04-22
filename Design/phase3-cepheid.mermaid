@@ -14,19 +14,19 @@ end
 
 
 
-subgraph HIE[Genomic Archiving and Communication System];
+subgraph HIE["Genomic Archiving and Communication System (GACS)"];
     RIE["Regional Orchestration Engine (RIE)"]
-    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Repository)"}
     FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, DocumentReference and Specimen"}
 end
 
 
-Cepheid --> |Lab Reports HL7 R01| RIE
-Cepheid --> |Lab Orders HL7 QBP Query| RIE
+Cepheid --> |4. Lab Reports HL7 R01| RIE
+Cepheid --> |3. Lab Orders HL7 QBP Query| RIE
 
-RIE --> |CSV Import| iGene
-iGene --> |Worksheet CSV| RIE
-RIE --> |FHIR RESTful| GDR
+RIE --> |5. CSV Import| iGene
+iGene --> |1. Worksheet CSV| RIE
+RIE --> |2. and 4. FHIR RESTful| GDR
 
 
 RIE --> FHIRLIMS

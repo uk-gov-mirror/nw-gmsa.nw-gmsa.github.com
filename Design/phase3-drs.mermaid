@@ -23,7 +23,7 @@ end
 
 subgraph HIE["Genomic Archiving and Communication System (GACS)"];
     RIE["Regional Orchestration Engine (RIE)"]
-    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Repository)"}
     VCFFHIR["VCF to FHIR Genomic Report"]
     FHIRVCF@{ shape: docs, label: "Variant & Sequence Phase Relationship"}
     FHIRLIMS@{ shape: docs, label: "Patient, ServiceRequest, DiagnosticReport, DocumentReference and Specimen"}

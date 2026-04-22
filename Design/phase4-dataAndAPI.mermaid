@@ -7,7 +7,7 @@ end
 
 
 subgraph RIE[Orchestration and Data Platform];
-    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Server)"}
+    GDR@{ shape: cyl, label: "Genomic Data Repository<br/>(FHIR Repository)"}
     Agg@{ shape: docs, label: "Aggregation Layer<br/>Final Report"}
     Agg --> |Genomic Data<br/>FHIR RESTful + Resource| GDR
     API["API Gateway<br/>(FHIR Facade)"]
