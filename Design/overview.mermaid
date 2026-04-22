@@ -3,7 +3,7 @@ graph
 subgraph TD GACS["Genomic Archive and Communication System (GACS)"];
     subgraph RIE["Regional Orchestration Engine (RIE)"];
         DataPipeLines
-        MessagingBus
+        MessagingBus[Enterprise Messaging Bus]
         AggregationLayer
     end
 
@@ -44,4 +44,4 @@ classDef purple fill:#E1D5E7;
 classDef pink fill:#F8CECC;
 
 class RIE,FHIRRepository purple;
-class UGR,APIGatewayUGR pink;
+class UGR,APIGatewayUGR,AggregationLayer pink;
