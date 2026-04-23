@@ -1,19 +1,14 @@
 sequenceDiagram
 
 participant DataConsumer As Data Consumer<br/>NEY Genomics
-participant APIGateway
-participant DataSource As Data Source<br/>NW Genomics Analysis and Communication System (GACS)
+participant APIGateway As API Gateway<br/>(FHIR Facade)
+participant GACS As Data Repository<br/>NW Genomics Analysis and Communication System (GACS)<br/>(FHIR Respository)
 
 
-note over DataConsumer,DataSource: Poll for new or updated orders
-DataConsumer ->> APIGateway: GET DiagnosticReport/$GMSARetrieve?_lastUpdate={date}&GMSA={ODSCode}
-APIGateway ->> APIGateway: Get a list of NHS Trust within GMSA region
-APIGateway ->> DataSource: GET ServiceRequest?_lastUpdate={date}&requestor={list of NHS Trusts}
-DataSource -->> APIGateway: search results
-alt forEach result
-    note over APIGateway,DataSource: Get detailed diagnostic report
-    APIGateway ->> DataSource: GET /DiagnosticReport?_id={order id}}&_include=DiagnosticReport:result&_include=DiagnosticReport:subject&_include=DiagnosticReport:based-on
-    DataSource -->> APIGateway: search results
-end
-APIGateway ->> APIGateway: Aggregate results
-APIGateway -->> DataConsumer: RPC results
+note over DataConsumer,GACS: Poll for new or updated orders
+DataConsumer ->> APIGateway: GET /$find-test-metadata?_lastUpdated={date}&ICSODSCode={list of ICSODSCode}
+APIGateway ->> GACS: Get a list of NHS Trust within ICB region <br>Get /Organisation?partof={ICSCode}&type=R0197
+GACS -->> APIGateway: Search results
+APIGateway ->> GACS: Get test metadata <br/>GET /ServiceRequest?_lastUpdated={date}&requestor={list of organisation ids}&_revinclude=DiagnosticReport:based-on<br/>&_include=ServiceRequest:specimen&_include=ServiceRequest:patient
+GACS -->> APIGateway: search results
+APIGateway -->> DataConsumer: RPC `find-test-metadata` results
