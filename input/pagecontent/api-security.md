@@ -88,8 +88,9 @@ TODO
 
 ### Identification and Authentication
 
-Only system-to-system identification is currently supported.
-NHS England identification: 
+At present, only system-to-system identification is currently supported using OAuth2 client credentials.
+
+NHS England user identification and authentication is: 
 
 - Practitioner openID [NHS England CIS2 Authentication](https://digital.nhs.uk/services/care-identity-service/applications-and-services/cis2-authentication)
 - Patient openID [NHS England NHS login](https://digital.nhs.uk/services/nhs-login)
