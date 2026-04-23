@@ -99,7 +99,7 @@ NHS England user identification and authentication is:
 
 ### Access Control and Authorisation
 
-#### OAuth2
+#### Authorisation - OAuth2
 
 - [EURIDICE EU Health Data API - Authorization](https://hl7.eu/fhir/health-data-api/en/authorization.html)]
 
@@ -120,11 +120,22 @@ Any Trust Integration can act as the Authorisation Client or Resource Server in 
 - The client then performs requests to the resource server using the `Access Token` (authorisation = Bearer {accessToken})
 - The resource **MUST** check the token is valid using **Introspect Token (ITI-102)**, invalid tokens will be rejected using a 403 Forbidden http code.
 
-#### Self Contained Tokens and JWT
+#### Access Control - JWT
 
 See also [NHS England Security and authorisation](https://digital.nhs.uk/developer/guides-and-documentation/security-and-authorisation)
+NHS England does not currently support detailed JWT tokens in APIM, the previous documentation can be found on [JSON Web Token Guidance](https://webarchive.nationalarchives.gov.uk/ukgwa/20250306002836/https://developer.nhs.uk/apis/nrl/guidance_jwt.html) and [Access Tokens and Audit (JWT)](https://webarchive.nationalarchives.gov.uk/ukgwa/20250307104717/https://developer.nhs.uk/apis/spine-core/security_jwt.html)
+
+##### Scopes
 
 FHIR Resource Scopes are used to define the permissions a client has to access a FHIR resource. See [SMART - App Launch: Scopes and Launch Context](https://build.fhir.org/ig/HL7/smart-app-launch/scopes-and-launch-context.html)
+
+| Role Type          | Authentication Type                                                                                                                                      | Scope        | 	Grants                                                                                                           |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------|
+| Patient or Citizen | User Restricted - [NHS England NHS login](https://digital.nhs.uk/services/nhs-login)                                                                     | `patient/*.rs` | Permission to read and search any resource for the current patient (see notes on wildcard scopes below).          |
+| Practitioner       | User Restricted - [NHS England CIS2 Authentication](https://digital.nhs.uk/services/care-identity-service/applications-and-services/cis2-authentication) | `user/*.cruds` | Permission to read and write all resources that the current user can access (see notes on wildcard scopes below). |
+| System             | Application Restricted - OAuth2 client credentials                                                                                                       | `system/*.*`   | Permission to read and write any resource.|
+
+
 
 ### Audit Logging
 
