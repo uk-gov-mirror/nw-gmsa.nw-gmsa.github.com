@@ -23,10 +23,10 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 <span class="badge badge-info">Patient Demographics</span>  
 
 
-| Name                  | LOINC | Value Set / Data Type                                                 | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR ServiceRequest                                                      | HL7 FHIR Resource (Message + RESTful)                                    |
-|-----------------------|-------|-----------------------------------------------------------------------|-------------|------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| NHS Number            |       | [NHS Number](StructureDefinition-NHSIdentifier.html)  | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
-| Medical Record Number |       | [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
+| Name                  | LOINC | Value Set / Data Type                                                 | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR ServiceRequest                                                      | HL7 FHIR Resource (Message + RESTful)                                   |
+|-----------------------|-------|-----------------------------------------------------------------------|-------------|------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| NHS Number            |       | [NHS Number](StructureDefinition-NHSIdentifier.html)  | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](StructureDefinition-Patient.html) |
+| Medical Record Number |       | [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](StructureDefinition-Patient.html) |
 {:.grid}
 
 <span class="badge badge-info">Hospital Spell</span>
