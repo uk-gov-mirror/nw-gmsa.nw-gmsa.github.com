@@ -23,10 +23,12 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 <span class="badge badge-info">Patient Demographics</span>  
 
 
-| Name                  | LOINC | Value Set / Data Type                                                 | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR ServiceRequest                                                      | HL7 FHIR Resource (Message + RESTful)                                   |
-|-----------------------|-------|-----------------------------------------------------------------------|-------------|------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| NHS Number            |       | [NHS Number](StructureDefinition-NHSIdentifier.html)  | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](StructureDefinition-Patient.html) |
-| Medical Record Number |       | [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](StructureDefinition-Patient.html) |
+| Name                  | LOINC | Value Set / Data Type                                                 | Cardinality | HL7 v2 OML_O21 Message  | HL7 FHIR ServiceRequest                                                                                | HL7 FHIR Resource (Message + RESTful)                                      |
+|-----------------------|-------|-----------------------------------------------------------------------|-------------|-------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| NHS Number            |       | [NHS Number](StructureDefinition-NHSIdentifier.html)                  | 0..1        | [PID](hl7v2.html#pid)-3 | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier                           | [Patient](StructureDefinition-Patient.html).identifier[nhsNumber]          |
+| Medical Record Number |       | [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 0..1        | [PID](hl7v2.html#pid)-3 | if NHS Number not present [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](StructureDefinition-Patient.html).identifier[MedicalRecordNumber] |
+| Date of Birth         |       | [Date of Birth](StructureDefinition-DateOfBirth.html)              | 0..1        | [PID](hl7v2.html#pid)-7    |                                                                                                        | [Patient](StructureDefinition-Patient.html).birthDate                      |
+| Postcode              |       | [Postcode](StructureDefinition-Postcode.html)                      | 0..1        | [PID](hl7v2.html#pid)-11   |                                                                                                        | [Patient](StructureDefinition-Patient.html).address.postalCode             |
 {:.grid}
 
 <span class="badge badge-info">Hospital Spell</span>
