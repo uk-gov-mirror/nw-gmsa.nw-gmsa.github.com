@@ -3,35 +3,48 @@ graph
 RespiratoryService
 
 subgraph InitialAssessmentAndImaging;
-    Radiology
+    Radiology["Radiology<br/><br/>NHS Trust or Regional (ICB) Service"]
     RadiologyReport@{ shape: docs, label: "Radiology Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>Images"}
 end
 
-RespiratoryService --> |1a. Referral| Radiology
+RespiratoryService --> |1a. Rediology Referral| Radiology
 Radiology --> |1b. Images and Report| RadiologyReport
 RadiologyReport --> RespiratoryService
 
 subgraph TissueSamplingBiopsyAndProcedures;
-   Biopsies
+    BiopsiesBL[Biopsy - Blood]
+    Biopsies[Biopsy - Tumor]
 end
 
-RespiratoryService --> |2a. Referral| Biopsies
+RespiratoryService --> |2a. ctDNA Referral| BiopsiesBL
+RespiratoryService --> |3a. Referral| Biopsies
 
-subgraph LaboratoryAnd MolecularTesting;
 
-Pathology
-
-Genomics
-
-GenomicReport@{ shape: docs, label: "Genomic Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>PDF Report<br/>Observations - Molecular/BioMarkers"}
-PathologyReport@{ shape: docs, label: "Pathology Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>Observations - Tissue Histology"}
+subgraph ctDNA Testing;
+    GenomicsNW[Genomics<br/><br/>NW Genomics]
+    GenomicNWReport@{ shape: docs, label: "Genomic Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>PDF Report<br/>Observations"}
 end
 
-Biopsies --> |2b. Send Sample| Pathology
-Pathology --> |2c. Referral and Send Liquid Biopsy Sample| Genomics
+subgraph Laboratory And Molecular Testing;
 
-Genomics --> GenomicReport
-GenomicReport --> RespiratoryService
+    Pathology["Pathology<br/><br/>NHS Trust or Regional (ICB) Service"]
+    GenomicsM[Genomics<br/><br/>e.g. NE&Y Genomics]
+    GenomicMReport@{ shape: docs, label: "Genomic Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>PDF Report<br/>Observations - Molecular/BioMarkers"}
+    PathologyReport@{ shape: docs, label: "Pathology Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>Observations - Tissue Histology"}
+end
+
+BiopsiesBL --> |2b. Send Sample| Pathology
+Biopsies --> |3b. Send Sample| Pathology
+
+BiopsiesBL --> |2c. Referral and Send Biopsy Sample| GenomicsNW
+Pathology --> |3c. Referral and Send Biopsy Sample| GenomicsM
+
+
+GenomicsM --> GenomicMReport
+GenomicMReport --> RespiratoryService
+
+GenomicsNW --> GenomicNWReport
+GenomicNWReport --> RespiratoryService
 
 Pathology --> PathologyReport
 PathologyReport --> RespiratoryService
@@ -40,9 +53,10 @@ LungCancerMDT[Lung Cancer MDT<br/>Likely to be supported by several NHS England 
 
 RadiologyReport --> LungCancerMDT
 PathologyReport --> LungCancerMDT
-GenomicReport --> LungCancerMDT
+GenomicMReport --> LungCancerMDT
+GenomicNWReport --> LungCancerMDT
 
 classDef purple fill:#E1D5E7;
 classDef pink fill:#F8CECC;
 
-class Genomics,GenomicReport pink
+class GenomicsNW,GenomicNWReport pink
