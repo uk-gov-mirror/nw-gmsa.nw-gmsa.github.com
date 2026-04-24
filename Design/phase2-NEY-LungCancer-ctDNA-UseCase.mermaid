@@ -1,0 +1,36 @@
+graph
+
+RespiratoryService
+
+OrderForm[Complete Order Form<br/><br/>Form defined by NW Genomics]
+
+subgraph TissueSamplingBiopsyAndProcedures;
+    BiopsiesBL[Biopsy - Collect Blood Sample]
+end
+
+
+RespiratoryService --> |1b. Sample Collection Order| BiopsiesBL
+RespiratoryService -->  OrderForm
+OrderForm --> |2a. Send Order Form| SampleReception
+
+subgraph ctDNA Testing;
+    SampleReception
+    iGeneLIMS
+    Analyser
+    GenomicNWReport@{ shape: docs, label: "Genomic Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>PDF Report<br/>Observations"}
+end
+
+SampleReception --> |3. Sample and Referral Administration| iGeneLIMS
+
+BiopsiesBL --> |2b. Send Liquud Biopsy Sample| SampleReception
+
+iGeneLIMS --> |6.| GenomicNWReport
+GenomicNWReport --> |7.| RespiratoryService
+iGeneLIMS --> |4. Workflow Request| Analyser
+Analyser --> |5. GA4GH BAM| iGeneLIMS
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class GenomicsNW,GenomicNWReport pink

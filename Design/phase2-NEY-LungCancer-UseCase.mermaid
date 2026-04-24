@@ -33,10 +33,10 @@ subgraph Laboratory And Molecular Testing;
     PathologyReport@{ shape: docs, label: "Pathology Report includes:<br/>ServiceRequest<br/>DiagnosticReport<br/>Specimen<br/>Observations - Tissue Histology"}
 end
 
-BiopsiesBL --> |2b. Send Sample| Pathology
+
 Biopsies --> |3b. Send Sample| Pathology
 
-BiopsiesBL --> |2c. Referral and Send Biopsy Sample| GenomicsNW
+BiopsiesBL --> |2b. Referral and Send Biopsy Sample| GenomicsNW
 Pathology --> |3c. Referral and Send Biopsy Sample| GenomicsM
 
 
