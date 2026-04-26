@@ -1,0 +1,31 @@
+---
+title: Hacking Health - Tailoring Patient Medication
+---
+graph
+
+Patient
+
+subgraph PreEmptiveTesting;
+
+    OrderPlacerSoftware
+    GenomicLaboratory["Genomic Laboratory<br/>(Likely to be private)"]
+    FHIRCDS@{ shape: docs, label: "Pharmacogenomic Report (PDF or FHIR Document)<br/><br/>DiagnosticReport, Variants, Theraputic Implication and Medication Recommendation"}
+
+    OrderPlacerSoftware --> |2. Order Pharmacogenomic Test| GenomicLaboratory
+    GenomicLaboratory --> FHIRCDS
+    FHIRCDS --> OrderPlacerSoftware
+end
+
+subgraph Health Consultation;
+    Consultation[Health Practitioner]
+    EPR[Electronic Patient Record]
+    Prescription
+end
+
+Patient --> |1. Complete Order Form| OrderPlacerSoftware
+
+Patient --> |a. Patient presents issues| Consultation
+Patient --> |"b. Patient shares Pharmacogenomic Report<br/>(Ideally electronically)"| Consultation
+Consultation --> |c. Review Report| Consultation
+Consultation --> |"d. Record Adverse Drug Reactions (AllergyIntolerance)"| EPR
+Consultation --> |e. Prescribe Drug<br/>Dose or Drug based on | Prescription 
