@@ -23,10 +23,12 @@ Archetype Viewer <a href="https://project-wildfyre.github.io/domain-archetype/?q
 <span class="badge badge-info">Patient Demographics</span>  
 
 
-| Name                  | LOINC | Value Set / Data Type                                                 | Cardinality | HL7 v2 OML_O21 Message | HL7 FHIR ServiceRequest                                                      | HL7 FHIR Resource (Message + RESTful)                                    |
-|-----------------------|-------|-----------------------------------------------------------------------|-------------|------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| NHS Number            |       | [NHS Number](StructureDefinition-NHSIdentifier.html)  | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
-| Medical Record Number |       | [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 0..1        | [PID](hl7v2.html#pid)  | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](https://nw-gmsa.github.io/R4/StructureDefinition-Patient.html) |
+| Name                  | LOINC | Value Set / Data Type                                                 | Cardinality | HL7 v2 OML_O21 Message  | HL7 FHIR ServiceRequest                                                                                | HL7 FHIR Resource (Message + RESTful)                                      |
+|-----------------------|-------|-----------------------------------------------------------------------|-------------|-------------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| NHS Number            |       | [NHS Number](StructureDefinition-NHSIdentifier.html)                  | 0..1        | [PID](hl7v2.html#pid)-3 | [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier                           | [Patient](StructureDefinition-Patient.html).identifier[nhsNumber]          |
+| Medical Record Number |       | [Medical Record Number](StructureDefinition-MedicalRecordNumber.html) | 0..1        | [PID](hl7v2.html#pid)-3 | if NHS Number not present [ServiceRequest](StructureDefinition-ServiceRequest.html).subject.identifier | [Patient](StructureDefinition-Patient.html).identifier[MedicalRecordNumber] |
+| Date of Birth         |       | [Date of Birth](StructureDefinition-DateOfBirth.html)              | 0..1        | [PID](hl7v2.html#pid)-7    |                                                                                                        | [Patient](StructureDefinition-Patient.html).birthDate                      |
+| Postcode              |       | [Postcode](StructureDefinition-Postcode.html)                      | 0..1        | [PID](hl7v2.html#pid)-11   |                                                                                                        | [Patient](StructureDefinition-Patient.html).address.postalCode             |
 {:.grid}
 
 <span class="badge badge-info">Hospital Spell</span>
@@ -78,6 +80,8 @@ Treat as mandatory for reflex or subcontracted orders.
 | Specimen Source Site      |         | [Specimen Body Site](ValueSet-specimen-bodysite.html)                         | 0..1        | [SPM](hl7v2.html#spm)-8  |                         | [Specimen](StructureDefinition-Specimen.html).collection.bodySite                |
 | Specimen Accession Number | 80398-1 | [Specimen Accession Number](StructureDefinition-SpecimenAccessionNumber.html) | 0..*        | [SPM](hl7v2.html#spm)-30 |                         | [Specimen](StructureDefinition-Specimen.html).accessionIdentifier                |
 | Shipment Tracking Number  | 97209-1 | [Shipment Tracking Number](StructureDefinition-ShipmentTrackingNumber.html)   | 0..*        | [SPM](hl7v2.html#spm)-32 |                         | [Specimen](StructureDefinition-Specimen.html).identifier[ShipmentTrackingNumber] | 
+| Specimen Collection Date  |         |    | 0..1        | [SPM](hl7v2.html#spm)-17 |                         | [Specimen](StructureDefinition-Specimen.html).collection.collectedDateTime       |
+| Specimen Received Date    |         |         | 0..1        | [SPM](hl7v2.html#spm)-18 |                         | [Specimen](StructureDefinition-Specimen.html).receivedTime                       |
 {:.grid}
 
 Note: it is likely that source systems will use ORM_01 and not include specimen details. In this case it is suggested that the specimen details are captured as 'Ask at Order Entry Questions' and so provided as OBX segments.
