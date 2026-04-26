@@ -2,8 +2,12 @@ sequenceDiagram
 
 participant DataConsumer As Data Consumer<br/>NEY Genomics
 participant APIGateway As API Gateway<br/>(FHIR Facade)
-participant GACS As Data Repository<br/>NW Genomics Analysis and Communication System (GACS)<br/>(FHIR Respository)
+participant GACS As Data Repository<br/>NW Genomics Analysis and Communication System (GACS)<br/>(RIE + GDR)
+participant LIMS as LIMS iGene<br/>(NW Genomics)
 
+note over LIMS,GACS: This is equivalent to a HL7 v2 O21 Event Message
+GACS ->> LIMS: Synchronise Data with iGene SQL Database (copy)
+GACS ->> GACS: Update GDR
 
 note over DataConsumer,GACS: Poll for new or updated orders
 DataConsumer ->> APIGateway: GET /$find-test-metadata?_lastUpdated={date}&ICSODSCode={list of ICSODSCode}

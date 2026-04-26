@@ -1,7 +1,16 @@
+---
+title: Order and Reports via FHIR RESTful API
+---
 sequenceDiagram
 
-participant DataSource As Data Source<br/>NW Genomics Analysis and Communication System (GACS)
+participant DataSource As Data Source<br/>NW Genomics Analysis and Communication System (GACS)<br/>(RIE + GDR)
+participant LIMS as LIMS iGene<br/>(NW Genomics)
 participant DataConsumer As Data Consumer<br/>NEY Genomics
+
+note over LIMS,DataSource: This is equivalent to a HL7 v2 O21 Event Message
+DataSource ->> LIMS: Synchronise Data with iGene SQL Database (copy)
+
+DataSource ->> DataSource: Update GDR
 
 note over DataConsumer,DataSource: Poll for new or updated orders
 DataConsumer ->> DataSource: GET ServiceRequest?_lastUpdate={date}<br/>(ideally this will be for NEY orgs only)
