@@ -1,0 +1,24 @@
+---
+title: Order Event Notifications
+---
+sequenceDiagram
+
+participant RIE as Regional Orchestration Engine<br/>(NW Genomics)
+participant LIMS as LIMS iGene<br/>(NW Genomics)
+participant GDR as Genomic Data Repository<br/>(NW Genomics)
+participant NEY as North East and Yorkshire Genomics
+
+note over RIE: This is equivalent to a HL7 v2 O21 Event Message
+RIE ->> LIMS: Synchronise Data with iGene SQL Database (copy)
+RIE ->> RIE: Convert to FHIR Resources
+RIE ->> GDR: Update GDR
+RIE ->> RIE: Create O21 Event
+
+note over RIE : FHiR Subscription Backport - future upgrade<br/>Note this will also include R01 Event Notifications
+
+opt Static Routing North East and Yorkshre Genomics
+    RIE ->> GDR: Create MessageHeader (source NW and destination NEY)
+    note over GDR,NEY : FHiR Subscription - future upgrade<br/>The retrieve notification can also be replaced in future by Multicast Notification Service
+    NEY ->> GDR: Retrieve notifications <br/>GET [base]/Bundle?message.receiver:identifier=[odsCode]&_lastUpdated=[date]<br/>ODS Code must match ODS code associated with OAuth2 ClientID
+    NEY ->> GDR: Acknowledge notifications<br/>POST / (FHIR Transaction)
+end
