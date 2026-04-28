@@ -1,0 +1,43 @@
+graph
+
+subgraph DS[Data Source Integration]
+    DataSource[Data Source<br/>e.g. EHR or LIMS]
+    HL7DocumentMessaging[HL7 Document Messaging<br/>e.g. HL7 ORU, ORM and OML]
+    DataPipelines[Data Pipelines<br/>e.g ETL, VCF feeds]
+end
+
+GACS[Data Platform<br/>Data Repository and Orchestration Engine<br/>e.g. GACS]
+
+EDP[Data Warehouse or External Data Platform <br/>e.g. FDP]
+
+subgraph DC[Data Consumer Integration];
+    FHIRRESTful[FHIR RESTful Query API]
+    FHIRDocumentMessaging["FHIR Document Messaging<br/>(e.g. HL7 ORU in FHIR format)"]
+    FHIRSubscription[FHIR Subscription Backport]
+    HL7Messaging[HL7 Event and Document Messaging<br/>e.g. MDM, SPM, OML and ORU]
+    DataConsumer[Data Consumer<br/>e.g. EHR or LIMS]
+end
+
+DataSource --> HL7DocumentMessaging
+DataSource --> DataPipelines
+HL7DocumentMessaging --> GACS
+DataPipelines --> GACS
+
+GACS --> FHIRDocumentMessaging
+GACS --> FHIRSubscription
+GACS --> HL7Messaging
+
+FHIRDocumentMessaging <--> |Direct or Message Polling| DataConsumer
+FHIRSubscription --> DataConsumer
+HL7Messaging --> DataConsumer
+DataConsumer --> FHIRRESTful
+FHIRRESTful --> GACS
+
+DataPipelines --> |Traditional| EDP
+EDP --> |Modern - Query on Demand| FHIRRESTful
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class DataConsumer,DataSource pink
+class GACS,EDP purple
