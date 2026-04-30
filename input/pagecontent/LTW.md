@@ -12,8 +12,8 @@
 | [Automation Manager](ActorDefinition-AutomationManager.html)    | Performed by Laboratory Information System (LIMS)                                           |
 | [Order Result Tracker](ActorDefinition-OrderResultTracker.html) | This is often provided by Electronic Patient Record (EPR) Systems                           |
 | Laboratory Report (Clinical Document)                           | See [Clinical Document](ActorDefinition-ClinicalDocument.html)                              | 
-| [Intermediary](ActorDefinition-Intermediary.html)                               | E.g. Regional or Trust Integration Engine |
-| Automation Manager | Often software associated with analysers |
+| [Intermediary](ActorDefinition-Intermediary.html)                               | E.g. Regional or Trust Integration Engine                                                   |
+| Automation Manager | Often software associated with analysers and Laboratory Analytical Workflow (IHE LAW)       |
 
 See also Ref A `Section 3 Laboratory Testing Workflow (LTW) Profile` for detailed description of actors.
 
