@@ -15,8 +15,8 @@ splitting the order is necessary
 end note
 
 opt North West GMSA Order
-RIE -> LIMSP: Submit Genomic Order O21 (LAB-1/LAB-4)
-LIMSP -> RIE: Send Laboratory Report R01 (LAB-3)
+RIE -> LIMSP: Submit Genomic Order O21 (LAB-1/LAB-35)
+LIMSP -> RIE: Send Laboratory Report R01 (LAB-3/LAB-36)
 RIE -> EPR: Send Laboratory Report R01 (LAB-3)
 end
 

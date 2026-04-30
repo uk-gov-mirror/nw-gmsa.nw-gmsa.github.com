@@ -24,10 +24,10 @@ opt Order Filler (Pathology) creates Genomic Order
 note over LIMSP, LIMSG
 Same specimen can reused for multiple tests
 end note
-LIMSP -> LIMSG: Submit Genomic Order O21 (LAB-1)
+LIMSP -> LIMSG: Submit Genomic Order O21 (LAB-1/LAB-35)
 LIMSP -> EPR: Copy of Genomic Order O22 (LAB-2)
 LIMSP --> LIMSG: Send Specimen (not a technical interaction)
-LIMSG -> LIMSP: Send Genomic Report R01 (LAB-3)
+LIMSG -> LIMSP: Send Genomic Report R01 (LAB-3/LAB-36)
 LIMSG -> EPR: Send Genomic Report R01 (LAB-3)
 end
 

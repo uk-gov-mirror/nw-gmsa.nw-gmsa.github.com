@@ -38,9 +38,141 @@ The current IHE ILW specification relies on HL7 v2.x, HL7 v3, and IHE XDS. Sever
 
 - [NHS England - Genomic Order Management Service FHIR API](https://digital.nhs.uk/developer/api-catalogue/genomic-order-management-service-fhir) a [FHIR Workflow](https://hl7.org/fhir/R4/workflow.html) based service for managing orders and results at a national level.
 
+<figure>
+{%include ILW-usecase-4-sequence.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Work Order Management </p>
+</figure>
+<br clear="all">
+
+#### Main Process Flow
+
+- Order Submission
+    - The Order Placer submits a Laboratory Order O21 (LAB-1) to the Automation Manager.
+    - The Automation Manager decides whether to route or split the order as needed depending on the requested tests.
+- Conditional Routing (opt blocks)
+    - [North West GMSA Order]
+        - The Automation Manager submits a Genomic Order O21 (LAB-1/LAB-4) to Order Filler (North West GMSA).
+        - The Order Filler sends back Laboratory Report R01 to the Automation Manager.
+        - The Automation Manager forwards this Laboratory Report R01 to the Order Placer.
+    - [Other GMSA Order]
+        - The Automation Manager submits a Genomic Order O21 (LAB-1/LAB-4) using the Genomic Order Management Service API to Order Filler (other GMSA).
+        - The Order Filler returns Laboratory Report R01 via the same API.
+        - The Automation Manager sends this Laboratory Report R01 to the Order Placer.
+- Completion
+    - When all tests in the order are complete, the Automation Manager sends a task complete notification (which can be an email) to the Order Placer.
+
+
 ### NHS North West Children Cancer 
 
 See [Blood Tests](SET.html#blood-sample-collection) which includes inter-organisation workflows around laboratory testing. 
+
+<img style="padding:3px;width:95%;" src="OrderCommunicationAndNotifications.drawio.png" alt="Order Communication and Notifications"/>
+<br clear="all">
+<p class="figureTitle">Genomic Order Notifications - Use Case 4</p> 
+<br clear="all">
+
+#### As is Process
+
+(From North West Children Cancer. This is centred around laboratory tests, genomic tests will have similar notification systems)
+
+- Blood test requested by Primary Treatment Centre (PTC)
+- Blood sample taken by Community Nurse or Paediatric Oncology Shared Care Unit (POSCU) and the specimen details are documented
+- Blood Laboratory Order is created and a laboratory order request is sent to the laboratory
+- Blood test performed by laboratory
+- Laboratory writes up a blood results report (laboratory report)
+- Laboratory report sent to Community Nurse or POSCU
+- Laboratory report then sent to PTC
+- Community Nurse or POSCU calls PTC by phone to notify that the results have been sent and to confirm that they have been received
+- If results cannot be understood, PTC will call Community Nurse or POSCU to inform them. This is usually due to a defective message
+    - Community Nurse or POSCU sends results in a different format (via telephone or re-writes the results out)
+- PTC may edit a child's prescription on regimen in light of blood results and may need to recall a patient into hospital for additional tests
+- If prescription is amended then PTC must notify POSCU
+
+
+### Use Case: Genomic Test Order following on from Pathology Test Order
+
+```mermaid
+
+graph TD;
+    subgraph Pathology["Pathology - Greater Manchester ICS"]
+        OrderPlacer[Order Placer<br/>e.g. MFT EPIC] --> |"1. Sends Laboratory Order (Pathology)<br/>ORM_O01 or OML_O21"| OrderFiller["Order Filler (Pathology)<br/>e.g. MFT EPIC Beaker or CFT Shire"]
+        OrderPlacer --> |"2. Asks for (Orders)"| SpecimenCollection
+        SpecimenCollection[Specimen Collection] --> |3. Sends Specimen| OrderFiller
+        OrderFiller --> |4. Send Laboratory Report<br/>ORU_R01| OrderPlacer
+    end 
+    subgraph Genomics["Genomics - North West Region"]
+      OrderPlacerG["Order Placer (Pathology)"] --> |5. Send Laboratory Order<br/>OML_O21| OrderFillerG["Order Filler (Genomics)<br/>e.g. iGene"]
+      OrderPlacerG --> |6. Sends Specimen| OrderFillerG
+      OrderFillerG --> |7. Sends Laboratory Report<br/>ORU_R01| OrderPlacerG
+    end
+
+    OrderFiller --> OrderPlacerG
+    OrderFiller --> |8. Sends Laboratory Report<br/>ORU_R01| OrderPlacer
+
+```
+
+<div class="alert alert-info" role="alert">
+<b>Specimen Event Tracking:</b> See LAB-40 HL7 v2.9 SET <a href="https://wiki.ihe.net/index.php/Specimen_Event_Tracking" _target="_blank">IHE Specimen Event Tracking (SET)</a> and  <a href="https://hl7-definition.caristix.com/v2/HL7v2.7/TriggerEvents/OSM_R26" _target="_blank">Hl7 v2.7 OSM_R26 Unsolicited Specimen Shipment Manifest Message</a>
+</div>
+
+<img style="padding:3px;width:95%;" src="LTW Use Case 3.drawio.png" alt="Genomic LTW Business Process - Use Case 3"/>
+<br clear="all">
+<p class="figureTitle">Genomic LTW Business Process - Use Case 3</p> 
+<br clear="all">
+
+In this use case the original order is raised by the `Order Placer` and sent to a Pathology LIMS (`Pathology Order Filler`). The Pathology LIMS follows the processes outlined in [Use Case 1: Genomic Test Order](#use-case-genomic-test-order) and [Use Case 2: Genomic Test Report](#use-case-genomic-test-report) for pathology testing.  
+As part of this testing, the clinical process requires a genomics test to be performed.
+This genomics process is largely the same except for:
+- The order is sent as one interaction as the sample does not need to be collected.
+- The order should contain the pathology report detailing the results of the pathology tests.
+
+<figure>
+{%include ILW-usecase-3-sequence.svg%}
+<p id="fX.X.X.X-X" class="figureTitle">Multiple Diagnostic Tests - LAB-1 and LAB-3</p>
+</figure>
+<br clear="all">
+
+#### Main Process Flow
+
+- Initial Laboratory Order
+    - Step 1: The Order Placer submits a Laboratory Order O21 (LAB-1) to Order Filler (Pathology).
+    - Step 2: Order Filler (Pathology) sends back a Laboratory Report R01 (LAB-3).
+    - Note: As required by local clinical guidelines, this step can also include imaging orders.
+- Optional Path 1 – Genomic Order created by original order placer
+    - Condition: [Genomic Order created by original order placer].
+    - Note: The same specimen can be reused for multiple tests.
+    - Step 3: Order Placer submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
+    - Step 4: Specimen is sent from Order Placer to Genomics.
+    - Step 5: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) back to the Order Placer.
+- Optional Path 2 – Genomic Order created by Pathology
+    - Condition: [Order Filler (Pathology) creates Genomic Order].
+    - Note: The same specimen can be reused for multiple tests.
+    - Step 6: Order Filler (Pathology) submits a Genomic Order O21 (LAB-2) to Order Filler (Genomics).
+    - Step 7: Specimen is sent from Pathology to Genomics.
+    - Step 8: Order Filler (Genomics) sends a Genomic Report R01 (LAB-3) to Order Filler (Pathology).
+    - Step 9: Pathology sends the Genomic Report R01 (LAB-3) to the Order Placer.
+
+#### Diagnostic Cancer Pathways
+
+This use case can often occur around cancer:
+
+<img style="padding:3px;width:20%;" src="cancer-diagnostics.png" alt="Cancer Diagnostics"/>
+<br clear="all">
+<p class="figureTitle">Cancer Diagnostics</p> 
+<br clear="all">
+
+##### Colorectal Cancer—Diagnostic Pathways Example
+
+The details of this are beyond the scope of this guide, for more details see [Getting It Right First Time (GIRFT) Best Practice Timed Diagnostic Cancer pathways ](https://gettingitrightfirsttime.co.uk/wp-content/uploads/2024/03/BestPracticeTimedDiagnosticCancerPathwayssummary-guide-March-24-V3.pdf)
+
+For information on `Genomic Tests on the bowel cancer cells`, see [macmillan.org.uk](https://www.macmillan.org.uk/cancer-information-and-support/bowel-cancer/tests-on-the-bowel-cancer-cells) and [NICE DG27 Molecular testing strategies for Lynch syndrome in people with colorectal cancer](https://www.nice.org.uk/guidance/dg27)
+
+<img style="padding:3px;width:90%;" src="ERIC.drawio.png" alt="Colorectal Cancer Diagnostics and Patient Referrals"/>
+<br clear="all">
+<p class="figureTitle">Colorectal Cancer Diagnostics and Patient Referrals</p> 
+<br clear="all">
+
+
 
 
 ## Options 
@@ -135,5 +267,6 @@ sequenceDiagram
 
     OrderFillerGenomics1 -->> OrderPlacer: Returns Report (Report Identifier 1, Order Identifier 1, Visit/Spell Number A  and Specimen Accession Number X)
 ```
+
 
 
