@@ -76,10 +76,7 @@ The exchange interactions are the same as the same as above.
 ```mermaid
 graph LR
 
-  GDR@{ shape: cloud, label: "Share Content"}
-
-ContentCreator
-ContentConsumer
+GDR@{ shape: cloud, label: "Share Content"}
 
 ContentCreator --> |Provide and Register Document| GDR
 ContentConsumer --> |Findling Documents| GDR
