@@ -90,6 +90,9 @@ pages:
   GACS.md:
     title: Genomic Archiving and Communication System (GACS)
     generation: markdown
+  MHDS.md:
+    title: Health Document Sharing (MHDS) and Sharing Laboratory Reports (XD-LAB)
+    generation: markdown
   LAB-1.md:
     title: Placer Order Management [LAB-1]
     generation: markdown
