@@ -358,9 +358,9 @@ subgraph HIE["Genomic Archiving and Communication System (GACS)"];
 end
 
 
-Cepheid --> |"Test Results Management (LAB-5)<br/>a. Lab Reports HL7 ORU_R30"| RIE
+Cepheid --> |"Test Results Management (LAB-5/LAB-32)<br/>a. Lab Reports HL7 ORU_R30"| RIE
 
-RIE --> |"Test Results Management (LAB-5)<br/b. CSV Import"| iGene
+RIE --> |"Test Results Management (LAB-5)<br/b. CSV  Import"| iGene
 
 
 classDef purple fill:#E1D5E7;
