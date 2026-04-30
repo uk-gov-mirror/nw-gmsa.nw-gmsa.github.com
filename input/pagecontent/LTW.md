@@ -309,9 +309,68 @@ Key differences include:
 
 ## Work Order Management (LAB-4)
 
+In Progress
+
+```mermaid
+graph TD
+
+
+subgraph GenomicLIMS["Order Filler"];
+    iGene[LIMS<br/>IGene]
+end
+
+subgraph HIE["Genomic Archiving and Communication System (GACS)"];
+    RIE["Regional Orchestration Engine (RIE)"]
+end
+
+
+subgraph Analyser["Automation Manager (Analyser)"];
+    Cepheid[Cepheid]
+end
+
+iGene --> |"Work Order Management (LAB-4)<br/>i. Worksheet CSV"| RIE
+RIE <--> |"Work Order Management (LAB-4)<br/>ii. Lab Orders HL7 QBP Query"| Cepheid
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class GDR,RIE,VCFFHIR pink;
+```
 
 ## Test Results Management (LAB-5)
 
+```mermaid
+graph TD
+
+subgraph GenomicLIMS["Order Filler"];
+    iGene[LIMS<br/>IGene]
+end
+
+
+subgraph Analyser["Automation Manager (Analyser)"];
+    Cepheid[Cepheid]
+end
+
+
+subgraph HIE["Genomic Archiving and Communication System (GACS)"];
+    RIE["Regional Orchestration Engine (RIE)"]
+end
+
+
+Cepheid --> |"Test Results Management (LAB-5)<br/>a. Lab Reports HL7 ORU_R30"| RIE
+
+RIE --> |"Test Results Management (LAB-5)<br/b. CSV Import"| iGene
+
+
+classDef purple fill:#E1D5E7;
+classDef pink fill:#F8CECC;
+
+class GDR,RIE,VCFFHIR pink;
+
+```
+
+In Progress
 
 ## Security Considerations
 
