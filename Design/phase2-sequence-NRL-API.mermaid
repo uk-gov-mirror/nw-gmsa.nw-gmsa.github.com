@@ -1,0 +1,21 @@
+---
+title: Health Document API
+---
+sequenceDiagram
+
+participant DataConsumer As Document Consumer
+participant DocumentRegistry as Document Registry<br/>National Record Locator Service (NRL)
+participant APIGateway as Document Repository<br/>API Gateway<br/>FHIR Facade
+participant DocumentRepository As Data Repository Source<br/>NW Genomics Analysis and Communication System (GACS)<br/>FHIR Respository
+
+
+note over DataConsumer,DocumentRegistry: Find Document References<br/>NRL 2. Retrieve patient's document pointers (GET)
+DataConsumer ->> DocumentRegistry: GET DocumentReference?subject:identifier={NHSNumber}
+DocumentRegistry -->> DataConsumer: search results
+alt for each document
+note over DataConsumer,DocumentRepository: Retrieve Document<br/>NRL 3. retrieve patient record from provider
+    DataConsumer ->> APIGateway: GET /Binary/{id}
+    APIGateway ->> DocumentRepository: GET /Binary/{id}
+    DocumentRepository -->> APIGateway: PDF Document
+    APIGateway -->> DataConsumer: PDF Document
+end

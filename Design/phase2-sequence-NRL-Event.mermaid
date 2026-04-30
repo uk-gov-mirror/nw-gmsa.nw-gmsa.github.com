@@ -1,0 +1,20 @@
+---
+title: Document Event Notifications
+---
+sequenceDiagram
+
+participant RIE as Regional Orchestration Engine<br/>(NW Genomics)
+
+participant GDR as Genomic Data Repository<br/>(NW Genomics)
+
+participant NRL as Document Registry<br/>National Record Locator Service (NRL)
+
+note over RIE: Wire Tap on existing HL7 message flows
+RIE ->> GDR: Store document metadata (FHIR DocumentReference) and document
+RIE ->> RIE: Create T01 Event
+
+note over RIE,NRL : Event Notifications <br/> Future enhancements - FHiR Subscription Backport and Multicast Notification Service
+
+opt NRL “1. Create pointer to patient record”
+    RIE ->> NRL: POST /DocumentReference
+end

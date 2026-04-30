@@ -71,15 +71,15 @@ This FHIR/IHE API is available for use in NW Genomics [Mobile Access to Health D
 XD-LAB uses HL7 Clinical Document Architecture (CDA), it is believed NHS England and HL7 EU/EHDS will adoption FHIR Document as the format of clinical documents.
 Example: [EU Laboratory Report](https://build.fhir.org/ig/hl7-eu/laboratory/)
 
-The exchange interactions are the same as the same as above.
+The exchange interactions (`Share Content`) in the diagram below, are the same as above.
 
 ```mermaid
 graph LR
 
-GDR@{ shape: cloud, label: "Share Content"}
+GDR["Share Content"]
 
 ContentCreator --> |Provide and Register Document| GDR
-ContentConsumer --> |Findling Documents| GDR
+ContentConsumer --> |Finding Documents| GDR
 ```
 
 ### Data Model
