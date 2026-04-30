@@ -84,7 +84,7 @@ ContentConsumer --> |Finding Documents| GDR
 
 ### Data Model
 
-#### Document Reference (Document Entry)
+#### FHIR Document Reference (XDS Document Entry)
 
 The data models in HL7 MDM (FHIR), FHIR and IHE XDS are effectively the same, this can be found in [NW Genomics FHIR DocumentReference](StructureDefinition-DocumentReference.html). NRL currently implements a subset which may be improved by National Imaging Registry (which is the source of the NW Genomcis model).   
 
