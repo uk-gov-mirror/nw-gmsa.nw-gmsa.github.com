@@ -54,11 +54,12 @@ Description:    """
 * basedOn[OrderIdentifier] insert Obligation(#SHOULD:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderPlacer)
 
 
-//* category ^slicing.discriminator.type = #value
-//* category ^slicing.discriminator.path = "coding"
-//* category ^slicing.rules = #open
-//* category ^slicing.description = "Slice based on the category code pattern"
-//* category ^slicing.ordered = false
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Slice based on the category code pattern"
+* category ^slicing.ordered = false
+
 * category contains Genetics 1..1
 
 // Looks like this has is fixe on EU Core newer than hl7.fhir.eu.base#2.0.0-ballot based on FHIR 4.0.1. Generated 2025-12-19
@@ -79,7 +80,7 @@ Description:    """
 
 * encounter 0..1 MS
 * encounter ^short = "A reference identifier to the episode/stay/visit number in which the report was created. (HL7 v2 PV1-19)"
-* encounter only Reference(HospitalSpell)
+//* encounter only Reference(HospitalSpell)
 * encounter.identifier only HospitalProviderSpellIdentifier
 * encounter.identifier ^short = "(HL7v2 PV1-19 Visit Number from OML_O21)"
 * encounter.identifier insert Obligation(#SHALL:populate-if-known, https://fhir.nwgenomics.nhs.uk/ActorDefinition/OrderFiller)
@@ -143,23 +144,23 @@ Description:    """
 
 * specimen 0..* MS
 
-* result only Reference(Observation)
+//* result only Reference(Observation)
 
 
-* result ^slicing.discriminator.type = #profile
-* result ^slicing.discriminator.path = "resolve()"
-* result ^slicing.rules = #open
-* result ^slicing.description = "Slice based on the reference profile and code pattern"
-* result contains
-    diagnostic-implication 0..* and
-   variant 0..* and
-   genomic-study 0..1
-* result[genomic-study]
-* result[genomic-study] only Reference(GenomicStudyPanel)
+//* result ^slicing.discriminator.type = #profile
+//* result ^slicing.discriminator.path = "resolve()"
+//* result ^slicing.rules = #open
+//* result ^slicing.description = "Slice based on the reference profile and code pattern"
+//* result contains
+//    diagnostic-implication 0..* and
+//   variant 0..* and
+//   genomic-study 0..1
+//* result[genomic-study]
+//* result[genomic-study] only Reference(GenomicStudyPanel)
 
-* result[variant] only Reference(Variant)
+//* result[variant] only Reference(Variant)
 
-* result[diagnostic-implication] only Reference(DiagnosticImplication)
+//* result[diagnostic-implication] only Reference(DiagnosticImplication)
 
 * presentedForm 1..* MS
 * presentedForm only NWAttachment

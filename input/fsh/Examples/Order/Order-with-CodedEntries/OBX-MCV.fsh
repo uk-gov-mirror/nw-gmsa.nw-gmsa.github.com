@@ -12,7 +12,7 @@ For coding descriptions see
 
 * identifier[+].value = "4326e29b-0875-401c-8ed4-459ce1fa24f0"
 
-* category[laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
+* category[+] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory "Laboratory"
 
 * status = #final
 

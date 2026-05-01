@@ -1,5 +1,5 @@
 Profile:        Practitioner
-Parent:         http://hl7.eu/fhir/base/StructureDefinition/practitioner-eu
+Parent:         http://hl7.eu/fhir/base/StructureDefinition/practitioner-eu-core
 Id:             Practitioner
 Title:          "Practitioner"
 Description:    """
@@ -23,4 +23,4 @@ Description:    """
 
 * identifier[PractitionerIdentifier] only PractitionerIdentifier
 
-* name 0..1 MS
+* name MS

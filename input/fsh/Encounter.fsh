@@ -1,5 +1,6 @@
 Profile:        Encounter
-Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter
+//Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-Encounter
+Parent:         http://hl7.org/fhir/StructureDefinition/Encounter
 Id:             Encounter
 Title:          "Encounter"
 Description:    """

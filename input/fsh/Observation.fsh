@@ -11,6 +11,11 @@ Description:    """
 * ^keyword[+] = #patientcare "Patient Care"
 * ^keyword[+] = #diagnostics "Diagnostics"
 
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Slice based on the category code pattern"
+* category ^slicing.ordered = false
 
 * category contains genomicsCategory 1..1
 * category[genomicsCategory] = $DIAGNOSTICSERVICE#GE
@@ -27,7 +32,7 @@ Description:    """
 * subject.identifier only NHSIdentifier
 
 * encounter 0..1 MS
-* encounter only Reference(Encounter)
+//* encounter only Reference(Encounter)
 * encounter.identifier only CorrelationIdentifier
 * encounter.identifier insert Obligation(#SHALL:populate-if-known, https://nw-gmsa.github.io/ActorDefinition/OrderFiller)
 * encounter.identifier insert Obligation(#SHALL:populate-if-known, https://nw-gmsa.github.io/ActorDefinition/OrderPlacer)
