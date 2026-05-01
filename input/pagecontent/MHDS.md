@@ -1,3 +1,7 @@
+<div class="alert alert-danger" role="alert">
+This is currently being elaborated and subject to change.
+</div>
+
 ## References
 
 1. [IHE Pathology and Laboratory Medicine (PaLM) Technical Framework - Volume 1](https://www.ihe.net/uploadedFiles/Documents/PaLM/IHE_PaLM_TF_Vol1.pdf) XD-LAB
