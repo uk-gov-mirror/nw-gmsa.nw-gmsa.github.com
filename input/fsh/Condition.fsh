@@ -3,7 +3,7 @@ Parent:         http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core
 Id:             Condition
 Title:          "Condition"
 Description:    """
-`Patient Care` `HL7 Europe Core`
+`Patient Care` [HL7 Europe Core - Condition](http://hl7.eu/fhir/base/StructureDefinition/condition-eu-core)
 """
 
 * ^keyword[+] = #core "Core"

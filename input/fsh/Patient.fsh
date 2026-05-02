@@ -3,7 +3,7 @@ Profile: Patient
 Parent: http://hl7.eu/fhir/base/StructureDefinition/patient-eu-core
 Id: Patient
 Description: """
-`Patient Administration` `HL7 Europe Core`
+`Patient Administration` [HL7 Europe Core - Patient](http://hl7.eu/fhir/base/StructureDefinition/patient-eu-core)
 """
 * ^keyword[+] = #core "Core"
 * ^keyword[+] = #pam "Patient Administration"

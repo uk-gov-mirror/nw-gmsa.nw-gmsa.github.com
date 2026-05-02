@@ -3,7 +3,7 @@ Parent:         Observation
 Id:             TherapeuticImplication
 Title:          "Therapeutic Implication (Observation)"
 Description:    """
-`HL7 Genomics Reporting` Placeholder for [TherapeuticImplication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html)
+[HL7 Genomics Reporting - TherapeuticImplication](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-therapeutic-implication.html)
 """
 
 * ^keyword[+] = #archetype "Domain Analysis Model"

@@ -3,7 +3,7 @@ Parent:         http://hl7.eu/fhir/base/StructureDefinition/practitioner-eu-core
 Id:             Practitioner
 Title:          "Practitioner"
 Description:    """
-`Care Directory` `HL7 Europe Core`
+`Care Directory` [HL7 Europe Core - Practitioner](http://hl7.eu/fhir/base/StructureDefinition/practitioner-eu-core)
 """
 
 * ^keyword[+] = #core "Core"

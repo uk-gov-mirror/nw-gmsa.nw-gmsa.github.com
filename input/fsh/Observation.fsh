@@ -4,7 +4,7 @@ Parent:         http://hl7.eu/fhir/base/StructureDefinition/medicalTestResult-eu
 Id:             Observation
 Title:          "Observation"
 Description:    """
-`Diagnostic` `HL7 Europe Core`
+`Diagnostic` [HL7 Europe Core - Observation: Medical Test Result](https://hl7.eu/fhir/base/2.0.0/StructureDefinition-medicalTestResult-eu-core.html)
 """
 
 * ^keyword[+] = #core "Core"
