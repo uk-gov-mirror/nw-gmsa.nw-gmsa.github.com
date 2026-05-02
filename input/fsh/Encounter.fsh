@@ -5,8 +5,8 @@ Id:             Encounter
 Title:          "Encounter"
 Description:    """
 `Patient Administration` `Base`, for implementation see
-- [Hospital Spell](StructureDefinition-HospitalSpell.html) - an admission (inpatient or outpatient)
-- [Visit](StructureDefinition-Visit.html) - an A&E attendance, a community contract, an OP attendance (Appointment), etc
+- `Account Number` [Hospital Spell](StructureDefinition-HospitalSpell.html) - an admission (inpatient or outpatient)
+- `Visit Number` [Visit](StructureDefinition-Visit.html) - an A&E attendance, a community contract, an OP attendance (Appointment), etc
 """
 
 * ^keyword[+] = #core "Base"
