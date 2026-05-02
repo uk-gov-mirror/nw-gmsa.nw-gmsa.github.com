@@ -6,7 +6,7 @@ Parent:         http://hl7.org/fhir/StructureDefinition/Specimen
 Id:             Specimen
 Title:          "Specimen"
 Description:    """
-`Diagnostic Workflow` `Specimen Collection`
+`Diagnostic` `Specimen Collection`
 """
 
 * ^keyword[+] = #core "Core"

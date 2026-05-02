@@ -3,7 +3,7 @@ Parent:         Observation
 Id:             Genotype
 Title:          "Genotype (Observation)"
 Description:    """
-[HL7 Genomics Reporting = Genotype](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genotype.html)
+`Diagnostic - Genomics` [HL7 Genomics Reporting = Genotype](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genotype.html)
 """
 
 * ^keyword[+] = #archetype "Domain Analysis Model"

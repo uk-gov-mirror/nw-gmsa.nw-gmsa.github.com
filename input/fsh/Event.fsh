@@ -1,8 +1,8 @@
-Profile:        Event
+Profile:        EventNotification
 Parent:         http://hl7.org/fhir/StructureDefinition/MessageHeader
-Id:             Event
-Title:          "Event"
-Description:    "DRAFT"
+Id:             EventNotification
+Title:          "Event Notification (MessageHeader)"
+Description:    "`Messaging` [Event Messsage](https://www.enterpriseintegrationpatterns.com/patterns/messaging/EventMessage.html)"
 
 * meta.lastUpdated	1..1 MS
 

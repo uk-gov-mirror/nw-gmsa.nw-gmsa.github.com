@@ -3,7 +3,7 @@ Parent:         Procedure
 Id:             GenomicStudy
 Title:          "Genomic Study (Procedure)"
 Description:    """
-[HL7 Genomics Reporting - GenomicStudy](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html)
+`Diagnostic - Genomics` [HL7 Genomics Reporting - GenomicStudy](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-genomic-study.html)
 """
 
 * ^keyword[+] = #archetype "Domain Analysis Model"

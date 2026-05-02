@@ -1,8 +1,8 @@
 Profile:        MessageHeader
 Parent:         http://hl7.org/fhir/StructureDefinition/MessageHeader
 Id:             MessageHeader
-Title:          "MessageHeader"
-Description:    "DRAFT"
+Title:          "Document Message (MessageHeader)"
+Description:    "`Messaging` [Document Message](https://www.enterpriseintegrationpatterns.com/patterns/messaging/DocumentMessage.html) "
 
 * meta.lastUpdated	1..1 MS
 

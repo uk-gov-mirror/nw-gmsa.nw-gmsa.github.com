@@ -3,7 +3,7 @@ Parent:         Observation
 Id:             Variant
 Title:          "Variant (Observation)"
 Description:    """
-[HL7 Genomics Reporting - Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html)
+`Diagnostic - Genomics` [HL7 Genomics Reporting - Variant](https://build.fhir.org/ig/HL7/genomics-reporting/StructureDefinition-variant.html)
 """
 
 //https://github.com/HL7/genomics-reporting/blob/master/input/fsh/CGFindings.fsh

@@ -4,7 +4,7 @@ Parent:         https://fhir.hl7.org.uk/StructureDefinition/UKCore-ServiceReques
 Id:             ServiceRequest
 Title:          "ServiceRequest"
 Description:    """
-`Diagnostic Workflow`
+`Diagnostic`
 """
 
 * ^keyword[+] = #core "Core"
