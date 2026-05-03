@@ -12,7 +12,7 @@ This is currently being elaborated and subject to change.
 
 | Data Element                       | Cepheid                                | iGene   | LOINC | Units | Reference Range          | HL7 FHIR                                                   | Example                           |
 |------------------------------------|----------------------------------------|---------|-------|-------|--------------------------|------------------------------------------------------------|-----------------------------------|
-| Variant                            |                                        |         |       |       |                          | Observation.partOf(Variant) - BCR::ABL Major (e14a2/e13a2) |                                   |
+| Variant                            |                                        |         |       |       |                          | Observation.derivedFrom(Variant) - BCR::ABL Major (e14a2/e13a2) |                                   |
 | Sample / Specimen (iGene S-Number) | SPM-2                                  | &#9745; |       |       |                          | DiagnosticReport.specimen                                  |                                   |
 | Report Number (iGene T-Number)     |                                        | &#9745; |       |       |                          | DiagnosticReport.identifier[PlacerNumber]                  |                                   |                               
 | Report Number (Cepheid)            | OBX-1 ??                               |         |       |       |                          | DiagnosticReport.identifier[FillerNumber]                  |                                   |
