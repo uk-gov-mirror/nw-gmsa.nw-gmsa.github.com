@@ -12,4 +12,4 @@ Description:    """
 * ^keyword[+] = #genomics "Genomics"
 * ^keyword[+] = #diagnostics "Diagnostics"
 
-* partOf only Reference(Variant)
+* derivedFrom only Reference(Variant)
