@@ -1,7 +1,7 @@
-Profile:        BCRABLMajorTranscript
+Profile:        LaboratoryAnalyteResult
 Parent:         Observation
-Id:             BCRABLMajorTranscript
-Title:          "BCR::ABL major transcript (Observation)"
+Id:             LaboratoryAnalyteResult
+Title:          "LaboratoryAnalyteResult - BCR::ABL major transcript (Observation)"
 Description:    """
 `Diagnostic - Genomics Test`
 """
