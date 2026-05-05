@@ -1,7 +1,7 @@
 Profile:        LaboratoryAnalyteResult
 Parent:         Observation
 Id:             LaboratoryAnalyteResult
-Title:          "LaboratoryAnalyteResult - BCR::ABL major transcript (Observation)"
+Title:          "Laboratory Analyte Result (Observation)"
 Description:    """
 `Diagnostic - Genomics Test`
 """
