@@ -12,7 +12,7 @@ This is currently being elaborated and subject to change.
 
 ## Data Mapping
 
-| Data Element                       | HL7 v2 - Cepheid                       | iGene   | LOINC | openEHR                  | HL7 FHIR - GACS                                                 | Example                           |
+| Data Element                       | HL7 v2 - Cepheid                       | iGene   | LOINC | openEHR                  | HL7 FHIR                                                | Example                           |
 |------------------------------------|----------------------------------------|---------|-------|--------------------------|-----------------------------------------------------------------|-----------------------------------|
 | Variant                            |                                        |         |       |                          | Observation.derivedFrom(Variant) - BCR::ABL Major (e14a2/e13a2) |                                   |
 | Sample / Specimen (iGene S-Number) | SPM-2                                  | &#9989; |       | Specimen                         | DiagnosticReport.specimen                                       |                                   |
