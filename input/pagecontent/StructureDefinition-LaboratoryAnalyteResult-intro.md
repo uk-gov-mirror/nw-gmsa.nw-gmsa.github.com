@@ -32,7 +32,7 @@ This is currently being elaborated and subject to change.
 |                                    | OBX-7 &BCRABL ABL&Ct                   |         |       | Analyte result detail    | ?? Observation.component.valueQuantity                          | ^7.9                              |                                                                                                |
 |                                    | OBX-8 &BCRABL ABL&EndPt                |         |       | Analyte result detail    | ?? Observation.component.valueQuantity                          | ^205.0                            |                                                                                                |
 |                                    |                                        |         |       | Test method                         |                                                                 |                                   |
-{:grid}
+{:.grid}
 
 Key LOINC Codes for BCR-ABL:
 
